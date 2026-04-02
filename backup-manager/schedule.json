@@ -1,0 +1,8 @@
+﻿{
+    "taskName":  "OpenClaw Daily Backup",
+    "dailyAt":  "03:30",
+    "scriptPath":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\backup-manager\\backup-manager.ps1",
+    "installedAtUtc":  "2026-04-02T08:14:57.3753703Z",
+    "backupDir":  "C:\\Users\\Itzhak\\OpenClawBackups",
+    "keep":  3
+}

@@ -1,13 +1,15 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('backup', 'list', 'restore', 'prune', 'status')]
+    [ValidateSet('backup', 'list', 'restore', 'prune', 'status', 'install-schedule', 'uninstall-schedule', 'self-test')]
     [string]$Command,
 
     [string]$Root = "$env:USERPROFILE\.openclaw",
     [string]$BackupDir = "$env:USERPROFILE\OpenClawBackups",
     [int]$Keep = 3,
     [string]$Snapshot,
+    [string]$TaskName = 'OpenClaw Daily Backup',
+    [string]$DailyAt = '03:30',
     [switch]$Verify,
     [switch]$Force,
     [switch]$Json
@@ -17,7 +19,7 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
 function Write-Json([object]$Value) {
-    $Value | ConvertTo-Json -Depth 10
+    $Value | ConvertTo-Json -Depth 20
 }
 
 function Assert-OpenClawCli {
@@ -47,6 +49,37 @@ function Get-SnapshotPrefix([string]$FileName) {
 
 function Get-MetadataPath([string]$ArchivePath) {
     return "$ArchivePath.metadata.json"
+}
+
+function Get-ScheduleMetadataPath {
+    return Join-Path $PSScriptRoot 'schedule.json'
+}
+
+function Get-RestoreCandidateItems {
+    return @(
+        'agents',
+        'canvas',
+        'completions',
+        'credentials',
+        'delivery-queue',
+        'devices',
+        'identity',
+        'logs',
+        'media',
+        'memory',
+        'tasks',
+        'telegram',
+        'workspace',
+        'exec-approvals.json',
+        'gateway.cmd',
+        'openclaw.json',
+        'openclaw.json.bak',
+        'openclaw.json.bak.1',
+        'openclaw.json.bak.2',
+        'openclaw.json.bak.3',
+        'openclaw.json.bak.4',
+        'update-check.json'
+    )
 }
 
 function Get-Snapshots {
@@ -85,66 +118,106 @@ function Get-Snapshots {
     return @($result)
 }
 
+function Resolve-Snapshot {
+    param([string]$Value)
+
+    $snapshots = @(Get-Snapshots)
+    if (-not $snapshots.Count) {
+        throw 'No snapshots found.'
+    }
+
+    if ([string]::IsNullOrWhiteSpace($Value) -or $Value -eq 'latest') {
+        return $snapshots | Select-Object -First 1
+    }
+
+    $direct = $snapshots | Where-Object {
+        $_.Name -eq $Value -or
+        $_.SnapshotId -eq $Value -or
+        $_.ArchivePath -eq $Value
+    } | Select-Object -First 1
+
+    if ($direct) {
+        return $direct
+    }
+
+    throw "Snapshot not found: $Value"
+}
+
+function Get-ExtractRoot([string]$ExtractDir) {
+    $archiveRoot = Get-ChildItem -LiteralPath $ExtractDir -Directory | Select-Object -First 1
+    if (-not $archiveRoot) {
+        throw 'Extracted archive root not found.'
+    }
+    return $archiveRoot.FullName
+}
+
+function Get-ExtractedStateRoot([string]$ExtractDir) {
+    $archiveRoot = Get-ExtractRoot $ExtractDir
+    $payloadDir = Join-Path $archiveRoot 'payload'
+    if (-not (Test-Path -LiteralPath $payloadDir)) {
+        throw "Archive payload folder missing: $payloadDir"
+    }
+
+    $candidates = Get-ChildItem -LiteralPath $payloadDir -Directory -Recurse | Where-Object {
+        $_.FullName -match '\\.openclaw$'
+    } | Sort-Object FullName
+
+    if (-not $candidates) {
+        throw 'Unable to locate .openclaw state root inside extracted archive.'
+    }
+
+    return $candidates[0].FullName
+}
+
 function Get-BackupStatus {
     $snapshots = @(Get-Snapshots)
     $latest = $snapshots | Select-Object -First 1
+    $scheduleMetadata = $null
+    $scheduleMetadataPath = Get-ScheduleMetadataPath
+    if (Test-Path -LiteralPath $scheduleMetadataPath) {
+        try {
+            $scheduleMetadata = Get-Content -LiteralPath $scheduleMetadataPath -Raw | ConvertFrom-Json
+        }
+        catch {
+            $scheduleMetadata = $null
+        }
+    }
+
+    $taskInfo = $null
+    try {
+        $task = Get-ScheduledTask -TaskName $TaskName -ErrorAction Stop
+        $taskInfo = [pscustomobject]@{
+            taskName = $task.TaskName
+            state = [string]$task.State
+            triggers = @($task.Triggers | ForEach-Object {
+                [pscustomobject]@{
+                    frequency = $_.Frequency
+                    startBoundary = $_.StartBoundary
+                    daysInterval = $_.DaysInterval
+                }
+            })
+            actions = @($task.Actions | ForEach-Object {
+                [pscustomobject]@{
+                    execute = $_.Execute
+                    arguments = $_.Arguments
+                    workingDirectory = $_.WorkingDirectory
+                }
+            })
+        }
+    }
+    catch {
+        $taskInfo = $null
+    }
 
     return [pscustomobject]@{
         Root = $Root
         BackupDir = $BackupDir
         Keep = $Keep
-        SnapshotCount = @($snapshots).Count
+        SnapshotCount = $snapshots.Count
         Latest = $latest
         Snapshots = $snapshots
-    }
-}
-
-function Invoke-Backup {
-    Assert-OpenClawCli | Out-Null
-    Ensure-Directory $BackupDir
-
-    $snapshotId = Get-TimestampUtc
-    $archivePath = Join-Path $BackupDir ("$snapshotId-openclaw-backup.tar.gz")
-
-    $args = @('backup', 'create', '--output', $archivePath, '--json')
-    if ($Verify) {
-        $args += '--verify'
-    }
-
-    $jsonRaw = & openclaw @args
-    if ($LASTEXITCODE -ne 0) {
-        throw "openclaw backup create failed with exit code $LASTEXITCODE"
-    }
-
-    $backupResult = $jsonRaw | ConvertFrom-Json
-    $cliVersion = (& openclaw --version | Select-Object -First 1)
-
-    $metadata = [pscustomobject]@{
-        snapshotId = $snapshotId
-        createdAtUtc = (Get-Date).ToUniversalTime().ToString('o')
-        archivePath = $backupResult.archivePath
-        archiveRoot = $backupResult.archiveRoot
-        verified = [bool]$backupResult.verified
-        includeWorkspace = [bool]$backupResult.includeWorkspace
-        onlyConfig = [bool]$backupResult.onlyConfig
-        root = $Root
-        backupDir = $BackupDir
-        keep = $Keep
-        host = $env:COMPUTERNAME
-        openclawVersion = $cliVersion
-        assets = $backupResult.assets
-        skipped = $backupResult.skipped
-    }
-
-    $metadataPath = Get-MetadataPath $backupResult.archivePath
-    $metadata | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $metadataPath -Encoding UTF8
-
-    $pruneResult = Invoke-Prune -PassThru
-
-    return [pscustomobject]@{
-        backup = $backupResult
-        metadataPath = $metadataPath
-        prune = $pruneResult
+        Schedule = $taskInfo
+        ScheduleMetadata = $scheduleMetadata
     }
 }
 
@@ -186,29 +259,107 @@ function Invoke-Prune {
     }
 }
 
-function Resolve-Snapshot {
-    param([string]$Value)
+function Invoke-Backup {
+    Assert-OpenClawCli | Out-Null
+    Ensure-Directory $BackupDir
 
-    $snapshots = @(Get-Snapshots)
-    if (-not @($snapshots).Count) {
-        throw 'No snapshots found.'
+    $snapshotId = Get-TimestampUtc
+    $archivePath = Join-Path $BackupDir ("$snapshotId-openclaw-backup.tar.gz")
+
+    $args = @('backup', 'create', '--output', $archivePath, '--json')
+    if ($Verify) {
+        $args += '--verify'
     }
 
-    if ([string]::IsNullOrWhiteSpace($Value) -or $Value -eq 'latest') {
-        return $snapshots | Select-Object -First 1
+    $jsonRaw = & openclaw @args
+    if ($LASTEXITCODE -ne 0) {
+        throw "openclaw backup create failed with exit code $LASTEXITCODE"
     }
 
-    $direct = $snapshots | Where-Object {
-        $_.Name -eq $Value -or
-        $_.SnapshotId -eq $Value -or
-        $_.ArchivePath -eq $Value
-    } | Select-Object -First 1
+    $backupResult = $jsonRaw | ConvertFrom-Json
+    $cliVersion = (& openclaw --version | Select-Object -First 1)
+    $verified = [bool]$backupResult.verified
 
-    if ($direct) {
-        return $direct
+    if (-not $verified) {
+        $verifyJson = & openclaw backup verify $backupResult.archivePath --json
+        if ($LASTEXITCODE -ne 0) {
+            throw "openclaw backup verify failed with exit code $LASTEXITCODE"
+        }
+        $verifyResult = $verifyJson | ConvertFrom-Json
+        $verified = [bool]$verifyResult.ok
+    }
+    else {
+        $verifyResult = [pscustomobject]@{ ok = $true; archivePath = $backupResult.archivePath }
     }
 
-    throw "Snapshot not found: $Value"
+    $metadata = [pscustomobject]@{
+        snapshotId = $snapshotId
+        createdAtUtc = (Get-Date).ToUniversalTime().ToString('o')
+        archivePath = $backupResult.archivePath
+        archiveRoot = $backupResult.archiveRoot
+        verified = $verified
+        includeWorkspace = [bool]$backupResult.includeWorkspace
+        onlyConfig = [bool]$backupResult.onlyConfig
+        root = $Root
+        backupDir = $BackupDir
+        keep = $Keep
+        host = $env:COMPUTERNAME
+        openclawVersion = $cliVersion
+        assets = $backupResult.assets
+        skipped = $backupResult.skipped
+        verify = $verifyResult
+    }
+
+    $metadataPath = Get-MetadataPath $backupResult.archivePath
+    $metadata | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $metadataPath -Encoding UTF8
+
+    $pruneResult = Invoke-Prune -PassThru
+
+    return [pscustomobject]@{
+        backup = $backupResult
+        verify = $verifyResult
+        metadataPath = $metadataPath
+        prune = $pruneResult
+    }
+}
+
+function Invoke-SafeCopyRestore {
+    param(
+        [string]$StateRoot,
+        [switch]$Apply
+    )
+
+    $items = Get-RestoreCandidateItems
+    $plan = @()
+
+    foreach ($item in $items) {
+        $source = Join-Path $StateRoot $item
+        $destination = Join-Path $Root $item
+        $existsInArchive = Test-Path -LiteralPath $source
+        $existsOnDisk = Test-Path -LiteralPath $destination
+        $entry = [pscustomobject]@{
+            item = $item
+            source = $source
+            destination = $destination
+            existsInArchive = $existsInArchive
+            existsOnDisk = $existsOnDisk
+            action = if ($existsInArchive) { 'restore' } elseif ($existsOnDisk) { 'remove' } else { 'skip' }
+        }
+        $plan += $entry
+
+        if (-not $Apply) {
+            continue
+        }
+
+        if ($existsOnDisk) {
+            Remove-Item -LiteralPath $destination -Recurse -Force
+        }
+        if ($existsInArchive) {
+            Copy-Item -LiteralPath $source -Destination $destination -Recurse -Force
+        }
+    }
+
+    return @($plan)
 }
 
 function Invoke-Restore {
@@ -219,82 +370,143 @@ function Invoke-Restore {
     $target = Resolve-Snapshot $Snapshot
     Assert-OpenClawCli | Out-Null
 
-    $restoreRoot = Join-Path $Root '_restore-staging'
-    if (Test-Path -LiteralPath $restoreRoot) {
-        Remove-Item -LiteralPath $restoreRoot -Recurse -Force
-    }
+    $restoreRoot = Join-Path $env:TEMP ("openclaw-restore-$([guid]::NewGuid().ToString('N'))")
     Ensure-Directory $restoreRoot
 
-    $tarRoot = Join-Path $restoreRoot 'archive'
-    Ensure-Directory $tarRoot
-
-    tar -xzf $target.ArchivePath -C $tarRoot
-    if ($LASTEXITCODE -ne 0) {
-        throw "Failed to extract archive: $($target.ArchivePath)"
-    }
-
-    $payloadRoot = Get-ChildItem -LiteralPath $tarRoot -Directory | Select-Object -First 1
-    if (-not $payloadRoot) {
-        throw 'Extracted archive root not found.'
-    }
-
-    $stateRoot = Join-Path $payloadRoot.FullName 'payload\windows\C\Users\Itzhak\.openclaw'
-    if (-not (Test-Path -LiteralPath $stateRoot)) {
-        throw "Expected state root not found in archive: $stateRoot"
-    }
-
-    $preRestoreDir = Join-Path $BackupDir 'pre-restore'
-    Ensure-Directory $preRestoreDir
-    $preRestoreArchive = Join-Path $preRestoreDir ("$(Get-TimestampUtc)-pre-restore-openclaw-backup.tar.gz")
-    $preArgs = @('backup', 'create', '--output', $preRestoreArchive, '--json')
-    $preJsonRaw = & openclaw @preArgs
-    if ($LASTEXITCODE -ne 0) {
-        throw "Failed to create pre-restore backup. Exit code: $LASTEXITCODE"
-    }
-    $preBackup = $preJsonRaw | ConvertFrom-Json
-
-    $items = @(
-        'agents',
-        'canvas',
-        'completions',
-        'credentials',
-        'delivery-queue',
-        'devices',
-        'identity',
-        'logs',
-        'media',
-        'memory',
-        'tasks',
-        'telegram',
-        'workspace',
-        'exec-approvals.json',
-        'gateway.cmd',
-        'openclaw.json',
-        'openclaw.json.bak',
-        'openclaw.json.bak.1',
-        'openclaw.json.bak.2',
-        'openclaw.json.bak.3',
-        'openclaw.json.bak.4',
-        'update-check.json'
-    )
-
-    foreach ($item in $items) {
-        $destination = Join-Path $Root $item
-        if (Test-Path -LiteralPath $destination) {
-            Remove-Item -LiteralPath $destination -Recurse -Force
+    try {
+        tar -xzf $target.ArchivePath -C $restoreRoot
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to extract archive: $($target.ArchivePath)"
         }
-        $source = Join-Path $stateRoot $item
-        if (Test-Path -LiteralPath $source) {
-            Copy-Item -LiteralPath $source -Destination $destination -Recurse -Force
+
+        $stateRoot = Get-ExtractedStateRoot $restoreRoot
+
+        $preRestoreDir = Join-Path $BackupDir 'pre-restore'
+        Ensure-Directory $preRestoreDir
+        $preRestoreArchive = Join-Path $preRestoreDir ("$(Get-TimestampUtc)-pre-restore-openclaw-backup.tar.gz")
+        $preJsonRaw = & openclaw backup create --output $preRestoreArchive --json
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to create pre-restore backup. Exit code: $LASTEXITCODE"
+        }
+        $preBackup = $preJsonRaw | ConvertFrom-Json
+
+        $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot -Apply
+
+        return [pscustomobject]@{
+            restoredSnapshot = $target
+            preRestoreBackup = $preBackup.archivePath
+            root = $Root
+            plan = $plan
         }
     }
+    finally {
+        if (Test-Path -LiteralPath $restoreRoot) {
+            Remove-Item -LiteralPath $restoreRoot -Recurse -Force
+        }
+    }
+}
 
-    Remove-Item -LiteralPath $restoreRoot -Recurse -Force
+function Test-RestorePlan {
+    $target = Resolve-Snapshot $Snapshot
+    $restoreRoot = Join-Path $env:TEMP ("openclaw-selftest-$([guid]::NewGuid().ToString('N'))")
+    Ensure-Directory $restoreRoot
+
+    try {
+        tar -xzf $target.ArchivePath -C $restoreRoot
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to extract archive: $($target.ArchivePath)"
+        }
+        $stateRoot = Get-ExtractedStateRoot $restoreRoot
+        $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot
+        return [pscustomobject]@{
+            snapshot = $target
+            extractedStateRoot = $stateRoot
+            planCount = $plan.Count
+            plan = $plan
+        }
+    }
+    finally {
+        if (Test-Path -LiteralPath $restoreRoot) {
+            Remove-Item -LiteralPath $restoreRoot -Recurse -Force
+        }
+    }
+}
+
+function Install-DailySchedule {
+    $parts = $DailyAt.Split(':')
+    if ($parts.Count -ne 2) {
+        throw 'DailyAt must be in HH:mm format.'
+    }
+
+    $hour = [int]$parts[0]
+    $minute = [int]$parts[1]
+    $start = Get-Date -Hour $hour -Minute $minute -Second 0
+    if ($start -lt (Get-Date)) {
+        $start = $start.AddDays(1)
+    }
+
+    $scriptPath = Join-Path $PSScriptRoot 'backup-manager.ps1'
+    $execute = 'powershell.exe'
+    $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`" -Command backup -Verify"
+    $action = New-ScheduledTaskAction -Execute $execute -Argument $arguments -WorkingDirectory $PSScriptRoot
+    $trigger = New-ScheduledTaskTrigger -Daily -At $start
+    $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+    Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null
+
+    $metadata = [pscustomobject]@{
+        taskName = $TaskName
+        dailyAt = $DailyAt
+        scriptPath = $scriptPath
+        installedAtUtc = (Get-Date).ToUniversalTime().ToString('o')
+        backupDir = $BackupDir
+        keep = $Keep
+    }
+    $metadata | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath (Get-ScheduleMetadataPath) -Encoding UTF8
 
     return [pscustomobject]@{
-        restoredSnapshot = $target
-        preRestoreBackup = $preBackup.archivePath
-        root = $Root
+        taskName = $TaskName
+        dailyAt = $DailyAt
+        scriptPath = $scriptPath
+        backupDir = $BackupDir
+    }
+}
+
+function Uninstall-DailySchedule {
+    try {
+        Unregister-ScheduledTask -TaskName $TaskName -Confirm:$false -ErrorAction Stop
+    }
+    catch {
+    }
+
+    $scheduleMetadataPath = Get-ScheduleMetadataPath
+    if (Test-Path -LiteralPath $scheduleMetadataPath) {
+        Remove-Item -LiteralPath $scheduleMetadataPath -Force
+    }
+
+    return [pscustomobject]@{
+        taskName = $TaskName
+        removed = $true
+    }
+}
+
+function Invoke-SelfTest {
+    Assert-OpenClawCli | Out-Null
+
+    $backupResult = Invoke-Backup
+    $snapshots = @(Get-Snapshots)
+    $latest = $snapshots | Select-Object -First 1
+    $verifyJson = & openclaw backup verify $latest.ArchivePath --json
+    if ($LASTEXITCODE -ne 0) {
+        throw "openclaw backup verify failed with exit code $LASTEXITCODE"
+    }
+    $verifyResult = $verifyJson | ConvertFrom-Json
+    $restoreResult = Test-RestorePlan -Snapshot $latest.SnapshotId
+
+    return [pscustomobject]@{
+        backup = $backupResult
+        verify = $verifyResult
+        restoreTest = $restoreResult
+        status = Get-BackupStatus
     }
 }
 
@@ -304,7 +516,7 @@ switch ($Command) {
         if ($Json) { Write-Json $result } else { $result }
     }
     'list' {
-        $result = Get-Snapshots
+        $result = @(Get-Snapshots)
         if ($Json) { Write-Json $result } else { $result }
     }
     'prune' {
@@ -316,6 +528,18 @@ switch ($Command) {
     }
     'restore' {
         $result = Invoke-Restore
+        if ($Json) { Write-Json $result } else { $result }
+    }
+    'install-schedule' {
+        $result = Install-DailySchedule
+        if ($Json) { Write-Json $result } else { $result }
+    }
+    'uninstall-schedule' {
+        $result = Uninstall-DailySchedule
+        if ($Json) { Write-Json $result } else { $result }
+    }
+    'self-test' {
+        $result = Invoke-SelfTest
         if ($Json) { Write-Json $result } else { $result }
     }
     default {

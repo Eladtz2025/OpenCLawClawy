@@ -1,56 +1,19 @@
 # Backup Manager
 
-OpenClaw backup wrapper for this machine.
+OpenClaw backup manager for this machine.
 
-## What it does
+## Goals
 
-- Creates full OpenClaw backups using `openclaw backup create`
-- Stores them under `C:\Users\Itzhak\OpenClawBackups`
-- Keeps only the latest 3 snapshots
-- Supports restore from a chosen snapshot
-- Creates an automatic pre-restore safety backup before overwrite
+- Full OpenClaw snapshot
+- Daily automatic backup
+- Keep only the latest 3 snapshots
+- Safe restore to a previous known-good state
+- Pre-restore safety snapshot before overwrite
+- Self-test flow for backup + verify + restore-plan validation
 
-## Commands
+## Scope
 
-### Create backup
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command backup -Verify
-```
-
-### Show status
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command status
-```
-
-### List snapshots
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command list
-```
-
-### Prune manually
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command prune
-```
-
-### Restore latest snapshot
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command restore -Snapshot latest -Force
-```
-
-### Restore specific snapshot
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command restore -Snapshot 2026-04-01T23-39-38.762Z -Force
-```
-
-## Snapshot scope
-
-The underlying OpenClaw backup currently covers the full active state root:
+The snapshot source is the active OpenClaw state root:
 
 - `C:\Users\Itzhak\.openclaw`
 
@@ -65,9 +28,80 @@ That includes:
 - logs
 - devices
 - media
+- delivery state
+- approvals state
 
-## Notes
+Backups are written outside the source tree to:
 
-- Restore is destructive by design and therefore requires `-Force`.
-- Restore currently targets this machine layout explicitly: `C:\Users\Itzhak\.openclaw`.
-- A pre-restore archive is created under `C:\Users\Itzhak\OpenClawBackups\pre-restore` before files are overwritten.
+- `C:\Users\Itzhak\OpenClawBackups`
+
+## Commands
+
+### Create backup
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command backup -Verify
+```
+
+### Status
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command status
+```
+
+### List snapshots
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command list
+```
+
+### Restore latest snapshot
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command restore -Snapshot latest -Force
+```
+
+### Restore specific snapshot
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command restore -Snapshot 2026-04-01T23-40-34.651Z -Force
+```
+
+### Install daily schedule
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command install-schedule -DailyAt 03:30
+```
+
+### Remove daily schedule
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command uninstall-schedule
+```
+
+### Self-test
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command self-test
+```
+
+## Safety model
+
+- Restore requires `-Force`
+- Restore creates a fresh `pre-restore` archive first
+- Restore extracts to a temp directory first
+- Restore validates the archive payload before overwrite
+- Retention pruning happens only after a successful backup write
+
+## Current machine assumptions
+
+This is intentionally tailored to the current machine and active profile:
+
+- Windows
+- active state root at `C:\Users\Itzhak\.openclaw`
+- OpenClaw CLI available on PATH
+
+## Files
+
+- `backup-manager.ps1` — main manager script
+- `schedule.json` — local schedule metadata written after task install
