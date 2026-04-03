@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>דשבורד חדשות יומי</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(12, 23, 40, 0.88);
+      --panel-2: rgba(15, 29, 50, 0.96);
+      --line: rgba(112, 147, 201, 0.20);
+      --text: #edf3ff;
+      --muted: #9cb0d1;
+      --accent: #7c5cff;
+      --accent2: #2ed3b7;
+      --hot: #ff4fd8;
+      --warn: #ffb65c;
+      --bad: #ff7373;
+      --shadow: 0 18px 48px rgba(0,0,0,.34);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(124,92,255,.18), transparent 28%),
+        radial-gradient(circle at top left, rgba(46,211,183,.12), transparent 24%),
+        linear-gradient(180deg, #081120 0%, #06101c 100%);
+      color: var(--text);
+    }
+    .wrap {
+      width: 1500px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 330px 1fr 360px;
+      gap: 22px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .sidebar, .main, .right { display: grid; gap: 22px; align-content: start; }
+    .hero { padding: 26px; min-height: 300px; }
+    .eyebrow {
+      font-size: 13px; text-transform: uppercase; letter-spacing: .18em; color: #8fa3c7;
+    }
+    h1 {
+      margin: 10px 0 14px;
+      font-size: 66px;
+      line-height: .94;
+      letter-spacing: -.03em;
+    }
+    h1 .accent { color: var(--hot); }
+    .sub {
+      color: var(--muted);
+      font-size: 24px;
+      line-height: 1.45;
+      max-width: 90%;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .stat {
+      background: rgba(9,16,30,.55);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 108px;
+    }
+    .stat .k { color: #87a0ca; font-size: 12px; text-transform: uppercase; letter-spacing: .16em; }
+    .stat .v { font-size: 34px; font-weight: 700; margin-top: 14px; }
+    .section { padding: 22px 24px; }
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #d9e4ff;
+    }
+    .section h2 span { color: var(--accent2); }
+    .item {
+      padding: 18px 0;
+      border-top: 1px solid rgba(129,155,199,.12);
+    }
+    .item:first-child { border-top: 0; padding-top: 6px; }
+    .pillrow { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(124,92,255,.14);
+      border: 1px solid rgba(124,92,255,.28);
+      color: #dcd4ff;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .pill.green { background: rgba(46,211,183,.14); border-color: rgba(46,211,183,.25); color: #bff5ea; }
+    .pill.orange { background: rgba(255,182,92,.14); border-color: rgba(255,182,92,.26); color: #ffd9a8; }
+    .pill.red { background: rgba(255,115,115,.14); border-color: rgba(255,115,115,.26); color: #ffc1c1; }
+    .headline { font-size: 32px; line-height: 1.15; margin: 0 0 10px; }
+    .summary { font-size: 20px; line-height: 1.5; color: #dbe5fb; }
+    .meta { margin-top: 12px; color: var(--muted); font-size: 17px; display:flex; gap:16px; flex-wrap:wrap; }
+    .smalllist { display: grid; gap: 14px; }
+    .mini {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(10,18,33,.55);
+      border: 1px solid rgba(129,155,199,.12);
+    }
+    .mini .t { font-size: 22px; line-height: 1.25; margin: 0 0 8px; }
+    .mini .s { color: var(--muted); font-size: 16px; line-height: 1.45; }
+    .cat {
+      display:grid; gap:14px;
+    }
+    .catcard {
+      padding:18px;
+      border-radius: 18px;
+      border:1px solid rgba(129,155,199,.12);
+      background: rgba(10,18,33,.5);
+    }
+    .catcard .name { color:#f1f5ff; font-size:20px; font-weight:700; }
+    .catcard .desc { color:var(--muted); margin-top:8px; font-size:16px; }
+    .footer { margin-top: 22px; padding: 18px 22px; color: var(--muted); font-size: 16px; }
+    .label { color:#8da7d5; font-size:12px; text-transform:uppercase; letter-spacing:.16em; }
+    .big { font-size: 40px; font-weight: 800; line-height: 1.05; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <div class="sidebar">
+        <div class="card hero">
+          <div class="eyebrow">Clawy // Daily Brief</div>
+          <h1>דשבורד חדשות <span class="accent">יומי</span></h1>
+          <div class="sub">חדשות מסוננות לערך אמיתי. קצר, נקי, בלי רעש, בלי קליקבייט.</div>
+          <div class="stats">
+            <div class="stat"><div class="k">נסרקו</div><div class="v">34</div></div>
+            <div class="stat"><div class="k">נכנסו לדוח</div><div class="v">6</div></div>
+            <div class="stat"><div class="k">עודכן</div><div class="v" style="font-size:26px">03 אפר׳<br>07:30</div></div>
+            <div class="stat"><div class="k">מצב יום</div><div class="v" style="font-size:28px">ממוקד</div></div>
+          </div>
+        </div>
+        <div class="card section">
+          <h2>תחומים <span>במעקב</span></h2>
+          <div class="cat">
+            <div class="catcard"><div class="name">טכנולוגיה</div><div class="desc">AI, שבבים, חברות פלטפורמה, רגולציה, מהלכים עם השפעה אמיתית.</div></div>
+            <div class="catcard"><div class="name">ישראל</div><div class="desc">ביטחון, מדיניות, מהלכים מדיניים, אירועים עם משמעות יומית גבוהה.</div></div>
+            <div class="catcard"><div class="name">קריפטו</div><div class="desc">רגולציה, תשתיות, פריצות, מהלכי ETF, אירועים עם קטליזטור אמיתי.</div></div>
+            <div class="catcard"><div class="name">הפועל פתח תקווה</div><div class="desc">רק עדכונים חשובים באמת: משחק, מאמן, שחקנים, מועדון.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="card section">
+          <div class="label">הכי חשוב היום</div>
+          <div class="big" style="margin:8px 0 18px;">3 דברים שבאמת שווים תשומת לב</div>
+          <div class="item">
+            <div class="pillrow">
+              <span class="pill green">טכנולוגיה</span>
+              <span class="pill">מאומת</span>
+              <span class="pill orange">לקרוא</span>
+            </div>
+            <h3 class="headline">מיקרוסופט דוחפת קדימה מודלי AI פנימיים במקום להישען רק על OpenAI</h3>
+            <div class="summary">אם זה מגובה במקורות חזקים, זו אינדיקציה לשינוי כוח אמיתי בשוק ה-AI: פחות תלות בספק אחד, יותר שליטה במודל, במחיר ובאינטגרציה.</div>
+            <div class="meta"><span>מקור: Microsoft / TechCrunch</span><span>למה חשוב: משנה יחסי כוח בשוק</span></div>
+          </div>
+          <div class="item">
+            <div class="pillrow">
+              <span class="pill green">ישראל</span>
+              <span class="pill orange">חלקית מאומת</span>
+              <span class="pill orange">לעקוב</span>
+            </div>
+            <h3 class="headline">מגעים לעסקה בעזה נמשכים, אבל אין עדיין פריצת דרך סגורה</h3>
+            <div class="summary">כותרות רבות מנפחות ״עסקה מעבר לפינה״. אם המקורות עצמם מדברים על חלון של שבוע-שבועיים ולא על סיכום, צריך למסגר את זה בזהירות.</div>
+            <div class="meta"><span>מקור: Reuters / דיווחי המשך</span><span>למה חשוב: השפעה מיידית על סדר היום הישראלי</span></div>
+          </div>
+          <div class="item">
+            <div class="pillrow">
+              <span class="pill green">קריפטו</span>
+              <span class="pill">מאומת</span>
+              <span class="pill orange">אולי</span>
+            </div>
+            <h3 class="headline">לא כל תזוזת מחיר בקריפטו שווה ידיעה; רק מהלך עם רגולציה, ETF או פריצה אמיתית נכנס</h3>
+            <div class="summary">זה עיקרון העריכה: פחות נרות ירוקים-אדומים, יותר אירועים שמשנים סיכון, נזילות, או מבנה שוק.</div>
+            <div class="meta"><span>מקור: סינון מערכתי</span><span>למה חשוב: חוסך זמן ורעש</span></div>
+          </div>
+        </div>
+        <div class="card section">
+          <h2>חדשה מרכזית <span>// פירוק נקי</span></h2>
+          <div class="item">
+            <div class="pillrow">
+              <span class="pill">Technology</span>
+              <span class="pill green">Worth your time</span>
+              <span class="pill orange">Hype: נמוכה</span>
+            </div>
+            <h3 class="headline">כך ייראה כל פריט בדשבורד: כותרת נקייה, בלי דרמה, עם סיבה לקרוא</h3>
+            <div class="summary">במקום בלוק טקסט ארוך, כל סיפור יוצג כמו כרטיס מוצר: כותרת אחת, תקציר קצר, למה זה חשוב, ורמז ברור אם שווה להעמיק או לדלג.</div>
+            <div class="meta"><span>קישור ישיר</span><span>מקור</span><span>ודאות</span><span>המלצה</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="card section">
+          <h2>תצוגת <span>סיכום</span></h2>
+          <div class="smalllist">
+            <div class="mini">
+              <div class="t">מה הכי חשוב היום</div>
+              <div class="s">3–4 שורות קצרות, בלי חזרה, שמסבירות את תמונת המצב האמיתית.</div>
+            </div>
+            <div class="mini">
+              <div class="t">מה כנראה מנופח</div>
+              <div class="s">נושאים שהכותרות שלהם רועשות יותר מהעובדות בפועל.</div>
+            </div>
+            <div class="mini">
+              <div class="t">על מה אפשר לדלג</div>
+              <div class="s">רעש שוק, שמועות, עדכונים זניחים, או תוכן שלא באמת משנה החלטות.</div>
+            </div>
+          </div>
+        </div>
+        <div class="card section">
+          <h2>שפת עיצוב <span>// אפליקציה</span></h2>
+          <div class="smalllist">
+            <div class="mini"><div class="t">נעים לקריאה</div><div class="s">כרטיסים, היררכיה ברורה, פחות טקסט רציף, תחושת מוצר ולא הודעה.</div></div>
+            <div class="mini"><div class="t">נייד קודם</div><div class="s">העיצוב יכוון גם למסך צר, כדי שטלגרם לא יהפוך את זה לקיר טקסט.</div></div>
+            <div class="mini"><div class="t">אפשרויות פלט</div><div class="s">תמונה מרונדרת, PDF, או דף HTML חי שאפשר לפתוח גם בדפדפן.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card footer">אב-טיפוס ויזואלי. המטרה: להפוך את הדוח היומי לחוויית קריאה שנראית כמו מוצר קטן ולא כמו הודעת טקסט ארוכה.</div>
+  </div>
+</body>
+</html>
