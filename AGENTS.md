@@ -214,6 +214,8 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 - Progress updates must be grounded in concrete work already performed.
 - If you are only describing the next intended step, say that explicitly.
 - Prefer: "השלב הבא שלי הוא..." over claiming work is already underway when it is not.
+- Do not propose implementation plans you cannot actually execute with the available tools and runtime constraints.
+- If a plan is only partly feasible, explicitly redesign it before presenting it as the working plan.
 
 ## Multi-Step Work Rule
 

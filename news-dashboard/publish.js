@@ -4,6 +4,7 @@ const path = require('path');
 const statePath = path.join(__dirname, 'state.json');
 const siteDir = path.join(__dirname, 'site');
 const indexPath = path.join(siteDir, 'index.html');
+const rootIndexPath = path.join(__dirname, '..', 'index.html');
 const archiveDir = path.join(siteDir, 'archive');
 
 if (!fs.existsSync(archiveDir)) fs.mkdirSync(archiveDir, { recursive: true });
@@ -34,4 +35,19 @@ const html = `<!doctype html>
 </html>`;
 
 fs.writeFileSync(indexPath, html, 'utf8');
+
+const rootHtml = `<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="0; url=./news-dashboard/site/latest.html?v=${Date.now()}" />
+  <title>Clawy News</title>
+</head>
+<body>
+  <a href="./news-dashboard/site/latest.html?v=${Date.now()}">Clawy News</a>
+</body>
+</html>`;
+fs.writeFileSync(rootIndexPath, rootHtml, 'utf8');
+
 console.log(indexPath);

@@ -1,13 +1,14 @@
 # News Engine Architecture
 
 ## Goal
-Upgrade the dashboard from prompt-driven summarization into a repeatable news engine.
+Upgrade the dashboard from prompt-driven summarization into a repeatable hybrid news engine.
 
 ## Layers
 
 ### 1. Source adapters
-Per-category source collectors.
-Each adapter should know:
+Per-category helper definitions for source collection.
+Live collection is performed by OpenClaw tools during each run, then normalized into local files.
+Each adapter/helper should know:
 - source name
 - source type (web, official, telegram, fixture, regulator)
 - collection method
@@ -119,9 +120,10 @@ Each story should carry:
 
 ## Build order
 1. Source map + policy
-2. Candidate JSON per category
-3. Dedup + scoring layer
-4. State file
-5. Archive generation
-6. Better site UI
-7. Telegram discovery sources
+2. Tool-driven candidate collection
+3. Candidate JSON normalization per category
+4. Dedup + scoring layer
+5. State file and selection
+6. Archive generation
+7. Better site UI
+8. Telegram discovery sources
