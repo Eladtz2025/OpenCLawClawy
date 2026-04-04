@@ -264,36 +264,63 @@ function Get-ExtractedStateRoot([string]$ExtractDir) {
 }
 
 function Get-ScheduleTaskInfo {
-    try {
-        $taskNameValue = $TaskName
-        $task = Get-ScheduledTask | Where-Object { $_.TaskName -eq $taskNameValue } | Select-Object -First 1
-        if (-not $task) {
-            return $null
-        }
+    $taskNameValue = $TaskName
 
-        return [pscustomobject]@{
-            taskName = $task.TaskName
-            taskPath = $task.TaskPath
-            state = [string]$task.State
-            triggers = @($task.Triggers | ForEach-Object {
-                [pscustomobject]@{
-                    frequency = $_.Frequency
-                    startBoundary = $_.StartBoundary
-                    daysInterval = $_.DaysInterval
-                }
-            })
-            actions = @($task.Actions | ForEach-Object {
-                [pscustomobject]@{
-                    execute = $_.Execute
-                    arguments = $_.Arguments
-                    workingDirectory = $_.WorkingDirectory
-                }
-            })
+    try {
+        $task = Get-ScheduledTask -TaskName $taskNameValue -ErrorAction Stop | Select-Object -First 1
+        if ($task) {
+            return [pscustomobject]@{
+                taskName = $task.TaskName
+                taskPath = $task.TaskPath
+                state = [string]$task.State
+                source = 'Get-ScheduledTask -TaskName'
+                triggers = @($task.Triggers | ForEach-Object {
+                    [pscustomobject]@{
+                        frequency = $_.Frequency
+                        startBoundary = $_.StartBoundary
+                        daysInterval = $_.DaysInterval
+                    }
+                })
+                actions = @($task.Actions | ForEach-Object {
+                    [pscustomobject]@{
+                        execute = $_.Execute
+                        arguments = $_.Arguments
+                        workingDirectory = $_.WorkingDirectory
+                    }
+                })
+            }
         }
     }
     catch {
-        return $null
     }
+
+    try {
+        $query = schtasks.exe /Query /TN $taskNameValue /V /FO CSV 2>$null
+        if ($LASTEXITCODE -eq 0 -and $query) {
+            $rows = $query | ConvertFrom-Csv
+            $row = $rows | Select-Object -First 1
+            if ($row) {
+                return [pscustomobject]@{
+                    taskName = $row.TaskName
+                    taskPath = '\'
+                    state = $row.Status
+                    source = 'schtasks.exe'
+                    triggers = @()
+                    actions = @(
+                        [pscustomobject]@{
+                            execute = $null
+                            arguments = $row.'Task To Run'
+                            workingDirectory = $null
+                        }
+                    )
+                }
+            }
+        }
+    }
+    catch {
+    }
+
+    return $null
 }
 
 function Get-BackupStatus {
