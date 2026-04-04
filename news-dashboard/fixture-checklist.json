@@ -1,0 +1,15 @@
+{
+  "category": "hapoel",
+  "priorityOrder": [
+    "Flashscore",
+    "Soccerway",
+    "Official Club",
+    "ONE",
+    "Sport5"
+  ],
+  "rules": [
+    "Try fixture-oriented sources first before declaring no significant update",
+    "If a match today is verified, it must be included",
+    "If fixture retrieval is weak, note that explicitly"
+  ]
+}
