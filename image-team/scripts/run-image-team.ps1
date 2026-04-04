@@ -58,9 +58,12 @@ $servicesJson | Set-Content -Path (Join-Path $jobDir 'local-services.json') -Enc
 $adapterJson = & (Join-Path $PSScriptRoot 'engine-adapter.ps1') -JobDir $jobDir
 $adapterJson | Set-Content -Path (Join-Path $jobDir 'engine-adapter.json') -Encoding UTF8
 
+$executionJson = & (Join-Path $PSScriptRoot 'try-execute-job.ps1') -JobDir $jobDir
+$executionJson | Set-Content -Path (Join-Path $jobDir 'execution.json') -Encoding UTF8
+
 $readyJson = & (Join-Path $PSScriptRoot 'assert-production-ready.ps1') -JobDir $jobDir
 $readyJson | Set-Content -Path (Join-Path $jobDir 'production-ready.json') -Encoding UTF8
 
 $status = 'PARTIAL'
-$next = 'Verify a runnable local engine on this machine, then wire execution to produce preview/v1/final image files.'
+$next = 'Verify or launch a runnable local engine on this machine so execution can produce preview/v1/final image files.'
 & (Join-Path $PSScriptRoot 'export-status.ps1') -JobDir $jobDir -Status $status -NextBestAction $next

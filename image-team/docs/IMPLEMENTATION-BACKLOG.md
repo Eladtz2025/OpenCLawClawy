@@ -17,6 +17,8 @@
 - [ ] Save preview / v1 / final artifacts
 - [x] Add production-readiness gate so the system cannot claim completion without real outputs
 - [x] Add engine adapter placeholder with explicit not-wired state
+- [x] Add Forge-compatible execution adapter that activates only when a local service is actually live
+- [x] Add local service probing and execution-status reporting
 
 ## Phase 3
 - [ ] Add InvokeAI fallback
