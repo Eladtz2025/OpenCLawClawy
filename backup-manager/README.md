@@ -55,6 +55,12 @@ powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Co
 powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command health-check
 ```
 
+### Export dashboard data
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command export-dashboard-data
+```
+
 ### List snapshots
 
 ```powershell
@@ -122,3 +128,5 @@ This is intentionally tailored to the current machine and active profile:
 
 - `backup-manager.ps1` — main manager script
 - `schedule.json` — local schedule metadata written after task install
+- `dashboard-data.json` — exported status/health/preview payload for the local dashboard
+- `dashboard.html` — lightweight local dashboard UI

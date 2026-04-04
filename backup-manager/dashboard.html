@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenClaw Backup Manager</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1115;
+      --panel: #171a21;
+      --panel-2: #1f2430;
+      --text: #e8ecf3;
+      --muted: #9aa4b2;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --bad: #ef4444;
+      --accent: #60a5fa;
+      --border: #2a3140;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1,h2,h3,p { margin-top: 0; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .button {
+      background: var(--accent);
+      color: #08111f;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .button.secondary {
+      background: var(--panel-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+    .metric {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 8px 0;
+    }
+    .muted { color: var(--muted); }
+    .status.ok { color: var(--ok); }
+    .status.warn { color: var(--warn); }
+    .status.bad { color: var(--bad); }
+    .section { margin-top: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #0b0d12;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin: 0;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .pill.ok { background: rgba(34,197,94,.15); color: var(--ok); }
+    .pill.warn { background: rgba(245,158,11,.15); color: var(--warn); }
+    .pill.bad { background: rgba(239,68,68,.15); color: var(--bad); }
+    ul { margin: 8px 0 0 18px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1>OpenClaw Backup Manager</h1>
+        <p class="muted">Local dashboard for backup, health, and restore preview.</p>
+      </div>
+      <div>
+        <button class="button" id="refreshBtn">Refresh</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="muted">Health</div>
+        <div class="metric" id="healthMetric">—</div>
+        <div id="healthText" class="status">—</div>
+      </div>
+      <div class="card">
+        <div class="muted">Latest snapshot</div>
+        <div class="metric" id="latestSnapshot">—</div>
+        <div class="muted" id="latestAge">—</div>
+      </div>
+      <div class="card">
+        <div class="muted">Retention</div>
+        <div class="metric" id="retentionMetric">—</div>
+        <div class="muted" id="retentionText">—</div>
+      </div>
+      <div class="card">
+        <div class="muted">Restore preview</div>
+        <div class="metric" id="previewMetric">—</div>
+        <div class="muted" id="previewText">—</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Environment</h3>
+        <div><strong>Root:</strong> <code id="rootPath">—</code></div>
+        <div><strong>Backup dir:</strong> <code id="backupDir">—</code></div>
+        <div><strong>Generated:</strong> <span id="generatedAt">—</span></div>
+      </div>
+      <div class="card">
+        <h3>Issues</h3>
+        <div id="issuesWrap" class="muted">No issues.</div>
+      </div>
+    </div>
+
+    <div class="section card">
+      <h3>Health checks</h3>
+      <table>
+        <thead>
+          <tr><th>Check</th><th>Status</th><th>Details</th></tr>
+        </thead>
+        <tbody id="checksBody"></tbody>
+      </table>
+    </div>
+
+    <div class="section card">
+      <h3>Snapshots</h3>
+      <table>
+        <thead>
+          <tr><th>Snapshot</th><th>Created</th><th>Verified</th><th>Size</th></tr>
+        </thead>
+        <tbody id="snapshotsBody"></tbody>
+      </table>
+    </div>
+
+    <div class="section card">
+      <h3>Restore preview</h3>
+      <pre id="previewBlock">—</pre>
+    </div>
+  </div>
+
+  <script>
+    const dataPath = './dashboard-data.json';
+
+    function formatBytes(bytes) {
+      if (!bytes && bytes !== 0) return '—';
+      const units = ['B','KB','MB','GB'];
+      let i = 0;
+      let value = bytes;
+      while (value >= 1024 && i < units.length - 1) {
+        value /= 1024;
+        i++;
+      }
+      return `${value.toFixed(value >= 10 || i === 0 ? 0 : 1)} ${units[i]}`;
+    }
+
+    function formatDate(value) {
+      if (!value) return '—';
+      return new Date(value).toLocaleString();
+    }
+
+    function ageFrom(value) {
+      if (!value) return '—';
+      const diffMs = Date.now() - new Date(value).getTime();
+      const mins = Math.floor(diffMs / 60000);
+      if (mins < 60) return `${mins} min ago`;
+      const hours = Math.floor(mins / 60);
+      if (hours < 48) return `${hours} h ago`;
+      const days = Math.floor(hours / 24);
+      return `${days} d ago`;
+    }
+
+    function pill(ok) {
+      return `<span class="pill ${ok ? 'ok' : 'bad'}">${ok ? 'OK' : 'FAIL'}</span>`;
+    }
+
+    async function load() {
+      const url = `${dataPath}?t=${Date.now()}`;
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const payload = await res.json();
+
+      document.getElementById('healthMetric').textContent = payload.health.ok ? 'OK' : 'ISSUE';
+      document.getElementById('healthText').textContent = payload.health.ok ? 'All checks passed' : `${payload.health.issues.length} issue(s)`;
+      document.getElementById('healthText').className = `status ${payload.health.ok ? 'ok' : 'bad'}`;
+
+      const latest = payload.status.latest || payload.status.Latest;
+      const latestSnapshotId = latest?.SnapshotId || latest?.snapshotId || '—';
+      const latestCreated = latest?.CreatedAtUtc || latest?.createdAtUtc;
+      document.getElementById('latestSnapshot').textContent = latestSnapshotId;
+      document.getElementById('latestAge').textContent = latestCreated ? `${formatDate(latestCreated)} • ${ageFrom(latestCreated)}` : '—';
+
+      const count = payload.status.SnapshotCount ?? payload.status.snapshotCount ?? 0;
+      const keep = payload.status.Keep ?? payload.keep ?? '—';
+      document.getElementById('retentionMetric').textContent = `${count}/${keep}`;
+      document.getElementById('retentionText').textContent = `${count} snapshots retained`;
+
+      const summary = payload.preview?.summary;
+      if (summary) {
+        document.getElementById('previewMetric').textContent = `${summary.overwriteCount}/${summary.addCount}/${summary.removeCount}`;
+        document.getElementById('previewText').textContent = 'overwrite / add / remove';
+      }
+
+      document.getElementById('rootPath').textContent = payload.root || payload.status.Root || '—';
+      document.getElementById('backupDir').textContent = payload.backupDir || payload.status.BackupDir || '—';
+      document.getElementById('generatedAt').textContent = formatDate(payload.generatedAtUtc);
+
+      const issuesWrap = document.getElementById('issuesWrap');
+      if (payload.health.issues?.length) {
+        issuesWrap.innerHTML = `<ul>${payload.health.issues.map(x => `<li>${x}</li>`).join('')}</ul>`;
+      } else {
+        issuesWrap.textContent = 'No issues.';
+      }
+
+      const checksBody = document.getElementById('checksBody');
+      checksBody.innerHTML = (payload.health.checks || []).map(check => `
+        <tr>
+          <td>${check.name}</td>
+          <td>${pill(check.ok)}</td>
+          <td><code>${typeof check.details === 'string' ? check.details : JSON.stringify(check.details)}</code></td>
+        </tr>
+      `).join('');
+
+      const snapshots = payload.status.Snapshots || payload.status.snapshots || [];
+      const snapshotsBody = document.getElementById('snapshotsBody');
+      snapshotsBody.innerHTML = snapshots.map(s => `
+        <tr>
+          <td><code>${s.SnapshotId || s.snapshotId}</code></td>
+          <td>${formatDate(s.CreatedAtUtc || s.createdAtUtc)}</td>
+          <td>${pill(!!(s.Verified ?? s.verified))}</td>
+          <td>${formatBytes(s.SizeBytes || s.sizeBytes)}</td>
+        </tr>
+      `).join('');
+
+      document.getElementById('previewBlock').textContent = payload.preview?.previewText || '—';
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', () => {
+      load().catch(err => alert(`Refresh failed: ${err.message}`));
+    });
+
+    load().catch(err => {
+      document.getElementById('previewBlock').textContent = `Failed to load dashboard-data.json\n\n${err.message}\n\nRun:\n powershell -ExecutionPolicy Bypass -File .\\backup-manager\\backup-manager.ps1 -Command export-dashboard-data`;
+    });
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('backup', 'list', 'restore', 'restore-preview', 'prune', 'status', 'health-check', 'install-schedule', 'uninstall-schedule', 'self-test')]
+    [ValidateSet('backup', 'list', 'restore', 'restore-preview', 'prune', 'status', 'health-check', 'export-dashboard-data', 'install-schedule', 'uninstall-schedule', 'self-test')]
     [string]$Command,
 
     [string]$Root,
@@ -24,6 +24,10 @@ function Write-Json([object]$Value) {
 
 function Get-ScheduleMetadataPath {
     return Join-Path $PSScriptRoot 'schedule.json'
+}
+
+function Get-DashboardDataPath {
+    return Join-Path $PSScriptRoot 'dashboard-data.json'
 }
 
 function Get-ScheduleMetadata {
@@ -302,7 +306,7 @@ function Get-ScheduleTaskInfo {
             if ($row) {
                 return [pscustomobject]@{
                     taskName = $row.TaskName
-                    taskPath = '\'
+                    taskPath = '\\'
                     state = $row.Status
                     source = 'schtasks.exe'
                     triggers = @()
@@ -381,6 +385,33 @@ function Invoke-Prune {
     }
 }
 
+function Export-DashboardData {
+    $status = Get-BackupStatus
+    $health = Invoke-HealthCheck
+    $preview = $null
+    if ($status.Latest) {
+        $preview = Get-RestorePreview -SnapshotValue $status.Latest.SnapshotId
+        $preview.previewText = Format-RestorePreviewText -Preview $preview
+    }
+
+    $payload = [pscustomobject]@{
+        generatedAtUtc = (Get-Date).ToUniversalTime().ToString('o')
+        root = $script:Root
+        backupDir = $script:BackupDir
+        status = $status
+        health = $health
+        preview = $preview
+    }
+
+    $path = Get-DashboardDataPath
+    $payload | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $path -Encoding UTF8
+
+    return [pscustomobject]@{
+        path = $path
+        data = $payload
+    }
+}
+
 function Invoke-Backup {
     Assert-OpenClawCli | Out-Null
     Ensure-Directory $script:BackupDir
@@ -446,12 +477,14 @@ function Invoke-Backup {
     $manifest | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $manifestPath -Encoding UTF8
 
     $pruneResult = Invoke-Prune -PassThru
+    $dashboard = Export-DashboardData
 
     return [pscustomobject]@{
         backup = $backupResult
         verify = $verifyResult
         metadataPath = $metadataPath
         manifestPath = $manifestPath
+        dashboardDataPath = $dashboard.path
         prune = $pruneResult
     }
 }
@@ -670,6 +703,7 @@ function Invoke-Restore {
 
         $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot -Apply
         $summary = Get-RestorePlanSummary -Plan $plan
+        $dashboard = Export-DashboardData
 
         return [pscustomobject]@{
             restoredSnapshot = $target
@@ -677,6 +711,7 @@ function Invoke-Restore {
             root = $script:Root
             summary = $summary
             versionWarning = $preview.versionWarning
+            dashboardDataPath = $dashboard.path
             plan = $plan
         }
     }
@@ -875,6 +910,10 @@ switch ($Command) {
     }
     'health-check' {
         $result = Invoke-HealthCheck
+        if ($Json) { Write-Json $result } else { $result }
+    }
+    'export-dashboard-data' {
+        $result = Export-DashboardData
         if ($Json) { Write-Json $result } else { $result }
     }
     'restore-preview' {
