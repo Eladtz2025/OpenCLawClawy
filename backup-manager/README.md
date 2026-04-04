@@ -49,6 +49,12 @@ powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Co
 powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command status
 ```
 
+### Health check
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command health-check
+```
+
 ### List snapshots
 
 ```powershell
@@ -93,11 +99,15 @@ powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Co
 
 ## Safety model
 
+- Health check validates root, backup dir, schedule metadata, retention, latest snapshot verify, restore preview sanity, and manifest presence
 - Restore preview shows what will be overwritten, added, or removed before restore
+- Restore blocks automatically if preview indicates removals from current state
+- Restore warns when snapshot OpenClaw version differs from the current runtime
 - Restore requires `-Force`
 - Restore creates a fresh `pre-restore` archive first
 - Restore extracts to a temp directory first
 - Restore validates the archive payload before overwrite
+- Each snapshot stores a manifest inventory beside metadata
 - Retention pruning happens only after a successful backup write
 
 ## Current machine assumptions

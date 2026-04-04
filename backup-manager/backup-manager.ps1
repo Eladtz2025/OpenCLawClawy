@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('backup', 'list', 'restore', 'restore-preview', 'prune', 'status', 'install-schedule', 'uninstall-schedule', 'self-test')]
+    [ValidateSet('backup', 'list', 'restore', 'restore-preview', 'prune', 'status', 'health-check', 'install-schedule', 'uninstall-schedule', 'self-test')]
     [string]$Command,
 
     [string]$Root,
@@ -19,7 +19,7 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
 function Write-Json([object]$Value) {
-    $Value | ConvertTo-Json -Depth 20
+    $Value | ConvertTo-Json -Depth 30
 }
 
 function Get-ScheduleMetadataPath {
@@ -116,6 +116,10 @@ function Get-MetadataPath([string]$ArchivePath) {
     return "$ArchivePath.metadata.json"
 }
 
+function Get-ManifestPath([string]$ArchivePath) {
+    return "$ArchivePath.manifest.json"
+}
+
 function Get-RestoreCandidateItems {
     return @(
         'agents',
@@ -143,6 +147,33 @@ function Get-RestoreCandidateItems {
     )
 }
 
+function Get-OpenClawVersion {
+    return (& openclaw --version | Select-Object -First 1)
+}
+
+function Get-ManifestEntries {
+    $items = Get-RestoreCandidateItems
+    $manifest = @()
+
+    foreach ($item in $items) {
+        $path = Join-Path $script:Root $item
+        if (-not (Test-Path -LiteralPath $path)) {
+            continue
+        }
+
+        $entry = Get-Item -LiteralPath $path -Force
+        $manifest += [pscustomobject]@{
+            item = $item
+            path = $path
+            type = if ($entry.PSIsContainer) { 'directory' } else { 'file' }
+            lastWriteTimeUtc = $entry.LastWriteTimeUtc.ToString('o')
+            sizeBytes = if ($entry.PSIsContainer) { $null } else { [int64]$entry.Length }
+        }
+    }
+
+    return @($manifest)
+}
+
 function Get-Snapshots {
     Ensure-Directory $script:BackupDir
 
@@ -151,6 +182,7 @@ function Get-Snapshots {
 
     $result = foreach ($archive in $archives) {
         $metadataPath = Get-MetadataPath $archive.FullName
+        $manifestPath = Get-ManifestPath $archive.FullName
         $metadata = $null
         if (Test-Path -LiteralPath $metadataPath) {
             try {
@@ -165,6 +197,7 @@ function Get-Snapshots {
             Name = $archive.Name
             ArchivePath = $archive.FullName
             MetadataPath = if (Test-Path -LiteralPath $metadataPath) { $metadataPath } else { $null }
+            ManifestPath = if (Test-Path -LiteralPath $manifestPath) { $manifestPath } else { $null }
             SizeBytes = $archive.Length
             LastWriteTimeUtc = $archive.LastWriteTimeUtc
             CreatedAtUtc = if ($metadata) { $metadata.createdAtUtc } else { $null }
@@ -230,15 +263,17 @@ function Get-ExtractedStateRoot([string]$ExtractDir) {
     return $candidates[0].FullName
 }
 
-function Get-BackupStatus {
-    $snapshots = @(Get-Snapshots)
-    $latest = $snapshots | Select-Object -First 1
-
-    $taskInfo = $null
+function Get-ScheduleTaskInfo {
     try {
-        $task = Get-ScheduledTask -TaskName $TaskName -ErrorAction Stop
-        $taskInfo = [pscustomobject]@{
+        $taskNameValue = $TaskName
+        $task = Get-ScheduledTask | Where-Object { $_.TaskName -eq $taskNameValue } | Select-Object -First 1
+        if (-not $task) {
+            return $null
+        }
+
+        return [pscustomobject]@{
             taskName = $task.TaskName
+            taskPath = $task.TaskPath
             state = [string]$task.State
             triggers = @($task.Triggers | ForEach-Object {
                 [pscustomobject]@{
@@ -257,8 +292,14 @@ function Get-BackupStatus {
         }
     }
     catch {
-        $taskInfo = $null
+        return $null
     }
+}
+
+function Get-BackupStatus {
+    $snapshots = @(Get-Snapshots)
+    $latest = $snapshots | Select-Object -First 1
+    $taskInfo = Get-ScheduleTaskInfo
 
     return [pscustomobject]@{
         Root = $script:Root
@@ -287,6 +328,9 @@ function Invoke-Prune {
         }
         if ($snapshot.MetadataPath -and (Test-Path -LiteralPath $snapshot.MetadataPath)) {
             Remove-Item -LiteralPath $snapshot.MetadataPath -Force
+        }
+        if ($snapshot.ManifestPath -and (Test-Path -LiteralPath $snapshot.ManifestPath)) {
+            Remove-Item -LiteralPath $snapshot.ManifestPath -Force
         }
         $removed += $snapshot
     }
@@ -328,7 +372,7 @@ function Invoke-Backup {
     }
 
     $backupResult = $jsonRaw | ConvertFrom-Json
-    $cliVersion = (& openclaw --version | Select-Object -First 1)
+    $cliVersion = Get-OpenClawVersion
     $verified = [bool]$backupResult.verified
 
     if (-not $verified) {
@@ -341,6 +385,13 @@ function Invoke-Backup {
     }
     else {
         $verifyResult = [pscustomobject]@{ ok = $true; archivePath = $backupResult.archivePath }
+    }
+
+    $manifest = [pscustomobject]@{
+        snapshotId = $snapshotId
+        createdAtUtc = (Get-Date).ToUniversalTime().ToString('o')
+        root = $script:Root
+        items = @(Get-ManifestEntries)
     }
 
     $metadata = [pscustomobject]@{
@@ -359,10 +410,13 @@ function Invoke-Backup {
         assets = $backupResult.assets
         skipped = $backupResult.skipped
         verify = $verifyResult
+        manifestPath = (Get-ManifestPath $backupResult.archivePath)
     }
 
     $metadataPath = Get-MetadataPath $backupResult.archivePath
-    $metadata | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $metadataPath -Encoding UTF8
+    $manifestPath = Get-ManifestPath $backupResult.archivePath
+    $metadata | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $metadataPath -Encoding UTF8
+    $manifest | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $manifestPath -Encoding UTF8
 
     $pruneResult = Invoke-Prune -PassThru
 
@@ -370,6 +424,7 @@ function Invoke-Backup {
         backup = $backupResult
         verify = $verifyResult
         metadataPath = $metadataPath
+        manifestPath = $manifestPath
         prune = $pruneResult
     }
 }
@@ -485,6 +540,13 @@ function Format-RestorePreviewText {
     $lines += "Root: $($Preview.root)"
     $lines += "Plan: total=$($Preview.summary.total), overwrite=$($Preview.summary.overwriteCount), add=$($Preview.summary.addCount), remove=$($Preview.summary.removeCount), skip=$($Preview.summary.skipCount)"
 
+    if ($Preview.versionWarning) {
+        $lines += "Warning: $($Preview.versionWarning)"
+    }
+    if ($Preview.removeGuardWarning) {
+        $lines += "Warning: $($Preview.removeGuardWarning)"
+    }
+
     foreach ($section in @(
         @{ Name = 'Overwrite'; Items = (ConvertTo-StringArray $Preview.summary.overwriteItems) },
         @{ Name = 'Add'; Items = (ConvertTo-StringArray $Preview.summary.addItems) },
@@ -497,6 +559,16 @@ function Format-RestorePreviewText {
     }
 
     return ($lines -join [Environment]::NewLine)
+}
+
+function Get-VersionWarning {
+    param([object]$Snapshot)
+
+    $currentVersion = Get-OpenClawVersion
+    if ($Snapshot.OpenClawVersion -and $Snapshot.OpenClawVersion -ne $currentVersion) {
+        return "snapshot version $($Snapshot.OpenClawVersion) differs from current version $currentVersion"
+    }
+    return $null
 }
 
 function Get-RestorePreview {
@@ -515,12 +587,16 @@ function Get-RestorePreview {
         $stateRoot = Get-ExtractedStateRoot $restoreRoot
         $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot
         $summary = Get-RestorePlanSummary -Plan $plan
+        $versionWarning = Get-VersionWarning -Snapshot $target
+        $removeGuardWarning = if ($summary.removeCount -gt 0) { "restore would remove $($summary.removeCount) item(s) from current state" } else { $null }
 
         return [pscustomobject]@{
             snapshot = $target
             root = $script:Root
             extractedStateRoot = $stateRoot
             summary = $summary
+            versionWarning = $versionWarning
+            removeGuardWarning = $removeGuardWarning
             plan = $plan
             previewText = $null
         }
@@ -538,6 +614,10 @@ function Invoke-Restore {
     }
 
     $preview = Get-RestorePreview -SnapshotValue $Snapshot
+    if ($preview.summary.removeCount -gt 0) {
+        throw "Restore blocked: preview indicates $($preview.summary.removeCount) removals. Review with -Command restore-preview first and adjust intentionally."
+    }
+
     $target = $preview.snapshot
     Assert-OpenClawCli | Out-Null
 
@@ -569,6 +649,7 @@ function Invoke-Restore {
             preRestoreBackup = $preBackup.archivePath
             root = $script:Root
             summary = $summary
+            versionWarning = $preview.versionWarning
             plan = $plan
         }
     }
@@ -586,6 +667,8 @@ function Test-RestorePlan {
         extractedStateRoot = $preview.extractedStateRoot
         planCount = @($preview.plan).Count
         summary = $preview.summary
+        versionWarning = $preview.versionWarning
+        removeGuardWarning = $preview.removeGuardWarning
         plan = $preview.plan
     }
 }
@@ -677,6 +760,74 @@ function Invoke-SelfTest {
     }
 }
 
+function Invoke-HealthCheck {
+    $status = Get-BackupStatus
+    $snapshots = @($status.Snapshots)
+    $latest = $snapshots | Select-Object -First 1
+    $issues = @()
+    $checks = @()
+
+    $rootExists = Test-Path -LiteralPath $script:Root
+    $checks += [pscustomobject]@{ name = 'root_exists'; ok = $rootExists; details = $script:Root }
+    if (-not $rootExists) { $issues += "root missing: $($script:Root)" }
+
+    $backupDirExists = Test-Path -LiteralPath $script:BackupDir
+    $checks += [pscustomobject]@{ name = 'backup_dir_exists'; ok = $backupDirExists; details = $script:BackupDir }
+    if (-not $backupDirExists) { $issues += "backup dir missing: $($script:BackupDir)" }
+
+    $hasScheduleMetadata = $null -ne $script:ScheduleMetadata
+    $checks += [pscustomobject]@{ name = 'schedule_metadata'; ok = $hasScheduleMetadata; details = $script:ScheduleMetadata }
+    if (-not $hasScheduleMetadata) { $issues += 'schedule metadata missing' }
+
+    $hasSnapshots = $snapshots.Count -gt 0
+    $checks += [pscustomobject]@{ name = 'has_snapshots'; ok = $hasSnapshots; details = $snapshots.Count }
+    if (-not $hasSnapshots) { $issues += 'no snapshots found' }
+
+    $retentionOk = $snapshots.Count -le $Keep
+    $checks += [pscustomobject]@{ name = 'retention'; ok = $retentionOk; details = "count=$($snapshots.Count), keep=$Keep" }
+    if (-not $retentionOk) { $issues += "retention exceeded: $($snapshots.Count) > $Keep" }
+
+    $latestVerified = $false
+    if ($latest) { $latestVerified = [bool]$latest.Verified }
+    $checks += [pscustomobject]@{ name = 'latest_verified'; ok = $latestVerified; details = if ($latest) { $latest.Name } else { $null } }
+    if ($latest -and -not $latestVerified) { $issues += "latest snapshot not verified: $($latest.Name)" }
+
+    $scheduleTask = Get-ScheduleTaskInfo
+    $scheduleOk = $null -ne $scheduleTask
+    $checks += [pscustomobject]@{ name = 'schedule_task'; ok = $scheduleOk; details = $scheduleTask }
+    if (-not $scheduleOk) { $issues += 'scheduled task not found' }
+
+    $latestPreview = $null
+    if ($latest) {
+        $latestPreview = Get-RestorePreview -SnapshotValue $latest.SnapshotId
+        $checks += [pscustomobject]@{ name = 'restore_preview'; ok = $true; details = $latestPreview.summary }
+        if ($latestPreview.versionWarning) {
+            $issues += $latestPreview.versionWarning
+        }
+        if ($latestPreview.removeGuardWarning) {
+            $issues += $latestPreview.removeGuardWarning
+        }
+    }
+
+    $manifestOk = $false
+    if ($latest -and $latest.ManifestPath -and (Test-Path -LiteralPath $latest.ManifestPath)) {
+        $manifestOk = $true
+    }
+    $checks += [pscustomobject]@{ name = 'manifest'; ok = $manifestOk; details = if ($latest) { $latest.ManifestPath } else { $null } }
+    if ($latest -and -not $manifestOk) { $issues += 'latest snapshot manifest missing' }
+
+    return [pscustomobject]@{
+        ok = ($issues.Count -eq 0)
+        root = $script:Root
+        backupDir = $script:BackupDir
+        keep = $Keep
+        latestSnapshot = $latest
+        latestPreviewSummary = if ($latestPreview) { $latestPreview.summary } else { $null }
+        checks = $checks
+        issues = $issues
+    }
+}
+
 Initialize-Paths
 
 switch ($Command) {
@@ -693,6 +844,10 @@ switch ($Command) {
     }
     'status' {
         $result = Get-BackupStatus
+        if ($Json) { Write-Json $result } else { $result }
+    }
+    'health-check' {
+        $result = Invoke-HealthCheck
         if ($Json) { Write-Json $result } else { $result }
     }
     'restore-preview' {
