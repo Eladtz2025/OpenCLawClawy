@@ -55,6 +55,9 @@ $servicesJson | Set-Content -Path (Join-Path $jobDir 'local-services.json') -Enc
 
 & (Join-Path $PSScriptRoot 'write-environment-report.ps1') -JobDir $jobDir
 
+$bringupJson = & (Join-Path $PSScriptRoot 'assess-bringup-from-job.ps1') -JobDir $jobDir
+$bringupJson | Set-Content -Path (Join-Path $jobDir 'bringup.json') -Encoding UTF8
+
 $adapterJson = & (Join-Path $PSScriptRoot 'engine-adapter.ps1') -JobDir $jobDir
 $adapterJson | Set-Content -Path (Join-Path $jobDir 'engine-adapter.json') -Encoding UTF8
 

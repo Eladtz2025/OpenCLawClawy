@@ -13,3 +13,6 @@ What still blocks ready state on this machine:
 1. A runnable local engine instance must exist
 2. That engine must answer on a compatible API or be launchable from a verified local path
 3. The runner must complete one successful real image job
+
+Current observed blocker:
+- Forge recipe exists under Pinokio example path, but `app/` is missing, so bring-up cannot start yet.

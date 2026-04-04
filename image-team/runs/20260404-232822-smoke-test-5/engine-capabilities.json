@@ -1,0 +1,16 @@
+﻿{
+    "engine":  "stable-diffusion-webui-forge",
+    "path":  "C:\\pinokio\\prototype\\system\\examples\\stable-diffusion-webui-forge",
+    "runnable":  false,
+    "api":  false,
+    "txt2img":  true,
+    "img2img":  true,
+    "inpainting":  true,
+    "outpainting":  true,
+    "instantid":  false,
+    "pulid":  false,
+    "photomaker":  false,
+    "notes":  [
+                  "Forge app directory missing."
+              ]
+}

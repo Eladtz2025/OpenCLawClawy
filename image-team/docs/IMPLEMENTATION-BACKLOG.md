@@ -22,9 +22,10 @@
 
 ## Phase 3
 - [ ] Add InvokeAI fallback
-- [ ] Add Forge/A1111 fallback
+- [ ] Add managed Forge bring-up once `app/webui-user.bat` exists
 - [ ] Add inpainting mask routing
 - [ ] Add side-by-side QA helper
+- [x] Add bring-up assessment so runs can distinguish recipe-only from runnable engine state
 
 ## Phase 4
 - [ ] One-command production run
