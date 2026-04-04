@@ -101,8 +101,9 @@ Reject if any of the following applies:
 - If not verified, say no significant update.
 
 ## Publishing rules
-- Total items: 5 to 8 max
-- Max 2 per category
+- Scan around 20 candidates per category when feasible
+- Publish up to 5 items per category
+- Prefer fewer if the day is weak
 - If category weak: write "אין עדכון משמעותי היום"
 - Keep headlines plain and factual
 - Write short summaries only
@@ -119,5 +120,5 @@ If source access is blocked, say so briefly.
 If a category has no strong item, say so cleanly.
 
 ## Output philosophy
-The dashboard is not a newspaper.
-It is a decision-support brief.
+The dashboard should feel like a personal news app.
+It is still a decision-support product, but category-first rather than editor-brief-first.
