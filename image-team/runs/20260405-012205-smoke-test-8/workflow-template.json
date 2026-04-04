@@ -1,0 +1,25 @@
+{
+  "workflowName": "comfy-portrait-preserve",
+  "description": "Placeholder workflow contract for portrait-preserving Comfy execution.",
+  "requiredInputs": [
+    "source_image",
+    "reference_image",
+    "prompt",
+    "negative_prompt",
+    "identity_method",
+    "denoise_strength",
+    "width",
+    "height",
+    "steps",
+    "cfg"
+  ],
+  "identityPreferenceOrder": [
+    "instantid",
+    "pulid",
+    "photomaker"
+  ],
+  "notes": [
+    "Use conservative settings for real faces.",
+    "Retry with lower denoise if likeness drifts."
+  ]
+}

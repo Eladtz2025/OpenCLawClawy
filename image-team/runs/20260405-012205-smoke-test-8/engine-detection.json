@@ -1,0 +1,34 @@
+﻿{
+    "timestamp":  "2026-04-05T01:22:05",
+    "commands":  [
+                     {
+                         "name":  "python",
+                         "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+                     },
+                     {
+                         "name":  "python3",
+                         "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Microsoft\\WindowsApps\\python3.exe"
+                     }
+                 ],
+    "directories":  [
+                        {
+                            "name":  "comfy",
+                            "path":  "C:\\pinokio\\prototype\\system\\examples\\comfy"
+                        },
+                        {
+                            "name":  "forge",
+                            "path":  "C:\\pinokio\\prototype\\system\\examples\\forge"
+                        },
+                        {
+                            "name":  "stable-diffusion-webui-forge",
+                            "path":  "C:\\pinokio\\prototype\\system\\examples\\stable-diffusion-webui-forge"
+                        }
+                    ],
+    "selectedEngine":  {
+                           "name":  "comfy",
+                           "path":  "C:\\pinokio\\prototype\\system\\examples\\comfy"
+                       },
+    "notes":  [
+
+              ]
+}

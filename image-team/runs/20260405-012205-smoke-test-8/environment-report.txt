@@ -1,0 +1,16 @@
+﻿Engine: comfy
+Path: C:\pinokio\prototype\system\examples\comfy
+Runnable: False
+API: False
+txt2img: True
+img2img: True
+inpainting: True
+outpainting: True
+InstantID: False
+PuLID: False
+PhotoMaker: False
+
+Services:
+- port=7860 ok=False status= info=The operation has timed out.
+- port=8188 ok=False status= info=The operation has timed out.
+- port=9090 ok=False status= info=The operation has timed out.

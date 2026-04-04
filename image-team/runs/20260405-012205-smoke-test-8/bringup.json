@@ -1,0 +1,13 @@
+﻿{
+    "engineRoot":  "C:\\pinokio\\prototype\\system\\examples\\comfy",
+    "appDir":  "C:\\pinokio\\prototype\\system\\examples\\comfy\\app",
+    "appDirExists":  false,
+    "envDirExists":  false,
+    "mainPyExists":  false,
+    "outputDirExists":  false,
+    "canAttemptBringup":  false,
+    "recommendedCommand":  null,
+    "notes":  [
+                  "Comfy app directory does not exist yet."
+              ]
+}

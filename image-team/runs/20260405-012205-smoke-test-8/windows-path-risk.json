@@ -1,0 +1,7 @@
+﻿{
+    "longPathsEnabled":  1,
+    "risk":  "LOW",
+    "notes":  [
+                  "Windows long paths support is enabled."
+              ]
+}

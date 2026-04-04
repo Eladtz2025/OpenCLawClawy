@@ -33,6 +33,9 @@ $workflowNotes = @(
 )
 $workflowNotes | Set-Content -Path (Join-Path $jobDir 'workflow_notes.txt') -Encoding UTF8
 
+& (Join-Path $PSScriptRoot 'package-workflow-assets.ps1') -JobDir $jobDir
+& (Join-Path $PSScriptRoot 'generate-side-by-side-notes.ps1') -JobDir $jobDir
+
 & (Join-Path $PSScriptRoot 'build-handoff.ps1') `
   -JobDir $jobDir `
   -Role 'Image Generation / Editing Specialist' `

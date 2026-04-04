@@ -40,6 +40,7 @@ Provide a reliable orchestrator and file contract even before the final local en
 
 ## Current preferred engine
 ComfyUI/Comfy is now the primary detected route when present, matching the original system requirement.
+The runner also prepares Comfy-oriented workflow assets per job, so execution wiring can snap into place once the app exists.
 
 ## Honesty gate
 This project must not be declared complete until a verified local engine produces real preview, v1, and final image outputs.

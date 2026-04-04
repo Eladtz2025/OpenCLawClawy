@@ -1,0 +1,18 @@
+﻿{
+    "WORKFLOW_TYPE":  "img2img",
+    "PRIMARY_TOOL":  "comfyui",
+    "SECONDARY_TOOL":  "invokeai",
+    "REQUIRED_INPUTS":  {
+                            "maskImage":  false,
+                            "referenceImage":  true,
+                            "sourceImage":  true
+                        },
+    "PROMPT":  "Portrait preserving edit package test",
+    "NEGATIVE_PROMPT":  "deformed face, wrong identity, asymmetrical eyes, broken teeth, extra fingers, extra limbs, bad hands, warped background, oversmoothed skin, duplicate features, low detail",
+    "RISK_NOTES":  "Use conservative settings to reduce face drift.",
+    "ID_METHOD_SELECTED":  "instantid",
+    "IDENTITY_RISK_LEVEL":  "MEDIUM",
+    "RECOMMENDED_SETTINGS":  "Low denoise, strong identity conditioning, rerun if face drifts.",
+    "PASS_OR_RETRY":  "REVIEW_REQUIRED",
+    "NOTES":  "Identity preservation enabled."
+}
