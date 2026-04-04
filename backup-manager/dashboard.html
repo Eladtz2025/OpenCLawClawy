@@ -126,7 +126,14 @@
         <h1>OpenClaw Backup Manager</h1>
         <p class="muted">Local dashboard for backup, health, and restore preview.</p>
       </div>
-      <div>
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <label class="muted" for="autoRefreshSelect">Auto-refresh</label>
+        <select id="autoRefreshSelect" class="button secondary" style="padding-right:32px;">
+          <option value="0">Off</option>
+          <option value="15">15s</option>
+          <option value="30" selected>30s</option>
+          <option value="60">60s</option>
+        </select>
         <button class="button" id="refreshBtn">Refresh</button>
       </div>
     </div>
@@ -160,6 +167,7 @@
         <div><strong>Root:</strong> <code id="rootPath">—</code></div>
         <div><strong>Backup dir:</strong> <code id="backupDir">—</code></div>
         <div><strong>Generated:</strong> <span id="generatedAt">—</span></div>
+        <div><strong>Last published:</strong> <span id="publishedAt">—</span></div>
       </div>
       <div class="card">
         <h3>Issues</h3>
@@ -195,6 +203,7 @@
 
   <script>
     const dataPath = './dashboard-data.json';
+    let autoRefreshTimer = null;
 
     function formatBytes(bytes) {
       if (!bytes && bytes !== 0) return '—';
@@ -257,7 +266,9 @@
 
       document.getElementById('rootPath').textContent = payload.root || payload.status.Root || '—';
       document.getElementById('backupDir').textContent = payload.backupDir || payload.status.BackupDir || '—';
-      document.getElementById('generatedAt').textContent = formatDate(payload.generatedAtUtc);
+      const generated = formatDate(payload.generatedAtUtc);
+      document.getElementById('generatedAt').textContent = generated;
+      document.getElementById('publishedAt').textContent = generated;
 
       const issuesWrap = document.getElementById('issuesWrap');
       if (payload.health.issues?.length) {
@@ -289,9 +300,26 @@
       document.getElementById('previewBlock').textContent = payload.preview?.previewText || '—';
     }
 
+    function applyAutoRefresh() {
+      if (autoRefreshTimer) {
+        clearInterval(autoRefreshTimer);
+        autoRefreshTimer = null;
+      }
+      const seconds = Number(document.getElementById('autoRefreshSelect').value || '0');
+      if (seconds > 0) {
+        autoRefreshTimer = setInterval(() => {
+          load().catch(() => {});
+        }, seconds * 1000);
+      }
+    }
+
     document.getElementById('refreshBtn').addEventListener('click', () => {
       load().catch(err => alert(`Refresh failed: ${err.message}`));
     });
+
+    document.getElementById('autoRefreshSelect').addEventListener('change', applyAutoRefresh);
+
+    applyAutoRefresh();
 
     load().catch(err => {
       document.getElementById('previewBlock').textContent = `Failed to load dashboard-data.json\n\n${err.message}\n\nRun:\n powershell -ExecutionPolicy Bypass -File .\\backup-manager\\backup-manager.ps1 -Command export-dashboard-data`;
