@@ -44,7 +44,7 @@ Tier 1:
 - Official club source
 - ONE
 - Sport5
-- Flashscore / Soccerway for fixture verification only
+- Flashscore / Soccerway for fixture verification and today's match status
 
 ## Source priority rules
 1. Primary source beats commentary.
@@ -97,14 +97,16 @@ Reject if any of the following applies:
 
 ### Hapoel Petah Tikva
 - Match / fixture / time claims require fixture verification.
+- If there is a match today, it must be included.
 - Club decisions require official or very strong sports reporting.
-- If not verified, say no significant update.
+- If today is weak, fall back to strongest items from the last 7 days and label them as weekly fallback.
 
 ## Publishing rules
 - Scan around 20 candidates per category when feasible
 - Publish up to 5 items per category
 - Prefer fewer if the day is weak
-- If category weak: write "אין עדכון משמעותי היום"
+- For crypto and Hapoel Petah Tikva, if today is weak, fall back to the strongest items from the last 7 days and label them clearly as weekly fallback
+- If category is still weak after fallback: write "אין עדכון משמעותי היום"
 - Keep headlines plain and factual
 - Write short summaries only
 - Keep one consistent story across the same day unless new facts justify change

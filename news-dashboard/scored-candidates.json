@@ -1,0 +1,29 @@
+[
+  {
+    "id": "tech-microsoft-models-2026-04-04",
+    "category": "technology",
+    "title": "Microsoft expands its in-house AI model lineup",
+    "summary": "Three new models released through Microsoft's AI stack.",
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+    "alternateSources": [
+      "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/"
+    ],
+    "collectedAt": "2026-04-04T13:00:00+03:00",
+    "sourceType": "web",
+    "sourceStrength": "high",
+    "certainty": "מאומת",
+    "hype": "נמוכה",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 9,
+      "reliability": 9,
+      "novelty": 8,
+      "immediacy": 8,
+      "usefulness": 9,
+      "total": 43
+    },
+    "fallbackMode": "today"
+  }
+]

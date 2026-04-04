@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NewsCandidate",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "title",
+    "source",
+    "sourceUrl",
+    "collectedAt",
+    "sourceType",
+    "sourceStrength"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "category": { "type": "string", "enum": ["technology", "israel", "crypto", "hapoel"] },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "why": { "type": "string" },
+    "source": { "type": "string" },
+    "sourceUrl": { "type": "string" },
+    "alternateSources": { "type": "array", "items": { "type": "string" } },
+    "collectedAt": { "type": "string" },
+    "publishedAt": { "type": "string" },
+    "sourceType": { "type": "string", "enum": ["web", "official", "telegram", "fixture", "regulator"] },
+    "sourceStrength": { "type": "string", "enum": ["high", "medium", "low"] },
+    "certainty": { "type": "string", "enum": ["מאומת", "חלקית מאומת", "לא ברור"] },
+    "hype": { "type": "string", "enum": ["נמוכה", "בינונית", "גבוהה"] },
+    "worth": { "type": "string", "enum": ["כן", "אולי", "לא"] },
+    "action": { "type": "string", "enum": ["לקרוא", "לעקוב", "לדלג"] },
+    "score": {
+      "type": "object",
+      "properties": {
+        "significance": { "type": "number" },
+        "reliability": { "type": "number" },
+        "novelty": { "type": "number" },
+        "immediacy": { "type": "number" },
+        "usefulness": { "type": "number" },
+        "total": { "type": "number" }
+      }
+    },
+    "fallbackMode": { "type": "string", "enum": ["today", "weekly"] }
+  }
+}

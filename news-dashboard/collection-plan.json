@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-04-04T13:19:52.040Z",
+  "categories": {
+    "technology": {
+      "targetCandidates": 20,
+      "sourceCount": 4,
+      "sources": [
+        {
+          "name": "Reuters Tech",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "The Verge",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "TechCrunch",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Official Company Sources",
+          "type": "official",
+          "priority": 1
+        }
+      ],
+      "candidates": []
+    },
+    "israel": {
+      "targetCandidates": 20,
+      "sourceCount": 5,
+      "sources": [
+        {
+          "name": "Haaretz",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "ynet",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Kan",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Reuters",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Official Statements",
+          "type": "official",
+          "priority": 1
+        }
+      ],
+      "candidates": []
+    },
+    "crypto": {
+      "targetCandidates": 20,
+      "sourceCount": 6,
+      "sources": [
+        {
+          "name": "Reuters",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "CoinDesk",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "The Block",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Bloomberg Crypto",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Decrypt",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Primary Filings",
+          "type": "regulator",
+          "priority": 1
+        }
+      ],
+      "candidates": []
+    },
+    "hapoel": {
+      "targetCandidates": 20,
+      "sourceCount": 5,
+      "sources": [
+        {
+          "name": "Official Club",
+          "type": "official",
+          "priority": 1
+        },
+        {
+          "name": "ONE",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Sport5",
+          "type": "web",
+          "priority": 1
+        },
+        {
+          "name": "Flashscore",
+          "type": "fixture",
+          "priority": 1
+        },
+        {
+          "name": "Soccerway",
+          "type": "fixture",
+          "priority": 1
+        }
+      ],
+      "candidates": []
+    }
+  }
+}
