@@ -55,6 +55,12 @@ powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Co
 powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command list
 ```
 
+### Preview restore plan
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command restore-preview -Snapshot latest
+```
+
 ### Restore latest snapshot
 
 ```powershell
@@ -87,6 +93,7 @@ powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Co
 
 ## Safety model
 
+- Restore preview shows what will be overwritten, added, or removed before restore
 - Restore requires `-Force`
 - Restore creates a fresh `pre-restore` archive first
 - Restore extracts to a temp directory first

@@ -1,11 +1,11 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('backup', 'list', 'restore', 'prune', 'status', 'install-schedule', 'uninstall-schedule', 'self-test')]
+    [ValidateSet('backup', 'list', 'restore', 'restore-preview', 'prune', 'status', 'install-schedule', 'uninstall-schedule', 'self-test')]
     [string]$Command,
 
-    [string]$Root = "$env:USERPROFILE\.openclaw",
-    [string]$BackupDir = "$env:USERPROFILE\OpenClawBackups",
+    [string]$Root,
+    [string]$BackupDir,
     [int]$Keep = 3,
     [string]$Snapshot,
     [string]$TaskName = 'OpenClaw Daily Backup',
@@ -20,6 +20,71 @@ Set-StrictMode -Version Latest
 
 function Write-Json([object]$Value) {
     $Value | ConvertTo-Json -Depth 20
+}
+
+function Get-ScheduleMetadataPath {
+    return Join-Path $PSScriptRoot 'schedule.json'
+}
+
+function Get-ScheduleMetadata {
+    $scheduleMetadataPath = Get-ScheduleMetadataPath
+    if (-not (Test-Path -LiteralPath $scheduleMetadataPath)) {
+        return $null
+    }
+
+    try {
+        return (Get-Content -LiteralPath $scheduleMetadataPath -Raw | ConvertFrom-Json)
+    }
+    catch {
+        return $null
+    }
+}
+
+function Initialize-Paths {
+    $script:ScheduleMetadata = Get-ScheduleMetadata
+
+    $scheduleRoot = $null
+    $scheduleScriptPath = $null
+    $scheduleBackupDir = $null
+    if ($script:ScheduleMetadata) {
+        $rootProp = $script:ScheduleMetadata.PSObject.Properties['root']
+        if ($rootProp) { $scheduleRoot = [string]$rootProp.Value }
+        $scriptPathProp = $script:ScheduleMetadata.PSObject.Properties['scriptPath']
+        if ($scriptPathProp) { $scheduleScriptPath = [string]$scriptPathProp.Value }
+        $backupDirProp = $script:ScheduleMetadata.PSObject.Properties['backupDir']
+        if ($backupDirProp) { $scheduleBackupDir = [string]$backupDirProp.Value }
+    }
+
+    if ([string]::IsNullOrWhiteSpace($Root)) {
+        if (-not [string]::IsNullOrWhiteSpace($scheduleRoot)) {
+            $script:Root = $scheduleRoot
+        }
+        elseif (-not [string]::IsNullOrWhiteSpace($scheduleScriptPath)) {
+            $scriptRootDir = Split-Path -Parent $scheduleScriptPath
+            $workspaceDir = Split-Path -Parent $scriptRootDir
+            $workspaceParent = Split-Path -Parent $workspaceDir
+            $script:Root = $workspaceParent
+        }
+        else {
+            $script:Root = Join-Path $env:USERPROFILE '.openclaw'
+        }
+    }
+    else {
+        $script:Root = $Root
+    }
+
+    if ([string]::IsNullOrWhiteSpace($BackupDir)) {
+        if (-not [string]::IsNullOrWhiteSpace($scheduleBackupDir)) {
+            $script:BackupDir = $scheduleBackupDir
+        }
+        else {
+            $rootParent = Split-Path -Parent $script:Root
+            $script:BackupDir = Join-Path $rootParent 'OpenClawBackups'
+        }
+    }
+    else {
+        $script:BackupDir = $BackupDir
+    }
 }
 
 function Assert-OpenClawCli {
@@ -51,10 +116,6 @@ function Get-MetadataPath([string]$ArchivePath) {
     return "$ArchivePath.metadata.json"
 }
 
-function Get-ScheduleMetadataPath {
-    return Join-Path $PSScriptRoot 'schedule.json'
-}
-
 function Get-RestoreCandidateItems {
     return @(
         'agents',
@@ -83,9 +144,9 @@ function Get-RestoreCandidateItems {
 }
 
 function Get-Snapshots {
-    Ensure-Directory $BackupDir
+    Ensure-Directory $script:BackupDir
 
-    $archives = Get-ChildItem -LiteralPath $BackupDir -File -Filter '*-openclaw-backup.tar.gz' |
+    $archives = Get-ChildItem -LiteralPath $script:BackupDir -File -Filter '*-openclaw-backup.tar.gz' |
         Sort-Object LastWriteTimeUtc -Descending
 
     $result = foreach ($archive in $archives) {
@@ -172,16 +233,6 @@ function Get-ExtractedStateRoot([string]$ExtractDir) {
 function Get-BackupStatus {
     $snapshots = @(Get-Snapshots)
     $latest = $snapshots | Select-Object -First 1
-    $scheduleMetadata = $null
-    $scheduleMetadataPath = Get-ScheduleMetadataPath
-    if (Test-Path -LiteralPath $scheduleMetadataPath) {
-        try {
-            $scheduleMetadata = Get-Content -LiteralPath $scheduleMetadataPath -Raw | ConvertFrom-Json
-        }
-        catch {
-            $scheduleMetadata = $null
-        }
-    }
 
     $taskInfo = $null
     try {
@@ -210,14 +261,14 @@ function Get-BackupStatus {
     }
 
     return [pscustomobject]@{
-        Root = $Root
-        BackupDir = $BackupDir
+        Root = $script:Root
+        BackupDir = $script:BackupDir
         Keep = $Keep
         SnapshotCount = $snapshots.Count
         Latest = $latest
         Snapshots = $snapshots
         Schedule = $taskInfo
-        ScheduleMetadata = $scheduleMetadata
+        ScheduleMetadata = $script:ScheduleMetadata
     }
 }
 
@@ -261,10 +312,10 @@ function Invoke-Prune {
 
 function Invoke-Backup {
     Assert-OpenClawCli | Out-Null
-    Ensure-Directory $BackupDir
+    Ensure-Directory $script:BackupDir
 
     $snapshotId = Get-TimestampUtc
-    $archivePath = Join-Path $BackupDir ("$snapshotId-openclaw-backup.tar.gz")
+    $archivePath = Join-Path $script:BackupDir ("$snapshotId-openclaw-backup.tar.gz")
 
     $args = @('backup', 'create', '--output', $archivePath, '--json')
     if ($Verify) {
@@ -300,8 +351,8 @@ function Invoke-Backup {
         verified = $verified
         includeWorkspace = [bool]$backupResult.includeWorkspace
         onlyConfig = [bool]$backupResult.onlyConfig
-        root = $Root
-        backupDir = $BackupDir
+        root = $script:Root
+        backupDir = $script:BackupDir
         keep = $Keep
         host = $env:COMPUTERNAME
         openclawVersion = $cliVersion
@@ -323,6 +374,38 @@ function Invoke-Backup {
     }
 }
 
+function New-RestorePlanEntry {
+    param(
+        [string]$Item,
+        [string]$Source,
+        [string]$Destination,
+        [bool]$ExistsInArchive,
+        [bool]$ExistsOnDisk
+    )
+
+    $action = if ($ExistsInArchive -and $ExistsOnDisk) {
+        'overwrite'
+    }
+    elseif ($ExistsInArchive -and -not $ExistsOnDisk) {
+        'add'
+    }
+    elseif (-not $ExistsInArchive -and $ExistsOnDisk) {
+        'remove'
+    }
+    else {
+        'skip'
+    }
+
+    return [pscustomobject]@{
+        item = $Item
+        source = $Source
+        destination = $Destination
+        existsInArchive = $ExistsInArchive
+        existsOnDisk = $ExistsOnDisk
+        action = $action
+    }
+}
+
 function Invoke-SafeCopyRestore {
     param(
         [string]$StateRoot,
@@ -334,17 +417,10 @@ function Invoke-SafeCopyRestore {
 
     foreach ($item in $items) {
         $source = Join-Path $StateRoot $item
-        $destination = Join-Path $Root $item
+        $destination = Join-Path $script:Root $item
         $existsInArchive = Test-Path -LiteralPath $source
         $existsOnDisk = Test-Path -LiteralPath $destination
-        $entry = [pscustomobject]@{
-            item = $item
-            source = $source
-            destination = $destination
-            existsInArchive = $existsInArchive
-            existsOnDisk = $existsOnDisk
-            action = if ($existsInArchive) { 'restore' } elseif ($existsOnDisk) { 'remove' } else { 'skip' }
-        }
+        $entry = New-RestorePlanEntry -Item $item -Source $source -Destination $destination -ExistsInArchive:$existsInArchive -ExistsOnDisk:$existsOnDisk
         $plan += $entry
 
         if (-not $Apply) {
@@ -362,12 +438,107 @@ function Invoke-SafeCopyRestore {
     return @($plan)
 }
 
+function Get-RestorePlanSummary {
+    param(
+        [object[]]$Plan
+    )
+
+    $overwrite = @($Plan | Where-Object { $_.action -eq 'overwrite' })
+    $add = @($Plan | Where-Object { $_.action -eq 'add' })
+    $remove = @($Plan | Where-Object { $_.action -eq 'remove' })
+    $skip = @($Plan | Where-Object { $_.action -eq 'skip' })
+
+    return [pscustomobject]@{
+        total = @($Plan).Count
+        overwriteCount = $overwrite.Count
+        addCount = $add.Count
+        removeCount = $remove.Count
+        skipCount = $skip.Count
+        overwriteItems = @($overwrite | ForEach-Object { [string]$_.item })
+        addItems = @($add | ForEach-Object { [string]$_.item })
+        removeItems = @($remove | ForEach-Object { [string]$_.item })
+        skipItems = @($skip | ForEach-Object { [string]$_.item })
+    }
+}
+
+function ConvertTo-StringArray([object]$Value) {
+    if ($null -eq $Value) {
+        return @()
+    }
+    if ($Value -is [System.Array]) {
+        return @($Value | ForEach-Object { [string]$_ })
+    }
+    if ($Value -is [System.Collections.IEnumerable] -and -not ($Value -is [string])) {
+        return @($Value | ForEach-Object { [string]$_ })
+    }
+    return @([string]$Value)
+}
+
+function Format-RestorePreviewText {
+    param(
+        [object]$Preview
+    )
+
+    $lines = @()
+    $lines += "Snapshot: $($Preview.snapshot.SnapshotId)"
+    $lines += "Archive: $($Preview.snapshot.ArchivePath)"
+    $lines += "Root: $($Preview.root)"
+    $lines += "Plan: total=$($Preview.summary.total), overwrite=$($Preview.summary.overwriteCount), add=$($Preview.summary.addCount), remove=$($Preview.summary.removeCount), skip=$($Preview.summary.skipCount)"
+
+    foreach ($section in @(
+        @{ Name = 'Overwrite'; Items = (ConvertTo-StringArray $Preview.summary.overwriteItems) },
+        @{ Name = 'Add'; Items = (ConvertTo-StringArray $Preview.summary.addItems) },
+        @{ Name = 'Remove'; Items = (ConvertTo-StringArray $Preview.summary.removeItems) }
+    )) {
+        $items = @($section.Items | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+        if ($items.Count) {
+            $lines += ($section.Name + ': ' + ($items -join ', '))
+        }
+    }
+
+    return ($lines -join [Environment]::NewLine)
+}
+
+function Get-RestorePreview {
+    param([string]$SnapshotValue)
+
+    $target = Resolve-Snapshot $SnapshotValue
+    $restoreRoot = Join-Path $env:TEMP ("openclaw-preview-$([guid]::NewGuid().ToString('N'))")
+    Ensure-Directory $restoreRoot
+
+    try {
+        tar -xzf $target.ArchivePath -C $restoreRoot
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to extract archive: $($target.ArchivePath)"
+        }
+
+        $stateRoot = Get-ExtractedStateRoot $restoreRoot
+        $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot
+        $summary = Get-RestorePlanSummary -Plan $plan
+
+        return [pscustomobject]@{
+            snapshot = $target
+            root = $script:Root
+            extractedStateRoot = $stateRoot
+            summary = $summary
+            plan = $plan
+            previewText = $null
+        }
+    }
+    finally {
+        if (Test-Path -LiteralPath $restoreRoot) {
+            Remove-Item -LiteralPath $restoreRoot -Recurse -Force
+        }
+    }
+}
+
 function Invoke-Restore {
     if (-not $Force) {
         throw 'Restore requires -Force to avoid accidental overwrite.'
     }
 
-    $target = Resolve-Snapshot $Snapshot
+    $preview = Get-RestorePreview -SnapshotValue $Snapshot
+    $target = $preview.snapshot
     Assert-OpenClawCli | Out-Null
 
     $restoreRoot = Join-Path $env:TEMP ("openclaw-restore-$([guid]::NewGuid().ToString('N'))")
@@ -381,7 +552,7 @@ function Invoke-Restore {
 
         $stateRoot = Get-ExtractedStateRoot $restoreRoot
 
-        $preRestoreDir = Join-Path $BackupDir 'pre-restore'
+        $preRestoreDir = Join-Path $script:BackupDir 'pre-restore'
         Ensure-Directory $preRestoreDir
         $preRestoreArchive = Join-Path $preRestoreDir ("$(Get-TimestampUtc)-pre-restore-openclaw-backup.tar.gz")
         $preJsonRaw = & openclaw backup create --output $preRestoreArchive --json
@@ -391,11 +562,13 @@ function Invoke-Restore {
         $preBackup = $preJsonRaw | ConvertFrom-Json
 
         $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot -Apply
+        $summary = Get-RestorePlanSummary -Plan $plan
 
         return [pscustomobject]@{
             restoredSnapshot = $target
             preRestoreBackup = $preBackup.archivePath
-            root = $Root
+            root = $script:Root
+            summary = $summary
             plan = $plan
         }
     }
@@ -407,28 +580,13 @@ function Invoke-Restore {
 }
 
 function Test-RestorePlan {
-    $target = Resolve-Snapshot $Snapshot
-    $restoreRoot = Join-Path $env:TEMP ("openclaw-selftest-$([guid]::NewGuid().ToString('N'))")
-    Ensure-Directory $restoreRoot
-
-    try {
-        tar -xzf $target.ArchivePath -C $restoreRoot
-        if ($LASTEXITCODE -ne 0) {
-            throw "Failed to extract archive: $($target.ArchivePath)"
-        }
-        $stateRoot = Get-ExtractedStateRoot $restoreRoot
-        $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot
-        return [pscustomobject]@{
-            snapshot = $target
-            extractedStateRoot = $stateRoot
-            planCount = $plan.Count
-            plan = $plan
-        }
-    }
-    finally {
-        if (Test-Path -LiteralPath $restoreRoot) {
-            Remove-Item -LiteralPath $restoreRoot -Recurse -Force
-        }
+    $preview = Get-RestorePreview -SnapshotValue $Snapshot
+    return [pscustomobject]@{
+        snapshot = $preview.snapshot
+        extractedStateRoot = $preview.extractedStateRoot
+        planCount = @($preview.plan).Count
+        summary = $preview.summary
+        plan = $preview.plan
     }
 }
 
@@ -451,23 +609,31 @@ function Install-DailySchedule {
     $action = New-ScheduledTaskAction -Execute $execute -Argument $arguments -WorkingDirectory $PSScriptRoot
     $trigger = New-ScheduledTaskTrigger -Daily -At $start
     $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
-    Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null
+    try {
+        Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null
+    }
+    catch {
+        schtasks.exe /Create /F /SC DAILY /TN $TaskName /TR ('powershell.exe ' + $arguments) /ST $DailyAt | Out-Null
+    }
 
     $metadata = [pscustomobject]@{
         taskName = $TaskName
         dailyAt = $DailyAt
         scriptPath = $scriptPath
+        root = $script:Root
         installedAtUtc = (Get-Date).ToUniversalTime().ToString('o')
-        backupDir = $BackupDir
+        backupDir = $script:BackupDir
         keep = $Keep
     }
     $metadata | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath (Get-ScheduleMetadataPath) -Encoding UTF8
+    $script:ScheduleMetadata = $metadata
 
     return [pscustomobject]@{
         taskName = $TaskName
         dailyAt = $DailyAt
         scriptPath = $scriptPath
-        backupDir = $BackupDir
+        root = $script:Root
+        backupDir = $script:BackupDir
     }
 }
 
@@ -482,6 +648,7 @@ function Uninstall-DailySchedule {
     if (Test-Path -LiteralPath $scheduleMetadataPath) {
         Remove-Item -LiteralPath $scheduleMetadataPath -Force
     }
+    $script:ScheduleMetadata = $null
 
     return [pscustomobject]@{
         taskName = $TaskName
@@ -510,6 +677,8 @@ function Invoke-SelfTest {
     }
 }
 
+Initialize-Paths
+
 switch ($Command) {
     'backup' {
         $result = Invoke-Backup
@@ -525,6 +694,11 @@ switch ($Command) {
     'status' {
         $result = Get-BackupStatus
         if ($Json) { Write-Json $result } else { $result }
+    }
+    'restore-preview' {
+        $result = Get-RestorePreview -SnapshotValue $Snapshot
+        $result.previewText = Format-RestorePreviewText -Preview $result
+        if ($Json) { Write-Json $result } else { $result.previewText }
     }
     'restore' {
         $result = Invoke-Restore
