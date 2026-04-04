@@ -17,7 +17,7 @@ foreach($name in $commandNames){
 }
 
 $scanRoots = @('C:\Users\Itzhak','C:\pinokio')
-$patterns = @('ComfyUI','InvokeAI','stable-diffusion-webui','stable-diffusion-webui-forge','Forge','AUTOMATIC1111')
+$patterns = @('ComfyUI','InvokeAI','stable-diffusion-webui','stable-diffusion-webui-forge','Forge','AUTOMATIC1111','comfy')
 foreach($root in $scanRoots){
   if(Test-Path $root){
     Get-ChildItem -Path $root -Directory -Recurse -ErrorAction SilentlyContinue |
@@ -29,7 +29,7 @@ foreach($root in $scanRoots){
   }
 }
 
-$preferred = @('ComfyUI','InvokeAI','stable-diffusion-webui-forge','Forge','stable-diffusion-webui','AUTOMATIC1111')
+$preferred = @('ComfyUI','comfy','InvokeAI','stable-diffusion-webui-forge','Forge','stable-diffusion-webui','AUTOMATIC1111')
 foreach($pref in $preferred){
   $match = $results.directories | Where-Object { $_.name -eq $pref } | Select-Object -First 1
   if($match){

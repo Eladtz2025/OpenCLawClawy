@@ -15,4 +15,5 @@ What still blocks ready state on this machine:
 3. The runner must complete one successful real image job
 
 Current observed blocker:
-- Forge recipe exists under Pinokio example path, but `app/` is missing, so bring-up cannot start yet.
+- Comfy recipe exists under Pinokio example path and is now the preferred engine, but `app/` is missing, so bring-up cannot start yet.
+- Forge also exists only as a recipe/example path.

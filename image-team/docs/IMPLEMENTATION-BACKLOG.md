@@ -19,6 +19,7 @@
 - [x] Add engine adapter placeholder with explicit not-wired state
 - [x] Add Forge-compatible execution adapter that activates only when a local service is actually live
 - [x] Add local service probing and execution-status reporting
+- [x] Switch primary discovery preference to Comfy when available, matching the system spec
 
 ## Phase 3
 - [ ] Add InvokeAI fallback
