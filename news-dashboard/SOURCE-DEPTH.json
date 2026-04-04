@@ -1,0 +1,6 @@
+{
+  "technology": { "targetPerSource": 10, "targetSelected": 5 },
+  "news": { "targetPerSource": 10, "targetSelected": 5 },
+  "crypto": { "targetPerSource": 10, "targetSelected": 5 },
+  "hapoel": { "targetPerSource": 10, "targetSelected": 5 }
+}

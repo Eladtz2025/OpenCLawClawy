@@ -103,8 +103,8 @@ Reject if any of the following applies:
 
 ## Publishing rules
 - Scan around 20 candidates per category when feasible
-- Publish up to 5 items per category
-- Prefer fewer if the day is weak
+- Target 5 items per category through deeper same-day scanning before concluding the category is thin
+- Prefer fewer only after a genuinely broad same-day scan
 - For crypto and Hapoel Petah Tikva, if today is weak, fall back to the strongest items from the last 7 days and label them clearly as weekly fallback
 - If category is still weak after fallback: write "אין עדכון משמעותי היום"
 - Keep headlines plain and factual
