@@ -14,3 +14,6 @@
 
 ## Consequence
 The image-team system can orchestrate work honestly, but cannot yet execute real generation/editing on this machine until a runnable local engine is present.
+
+## Updated note
+A later direct registry check showed Windows long paths support is enabled; the primary blocker is still the missing runnable app/service, not path length support.

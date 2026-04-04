@@ -1,0 +1,12 @@
+﻿ready=False
+engine=stable-diffusion-webui-forge
+enginePath=C:\pinokio\prototype\system\examples\stable-diffusion-webui-forge
+engineRunnable=False
+engineApi=False
+bringupPossible=False
+longPathsEnabled=1
+longPathRisk=LOW
+services=
+- port=7860 ok=False
+- port=8188 ok=False
+- port=9090 ok=False

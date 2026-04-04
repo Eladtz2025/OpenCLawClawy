@@ -67,6 +67,8 @@ $executionJson | Set-Content -Path (Join-Path $jobDir 'execution.json') -Encodin
 $readyJson = & (Join-Path $PSScriptRoot 'assert-production-ready.ps1') -JobDir $jobDir
 $readyJson | Set-Content -Path (Join-Path $jobDir 'production-ready.json') -Encoding UTF8
 
+& (Join-Path $PSScriptRoot 'generate-readiness-summary.ps1') -JobDir $jobDir
+
 $status = 'PARTIAL'
 $next = 'Verify or launch a runnable local engine on this machine so execution can produce preview/v1/final image files.'
 & (Join-Path $PSScriptRoot 'export-status.ps1') -JobDir $jobDir -Status $status -NextBestAction $next
