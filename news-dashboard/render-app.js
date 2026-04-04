@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputPath = process.argv[2] || path.join(__dirname, 'selected-candidates.json');
+const inputPath = process.argv[2] || path.join(__dirname, 'selected-candidates.with-fallback.json');
 const outputPath = process.argv[3] || path.join(__dirname, 'site', 'latest.html');
 const archiveDate = new Date().toISOString().slice(0,10);
 
@@ -20,7 +20,8 @@ function tagClass(v='') {
 function hebrewCategory(key){ return ({technology:'טכנולוגיה', israel:'ישראל', crypto:'קריפטו', hapoel:'הפועל פתח תקווה'})[key] || key; }
 
 function card(item){
-  return `<article class="card"><div class="tagrow"><span class="tag blue">${esc(item.source)}</span><span class="tag ${tagClass(item.certainty)}">${esc(item.certainty||'חלקית מאומת')}</span><span class="tag ${tagClass(item.action)}">${esc(item.action||'לעקוב')}</span></div><h3 class="h3">${esc(item.title)}</h3><div class="summary">${esc(item.summary||'')}</div><div class="why"><strong>למה זה חשוב:</strong> ${esc(item.why||'לא צוין')}</div><div class="meta"><span>ניפוח: ${esc(item.hype||'בינונית')}</span><span>שווה זמן: ${esc(item.worth||'אולי')}</span><span><a href="${esc(item.sourceUrl)}?v=${archiveDate}">קישור</a></span></div></article>`;
+  const fallbackTag = item.fallbackMode === 'weekly' ? `<span class="tag purple">fallback שבועי</span>` : '';
+  return `<article class="card"><div class="tagrow"><span class="tag blue">${esc(item.source)}</span><span class="tag ${tagClass(item.certainty)}">${esc(item.certainty||'חלקית מאומת')}</span><span class="tag ${tagClass(item.action)}">${esc(item.action||'לעקוב')}</span>${fallbackTag}</div><h3 class="h3">${esc(item.title)}</h3><div class="summary">${esc(item.summary||'')}</div><div class="why"><strong>למה זה חשוב:</strong> ${esc(item.why||'לא צוין')}</div><div class="meta"><span>ניפוח: ${esc(item.hype||'בינונית')}</span><span>שווה זמן: ${esc(item.worth||'אולי')}</span><span><a href="${esc(item.sourceUrl)}?v=${archiveDate}">קישור</a></span></div></article>`;
 }
 
 function section(key){
