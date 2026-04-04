@@ -1,154 +1,10 @@
 ﻿{
-    "generatedAtUtc":  "2026-04-04T14:35:25.7393139Z",
-    "root":  "C:\\Users\\Itzhak\\.openclaw",
-    "backupDir":  "C:\\Users\\Itzhak\\OpenClawBackups",
-    "status":  {
-                   "Root":  "C:\\Users\\Itzhak\\.openclaw",
-                   "BackupDir":  "C:\\Users\\Itzhak\\OpenClawBackups",
-                   "Keep":  3,
-                   "SnapshotCount":  3,
-                   "Latest":  {
-                                  "Name":  "2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                  "ArchivePath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                  "MetadataPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.metadata.json",
-                                  "ManifestPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.manifest.json",
-                                  "SizeBytes":  57431980,
-                                  "LastWriteTimeUtc":  "\/Date(1775312614909)\/",
-                                  "CreatedAtUtc":  "2026-04-04T14:23:37.2438408Z",
-                                  "Verified":  true,
-                                  "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
-                                  "Root":  "C:\\Users\\Itzhak\\.openclaw",
-                                  "Host":  "DESKTOP-6BJP1TF",
-                                  "SnapshotId":  "2026-04-04T14-23-28.124Z"
-                              },
-                   "Snapshots":  [
-                                     {
-                                         "Name":  "2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                         "ArchivePath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                         "MetadataPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.metadata.json",
-                                         "ManifestPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.manifest.json",
-                                         "SizeBytes":  57431980,
-                                         "LastWriteTimeUtc":  "\/Date(1775312614909)\/",
-                                         "CreatedAtUtc":  "2026-04-04T14:23:37.2438408Z",
-                                         "Verified":  true,
-                                         "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
-                                         "Root":  "C:\\Users\\Itzhak\\.openclaw",
-                                         "Host":  "DESKTOP-6BJP1TF",
-                                         "SnapshotId":  "2026-04-04T14-23-28.124Z"
-                                     },
-                                     {
-                                         "Name":  "2026-04-03T00-30-01.270Z-openclaw-backup.tar.gz",
-                                         "ArchivePath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-03T00-30-01.270Z-openclaw-backup.tar.gz",
-                                         "MetadataPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-03T00-30-01.270Z-openclaw-backup.tar.gz.metadata.json",
-                                         "ManifestPath":  null,
-                                         "SizeBytes":  3116252,
-                                         "LastWriteTimeUtc":  "\/Date(1775176203947)\/",
-                                         "CreatedAtUtc":  "2026-04-03T00:30:04.3757567Z",
-                                         "Verified":  true,
-                                         "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
-                                         "Root":  "C:\\Users\\Itzhak\\.openclaw",
-                                         "Host":  "DESKTOP-6BJP1TF",
-                                         "SnapshotId":  "2026-04-03T00-30-01.270Z"
-                                     },
-                                     {
-                                         "Name":  "2026-04-02T08-15-12.511Z-openclaw-backup.tar.gz",
-                                         "ArchivePath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-02T08-15-12.511Z-openclaw-backup.tar.gz",
-                                         "MetadataPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-02T08-15-12.511Z-openclaw-backup.tar.gz.metadata.json",
-                                         "ManifestPath":  null,
-                                         "SizeBytes":  3064271,
-                                         "LastWriteTimeUtc":  "\/Date(1775117714057)\/",
-                                         "CreatedAtUtc":  "2026-04-02T08:15:15.4331302Z",
-                                         "Verified":  true,
-                                         "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
-                                         "Root":  "C:\\Users\\Itzhak\\.openclaw",
-                                         "Host":  "DESKTOP-6BJP1TF",
-                                         "SnapshotId":  "2026-04-02T08-15-12.511Z"
-                                     }
-                                 ],
-                   "Schedule":  {
-                                    "taskName":  "\\OpenClaw Daily Backup",
-                                    "taskPath":  "\\\\",
-                                    "state":  "Ready",
-                                    "source":  "schtasks.exe",
-                                    "triggers":  [
-
-                                                 ],
-                                    "actions":  [
-                                                    {
-                                                        "execute":  null,
-                                                        "arguments":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\Itzhak\\.openclaw\\workspace\\backup-manager\\backup-manager.ps1\" -Command backup -Verify\"",
-                                                        "workingDirectory":  null
-                                                    }
-                                                ]
-                                },
-                   "ScheduleMetadata":  {
-                                            "taskName":  "OpenClaw Daily Backup",
-                                            "dailyAt":  "03:30",
-                                            "scriptPath":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\backup-manager\\backup-manager.ps1",
-                                            "root":  "C:\\Users\\Itzhak\\.openclaw",
-                                            "installedAtUtc":  "2026-04-04T14:18:24.0242650Z",
-                                            "backupDir":  "C:\\Users\\Itzhak\\OpenClawBackups",
-                                            "keep":  3
-                                        }
-               },
+    "generatedAtUtc":  "2026-04-04T14:43:45.5837256Z",
     "health":  {
                    "ok":  true,
-                   "root":  "C:\\Users\\Itzhak\\.openclaw",
-                   "backupDir":  "C:\\Users\\Itzhak\\OpenClawBackups",
-                   "keep":  3,
-                   "latestSnapshot":  {
-                                          "Name":  "2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                          "ArchivePath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                          "MetadataPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.metadata.json",
-                                          "ManifestPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.manifest.json",
-                                          "SizeBytes":  57431980,
-                                          "LastWriteTimeUtc":  "\/Date(1775312614909)\/",
-                                          "CreatedAtUtc":  "2026-04-04T14:23:37.2438408Z",
-                                          "Verified":  true,
-                                          "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
-                                          "Root":  "C:\\Users\\Itzhak\\.openclaw",
-                                          "Host":  "DESKTOP-6BJP1TF",
-                                          "SnapshotId":  "2026-04-04T14-23-28.124Z"
-                                      },
-                   "latestPreviewSummary":  {
-                                                "total":  22,
-                                                "overwriteCount":  21,
-                                                "addCount":  0,
-                                                "removeCount":  0,
-                                                "skipCount":  1,
-                                                "overwriteItems":  [
-                                                                       "agents",
-                                                                       "canvas",
-                                                                       "completions",
-                                                                       "credentials",
-                                                                       "delivery-queue",
-                                                                       "devices",
-                                                                       "identity",
-                                                                       "logs",
-                                                                       "media",
-                                                                       "memory",
-                                                                       "tasks",
-                                                                       "telegram",
-                                                                       "workspace",
-                                                                       "exec-approvals.json",
-                                                                       "openclaw.json",
-                                                                       "openclaw.json.bak",
-                                                                       "openclaw.json.bak.1",
-                                                                       "openclaw.json.bak.2",
-                                                                       "openclaw.json.bak.3",
-                                                                       "openclaw.json.bak.4",
-                                                                       "update-check.json"
-                                                                   ],
-                                                "addItems":  [
+                   "issues":  [
 
-                                                             ],
-                                                "removeItems":  [
-
-                                                                ],
-                                                "skipItems":  [
-                                                                  "gateway.cmd"
-                                                              ]
-                                            },
+                              ],
                    "checks":  [
                                   {
                                       "name":  "root_exists",
@@ -256,28 +112,59 @@
                                       "ok":  true,
                                       "details":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.manifest.json"
                                   }
-                              ],
-                   "issues":  [
-
                               ]
+               },
+    "status":  {
+                   "Keep":  3,
+                   "SnapshotCount":  3,
+                   "Latest":  {
+                                  "Name":  "2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
+                                  "CreatedAtUtc":  "2026-04-04T14:23:37.2438408Z",
+                                  "Verified":  true,
+                                  "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
+                                  "SnapshotId":  "2026-04-04T14-23-28.124Z",
+                                  "SizeBytes":  57431980
+                              },
+                   "Snapshots":  [
+                                     {
+                                         "Name":  "2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
+                                         "CreatedAtUtc":  "2026-04-04T14:23:37.2438408Z",
+                                         "Verified":  true,
+                                         "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
+                                         "SnapshotId":  "2026-04-04T14-23-28.124Z",
+                                         "SizeBytes":  57431980
+                                     },
+                                     {
+                                         "Name":  "2026-04-03T00-30-01.270Z-openclaw-backup.tar.gz",
+                                         "CreatedAtUtc":  "2026-04-03T00:30:04.3757567Z",
+                                         "Verified":  true,
+                                         "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
+                                         "SnapshotId":  "2026-04-03T00-30-01.270Z",
+                                         "SizeBytes":  3116252
+                                     },
+                                     {
+                                         "Name":  "2026-04-02T08-15-12.511Z-openclaw-backup.tar.gz",
+                                         "CreatedAtUtc":  "2026-04-02T08:15:15.4331302Z",
+                                         "Verified":  true,
+                                         "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
+                                         "SnapshotId":  "2026-04-02T08-15-12.511Z",
+                                         "SizeBytes":  3064271
+                                     }
+                                 ],
+                   "Schedule":  {
+                                    "taskName":  "\\OpenClaw Daily Backup",
+                                    "state":  "Ready",
+                                    "source":  "schtasks.exe"
+                                }
                },
     "preview":  {
                     "snapshot":  {
                                      "Name":  "2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                     "ArchivePath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz",
-                                     "MetadataPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.metadata.json",
-                                     "ManifestPath":  "C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz.manifest.json",
-                                     "SizeBytes":  57431980,
-                                     "LastWriteTimeUtc":  "\/Date(1775312614909)\/",
                                      "CreatedAtUtc":  "2026-04-04T14:23:37.2438408Z",
                                      "Verified":  true,
                                      "OpenClawVersion":  "OpenClaw 2026.3.31 (213a704)",
-                                     "Root":  "C:\\Users\\Itzhak\\.openclaw",
-                                     "Host":  "DESKTOP-6BJP1TF",
                                      "SnapshotId":  "2026-04-04T14-23-28.124Z"
                                  },
-                    "root":  "C:\\Users\\Itzhak\\.openclaw",
-                    "extractedStateRoot":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw",
                     "summary":  {
                                     "total":  22,
                                     "overwriteCount":  21,
@@ -319,184 +206,6 @@
                                 },
                     "versionWarning":  null,
                     "removeGuardWarning":  null,
-                    "plan":  [
-                                 {
-                                     "item":  "agents",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\agents",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\agents",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "canvas",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\canvas",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\canvas",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "completions",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\completions",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\completions",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "credentials",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\credentials",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\credentials",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "delivery-queue",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\delivery-queue",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\delivery-queue",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "devices",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\devices",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\devices",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "identity",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\identity",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\identity",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "logs",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\logs",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\logs",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "media",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\media",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\media",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "memory",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\memory",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\memory",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "tasks",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\tasks",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\tasks",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "telegram",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\telegram",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\telegram",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "workspace",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\workspace",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\workspace",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "exec-approvals.json",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\exec-approvals.json",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\exec-approvals.json",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "gateway.cmd",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\gateway.cmd",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\gateway.cmd",
-                                     "existsInArchive":  false,
-                                     "existsOnDisk":  false,
-                                     "action":  "skip"
-                                 },
-                                 {
-                                     "item":  "openclaw.json",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\openclaw.json",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\openclaw.json",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "openclaw.json.bak",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\openclaw.json.bak",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\openclaw.json.bak",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "openclaw.json.bak.1",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.1",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.1",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "openclaw.json.bak.2",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.2",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.2",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "openclaw.json.bak.3",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.3",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.3",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "openclaw.json.bak.4",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.4",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\openclaw.json.bak.4",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 },
-                                 {
-                                     "item":  "update-check.json",
-                                     "source":  "C:\\WINDOWS\\TEMP\\openclaw-preview-75fc1d1b3583458a9f46334dd80223c7\\2026-04-04T14-23-30.126Z-openclaw-backup\\payload\\windows\\C\\Users\\Itzhak\\.openclaw\\update-check.json",
-                                     "destination":  "C:\\Users\\Itzhak\\.openclaw\\update-check.json",
-                                     "existsInArchive":  true,
-                                     "existsOnDisk":  true,
-                                     "action":  "overwrite"
-                                 }
-                             ],
                     "previewText":  "Snapshot: 2026-04-04T14-23-28.124Z\r\nArchive: C:\\Users\\Itzhak\\OpenClawBackups\\2026-04-04T14-23-28.124Z-openclaw-backup.tar.gz\r\nRoot: C:\\Users\\Itzhak\\.openclaw\r\nPlan: total=22, overwrite=21, add=0, remove=0, skip=1\r\nOverwrite: agents, canvas, completions, credentials, delivery-queue, devices, identity, logs, media, memory, tasks, telegram, workspace, exec-approvals.json, openclaw.json, openclaw.json.bak, openclaw.json.bak.1, openclaw.json.bak.2, openclaw.json.bak.3, openclaw.json.bak.4, update-check.json"
                 }
 }
