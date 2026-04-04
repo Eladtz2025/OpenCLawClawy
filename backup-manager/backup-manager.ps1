@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('backup', 'list', 'restore', 'restore-preview', 'prune', 'status', 'health-check', 'export-dashboard-data', 'install-schedule', 'uninstall-schedule', 'self-test')]
+    [ValidateSet('backup', 'list', 'restore', 'restore-preview', 'prune', 'status', 'health-check', 'export-dashboard-data', 'publish-dashboard', 'install-schedule', 'uninstall-schedule', 'self-test')]
     [string]$Command,
 
     [string]$Root,
@@ -394,21 +394,107 @@ function Export-DashboardData {
         $preview.previewText = Format-RestorePreviewText -Preview $preview
     }
 
-    $payload = [pscustomobject]@{
+    $latestSnapshot = $status.Latest
+    $publicPayload = [pscustomobject]@{
         generatedAtUtc = (Get-Date).ToUniversalTime().ToString('o')
-        root = $script:Root
-        backupDir = $script:BackupDir
-        status = $status
-        health = $health
-        preview = $preview
+        health = [pscustomobject]@{
+            ok = $health.ok
+            issues = $health.issues
+            checks = $health.checks
+        }
+        status = [pscustomobject]@{
+            Keep = $status.Keep
+            SnapshotCount = $status.SnapshotCount
+            Latest = if ($latestSnapshot) {
+                [pscustomobject]@{
+                    Name = $latestSnapshot.Name
+                    CreatedAtUtc = $latestSnapshot.CreatedAtUtc
+                    Verified = $latestSnapshot.Verified
+                    OpenClawVersion = $latestSnapshot.OpenClawVersion
+                    SnapshotId = $latestSnapshot.SnapshotId
+                    SizeBytes = $latestSnapshot.SizeBytes
+                }
+            } else { $null }
+            Snapshots = @($status.Snapshots | ForEach-Object {
+                [pscustomobject]@{
+                    Name = $_.Name
+                    CreatedAtUtc = $_.CreatedAtUtc
+                    Verified = $_.Verified
+                    OpenClawVersion = $_.OpenClawVersion
+                    SnapshotId = $_.SnapshotId
+                    SizeBytes = $_.SizeBytes
+                }
+            })
+            Schedule = if ($status.Schedule) {
+                [pscustomobject]@{
+                    taskName = $status.Schedule.taskName
+                    state = $status.Schedule.state
+                    source = $status.Schedule.source
+                }
+            } else { $null }
+        }
+        preview = if ($preview) {
+            [pscustomobject]@{
+                snapshot = [pscustomobject]@{
+                    Name = $preview.snapshot.Name
+                    CreatedAtUtc = $preview.snapshot.CreatedAtUtc
+                    Verified = $preview.snapshot.Verified
+                    OpenClawVersion = $preview.snapshot.OpenClawVersion
+                    SnapshotId = $preview.snapshot.SnapshotId
+                }
+                summary = $preview.summary
+                versionWarning = $preview.versionWarning
+                removeGuardWarning = $preview.removeGuardWarning
+                previewText = $preview.previewText
+            }
+        } else { $null }
     }
 
     $path = Get-DashboardDataPath
-    $payload | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $path -Encoding UTF8
+    $publicPayload | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $path -Encoding UTF8
 
     return [pscustomobject]@{
         path = $path
-        data = $payload
+        data = $publicPayload
+    }
+}
+
+function Publish-Dashboard {
+    $export = Export-DashboardData
+    $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+
+    $statusOutput = & git -C $repoRoot status --porcelain -- 'backup-manager/dashboard-data.json'
+    if ([string]::IsNullOrWhiteSpace(($statusOutput | Out-String))) {
+        return [pscustomobject]@{
+            published = $false
+            reason = 'dashboard-data.json unchanged'
+            path = $export.path
+        }
+    }
+
+    & git -C $repoRoot add -- 'backup-manager/dashboard-data.json'
+    if ($LASTEXITCODE -ne 0) {
+        throw 'git add failed for dashboard-data.json'
+    }
+
+    $message = 'Update backup dashboard data'
+    & git -C $repoRoot commit -m $message -- 'backup-manager/dashboard-data.json' | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        throw 'git commit failed for dashboard-data.json'
+    }
+
+    & git -C $repoRoot push origin main | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        throw 'git push failed for dashboard-data.json'
+    }
+
+    $commit = (& git -C $repoRoot rev-parse HEAD | Select-Object -First 1)
+
+    return [pscustomobject]@{
+        published = $true
+        path = $export.path
+        commit = $commit
+        url = 'https://eladtz2025.github.io/OpenCLawClawy/backup-manager/dashboard.html'
     }
 }
 
@@ -478,6 +564,7 @@ function Invoke-Backup {
 
     $pruneResult = Invoke-Prune -PassThru
     $dashboard = Export-DashboardData
+    $publishedDashboard = Publish-Dashboard
 
     return [pscustomobject]@{
         backup = $backupResult
@@ -485,6 +572,7 @@ function Invoke-Backup {
         metadataPath = $metadataPath
         manifestPath = $manifestPath
         dashboardDataPath = $dashboard.path
+        dashboardPublish = $publishedDashboard
         prune = $pruneResult
     }
 }
@@ -704,6 +792,7 @@ function Invoke-Restore {
         $plan = Invoke-SafeCopyRestore -StateRoot $stateRoot -Apply
         $summary = Get-RestorePlanSummary -Plan $plan
         $dashboard = Export-DashboardData
+        $publishedDashboard = Publish-Dashboard
 
         return [pscustomobject]@{
             restoredSnapshot = $target
@@ -712,6 +801,7 @@ function Invoke-Restore {
             summary = $summary
             versionWarning = $preview.versionWarning
             dashboardDataPath = $dashboard.path
+            dashboardPublish = $publishedDashboard
             plan = $plan
         }
     }
@@ -914,6 +1004,10 @@ switch ($Command) {
     }
     'export-dashboard-data' {
         $result = Export-DashboardData
+        if ($Json) { Write-Json $result } else { $result }
+    }
+    'publish-dashboard' {
+        $result = Publish-Dashboard
         if ($Json) { Write-Json $result } else { $result }
     }
     'restore-preview' {

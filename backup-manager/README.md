@@ -61,6 +61,12 @@ powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Co
 powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command export-dashboard-data
 ```
 
+### Publish dashboard data to GitHub Pages
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-manager\backup-manager.ps1 -Command publish-dashboard
+```
+
 ### List snapshots
 
 ```powershell
