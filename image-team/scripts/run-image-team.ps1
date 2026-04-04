@@ -47,6 +47,14 @@ $workflowNotes | Set-Content -Path (Join-Path $jobDir 'workflow_notes.txt') -Enc
   -Risks @('Identity drift on real faces','No runnable engine path verified yet') `
   -Notes @('Do not overwrite originals','Prefer conservative reruns')
 
+$capabilitiesJson = & (Join-Path $PSScriptRoot 'resolve-engine-capabilities.ps1') -EngineDetectionPath (Join-Path $jobDir 'engine-detection.json')
+$capabilitiesJson | Set-Content -Path (Join-Path $jobDir 'engine-capabilities.json') -Encoding UTF8
+
+$servicesJson = & (Join-Path $PSScriptRoot 'detect-local-services.ps1')
+$servicesJson | Set-Content -Path (Join-Path $jobDir 'local-services.json') -Encoding UTF8
+
+& (Join-Path $PSScriptRoot 'write-environment-report.ps1') -JobDir $jobDir
+
 $adapterJson = & (Join-Path $PSScriptRoot 'engine-adapter.ps1') -JobDir $jobDir
 $adapterJson | Set-Content -Path (Join-Path $jobDir 'engine-adapter.json') -Encoding UTF8
 
