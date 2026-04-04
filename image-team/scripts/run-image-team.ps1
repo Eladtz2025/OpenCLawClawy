@@ -33,6 +33,26 @@ $workflowNotes = @(
 )
 $workflowNotes | Set-Content -Path (Join-Path $jobDir 'workflow_notes.txt') -Encoding UTF8
 
+& (Join-Path $PSScriptRoot 'build-handoff.ps1') `
+  -JobDir $jobDir `
+  -Role 'Image Generation / Editing Specialist' `
+  -TaskSummary 'Execute the planned workflow with the selected local engine once runnable engine wiring exists.' `
+  -InputFiles @(
+    (Join-Path $jobDir 'job.json'),
+    (Join-Path $jobDir 'plan.json'),
+    (Join-Path $jobDir 'engine-detection.json'),
+    (Join-Path $jobDir 'workflow_notes.txt')
+  ) `
+  -ExpectedOutputs @('image_preview.*','image_v1.*','image_final.*','workflow_notes.txt','qa\\qa_report.txt') `
+  -Risks @('Identity drift on real faces','No runnable engine path verified yet') `
+  -Notes @('Do not overwrite originals','Prefer conservative reruns')
+
+$adapterJson = & (Join-Path $PSScriptRoot 'engine-adapter.ps1') -JobDir $jobDir
+$adapterJson | Set-Content -Path (Join-Path $jobDir 'engine-adapter.json') -Encoding UTF8
+
+$readyJson = & (Join-Path $PSScriptRoot 'assert-production-ready.ps1') -JobDir $jobDir
+$readyJson | Set-Content -Path (Join-Path $jobDir 'production-ready.json') -Encoding UTF8
+
 $status = 'PARTIAL'
-$next = 'Provide a runnable local engine path and real input images, then connect execution stage.'
+$next = 'Verify a runnable local engine on this machine, then wire execution to produce preview/v1/final image files.'
 & (Join-Path $PSScriptRoot 'export-status.ps1') -JobDir $jobDir -Status $status -NextBestAction $next

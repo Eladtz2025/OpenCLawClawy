@@ -15,6 +15,8 @@
 - [ ] Add execution adapter for ComfyUI API
 - [ ] Add identity-node capability check (InstantID / PuLID / PhotoMaker)
 - [ ] Save preview / v1 / final artifacts
+- [x] Add production-readiness gate so the system cannot claim completion without real outputs
+- [x] Add engine adapter placeholder with explicit not-wired state
 
 ## Phase 3
 - [ ] Add InvokeAI fallback
