@@ -1,0 +1,11 @@
+﻿{
+    "status":  "not-wired",
+    "selectedEngine":  {
+                           "name":  "comfy",
+                           "path":  "C:\\pinokio\\prototype\\system\\examples\\comfy"
+                       },
+    "executionMode":  "unknown",
+    "notes":  [
+                  "Engine detected but adapter not implemented."
+              ]
+}

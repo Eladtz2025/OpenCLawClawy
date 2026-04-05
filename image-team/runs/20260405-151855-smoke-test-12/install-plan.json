@@ -1,0 +1,23 @@
+﻿{
+    "status":  "planned",
+    "engine":  "comfy",
+    "engineRoot":  "C:\\pinokio\\prototype\\system\\examples\\comfy",
+    "appDir":  "C:\\pinokio\\prototype\\system\\examples\\comfy\\app",
+    "envDir":  "C:\\pinokio\\prototype\\system\\examples\\comfy\\app\\env",
+    "modelPath":  "C:\\pinokio\\prototype\\system\\examples\\comfy\\app\\models\\checkpoints",
+    "mode":  "cpu-safe-plan",
+    "steps":  [
+                  "git clone https://github.com/comfyanonymous/ComfyUI app",
+                  "git clone https://github.com/comfyanonymous/ComfyUI_examples workflows\\\\ComfyUI_examples",
+                  "git clone https://github.com/ltdrdata/ComfyUI-Manager app\\\\custom_nodes\\\\ComfyUI-Manager",
+                  "uv pip install -r requirements.txt",
+                  "uv pip install -U bitsandbytes",
+                  "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cpu --force-reinstall --no-deps",
+                  "download runwayml/stable-diffusion-v1-5 -\u003e v1-5-pruned.safetensors"
+              ],
+    "notes":  [
+                  "Plan derived from local Pinokio Comfy recipe files.",
+                  "This is an install plan only; not executed automatically yet.",
+                  "CPU torch path selected because no NVIDIA runtime was verified."
+              ]
+}

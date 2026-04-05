@@ -19,3 +19,4 @@ Current observed blocker:
 - Forge also exists only as a recipe/example path.
 - The managed launcher layer now confirms the current lifecycle state is `recipe-only`.
 - Preflight now marks installPossible=true, but bringupPossible=false and executionPossible=false.
+- The system can now derive an install plan automatically (`installState = install-planned`).
