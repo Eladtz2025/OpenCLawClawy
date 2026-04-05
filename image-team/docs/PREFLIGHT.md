@@ -17,5 +17,10 @@ Per run, preflight results are written to:
 Current observed result on this machine:
 - Python: present
 - Git: present
-- uv: missing at expected Pinokio path
-- huggingface-cli: missing at expected Pinokio path
+- uv: present (under Pinokio `Library\\bin`)
+- huggingface-cli: not found in checked Pinokio locations
+
+Meaning:
+- installPossible = true
+- bringupPossible = false
+- executionPossible = false

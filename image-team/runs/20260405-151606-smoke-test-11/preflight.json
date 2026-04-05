@@ -1,0 +1,10 @@
+﻿{
+    "installPossible":  true,
+    "bringupPossible":  false,
+    "executionPossible":  false,
+    "notes":  [
+                  "Install prerequisites appear present.",
+                  "Bring-up prerequisites are missing.",
+                  "Engine is not yet runnable."
+              ]
+}

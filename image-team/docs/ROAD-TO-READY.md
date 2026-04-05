@@ -18,4 +18,4 @@ Current observed blocker:
 - Comfy recipe exists under Pinokio example path and is now the preferred engine, but `app/` is missing, so bring-up cannot start yet.
 - Forge also exists only as a recipe/example path.
 - The managed launcher layer now confirms the current lifecycle state is `recipe-only`.
-- Preflight currently marks installPossible=false because `uv` is missing at the expected Pinokio path.
+- Preflight now marks installPossible=true, but bringupPossible=false and executionPossible=false.

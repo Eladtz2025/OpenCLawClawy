@@ -12,5 +12,5 @@ It only tells the team whether local installation is technically plausible from 
 Current observed state on this machine:
 - Pinokio Python: present
 - Pinokio Git: present
-- Pinokio uv: not found at expected path
-- huggingface-cli: not found at expected path
+- Pinokio uv: present
+- huggingface-cli: not found in checked Pinokio locations
