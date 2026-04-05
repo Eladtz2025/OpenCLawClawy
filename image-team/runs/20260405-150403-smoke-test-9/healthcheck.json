@@ -1,0 +1,10 @@
+﻿{
+    "anyServiceUp":  false,
+    "livePorts":  [
+
+                  ],
+    "notes":  [
+                  "No local image service is currently responding."
+              ]
+}
+

@@ -64,12 +64,19 @@ $bringupJson | Set-Content -Path (Join-Path $jobDir 'bringup.json') -Encoding UT
 $adapterJson = & (Join-Path $PSScriptRoot 'engine-adapter.ps1') -JobDir $jobDir
 $adapterJson | Set-Content -Path (Join-Path $jobDir 'engine-adapter.json') -Encoding UTF8
 
+$managedStartJson = & (Join-Path $PSScriptRoot 'start-managed-engine.ps1') -JobDir $jobDir
+$managedStartJson | Set-Content -Path (Join-Path $jobDir 'managed-start.json') -Encoding UTF8
+
+$healthJson = & (Join-Path $PSScriptRoot 'engine-healthcheck.ps1') -JobDir $jobDir
+$healthJson | Set-Content -Path (Join-Path $jobDir 'healthcheck.json') -Encoding UTF8
+
 $executionJson = & (Join-Path $PSScriptRoot 'try-execute-job.ps1') -JobDir $jobDir
 $executionJson | Set-Content -Path (Join-Path $jobDir 'execution.json') -Encoding UTF8
 
 $readyJson = & (Join-Path $PSScriptRoot 'assert-production-ready.ps1') -JobDir $jobDir
 $readyJson | Set-Content -Path (Join-Path $jobDir 'production-ready.json') -Encoding UTF8
 
+& (Join-Path $PSScriptRoot 'update-system-state.ps1') -JobDir $jobDir
 & (Join-Path $PSScriptRoot 'generate-readiness-summary.ps1') -JobDir $jobDir
 
 $status = 'PARTIAL'
