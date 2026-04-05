@@ -33,3 +33,6 @@ Each summary block should sound like an editor closing a morning meeting:
 - no showmanship
 - a little personality is fine
 - never cheesy
+- even tighter wording when rendered in cards
+- prefer one sharp sentence over two soft ones
+- if a line sounds inflated, rewrite it flatter
