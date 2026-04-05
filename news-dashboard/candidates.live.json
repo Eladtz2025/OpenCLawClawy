@@ -7,9 +7,7 @@
     "why": "זה משפיע ישירות על עלות ותפעול של זרימות coding agents וכלי harness חיצוניים.",
     "source": "TechCrunch",
     "sourceUrl": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
-    "alternateSources": [
-      "https://techcrunch.com/feed/"
-    ],
+    "alternateSources": ["https://techcrunch.com/feed/"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-04T16:32:22Z",
     "sourceType": "web",
@@ -18,13 +16,7 @@
     "hype": "נמוכה",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 8,
-      "reliability": 8,
-      "novelty": 8,
-      "immediacy": 8,
-      "usefulness": 10
-    },
+    "score": {"significance": 8, "reliability": 8, "novelty": 8, "immediacy": 8, "usefulness": 10},
     "fallbackMode": "today"
   },
   {
@@ -35,9 +27,7 @@
     "why": "זה ממחיש שהנזק המיידי מ-AI גנרטיבי עובר מהייפ למקרי פגיעה תפעוליים אמיתיים ביוצרים ופלטפורמות.",
     "source": "The Verge",
     "sourceUrl": "https://www.theverge.com/entertainment/907111/murphy-campbell-folk-music-ai-copyright",
-    "alternateSources": [
-      "https://www.theverge.com/rss/index.xml"
-    ],
+    "alternateSources": ["https://www.theverge.com/rss/index.xml"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-04T17:52:10Z",
     "sourceType": "web",
@@ -46,13 +36,7 @@
     "hype": "נמוכה",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 7,
-      "reliability": 8,
-      "novelty": 7,
-      "immediacy": 6,
-      "usefulness": 8
-    },
+    "score": {"significance": 7, "reliability": 8, "novelty": 7, "immediacy": 6, "usefulness": 8},
     "fallbackMode": "today"
   },
   {
@@ -63,9 +47,7 @@
     "why": "זו אינדיקציה לחיבור ההולך ומתהדק בין סייבר קלאסי, הגנה פיזית ורחפנים.",
     "source": "TechCrunch",
     "sourceUrl": "https://techcrunch.com/2026/04/04/after-fighting-malware-for-decades-this-cybersecurity-veteran-is-now-hacking-drones/",
-    "alternateSources": [
-      "https://techcrunch.com/feed/"
-    ],
+    "alternateSources": ["https://techcrunch.com/feed/"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-04T13:00:00Z",
     "sourceType": "web",
@@ -74,13 +56,7 @@
     "hype": "נמוכה",
     "worth": "אולי",
     "action": "לעקוב",
-    "score": {
-      "significance": 6,
-      "reliability": 8,
-      "novelty": 6,
-      "immediacy": 5,
-      "usefulness": 7
-    },
+    "score": {"significance": 6, "reliability": 8, "novelty": 6, "immediacy": 5, "usefulness": 7},
     "fallbackMode": "today"
   },
   {
@@ -91,9 +67,7 @@
     "why": "זה האירוע הישראלי השוטף המרכזי של הבוקר, גם אם התמונה עוד מתעדכנת מהר.",
     "source": "ynet",
     "sourceUrl": "https://www.ynet.co.il/news/blogs/article/r17szejhwg#autoplay",
-    "alternateSources": [
-      "https://www.ynet.co.il/news"
-    ],
+    "alternateSources": ["https://www.ynet.co.il/news"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-05T04:32:00Z",
     "sourceType": "web",
@@ -102,13 +76,7 @@
     "hype": "בינונית",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 9,
-      "reliability": 7,
-      "novelty": 6,
-      "immediacy": 10,
-      "usefulness": 8
-    },
+    "score": {"significance": 9, "reliability": 7, "novelty": 6, "immediacy": 10, "usefulness": 8},
     "fallbackMode": "today"
   },
   {
@@ -119,9 +87,7 @@
     "why": "זה מסמן פער בין מסרים פוליטיים ליכולת צבאית, נקודה חשובה לקבלת החלטות והערכת מצב.",
     "source": "הארץ",
     "sourceUrl": "https://www.haaretz.com/israel-news/israel-security/2026-04-05/ty-article/.premium/despite-netanyahu-governments-promises-idf-admits-it-cant-disarm-hezbollah/0000019d-59f0-db3c-a3df-d9f5236c0000",
-    "alternateSources": [
-      "https://www.haaretz.com/israel-news"
-    ],
+    "alternateSources": ["https://www.haaretz.com/israel-news"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-05T05:53:00Z",
     "sourceType": "web",
@@ -130,13 +96,7 @@
     "hype": "נמוכה",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 8,
-      "reliability": 7,
-      "novelty": 6,
-      "immediacy": 7,
-      "usefulness": 8
-    },
+    "score": {"significance": 8, "reliability": 7, "novelty": 6, "immediacy": 7, "usefulness": 8},
     "fallbackMode": "today"
   },
   {
@@ -156,13 +116,7 @@
     "hype": "נמוכה",
     "worth": "אולי",
     "action": "לעקוב",
-    "score": {
-      "significance": 5,
-      "reliability": 8,
-      "novelty": 5,
-      "immediacy": 7,
-      "usefulness": 8
-    },
+    "score": {"significance": 5, "reliability": 8, "novelty": 5, "immediacy": 7, "usefulness": 8},
     "fallbackMode": "today"
   },
   {
@@ -173,9 +127,7 @@
     "why": "זה סיפור תשתיתי אמיתי על אבטחת הרשת, לא עוד תנודת מחיר בלי קטליזטור.",
     "source": "CoinDesk",
     "sourceUrl": "https://www.coindesk.com/tech/2026/04/04/bitcoin-s-usd1-3-trillion-security-race-key-initiatives-aimed-at-quantum-proofing-the-world-s-largest-blockchain",
-    "alternateSources": [
-      "https://www.coindesk.com/arc/outboundfeeds/rss"
-    ],
+    "alternateSources": ["https://www.coindesk.com/arc/outboundfeeds/rss"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-05T03:31:49Z",
     "sourceType": "web",
@@ -184,13 +136,7 @@
     "hype": "בינונית",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 8,
-      "reliability": 8,
-      "novelty": 8,
-      "immediacy": 8,
-      "usefulness": 9
-    },
+    "score": {"significance": 8, "reliability": 8, "novelty": 8, "immediacy": 8, "usefulness": 9},
     "fallbackMode": "today"
   },
   {
@@ -201,9 +147,7 @@
     "why": "זה נותן אינדיקציה לכיוון ניהול האוצר של Ethereum Foundation ולמחויבות לתשתית proof-of-stake.",
     "source": "Decrypt",
     "sourceUrl": "https://decrypt.co/363253/ethereum-foundation-stakes-93m-worth-of-eth-nears-strategic-target",
-    "alternateSources": [
-      "https://decrypt.co/news/news"
-    ],
+    "alternateSources": ["https://decrypt.co/news/news"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-03T00:00:00Z",
     "sourceType": "web",
@@ -212,13 +156,7 @@
     "hype": "נמוכה",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 7,
-      "reliability": 7,
-      "novelty": 6,
-      "immediacy": 5,
-      "usefulness": 8
-    },
+    "score": {"significance": 7, "reliability": 7, "novelty": 6, "immediacy": 5, "usefulness": 8},
     "fallbackMode": "weekly"
   },
   {
@@ -229,9 +167,7 @@
     "why": "זה יותר שימושי מעוד כותרת על 'המחיר עלה/ירד' כי יש כאן זרימת היצע ממשית משחקן ציבורי מרכזי.",
     "source": "Decrypt",
     "sourceUrl": "https://decrypt.co/363255/bitcoin-miner-riot-platforms-sells-250-million-btc",
-    "alternateSources": [
-      "https://decrypt.co/news/news"
-    ],
+    "alternateSources": ["https://decrypt.co/news/news"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-03T00:00:00Z",
     "sourceType": "web",
@@ -240,13 +176,7 @@
     "hype": "נמוכה",
     "worth": "אולי",
     "action": "לעקוב",
-    "score": {
-      "significance": 6,
-      "reliability": 7,
-      "novelty": 5,
-      "immediacy": 5,
-      "usefulness": 7
-    },
+    "score": {"significance": 6, "reliability": 7, "novelty": 5, "immediacy": 5, "usefulness": 7},
     "fallbackMode": "weekly"
   },
   {
@@ -257,9 +187,7 @@
     "why": "זה מאמת שאין כרגע אירוע משחק להיום, בלי לנחש ובלי להשאיר את הקטגוריה ריקה לפני בדיקת מקורות fixture, ובו בזמן שומר שקיפות על retrieval חלקי.",
     "source": "Flashscore + Soccerway",
     "sourceUrl": "https://www.flashscore.com/team/hapoel-petah-tikva/0Q2H9Ccm/",
-    "alternateSources": [
-      "https://www.soccerway.com/team/hapoel-petah-tikva/0Q2H9Ccm/"
-    ],
+    "alternateSources": ["https://www.soccerway.com/team/hapoel-petah-tikva/0Q2H9Ccm/"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-05T04:32:00Z",
     "sourceType": "fixture",
@@ -268,13 +196,7 @@
     "hype": "נמוכה",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 8,
-      "reliability": 10,
-      "novelty": 5,
-      "immediacy": 6,
-      "usefulness": 9
-    },
+    "score": {"significance": 8, "reliability": 10, "novelty": 5, "immediacy": 6, "usefulness": 9},
     "fallbackMode": "weekly"
   },
   {
@@ -285,9 +207,7 @@
     "why": "בהיעדר משחק היום, זה הפריט הספורטיבי הכי רלוונטי מהשבוע האחרון שמאומת בשני מקורות fixture.",
     "source": "Flashscore + Soccerway",
     "sourceUrl": "https://www.soccerway.com/team/hapoel-petah-tikva/0Q2H9Ccm/",
-    "alternateSources": [
-      "https://www.flashscore.com/team/hapoel-petah-tikva/0Q2H9Ccm/"
-    ],
+    "alternateSources": ["https://www.flashscore.com/team/hapoel-petah-tikva/0Q2H9Ccm/"],
     "collectedAt": "2026-04-05T04:32:00Z",
     "publishedAt": "2026-04-04T20:15:00Z",
     "sourceType": "fixture",
@@ -296,13 +216,27 @@
     "hype": "נמוכה",
     "worth": "כן",
     "action": "לקרוא",
-    "score": {
-      "significance": 7,
-      "reliability": 10,
-      "novelty": 6,
-      "immediacy": 7,
-      "usefulness": 8
-    },
+    "score": {"significance": 7, "reliability": 10, "novelty": 6, "immediacy": 7, "usefulness": 8},
+    "fallbackMode": "weekly"
+  },
+  {
+    "id": "hapoel-weak-retrieval-note-2026-04-05",
+    "category": "hapoel",
+    "title": "שכבת הפועל נשארה חלקית: בוצע fixture verification, אבל ONE/Sport5 לא הניבו פריטי עומק זמינים",
+    "summary": "בוצעו ניסיונות חיים גם ל-ONE ול-Sport5, אך בדפדפן לא התקבלו תוצאות שימושיות; לכן הקטגוריה נשענת הבוקר על אימות fixture כפול ועל fallback שבועי מסומן.",
+    "why": "שקיפות עדיפה על פני יצירת רושם שיש כיסוי עמוק יותר ממה שבפועל הושג בריצה הזו.",
+    "source": "Hybrid engine",
+    "sourceUrl": "https://eladtz2025.github.io/OpenCLawClawy/",
+    "alternateSources": [],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-05T04:32:00Z",
+    "sourceType": "web",
+    "sourceStrength": "medium",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "אולי",
+    "action": "לעקוב",
+    "score": {"significance": 5, "reliability": 8, "novelty": 5, "immediacy": 7, "usefulness": 8},
     "fallbackMode": "weekly"
   }
 ]

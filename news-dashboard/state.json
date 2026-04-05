@@ -1,26 +1,109 @@
 {
-  "lastPublishedAt": "2026-04-04T13:25:18.020Z",
+  "lastPublishedAt": "2026-04-05T04:34:19.137Z",
   "latestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/site/latest.html",
-  "publishedStories": [],
+  "publishedStories": [
+    {
+      "id": "technology-anthropic-openclaw-pricing-2026-04-04",
+      "category": "technology",
+      "title": "Anthropic תגבה תשלום נפרד על שימוש ב-Claude Code דרך OpenClaw וכלי צד ג'",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "technology-ai-music-copyright-verge-2026-04-04",
+      "category": "technology",
+      "title": "The Verge: מוזיקאית הפכה למטרה ל-AI fakes ולתביעות זכויות בעייתיות",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "technology-drone-defense-techcrunch-2026-04-04",
+      "category": "technology",
+      "title": "TechCrunch: בכיר סייבר ותיק עובר ממלחמה במלware לעבודה על הגנת רחפנים",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "israel-ynet-liveblog-iran-2026-04-05",
+      "category": "israel",
+      "title": "ynet: ירי לדרום ולצפון, בלי נפגעים; הזירה מול איראן ממשיכה להשתנות במהלך הלילה",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "israel-haaretz-hezbollah-analysis-2026-04-05",
+      "category": "israel",
+      "title": "הארץ: גם לפי הערכת מערכת הביטחון, פירוק חיזבאללה מנשקו לא נראה ישים כרגע",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "israel-partial-retrieval-note-2026-04-05",
+      "category": "israel",
+      "title": "איסוף ישראל הבוקר נשאר חלקי — חלק מהמקורות הישירים חסומים בריצה הזו",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "crypto-bitcoin-quantum-coindesk-2026-04-05",
+      "category": "crypto",
+      "title": "CoinDesk: מרוץ ההקשחה הקוונטית של ביטקוין עולה שלב",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "crypto-ethereum-foundation-staking-2026-04-03",
+      "category": "crypto",
+      "title": "Ethereum Foundation הזרימה כ-93 מיליון דולר ב-ETH ל-staking ומתקרבת ליעד",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "crypto-riot-sells-bitcoin-2026-04-03",
+      "category": "crypto",
+      "title": "Riot Platforms מכרה יותר מ-250 מיליון דולר בביטקוין ברבעון הראשון",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "hapoel-fixture-hapoel-tel-aviv-2026-04-11",
+      "category": "hapoel",
+      "title": "אין משחק היום; המשחק הבא של הפועל פתח תקווה הוא מול הפועל תל אביב ב-11.04 ב-20:00",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    },
+    {
+      "id": "hapoel-last-result-beer-sheva-2026-04-04",
+      "category": "hapoel",
+      "title": "הפועל פתח תקווה סיימה ב-1:1 מול הפועל באר שבע ב-04.04",
+      "publishedAt": "2026-04-05T04:34:19.020Z"
+    }
+  ],
   "categories": {
     "technology": {
-      "lastIds": [],
-      "lastUpdatedAt": null
+      "lastIds": [
+        "technology-anthropic-openclaw-pricing-2026-04-04",
+        "technology-ai-music-copyright-verge-2026-04-04",
+        "technology-drone-defense-techcrunch-2026-04-04"
+      ],
+      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
     },
     "israel": {
-      "lastIds": [],
-      "lastUpdatedAt": null
+      "lastIds": [
+        "israel-ynet-liveblog-iran-2026-04-05",
+        "israel-haaretz-hezbollah-analysis-2026-04-05",
+        "israel-partial-retrieval-note-2026-04-05"
+      ],
+      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
     },
     "crypto": {
-      "lastIds": [],
-      "lastUpdatedAt": null
+      "lastIds": [
+        "crypto-bitcoin-quantum-coindesk-2026-04-05",
+        "crypto-ethereum-foundation-staking-2026-04-03",
+        "crypto-riot-sells-bitcoin-2026-04-03"
+      ],
+      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
     },
     "hapoel": {
-      "lastIds": [],
-      "lastUpdatedAt": null
+      "lastIds": [
+        "hapoel-fixture-hapoel-tel-aviv-2026-04-11",
+        "hapoel-last-result-beer-sheva-2026-04-04"
+      ],
+      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
     }
   },
   "archive": [
+    "2026-04-05.html",
     "2026-04-04.html"
   ]
 }

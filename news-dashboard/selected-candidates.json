@@ -1,29 +1,319 @@
 [
   {
-    "id": "tech-microsoft-models-2026-04-04",
+    "id": "technology-anthropic-openclaw-pricing-2026-04-04",
     "category": "technology",
-    "title": "Microsoft expands its in-house AI model lineup",
-    "summary": "Three new models released through Microsoft's AI stack.",
+    "title": "Anthropic תגבה תשלום נפרד על שימוש ב-Claude Code דרך OpenClaw וכלי צד ג'",
+    "summary": "לפי TechCrunch, החל מ-4 באפריל Anthropic מפסיקה לכלול שימוש דרך harnesses כמו OpenClaw במכסת המנוי הרגילה ועוברת לחיוב pay-as-you-go נפרד.",
+    "why": "זה משפיע ישירות על עלות ותפעול של זרימות coding agents וכלי harness חיצוניים.",
     "source": "TechCrunch",
-    "sourceUrl": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+    "sourceUrl": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
     "alternateSources": [
-      "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/"
+      "https://techcrunch.com/feed/"
     ],
-    "collectedAt": "2026-04-04T13:00:00+03:00",
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-04T16:32:22Z",
     "sourceType": "web",
+    "sourceStrength": "high",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 8,
+      "reliability": 8,
+      "novelty": 8,
+      "immediacy": 8,
+      "usefulness": 10,
+      "total": 42
+    },
+    "fallbackMode": "today"
+  },
+  {
+    "id": "technology-ai-music-copyright-verge-2026-04-04",
+    "category": "technology",
+    "title": "The Verge: מוזיקאית הפכה למטרה ל-AI fakes ולתביעות זכויות בעייתיות",
+    "summary": "The Verge מתאר מקרה שבו שירים שנוצרו ב-AI הועלו בשם האמנית Murphy Campbell, ובהמשך הוגשו גם טענות זכויות על חומרים ציבוריים ביוטיוב.",
+    "why": "זה ממחיש שהנזק המיידי מ-AI גנרטיבי עובר מהייפ למקרי פגיעה תפעוליים אמיתיים ביוצרים ופלטפורמות.",
+    "source": "The Verge",
+    "sourceUrl": "https://www.theverge.com/entertainment/907111/murphy-campbell-folk-music-ai-copyright",
+    "alternateSources": [
+      "https://www.theverge.com/rss/index.xml"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-04T17:52:10Z",
+    "sourceType": "web",
+    "sourceStrength": "high",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 7,
+      "reliability": 8,
+      "novelty": 7,
+      "immediacy": 6,
+      "usefulness": 8,
+      "total": 36
+    },
+    "fallbackMode": "today"
+  },
+  {
+    "id": "technology-drone-defense-techcrunch-2026-04-04",
+    "category": "technology",
+    "title": "TechCrunch: בכיר סייבר ותיק עובר ממלחמה במלware לעבודה על הגנת רחפנים",
+    "summary": "בפיד האחרון של TechCrunch בלט ראיון עם Mikko Hyppönen על מעבר ממאבק בנוזקות לעיסוק במערכות לעצירת רחפנים קטלניים.",
+    "why": "זו אינדיקציה לחיבור ההולך ומתהדק בין סייבר קלאסי, הגנה פיזית ורחפנים.",
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/04/04/after-fighting-malware-for-decades-this-cybersecurity-veteran-is-now-hacking-drones/",
+    "alternateSources": [
+      "https://techcrunch.com/feed/"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-04T13:00:00Z",
+    "sourceType": "web",
+    "sourceStrength": "high",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "אולי",
+    "action": "לעקוב",
+    "score": {
+      "significance": 6,
+      "reliability": 8,
+      "novelty": 6,
+      "immediacy": 5,
+      "usefulness": 7,
+      "total": 32
+    },
+    "fallbackMode": "today"
+  },
+  {
+    "id": "israel-ynet-liveblog-iran-2026-04-05",
+    "category": "israel",
+    "title": "ynet: ירי לדרום ולצפון, בלי נפגעים; הזירה מול איראן ממשיכה להשתנות במהלך הלילה",
+    "summary": "בעמוד החדשות והמבזקים של ynet הופיעו עדכונים רציפים על שיגורים לדרום ולצפון ללא נפגעים, לצד התפתחויות סביב תקיפות באיראן וחילוץ הנווט.",
+    "why": "זה האירוע הישראלי השוטף המרכזי של הבוקר, גם אם התמונה עוד מתעדכנת מהר.",
+    "source": "ynet",
+    "sourceUrl": "https://www.ynet.co.il/news/blogs/article/r17szejhwg#autoplay",
+    "alternateSources": [
+      "https://www.ynet.co.il/news"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-05T04:32:00Z",
+    "sourceType": "web",
+    "sourceStrength": "high",
+    "certainty": "חלקית מאומת",
+    "hype": "בינונית",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 9,
+      "reliability": 7,
+      "novelty": 6,
+      "immediacy": 10,
+      "usefulness": 8,
+      "total": 40
+    },
+    "fallbackMode": "today"
+  },
+  {
+    "id": "israel-haaretz-hezbollah-analysis-2026-04-05",
+    "category": "israel",
+    "title": "הארץ: גם לפי הערכת מערכת הביטחון, פירוק חיזבאללה מנשקו לא נראה ישים כרגע",
+    "summary": "בדף Israel News של הארץ הופיעה הבוקר כתבת ניתוח מרכזית שטוענת כי למרות הבטחות הממשלה, גם בצה\"ל מודים שלא ניתן כרגע לפרק את חיזבאללה מנשקו.",
+    "why": "זה מסמן פער בין מסרים פוליטיים ליכולת צבאית, נקודה חשובה לקבלת החלטות והערכת מצב.",
+    "source": "הארץ",
+    "sourceUrl": "https://www.haaretz.com/israel-news/israel-security/2026-04-05/ty-article/.premium/despite-netanyahu-governments-promises-idf-admits-it-cant-disarm-hezbollah/0000019d-59f0-db3c-a3df-d9f5236c0000",
+    "alternateSources": [
+      "https://www.haaretz.com/israel-news"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-05T05:53:00Z",
+    "sourceType": "web",
+    "sourceStrength": "high",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 8,
+      "reliability": 7,
+      "novelty": 6,
+      "immediacy": 7,
+      "usefulness": 8,
+      "total": 36
+    },
+    "fallbackMode": "today"
+  },
+  {
+    "id": "israel-partial-retrieval-note-2026-04-05",
+    "category": "israel",
+    "title": "איסוף ישראל הבוקר נשאר חלקי — חלק מהמקורות הישירים חסומים בריצה הזו",
+    "summary": "בוצע איסוף חי דרך ynet ו-Haaretz בדפדפן, אבל מקורות רשמיים מסוימים נחסמו ב-Cloudflare ולכן האימות נשאר חלקי בחלק מהשכבה הישראלית.",
+    "why": "שקיפות: עדיף לציין מגבלת איסוף מאשר לכתוב כאילו כל שכבת האימות הושלמה.",
+    "source": "Hybrid engine",
+    "sourceUrl": "https://eladtz2025.github.io/OpenCLawClawy/",
+    "alternateSources": [],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-05T04:32:00Z",
+    "sourceType": "web",
+    "sourceStrength": "medium",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "אולי",
+    "action": "לעקוב",
+    "score": {
+      "significance": 5,
+      "reliability": 8,
+      "novelty": 5,
+      "immediacy": 7,
+      "usefulness": 8,
+      "total": 33
+    },
+    "fallbackMode": "today"
+  },
+  {
+    "id": "crypto-bitcoin-quantum-coindesk-2026-04-05",
+    "category": "crypto",
+    "title": "CoinDesk: מרוץ ההקשחה הקוונטית של ביטקוין עולה שלב",
+    "summary": "CoinDesk מדווח שמפתחי ביטקוין דנים כבר כעת בשדרוגים להגנה מפני איום קוונטי, אחרי מחקר חדש של Google שהחזיר את הסיכון למרכז הדיון.",
+    "why": "זה סיפור תשתיתי אמיתי על אבטחת הרשת, לא עוד תנודת מחיר בלי קטליזטור.",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/tech/2026/04/04/bitcoin-s-usd1-3-trillion-security-race-key-initiatives-aimed-at-quantum-proofing-the-world-s-largest-blockchain",
+    "alternateSources": [
+      "https://www.coindesk.com/arc/outboundfeeds/rss"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-05T03:31:49Z",
+    "sourceType": "web",
+    "sourceStrength": "high",
+    "certainty": "חלקית מאומת",
+    "hype": "בינונית",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 8,
+      "reliability": 8,
+      "novelty": 8,
+      "immediacy": 8,
+      "usefulness": 9,
+      "total": 41
+    },
+    "fallbackMode": "today"
+  },
+  {
+    "id": "crypto-ethereum-foundation-staking-2026-04-03",
+    "category": "crypto",
+    "title": "Ethereum Foundation הזרימה כ-93 מיליון דולר ב-ETH ל-staking ומתקרבת ליעד",
+    "summary": "לפי Decrypt, הקרן הפקידה 45,034 ETH ומתקרבת ליעד אסטרטגי של 70 אלף ETH ב-staking — מהלך מוסדי משמעותי יותר מסתם כותרת מחיר.",
+    "why": "זה נותן אינדיקציה לכיוון ניהול האוצר של Ethereum Foundation ולמחויבות לתשתית proof-of-stake.",
+    "source": "Decrypt",
+    "sourceUrl": "https://decrypt.co/363253/ethereum-foundation-stakes-93m-worth-of-eth-nears-strategic-target",
+    "alternateSources": [
+      "https://decrypt.co/news/news"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-03T00:00:00Z",
+    "sourceType": "web",
+    "sourceStrength": "medium",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 7,
+      "reliability": 7,
+      "novelty": 6,
+      "immediacy": 5,
+      "usefulness": 8,
+      "total": 33
+    },
+    "fallbackMode": "weekly"
+  },
+  {
+    "id": "crypto-riot-sells-bitcoin-2026-04-03",
+    "category": "crypto",
+    "title": "Riot Platforms מכרה יותר מ-250 מיליון דולר בביטקוין ברבעון הראשון",
+    "summary": "לפי Decrypt, Riot מכרה 3,778 BTC ברבעון הראשון במחיר ממוצע של מעל 76 אלף דולר, מה שמוסיף מידע אמיתי על לחץ מכירות מצד כורה ציבורי גדול.",
+    "why": "זה יותר שימושי מעוד כותרת על 'המחיר עלה/ירד' כי יש כאן זרימת היצע ממשית משחקן ציבורי מרכזי.",
+    "source": "Decrypt",
+    "sourceUrl": "https://decrypt.co/363255/bitcoin-miner-riot-platforms-sells-250-million-btc",
+    "alternateSources": [
+      "https://decrypt.co/news/news"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-03T00:00:00Z",
+    "sourceType": "web",
+    "sourceStrength": "medium",
+    "certainty": "חלקית מאומת",
+    "hype": "נמוכה",
+    "worth": "אולי",
+    "action": "לעקוב",
+    "score": {
+      "significance": 6,
+      "reliability": 7,
+      "novelty": 5,
+      "immediacy": 5,
+      "usefulness": 7,
+      "total": 30
+    },
+    "fallbackMode": "weekly"
+  },
+  {
+    "id": "hapoel-fixture-hapoel-tel-aviv-2026-04-11",
+    "category": "hapoel",
+    "title": "אין משחק היום; המשחק הבא של הפועל פתח תקווה הוא מול הפועל תל אביב ב-11.04 ב-20:00",
+    "summary": "בוצע fixture-first מול Flashscore ומול Soccerway, ושניהם מציגים את המשחק הבא של הפועל פתח תקווה מול הפועל תל אביב ביום 11.04 בשעה 20:00. ניסיונות חיים ל-ONE ול-Sport5 לא הניבו עומק שימושי, ולכן הקטגוריה נשענת הבוקר על fallback שבועי מסומן.",
+    "why": "זה מאמת שאין כרגע אירוע משחק להיום, בלי לנחש ובלי להשאיר את הקטגוריה ריקה לפני בדיקת מקורות fixture, ובו בזמן שומר שקיפות על retrieval חלקי.",
+    "source": "Flashscore + Soccerway",
+    "sourceUrl": "https://www.flashscore.com/team/hapoel-petah-tikva/0Q2H9Ccm/",
+    "alternateSources": [
+      "https://www.soccerway.com/team/hapoel-petah-tikva/0Q2H9Ccm/"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-05T04:32:00Z",
+    "sourceType": "fixture",
     "sourceStrength": "high",
     "certainty": "מאומת",
     "hype": "נמוכה",
     "worth": "כן",
     "action": "לקרוא",
     "score": {
-      "significance": 9,
-      "reliability": 9,
-      "novelty": 8,
-      "immediacy": 8,
+      "significance": 8,
+      "reliability": 10,
+      "novelty": 5,
+      "immediacy": 6,
       "usefulness": 9,
-      "total": 43
+      "total": 38
     },
-    "fallbackMode": "today"
+    "fallbackMode": "weekly"
+  },
+  {
+    "id": "hapoel-last-result-beer-sheva-2026-04-04",
+    "category": "hapoel",
+    "title": "הפועל פתח תקווה סיימה ב-1:1 מול הפועל באר שבע ב-04.04",
+    "summary": "גם Flashscore וגם Soccerway מציגים את תוצאת המשחק האחרונה: 1:1 מול הפועל באר שבע ב-04.04 בשעה 20:15.",
+    "why": "בהיעדר משחק היום, זה הפריט הספורטיבי הכי רלוונטי מהשבוע האחרון שמאומת בשני מקורות fixture.",
+    "source": "Flashscore + Soccerway",
+    "sourceUrl": "https://www.soccerway.com/team/hapoel-petah-tikva/0Q2H9Ccm/",
+    "alternateSources": [
+      "https://www.flashscore.com/team/hapoel-petah-tikva/0Q2H9Ccm/"
+    ],
+    "collectedAt": "2026-04-05T04:32:00Z",
+    "publishedAt": "2026-04-04T20:15:00Z",
+    "sourceType": "fixture",
+    "sourceStrength": "high",
+    "certainty": "מאומת",
+    "hype": "נמוכה",
+    "worth": "כן",
+    "action": "לקרוא",
+    "score": {
+      "significance": 7,
+      "reliability": 10,
+      "novelty": 6,
+      "immediacy": 7,
+      "usefulness": 8,
+      "total": 38
+    },
+    "fallbackMode": "weekly"
   }
 ]
