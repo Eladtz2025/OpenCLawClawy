@@ -1,63 +1,161 @@
 {
-  "generated_at": "2026-04-08T10:22:22.885Z",
+  "generated_at": "2026-04-08T11:02:34.092Z",
+  "summary": {
+    "total_systems": 3,
+    "heavy_systems": 1,
+    "needs_cleanup": 3,
+    "closest_to_10_count": 0
+  },
+  "top_priorities": [
+    "Itzhak Main Runtime",
+    "Openclaw Main Runtime",
+    "Custom Workspace Cluster"
+  ],
+  "top_heavy_systems": [
+    "Custom Workspace Cluster"
+  ],
+  "systems_needing_cleanup": [
+    "Itzhak Main Runtime",
+    "Openclaw Main Runtime",
+    "Custom Workspace Cluster"
+  ],
+  "systems_needing_redesign": [
+    "Custom Workspace Cluster"
+  ],
+  "closest_to_10": [
+    {
+      "display_name": "Itzhak Main Runtime",
+      "overall_score": 5.7
+    },
+    {
+      "display_name": "Openclaw Main Runtime",
+      "overall_score": 5.4
+    },
+    {
+      "display_name": "Custom Workspace Cluster",
+      "overall_score": 4
+    }
+  ],
   "systems": [
     {
       "system_id": "openclaw-itzhak-main",
       "name": "OpenClaw Itzhak Main",
+      "display_name": "Itzhak Main Runtime",
       "owner": "Itzhak",
+      "purpose": "Primary OpenClaw runtime for Itzhak with Telegram and local dashboard.",
       "status": "active",
       "overall_score": 5.7,
       "overall_rating": "weak",
       "weight": "moderate",
-      "recommendation": "improve later"
+      "recommendation": "improve later",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "2026-04-07T15:28:45.140Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "key_risks": [
+        "open telegram groupPolicy",
+        "full exec exposure",
+        "many config backup snapshots"
+      ],
+      "short_summary": "טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.",
+      "source_details": {
+        "related_ports": [
+          18789,
+          18791,
+          58697
+        ],
+        "related_tasks": [
+          "OpenClaw - On Network Reconnect",
+          "OpenClaw Gateway - Itzhak"
+        ],
+        "related_cron_jobs": [
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\runs",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.095d4a23b7f67433.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.2111e5fd70c8bb12.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.5263af6d13b85c8b.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.53a178f21c10c9b2.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.6d62dde3eb792186.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.7373cf449c431636.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.80686d885e73e6f9.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.8e12e4a2df14a59e.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.9830cc8f8491f7b4.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.aafb6d73beb2782c.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c0694fe111902699.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c275b39348001af7.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.e6fee8eaffc6c345.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.bak",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\runs\\037374da-812f-4678-8f22-89da8d11c036.jsonl"
+        ]
+      }
     },
     {
       "system_id": "openclaw-openclaw-main",
       "name": "OpenClaw Openclaw Main",
+      "display_name": "Openclaw Main Runtime",
       "owner": "Openclaw",
+      "purpose": "Secondary OpenClaw runtime for Openclaw user with Telegram and local dashboard.",
       "status": "active",
       "overall_score": 5.4,
       "overall_rating": "weak",
       "weight": "moderate",
-      "recommendation": "manual review"
+      "recommendation": "manual review",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "2026-04-07T13:34:35.928Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\OpenClaw\\.openclaw\\workspace",
+      "key_risks": [
+        "open telegram groupPolicy",
+        "full exec exposure",
+        "fallback model not verified"
+      ],
+      "short_summary": "שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.",
+      "source_details": {
+        "related_ports": [
+          18790,
+          18792,
+          57849
+        ],
+        "related_tasks": [
+          "OpenClaw - On Network Reconnect",
+          "OpenClaw Gateway - Itzhak",
+          "OpenClaw Gateway - Openclaw"
+        ],
+        "related_cron_jobs": []
+      }
     },
     {
       "system_id": "workspace-custom-systems",
       "name": "Workspace Custom Systems Cluster",
+      "display_name": "Custom Workspace Cluster",
       "owner": "Itzhak",
+      "purpose": "Mixed custom systems found in the Itzhak workspace.",
       "status": "unknown",
       "overall_score": 4,
       "overall_rating": "weak",
       "weight": "heavy",
-      "recommendation": "needs cleanup"
+      "recommendation": "needs cleanup",
+      "needs_cleanup": true,
+      "needs_redesign": true,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "key_risks": [
+        "mixed active and stale projects",
+        "git residue",
+        "unclear ownership by subproject"
+      ],
+      "short_summary": "מעורבב מדי, כבד מדי, ולא מספיק ניהולי.",
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
     }
-  ],
-  "top_heavy_systems": [
-    "Workspace Custom Systems Cluster"
-  ],
-  "systems_with_repeated_failures": [
-    "Workspace Custom Systems Cluster"
-  ],
-  "systems_that_need_cleanup": [
-    "OpenClaw Itzhak Main",
-    "OpenClaw Openclaw Main",
-    "Workspace Custom Systems Cluster"
-  ],
-  "closest_to_10": [
-    {
-      "name": "OpenClaw Itzhak Main",
-      "overall_score": 5.7
-    },
-    {
-      "name": "OpenClaw Openclaw Main",
-      "overall_score": 5.4
-    },
-    {
-      "name": "Workspace Custom Systems Cluster",
-      "overall_score": 4
-    }
-  ],
-  "systems_needing_redesign": [
-    "Workspace Custom Systems Cluster"
   ]
 }

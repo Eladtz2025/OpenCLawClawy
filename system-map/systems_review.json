@@ -1,171 +1,219 @@
 {
-  "generated_at": "2026-04-08T10:22:22.885Z",
+  "generated_at": "2026-04-08T11:02:34.092Z",
   "reviews": [
     {
       "system_id": "openclaw-itzhak-main",
-      "name": "OpenClaw Itzhak Main",
+      "display_name": "Itzhak Main Runtime",
       "owner": "Itzhak",
       "status": "active",
       "overall_score": {
         "score": 5.7,
-        "rating": "weak"
+        "rating": "weak",
+        "explanation": "ממוצע שמרני של מדדי הביקורת."
       },
-      "weight_assessment": "moderate",
+      "weight": "moderate",
       "recommendation": "improve later",
-      "fits_this_machine": "yes",
-      "notes": "רץ בפועל ונראה יציב, אבל החשיפה לקבוצת טלגרם פתוחה עם exec מלא פוגעת קשות בבטיחות ובתחזוקתיות.",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "2026-04-07T15:28:45.140Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "key_risks": [
+        "open telegram groupPolicy",
+        "full exec exposure",
+        "many config backup snapshots"
+      ],
+      "short_summary": "טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.",
       "scores": {
         "architecture_score": {
           "score": 6.5,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "מבנה סביר, אבל רמת החשיפה גבוהה מדי."
         },
         "clarity_score": {
           "score": 6,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "המערכת מובנת חלקית, אך לא מספיק מבודדת."
         },
         "runtime_weight_score": {
           "score": 6.5,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "המשקל סביר ביחס להרצה שוטפת."
         },
         "resource_fit_score": {
           "score": 7,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "מתאים למחשב הזה בלי עומס חריג."
         },
         "maintainability_score": {
           "score": 5.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "יש קבצי גיבוי ושאריות שמכבידים על ניהול."
         },
         "safety_score": {
           "score": 2.5,
-          "rating": "critical"
+          "rating": "critical",
+          "explanation": "הבטיחות חלשה בגלל exec מלא בקבוצה פתוחה."
         },
         "noise_score": {
           "score": 5.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "רעש בינוני, לא קיצוני."
         },
         "residue_risk_score": {
           "score": 4.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "יש סיכון residue ממשי אבל לא קיצוני."
         },
         "reliability_score": {
           "score": 7.5,
-          "rating": "good"
-        },
-        "overall_score": {
-          "score": 5.7,
-          "rating": "weak"
+          "rating": "good",
+          "explanation": "נראה רץ ויציב בפועל."
         }
       }
     },
     {
       "system_id": "openclaw-openclaw-main",
-      "name": "OpenClaw Openclaw Main",
+      "display_name": "Openclaw Main Runtime",
       "owner": "Openclaw",
       "status": "active",
       "overall_score": {
         "score": 5.4,
-        "rating": "weak"
+        "rating": "weak",
+        "explanation": "ממוצע שמרני של מדדי הביקורת."
       },
-      "weight_assessment": "moderate",
+      "weight": "moderate",
       "recommendation": "manual review",
-      "fits_this_machine": "yes",
-      "notes": "גם כאן הריצה פעילה, אבל יש חוסר בהירות סביב fallback model וחשיפת exec מלאה בקבוצות.",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "2026-04-07T13:34:35.928Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\OpenClaw\\.openclaw\\workspace",
+      "key_risks": [
+        "open telegram groupPolicy",
+        "full exec exposure",
+        "fallback model not verified"
+      ],
+      "short_summary": "שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.",
       "scores": {
         "architecture_score": {
           "score": 6,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "מבנה בסיסי תקין, אך יש חוסר בהירות סביב fallback."
         },
         "clarity_score": {
           "score": 5.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "הקריאות ניהולית בינונית."
         },
         "runtime_weight_score": {
           "score": 6.5,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "לא נראה כבד מדי."
         },
         "resource_fit_score": {
           "score": 6.5,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "מתאים למחשב הזה ברמה סבירה."
         },
         "maintainability_score": {
           "score": 5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "לא מספיק נקי ולא מספיק חד-משמעי."
         },
         "safety_score": {
           "score": 2.5,
-          "rating": "critical"
+          "rating": "critical",
+          "explanation": "חשיפה בטיחותית גבוהה."
         },
         "noise_score": {
           "score": 5.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "רעש בינוני."
         },
         "residue_risk_score": {
           "score": 4.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "שאריות קונפיג קיימות."
         },
         "reliability_score": {
           "score": 7,
-          "rating": "acceptable"
-        },
-        "overall_score": {
-          "score": 5.4,
-          "rating": "weak"
+          "rating": "acceptable",
+          "explanation": "רץ, אך חלק מהבסיס לא מאומת."
         }
       }
     },
     {
       "system_id": "workspace-custom-systems",
-      "name": "Workspace Custom Systems Cluster",
+      "display_name": "Custom Workspace Cluster",
       "owner": "Itzhak",
       "status": "unknown",
       "overall_score": {
         "score": 4,
-        "rating": "weak"
+        "rating": "weak",
+        "explanation": "ממוצע שמרני של מדדי הביקורת."
       },
-      "weight_assessment": "heavy",
+      "weight": "heavy",
       "recommendation": "needs cleanup",
-      "fits_this_machine": "partial",
-      "notes": "זה אוסף פרויקטים ולא מערכת אחת נקייה. יש שאריות ב-git status וחוסר הפרדה ברור בין פעיל, ניסיוני ונטוש.",
+      "needs_cleanup": true,
+      "needs_redesign": true,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "key_risks": [
+        "mixed active and stale projects",
+        "git residue",
+        "unclear ownership by subproject"
+      ],
+      "short_summary": "מעורבב מדי, כבד מדי, ולא מספיק ניהולי.",
       "scores": {
         "architecture_score": {
           "score": 4,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "זה לא ארכיטקטורה אחת ברורה אלא צבר פרויקטים."
         },
         "clarity_score": {
           "score": 3.5,
-          "rating": "critical"
+          "rating": "critical",
+          "explanation": "הבהירות נמוכה."
         },
         "runtime_weight_score": {
           "score": 4.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "המשקל הכולל כבר מורגש."
         },
         "resource_fit_score": {
           "score": 4.5,
-          "rating": "weak"
+          "rating": "weak",
+          "explanation": "מתאים חלקית בלבד למחשב זה."
         },
         "maintainability_score": {
           "score": 3.5,
-          "rating": "critical"
+          "rating": "critical",
+          "explanation": "קשה לתחזק צבר כזה."
         },
         "safety_score": {
           "score": 6,
-          "rating": "acceptable"
+          "rating": "acceptable",
+          "explanation": "לא זוהתה חשיפה כמו ברנטיימים, לכן מעט טוב יותר."
         },
         "noise_score": {
           "score": 3.5,
-          "rating": "critical"
+          "rating": "critical",
+          "explanation": "רעש גבוה יחסית בגלל צבירה של ניסויים."
         },
         "residue_risk_score": {
           "score": 3,
-          "rating": "critical"
+          "rating": "critical",
+          "explanation": "סיכון residue גבוה."
         },
         "reliability_score": {
           "score": 3.5,
-          "rating": "critical"
-        },
-        "overall_score": {
-          "score": 4,
-          "rating": "weak"
+          "rating": "critical",
+          "explanation": "לא ברור מה פעיל ומה נטוש."
         }
       }
     }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T10:22:22.884Z",
+  "generated_at": "2026-04-08T11:02:34.092Z",
   "scan_scope": [
     "C:\\Users\\Itzhak",
     "C:\\Users\\Openclaw"
@@ -8,362 +8,121 @@
     {
       "system_id": "openclaw-itzhak-main",
       "name": "OpenClaw Itzhak Main",
-      "user_owner": "Itzhak",
-      "purpose": "Primary OpenClaw runtime for Itzhak with Telegram access and local dashboard.",
-      "input_channels": [
-        "telegram"
-      ],
-      "output_channels": [
-        "telegram",
-        "dashboard"
-      ],
-      "bot_topic_group": {
-        "telegram_group_policy": "open",
-        "telegram_require_mention": false
-      },
-      "related_workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
-      "related_config_paths": [
-        "C:\\Users\\Itzhak\\.openclaw\\openclaw.json",
-        "C:\\ProgramData\\OpenClaw\\openclaw-Itzhak.cmd"
-      ],
-      "related_scripts_files": [
-        "C:\\ProgramData\\OpenClaw\\openclaw-Itzhak.cmd",
-        "C:\\Users\\Itzhak\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js"
-      ],
-      "related_scheduled_tasks": [
-        "OpenClaw - On Network Reconnect",
-        "OpenClaw Gateway - Itzhak"
-      ],
-      "related_cron_jobs": [
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\runs",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.095d4a23b7f67433.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.2111e5fd70c8bb12.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.5263af6d13b85c8b.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.53a178f21c10c9b2.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.6d62dde3eb792186.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.7373cf449c431636.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.80686d885e73e6f9.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.8e12e4a2df14a59e.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.9830cc8f8491f7b4.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.aafb6d73beb2782c.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c0694fe111902699.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c275b39348001af7.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.e6fee8eaffc6c345.tmp",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.bak",
-        "C:\\Users\\Itzhak\\.openclaw\\cron\\runs\\037374da-812f-4678-8f22-89da8d11c036.jsonl"
-      ],
-      "related_ports": [
-        18789,
-        18791,
-        58697
-      ],
-      "dependencies": [
-        "Node.js",
-        "OpenAI Codex",
-        "Ollama",
-        "Telegram Bot API",
-        "browser plugin"
-      ],
-      "browser_used": true,
-      "telegram_used": true,
-      "whatsapp_used": false,
-      "model_fallback_exists": true,
+      "display_name": "Itzhak Main Runtime",
+      "owner": "Itzhak",
+      "purpose": "Primary OpenClaw runtime for Itzhak with Telegram and local dashboard.",
       "status": "active",
-      "last_known_activity": "2026-04-07T15:28:45.140Z",
-      "risk_level": "high",
-      "estimated_weight": "moderate",
-      "components": [
-        "gateway",
-        "telegram channel",
-        "browser tooling",
-        "cron store",
-        "workspace",
-        "memory store"
+      "overall_score": 5.7,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "recommendation": "improve later",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "2026-04-07T15:28:45.140Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "key_risks": [
+        "open telegram groupPolicy",
+        "full exec exposure",
+        "many config backup snapshots"
       ],
-      "residue_or_duplicates": [
-        "multiple openclaw.json.clobbered backups",
-        "config backup chain (.bak*)",
-        "possible stale logs/backups"
-      ],
-      "manual_check_required": true,
-      "manual_check_reason": "Security posture is open groupPolicy with full exec and elevated tools.",
-      "review": {
-        "scores": {
-          "architecture_score": {
-            "score": 6.5,
-            "rating": "acceptable"
-          },
-          "clarity_score": {
-            "score": 6,
-            "rating": "acceptable"
-          },
-          "runtime_weight_score": {
-            "score": 6.5,
-            "rating": "acceptable"
-          },
-          "resource_fit_score": {
-            "score": 7,
-            "rating": "acceptable"
-          },
-          "maintainability_score": {
-            "score": 5.5,
-            "rating": "weak"
-          },
-          "safety_score": {
-            "score": 2.5,
-            "rating": "critical"
-          },
-          "noise_score": {
-            "score": 5.5,
-            "rating": "weak"
-          },
-          "residue_risk_score": {
-            "score": 4.5,
-            "rating": "weak"
-          },
-          "reliability_score": {
-            "score": 7.5,
-            "rating": "good"
-          },
-          "overall_score": {
-            "score": 5.7,
-            "rating": "weak"
-          }
-        },
-        "weight_assessment": "moderate",
-        "built_correctly": "acceptable",
-        "too_complex": false,
-        "too_heavy": false,
-        "too_noisy": false,
-        "leaves_residue": true,
-        "needs_refactor": true,
-        "fits_this_machine": "yes",
-        "recommendation": "improve later",
-        "notes": "רץ בפועל ונראה יציב, אבל החשיפה לקבוצת טלגרם פתוחה עם exec מלא פוגעת קשות בבטיחות ובתחזוקתיות."
+      "short_summary": "טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.",
+      "source_details": {
+        "related_ports": [
+          18789,
+          18791,
+          58697
+        ],
+        "related_tasks": [
+          "OpenClaw - On Network Reconnect",
+          "OpenClaw Gateway - Itzhak"
+        ],
+        "related_cron_jobs": [
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\runs",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.095d4a23b7f67433.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.2111e5fd70c8bb12.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.5263af6d13b85c8b.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.53a178f21c10c9b2.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.6d62dde3eb792186.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.7373cf449c431636.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.80686d885e73e6f9.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.8e12e4a2df14a59e.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.9830cc8f8491f7b4.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.aafb6d73beb2782c.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c0694fe111902699.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c275b39348001af7.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.e6fee8eaffc6c345.tmp",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.bak",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\runs\\037374da-812f-4678-8f22-89da8d11c036.jsonl"
+        ]
       }
     },
     {
       "system_id": "openclaw-openclaw-main",
       "name": "OpenClaw Openclaw Main",
-      "user_owner": "Openclaw",
-      "purpose": "Secondary OpenClaw runtime for Openclaw user with its own Telegram bot and local dashboard.",
-      "input_channels": [
-        "telegram"
-      ],
-      "output_channels": [
-        "telegram",
-        "dashboard"
-      ],
-      "bot_topic_group": {
-        "telegram_group_policy": "open",
-        "telegram_require_mention": false
-      },
-      "related_workspace_path": "C:\\Users\\OpenClaw\\.openclaw\\workspace",
-      "related_config_paths": [
-        "C:\\Users\\Openclaw\\.openclaw\\openclaw.json",
-        "C:\\ProgramData\\OpenClaw\\openclaw-Openclaw.cmd"
-      ],
-      "related_scripts_files": [
-        "C:\\ProgramData\\OpenClaw\\openclaw-Openclaw.cmd",
-        "C:\\Users\\Openclaw\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js"
-      ],
-      "related_scheduled_tasks": [
-        "OpenClaw - On Network Reconnect",
-        "OpenClaw Gateway - Itzhak",
-        "OpenClaw Gateway - Openclaw"
-      ],
-      "related_cron_jobs": [],
-      "related_ports": [
-        18790,
-        18792,
-        57849
-      ],
-      "dependencies": [
-        "Node.js",
-        "OpenAI Codex",
-        "Ollama fallback",
-        "Telegram Bot API",
-        "browser plugin"
-      ],
-      "browser_used": true,
-      "telegram_used": true,
-      "whatsapp_used": false,
-      "model_fallback_exists": true,
+      "display_name": "Openclaw Main Runtime",
+      "owner": "Openclaw",
+      "purpose": "Secondary OpenClaw runtime for Openclaw user with Telegram and local dashboard.",
       "status": "active",
-      "last_known_activity": "2026-04-07T13:34:35.928Z",
-      "risk_level": "high",
-      "estimated_weight": "moderate",
-      "components": [
-        "gateway",
-        "telegram channel",
-        "browser tooling",
-        "workspace",
-        "memory store"
+      "overall_score": 5.4,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "recommendation": "manual review",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "2026-04-07T13:34:35.928Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\OpenClaw\\.openclaw\\workspace",
+      "key_risks": [
+        "open telegram groupPolicy",
+        "full exec exposure",
+        "fallback model not verified"
       ],
-      "residue_or_duplicates": [
-        "multiple openclaw.json.clobbered backups",
-        "config backup chain (.bak*)"
-      ],
-      "manual_check_required": true,
-      "manual_check_reason": "Fallback model gemma4:e2b may require manual validation, and groupPolicy is open with full exec.",
-      "review": {
-        "scores": {
-          "architecture_score": {
-            "score": 6,
-            "rating": "acceptable"
-          },
-          "clarity_score": {
-            "score": 5.5,
-            "rating": "weak"
-          },
-          "runtime_weight_score": {
-            "score": 6.5,
-            "rating": "acceptable"
-          },
-          "resource_fit_score": {
-            "score": 6.5,
-            "rating": "acceptable"
-          },
-          "maintainability_score": {
-            "score": 5,
-            "rating": "weak"
-          },
-          "safety_score": {
-            "score": 2.5,
-            "rating": "critical"
-          },
-          "noise_score": {
-            "score": 5.5,
-            "rating": "weak"
-          },
-          "residue_risk_score": {
-            "score": 4.5,
-            "rating": "weak"
-          },
-          "reliability_score": {
-            "score": 7,
-            "rating": "acceptable"
-          },
-          "overall_score": {
-            "score": 5.4,
-            "rating": "weak"
-          }
-        },
-        "weight_assessment": "moderate",
-        "built_correctly": "acceptable",
-        "too_complex": false,
-        "too_heavy": false,
-        "too_noisy": false,
-        "leaves_residue": true,
-        "needs_refactor": true,
-        "fits_this_machine": "yes",
-        "recommendation": "manual review",
-        "notes": "גם כאן הריצה פעילה, אבל יש חוסר בהירות סביב fallback model וחשיפת exec מלאה בקבוצות."
+      "short_summary": "שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.",
+      "source_details": {
+        "related_ports": [
+          18790,
+          18792,
+          57849
+        ],
+        "related_tasks": [
+          "OpenClaw - On Network Reconnect",
+          "OpenClaw Gateway - Itzhak",
+          "OpenClaw Gateway - Openclaw"
+        ],
+        "related_cron_jobs": []
       }
     },
     {
       "system_id": "workspace-custom-systems",
       "name": "Workspace Custom Systems Cluster",
-      "user_owner": "Itzhak",
-      "purpose": "Collection of custom-built systems found in the Itzhak OpenClaw workspace.",
-      "input_channels": [
-        "file-based",
-        "possibly telegram for news-dashboard"
-      ],
-      "output_channels": [
-        "files",
-        "possible telegram artifacts"
-      ],
-      "bot_topic_group": {},
-      "related_workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
-      "related_config_paths": [],
-      "related_scripts_files": [
-        "C:\\Users\\Itzhak\\.openclaw\\workspace\\image-team",
-        "C:\\Users\\Itzhak\\.openclaw\\workspace\\news-dashboard",
-        "C:\\Users\\Itzhak\\.openclaw\\workspace\\smoke-test-build"
-      ],
-      "related_scheduled_tasks": [],
-      "related_cron_jobs": [],
-      "related_ports": [],
-      "dependencies": [
-        "workspace files",
-        "project-specific scripts"
-      ],
-      "browser_used": false,
-      "telegram_used": true,
-      "whatsapp_used": false,
-      "model_fallback_exists": false,
+      "display_name": "Custom Workspace Cluster",
+      "owner": "Itzhak",
+      "purpose": "Mixed custom systems found in the Itzhak workspace.",
       "status": "unknown",
-      "last_known_activity": null,
-      "risk_level": "medium",
-      "estimated_weight": "heavy",
-      "components": [
-        "news-dashboard",
-        "image-team",
-        "backup-manager residue",
-        "smoke-test-build"
+      "overall_score": 4,
+      "overall_rating": "weak",
+      "weight": "heavy",
+      "recommendation": "needs cleanup",
+      "needs_cleanup": true,
+      "needs_redesign": true,
+      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "key_risks": [
+        "mixed active and stale projects",
+        "git residue",
+        "unclear ownership by subproject"
       ],
-      "residue_or_duplicates": [
-        "deleted backup-manager tracked files in git status",
-        "deleted image-team run artifacts in git status",
-        "multiple experimental folders"
-      ],
-      "manual_check_required": true,
-      "manual_check_reason": "Requires owner review to separate active projects from residue.",
-      "review": {
-        "scores": {
-          "architecture_score": {
-            "score": 4,
-            "rating": "weak"
-          },
-          "clarity_score": {
-            "score": 3.5,
-            "rating": "critical"
-          },
-          "runtime_weight_score": {
-            "score": 4.5,
-            "rating": "weak"
-          },
-          "resource_fit_score": {
-            "score": 4.5,
-            "rating": "weak"
-          },
-          "maintainability_score": {
-            "score": 3.5,
-            "rating": "critical"
-          },
-          "safety_score": {
-            "score": 6,
-            "rating": "acceptable"
-          },
-          "noise_score": {
-            "score": 3.5,
-            "rating": "critical"
-          },
-          "residue_risk_score": {
-            "score": 3,
-            "rating": "critical"
-          },
-          "reliability_score": {
-            "score": 3.5,
-            "rating": "critical"
-          },
-          "overall_score": {
-            "score": 4,
-            "rating": "weak"
-          }
-        },
-        "weight_assessment": "heavy",
-        "built_correctly": "weak",
-        "too_complex": true,
-        "too_heavy": true,
-        "too_noisy": true,
-        "leaves_residue": true,
-        "needs_refactor": true,
-        "fits_this_machine": "partial",
-        "recommendation": "needs cleanup",
-        "notes": "זה אוסף פרויקטים ולא מערכת אחת נקייה. יש שאריות ב-git status וחוסר הפרדה ברור בין פעיל, ניסיוני ונטוש."
+      "short_summary": "מעורבב מדי, כבד מדי, ולא מספיק ניהולי.",
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
       }
     }
   ],

@@ -4,71 +4,69 @@
 
 ## תמונת מצב
 
-- נמצאו 2 רנטיימים פעילים של OpenClaw, אחד לכל יוזר.
-- נמצאו 2 Scheduled Tasks פעילים לשירותי Gateway ועוד משימת reconnect כללית.
-- נמצאו פורטי Dashboard/Gateway פעילים: 18789, 18790, עם פורטים משויכים נוספים 18791, 18792.
-- נמצאו שאריות קונפיג רבות: קבצי bak/clobbered בשני היוזרים.
-- נמצאו פרויקטים מותאמים אישית ב-workspace של Itzhak שדורשים סיווג ידני בין active ל-residue.
+- מערכות שזוהו: 3
+- מערכות כבדות: 1
+- מערכות שדורשות ניקוי: 3
+- מערכות קרובות ל-10/10: 0
 
-## OpenClaw Itzhak Main
+## Itzhak Main Runtime
 
-- ייעוד: Primary OpenClaw runtime for Itzhak with Telegram access and local dashboard.
-- בעלות: Itzhak
-- מצב: active
-- איפה יושב: C:\Users\Itzhak\.openclaw\workspace
-- ממה מורכב: gateway, telegram channel, browser tooling, cron store, workspace, memory store
-- מה קשור: configs: C:\Users\Itzhak\.openclaw\openclaw.json, C:\ProgramData\OpenClaw\openclaw-Itzhak.cmd | tasks: OpenClaw - On Network Reconnect, OpenClaw Gateway - Itzhak | ports: 18789, 18791, 58697 | files: C:\ProgramData\OpenClaw\openclaw-Itzhak.cmd, C:\Users\Itzhak\AppData\Roaming\npm\node_modules\openclaw\dist\index.js
-- שאריות/כפילויות: multiple openclaw.json.clobbered backups; config backup chain (.bak*); possible stale logs/backups
-- נדרשת בדיקה ידנית: כן - Security posture is open groupPolicy with full exec and elevated tools.
-- ציון כללי: 5.7/10 (weak)
-- משקל על המחשב הזה: moderate
-- הערכה: בנויה acceptable, מסורבלת מדי: לא, כבדה מדי: לא, רועשת מדי: לא, משאירה residue: כן, צריכה refactor: כן, מתאימה למחשב: yes
-- המלצה: improve later
-- הערת ביקורת: רץ בפועל ונראה יציב, אבל החשיפה לקבוצת טלגרם פתוחה עם exec מלא פוגעת קשות בבטיחות ובתחזוקתיות.
+- purpose: Primary OpenClaw runtime for Itzhak with Telegram and local dashboard.
+- owner: Itzhak
+- status: active
+- overall_score: 5.7/10 (weak)
+- weight: moderate
+- recommendation: improve later
+- needs_cleanup: yes
+- needs_redesign: no
+- last_checked: 2026-04-08T11:02:34.092Z
+- last_updated_if_known: 2026-04-07T15:28:45.140Z
+- dashboard_link_if_exists: https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html
+- workspace_path: C:\Users\Itzhak\.openclaw\workspace
+- key_risks: open telegram groupPolicy, full exec exposure, many config backup snapshots
+- short_summary: טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.
+- score_explanations: architecture=מבנה סביר, אבל רמת החשיפה גבוהה מדי.; clarity=המערכת מובנת חלקית, אך לא מספיק מבודדת.; safety=הבטיחות חלשה בגלל exec מלא בקבוצה פתוחה.
 
-## OpenClaw Openclaw Main
+## Openclaw Main Runtime
 
-- ייעוד: Secondary OpenClaw runtime for Openclaw user with its own Telegram bot and local dashboard.
-- בעלות: Openclaw
-- מצב: active
-- איפה יושב: C:\Users\OpenClaw\.openclaw\workspace
-- ממה מורכב: gateway, telegram channel, browser tooling, workspace, memory store
-- מה קשור: configs: C:\Users\Openclaw\.openclaw\openclaw.json, C:\ProgramData\OpenClaw\openclaw-Openclaw.cmd | tasks: OpenClaw - On Network Reconnect, OpenClaw Gateway - Itzhak, OpenClaw Gateway - Openclaw | ports: 18790, 18792, 57849 | files: C:\ProgramData\OpenClaw\openclaw-Openclaw.cmd, C:\Users\Openclaw\AppData\Roaming\npm\node_modules\openclaw\dist\index.js
-- שאריות/כפילויות: multiple openclaw.json.clobbered backups; config backup chain (.bak*)
-- נדרשת בדיקה ידנית: כן - Fallback model gemma4:e2b may require manual validation, and groupPolicy is open with full exec.
-- ציון כללי: 5.4/10 (weak)
-- משקל על המחשב הזה: moderate
-- הערכה: בנויה acceptable, מסורבלת מדי: לא, כבדה מדי: לא, רועשת מדי: לא, משאירה residue: כן, צריכה refactor: כן, מתאימה למחשב: yes
-- המלצה: manual review
-- הערת ביקורת: גם כאן הריצה פעילה, אבל יש חוסר בהירות סביב fallback model וחשיפת exec מלאה בקבוצות.
+- purpose: Secondary OpenClaw runtime for Openclaw user with Telegram and local dashboard.
+- owner: Openclaw
+- status: active
+- overall_score: 5.4/10 (weak)
+- weight: moderate
+- recommendation: manual review
+- needs_cleanup: yes
+- needs_redesign: no
+- last_checked: 2026-04-08T11:02:34.092Z
+- last_updated_if_known: 2026-04-07T13:34:35.928Z
+- dashboard_link_if_exists: https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html
+- workspace_path: C:\Users\OpenClaw\.openclaw\workspace
+- key_risks: open telegram groupPolicy, full exec exposure, fallback model not verified
+- short_summary: שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.
+- score_explanations: architecture=מבנה בסיסי תקין, אך יש חוסר בהירות סביב fallback.; clarity=הקריאות ניהולית בינונית.; safety=חשיפה בטיחותית גבוהה.
 
-## Workspace Custom Systems Cluster
+## Custom Workspace Cluster
 
-- ייעוד: Collection of custom-built systems found in the Itzhak OpenClaw workspace.
-- בעלות: Itzhak
-- מצב: unknown
-- איפה יושב: C:\Users\Itzhak\.openclaw\workspace
-- ממה מורכב: news-dashboard, image-team, backup-manager residue, smoke-test-build
-- מה קשור: files: C:\Users\Itzhak\.openclaw\workspace\image-team, C:\Users\Itzhak\.openclaw\workspace\news-dashboard, C:\Users\Itzhak\.openclaw\workspace\smoke-test-build
-- שאריות/כפילויות: deleted backup-manager tracked files in git status; deleted image-team run artifacts in git status; multiple experimental folders
-- נדרשת בדיקה ידנית: כן - Requires owner review to separate active projects from residue.
-- ציון כללי: 4/10 (weak)
-- משקל על המחשב הזה: heavy
-- הערכה: בנויה weak, מסורבלת מדי: כן, כבדה מדי: כן, רועשת מדי: כן, משאירה residue: כן, צריכה refactor: כן, מתאימה למחשב: partial
-- המלצה: needs cleanup
-- הערת ביקורת: זה אוסף פרויקטים ולא מערכת אחת נקייה. יש שאריות ב-git status וחוסר הפרדה ברור בין פעיל, ניסיוני ונטוש.
+- purpose: Mixed custom systems found in the Itzhak workspace.
+- owner: Itzhak
+- status: unknown
+- overall_score: 4/10 (weak)
+- weight: heavy
+- recommendation: needs cleanup
+- needs_cleanup: yes
+- needs_redesign: yes
+- last_checked: 2026-04-08T11:02:34.092Z
+- last_updated_if_known: unknown
+- dashboard_link_if_exists: unknown
+- workspace_path: C:\Users\Itzhak\.openclaw\workspace
+- key_risks: mixed active and stale projects, git residue, unclear ownership by subproject
+- short_summary: מעורבב מדי, כבד מדי, ולא מספיק ניהולי.
+- score_explanations: architecture=זה לא ארכיטקטורה אחת ברורה אלא צבר פרויקטים.; clarity=הבהירות נמוכה.; safety=לא זוהתה חשיפה כמו ברנטיימים, לכן מעט טוב יותר.
 
-## Residue וסיכוני תחזוקה
-
-- wrappers פעילים: C:\ProgramData\OpenClaw\openclaw-Itzhak.cmd, C:\ProgramData\OpenClaw\openclaw-Openclaw.cmd
-- wrappers/refs ישנים אפשריים: OpenClaw - On Network Reconnect, backup-manager, smoke-test-build, image-team/runs שנמחקו ב-git status
-- stale logs: commands.log וקבצי logs נוספים דורשים מדיניות רוטציה ידנית אם רוצים לצמצם משקל מקומי.
-- stale model refs: ב-Openclaw מוגדר fallback gemma4:e2b, לא אומת כמודל זמין רץ כעת.
-- stale backups refs: קיימים snapshotים רבים מסוג .bak ו-.clobbered בשני היוזרים.
-
-## קבצי פלט
+## Output Files
 
 - C:\Users\Itzhak\.openclaw\workspace\system-map\SYSTEM_MAP.md
 - C:\Users\Itzhak\.openclaw\workspace\system-map\systems.json
 - C:\Users\Itzhak\.openclaw\workspace\system-map\systems_review.json
 - C:\Users\Itzhak\.openclaw\workspace\system-map\dashboard-data.json
+- C:\Users\Itzhak\.openclaw\workspace\system-map\dashboard.html
