@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-04-08T10:22:22.885Z",
+  "reviews": [
+    {
+      "system_id": "openclaw-itzhak-main",
+      "name": "OpenClaw Itzhak Main",
+      "owner": "Itzhak",
+      "status": "active",
+      "overall_score": {
+        "score": 5.7,
+        "rating": "weak"
+      },
+      "weight_assessment": "moderate",
+      "recommendation": "improve later",
+      "fits_this_machine": "yes",
+      "notes": "רץ בפועל ונראה יציב, אבל החשיפה לקבוצת טלגרם פתוחה עם exec מלא פוגעת קשות בבטיחות ובתחזוקתיות.",
+      "scores": {
+        "architecture_score": {
+          "score": 6.5,
+          "rating": "acceptable"
+        },
+        "clarity_score": {
+          "score": 6,
+          "rating": "acceptable"
+        },
+        "runtime_weight_score": {
+          "score": 6.5,
+          "rating": "acceptable"
+        },
+        "resource_fit_score": {
+          "score": 7,
+          "rating": "acceptable"
+        },
+        "maintainability_score": {
+          "score": 5.5,
+          "rating": "weak"
+        },
+        "safety_score": {
+          "score": 2.5,
+          "rating": "critical"
+        },
+        "noise_score": {
+          "score": 5.5,
+          "rating": "weak"
+        },
+        "residue_risk_score": {
+          "score": 4.5,
+          "rating": "weak"
+        },
+        "reliability_score": {
+          "score": 7.5,
+          "rating": "good"
+        },
+        "overall_score": {
+          "score": 5.7,
+          "rating": "weak"
+        }
+      }
+    },
+    {
+      "system_id": "openclaw-openclaw-main",
+      "name": "OpenClaw Openclaw Main",
+      "owner": "Openclaw",
+      "status": "active",
+      "overall_score": {
+        "score": 5.4,
+        "rating": "weak"
+      },
+      "weight_assessment": "moderate",
+      "recommendation": "manual review",
+      "fits_this_machine": "yes",
+      "notes": "גם כאן הריצה פעילה, אבל יש חוסר בהירות סביב fallback model וחשיפת exec מלאה בקבוצות.",
+      "scores": {
+        "architecture_score": {
+          "score": 6,
+          "rating": "acceptable"
+        },
+        "clarity_score": {
+          "score": 5.5,
+          "rating": "weak"
+        },
+        "runtime_weight_score": {
+          "score": 6.5,
+          "rating": "acceptable"
+        },
+        "resource_fit_score": {
+          "score": 6.5,
+          "rating": "acceptable"
+        },
+        "maintainability_score": {
+          "score": 5,
+          "rating": "weak"
+        },
+        "safety_score": {
+          "score": 2.5,
+          "rating": "critical"
+        },
+        "noise_score": {
+          "score": 5.5,
+          "rating": "weak"
+        },
+        "residue_risk_score": {
+          "score": 4.5,
+          "rating": "weak"
+        },
+        "reliability_score": {
+          "score": 7,
+          "rating": "acceptable"
+        },
+        "overall_score": {
+          "score": 5.4,
+          "rating": "weak"
+        }
+      }
+    },
+    {
+      "system_id": "workspace-custom-systems",
+      "name": "Workspace Custom Systems Cluster",
+      "owner": "Itzhak",
+      "status": "unknown",
+      "overall_score": {
+        "score": 4,
+        "rating": "weak"
+      },
+      "weight_assessment": "heavy",
+      "recommendation": "needs cleanup",
+      "fits_this_machine": "partial",
+      "notes": "זה אוסף פרויקטים ולא מערכת אחת נקייה. יש שאריות ב-git status וחוסר הפרדה ברור בין פעיל, ניסיוני ונטוש.",
+      "scores": {
+        "architecture_score": {
+          "score": 4,
+          "rating": "weak"
+        },
+        "clarity_score": {
+          "score": 3.5,
+          "rating": "critical"
+        },
+        "runtime_weight_score": {
+          "score": 4.5,
+          "rating": "weak"
+        },
+        "resource_fit_score": {
+          "score": 4.5,
+          "rating": "weak"
+        },
+        "maintainability_score": {
+          "score": 3.5,
+          "rating": "critical"
+        },
+        "safety_score": {
+          "score": 6,
+          "rating": "acceptable"
+        },
+        "noise_score": {
+          "score": 3.5,
+          "rating": "critical"
+        },
+        "residue_risk_score": {
+          "score": 3,
+          "rating": "critical"
+        },
+        "reliability_score": {
+          "score": 3.5,
+          "rating": "critical"
+        },
+        "overall_score": {
+          "score": 4,
+          "rating": "weak"
+        }
+      }
+    }
+  ]
+}

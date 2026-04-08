@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-04-08T10:22:22.885Z",
+  "systems": [
+    {
+      "system_id": "openclaw-itzhak-main",
+      "name": "OpenClaw Itzhak Main",
+      "owner": "Itzhak",
+      "status": "active",
+      "overall_score": 5.7,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "recommendation": "improve later"
+    },
+    {
+      "system_id": "openclaw-openclaw-main",
+      "name": "OpenClaw Openclaw Main",
+      "owner": "Openclaw",
+      "status": "active",
+      "overall_score": 5.4,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "recommendation": "manual review"
+    },
+    {
+      "system_id": "workspace-custom-systems",
+      "name": "Workspace Custom Systems Cluster",
+      "owner": "Itzhak",
+      "status": "unknown",
+      "overall_score": 4,
+      "overall_rating": "weak",
+      "weight": "heavy",
+      "recommendation": "needs cleanup"
+    }
+  ],
+  "top_heavy_systems": [
+    "Workspace Custom Systems Cluster"
+  ],
+  "systems_with_repeated_failures": [
+    "Workspace Custom Systems Cluster"
+  ],
+  "systems_that_need_cleanup": [
+    "OpenClaw Itzhak Main",
+    "OpenClaw Openclaw Main",
+    "Workspace Custom Systems Cluster"
+  ],
+  "closest_to_10": [
+    {
+      "name": "OpenClaw Itzhak Main",
+      "overall_score": 5.7
+    },
+    {
+      "name": "OpenClaw Openclaw Main",
+      "overall_score": 5.4
+    },
+    {
+      "name": "Workspace Custom Systems Cluster",
+      "overall_score": 4
+    }
+  ],
+  "systems_needing_redesign": [
+    "Workspace Custom Systems Cluster"
+  ]
+}

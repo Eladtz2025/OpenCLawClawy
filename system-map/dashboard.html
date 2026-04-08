@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>System Map Dashboard</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; margin: 24px; background:#f6f7fb; color:#1f2937; }
+    h1,h2 { margin: 0 0 12px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:20px 0; }
+    .card { background:#fff; border-radius:14px; padding:16px; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+    .system { margin-bottom:16px; }
+    .meta { color:#6b7280; font-size:14px; margin:4px 0; }
+    .score { font-size:28px; font-weight:700; }
+    .badge { display:inline-block; padding:4px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; margin-left:6px; }
+    ul { margin:8px 0 0; padding-right:18px; }
+    .systems { display:grid; gap:14px; }
+  </style>
+</head>
+<body>
+  <h1>System Map Dashboard</h1>
+  <div class="grid">
+    <div class="card"><h2>מערכות</h2><div class="score">3</div></div>
+    <div class="card"><h2>כבדות</h2><div class="score">1</div></div>
+    <div class="card"><h2>צריכות ניקוי</h2><div class="score">2</div></div>
+    <div class="card"><h2>קרובות ל-10/10</h2><div class="score">3</div></div>
+  </div>
+
+  <div class="card">
+    <h2>כל המערכות</h2>
+    <div class="systems">
+      
+        <div class="system">
+          <div><strong>OpenClaw Itzhak Main</strong> <span class="badge">Itzhak</span><span class="badge">active</span><span class="badge">moderate</span></div>
+          <div class="meta">Primary OpenClaw runtime for Itzhak with Telegram access and local dashboard.</div>
+          <div class="meta">Overall score: 5.7</div>
+          <div class="meta">Recommendation: improve later</div>
+          <div>רץ בפועל ונראה יציב, אבל החשיפה לקבוצת טלגרם פתוחה עם exec מלא פוגעת קשות בבטיחות ובתחזוקתיות.</div>
+        </div>
+      
+        <div class="system">
+          <div><strong>OpenClaw Openclaw Main</strong> <span class="badge">Openclaw</span><span class="badge">active</span><span class="badge">moderate</span></div>
+          <div class="meta">Secondary OpenClaw runtime for Openclaw user with its own Telegram bot and local dashboard.</div>
+          <div class="meta">Overall score: 5.4</div>
+          <div class="meta">Recommendation: manual review</div>
+          <div>גם כאן הריצה פעילה, אבל יש חוסר בהירות סביב fallback model וחשיפת exec מלאה בקבוצות.</div>
+        </div>
+      
+        <div class="system">
+          <div><strong>Workspace Custom Systems Cluster</strong> <span class="badge">Itzhak</span><span class="badge">unknown</span><span class="badge">heavy</span></div>
+          <div class="meta">Collection of custom-built systems found in the Itzhak OpenClaw workspace.</div>
+          <div class="meta">Overall score: 4</div>
+          <div class="meta">Recommendation: needs cleanup</div>
+          <div>זה אוסף פרויקטים ולא מערכת אחת נקייה. יש שאריות ב-git status וחוסר הפרדה ברור בין פעיל, ניסיוני ונטוש.</div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h2>Top heavy systems</h2><ul><li>Workspace Custom Systems Cluster</li></ul></div>
+    <div class="card"><h2>Systems needing cleanup</h2><ul><li>OpenClaw Openclaw Main</li><li>Workspace Custom Systems Cluster</li></ul></div>
+    <div class="card"><h2>Systems needing redesign</h2><ul><li>Workspace Custom Systems Cluster</li></ul></div>
+    <div class="card"><h2>Closest to 10/10</h2><ul><li>OpenClaw Itzhak Main (5.7)</li><li>OpenClaw Openclaw Main (5.4)</li><li>Workspace Custom Systems Cluster (4)</li></ul></div>
+  </div>
+</body>
+</html>
