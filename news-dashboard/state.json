@@ -1,108 +1,130 @@
 {
-  "lastPublishedAt": "2026-04-05T04:34:19.137Z",
+  "lastPublishedAt": "2026-04-08T04:34:40.963Z",
   "latestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/site/latest.html",
   "publishedStories": [
     {
-      "id": "technology-anthropic-openclaw-pricing-2026-04-04",
+      "id": "technology-anthropic-compute-google-broadcom-2026-04-07",
       "category": "technology",
-      "title": "Anthropic תגבה תשלום נפרד על שימוש ב-Claude Code דרך OpenClaw וכלי צד ג'",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "Anthropic מרחיבה את עסקת המחשוב עם Google ו-Broadcom",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "technology-ai-music-copyright-verge-2026-04-04",
+      "id": "technology-nvidia-schedmd-slurm-reuters-2026-04-06",
       "category": "technology",
-      "title": "The Verge: מוזיקאית הפכה למטרה ל-AI fakes ולתביעות זכויות בעייתיות",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "רכישת SchedMD בידי Nvidia מעוררת חשש להטיה סביב Slurm",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "technology-drone-defense-techcrunch-2026-04-04",
+      "id": "technology-anthropic-mythos-glasswing-2026-04-07",
       "category": "technology",
-      "title": "TechCrunch: בכיר סייבר ותיק עובר ממלחמה במלware לעבודה על הגנת רחפנים",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "Anthropic חשפה preview למודל Mythos ביוזמת סייבר מצומצמת",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "israel-ynet-liveblog-iran-2026-04-05",
+      "id": "technology-google-ai-edge-eloquent-2026-04-06",
+      "category": "technology",
+      "title": "Google השיקה בשקט אפליקציית תמלול מקומית ל-iOS",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
+    },
+    {
+      "id": "israel-ynet-hormuz-escalation-2026-04-08",
       "category": "israel",
-      "title": "ynet: ירי לדרום ולצפון, בלי נפגעים; הזירה מול איראן ממשיכה להשתנות במהלך הלילה",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "בישראל נערכים להסלמה מול איראן אחרי כישלון מאמצי התיווך סביב הורמוז",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "israel-haaretz-hezbollah-analysis-2026-04-05",
+      "id": "israel-ynet-homefront-alerts-2026-04-08",
       "category": "israel",
-      "title": "הארץ: גם לפי הערכת מערכת הביטחון, פירוק חיזבאללה מנשקו לא נראה ישים כרגע",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "פיקוד העורף מזהיר מהתרחבות אזורי ההתרעה בעקבות שיגורים מאיראן",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "israel-partial-retrieval-note-2026-04-05",
+      "id": "israel-reuters-kharg-island-us-strike-2026-04-07",
       "category": "israel",
-      "title": "איסוף ישראל הבוקר נשאר חלקי — חלק מהמקורות הישירים חסומים בריצה הזו",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "Reuters: ארהב תקפה מטרות צבאיות באי ח'ארג באיראן",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "crypto-bitcoin-quantum-coindesk-2026-04-05",
+      "id": "israel-reuters-masnaa-border-crossing-2026-04-07",
+      "category": "israel",
+      "title": "Reuters: ישראל נמנעה בינתיים מתקיפה במעבר מסנעא בין סוריה ללבנון",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
+    },
+    {
+      "id": "crypto-coindesk-bitcoin-etf-inflows-2026-04-07",
       "category": "crypto",
-      "title": "CoinDesk: מרוץ ההקשחה הקוונטית של ביטקוין עולה שלב",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "תעודות הסל על ביטקוין רשמו יום זרימות חזק במיוחד",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "crypto-ethereum-foundation-staking-2026-04-03",
+      "id": "crypto-decrypt-cme-avax-sui-futures-2026-04-07",
       "category": "crypto",
-      "title": "Ethereum Foundation הזרימה כ-93 מיליון דולר ב-ETH ל-staking ומתקרבת ליעד",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "CME מתכננת להשיק חוזי AVAX ו-SUI לקראת מעבר למסחר 24/7",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "crypto-riot-sells-bitcoin-2026-04-03",
+      "id": "crypto-coindesk-bitcoin-69000-iran-deal-2026-04-07",
       "category": "crypto",
-      "title": "Riot Platforms מכרה יותר מ-250 מיליון דולר בביטקוין ברבעון הראשון",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "ביטקוין חזר מעל 69 אלף דולר על רקע תקווה לרגיעה גיאופוליטית",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "hapoel-fixture-hapoel-tel-aviv-2026-04-11",
+      "id": "hapoel-flashscore-fixture-attempt-2026-04-08",
       "category": "hapoel",
-      "title": "אין משחק היום; המשחק הבא של הפועל פתח תקווה הוא מול הפועל תל אביב ב-11.04 ב-20:00",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "נעשה ניסיון fixture-first ב-Flashscore, אבל השליפה נשארה חלשה",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     },
     {
-      "id": "hapoel-last-result-beer-sheva-2026-04-04",
+      "id": "hapoel-one-team-page-press-conference-2026-04-08",
       "category": "hapoel",
-      "title": "הפועל פתח תקווה סיימה ב-1:1 מול הפועל באר שבע ב-04.04",
-      "publishedAt": "2026-04-05T04:34:19.020Z"
+      "title": "ONE מציג דף קבוצה מעודכן להפועל פתח תקווה עם הכנה למשחק מול הפועל חיפה",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
+    },
+    {
+      "id": "hapoel-soccerway-squad-fixtures-2026-04-08",
+      "category": "hapoel",
+      "title": "Soccerway מאשר דף קבוצה פעיל אך לא סיפק פירוט fixture מלא בריצה",
+      "publishedAt": "2026-04-08T04:34:40.864Z"
     }
   ],
   "categories": {
     "technology": {
       "lastIds": [
-        "technology-anthropic-openclaw-pricing-2026-04-04",
-        "technology-ai-music-copyright-verge-2026-04-04",
-        "technology-drone-defense-techcrunch-2026-04-04"
+        "technology-anthropic-compute-google-broadcom-2026-04-07",
+        "technology-nvidia-schedmd-slurm-reuters-2026-04-06",
+        "technology-anthropic-mythos-glasswing-2026-04-07",
+        "technology-google-ai-edge-eloquent-2026-04-06"
       ],
-      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
+      "lastUpdatedAt": "2026-04-08T04:34:40.864Z"
     },
     "israel": {
       "lastIds": [
-        "israel-ynet-liveblog-iran-2026-04-05",
-        "israel-haaretz-hezbollah-analysis-2026-04-05",
-        "israel-partial-retrieval-note-2026-04-05"
+        "israel-ynet-hormuz-escalation-2026-04-08",
+        "israel-ynet-homefront-alerts-2026-04-08",
+        "israel-reuters-kharg-island-us-strike-2026-04-07",
+        "israel-reuters-masnaa-border-crossing-2026-04-07"
       ],
-      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
+      "lastUpdatedAt": "2026-04-08T04:34:40.864Z"
     },
     "crypto": {
       "lastIds": [
-        "crypto-bitcoin-quantum-coindesk-2026-04-05",
-        "crypto-ethereum-foundation-staking-2026-04-03",
-        "crypto-riot-sells-bitcoin-2026-04-03"
+        "crypto-coindesk-bitcoin-etf-inflows-2026-04-07",
+        "crypto-decrypt-cme-avax-sui-futures-2026-04-07",
+        "crypto-coindesk-bitcoin-69000-iran-deal-2026-04-07"
       ],
-      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
+      "lastUpdatedAt": "2026-04-08T04:34:40.864Z"
     },
     "hapoel": {
       "lastIds": [
-        "hapoel-fixture-hapoel-tel-aviv-2026-04-11",
-        "hapoel-last-result-beer-sheva-2026-04-04"
+        "hapoel-flashscore-fixture-attempt-2026-04-08",
+        "hapoel-one-team-page-press-conference-2026-04-08",
+        "hapoel-soccerway-squad-fixtures-2026-04-08"
       ],
-      "lastUpdatedAt": "2026-04-05T04:34:19.020Z"
+      "lastUpdatedAt": "2026-04-08T04:34:40.864Z"
     }
   },
   "archive": [
+    "2026-04-08.html",
     "2026-04-05.html",
     "2026-04-04.html"
   ]
