@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T11:02:34.092Z",
+  "generated_at": "2026-04-08T11:57:45.955Z",
   "scan_scope": [
     "C:\\Users\\Itzhak",
     "C:\\Users\\Openclaw"
@@ -8,9 +8,9 @@
     {
       "system_id": "openclaw-itzhak-main",
       "name": "OpenClaw Itzhak Main",
-      "display_name": "Itzhak Main Runtime",
+      "display_name": "Main Bot, Itzhak",
       "owner": "Itzhak",
-      "purpose": "Primary OpenClaw runtime for Itzhak with Telegram and local dashboard.",
+      "purpose": "Primary OpenClaw bot.",
       "status": "active",
       "overall_score": 5.7,
       "overall_rating": "weak",
@@ -18,16 +18,17 @@
       "recommendation": "improve later",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_checked": "2026-04-08T11:57:45.955Z",
       "last_updated_if_known": "2026-04-07T15:28:45.140Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
       "key_risks": [
-        "open telegram groupPolicy",
-        "full exec exposure",
-        "many config backup snapshots"
+        "open group access",
+        "full exec",
+        "config residue"
       ],
-      "short_summary": "טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.",
+      "short_summary": "Works, but safety is weak.",
       "source_details": {
         "related_ports": [
           18789,
@@ -62,9 +63,9 @@
     {
       "system_id": "openclaw-openclaw-main",
       "name": "OpenClaw Openclaw Main",
-      "display_name": "Openclaw Main Runtime",
+      "display_name": "Main Bot, Openclaw",
       "owner": "Openclaw",
-      "purpose": "Secondary OpenClaw runtime for Openclaw user with Telegram and local dashboard.",
+      "purpose": "Secondary OpenClaw bot.",
       "status": "active",
       "overall_score": 5.4,
       "overall_rating": "weak",
@@ -72,16 +73,17 @@
       "recommendation": "manual review",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_checked": "2026-04-08T11:57:45.955Z",
       "last_updated_if_known": "2026-04-07T13:34:35.928Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "workspace_path": "C:\\Users\\OpenClaw\\.openclaw\\workspace",
       "key_risks": [
-        "open telegram groupPolicy",
-        "full exec exposure",
-        "fallback model not verified"
+        "open group access",
+        "full exec",
+        "unverified fallback"
       ],
-      "short_summary": "שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.",
+      "short_summary": "Usable, but needs review.",
       "source_details": {
         "related_ports": [
           18790,
@@ -99,9 +101,9 @@
     {
       "system_id": "workspace-custom-systems",
       "name": "Workspace Custom Systems Cluster",
-      "display_name": "Custom Workspace Cluster",
+      "display_name": "Custom Projects Cluster",
       "owner": "Itzhak",
-      "purpose": "Mixed custom systems found in the Itzhak workspace.",
+      "purpose": "Mixed custom workspace projects.",
       "status": "unknown",
       "overall_score": 4,
       "overall_rating": "weak",
@@ -109,16 +111,17 @@
       "recommendation": "needs cleanup",
       "needs_cleanup": true,
       "needs_redesign": true,
-      "last_checked": "2026-04-08T11:02:34.092Z",
+      "last_checked": "2026-04-08T11:57:45.955Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
       "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
       "key_risks": [
-        "mixed active and stale projects",
+        "mixed active and stale work",
         "git residue",
-        "unclear ownership by subproject"
+        "unclear boundaries"
       ],
-      "short_summary": "מעורבב מדי, כבד מדי, ולא מספיק ניהולי.",
+      "short_summary": "Messy and hard to manage.",
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
@@ -128,11 +131,11 @@
   ],
   "residue_summary": {
     "config_backup_indicators": [
-      "Itzhak: openclaw.json.bak, .bak.1-.bak.4, multiple .clobbered snapshots",
-      "Openclaw: openclaw.json.bak, .bak.1-.bak.4, multiple .clobbered snapshots"
+      "Itzhak: many bak/clobbered snapshots",
+      "Openclaw: many bak/clobbered snapshots"
     ],
     "stale_or_missing_model_refs": [
-      "Openclaw fallback model ollama/gemma4:e2b not confirmed in running Ollama process list"
+      "Openclaw fallback model ollama/gemma4:e2b not confirmed in process scan"
     ],
     "stale_tasks": [
       "OpenClaw - On Network Reconnect"

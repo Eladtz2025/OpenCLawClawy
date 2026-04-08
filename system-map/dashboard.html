@@ -6,159 +6,135 @@
   <title>System Map Dashboard</title>
   <style>
     :root {
-      --bg:#f3f6fb;
-      --card:#ffffff;
-      --text:#172033;
-      --muted:#62708a;
-      --line:#e4e9f2;
-      --green:#e7f7ee;
-      --green-t:#146c43;
-      --blue:#eaf2ff;
-      --blue-t:#2157b4;
-      --amber:#fff3dd;
-      --amber-t:#9a6500;
-      --red:#fdeaea;
-      --red-t:#b42318;
-      --gray:#eef1f5;
-      --gray-t:#516071;
+      --bg:#f4f7fb;
+      --card:#fff;
+      --text:#162033;
+      --muted:#66758b;
+      --line:#e5eaf2;
+      --ok:#e8f7ee; --ok-t:#136c43;
+      --info:#eaf2ff; --info-t:#1e58b7;
+      --warn:#fff4de; --warn-t:#9b6400;
+      --bad:#fdeceb; --bad-t:#b42318;
+      --mutedbg:#eef2f6; --mutedt:#5d6a7b;
     }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Segoe UI, Arial, sans-serif; background:var(--bg); color:var(--text); }
-    .wrap { max-width:1100px; margin:0 auto; padding:20px 14px 40px; }
-    .hero, .panel, .system-card { background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:0 6px 18px rgba(20,32,51,.05); }
-    .hero { padding:20px; margin-bottom:16px; }
-    h1 { margin:0 0 8px; font-size:28px; }
-    h2 { margin:0 0 12px; font-size:18px; }
-    .sub { color:var(--muted); font-size:14px; }
-    .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:16px; }
-    .stat { background:#f8faff; border:1px solid var(--line); border-radius:14px; padding:14px; }
-    .stat .n { font-size:28px; font-weight:700; }
-    .layout { display:grid; grid-template-columns:1.1fr .9fr; gap:16px; margin-bottom:16px; }
-    .panel { padding:16px; }
-    ul { margin:0; padding-right:18px; }
-    li { margin:6px 0; }
-    .systems { display:grid; gap:14px; }
-    .system-card { padding:16px; }
-    .topline { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px; }
-    .title { font-size:18px; font-weight:700; }
-    .badge { display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:600; }
-    .green { background:var(--green); color:var(--green-t); }
-    .blue { background:var(--blue); color:var(--blue-t); }
-    .amber { background:var(--amber); color:var(--amber-t); }
-    .red { background:var(--red); color:var(--red-t); }
-    .gray { background:var(--gray); color:var(--gray-t); }
-    .meta { color:var(--muted); font-size:13px; margin:4px 0; }
-    .summary { margin:10px 0; font-size:14px; }
-    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
-    .mini { background:#f8faff; border:1px solid var(--line); border-radius:12px; padding:10px; font-size:13px; }
-    .empty { color:var(--muted); font-size:14px; }
-    a { color:#2157b4; text-decoration:none; }
-    @media (max-width: 820px) {
-      .stats, .layout, .grid2 { grid-template-columns:1fr; }
-      h1 { font-size:24px; }
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1120px;margin:0 auto;padding:18px 14px 40px}
+    .hero,.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 24px rgba(22,32,51,.06)}
+    .hero{padding:20px;margin-bottom:16px}
+    h1{margin:0 0 6px;font-size:28px}
+    h2{margin:0 0 12px;font-size:18px}
+    .sub{color:var(--muted);font-size:14px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+    .stat{background:#f9fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .n{font-size:28px;font-weight:700}
+    .section{margin-bottom:16px}
+    .panel{padding:16px}
+    .cards{display:grid;gap:14px}
+    .card{padding:16px}
+    .top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+    .title{font-size:18px;font-weight:700}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
+    .ok{background:var(--ok);color:var(--ok-t)}
+    .info{background:var(--info);color:var(--info-t)}
+    .warn{background:var(--warn);color:var(--warn-t)}
+    .bad{background:var(--bad);color:var(--bad-t)}
+    .muted{background:var(--mutedbg);color:var(--mutedt)}
+    .meta{color:var(--muted);font-size:13px}
+    .summary{margin:10px 0 12px;font-size:14px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mini{background:#f9fbff;border:1px solid var(--line);border-radius:14px;padding:10px;font-size:13px}
+    .mini strong{display:block;margin-bottom:4px}
+    ul{margin:0;padding-right:18px}
+    li{margin:6px 0}
+    a{color:#1e58b7;text-decoration:none;font-weight:600}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .empty{color:var(--muted);font-size:14px}
+    @media (max-width:820px){.stats,.two,.row{grid-template-columns:1fr}h1{font-size:24px}.wrap{padding:14px 10px 32px}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <section class="hero">
+    <section class="hero section">
       <h1>System Map</h1>
-      <div class="sub">מיפוי וביקורת שמרניים לכל מערכות OpenClaw שזוהו.</div>
+      <div class="sub">Dashboard קל, מהיר וברור לניהול מערכות OpenClaw.</div>
       <div class="stats">
         <div class="stat"><div class="n">3</div><div class="sub">מערכות</div></div>
         <div class="stat"><div class="n">1</div><div class="sub">כבדות</div></div>
         <div class="stat"><div class="n">3</div><div class="sub">דורשות ניקוי</div></div>
-        <div class="stat"><div class="n">0</div><div class="sub">קרובות ל-10/10</div></div>
+        <div class="stat"><div class="n">3</div><div class="sub">קרובות ל-10/10</div></div>
       </div>
     </section>
 
-    <div class="layout">
-      <section class="panel">
-        <h2>Top priorities</h2>
-        <ul><li>Itzhak Main Runtime <span class="sub">(improve later)</span></li><li>Openclaw Main Runtime <span class="sub">(manual review)</span></li><li>Custom Workspace Cluster <span class="sub">(needs cleanup)</span></li></ul>
-      </section>
-      <section class="panel">
-        <h2>דורש טיפול עכשיו</h2>
-        <ul><li>Custom Workspace Cluster</li></ul>
-      </section>
-    </div>
+    <section class="panel section">
+      <h2>דורש טיפול עכשיו</h2>
+      <ul><li>Custom Projects Cluster</li></ul>
+    </section>
 
-    <div class="layout">
-      <section class="panel">
-        <h2>Top heavy systems</h2>
-        <ul><li>Custom Workspace Cluster</li></ul>
-      </section>
-      <section class="panel">
-        <h2>Systems needing cleanup</h2>
-        <ul><li>Itzhak Main Runtime</li><li>Openclaw Main Runtime</li><li>Custom Workspace Cluster</li></ul>
-      </section>
-    </div>
-
-    <div class="layout">
-      <section class="panel">
-        <h2>Systems needing redesign</h2>
-        <ul><li>Custom Workspace Cluster</li></ul>
-      </section>
-      <section class="panel">
-        <h2>Closest to 10/10</h2>
-        <ul><li>Itzhak Main Runtime <span class="sub">(5.7)</span></li><li>Openclaw Main Runtime <span class="sub">(5.4)</span></li><li>Custom Workspace Cluster <span class="sub">(4)</span></li></ul>
-      </section>
-    </div>
-
-    <section class="systems">
+    <section class="cards section">
       
-        <article class="system-card">
-          <div class="topline">
-            <div class="title">Itzhak Main Runtime</div>
-            <span class="badge green">active</span>
-            <span class="badge blue">moderate</span>
-            <span class="badge blue">score 5.7</span>
+        <article class="card">
+          <div class="top">
+            <div class="title">Main Bot, Itzhak</div>
+            <span class="badge ok">active</span>
+            <span class="badge info">moderate</span>
+            <span class="badge info">5.7/10</span>
           </div>
-          <div class="meta">Itzhak · Primary OpenClaw runtime for Itzhak with Telegram and local dashboard.</div>
-          <div class="summary">טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.</div>
-          <div class="grid2">
-            <div class="mini"><strong>Recommendation</strong><br>improve later</div>
-            <div class="mini"><strong>Key risks</strong><br>open telegram groupPolicy, full exec exposure, many config backup snapshots</div>
-            <div class="mini"><strong>Workspace</strong><br>C:\Users\Itzhak\.openclaw\workspace</div>
-            <div class="mini"><strong>Dashboard</strong><br><a href="https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html">open</a></div>
+          <div class="meta">Itzhak · Primary OpenClaw bot.</div>
+          <div class="summary">Works, but safety is weak.</div>
+          <div class="row">
+            <div class="mini"><strong>Recommendation</strong>improve later</div>
+            <div class="mini"><strong>Key risks</strong>open group access, full exec, config residue</div>
+            <div class="mini"><strong>Action</strong><a href="https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html">Open</a></div>
+            <div class="mini"><strong>Workspace</strong>C:\Users\Itzhak\.openclaw\workspace</div>
           </div>
         </article>
       
-        <article class="system-card">
-          <div class="topline">
-            <div class="title">Openclaw Main Runtime</div>
-            <span class="badge green">active</span>
-            <span class="badge blue">moderate</span>
-            <span class="badge blue">score 5.4</span>
+        <article class="card">
+          <div class="top">
+            <div class="title">Main Bot, Openclaw</div>
+            <span class="badge ok">active</span>
+            <span class="badge info">moderate</span>
+            <span class="badge info">5.4/10</span>
           </div>
-          <div class="meta">Openclaw · Secondary OpenClaw runtime for Openclaw user with Telegram and local dashboard.</div>
-          <div class="summary">שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.</div>
-          <div class="grid2">
-            <div class="mini"><strong>Recommendation</strong><br>manual review</div>
-            <div class="mini"><strong>Key risks</strong><br>open telegram groupPolicy, full exec exposure, fallback model not verified</div>
-            <div class="mini"><strong>Workspace</strong><br>C:\Users\OpenClaw\.openclaw\workspace</div>
-            <div class="mini"><strong>Dashboard</strong><br><a href="https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html">open</a></div>
+          <div class="meta">Openclaw · Secondary OpenClaw bot.</div>
+          <div class="summary">Usable, but needs review.</div>
+          <div class="row">
+            <div class="mini"><strong>Recommendation</strong>manual review</div>
+            <div class="mini"><strong>Key risks</strong>open group access, full exec, unverified fallback</div>
+            <div class="mini"><strong>Action</strong><a href="https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html">Open</a></div>
+            <div class="mini"><strong>Workspace</strong>C:\Users\OpenClaw\.openclaw\workspace</div>
           </div>
         </article>
       
-        <article class="system-card">
-          <div class="topline">
-            <div class="title">Custom Workspace Cluster</div>
-            <span class="badge amber">unknown</span>
-            <span class="badge amber">heavy</span>
-            <span class="badge blue">score 4</span>
+        <article class="card">
+          <div class="top">
+            <div class="title">Custom Projects Cluster</div>
+            <span class="badge warn">unknown</span>
+            <span class="badge warn">heavy</span>
+            <span class="badge info">4/10</span>
           </div>
-          <div class="meta">Itzhak · Mixed custom systems found in the Itzhak workspace.</div>
-          <div class="summary">מעורבב מדי, כבד מדי, ולא מספיק ניהולי.</div>
-          <div class="grid2">
-            <div class="mini"><strong>Recommendation</strong><br>needs cleanup</div>
-            <div class="mini"><strong>Key risks</strong><br>mixed active and stale projects, git residue, unclear ownership by subproject</div>
-            <div class="mini"><strong>Workspace</strong><br>C:\Users\Itzhak\.openclaw\workspace</div>
-            <div class="mini"><strong>Dashboard</strong><br>unknown</div>
+          <div class="meta">Itzhak · Mixed custom workspace projects.</div>
+          <div class="summary">Messy and hard to manage.</div>
+          <div class="row">
+            <div class="mini"><strong>Recommendation</strong>needs cleanup</div>
+            <div class="mini"><strong>Key risks</strong>mixed active and stale work, git residue, unclear boundaries</div>
+            <div class="mini"><strong>Action</strong>unknown</div>
+            <div class="mini"><strong>Workspace</strong>C:\Users\Itzhak\.openclaw\workspace</div>
           </div>
         </article>
       
     </section>
+
+    <div class="two section">
+      <section class="panel"><h2>Heavy systems</h2><ul><li>Custom Projects Cluster</li></ul></section>
+      <section class="panel"><h2>Cleanup</h2><ul><li>Main Bot, Itzhak</li><li>Main Bot, Openclaw</li><li>Custom Projects Cluster</li></ul></section>
+    </div>
+
+    <div class="two section">
+      <section class="panel"><h2>Redesign</h2><ul><li>Custom Projects Cluster</li></ul></section>
+      <section class="panel"><h2>Closest to 10/10</h2><ul><li>Main Bot, Itzhak (5.7)</li><li>Main Bot, Openclaw (5.4)</li><li>Custom Projects Cluster (4)</li></ul></section>
+    </div>
   </div>
 </body>
 </html>

@@ -1,17 +1,17 @@
 # SYSTEM_MAP
 
-מיפוי, ביקורת ודירוג שמרני של מערכות OpenClaw והמערכות הקשורות שנמצאו תחת Itzhak ו-Openclaw. הסריקה הייתה לקריאה בלבד.
+Conservative mapping and review of detected OpenClaw systems.
 
-## תמונת מצב
+## Summary
 
-- מערכות שזוהו: 3
-- מערכות כבדות: 1
-- מערכות שדורשות ניקוי: 3
-- מערכות קרובות ל-10/10: 0
+- Systems: 3
+- Heavy: 1
+- Needs cleanup: 3
+- Near 10/10: 0
 
-## Itzhak Main Runtime
+## Main Bot, Itzhak
 
-- purpose: Primary OpenClaw runtime for Itzhak with Telegram and local dashboard.
+- purpose: Primary OpenClaw bot.
 - owner: Itzhak
 - status: active
 - overall_score: 5.7/10 (weak)
@@ -19,17 +19,17 @@
 - recommendation: improve later
 - needs_cleanup: yes
 - needs_redesign: no
-- last_checked: 2026-04-08T11:02:34.092Z
+- last_checked: 2026-04-08T11:57:45.955Z
 - last_updated_if_known: 2026-04-07T15:28:45.140Z
-- dashboard_link_if_exists: https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html
+- action_link: https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html
 - workspace_path: C:\Users\Itzhak\.openclaw\workspace
-- key_risks: open telegram groupPolicy, full exec exposure, many config backup snapshots
-- short_summary: טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.
-- score_explanations: architecture=מבנה סביר, אבל רמת החשיפה גבוהה מדי.; clarity=המערכת מובנת חלקית, אך לא מספיק מבודדת.; safety=הבטיחות חלשה בגלל exec מלא בקבוצה פתוחה.
+- key_risks: open group access, full exec, config residue
+- short_summary: Works, but safety is weak.
+- score_explanations: architecture=Reasonable structure, weak exposure control.; clarity=Understandable, but not clean enough.; safety=Open group with full exec is unsafe.
 
-## Openclaw Main Runtime
+## Main Bot, Openclaw
 
-- purpose: Secondary OpenClaw runtime for Openclaw user with Telegram and local dashboard.
+- purpose: Secondary OpenClaw bot.
 - owner: Openclaw
 - status: active
 - overall_score: 5.4/10 (weak)
@@ -37,17 +37,17 @@
 - recommendation: manual review
 - needs_cleanup: yes
 - needs_redesign: no
-- last_checked: 2026-04-08T11:02:34.092Z
+- last_checked: 2026-04-08T11:57:45.955Z
 - last_updated_if_known: 2026-04-07T13:34:35.928Z
-- dashboard_link_if_exists: https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html
+- action_link: https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html
 - workspace_path: C:\Users\OpenClaw\.openclaw\workspace
-- key_risks: open telegram groupPolicy, full exec exposure, fallback model not verified
-- short_summary: שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.
-- score_explanations: architecture=מבנה בסיסי תקין, אך יש חוסר בהירות סביב fallback.; clarity=הקריאות ניהולית בינונית.; safety=חשיפה בטיחותית גבוהה.
+- key_risks: open group access, full exec, unverified fallback
+- short_summary: Usable, but needs review.
+- score_explanations: architecture=Basic structure is okay.; clarity=Management clarity is only medium.; safety=Same unsafe exposure profile.
 
-## Custom Workspace Cluster
+## Custom Projects Cluster
 
-- purpose: Mixed custom systems found in the Itzhak workspace.
+- purpose: Mixed custom workspace projects.
 - owner: Itzhak
 - status: unknown
 - overall_score: 4/10 (weak)
@@ -55,15 +55,15 @@
 - recommendation: needs cleanup
 - needs_cleanup: yes
 - needs_redesign: yes
-- last_checked: 2026-04-08T11:02:34.092Z
+- last_checked: 2026-04-08T11:57:45.955Z
 - last_updated_if_known: unknown
-- dashboard_link_if_exists: unknown
+- action_link: unknown
 - workspace_path: C:\Users\Itzhak\.openclaw\workspace
-- key_risks: mixed active and stale projects, git residue, unclear ownership by subproject
-- short_summary: מעורבב מדי, כבד מדי, ולא מספיק ניהולי.
-- score_explanations: architecture=זה לא ארכיטקטורה אחת ברורה אלא צבר פרויקטים.; clarity=הבהירות נמוכה.; safety=לא זוהתה חשיפה כמו ברנטיימים, לכן מעט טוב יותר.
+- key_risks: mixed active and stale work, git residue, unclear boundaries
+- short_summary: Messy and hard to manage.
+- score_explanations: architecture=Not one clean architecture.; clarity=Low clarity.; safety=Less exposed than the bots.
 
-## Output Files
+## Files
 
 - C:\Users\Itzhak\.openclaw\workspace\system-map\SYSTEM_MAP.md
 - C:\Users\Itzhak\.openclaw\workspace\system-map\systems.json

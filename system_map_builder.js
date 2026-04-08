@@ -62,9 +62,7 @@ const customWorkspaceHits = workspacePaths.filter(p => /news-dashboard|image-tea
 
 function scoreCard(values, explanations) {
   const scored = {};
-  for (const [k, v] of Object.entries(values)) {
-    scored[k] = { score: v, rating: grade(v), explanation: explanations[k] || 'unknown' };
-  }
+  for (const [k, v] of Object.entries(values)) scored[k] = { score: v, rating: grade(v), explanation: explanations[k] || 'unknown' };
   return scored;
 }
 
@@ -77,9 +75,9 @@ const rawSystems = [
   {
     system_id: 'openclaw-itzhak-main',
     name: 'OpenClaw Itzhak Main',
-    display_name: 'Itzhak Main Runtime',
+    display_name: 'Main Bot, Itzhak',
     owner: 'Itzhak',
-    purpose: 'Primary OpenClaw runtime for Itzhak with Telegram and local dashboard.',
+    purpose: 'Primary OpenClaw bot.',
     status: 'active',
     workspace_path: itzhakCfg?.agents?.defaults?.workspace || 'unknown',
     related_ports: uniq([...(portsByPid[itzhakPid] || []), 18789, 18791]).sort((a,b)=>a-b),
@@ -87,20 +85,17 @@ const rawSystems = [
     related_cron_jobs: uniq(cronPaths.filter(p => p.startsWith('C:\\Users\\Itzhak\\.openclaw\\cron'))),
     last_updated_if_known: itzhakCfg?.meta?.lastTouchedAt || 'unknown',
     dashboard_link_if_exists: publicDashboard,
-    key_risks: [
-      'open telegram groupPolicy',
-      'full exec exposure',
-      'many config backup snapshots'
-    ],
-    short_summary: 'רץ בפועל ודי ברור, אבל פתוח מדי ובעל שאריות קונפיג.',
+    action_link: publicDashboard,
+    key_risks: ['open group access', 'full exec', 'config residue'],
+    short_summary: 'Stable, but too open.',
     estimated_weight: 'moderate'
   },
   {
     system_id: 'openclaw-openclaw-main',
     name: 'OpenClaw Openclaw Main',
-    display_name: 'Openclaw Main Runtime',
+    display_name: 'Main Bot, Openclaw',
     owner: 'Openclaw',
-    purpose: 'Secondary OpenClaw runtime for Openclaw user with Telegram and local dashboard.',
+    purpose: 'Secondary OpenClaw bot.',
     status: 'active',
     workspace_path: openclawCfg?.agents?.defaults?.workspace || 'unknown',
     related_ports: uniq([...(portsByPid[openclawPid] || []), 18790, 18792]).sort((a,b)=>a-b),
@@ -108,20 +103,17 @@ const rawSystems = [
     related_cron_jobs: uniq(cronPaths.filter(p => p.startsWith('C:\\Users\\Openclaw\\.openclaw\\cron'))),
     last_updated_if_known: openclawCfg?.meta?.lastTouchedAt || 'unknown',
     dashboard_link_if_exists: publicDashboard,
-    key_risks: [
-      'open telegram groupPolicy',
-      'full exec exposure',
-      'fallback model not verified'
-    ],
-    short_summary: 'פעיל ושמיש, אבל בטיחות חלשה וחלק מהקונפיג לא מאומת.',
+    action_link: publicDashboard,
+    key_risks: ['open group access', 'full exec', 'unverified fallback'],
+    short_summary: 'Useful, but not tight enough.',
     estimated_weight: 'moderate'
   },
   {
     system_id: 'workspace-custom-systems',
     name: 'Workspace Custom Systems Cluster',
-    display_name: 'Custom Workspace Cluster',
+    display_name: 'Custom Projects Cluster',
     owner: 'Itzhak',
-    purpose: 'Mixed custom systems found in the Itzhak workspace.',
+    purpose: 'Mixed custom workspace projects.',
     status: 'unknown',
     workspace_path: 'C:\\Users\\Itzhak\\.openclaw\\workspace',
     related_ports: [],
@@ -129,103 +121,28 @@ const rawSystems = [
     related_cron_jobs: [],
     last_updated_if_known: 'unknown',
     dashboard_link_if_exists: 'unknown',
-    key_risks: [
-      'mixed active and stale projects',
-      'git residue',
-      'unclear ownership by subproject'
-    ],
-    short_summary: 'אוסף פרויקטים מעורבב, לא מערכת אחת נקייה.',
+    action_link: 'unknown',
+    key_risks: ['mixed active and stale work', 'git residue', 'unclear boundaries'],
+    short_summary: 'Too mixed and too noisy.',
     estimated_weight: 'heavy'
   }
 ];
 
 const reviewInputs = {
   'openclaw-itzhak-main': {
-    scores: {
-      architecture_score: 6.5,
-      clarity_score: 6.0,
-      runtime_weight_score: 6.5,
-      resource_fit_score: 7.0,
-      maintainability_score: 5.5,
-      safety_score: 2.5,
-      noise_score: 5.5,
-      residue_risk_score: 4.5,
-      reliability_score: 7.5
-    },
-    explanations: {
-      architecture_score: 'מבנה סביר, אבל רמת החשיפה גבוהה מדי.',
-      clarity_score: 'המערכת מובנת חלקית, אך לא מספיק מבודדת.',
-      runtime_weight_score: 'המשקל סביר ביחס להרצה שוטפת.',
-      resource_fit_score: 'מתאים למחשב הזה בלי עומס חריג.',
-      maintainability_score: 'יש קבצי גיבוי ושאריות שמכבידים על ניהול.',
-      safety_score: 'הבטיחות חלשה בגלל exec מלא בקבוצה פתוחה.',
-      noise_score: 'רעש בינוני, לא קיצוני.',
-      residue_risk_score: 'יש סיכון residue ממשי אבל לא קיצוני.',
-      reliability_score: 'נראה רץ ויציב בפועל.'
-    },
-    weight: 'moderate',
-    recommendation: 'improve later',
-    needs_cleanup: true,
-    needs_redesign: false,
-    summary: 'טוב תפעולית, חלש בבטיחות ובניקיון קונפיג.'
+    scores: { architecture_score: 6.5, clarity_score: 6.0, runtime_weight_score: 6.5, resource_fit_score: 7.0, maintainability_score: 5.5, safety_score: 2.5, noise_score: 5.5, residue_risk_score: 4.5, reliability_score: 7.5 },
+    explanations: { architecture_score: 'Reasonable structure, weak exposure control.', clarity_score: 'Understandable, but not clean enough.', runtime_weight_score: 'Runtime weight is fair.', resource_fit_score: 'Fits this machine well enough.', maintainability_score: 'Backup clutter hurts upkeep.', safety_score: 'Open group with full exec is unsafe.', noise_score: 'Moderate noise level.', residue_risk_score: 'Residual config clutter exists.', reliability_score: 'Running and appears stable.' },
+    weight: 'moderate', recommendation: 'improve later', needs_cleanup: true, needs_redesign: false, summary: 'Works, but safety is weak.'
   },
   'openclaw-openclaw-main': {
-    scores: {
-      architecture_score: 6.0,
-      clarity_score: 5.5,
-      runtime_weight_score: 6.5,
-      resource_fit_score: 6.5,
-      maintainability_score: 5.0,
-      safety_score: 2.5,
-      noise_score: 5.5,
-      residue_risk_score: 4.5,
-      reliability_score: 7.0
-    },
-    explanations: {
-      architecture_score: 'מבנה בסיסי תקין, אך יש חוסר בהירות סביב fallback.',
-      clarity_score: 'הקריאות ניהולית בינונית.',
-      runtime_weight_score: 'לא נראה כבד מדי.',
-      resource_fit_score: 'מתאים למחשב הזה ברמה סבירה.',
-      maintainability_score: 'לא מספיק נקי ולא מספיק חד-משמעי.',
-      safety_score: 'חשיפה בטיחותית גבוהה.',
-      noise_score: 'רעש בינוני.',
-      residue_risk_score: 'שאריות קונפיג קיימות.',
-      reliability_score: 'רץ, אך חלק מהבסיס לא מאומת.'
-    },
-    weight: 'moderate',
-    recommendation: 'manual review',
-    needs_cleanup: true,
-    needs_redesign: false,
-    summary: 'שימושי, אבל לא מספיק מהודק ולא מספיק בטוח.'
+    scores: { architecture_score: 6.0, clarity_score: 5.5, runtime_weight_score: 6.5, resource_fit_score: 6.5, maintainability_score: 5.0, safety_score: 2.5, noise_score: 5.5, residue_risk_score: 4.5, reliability_score: 7.0 },
+    explanations: { architecture_score: 'Basic structure is okay.', clarity_score: 'Management clarity is only medium.', runtime_weight_score: 'Not too heavy.', resource_fit_score: 'Fair fit for this machine.', maintainability_score: 'Still not clean enough.', safety_score: 'Same unsafe exposure profile.', noise_score: 'Moderate noise.', residue_risk_score: 'Config residue remains.', reliability_score: 'Active, but parts are unverified.' },
+    weight: 'moderate', recommendation: 'manual review', needs_cleanup: true, needs_redesign: false, summary: 'Usable, but needs review.'
   },
   'workspace-custom-systems': {
-    scores: {
-      architecture_score: 4.0,
-      clarity_score: 3.5,
-      runtime_weight_score: 4.5,
-      resource_fit_score: 4.5,
-      maintainability_score: 3.5,
-      safety_score: 6.0,
-      noise_score: 3.5,
-      residue_risk_score: 3.0,
-      reliability_score: 3.5
-    },
-    explanations: {
-      architecture_score: 'זה לא ארכיטקטורה אחת ברורה אלא צבר פרויקטים.',
-      clarity_score: 'הבהירות נמוכה.',
-      runtime_weight_score: 'המשקל הכולל כבר מורגש.',
-      resource_fit_score: 'מתאים חלקית בלבד למחשב זה.',
-      maintainability_score: 'קשה לתחזק צבר כזה.',
-      safety_score: 'לא זוהתה חשיפה כמו ברנטיימים, לכן מעט טוב יותר.',
-      noise_score: 'רעש גבוה יחסית בגלל צבירה של ניסויים.',
-      residue_risk_score: 'סיכון residue גבוה.',
-      reliability_score: 'לא ברור מה פעיל ומה נטוש.'
-    },
-    weight: 'heavy',
-    recommendation: 'needs cleanup',
-    needs_cleanup: true,
-    needs_redesign: true,
-    summary: 'מעורבב מדי, כבד מדי, ולא מספיק ניהולי.'
+    scores: { architecture_score: 4.0, clarity_score: 3.5, runtime_weight_score: 4.5, resource_fit_score: 4.5, maintainability_score: 3.5, safety_score: 6.0, noise_score: 3.5, residue_risk_score: 3.0, reliability_score: 3.5 },
+    explanations: { architecture_score: 'Not one clean architecture.', clarity_score: 'Low clarity.', runtime_weight_score: 'Heavy enough to matter.', resource_fit_score: 'Only partial fit.', maintainability_score: 'Hard to maintain as-is.', safety_score: 'Less exposed than the bots.', noise_score: 'Too noisy.', residue_risk_score: 'High residue risk.', reliability_score: 'Active state is unclear.' },
+    weight: 'heavy', recommendation: 'needs cleanup', needs_cleanup: true, needs_redesign: true, summary: 'Messy and hard to manage.'
   }
 };
 
@@ -248,6 +165,7 @@ const enrichedSystems = rawSystems.map(system => {
     last_checked: now,
     last_updated_if_known: system.last_updated_if_known,
     dashboard_link_if_exists: system.dashboard_link_if_exists,
+    action_link: system.action_link,
     workspace_path: system.workspace_path,
     key_risks: uniq(system.key_risks),
     short_summary: input.summary,
@@ -267,7 +185,7 @@ const systemsReview = enrichedSystems.map(system => {
     display_name: system.display_name,
     owner: system.owner,
     status: system.status,
-    overall_score: { score: system.overall_score, rating: system.overall_rating, explanation: 'ממוצע שמרני של מדדי הביקורת.' },
+    overall_score: { score: system.overall_score, rating: system.overall_rating, explanation: 'Conservative average of review metrics.' },
     weight: system.weight,
     recommendation: system.recommendation,
     needs_cleanup: system.needs_cleanup,
@@ -275,6 +193,7 @@ const systemsReview = enrichedSystems.map(system => {
     last_checked: system.last_checked,
     last_updated_if_known: system.last_updated_if_known,
     dashboard_link_if_exists: system.dashboard_link_if_exists,
+    action_link: system.action_link,
     workspace_path: system.workspace_path,
     key_risks: system.key_risks,
     short_summary: system.short_summary,
@@ -287,21 +206,15 @@ const systemsJson = {
   scan_scope: ['C:\\Users\\Itzhak', 'C:\\Users\\Openclaw'],
   systems: enrichedSystems,
   residue_summary: {
-    config_backup_indicators: [
-      'Itzhak: openclaw.json.bak, .bak.1-.bak.4, multiple .clobbered snapshots',
-      'Openclaw: openclaw.json.bak, .bak.1-.bak.4, multiple .clobbered snapshots'
-    ],
-    stale_or_missing_model_refs: ['Openclaw fallback model ollama/gemma4:e2b not confirmed in running Ollama process list'],
+    config_backup_indicators: ['Itzhak: many bak/clobbered snapshots', 'Openclaw: many bak/clobbered snapshots'],
+    stale_or_missing_model_refs: ['Openclaw fallback model ollama/gemma4:e2b not confirmed in process scan'],
     stale_tasks: uniq(openTasks.filter(t => t.State !== 4).map(t => t.TaskName)),
     stale_logs_candidates: uniq(logPaths.filter(p => /commands\.log|audit/i.test(p))).slice(0, 20),
     old_workspaces_or_wrappers: uniq(customWorkspaceHits.filter(p => /backup-manager|smoke-test-build/i.test(p)))
   }
 };
 
-const systemsReviewJson = {
-  generated_at: now,
-  reviews: systemsReview
-};
+const systemsReviewJson = { generated_at: now, reviews: systemsReview };
 
 const dashboardData = {
   generated_at: now,
@@ -311,10 +224,11 @@ const dashboardData = {
     needs_cleanup: enrichedSystems.filter(s => s.needs_cleanup).length,
     closest_to_10_count: enrichedSystems.filter(s => s.overall_score >= 7.5).length
   },
-  top_priorities: enrichedSystems.filter(s => s.needs_cleanup || s.needs_redesign || s.status !== 'active').map(s => s.display_name),
-  top_heavy_systems: enrichedSystems.filter(s => ['heavy', 'abusive'].includes(s.weight)).map(s => s.display_name),
-  systems_needing_cleanup: enrichedSystems.filter(s => s.needs_cleanup).map(s => s.display_name),
-  systems_needing_redesign: enrichedSystems.filter(s => s.needs_redesign).map(s => s.display_name),
+  top_priorities: uniq(enrichedSystems.filter(s => s.needs_cleanup || s.needs_redesign || s.status !== 'active').map(s => s.display_name)),
+  requires_attention_now: uniq(enrichedSystems.filter(s => s.needs_redesign || s.status !== 'active' || s.weight === 'heavy' || s.weight === 'abusive').map(s => s.display_name)),
+  top_heavy_systems: uniq(enrichedSystems.filter(s => ['heavy', 'abusive'].includes(s.weight)).map(s => s.display_name)),
+  systems_needing_cleanup: uniq(enrichedSystems.filter(s => s.needs_cleanup).map(s => s.display_name)),
+  systems_needing_redesign: uniq(enrichedSystems.filter(s => s.needs_redesign).map(s => s.display_name)),
   closest_to_10: [...enrichedSystems].sort((a,b) => b.overall_score - a.overall_score).slice(0,3).map(s => ({ display_name: s.display_name, overall_score: s.overall_score })),
   systems: enrichedSystems
 };
@@ -324,14 +238,11 @@ fs.writeFileSync(path.join(outputDir, 'systems_review.json'), JSON.stringify(sys
 fs.writeFileSync(path.join(outputDir, 'dashboard-data.json'), JSON.stringify(dashboardData, null, 2), 'utf8');
 
 const lines = [];
-lines.push('# SYSTEM_MAP', '');
-lines.push('מיפוי, ביקורת ודירוג שמרני של מערכות OpenClaw והמערכות הקשורות שנמצאו תחת Itzhak ו-Openclaw. הסריקה הייתה לקריאה בלבד.', '');
-lines.push('## תמונת מצב', '');
-lines.push(`- מערכות שזוהו: ${enrichedSystems.length}`);
-lines.push(`- מערכות כבדות: ${dashboardData.summary.heavy_systems}`);
-lines.push(`- מערכות שדורשות ניקוי: ${dashboardData.summary.needs_cleanup}`);
-lines.push(`- מערכות קרובות ל-10/10: ${dashboardData.summary.closest_to_10_count}`);
-lines.push('');
+lines.push('# SYSTEM_MAP', '', 'Conservative mapping and review of detected OpenClaw systems.', '', '## Summary', '');
+lines.push(`- Systems: ${enrichedSystems.length}`);
+lines.push(`- Heavy: ${dashboardData.summary.heavy_systems}`);
+lines.push(`- Needs cleanup: ${dashboardData.summary.needs_cleanup}`);
+lines.push(`- Near 10/10: ${dashboardData.summary.closest_to_10_count}`, '');
 for (const s of enrichedSystems) {
   const review = systemsReview.find(r => r.system_id === s.system_id);
   lines.push(`## ${s.display_name}`, '');
@@ -345,14 +256,13 @@ for (const s of enrichedSystems) {
   lines.push(`- needs_redesign: ${s.needs_redesign ? 'yes' : 'no'}`);
   lines.push(`- last_checked: ${s.last_checked}`);
   lines.push(`- last_updated_if_known: ${s.last_updated_if_known}`);
-  lines.push(`- dashboard_link_if_exists: ${s.dashboard_link_if_exists}`);
+  lines.push(`- action_link: ${s.action_link}`);
   lines.push(`- workspace_path: ${s.workspace_path}`);
   lines.push(`- key_risks: ${s.key_risks.join(', ') || 'unknown'}`);
   lines.push(`- short_summary: ${s.short_summary}`);
-  lines.push(`- score_explanations: architecture=${review.scores.architecture_score.explanation}; clarity=${review.scores.clarity_score.explanation}; safety=${review.scores.safety_score.explanation}`);
-  lines.push('');
+  lines.push(`- score_explanations: architecture=${review.scores.architecture_score.explanation}; clarity=${review.scores.clarity_score.explanation}; safety=${review.scores.safety_score.explanation}`, '');
 }
-lines.push('## Output Files', '');
+lines.push('## Files', '');
 lines.push(`- ${path.join(outputDir, 'SYSTEM_MAP.md')}`);
 lines.push(`- ${path.join(outputDir, 'systems.json')}`);
 lines.push(`- ${path.join(outputDir, 'systems_review.json')}`);

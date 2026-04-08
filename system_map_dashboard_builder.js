@@ -3,24 +3,17 @@ const path = require('path');
 
 const base = 'C:\\Users\\Itzhak\\.openclaw\\workspace\\system-map';
 const systemsJson = JSON.parse(fs.readFileSync(path.join(base, 'systems.json'), 'utf8').replace(/^\uFEFF/, ''));
-const reviewJson = JSON.parse(fs.readFileSync(path.join(base, 'systems_review.json'), 'utf8').replace(/^\uFEFF/, ''));
 const systems = systemsJson.systems || [];
-const reviewById = Object.fromEntries((reviewJson.reviews || []).map(r => [r.system_id, r]));
 
-const cards = systems.map(s => ({ ...s, review: reviewById[s.system_id] || null }));
-const total = cards.length;
-const heavyCount = cards.filter(s => ['heavy', 'abusive'].includes(s.weight)).length;
-const cleanupCount = cards.filter(s => s.needs_cleanup).length;
-const nearTen = cards.filter(s => typeof s.overall_score === 'number' && s.overall_score >= 7.5).length;
+const total = systems.length;
+const heavy = systems.filter(s => ['heavy', 'abusive'].includes(s.weight));
+const cleanup = systems.filter(s => s.needs_cleanup);
+const redesign = systems.filter(s => s.needs_redesign);
+const closest = [...systems].filter(s => typeof s.overall_score === 'number').sort((a,b) => b.overall_score - a.overall_score).slice(0, 3);
+const attentionNow = systems.filter(s => s.needs_redesign || s.status !== 'active' || ['heavy','abusive'].includes(s.weight));
 
-const topPriorities = cards.filter(s => s.needs_cleanup || s.needs_redesign || s.status !== 'active');
-const topHeavy = cards.filter(s => ['heavy', 'abusive'].includes(s.weight));
-const cleanup = cards.filter(s => s.needs_cleanup);
-const redesign = cards.filter(s => s.needs_redesign);
-const closest = [...cards].filter(s => typeof s.overall_score === 'number').sort((a,b) => b.overall_score - a.overall_score).slice(0, 3);
-
-function esc(s) {
-  return String(s ?? 'unknown')
+function esc(v) {
+  return String(v ?? 'unknown')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -30,24 +23,21 @@ function esc(s) {
 function badgeClass(value, type) {
   const v = String(value || '').toLowerCase();
   if (type === 'status') {
-    if (v === 'active') return 'green';
-    if (v === 'inactive') return 'gray';
-    if (v === 'broken') return 'red';
-    return 'amber';
+    if (v === 'active') return 'ok';
+    if (v === 'inactive') return 'muted';
+    if (v === 'broken') return 'bad';
+    return 'warn';
   }
   if (type === 'weight') {
-    if (v === 'light') return 'green';
-    if (v === 'moderate') return 'blue';
-    if (v === 'heavy') return 'amber';
-    if (v === 'abusive') return 'red';
+    if (v === 'light') return 'ok';
+    if (v === 'moderate') return 'info';
+    if (v === 'heavy') return 'warn';
+    if (v === 'abusive') return 'bad';
   }
-  if (type === 'priority') {
-    return v === 'true' ? 'red' : 'gray';
-  }
-  return 'gray';
+  return 'muted';
 }
 
-function list(items, formatter) {
+function renderList(items, formatter) {
   if (!items.length) return '<div class="empty">None</div>';
   return `<ul>${items.map(i => `<li>${formatter(i)}</li>`).join('')}</ul>`;
 }
@@ -60,125 +50,101 @@ const html = `<!doctype html>
   <title>System Map Dashboard</title>
   <style>
     :root {
-      --bg:#f3f6fb;
-      --card:#ffffff;
-      --text:#172033;
-      --muted:#62708a;
-      --line:#e4e9f2;
-      --green:#e7f7ee;
-      --green-t:#146c43;
-      --blue:#eaf2ff;
-      --blue-t:#2157b4;
-      --amber:#fff3dd;
-      --amber-t:#9a6500;
-      --red:#fdeaea;
-      --red-t:#b42318;
-      --gray:#eef1f5;
-      --gray-t:#516071;
+      --bg:#f4f7fb;
+      --card:#fff;
+      --text:#162033;
+      --muted:#66758b;
+      --line:#e5eaf2;
+      --ok:#e8f7ee; --ok-t:#136c43;
+      --info:#eaf2ff; --info-t:#1e58b7;
+      --warn:#fff4de; --warn-t:#9b6400;
+      --bad:#fdeceb; --bad-t:#b42318;
+      --mutedbg:#eef2f6; --mutedt:#5d6a7b;
     }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Segoe UI, Arial, sans-serif; background:var(--bg); color:var(--text); }
-    .wrap { max-width:1100px; margin:0 auto; padding:20px 14px 40px; }
-    .hero, .panel, .system-card { background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:0 6px 18px rgba(20,32,51,.05); }
-    .hero { padding:20px; margin-bottom:16px; }
-    h1 { margin:0 0 8px; font-size:28px; }
-    h2 { margin:0 0 12px; font-size:18px; }
-    .sub { color:var(--muted); font-size:14px; }
-    .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:16px; }
-    .stat { background:#f8faff; border:1px solid var(--line); border-radius:14px; padding:14px; }
-    .stat .n { font-size:28px; font-weight:700; }
-    .layout { display:grid; grid-template-columns:1.1fr .9fr; gap:16px; margin-bottom:16px; }
-    .panel { padding:16px; }
-    ul { margin:0; padding-right:18px; }
-    li { margin:6px 0; }
-    .systems { display:grid; gap:14px; }
-    .system-card { padding:16px; }
-    .topline { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px; }
-    .title { font-size:18px; font-weight:700; }
-    .badge { display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:600; }
-    .green { background:var(--green); color:var(--green-t); }
-    .blue { background:var(--blue); color:var(--blue-t); }
-    .amber { background:var(--amber); color:var(--amber-t); }
-    .red { background:var(--red); color:var(--red-t); }
-    .gray { background:var(--gray); color:var(--gray-t); }
-    .meta { color:var(--muted); font-size:13px; margin:4px 0; }
-    .summary { margin:10px 0; font-size:14px; }
-    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
-    .mini { background:#f8faff; border:1px solid var(--line); border-radius:12px; padding:10px; font-size:13px; }
-    .empty { color:var(--muted); font-size:14px; }
-    a { color:#2157b4; text-decoration:none; }
-    @media (max-width: 820px) {
-      .stats, .layout, .grid2 { grid-template-columns:1fr; }
-      h1 { font-size:24px; }
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1120px;margin:0 auto;padding:18px 14px 40px}
+    .hero,.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 24px rgba(22,32,51,.06)}
+    .hero{padding:20px;margin-bottom:16px}
+    h1{margin:0 0 6px;font-size:28px}
+    h2{margin:0 0 12px;font-size:18px}
+    .sub{color:var(--muted);font-size:14px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+    .stat{background:#f9fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .n{font-size:28px;font-weight:700}
+    .section{margin-bottom:16px}
+    .panel{padding:16px}
+    .cards{display:grid;gap:14px}
+    .card{padding:16px}
+    .top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+    .title{font-size:18px;font-weight:700}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
+    .ok{background:var(--ok);color:var(--ok-t)}
+    .info{background:var(--info);color:var(--info-t)}
+    .warn{background:var(--warn);color:var(--warn-t)}
+    .bad{background:var(--bad);color:var(--bad-t)}
+    .muted{background:var(--mutedbg);color:var(--mutedt)}
+    .meta{color:var(--muted);font-size:13px}
+    .summary{margin:10px 0 12px;font-size:14px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mini{background:#f9fbff;border:1px solid var(--line);border-radius:14px;padding:10px;font-size:13px}
+    .mini strong{display:block;margin-bottom:4px}
+    ul{margin:0;padding-right:18px}
+    li{margin:6px 0}
+    a{color:#1e58b7;text-decoration:none;font-weight:600}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .empty{color:var(--muted);font-size:14px}
+    @media (max-width:820px){.stats,.two,.row{grid-template-columns:1fr}h1{font-size:24px}.wrap{padding:14px 10px 32px}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <section class="hero">
+    <section class="hero section">
       <h1>System Map</h1>
-      <div class="sub">מיפוי וביקורת שמרניים לכל מערכות OpenClaw שזוהו.</div>
+      <div class="sub">Dashboard קל, מהיר וברור לניהול מערכות OpenClaw.</div>
       <div class="stats">
         <div class="stat"><div class="n">${total}</div><div class="sub">מערכות</div></div>
-        <div class="stat"><div class="n">${heavyCount}</div><div class="sub">כבדות</div></div>
-        <div class="stat"><div class="n">${cleanupCount}</div><div class="sub">דורשות ניקוי</div></div>
-        <div class="stat"><div class="n">${nearTen}</div><div class="sub">קרובות ל-10/10</div></div>
+        <div class="stat"><div class="n">${heavy.length}</div><div class="sub">כבדות</div></div>
+        <div class="stat"><div class="n">${cleanup.length}</div><div class="sub">דורשות ניקוי</div></div>
+        <div class="stat"><div class="n">${closest.length}</div><div class="sub">קרובות ל-10/10</div></div>
       </div>
     </section>
 
-    <div class="layout">
-      <section class="panel">
-        <h2>Top priorities</h2>
-        ${list(topPriorities, s => `${esc(s.display_name)} <span class="sub">(${esc(s.recommendation)})</span>`)}
-      </section>
-      <section class="panel">
-        <h2>דורש טיפול עכשיו</h2>
-        ${list(topPriorities.filter(s => s.needs_redesign || s.status !== 'active' || s.weight === 'heavy' || s.weight === 'abusive'), s => esc(s.display_name))}
-      </section>
-    </div>
+    <section class="panel section">
+      <h2>דורש טיפול עכשיו</h2>
+      ${renderList(attentionNow, s => esc(s.display_name))}
+    </section>
 
-    <div class="layout">
-      <section class="panel">
-        <h2>Top heavy systems</h2>
-        ${list(topHeavy, s => esc(s.display_name))}
-      </section>
-      <section class="panel">
-        <h2>Systems needing cleanup</h2>
-        ${list(cleanup, s => esc(s.display_name))}
-      </section>
-    </div>
-
-    <div class="layout">
-      <section class="panel">
-        <h2>Systems needing redesign</h2>
-        ${list(redesign, s => esc(s.display_name))}
-      </section>
-      <section class="panel">
-        <h2>Closest to 10/10</h2>
-        ${list(closest, s => `${esc(s.display_name)} <span class="sub">(${esc(s.overall_score)})</span>`)}
-      </section>
-    </div>
-
-    <section class="systems">
-      ${cards.map(s => `
-        <article class="system-card">
-          <div class="topline">
+    <section class="cards section">
+      ${systems.map(s => `
+        <article class="card">
+          <div class="top">
             <div class="title">${esc(s.display_name)}</div>
-            <span class="badge ${badgeClass(s.status, 'status')}">${esc(s.status)}</span>
-            <span class="badge ${badgeClass(s.weight, 'weight')}">${esc(s.weight)}</span>
-            <span class="badge blue">score ${esc(s.overall_score)}</span>
+            <span class="badge ${badgeClass(s.status,'status')}">${esc(s.status)}</span>
+            <span class="badge ${badgeClass(s.weight,'weight')}">${esc(s.weight)}</span>
+            <span class="badge info">${esc(s.overall_score)}/10</span>
           </div>
           <div class="meta">${esc(s.owner)} · ${esc(s.purpose)}</div>
           <div class="summary">${esc(s.short_summary)}</div>
-          <div class="grid2">
-            <div class="mini"><strong>Recommendation</strong><br>${esc(s.recommendation)}</div>
-            <div class="mini"><strong>Key risks</strong><br>${esc((s.key_risks || []).join(', ') || 'unknown')}</div>
-            <div class="mini"><strong>Workspace</strong><br>${esc(s.workspace_path || 'unknown')}</div>
-            <div class="mini"><strong>Dashboard</strong><br>${s.dashboard_link_if_exists && s.dashboard_link_if_exists !== 'unknown' ? `<a href="${esc(s.dashboard_link_if_exists)}">open</a>` : 'unknown'}</div>
+          <div class="row">
+            <div class="mini"><strong>Recommendation</strong>${esc(s.recommendation)}</div>
+            <div class="mini"><strong>Key risks</strong>${esc((s.key_risks || []).join(', ') || 'unknown')}</div>
+            <div class="mini"><strong>Action</strong>${s.action_link && s.action_link !== 'unknown' ? `<a href="${esc(s.action_link)}">Open</a>` : 'unknown'}</div>
+            <div class="mini"><strong>Workspace</strong>${esc(s.workspace_path || 'unknown')}</div>
           </div>
         </article>
       `).join('')}
     </section>
+
+    <div class="two section">
+      <section class="panel"><h2>Heavy systems</h2>${renderList(heavy, s => esc(s.display_name))}</section>
+      <section class="panel"><h2>Cleanup</h2>${renderList(cleanup, s => esc(s.display_name))}</section>
+    </div>
+
+    <div class="two section">
+      <section class="panel"><h2>Redesign</h2>${renderList(redesign, s => esc(s.display_name))}</section>
+      <section class="panel"><h2>Closest to 10/10</h2>${renderList(closest, s => `${esc(s.display_name)} (${esc(s.overall_score)})`)}</section>
+    </div>
   </div>
 </body>
 </html>`;
