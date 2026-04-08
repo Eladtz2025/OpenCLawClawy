@@ -1,7 +1,7 @@
 {
   "system_name": "PC Guardian",
   "version": "1.0.0",
-  "last_check": "2026-04-08T06:51:45.801Z",
+  "last_check": "2026-04-08T10:11:53.218Z",
   "overall_status": "WARNING",
   "computer_health": {
     "status": "WARNING",
@@ -16,6 +16,69 @@
     ]
   },
   "recent_failures": [
+    {
+      "time": "2026-04-08T10:11:53.218Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T10:11:53.218Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    },
+    {
+      "time": "2026-04-08T10:11:05.302Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T10:11:05.302Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    },
+    {
+      "time": "2026-04-08T10:09:59.391Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T10:09:59.391Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    },
     {
       "time": "2026-04-08T06:51:45.801Z",
       "kind": "Internet Reachability",
@@ -99,6 +162,27 @@
   ],
   "last_fixes": [
     {
+      "time": "2026-04-08T10:11:05.302Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "failed",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T10:09:59.391Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "failed",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T10:09:59.391Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 1"
+    },
+    {
       "time": "2026-04-08T06:51:45.801Z",
       "type": "restart_task",
       "target": "OpenClaw - On Network Reconnect",
@@ -178,34 +262,34 @@
   ],
   "top_offenders": [
     {
-      "name": "MsMpEng",
-      "cpu": 1194.7,
-      "memoryMb": 245,
-      "path": ""
+      "name": "powershell",
+      "cpu": 11634.4,
+      "memoryMb": 29,
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
     },
     {
       "name": "node",
-      "cpu": 1130.8,
-      "memoryMb": 757,
+      "cpu": 1496.5,
+      "memoryMb": 847,
       "path": "C:\\Program Files\\nodejs\\node.exe"
     },
     {
+      "name": "MsMpEng",
+      "cpu": 1362.7,
+      "memoryMb": 241,
+      "path": ""
+    },
+    {
       "name": "System",
-      "cpu": 837.4,
+      "cpu": 1106.2,
       "memoryMb": 10,
       "path": ""
     },
     {
       "name": "SearchIndexer",
-      "cpu": 769,
-      "memoryMb": 45,
+      "cpu": 788,
+      "memoryMb": 37,
       "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
-    },
-    {
-      "name": "logioptionsplus_agent",
-      "cpu": 643.8,
-      "memoryMb": 30,
-      "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
     }
   ],
   "alerts": {

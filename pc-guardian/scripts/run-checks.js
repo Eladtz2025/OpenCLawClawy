@@ -27,13 +27,13 @@ function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function readJson(file) { return JSON.parse(fs.readFileSync(file, 'utf8')); }
 function writeJson(file, obj) { fs.writeFileSync(file, JSON.stringify(obj, null, 2) + '\n', 'utf8'); }
 function appendLog(line) { logLines.push('[' + new Date().toISOString() + '] ' + line); }
-function runPs(command, fallback = null) {
+function runPs(command, fallback = null, options = {}) {
   try {
     const encoded = Buffer.from(command, 'utf16le').toString('base64');
     const out = execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', encoded], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
     return out.trim();
   } catch (error) {
-    appendLog('PowerShell failed: ' + error.message);
+    if (!options.silent) appendLog('PowerShell failed: ' + error.message);
     return fallback;
   }
 }
@@ -100,11 +100,11 @@ function restartService(name) {
 }
 function startTask(name) {
   if (IS_DRY_RUN) return true;
-  try { execSync('schtasks /Run /TN "' + name.replace(/"/g, '""') + '"', { stdio: 'ignore' }); return true; } catch { return false; }
+  try { execFileSync('schtasks', ['/Run', '/TN', name], { stdio: 'ignore' }); return true; } catch { return false; }
 }
 function disableTask(name) {
   if (IS_DRY_RUN) return true;
-  try { execSync('schtasks /Change /TN "' + name.replace(/"/g, '""') + '" /Disable', { stdio: 'ignore' }); return true; } catch { return false; }
+  try { execFileSync('schtasks', ['/Change', '/TN', name, '/Disable'], { stdio: 'ignore' }); return true; } catch { return false; }
 }
 function getJson(command, fallback) {
   const out = runPs(command, null);
@@ -118,13 +118,13 @@ const ramUsedPct = mem.TotalGB > 0 ? ((mem.TotalGB - mem.FreeGB) / mem.TotalGB) 
 const disks = arrayify(getJson('Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | Select-Object DeviceID,@{n="FreeGB";e={[math]::Round($_.FreeSpace/1GB,2)}},@{n="SizeGB";e={[math]::Round($_.Size/1GB,2)}} | ConvertTo-Json -Compress', []));
 const diskActivity = toNumber(runPs('(Get-Counter "\\PhysicalDisk(_Total)\\% Disk Time").CounterSamples[0].CookedValue.ToString("F2")', '0'));
 const pingResults = CONFIG.monitoring.connectivity_targets.map(target => ({ target, ok: /True/i.test(runPs('Test-Connection -ComputerName "' + target + '" -Count 1 -Quiet', 'False') || 'False') }));
-const webResults = CONFIG.monitoring.internet_targets.map(target => ({ target, ok: /^(200|204)$/i.test(String(runPs('(Invoke-WebRequest -UseBasicParsing -Uri "' + target + '" -TimeoutSec 5).StatusCode', '0'))) }));
+const webResults = CONFIG.monitoring.internet_targets.map(target => ({ target, ok: /^(200|204)$/i.test(String(runPs('try { (Invoke-WebRequest -UseBasicParsing -Uri "' + target + '" -TimeoutSec 5).StatusCode } catch { 0 }', '0', { silent: true }))) }));
 const topProcesses = arrayify(getJson('Get-Process | Sort-Object CPU -Descending | Select-Object -First 5 ProcessName,Id,CPU,WS,Path | ConvertTo-Json -Compress', []));
 const defender = getJson('if (Get-Command Get-MpComputerStatus -ErrorAction SilentlyContinue) { Get-MpComputerStatus | Select-Object AntivirusEnabled,RealTimeProtectionEnabled,QuickScanAge,FullScanAge,AntivirusSignatureLastUpdated | ConvertTo-Json -Compress }', { AntivirusEnabled: null, RealTimeProtectionEnabled: null });
 const firewall = arrayify(getJson('Get-NetFirewallProfile | Select-Object Name,Enabled | ConvertTo-Json -Compress', []));
 const importantServices = arrayify(getJson(`$names = @(${RULES.important_services.map(x => `'${x}'`).join(',')}); Get-Service | Where-Object { $names -contains $_.Name } | Select-Object Name,Status,StartType | ConvertTo-Json -Compress`, []));
 const scheduledTasks = arrayify(getJson(`$patterns = @(${RULES.important_tasks.map(x => `'${x}'`).join(',')}); Get-ScheduledTask | Where-Object { $name = $_.TaskName; foreach ($p in $patterns) { if ($name -like ('*' + $p + '*')) { return $true } }; return $false } | Select-Object TaskName,State,TaskPath | ConvertTo-Json -Compress`, []));
-const recentEvents = arrayify(getJson(`$start=(Get-Date).AddHours(-${CONFIG.monitoring.recent_event_hours}); Get-WinEvent -FilterHashtable @{LogName='System'; Level=2; StartTime=$start} -MaxEvents 15 | Select-Object TimeCreated,Id,ProviderName,LevelDisplayName,Message | ConvertTo-Json -Compress`, []));
+const recentEvents = arrayify(getJson(`$start=(Get-Date).AddHours(-${CONFIG.monitoring.recent_event_hours}); try { Get-WinEvent -FilterHashtable @{LogName='System'; Level=2; StartTime=$start} -MaxEvents 15 | Select-Object TimeCreated,Id,ProviderName,LevelDisplayName,Message | ConvertTo-Json -Compress } catch { '[]' }`, []));
 const netPorts = arrayify(getJson(`Get-NetTCPConnection -State Listen | Where-Object { ${RULES.important_ports.map(p => '$_.LocalPort -eq ' + p).join(' -or ')} } | Select-Object LocalAddress,LocalPort,OwningProcess | ConvertTo-Json -Compress`, []));
 const gateways = CONFIG.openclaw.gateways.map(g => {
   const code = toNumber(runPs(`try { (Invoke-WebRequest -UseBasicParsing -Uri '${g.url}' -TimeoutSec 5).StatusCode } catch { if ($_.Exception.Response) { $_.Exception.Response.StatusCode.value__ } else { 0 } }`, '0'));
@@ -178,7 +178,7 @@ for (const svc of importantServices) {
 for (const task of openclawTasks) {
   const state = String(task.State || '').toLowerCase();
   const numericState = toNumber(task.State, -1);
-  const runnable = state === 'ready' || state === 'running' || numericState === 3 || numericState === 4;
+  const runnable = state === 'ready' || state === 'running' || numericState === 1 || numericState === 3 || numericState === 4;
   if (!runnable) addFix('restart_task', task.TaskName, startTask(task.TaskName) ? 'success' : 'failed', 'Task state was ' + task.State);
 }
 if (nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical) {
