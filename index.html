@@ -2,79 +2,11 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="0; url=./system-map/dashboard.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PC Guardian</title>
-  <style>
-    body{font-family:Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e5e7eb;margin:0;padding:20px}
-    .wrap{max-width:1200px;margin:0 auto}
-    h1,h2{margin:0 0 12px}
-    .hero{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
-    .muted{color:#94a3b8;font-size:13px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:16px 0 22px}
-    .columns{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
-    .stack{display:grid;gap:16px}
-    .card{background:#111827;border:1px solid #243046;border-radius:14px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
-    .label{color:#94a3b8;font-size:12px;margin-bottom:8px}
-    .value{font-size:24px;font-weight:700}
-    .sub{margin-top:8px;color:#cbd5e1;font-size:13px;line-height:1.45}
-    .badge{display:inline-block;padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px}
-    .ok{background:#123524;color:#9ae6b4}.warn{background:#43320b;color:#f6e05e}.crit{background:#4a1f1f;color:#feb2b2}
-    table{width:100%;border-collapse:collapse;background:#111827;border-radius:14px;overflow:hidden}
-    th,td{padding:10px 12px;border-bottom:1px solid #243046;text-align:right;vertical-align:top}
-    th{background:#162033;color:#cbd5e1}
-    tr:last-child td{border-bottom:none}
-    .list{display:grid;gap:10px}
-    .item{padding:10px 12px;border:1px solid #243046;border-radius:12px;background:#0f172a}
-    .item strong{display:block;margin-bottom:4px}
-    @media (max-width: 900px){.columns{grid-template-columns:1fr}}
-  </style>
+  <title>System Map Dashboard</title>
 </head>
 <body>
-<div class="wrap">
-  <div class="hero">
-    <div>
-      <h1>PC Guardian</h1>
-      <div class="muted">Last check: 2026-04-08T10:11:53.218Z</div>
-    </div>
-    <div><span class="badge warn">WARNING</span></div>
-  </div>
-
-  <div class="grid">
-    <div class="card"><div class="label">מצב כללי</div><div class="value"><span class="badge warn">WARNING</span></div></div>
-    <div class="card"><div class="label">מצב מחשב</div><div class="value"><span class="badge warn">WARNING</span></div></div>
-    <div class="card"><div class="label">מצב OpenClaw</div><div class="value"><span class="badge warn">WARNING</span></div></div>
-    <div class="card"><div class="label">Last check</div><div class="value">2026-04-08T10:11:53.218Z</div></div>
-    <div class="card"><div class="label">Last critical event</div><div class="value">אין</div></div>
-    <div class="card"><div class="label">Systems needing review</div><div class="value">מחשב, OpenClaw</div></div>
-  </div>
-
-  <div class="columns">
-    <div class="stack">
-      <div class="card">
-        <h2>Issues אחרונים</h2>
-        <table><thead><tr><th>זמן</th><th>סוג</th><th>סיכום</th></tr></thead><tbody><tr><td>2026-04-08T10:11:53.218Z</td><td>Internet Reachability</td><td>Internet failed: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T10:11:53.218Z</td><td>Cron Jobs</td><td>No cron artifacts found</td></tr><tr><td>2026-04-08T10:11:05.302Z</td><td>Internet Reachability</td><td>Internet failed: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T10:11:05.302Z</td><td>Cron Jobs</td><td>No cron artifacts found</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>Internet Reachability</td><td>Internet failed: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>Cron Jobs</td><td>No cron artifacts found</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>Internet Reachability</td><td>Internet failed: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>Cron Jobs</td><td>No cron artifacts found</td></tr></tbody></table>
-      </div>
-      <div class="card">
-        <h2>Fixes אחרונים</h2>
-        <table><thead><tr><th>זמן</th><th>פעולה</th><th>יעד</th><th>תוצאה</th></tr></thead><tbody><tr><td>2026-04-08T10:11:05.302Z</td><td>restart_task</td><td>OpenClaw - On Network Reconnect</td><td>failed</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>restart_task</td><td>OpenClaw - On Network Reconnect</td><td>failed</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>cleanup_safe_path</td><td>C:\Windows\Temp</td><td>success</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>restart_task</td><td>OpenClaw - On Network Reconnect</td><td>failed</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>cleanup_safe_path</td><td>C:\Windows\Temp</td><td>success</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>cleanup_safe_path</td><td>C:\Users\Itzhak\AppData\Local\Temp</td><td>success</td></tr><tr><td>2026-04-08T06:51:07.081Z</td><td>restart_task</td><td>OpenClaw - On Network Reconnect</td><td>success</td></tr><tr><td>2026-04-08T06:51:07.081Z</td><td>cleanup_safe_path</td><td>C:\Windows\Temp</td><td>success</td></tr></tbody></table>
-      </div>
-    </div>
-
-    <div class="stack">
-      <div class="card">
-        <h2>Top offenders</h2>
-        <div class="list"><div class="item"><strong>powershell</strong><div>CPU: 11634.4</div><div>Memory: 29 MB</div><div class="muted">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</div></div><div class="item"><strong>node</strong><div>CPU: 1496.5</div><div>Memory: 847 MB</div><div class="muted">C:\Program Files\nodejs\node.exe</div></div><div class="item"><strong>MsMpEng</strong><div>CPU: 1362.7</div><div>Memory: 241 MB</div><div class="muted">n/a</div></div><div class="item"><strong>System</strong><div>CPU: 1106.2</div><div>Memory: 10 MB</div><div class="muted">n/a</div></div><div class="item"><strong>SearchIndexer</strong><div>CPU: 788</div><div>Memory: 37 MB</div><div class="muted">C:\WINDOWS\system32\SearchIndexer.exe</div></div></div>
-      </div>
-      <div class="card">
-        <h2>מצב מחשב</h2>
-        <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>CPU</td><td><span class="badge ok">OK</span></td><td>CPU 24.7%</td></tr><tr><td>RAM</td><td><span class="badge ok">OK</span></td><td>RAM 46.4%</td></tr><tr><td>Disk C:</td><td><span class="badge ok">OK</span></td><td>C: free 225.92GB</td></tr><tr><td>Disk Activity</td><td><span class="badge ok">OK</span></td><td>Disk activity 0.8%</td></tr><tr><td>Network Connectivity</td><td><span class="badge ok">OK</span></td><td>Ping OK</td></tr><tr><td>Internet Reachability</td><td><span class="badge warn">WARNING</span></td><td>Internet failed: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>Windows Defender</td><td><span class="badge ok">OK</span></td><td>Defender OK</td></tr><tr><td>Firewall</td><td><span class="badge ok">OK</span></td><td>Firewall OK</td></tr><tr><td>Critical Events</td><td><span class="badge ok">OK</span></td><td>No recent critical events</td></tr><tr><td>Important Services</td><td><span class="badge ok">OK</span></td><td>Services OK</td></tr><tr><td>Important Tasks</td><td><span class="badge ok">OK</span></td><td>Tasks found</td></tr></tbody></table>
-      </div>
-      <div class="card">
-        <h2>מצב OpenClaw</h2>
-        <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>gateway-18789</td><td><span class="badge ok">OK</span></td><td>gateway-18789 port 18789 OK</td></tr><tr><td>gateway-18790</td><td><span class="badge ok">OK</span></td><td>gateway-18790 port 18790 OK</td></tr><tr><td>OpenClaw Ports</td><td><span class="badge ok">OK</span></td><td>Ports 18789, 18790</td></tr><tr><td>OpenClaw Tasks</td><td><span class="badge ok">OK</span></td><td>OpenClaw tasks found</td></tr><tr><td>Cron Jobs</td><td><span class="badge warn">WARNING</span></td><td>No cron artifacts found</td></tr><tr><td>Fallback / Model failures</td><td><span class="badge ok">OK</span></td><td>No model fallback hints</td></tr><tr><td>Growth scan</td><td><span class="badge ok">OK</span></td><td>Growth items: 9</td></tr></tbody></table>
-      </div>
-    </div>
-  </div>
-</div>
+  <p><a href="./system-map/dashboard.html">פתח דשבורד</a></p>
 </body>
 </html>
