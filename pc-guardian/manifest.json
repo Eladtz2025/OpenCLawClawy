@@ -1,0 +1,24 @@
+{
+  "system_name": "PC Guardian",
+  "version": "1.0.0",
+  "runtime": "node",
+  "entrypoint": "scripts/run-checks.js",
+  "dashboard": "dashboard/index.html",
+  "state": "state/state.json",
+  "logs": "logs",
+  "config": [
+    "config/config.json",
+    "config/rules.json"
+  ],
+  "schedule": {
+    "type": "windows-task-scheduler",
+    "wrapper": "scripts/run-pc-guardian.ps1",
+    "default_interval_minutes": 15
+  },
+  "capabilities": [
+    "dashboard",
+    "checks",
+    "auto-fix",
+    "alerts"
+  ]
+}

@@ -1,0 +1,532 @@
+{
+  "system_name": "PC Guardian",
+  "generated_at": "2026-04-08T06:51:45.801Z",
+  "overall_status": "WARNING",
+  "computer_status": "WARNING",
+  "openclaw_status": "WARNING",
+  "computer_checks": [
+    {
+      "name": "CPU",
+      "value": 27.97,
+      "status": "OK",
+      "summary": "CPU 28.0%"
+    },
+    {
+      "name": "RAM",
+      "value": 41.497461928934,
+      "status": "OK",
+      "summary": "RAM 41.5%"
+    },
+    {
+      "name": "Disk C:",
+      "value": 225.9,
+      "status": "OK",
+      "summary": "C: free 225.9GB"
+    },
+    {
+      "name": "Disk Activity",
+      "value": 1.26,
+      "status": "OK",
+      "summary": "Disk activity 1.3%"
+    },
+    {
+      "name": "Network Connectivity",
+      "value": [
+        {
+          "target": "1.1.1.1",
+          "ok": true
+        },
+        {
+          "target": "8.8.8.8",
+          "ok": true
+        }
+      ],
+      "status": "OK",
+      "summary": "Ping OK"
+    },
+    {
+      "name": "Internet Reachability",
+      "value": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt"
+    },
+    {
+      "name": "Windows Defender",
+      "value": {
+        "AntivirusEnabled": true,
+        "RealTimeProtectionEnabled": true,
+        "QuickScanAge": 0,
+        "FullScanAge": 4294967295,
+        "AntivirusSignatureLastUpdated": "/Date(1775607554000)/"
+      },
+      "status": "OK",
+      "summary": "Defender OK"
+    },
+    {
+      "name": "Firewall",
+      "value": [
+        {
+          "Name": "Domain",
+          "Enabled": 1
+        },
+        {
+          "Name": "Private",
+          "Enabled": 1
+        },
+        {
+          "Name": "Public",
+          "Enabled": 1
+        }
+      ],
+      "status": "OK",
+      "summary": "Firewall OK"
+    },
+    {
+      "name": "Critical Events",
+      "value": 0,
+      "status": "OK",
+      "summary": "No recent critical events"
+    },
+    {
+      "name": "Important Services",
+      "value": [
+        {
+          "Name": "mpssvc",
+          "Status": 4,
+          "StartType": 2
+        },
+        {
+          "Name": "WinDefend",
+          "Status": 4,
+          "StartType": 2
+        }
+      ],
+      "status": "OK",
+      "summary": "Services OK"
+    },
+    {
+      "name": "Important Tasks",
+      "value": [
+        {
+          "TaskName": "OpenClaw - On Network Reconnect",
+          "State": 1,
+          "TaskPath": "\\"
+        },
+        {
+          "TaskName": "OpenClaw Gateway - Itzhak",
+          "State": 4,
+          "TaskPath": "\\"
+        },
+        {
+          "TaskName": "OpenClaw Gateway - Openclaw",
+          "State": 4,
+          "TaskPath": "\\"
+        },
+        {
+          "TaskName": "Windows Defender Cache Maintenance",
+          "State": 3,
+          "TaskPath": "\\Microsoft\\Windows\\Windows Defender\\"
+        },
+        {
+          "TaskName": "Windows Defender Cleanup",
+          "State": 3,
+          "TaskPath": "\\Microsoft\\Windows\\Windows Defender\\"
+        },
+        {
+          "TaskName": "Windows Defender Scheduled Scan",
+          "State": 3,
+          "TaskPath": "\\Microsoft\\Windows\\Windows Defender\\"
+        },
+        {
+          "TaskName": "Windows Defender Verification",
+          "State": 3,
+          "TaskPath": "\\Microsoft\\Windows\\Windows Defender\\"
+        }
+      ],
+      "status": "OK",
+      "summary": "Tasks found"
+    }
+  ],
+  "openclaw_checks": [
+    {
+      "name": "gateway-18789",
+      "value": {
+        "name": "gateway-18789",
+        "url": "http://127.0.0.1:18789/health",
+        "port": 18789,
+        "statusCode": 200,
+        "listening": true,
+        "ok": true
+      },
+      "status": "OK",
+      "summary": "gateway-18789 port 18789 OK"
+    },
+    {
+      "name": "gateway-18790",
+      "value": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "statusCode": 200,
+        "listening": true,
+        "ok": true
+      },
+      "status": "OK",
+      "summary": "gateway-18790 port 18790 OK"
+    },
+    {
+      "name": "OpenClaw Ports",
+      "value": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18790,
+          "OwningProcess": 9148
+        },
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 16640
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18790,
+          "OwningProcess": 9148
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 16640
+        }
+      ],
+      "status": "OK",
+      "summary": "Ports 18789, 18790"
+    },
+    {
+      "name": "OpenClaw Tasks",
+      "value": [
+        {
+          "TaskName": "OpenClaw - On Network Reconnect",
+          "State": 1,
+          "TaskPath": "\\"
+        },
+        {
+          "TaskName": "OpenClaw Gateway - Itzhak",
+          "State": 4,
+          "TaskPath": "\\"
+        },
+        {
+          "TaskName": "OpenClaw Gateway - Openclaw",
+          "State": 4,
+          "TaskPath": "\\"
+        }
+      ],
+      "status": "OK",
+      "summary": "OpenClaw tasks found"
+    },
+    {
+      "name": "Cron Jobs",
+      "value": [],
+      "status": "WARNING",
+      "summary": "No cron artifacts found"
+    },
+    {
+      "name": "Fallback / Model failures",
+      "value": [],
+      "status": "OK",
+      "summary": "No model fallback hints"
+    },
+    {
+      "name": "Growth scan",
+      "value": [
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
+          "SizeMB": 0.01
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\skills\\.openclaw-install-backups",
+          "SizeMB": 0
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\agents\\codex\\sessions",
+          "SizeMB": 0
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\agents\\main\\sessions",
+          "SizeMB": 15.84
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\browser\\openclaw\\user-data\\Default\\Sessions",
+          "SizeMB": 0.05
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\logs",
+          "SizeMB": 0.11
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
+          "SizeMB": 0.01
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\backups",
+          "SizeMB": 0
+        },
+        {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\skills\\.openclaw-install-backups",
+          "SizeMB": 0
+        }
+      ],
+      "status": "OK",
+      "summary": "Growth items: 9"
+    }
+  ],
+  "recent_failures": [
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "kind": "Important Services",
+      "summary": "Important service stopped",
+      "details": [
+        {
+          "Name": "mpssvc",
+          "Status": 4,
+          "StartType": 2
+        },
+        {
+          "Name": "WinDefend",
+          "Status": 4,
+          "StartType": 2
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    }
+  ],
+  "last_fixes": [
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "failed",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 6"
+    },
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 3672"
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "success",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 7"
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 3673"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "success",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "restart_task",
+      "target": "OpenClaw Gateway - Itzhak",
+      "result": "success",
+      "details": "Task state was 4"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "restart_task",
+      "target": "OpenClaw Gateway - Openclaw",
+      "result": "success",
+      "details": "Task state was 4"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 7"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 3673"
+    }
+  ],
+  "top_offenders": [
+    {
+      "name": "MsMpEng",
+      "cpu": 1194.7,
+      "memoryMb": 245,
+      "path": ""
+    },
+    {
+      "name": "node",
+      "cpu": 1130.8,
+      "memoryMb": 757,
+      "path": "C:\\Program Files\\nodejs\\node.exe"
+    },
+    {
+      "name": "System",
+      "cpu": 837.4,
+      "memoryMb": 10,
+      "path": ""
+    },
+    {
+      "name": "SearchIndexer",
+      "cpu": 769,
+      "memoryMb": 45,
+      "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
+    },
+    {
+      "name": "logioptionsplus_agent",
+      "cpu": 643.8,
+      "memoryMb": 30,
+      "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
+    }
+  ],
+  "gateways": [
+    {
+      "name": "gateway-18789",
+      "url": "http://127.0.0.1:18789/health",
+      "port": 18789,
+      "statusCode": 200,
+      "listening": true,
+      "ok": true
+    },
+    {
+      "name": "gateway-18790",
+      "url": "http://127.0.0.1:18790/health",
+      "port": 18790,
+      "statusCode": 200,
+      "listening": true,
+      "ok": true
+    }
+  ],
+  "scheduled_tasks": [
+    {
+      "TaskName": "OpenClaw - On Network Reconnect",
+      "State": 1,
+      "TaskPath": "\\"
+    },
+    {
+      "TaskName": "OpenClaw Gateway - Itzhak",
+      "State": 4,
+      "TaskPath": "\\"
+    },
+    {
+      "TaskName": "OpenClaw Gateway - Openclaw",
+      "State": 4,
+      "TaskPath": "\\"
+    }
+  ],
+  "services": [
+    {
+      "Name": "mpssvc",
+      "Status": 4,
+      "StartType": 2
+    },
+    {
+      "Name": "WinDefend",
+      "Status": 4,
+      "StartType": 2
+    }
+  ],
+  "recent_events": []
+}

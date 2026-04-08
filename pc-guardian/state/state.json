@@ -1,0 +1,216 @@
+{
+  "system_name": "PC Guardian",
+  "version": "1.0.0",
+  "last_check": "2026-04-08T06:51:45.801Z",
+  "overall_status": "WARNING",
+  "computer_health": {
+    "status": "WARNING",
+    "issues": [
+      "Internet failed: https://www.msftconnecttest.com/connecttest.txt"
+    ]
+  },
+  "openclaw_health": {
+    "status": "WARNING",
+    "issues": [
+      "No cron artifacts found"
+    ]
+  },
+  "recent_failures": [
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "kind": "Important Services",
+      "summary": "Important service stopped",
+      "details": [
+        {
+          "Name": "mpssvc",
+          "Status": 4,
+          "StartType": 2
+        },
+        {
+          "Name": "WinDefend",
+          "Status": 4,
+          "StartType": 2
+        }
+      ]
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron artifacts found",
+      "details": []
+    }
+  ],
+  "last_fixes": [
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "failed",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 6"
+    },
+    {
+      "time": "2026-04-08T06:51:45.801Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 3672"
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "success",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 7"
+    },
+    {
+      "time": "2026-04-08T06:51:07.081Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 3673"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "restart_task",
+      "target": "OpenClaw - On Network Reconnect",
+      "result": "success",
+      "details": "Task state was 1"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "restart_task",
+      "target": "OpenClaw Gateway - Itzhak",
+      "result": "success",
+      "details": "Task state was 4"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "restart_task",
+      "target": "OpenClaw Gateway - Openclaw",
+      "result": "success",
+      "details": "Task state was 4"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 7"
+    },
+    {
+      "time": "2026-04-08T06:50:03.680Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 3673"
+    }
+  ],
+  "top_offenders": [
+    {
+      "name": "MsMpEng",
+      "cpu": 1194.7,
+      "memoryMb": 245,
+      "path": ""
+    },
+    {
+      "name": "node",
+      "cpu": 1130.8,
+      "memoryMb": 757,
+      "path": "C:\\Program Files\\nodejs\\node.exe"
+    },
+    {
+      "name": "System",
+      "cpu": 837.4,
+      "memoryMb": 10,
+      "path": ""
+    },
+    {
+      "name": "SearchIndexer",
+      "cpu": 769,
+      "memoryMb": 45,
+      "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
+    },
+    {
+      "name": "logioptionsplus_agent",
+      "cpu": 643.8,
+      "memoryMb": 30,
+      "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
+    }
+  ],
+  "alerts": {
+    "last_sent_at": null,
+    "last_status": null,
+    "last_summary": null
+  }
+}

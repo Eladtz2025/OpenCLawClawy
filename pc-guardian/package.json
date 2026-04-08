@@ -1,0 +1,11 @@
+{
+  "name": "pc-guardian",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight PC and OpenClaw health guardian",
+  "scripts": {
+    "check": "node scripts/run-checks.js",
+    "dashboard": "node scripts/render-dashboard.js",
+    "test": "node scripts/run-checks.js --dry-run"
+  }
+}
