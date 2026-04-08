@@ -2,11 +2,111 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="0; url=./system-map/dashboard.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>System Map Dashboard</title>
+  <title>PC Guardian</title>
+  <style>
+    body{font-family:Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e5e7eb;margin:0;padding:18px}
+    .wrap{max-width:1200px;margin:0 auto}
+    h1,h2,h3{margin:0 0 12px}
+    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-bottom:18px}
+    .hero-card,.card{background:#111827;border:1px solid #243046;border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.18)}
+    .hero-card{padding:22px}
+    .hero-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .hero-main{font-size:34px;font-weight:800;line-height:1.1}
+    .hero-sub{font-size:16px;color:#dbe3f0;line-height:1.6}
+    .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+    .label{color:#94a3b8;font-size:13px;margin-bottom:8px}
+    .value{font-size:26px;font-weight:700}
+    .sub{margin-top:8px;color:#cbd5e1;font-size:15px;line-height:1.55}
+    .muted{color:#94a3b8;font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0}
+    .columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .stack{display:grid;gap:16px}
+    .badge{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px}
+    .ok{background:#123524;color:#9ae6b4}.warn{background:#43320b;color:#f6e05e}.crit{background:#4a1f1f;color:#feb2b2}.soft{background:#1e293b;color:#cbd5e1}
+    table{width:100%;border-collapse:collapse;background:#111827;border-radius:14px;overflow:hidden}
+    th,td{padding:12px 12px;border-bottom:1px solid #243046;text-align:right;vertical-align:top;font-size:14px}
+    th{background:#162033;color:#cbd5e1}
+    tr:last-child td{border-bottom:none}
+    .list{display:grid;gap:12px}
+    .item{padding:14px;border:1px solid #243046;border-radius:14px;background:#0f172a}
+    .item strong{display:block;margin-bottom:6px;font-size:16px}
+    .priority{border-right:4px solid #f6e05e}
+    .priority.critline{border-right-color:#feb2b2}
+    .pill{display:inline-block;margin-top:8px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .section-title{margin-bottom:10px;font-size:22px}
+    @media (max-width: 900px){
+      body{padding:14px}
+      .hero,.columns{grid-template-columns:1fr}
+      .hero-main{font-size:28px}
+      .hero-meta{grid-template-columns:1fr}
+      .value{font-size:24px}
+      th,td{padding:11px 10px;font-size:15px}
+    }
+  </style>
 </head>
 <body>
-  <p><a href="./system-map/dashboard.html">פתח דשבורד</a></p>
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-card">
+      <div class="hero-title">
+        <div>
+          <div class="muted">מצב כללי</div>
+          <div class="hero-main">Warning</div>
+        </div>
+        <div><span class="badge warn">Warning</span></div>
+      </div>
+      <div class="hero-sub">אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</div>
+      <div class="hero-meta">
+        <div class="card "><div class="label">בדיקות בבעיה</div><div class="value">2</div><div class="sub">דורש תשומת לב</div></div>
+        <div class="card "><div class="label">מערכות בבעיה</div><div class="value">2</div><div class="sub">המחשב, OpenClaw</div></div>
+        <div class="card "><div class="label">בדיקה אחרונה</div><div class="value">2026-04-08T10:11:53.218Z</div><div class="sub">עודכן עכשיו</div></div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="card "><div class="label">מצב מחשב</div><div class="value"><span class="badge warn">Warning</span></div><div class="sub">יש נקודות שדורשות בדיקה</div></div>
+      <div class="card "><div class="label">מצב OpenClaw</div><div class="value"><span class="badge warn">Warning</span></div><div class="sub">יש פריטים פתוחים</div></div>
+      <div class="card "><div class="label">אירוע קריטי אחרון</div><div class="value">אין</div><div class="sub">לא זוהה</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2 class="section-title">דורש טיפול עכשיו</h2>
+      <div class="list"><div class="item priority "><strong>אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</strong><span class="pill warn">Warning</span></div><div class="item priority "><strong>לא זוהו cron jobs</strong><span class="pill warn">Warning</span></div><div class="item priority "><strong>אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</strong><span class="pill warn">Warning</span></div></div>
+    </div>
+    <div class="card "><div class="label">מה עדיין פתוח</div><div class="value">אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</div><div class="sub">ועוד 5 פריטים</div></div>
+    <div class="card "><div class="label">מה תוקן אוטומטית</div><div class="value">בוצע ניסיון הפעלה מחדש למשימה</div><div class="sub">OpenClaw - On Network Reconnect · נכשל</div></div>
+    <div class="card "><div class="label">מה רק Warning</div><div class="value">6</div><div class="sub">לא קריטי, אבל כדאי לבדוק</div></div>
+  </div>
+
+  <div class="columns">
+    <div class="stack">
+      <div class="card">
+        <h2 class="section-title">תקלות אחרונות</h2>
+        <table><thead><tr><th>מתי</th><th>נושא</th><th>מה קורה</th></tr></thead><tbody><tr><td>2026-04-08T10:11:53.218Z</td><td>גישה לאינטרנט</td><td>אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T10:11:53.218Z</td><td>Cron jobs</td><td>לא זוהו cron jobs</td></tr><tr><td>2026-04-08T10:11:05.302Z</td><td>גישה לאינטרנט</td><td>אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T10:11:05.302Z</td><td>Cron jobs</td><td>לא זוהו cron jobs</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>גישה לאינטרנט</td><td>אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>Cron jobs</td><td>לא זוהו cron jobs</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>גישה לאינטרנט</td><td>אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>Cron jobs</td><td>לא זוהו cron jobs</td></tr></tbody></table>
+      </div>
+      <div class="card">
+        <h2 class="section-title">תוקן אוטומטית</h2>
+        <table><thead><tr><th>מתי</th><th>מה בוצע</th><th>יעד</th><th>תוצאה</th></tr></thead><tbody><tr><td>2026-04-08T10:11:05.302Z</td><td>בוצע ניסיון הפעלה מחדש למשימה</td><td>OpenClaw - On Network Reconnect</td><td>נכשל</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>בוצע ניסיון הפעלה מחדש למשימה</td><td>OpenClaw - On Network Reconnect</td><td>נכשל</td></tr><tr><td>2026-04-08T10:09:59.391Z</td><td>נוקה אזור בטוח</td><td>C:\Windows\Temp</td><td>הצליח</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>בוצע ניסיון הפעלה מחדש למשימה</td><td>OpenClaw - On Network Reconnect</td><td>נכשל</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>נוקה אזור בטוח</td><td>C:\Windows\Temp</td><td>הצליח</td></tr><tr><td>2026-04-08T06:51:45.801Z</td><td>נוקה אזור בטוח</td><td>C:\Users\Itzhak\AppData\Local\Temp</td><td>הצליח</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card">
+        <h2 class="section-title">Top offenders</h2>
+        <div class="list"><div class="item"><strong>powershell</strong><div>CPU: 11634.4</div><div>זיכרון: 29 MB</div><div class="muted">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</div><span class="pill crit">דורש טיפול</span></div><div class="item"><strong>node</strong><div>CPU: 1496.5</div><div>זיכרון: 847 MB</div><div class="muted">C:\Program Files\nodejs\node.exe</div><span class="pill warn">חריג</span></div><div class="item"><strong>MsMpEng</strong><div>CPU: 1362.7</div><div>זיכרון: 241 MB</div><div class="muted">ללא נתיב</div><span class="pill soft">גבוה</span></div><div class="item"><strong>System</strong><div>CPU: 1106.2</div><div>זיכרון: 10 MB</div><div class="muted">ללא נתיב</div><span class="pill soft">גבוה</span></div><div class="item"><strong>SearchIndexer</strong><div>CPU: 788</div><div>זיכרון: 37 MB</div><div class="muted">C:\WINDOWS\system32\SearchIndexer.exe</div><span class="pill soft">גבוה</span></div></div>
+      </div>
+      <div class="card">
+        <h2 class="section-title">מצב מחשב</h2>
+        <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>CPU</td><td><span class="badge ok">OK</span></td><td>CPU 24.7%</td></tr><tr><td>RAM</td><td><span class="badge ok">OK</span></td><td>RAM 46.4%</td></tr><tr><td>Disk C:</td><td><span class="badge ok">OK</span></td><td>C: free 225.92GB</td></tr><tr><td>Disk Activity</td><td><span class="badge ok">OK</span></td><td>Disk activity 0.8%</td></tr><tr><td>Network Connectivity</td><td><span class="badge ok">OK</span></td><td>חיבור רשת תקין</td></tr><tr><td>Internet Reachability</td><td><span class="badge warn">Warning</span></td><td>אין גישה אל: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>Windows Defender</td><td><span class="badge ok">OK</span></td><td>Defender תקין</td></tr><tr><td>Firewall</td><td><span class="badge ok">OK</span></td><td>Firewall תקין</td></tr><tr><td>Critical Events</td><td><span class="badge ok">OK</span></td><td>No recent critical events</td></tr><tr><td>Important Services</td><td><span class="badge ok">OK</span></td><td>השירותים תקינים</td></tr><tr><td>Important Tasks</td><td><span class="badge ok">OK</span></td><td>Tasks found</td></tr></tbody></table>
+      </div>
+      <div class="card">
+        <h2 class="section-title">מצב OpenClaw</h2>
+        <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>gateway-18789</td><td><span class="badge ok">OK</span></td><td>gateway-18789 port 18789 OK</td></tr><tr><td>gateway-18790</td><td><span class="badge ok">OK</span></td><td>gateway-18790 port 18790 OK</td></tr><tr><td>OpenClaw Ports</td><td><span class="badge ok">OK</span></td><td>Ports 18789, 18790</td></tr><tr><td>OpenClaw Tasks</td><td><span class="badge ok">OK</span></td><td>משימות OpenClaw זמינות</td></tr><tr><td>Cron Jobs</td><td><span class="badge warn">Warning</span></td><td>לא זוהו cron jobs</td></tr><tr><td>Fallback / Model failures</td><td><span class="badge ok">OK</span></td><td>No model fallback hints</td></tr><tr><td>Growth scan</td><td><span class="badge ok">OK</span></td><td>נמצאו תיקיות למעקב: 9</td></tr></tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
