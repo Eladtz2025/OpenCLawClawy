@@ -1,83 +1,273 @@
 [
   {
-    "source": "OpenAI News",
-    "url": "https://openai.com/news/",
+    "source": "TechNewsHeb Telegram",
+    "url": "https://t.me/s/TechNewsHeb",
     "kind": "primary",
-    "parser": "openai",
-    "success": false,
-    "fallback": true,
-    "error": "Error: HTTP 403 for https://openai.com/news/",
-    "items": []
-  },
-  {
-    "source": "Anthropic News",
-    "url": "https://www.anthropic.com/news",
-    "kind": "secondary",
-    "parser": "anthropic",
+    "parser": "telegram",
     "success": true,
     "fallback": false,
     "items": [
       {
-        "title": "Product Feb 17, 2026 Introducing Claude Sonnet 4.6 Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.",
-        "url": "https://www.anthropic.com/news/claude-sonnet-4-6"
+        "title": "כך נראה ליקוי חמה מהחלל : האסטרונאוטים של משימת Artemis II שלחו תמונות ראשונות מהטיסה ההיסטורית סביב הירח. בנוסף, הם שחזרו את הצילום האגדי של Apollo 8, שבו כדור",
+        "url": "https://t.me/TechNewsHeb/8530"
       },
       {
-        "title": "Apr 6, 2026 Announcements Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
-        "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+        "title": "היום Git חוגגת יום הולדת 21&#33; 🥳 לרגל החגיגות, ריכזנו עבורכם מבחר משחקים וסימולטורים פופולריים ללימוד Git: 🟢 הכירו את Oh My Git — משחק קלפים בקוד פתוח המלמד",
+        "url": "https://t.me/TechNewsHeb/8534"
       },
       {
-        "title": "Mar 31, 2026 Announcements Australian government and Anthropic sign MOU for AI safety and research",
-        "url": "https://www.anthropic.com/news/australia-MOU"
+        "title": "​&rlm; ☝🏻 חברת Z ai הסינית השיקה את GLM-5V-Turbo — מודל בינה מלאכותית מולטי-מודאלי שמסוגל להסתכל על סקיצת עיצוב ולהפוך אותה לקוד פרונטנד מוכן לעבודה. ​&rlm;GLM",
+        "url": "https://t.me/TechNewsHeb/8535"
       },
       {
-        "title": "Mar 12, 2026 Announcements Anthropic invests $100 million into the Claude Partner Network",
-        "url": "https://www.anthropic.com/news/claude-partner-network"
+        "title": "חברת Alibaba הציגה את WanToFight. ה-WanToFight הוא מודל בינה מלאכותית יוצרת (Generative AI) למשחקים, שלא רק מייצר וידאו, אלא מסמלץ עולם משחק שלם בזמן אמת. בדמו ",
+        "url": "https://t.me/TechNewsHeb/8537"
       },
       {
-        "title": "Mar 11, 2026 Announcements Introducing The Anthropic Institute",
-        "url": "https://www.anthropic.com/news/the-anthropic-institute"
+        "title": "ה-CIA השתמש בטכנולוגיית סייברפאנק חשאית כדי \"לשמוע\" את פעימות הלב של טייס שהופל באיראן ממרחק של מאות קילומטרים, ובכך להציל את חייו. הנה מה שאנחנו יודעים: • הטכנ",
+        "url": "https://t.me/TechNewsHeb/8539"
       },
       {
-        "title": "Mar 10, 2026 Announcements Sydney will become Anthropic’s fourth office in Asia-Pacific",
-        "url": "https://www.anthropic.com/news/sydney-fourth-office-asia-pacific"
+        "title": "הנה משהו מגניב שמצאנו: מישהו פיתח סמן עכבר בעיצוב דרקון — הלטאה הזו מפזרת אותיות במסמכים ואפילו יורקת אש כשלוחצים עליה. העבודה נדחית, אנחנו מתחילים להתמכר. #Too",
+        "url": "https://t.me/TechNewsHeb/8540"
       },
       {
-        "title": "Mar 6, 2026 Policy Partnering with Mozilla to improve Firefox’s security",
-        "url": "https://www.anthropic.com/news/mozilla-firefox-security"
+        "title": "⚡️ ה-Suno קיבלה תחרות רצינית — שוחרר מודל מושלם לעבודה עם סאונד. ACE-Step 1.5 XL מנצח את כל המתחרים בבנצ'מרקים, יכול לרוץ אפילו על מחשב חלש והוא בקוד פתוח מלא&#",
+        "url": "https://t.me/TechNewsHeb/8541"
       },
       {
-        "title": "Mar 5, 2026 Announcements Where things stand with the Department of War",
-        "url": "https://www.anthropic.com/news/where-stand-department-war"
+        "title": "בינה מלאכותית סייעה לאדם משותק לקבל בחזרה את קולו הישן — החברות Neuralink ו-ElevenLabs הצליחו לשכפל את גוון הקול של הגבר והחליפו את הקול הממוחשב חסר הנשמה בדיבו",
+        "url": "https://t.me/TechNewsHeb/8542"
       },
       {
-        "title": "Feb 27, 2026 Announcements Statement on the comments from Secretary of War Pete Hegseth",
-        "url": "https://www.anthropic.com/news/statement-comments-secretary-war"
+        "title": "חברת Anthropic חשפה את Claude Mythos – המודל העוצמתי ביותר מבין הרשתות הניורוניות המוכרות כיום. כבר במהלך הבדיקות, המודל הצליח לאתר אלפי פרצות אבטחה בתוכנות פופ",
+        "url": "https://t.me/TechNewsHeb/8543"
       },
       {
-        "title": "Feb 26, 2026 Announcements Statement from Dario Amodei on our discussions with the Department of War",
-        "url": "https://www.anthropic.com/news/statement-department-of-war"
+        "title": "כשה-AI איטי מדי: הכירו את badclaude, אולי הפרויקט הכי מצחיק שראינו לאחרונה יש פרויקטים בקוד פתוח שנולדים כדי לפתור בעיה אמיתית, ויש כאלה שנולדים פשוט כי למפתחים",
+        "url": "https://t.me/TechNewsHeb/8546"
       },
       {
-        "title": "Feb 25, 2026 Announcements Anthropic acquires Vercept to advance Claude&#x27;s computer use capabilities",
-        "url": "https://www.anthropic.com/news/acquires-vercept"
+        "title": "דיווחים חדשים חושפים כי הקולגות של Sam Altman סיפרו שהוא לא יודע לקודד. המנכ\"ל של OpenAI לא מבין בתכנות בכלל, והוא נוטה להתבלבל אפילו במושגי יסוד של Machine Lea",
+        "url": "https://t.me/TechNewsHeb/8547"
       },
       {
-        "title": "Consumer health data privacy policy",
-        "url": "https://www.anthropic.com/legal/consumer-health-data-privacy-policy"
+        "title": "🦀 הנה איך מתחילים לבנות את מודל ה-OpenClaw בהתאמה אישית — פורסם מדריך מפורט במיוחד, שבעזרתו תוכלו ליצור לעצמכם סוכן בינה מלאכותית (AI) לכל מטרה. המדריך מציע: \ud83d",
+        "url": "https://t.me/TechNewsHeb/8548"
+      },
+      {
+        "title": "🔥 ריכזנו עבורכם אוסף של קורסי AI מטורפים בפוסט אחד&#33; כאן תמצאו קישורים למשאבים של חברות הבינה המלאכותית המובילות בעולם, אקדמיות ואוניברסיטאות. כל אחד יכול ל",
+        "url": "https://t.me/TechNewsHeb/8549"
+      },
+      {
+        "title": "עבור משימות חלל, כמעט תמיד מעצבים ורוקמים פאטצ'ים (תגים). אם במשימה משתתפים בני אדם — הם לובשים את הפאטצ'ים האלה. ​פאטצ'ים יכולים להיות ממש מגניבים (כמו בתמונות",
+        "url": "https://t.me/TechNewsHeb/8550"
       }
     ]
   },
   {
-    "source": "Google DeepMind Blog",
-    "url": "https://deepmind.google/discover/blog/",
-    "kind": "secondary",
-    "parser": "deepmind",
+    "source": "AI_tg_il Telegram",
+    "url": "https://t.me/s/AI_tg_il",
+    "kind": "primary",
+    "parser": "telegram",
     "success": true,
     "fallback": false,
     "items": [
       {
-        "title": "Google DeepMind Explore the frontier of AI",
-        "url": "https://deepmind.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+        "title": "מעניין&#33; OpenAI רוכשת את TBPN. אז ככה, TBPN זו תוכנית שעושה ראיונות עם כל המי ומי בעולם הטק, והם משדרים ב-X וביוטיוב. אז למה לקנות אותם? ב-OpenAI טוענים שזה ",
+        "url": "https://t.me/AI_tg_il/2224"
+      },
+      {
+        "title": "פיצ׳רי הAI בטלגרם זמינים עכשיו לכולם. תבדקו שהאפליקציה שלכם מעודכנת לגירסה האחרונה. ### מבדיקה קצרה נראה שתיקון שגיאות הכתיב בעברית לא ממש מוצלח, אבל התרגום דוו",
+        "url": "https://t.me/AI_tg_il/2225"
+      },
+      {
+        "title": "״שימוש במחשב״ מגיע גם לקלוד קוד. תוכלו לתת לקלוד קוד להשתמש בעכבר ובמקלדת כדי לפתוח אפליקציות, לנווט בממשק - ולבדוק על אמת את הדברים שהוא בונה. איך מתחילים? תקל",
+        "url": "https://t.me/AI_tg_il/2226"
+      },
+      {
+        "title": "״שימוש במחשב״ בקלוד קוד זמין עכשיו גם בווינדוס&#33; בינה מלאכותית בטלגרם - https://t.me/AI_tg_il",
+        "url": "https://t.me/AI_tg_il/2227"
+      },
+      {
+        "title": "אנתרופיק מודיעה שהיא לא מאפשרת יותר לאפליקציות צד ג להשתמש במנוי שלכם בקלוד - רוצים להשתמש בOpenClaw? תשתמשו בAPI ותשלמו לפי שימוש... בינה מלאכותית בטלגרם - htt",
+        "url": "https://t.me/AI_tg_il/2228"
+      },
+      {
+        "title": "מתחרה לננו בננה? נראה שבקרוב נקבל מודל תמונות חדש מOpenAI. בארנה הופיעו כמה מודלים חדשים עם שמות קוד maskingtape, packingtape, ו-gaffertape. הם מביאים תוצאות שמ",
+        "url": "https://t.me/AI_tg_il/2232"
+      },
+      {
+        "title": "גוגל שחררה במהלך החג את Gemma 4 הדור הבא של מודלי ה־Open Weights שלה. המודל מגיע ב4 גדלים כשהגדולים מגיעים עם חלון הקשר של 256k טוקנים והקטנים יכולים לרוץ גם על",
+        "url": "https://t.me/AI_tg_il/2233"
+      },
+      {
+        "title": "רוצים לנסות את המודלים הפתוחים של גוגל? לגוגל יש אפליקציה רשמית בדיוק בשביל זה - הרצה של מודלים מקומית על הטלפון שלכם ללא צורך בחיבור לאינטרנט. להורדה: 📱 אייפו",
+        "url": "https://t.me/AI_tg_il/2236"
+      },
+      {
+        "title": "רוצה לשתף אתכם איך אני עובד עם קודקס. שימו לב, לכל אחד מתאימה צורה אחרת של עבודה, אני משתף את שלי וקחו בחשבון שזה לא הכי \"חכם\" מבחינת כלכלת טוקנים כי זה זולל הר",
+        "url": "https://t.me/AI_tg_il/2237"
+      },
+      {
+        "title": "https://www.youtube.com/watch?v=B21KxGs8zDI ראיון מעניין של סם אלטמן. הוא מדבר בין היתר על איומי סייבר ואומר שיתכן שכבר השנה אנחנו עלולים לראות מתקפת סייבר שתרע",
+        "url": "https://t.me/AI_tg_il/2238"
+      },
+      {
+        "title": "מישהו בנה שוט לקלוד קוד 😂 \"Random IT guy at 3am\" בינה מלאכותית בטלגרם - https://t.me/AI_tg_il",
+        "url": "https://t.me/AI_tg_il/2239"
+      },
+      {
+        "title": "היסטוריה בשידור חי&#33; ממש ברגע זה החללית אוריון מתקרבת לירח. בדקות הקרובות היא הולכת לקבוע שיא חדש: היא תעקוף את המרחק של אפולו 13 ותגיע לנקודה הכי רחוקה שבה ",
+        "url": "https://t.me/AI_tg_il/2240"
+      },
+      {
+        "title": "ידעתם שלאיראן יש מרכז AI? אז כבר אין. מוקדם יותר השבוע תקפה ישראל את מתקן ה-AI של המשטר האיראני באוניברסיטת שאריף שבטהרן. בתוך הבניין פעל Data center מרכזי ששימ",
+        "url": "https://t.me/AI_tg_il/2241"
+      },
+      {
+        "title": "יתכן שאנתרופיק תשחרר בקרוב סדרת מודלים חדשה לגמרי בשם ׳קפיברה׳. לפי השמועות מדובר בקפיצת מדרגה ביכולות של המודל בתחום הסייבר והוא קיבל ציונים גבוהים דרמטית מסדר",
+        "url": "https://t.me/AI_tg_il/2242"
+      },
+      {
+        "title": "אנתרופיק מכריזה על פרויקט Glasswing. פרויקט דחוף שמטרתו לסייע באבטחת סייבר לחברות הגדולות. הפרויקט ישתמש במודל החדש ״מיתוס״ - המודל הכי טוב של אנתרופיק עד היום,",
+        "url": "https://t.me/AI_tg_il/2243"
+      }
+    ]
+  },
+  {
+    "source": "botai14 Telegram",
+    "url": "https://t.me/s/botai14",
+    "kind": "secondary",
+    "parser": "telegram",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "⚡️ קוד המקור של Claude Code הודלף במלואו לרשת — הכלי המרכזי של חברת Anthropic הפך בטעות לפרויקט קוד פתוח. למשתמשים יש כעת גישה מלאה לכל הלוגיקה המבצעית, הפרומפט",
+        "url": "https://t.me/botai14/1137"
+      },
+      {
+        "title": "הפאדיחה של אנת'רופיק: הקוד של Claude Code דלף. הפיצ'רים הסודיים נחשפו 👈🏽 לקריאה נוחה במחשב 👉🏽 ⬇️ לקריאת נוחה בנייד ⬇️",
+        "url": "https://t.me/botai14/1138"
+      },
+      {
+        "title": "⚡️ קוד המקור של Claude Code הודלף במלואו לרשת — הכלי המרכזי של חברת Anthropic הפך בטעות לפרויקט קוד פתוח. למשתמשים יש כעת גישה מלאה לכל הלוגיקה המבצעית, הפרומפט",
+        "url": "https://t.me/botai14/1139"
+      },
+      {
+        "title": "חברת Google הודיעה על השקת של מודל Gemma 4 🚀 . המודל הפתוח הוצג בגרסאות בנפח 26B ו-31B המיועדות למחשבים, לצד דגמים מינימליים במיוחד המותאמים לטלפונים חכמים ולמ",
+        "url": "https://t.me/botai14/1143"
+      },
+      {
+        "title": "השירות GitReverse הופך רפוזיטוריות ב-GitHub לפרומפטים תוך שניות. הוא מנתח מבנה ופונקציות ומייצר הוראות מדויקות ל-AI לשימוש ב-Codex, Cursor או Claude. נסו בחינם:",
+        "url": "https://t.me/botai14/1144"
+      },
+      {
+        "title": "האם תמיד רציתם להריץ מודל LLM מקומי אך לא ידעתם איזה מודל יכול לרוץ על המחשב שלכם? אתר מעניין שבו ניתן להזין את פרטי המחשב, והוא ימליץ על המודלים שיכולים להריץ ",
+        "url": "https://t.me/botai14/1145"
+      },
+      {
+        "title": "גוגל משיקה את Gemma 4 – מודל AI להרצה מקומית על סמארטפונים ו-IoT 👈🏽 לקריאה נוחה במחשב 👉🏽 ⬇️ לקריאת נוחה בנייד ⬇️",
+        "url": "https://t.me/botai14/1146"
+      },
+      {
+        "title": "הודעה רשמית: Seedance 2.0 הושק כעת בגישה גלובלית 🔥 לאחר עיכוב ממושך, החברה ByteDance שחררה סופית את מודל הווידאו המתקדם (SOTA) שלה מחוץ לגבולות סין. ניתן להתנס",
+        "url": "https://t.me/botai14/1148"
+      },
+      {
+        "title": "האם תאבדו את הזכויות על הקוד שלכם רק בגלל שהשתמשתם ב-AI? 👈🏽 לקריאה נוחה במחשב 👉🏽 ⬇️ לקריאת נוחה בנייד ⬇️",
+        "url": "https://t.me/botai14/1151"
+      },
+      {
+        "title": "נטפליקס השיקה לציבור את מודל ה-AI VOID להסרת אובייקטים מושלמת מווידאו 🎬 . פשוט ציינו את האובייקט להסרה, והמודל יגזור אותו ללא עקבות וישיב את הרקע בצורה טבעית ✨",
+        "url": "https://t.me/botai14/1153"
+      },
+      {
+        "title": "מיקרוסופט השיקה את MAI-1 מודל AI חינמי לתמלול דיבור שמעולה מ-Gemini במבחן FLEUR 🚀 . ניתן להעלות קבצים או להקליט בדפדפן – מהיר ומתאים להרצאות וראיונות 🎙️ . נסו",
+        "url": "https://t.me/botai14/1154"
+      },
+      {
+        "title": "הכירו את Auphonic: מעביר כל קובץ אודיו לאיכות אולפן 🎙️ ✨ . הסאונד יהיה צלול, גם עם רעשי רקע. ✅ תומך בכל פורמטים פופולריים. ✅ מוריד רעשים, שתיקות והיסוסים. ✅ מח",
+        "url": "https://t.me/botai14/1155"
+      },
+      {
+        "title": "גוגל חושפת אפליקציית הכתבה חינמית עם כמה טוויסטים מעניינים 👈🏽 לקריאה נוחה במחשב 👉🏽 ⬇️ לקריאת נוחה בנייד ⬇️",
+        "url": "https://t.me/botai14/1156"
+      },
+      {
+        "title": "חובב טכנולוגיה פיתח את Shannon, סוכן AI אוטונומי לבדיקת חדירות, והפיץ אותו כקוד פתוח. 🤖 🛡️ הכלי מבצע איסוף מודיעין, מזהה חולשות ומייצר דוחות עם PoC מוכנים לשי",
+        "url": "https://t.me/botai14/1157"
+      },
+      {
+        "title": "גוגל טרנדס עוברת שדרוג משמעותי עם שילוב של Gemini. 🚀 גוגל משיקה את חוויית Google Trends החדשה במובייל, המשתלבת עם כושר הבינה המלאכותית של Gemini. שינוי זה מאפש",
+        "url": "https://t.me/botai14/1158"
+      }
+    ]
+  },
+  {
+    "source": "hackit770 Telegram",
+    "url": "https://t.me/s/hackit770",
+    "kind": "secondary",
+    "parser": "telegram",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "⁨ רגע לפני פסח: בואו תראו מה ה״סוד״ לסרטונים הטרנדיים האלה 🤯 ובקיצור: לצלם את עצמכם בווידאו, לצלם מסך של הפריים הראשון וללכת לננו בננה, להחליף את הדמות למה שתר",
+        "url": "https://t.me/hackit770/1579"
+      },
+      {
+        "title": "התמונה שאתם רואים פה רצה ברשת אתמול בקצב מסחרר. למה? כי מסתבר שאתמול היה יום מטלטל מאוד בעקבות 2 אירועים חמורים שפורסמו: 1. כל קוד המקור של קלוד קוד עלה בטעות ל",
+        "url": "https://t.me/hackit770/1580"
+      },
+      {
+        "title": "קבלו את הדירוג שלי ל-5 כלי ה-AI שהכי כדאי להתמקד בהם כיום. כמו הסדר של פסח - אבל ב-AI. למה? כי יש יותר מדי כלים. יותר מדי בלאגן. לעניות דעתי, אין טעם ללמוד המון",
+        "url": "https://t.me/hackit770/1581"
+      },
+      {
+        "title": "מועדים לשמחה, היום התחילה ספירת העומר, יום אחד לעומר, אז לכבוד זה לקחתי את עומר אדם ועשיתי השוואה בין 3 המודלים הכי חזקים היום שיודעים לקחת תמונה ולהפוך אותה למ",
+        "url": "https://t.me/hackit770/1582"
+      },
+      {
+        "title": "מה עושים ב-4 בלילה? בונים עם קלוד קוד (דרך קלוד דסקטופ כמובן) מערכת תמלול שמסוגלת לתמלל קבצים בכל אורך, ואפילו תומכת בתמלול של ספריה שלמה שיש בה המון קבצים. ומה",
+        "url": "https://t.me/hackit770/1583"
+      },
+      {
+        "title": "אחרי המון זמן שלא עבדתי עם מידג׳רני, הלילה החלטתי לנסות שוב. ממש הופתעתי מרמת הריאליזם, מיליארד רמות מעל כולם, והכי הופתעתי ממודל הווידאו שלהם שעשה עבודה פשוט מ",
+        "url": "https://t.me/hackit770/1584"
+      },
+      {
+        "title": "אמרו לי שאני מטומטם שאני משחרר את זה בחינם לכולם, אבל עבורי קוד פתוח זה ערך אמיתי לקהילה. אז קבלו במתנה את בליץ AI&#33; סטודיו ה-AI שמאפשר לכם לתמלל בעברית וליה",
+        "url": "https://t.me/hackit770/1585"
+      },
+      {
+        "title": "מעניין: OpenHands, כלי לפיתוח עם AI, תופס את המקום הראשון בפיתוח ״מתמשך״ עם סוכני AI ועוקף את קלוד קוד ואת ג׳מיני CLI וגם מציג מדד חדש בשם EvoClaw (אולי די עם ה",
+        "url": "https://t.me/hackit770/1588"
+      },
+      {
+        "title": "הספרינט מת. הפילוסופיה של \"רוץ מהר, קבל פידבק, ואז תתקן מה שצריך ותשחרר עדכוני גרסאות\" פשוט הפכה לאיטית מדי בתצורה שהכרנו. שזה מטורף לחשוב על זה. הריצה הכי מהיר",
+        "url": "https://t.me/hackit770/1589"
+      },
+      {
+        "title": "טיפ זהב: אם תגידו לקלוד לזכור דברים - הוא יוסיף את זה לזיכרון שלו. זה עדכון שחמק מתחת לרדאר מרוב חידושים, אבל הוא משמעותי. לדוגמא, אני עובד על סרטון חדש, יצרתי ",
+        "url": "https://t.me/hackit770/1590"
+      },
+      {
+        "title": "קבלו את אתר הקורסים החינמיים על AI שאתם חייבים להכיר 🤩 https://www.deeplearning.ai/",
+        "url": "https://t.me/hackit770/1591"
+      },
+      {
+        "title": "תעבדו חכם יותר, לא קשה יותר. קורס ה-AI שלי על קלוד דסקטופ - שעוזר לעשות בדיוק את זה ומיועד לכולם - מחכה לכם ממש פה: https://practical.yuv.ai נגרות לומדים מנגר. ",
+        "url": "https://t.me/hackit770/1592"
+      },
+      {
+        "title": "לכל מימונה יש מוצאי מימונה. תרבחו ותסעדו&#33;",
+        "url": "https://t.me/hackit770/1593"
+      },
+      {
+        "title": "אין לי כוח כבר לאנת'רופיק. רק סיימנו את פסח - והנה לפני כ-20 דקות ראיתי הכרזה ששוב מטלטלת את השוק 😮 מה הפעם? קלוד יכול לבנות לנו סוכני AI מנוהלים שנוכל להכניס ",
+        "url": "https://t.me/hackit770/1594"
       }
     ]
   }

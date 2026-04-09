@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-09T05:01:30.237Z",
+  "lastPublishedAt": "2026-04-09T05:09:59.613Z",
   "latestUrl": "./news-dashboard/site/latest.html",
   "archive": [
     "2026-04-09.html",
@@ -28,15 +28,12 @@
       "got": 5,
       "fallbackActive": false,
       "sourcesWorked": [
-        "Anthropic News",
-        "Google DeepMind Blog"
+        "TechNewsHeb Telegram",
+        "AI_tg_il Telegram",
+        "botai14 Telegram",
+        "hackit770 Telegram"
       ],
-      "sourcesFailed": [
-        {
-          "source": "OpenAI News",
-          "error": "Error: HTTP 403 for https://openai.com/news/"
-        }
-      ]
+      "sourcesFailed": []
     },
     "israel": {
       "topic": "israel",

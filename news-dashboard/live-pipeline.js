@@ -33,9 +33,10 @@ const TOPICS = [
     hebrew: 'טכנולוגיה #2',
     description: 'Telegram-defined second technology feed',
     sources: [
-      { name: 'OpenAI News', url: 'https://openai.com/news/', kind: 'primary', parser: 'openai' },
-      { name: 'Anthropic News', url: 'https://www.anthropic.com/news', kind: 'secondary', parser: 'anthropic' },
-      { name: 'Google DeepMind Blog', url: 'https://deepmind.google/discover/blog/', kind: 'secondary', parser: 'deepmind' }
+      { name: 'TechNewsHeb Telegram', url: 'https://t.me/s/TechNewsHeb', kind: 'primary', parser: 'telegram' },
+      { name: 'AI_tg_il Telegram', url: 'https://t.me/s/AI_tg_il', kind: 'primary', parser: 'telegram' },
+      { name: 'botai14 Telegram', url: 'https://t.me/s/botai14', kind: 'secondary', parser: 'telegram' },
+      { name: 'hackit770 Telegram', url: 'https://t.me/s/hackit770', kind: 'secondary', parser: 'telegram' }
     ]
   },
   {
@@ -178,32 +179,16 @@ const parsers = {
       return { title: text, url: href };
     }, 40);
   },
-  openai(html, source) {
-    return extractMatches(html, /<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, (m) => {
-      const href = absolutize(source.url, decodeEntities(m[1]));
-      const text = stripTags(m[2]);
-      if (!/openai\.com\//i.test(href)) return null;
-      if (text.length < 30 || text.length > 180) return null;
-      return { title: text, url: href };
-    }, 40);
-  },
-  anthropic(html, source) {
-    return extractMatches(html, /<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, (m) => {
-      const href = absolutize(source.url, decodeEntities(m[1]));
-      const text = stripTags(m[2]);
-      if (!/anthropic\.com\//i.test(href)) return null;
-      if (text.length < 30 || text.length > 180) return null;
-      return { title: text, url: href };
-    }, 40);
-  },
-  deepmind(html, source) {
-    return extractMatches(html, /<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, (m) => {
-      const href = absolutize(source.url, decodeEntities(m[1]));
-      const text = stripTags(m[2]);
-      if (!/deepmind\.google\//i.test(href)) return null;
-      if (text.length < 30 || text.length > 180) return null;
-      return { title: text, url: href };
-    }, 40);
+  telegram(html, source) {
+    const textMatches = [...html.matchAll(/<div class="tgme_widget_message_text[^>]*>([\s\S]*?)<\/div>/gi)].slice(0, 30);
+    const hrefMatches = [...html.matchAll(/<a[^>]+class="tgme_widget_message_date"[^>]+href="([^"]+)"/gi)].slice(0, 30);
+    const out = [];
+    for (let i = 0; i < Math.min(textMatches.length, hrefMatches.length); i += 1) {
+      const text = decodeEntities(stripTags(textMatches[i][1] || ''));
+      if (text.length < 25) continue;
+      out.push({ title: text.slice(0, 160), url: absolutize(source.url, decodeEntities(hrefMatches[i][1])) });
+    }
+    return out;
   },
   ynet(html, source) {
     return extractMatches(html, /<a[^>]+href=['"]([^'"]+)['"][^>]*>([\s\S]*?)<\/a>/gi, (m) => {

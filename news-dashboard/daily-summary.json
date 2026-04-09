@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-09T05:01:30.237Z",
+  "generatedAt": "2026-04-09T05:09:59.613Z",
   "status": "SUCCESS",
   "latestUrl": "./news-dashboard/site/latest.html",
-  "lastPublishedAt": "2026-04-09T05:01:30.237Z",
-  "sourcesWorkedCount": 13,
+  "lastPublishedAt": "2026-04-09T05:09:59.613Z",
+  "sourcesWorkedCount": 15,
   "fallbackActive": false,
   "topicStatus": [
     {
@@ -26,15 +26,12 @@
       "got": 5,
       "fallbackActive": false,
       "sourcesWorked": [
-        "Anthropic News",
-        "Google DeepMind Blog"
+        "TechNewsHeb Telegram",
+        "AI_tg_il Telegram",
+        "botai14 Telegram",
+        "hackit770 Telegram"
       ],
-      "sourcesFailed": [
-        {
-          "source": "OpenAI News",
-          "error": "Error: HTTP 403 for https://openai.com/news/"
-        }
-      ]
+      "sourcesFailed": []
     },
     {
       "topic": "israel",
