@@ -1,0 +1,11 @@
+{
+  "name": "news-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Live daily news pipeline",
+  "main": "morning-run.js",
+  "scripts": {
+    "morning": "node morning-run.js",
+    "test:live": "node morning-run.js --dry-run"
+  }
+}

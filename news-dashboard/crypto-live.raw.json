@@ -1,0 +1,212 @@
+[
+  {
+    "source": "CoinDesk",
+    "url": "https://www.coindesk.com/",
+    "kind": "primary",
+    "parser": "coindesk",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "The Protocol: Bernstein says quantum threat to Bitcoin is real but manageable Also: North Korea’s 6-month plot with Drift, Solana Foundation’s new ad and Alchemy AI.",
+        "url": "https://www.coindesk.com/tech/2026/04/08/the-protocol-bernstein-says-quantum-threat-to-bitcoin-is-real-but-manageable"
+      },
+      {
+        "title": "Adam Back denies he’s Satoshi Nakamoto after NYT report claims he’s Bitcoin’s creator Similarities reflect shared early research, not proof, said Back. Others have questions too.",
+        "url": "https://www.coindesk.com/markets/2026/04/08/adam-back-denies-he-s-satoshi-nakamoto-after-nyt-report-claims-he-s-bitcoin-s-creator"
+      },
+      {
+        "title": "CoinDesk 20 performance update: Internet Computer (ICP) rises 12.1% NEAR Protocol (NEAR) joined Internet Computer (ICP) as a top performer, climbing 8.9% from Tuesday.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/04/08/coindesk-20-performance-update-internet-computer-icp-rises-12-1"
+      },
+      {
+        "title": "Pharos Network Announces $44M Series A Round, Bringing Total Funding to $52M to Scale Onchain Economy",
+        "url": "https://www.coindesk.com/press-release/2026/04/08/pharos-network-announces-usd44m-series-a-round-bringing-total-funding-to-usd52m-to-scale-onchain-economy"
+      },
+      {
+        "title": "Bitbase Officially Launches Global Derivatives Platform, Aiming to Reshape Market Standards via \"Institutional Rigor\" and \"Awards for Discipline\"",
+        "url": "https://www.coindesk.com/press-release/2026/04/07/bitbase-officially-launches-global-derivatives-platform-aiming-to-reshape-market-standards-via-institutional-rigor-and-awards-for-discipline"
+      },
+      {
+        "title": "MSX Launches \"Novice & Education\" Initiative to Bridge Knowledge Gap in Tokenized Equity Trading",
+        "url": "https://www.coindesk.com/press-release/2026/04/01/msx-launches-novice-and-education-initiative-to-bridge-knowledge-gap-in-tokenized-equity-trading"
+      },
+      {
+        "title": "Bitcoin under $71,000, ETH, SOL, XRP drop as Iran ceasefire frays within 48 hours of being signed",
+        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-under-usd71-000-eth-sol-xrp-drop-as-iran-ceasefire-frays-within-48-hours-of-being-signed"
+      },
+      {
+        "title": "Bitcoin under $71,000, ETH, SOL, XRP drop as Iran ceasefire frays within 48 hours of being signed",
+        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-under-usd71-000-eth-sol-xrp-drop-as-iran-ceasefire-frays-within-48-hours-of-being-signed"
+      },
+      {
+        "title": "Morgan Stanley’s bitcoin ETF draws $34 million on day one",
+        "url": "https://www.coindesk.com/markets/2026/04/08/morgan-stanley-s-bitcoin-etf-draws-usd34-million-on-day-one"
+      },
+      {
+        "title": "Bitcoin gets its first working prototype of quantum-resistant wallet rescue tool",
+        "url": "https://www.coindesk.com/tech/2026/04/09/bitcoin-gets-first-working-prototype-of-quantum-resistant-wallet-rescue-tool"
+      },
+      {
+        "title": "Michael Saylor says bitcoin has likely bottomed, quantum risk overblown",
+        "url": "https://www.coindesk.com/markets/2026/04/08/michael-saylor-says-bitcoin-has-likely-bottomed-quantum-risk-overblown"
+      },
+      {
+        "title": "How CoinW’s Upgraded Futures Trading Businesses Are Responding Nimbly to Trends",
+        "url": "https://www.coindesk.com/sponsored-content/how-coinw-s-upgraded-futures-trading-businesses-are-responding-nimbly-to-trends"
+      },
+      {
+        "title": "U.S. Treasury proposes demands that stablecoin firms be set to police bad transactions",
+        "url": "https://www.coindesk.com/policy/2026/04/08/u-s-treasury-to-propose-demands-that-stablecoin-firms-be-set-to-police-bad-transactions"
+      },
+      {
+        "title": "Iran eyes crypto toll for oil tanker transits through Strait of Hormuz, according to FT",
+        "url": "https://www.coindesk.com/markets/2026/04/08/iran-eyes-crypto-toll-for-oil-tanker-transit-through-strait-of-hormuz"
+      },
+      {
+        "title": "Bitcoin is above $70,000 on Iran ceasefire, but rally is turning cautious for good reasons",
+        "url": "https://www.coindesk.com/markets/2026/04/08/bitcoin-is-above-usd70-000-on-iran-ceasefire-but-rally-is-turning-cautious-for-good-reasons"
+      }
+    ]
+  },
+  {
+    "source": "Decrypt",
+    "url": "https://decrypt.co/",
+    "kind": "secondary",
+    "parser": "decrypt",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "Bitcoin Depot ATM Operator Says $3.6 Million in BTC Stolen in Corporate Hack",
+        "url": "https://decrypt.co/363734/bitcoin-depot-atm-operator-3-6-million-btc-stolen-security-breach"
+      },
+      {
+        "title": "Researchers Propose New Way to Manage Financial Risk When AI Agents Fumble Trades",
+        "url": "https://decrypt.co/363727/agentic-risk-standard-ai-research-finance-trades"
+      },
+      {
+        "title": "Bitcoin Miner Cango Sells $143 Million in BTC, Slashes Production Costs",
+        "url": "https://decrypt.co/363730/bitcoin-miner-cango-sells-143-million-btc-slashes-production-costs"
+      },
+      {
+        "title": "Meta Launches Muse Spark, Its Most Capable AI Yet—But Gemini 3.1 Pro Still Leads the Pack",
+        "url": "https://decrypt.co/363691/meta-muse-spark-most-capable-ai-gemini-pro-still-leads"
+      },
+      {
+        "title": "Stablecoin Issuers Must Adhere to Anti-Money Laundering and Sanctions Programs, Says Treasury",
+        "url": "https://decrypt.co/news-explorer?pinned=1373841&title=stablecoin-issuers-must-adhere-to-anti-money-laundering-and-sanctions-programs-says-treasury"
+      },
+      {
+        "title": "Chainalysis Predicts Stablecoins May Exceed Traditional Payment Networks With $1.5 Quadrillion Annual Trading Volume",
+        "url": "https://decrypt.co/news-explorer?pinned=1373797&title=chainalysis-predicts-stablecoins-may-exceed-traditional-payment-networks-with-15-quadrillion-annual-trading-volume"
+      },
+      {
+        "title": "Bernstein Report Reassures Minimal Threat of Quantum Computing to Bitcoin Security and Mining Operations",
+        "url": "https://decrypt.co/news-explorer?pinned=1373786&title=bernstein-report-reassures-minimal-threat-of-quantum-computing-to-bitcoin-security-and-mining-operations"
+      },
+      {
+        "title": "Michael Saylor Predicts Bitcoin&#x27;s Bottom at $60,000 Was Driven by Seller Exhaustion and Capital Structure",
+        "url": "https://decrypt.co/news-explorer?pinned=1373782&title=michael-saylor-predicts-bitcoins-bottom-at-60000-was-driven-by-seller-exhaustion-and-capital-structure"
+      },
+      {
+        "title": "Coinbase&#x27;s EU Growth Hinges on Alignment Between US and EU Regulations, Says Exec",
+        "url": "https://decrypt.co/news-explorer?pinned=1373735&title=coinbases-eu-growth-hinges-on-alignment-between-us-and-eu-regulations-says-exec"
+      },
+      {
+        "title": "Hyperliquid Users Hit With Massive Liquidations Due to Plunging Oil Prices",
+        "url": "https://decrypt.co/news-explorer?pinned=1373710&title=hyperliquid-users-hit-with-massive-liquidations-due-to-plunging-oil-prices"
+      },
+      {
+        "title": "Cloudflare Prioritizes Post-Quantum Authentication By 2029 to Protect Against Cryptography Threats",
+        "url": "https://decrypt.co/news-explorer?pinned=1373698&title=cloudflare-prioritizes-post-quantum-authentication-by-2029-to-protect-against-cryptography-threats"
+      },
+      {
+        "title": "Bored Ape Yacht Club Creator Yuga Labs Settles Copyright Lawsuit With Ryder Ripps",
+        "url": "https://decrypt.co/news-explorer?pinned=1373674&title=bored-ape-yacht-club-creator-yuga-labs-settles-copyright-lawsuit-with-ryder-ripps"
+      },
+      {
+        "title": "Is Adam Back Really Bitcoin Creator Satoshi Nakamoto? NYT Says Yes, But He Denies It",
+        "url": "https://decrypt.co/news-explorer?pinned=1373515&title=is-adam-back-really-bitcoin-creator-satoshi-nakamoto-nyt-says-yes-but-he-denies-it"
+      },
+      {
+        "title": "Standard Chartered May Merge Zodia Custody&#x27;s Crypto Business With Its Digital Asset Division",
+        "url": "https://decrypt.co/news-explorer?pinned=1373445&title=standard-chartered-may-merge-zodia-custodys-crypto-business-with-its-digital-asset-division"
+      },
+      {
+        "title": "SEC Enforcement Actions Fell in 2025 as Regulator Took Friendlier Approach to Crypto",
+        "url": "https://decrypt.co/news-explorer?pinned=1373411&title=sec-enforcement-actions-fell-in-2025-as-regulator-took-friendlier-approach-to-crypto"
+      }
+    ]
+  },
+  {
+    "source": "SEC Press Releases",
+    "url": "https://www.sec.gov/news/pressreleases",
+    "kind": "secondary",
+    "parser": "sec",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "Variable Insurance Products Search",
+        "url": "https://www.sec.gov/search-filings/variable-insurance-products-search"
+      },
+      {
+        "title": "Public Dissemination Service (PDS)",
+        "url": "https://www.sec.gov/search-filings/public-dissemination-service-system-contact"
+      },
+      {
+        "title": "EDGAR Filer Management Portal",
+        "url": "https://www.filermanagement.edgarfiling.sec.gov/filermgmt/Welcome/EDGARFilerMgmtMain.htm"
+      },
+      {
+        "title": "Online Forms Management Portal",
+        "url": "https://www.onlineforms.edgarfiling.sec.gov/Welcome/EDGAROnlineFormsLogin.htm"
+      },
+      {
+        "title": "Filer Support & Resources",
+        "url": "https://www.sec.gov/submit-filings/filer-support-resources"
+      },
+      {
+        "title": "Statistics & Data Visualizations",
+        "url": "https://www.sec.gov/data-research/statistics-data-visualizations"
+      },
+      {
+        "title": "No-Action, Interpretive, and Exemptive Letters",
+        "url": "https://www.sec.gov/rules-regulations/no-action-interpretive-exemptive-letters"
+      },
+      {
+        "title": "Self-Regulatory Organization Rulemaking",
+        "url": "https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking"
+      },
+      {
+        "title": "Public Petitions for Rulemaking",
+        "url": "https://www.sec.gov/rules-regulations/petitions-rulemaking-submitted-to-sec"
+      },
+      {
+        "title": "Administrative Proceedings",
+        "url": "https://www.sec.gov/enforcement-litigation/administrative-proceedings"
+      },
+      {
+        "title": "Administrative Law Judge Orders and Initial Decisions",
+        "url": "https://www.sec.gov/enforcement-litigation/administrative-law-judge-orders-initial-decisions"
+      },
+      {
+        "title": "Distributions to Harmed Investors",
+        "url": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors"
+      },
+      {
+        "title": "Compliance Outreach Program",
+        "url": "https://www.sec.gov/compliance/compliance-outreach-program"
+      },
+      {
+        "title": "Market Structure Analytics",
+        "url": "https://www.sec.gov/featured-topics/market-structure-analytics"
+      },
+      {
+        "title": "Saving and Investing for Military Personnel",
+        "url": "https://www.sec.gov/featured-topics/saving-investing-military-personnel"
+      }
+    ]
+  }
+]

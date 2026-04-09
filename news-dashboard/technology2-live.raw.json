@@ -1,0 +1,84 @@
+[
+  {
+    "source": "OpenAI News",
+    "url": "https://openai.com/news/",
+    "kind": "primary",
+    "parser": "openai",
+    "success": false,
+    "fallback": true,
+    "error": "Error: HTTP 403 for https://openai.com/news/",
+    "items": []
+  },
+  {
+    "source": "Anthropic News",
+    "url": "https://www.anthropic.com/news",
+    "kind": "secondary",
+    "parser": "anthropic",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "Product Feb 17, 2026 Introducing Claude Sonnet 4.6 Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.",
+        "url": "https://www.anthropic.com/news/claude-sonnet-4-6"
+      },
+      {
+        "title": "Apr 6, 2026 Announcements Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+        "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+      },
+      {
+        "title": "Mar 31, 2026 Announcements Australian government and Anthropic sign MOU for AI safety and research",
+        "url": "https://www.anthropic.com/news/australia-MOU"
+      },
+      {
+        "title": "Mar 12, 2026 Announcements Anthropic invests $100 million into the Claude Partner Network",
+        "url": "https://www.anthropic.com/news/claude-partner-network"
+      },
+      {
+        "title": "Mar 11, 2026 Announcements Introducing The Anthropic Institute",
+        "url": "https://www.anthropic.com/news/the-anthropic-institute"
+      },
+      {
+        "title": "Mar 10, 2026 Announcements Sydney will become Anthropic’s fourth office in Asia-Pacific",
+        "url": "https://www.anthropic.com/news/sydney-fourth-office-asia-pacific"
+      },
+      {
+        "title": "Mar 6, 2026 Policy Partnering with Mozilla to improve Firefox’s security",
+        "url": "https://www.anthropic.com/news/mozilla-firefox-security"
+      },
+      {
+        "title": "Mar 5, 2026 Announcements Where things stand with the Department of War",
+        "url": "https://www.anthropic.com/news/where-stand-department-war"
+      },
+      {
+        "title": "Feb 27, 2026 Announcements Statement on the comments from Secretary of War Pete Hegseth",
+        "url": "https://www.anthropic.com/news/statement-comments-secretary-war"
+      },
+      {
+        "title": "Feb 26, 2026 Announcements Statement from Dario Amodei on our discussions with the Department of War",
+        "url": "https://www.anthropic.com/news/statement-department-of-war"
+      },
+      {
+        "title": "Feb 25, 2026 Announcements Anthropic acquires Vercept to advance Claude&#x27;s computer use capabilities",
+        "url": "https://www.anthropic.com/news/acquires-vercept"
+      },
+      {
+        "title": "Consumer health data privacy policy",
+        "url": "https://www.anthropic.com/legal/consumer-health-data-privacy-policy"
+      }
+    ]
+  },
+  {
+    "source": "Google DeepMind Blog",
+    "url": "https://deepmind.google/discover/blog/",
+    "kind": "secondary",
+    "parser": "deepmind",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "Google DeepMind Explore the frontier of AI",
+        "url": "https://deepmind.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+      }
+    ]
+  }
+]

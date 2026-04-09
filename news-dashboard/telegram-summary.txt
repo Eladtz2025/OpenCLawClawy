@@ -1,0 +1,2 @@
+בוקר טוב
+./news-dashboard/site/latest.html

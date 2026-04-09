@@ -1,0 +1,212 @@
+[
+  {
+    "source": "TechCrunch AI",
+    "url": "https://techcrunch.com/category/artificial-intelligence/",
+    "kind": "primary",
+    "parser": "tc",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "Poke makes using AI agents as easy as sending a text",
+        "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/"
+      },
+      {
+        "title": "AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict",
+        "url": "https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/"
+      },
+      {
+        "title": "Tubi is the first streamer to launch a native app within ChatGPT",
+        "url": "https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/"
+      },
+      {
+        "title": "Snowflake’s transition from storing data to shipping with it",
+        "url": "https://techcrunch.com/podcast/snowflakes-transition-from-storing-data-to-shipping-with-it/"
+      },
+      {
+        "title": "Why Snowflake is no longer just a data warehouse",
+        "url": "https://techcrunch.com/video/why-snowflake-is-no-longer-just-a-data-warehouse/"
+      },
+      {
+        "title": "Astropad&#8217;s Workbench reimagines remote desktop for AI agents, not IT support",
+        "url": "https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/"
+      },
+      {
+        "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
+        "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/"
+      },
+      {
+        "title": "Databricks co-founder wins prestigious ACM award, says &#8216;AGI is here already&#8217;",
+        "url": "https://techcrunch.com/2026/04/08/databricks-matei-zaharia-wins-acm-computing-prize-agi/"
+      },
+      {
+        "title": "Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass",
+        "url": "https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/"
+      },
+      {
+        "title": "Atlassian launches visual AI tools and third-party agents in Confluence",
+        "url": "https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/"
+      },
+      {
+        "title": "Google quietly launched an AI dictation app that works offline",
+        "url": "https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/"
+      },
+      {
+        "title": "I can&#8217;t help rooting for tiny open source AI model maker Arcee",
+        "url": "https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/"
+      },
+      {
+        "title": "Firmus, the &#8216;Southgate&#8217; AI data center builder backed by Nvidia, hits $5.5B valuation",
+        "url": "https://techcrunch.com/2026/04/07/firmus-the-southgate-ai-datacenter-builder-backed-by-nvidia-hits-5-5b-valuation/"
+      },
+      {
+        "title": "Intel signs on to Elon Musk&#8217;s Terafab chips project",
+        "url": "https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/"
+      },
+      {
+        "title": "Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative",
+        "url": "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/"
+      }
+    ]
+  },
+  {
+    "source": "The Verge Tech",
+    "url": "https://www.theverge.com/tech",
+    "kind": "primary",
+    "parser": "verge",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "The homepage The Verge The Verge logo.",
+        "url": "https://www.theverge.com/"
+      },
+      {
+        "title": "The homepage The Verge The Verge logo.",
+        "url": "https://www.theverge.com/"
+      },
+      {
+        "title": "Insta360’s Snap is a tiny magnetic phone screen for taking rear-camera selfies",
+        "url": "https://www.theverge.com/tech/907670/insta360-snap-usb-c-magsafe-screen-selfies-smartphone-rear-camera"
+      },
+      {
+        "title": "Unionized ProPublica staff are on strike over AI, layoffs, and wages",
+        "url": "https://www.theverge.com/news/908401/propublica-union-strike-negotiations-ai-layoffs"
+      },
+      {
+        "title": "Gemini gets notebooks to help you organize projects",
+        "url": "https://www.theverge.com/tech/909031/google-gemini-notebooks-notebooklm"
+      },
+      {
+        "title": "Dyson made a handheld version of its iconic fans",
+        "url": "https://www.theverge.com/tech/907802/dyson-hushjet-mini-cool-handheld-personal-fan-specs-availability"
+      },
+      {
+        "title": "translates speech into your preferred language",
+        "url": "https://www.theverge.com/news/670322/google-meet-gemini-translation-ai-english-spanish"
+      },
+      {
+        "title": "The AI RAM shortage is also driving up SSD prices",
+        "url": "https://www.theverge.com/tech/908916/ssd-storage-shortages-price-increases"
+      },
+      {
+        "title": "The Neo Effect: How Apple’s cheapest Mac is changing the PC game",
+        "url": "https://www.theverge.com/tech/904705/apple-macbook-neo-news-reviews-mods"
+      },
+      {
+        "title": "Microsoft’s executive shake-up continues as developer division chief resigns",
+        "url": "https://www.theverge.com/tech/908793/microsoft-devdiv-julia-liuson-resignation"
+      },
+      {
+        "title": "Meta is reentering the AI race with a new model called Muse Spark",
+        "url": "https://www.theverge.com/tech/908769/meta-muse-spark-ai-model-launch-rollout"
+      },
+      {
+        "title": "Amazon’s Smart Thermostat can help lower your energy bills, and it’s down to $62",
+        "url": "https://www.theverge.com/gadgets/908742/amazon-smart-thermostat-samsung-galaxy-buds-4-pro-deal-sale"
+      },
+      {
+        "title": "classic grey version of the 8BitDo 64 controller",
+        "url": "https://www.theverge.com/news/825309/8bitdo-64-wireless-bluetooth-controller-analogue-3d-retro-gray-color"
+      },
+      {
+        "title": "Xbox’s new era needs games like Forza Horizon 6",
+        "url": "https://www.theverge.com/games/908305/forza-horizon-6-preview-xbox"
+      },
+      {
+        "title": "Tractive’s new dog and cat trackers provide more health insights for your pets",
+        "url": "https://www.theverge.com/tech/907947/tractive-dog-6-xl-cat-mini-pet-trackers-health-monitoring-location"
+      }
+    ]
+  },
+  {
+    "source": "Google Blog Technology",
+    "url": "https://blog.google/technology/",
+    "kind": "secondary",
+    "parser": "google",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "Veo 3.1 Ingredients to Video: More consistency, creativity and control Today, we’re introducing an enhanced version of Veo 3.1 “Ingredients to Video.”",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-ingredients-to-video/"
+      },
+      {
+        "title": "Measuring progress toward AGI: A cognitive framework",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/"
+      },
+      {
+        "title": "Create new worlds in Project Genie with these 4 tips",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie/"
+      },
+      {
+        "title": "Advancing AI benchmarking with Game Arena",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/kaggle-game-arena-updates/"
+      },
+      {
+        "title": "View more from Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/"
+      },
+      {
+        "title": "Try notebooks in Gemini to easily keep track of projects",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/"
+      },
+      {
+        "title": "Lyria 3 Pro: Create longer tracks in more Google products",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/"
+      },
+      {
+        "title": "Introducing “vibe design” with Stitch",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
+      },
+      {
+        "title": "An update on our mental health work",
+        "url": "https://blog.google/innovation-and-ai/technology/health/mental-health-updates/"
+      },
+      {
+        "title": "Announcing the winners of the MedGemma Impact Challenge",
+        "url": "https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/"
+      },
+      {
+        "title": "A more personal digital health experience for people in Europe",
+        "url": "https://blog.google/innovation-and-ai/technology/health/google-docmorris-partnership/"
+      },
+      {
+        "title": "Evolving expectations of what’s possible",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/"
+      },
+      {
+        "title": "Quantum frontiers may be closer than they appear",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/"
+      },
+      {
+        "title": "How we’re helping you avoid scams this tax season",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/five-ways-google-helps-you-avoid-scammers/"
+      },
+      {
+        "title": "View more from Safety & Security",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/"
+      }
+    ]
+  }
+]

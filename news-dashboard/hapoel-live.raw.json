@@ -1,0 +1,168 @@
+[
+  {
+    "source": "Hapoel PT Official",
+    "url": "https://www.hapoelpt.com/",
+    "kind": "primary",
+    "parser": "hapoel",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "החנות הרשמית",
+        "url": "https://www.hapoelpt.com/shop"
+      },
+      {
+        "title": "בית הספר לכדורגל",
+        "url": "https://www.hapoelpt.com/youthfootballschool"
+      },
+      {
+        "title": "הפועל בקהילה",
+        "url": "https://www.hapoelpt.com/community"
+      },
+      {
+        "title": "תקנון, כללים ותנאי שימוש בכרטיסים",
+        "url": "https://www.hapoelpt.com/terms"
+      },
+      {
+        "title": "תנאי שימוש ופרטיות באתר",
+        "url": "https://www.hapoelpt.com/terms-and-privacy"
+      },
+      {
+        "title": "תנאי שימוש באפליקציה",
+        "url": "https://www.hapoelpt.com/tos"
+      },
+      {
+        "title": "לתקציר המשחק",
+        "url": "https://www.hapoelpt.com/fixtures"
+      },
+      {
+        "title": "כניסה למחלקת הנוער",
+        "url": "https://www.hapoelpt.com/youth"
+      },
+      {
+        "title": "לפרטים נוספים",
+        "url": "https://www.hapoelpt.com/youthfootballschool"
+      },
+      {
+        "title": "לחבילות הפרסום שלנו",
+        "url": "https://www.hapoelpt.com/businesses"
+      },
+      {
+        "title": "לכל הסרטונים",
+        "url": "https://www.hapoelpt.com/hptv"
+      },
+      {
+        "title": "תצוגה מהירה חדש",
+        "url": "https://www.hapoelpt.com/product-page/%D7%9E%D7%93%D7%99-%D7%94%D7%91%D7%99%D7%AA-%D7%94%D7%A8%D7%A9%D7%9E%D7%99%D7%99%D7%9D-25-26"
+      },
+      {
+        "title": "חולצת הבית הרשמית 25/26 מחיר 200.00 ₪ 3 חולצות משחק רשמיות ב500 ש״ח",
+        "url": "https://www.hapoelpt.com/product-page/%D7%9E%D7%93%D7%99-%D7%94%D7%91%D7%99%D7%AA-%D7%94%D7%A8%D7%A9%D7%9E%D7%99%D7%99%D7%9D-25-26"
+      },
+      {
+        "title": "תצוגה מהירה חדש",
+        "url": "https://www.hapoelpt.com/product-page/%D7%AA%D7%9C%D7%91%D7%95%D7%A9%D7%AA-%D7%A9%D7%9C%D7%99%D7%A9%D7%99%D7%AA-25-26"
+      },
+      {
+        "title": "חולצת החוץ הרשמית 25/26 מחיר 200.00 ₪ 3 חולצות משחק רשמיות ב500 ש״ח",
+        "url": "https://www.hapoelpt.com/product-page/%D7%AA%D7%9C%D7%91%D7%95%D7%A9%D7%AA-%D7%A9%D7%9C%D7%99%D7%A9%D7%99%D7%AA-25-26"
+      }
+    ]
+  },
+  {
+    "source": "ONE Hapoel PT",
+    "url": "https://www.one.co.il/",
+    "kind": "secondary",
+    "parser": "one",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "מדוע הרגיזה תרצה את אוהדי הפועל?",
+        "url": "https://www.one.co.il/Glitch/72149/%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%a8%d7%92%d7%99%d7%96%d7%94-%d7%aa%d7%a8%d7%a6%d7%94-%d7%90%d7%aa-%d7%90%d7%95%d7%94%d7%93%d7%99-%d7%94%d7%a4%d7%95%d7%a2%d7%9c-"
+      },
+      {
+        "title": "19:30 הפועל ב\"ש בני יהודה",
+        "url": "https://www.one.co.il/live/match/470716"
+      },
+      {
+        "title": "19:30 הפועל ת\"א אולימפיאקוס",
+        "url": "https://www.one.co.il/live/match/463107"
+      },
+      {
+        "title": "15:00 עירוני מודיעין הפועל ר\"ג",
+        "url": "https://www.one.co.il/live/match/474550"
+      },
+      {
+        "title": "15:00 הפועל כפ\"ס מ.ס כפר קאסם",
+        "url": "https://www.one.co.il/live/match/474551"
+      },
+      {
+        "title": "15:00 הפועל כפר שלם הפועל חדרה",
+        "url": "https://www.one.co.il/live/match/474552"
+      },
+      {
+        "title": "15:00 הפועל ראשל\"צ הפועל עכו",
+        "url": "https://www.one.co.il/live/match/474553"
+      },
+      {
+        "title": "15:00 הפועל רעננה הפועל עפולה",
+        "url": "https://www.one.co.il/live/match/474556"
+      },
+      {
+        "title": "\"הבחירה שלכם מעידה על תעצומות נפש\" בעלי הפועל חיפה יואב כץ שלח לשחקנים הזרים שנשארו בארץ בזמן הלחימה עם איראן מכתב ובו כתב: \"מביע את הערכתי, זה אופי יוצא דופן ומחויבות אמיתית\" 10",
+        "url": "https://www.one.co.il/Article/25-26/1,1,1,53337/519205.html?ref=hp"
+      },
+      {
+        "title": "בלי ספינים: חיפה עשתה טעות גדולה בפגרה האזינו: בלי קשר לטעות השיפוט בפנדל נגד הפועל תל אביב, הירוקים לא התכוננו טוב לחזרת המשחקים ונראו רע. וגם: הספינים, התדמית של אזולאי והזרים 58",
+        "url": "https://www.one.co.il/Article/25-26/1,1,4,126491/519065.html?ref=hp"
+      },
+      {
+        "title": "אליניב ברדה בנה קבוצה שלא תלויה באף שחקן החיסורים בקישור, החזרה של מאיימבו והיציבות שהכניס להגנה, לויזו, עומק הסגל והאם יש סיכוי לאליפות סנסציונית? האזינו לפודקאסט הפועל תל אביב 37",
+        "url": "https://www.one.co.il/Article/25-26/1,1,5,75533/519072.html?ref=hp"
+      }
+    ]
+  },
+  {
+    "source": "Sport5",
+    "url": "https://www.sport5.co.il/",
+    "kind": "secondary",
+    "parser": "sport5",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "בראיינט כיכב: הפועל ת\"א ניצחה 80:95 את פנרבחצ'ה",
+        "url": "https://vod.sport5.co.il/?Vc=893&Vi=539471"
+      },
+      {
+        "title": "בקבוצה קיבלו ביטחון לקראת הפועל חיפה. האופציה על אנטמן תמומש",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=539618"
+      },
+      {
+        "title": "בית\"ר ממשיכה בהכנות לקראת הפועל י-ם. ברק יצחקי יחזור ל-4:3:3",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=539605"
+      },
+      {
+        "title": "מכבי תלויה בהפועל? התרחישים ביורוליג",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=405&docID=539540"
+      },
+      {
+        "title": "השורד איטודיס: הנוקאאוט של הפועל ת\"א",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=405&docID=539543"
+      },
+      {
+        "title": "אם יעפילו לפלייאוף: המענק של שחקני הפועל",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=11840&docID=539530"
+      },
+      {
+        "title": "רשמה 39:40 בחוץ על המוליכה. 28:31 להפועל ראשל\"צ על הפועל אשדוד",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=616&docID=539419"
+      },
+      {
+        "title": "כך הפועל עשויה לקבוע את גורלה של מכבי",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=11252&docID=539291"
+      }
+    ]
+  }
+]

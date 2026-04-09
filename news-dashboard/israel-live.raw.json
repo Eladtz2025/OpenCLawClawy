@@ -1,0 +1,152 @@
+[
+  {
+    "source": "ynet News",
+    "url": "https://www.ynet.co.il/news",
+    "kind": "primary",
+    "parser": "ynet",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "הפער הבלתי נסבל בין מילים וטילים: הבטחות נתניהו מול המציאות הכואבת",
+        "url": "https://www.ynet.co.il/news/article/bjl2pln3zl#autoplay"
+      },
+      {
+        "title": "טובאל קיבל הצטיינות על השירות בעזה: \"לא הספיק לנוח ועבר ללבנון\"",
+        "url": "https://www.ynet.co.il/news/article/sjpfqxv3zg#autoplay"
+      },
+      {
+        "title": "מהלומת אש וכיתור בינת ג'ביל: ישראל נלחמת בלבנון עם אור ירוק מטראמפ",
+        "url": "https://www.ynet.co.il/news/article/bk005yevh11e#autoplay"
+      },
+      {
+        "title": "זעם נשות השב\"כ על מכתב רעייתו של זיני: \"אל תדרדרו אותנו\"",
+        "url": "https://www.ynet.co.il/news/article/sj3gnmvhwg"
+      },
+      {
+        "title": "התושבים שעוזבים מספרים: \"איראן נהרסת לנגד עינינו\"",
+        "url": "https://www.ynet.co.il/news/article/sjtuircsbg#autoplay"
+      },
+      {
+        "title": "\"חתרנו למגע - ואיבדנו את הטובים ביותר\": מג\"ד הנח\"ל משחזר את הקרב הקשה בלבנון",
+        "url": "https://www.ynet.co.il/news/article/yokra14729180"
+      },
+      {
+        "title": "\"ישו נגד מוחמד\": הגסת' רואה במלחמה כעימות דתי, ואפילו האפיפיור לא שותק",
+        "url": "https://www.ynet.co.il/news/article/h191yv0jbe"
+      },
+      {
+        "title": "חברם לצוות של הרוגי הנח\"ל: \"מקסים היה התרופה שלנו, גלעד תמיד הצטיין\"",
+        "url": "https://www.ynet.co.il/news/article/r1keafks11x"
+      },
+      {
+        "title": "\"בשנה שעברה בעזה, עכשיו בגבול לבנון\": עם הלוחמים שחגגו את הסדר במוצב",
+        "url": "https://www.ynet.co.il/news/article/yokra14728489"
+      },
+      {
+        "title": "מלחמה בלי סוף: האיומים האיראניים - והתרחישים שישחקו לטובתם",
+        "url": "https://www.ynet.co.il/news/article/sy11t1tijbl#autoplay"
+      },
+      {
+        "title": "ביטחוני - פוליטי - מדיני",
+        "url": "https://www.ynet.co.il/news/category/185"
+      },
+      {
+        "title": "עוד בביטחוני - פוליטי - מדיני",
+        "url": "https://www.ynet.co.il/news/category/185"
+      },
+      {
+        "title": "האיום הקיומי ש\"הוסר\" כבר אז - והפעם רק \"הורחק\": הצהרות נתניהו וטראמפ בין שתי המלחמות",
+        "url": "https://www.ynet.co.il/news/article/hya66m1szl#autoplay"
+      },
+      {
+        "title": "הסוף העצוב של יוחנן, אחרי שנים של לחימה בצה\"ל: ״הוא אמר לי &#x27;תקשיב, אני כבר חנוק&#x27;\"",
+        "url": "https://www.ynet.co.il/news/article/b111l1cx2wg"
+      },
+      {
+        "title": "פיקוד העורף: חזרה לפעילות מלאה בבוקר - למעט בצפון, הגבלות התקהלות גם במרכז",
+        "url": "https://www.ynet.co.il/news/article/bkqo5bv211l"
+      }
+    ]
+  },
+  {
+    "source": "Times of Israel",
+    "url": "https://www.timesofisrael.com/",
+    "kind": "secondary",
+    "parser": "toi",
+    "success": true,
+    "fallback": false,
+    "items": [
+      {
+        "title": "Support ToI and remove all ads",
+        "url": "https://crm.timesofisrael.com/sign-up"
+      },
+      {
+        "title": "The Daily Edition What Matters Most Today",
+        "url": "https://www.timesofisrael.com/the-daily-edition/"
+      },
+      {
+        "title": "Tech Israel Updates from Silicon Wadi",
+        "url": "https://www.timesofisrael.com/tech-israel-edition/"
+      },
+      {
+        "title": "Real Estate Israel Monthly Update",
+        "url": "https://www.timesofisrael.com/real-estate-israel-edition/"
+      },
+      {
+        "title": "The Weekend Edition The Best Reads of the Week",
+        "url": "https://www.timesofisrael.com/the-weekend-edition/"
+      },
+      {
+        "title": "Weekly Highlights Choice Voices From The Blogs",
+        "url": "https://www.timesofisrael.com/the-blogs-edition/"
+      },
+      {
+        "title": "North New Jersey The Jewish Standard",
+        "url": "https://jewishstandard.timesofisrael.com/"
+      },
+      {
+        "title": "Pittsburgh Jewish Chronicle",
+        "url": "https://jewishchronicle.timesofisrael.com/"
+      },
+      {
+        "title": "For Publishers Become a Partner",
+        "url": "https://www.timesofisrael.com/local/"
+      },
+      {
+        "title": "About The Times of Israel",
+        "url": "https://www.timesofisrael.com/about/"
+      },
+      {
+        "title": "Advertise on The Times of Israel",
+        "url": "https://www.timesofisrael.com/advertise/"
+      },
+      {
+        "title": "Trump threatens to renew war if Iran doesn&#8217;t comply with &#8216;real agreement&#8217;",
+        "url": "https://www.timesofisrael.com/liveblog-april-09-2026/"
+      },
+      {
+        "title": "Temple Mount reopens after ceasefire with Iran",
+        "url": "https://www.timesofisrael.com/liveblog_entry/temple-mount-reopens-after-ceasefire-with-iran/"
+      },
+      {
+        "title": "Pakistan declares two days of vacation in Islamabad ahead of planned Iran-US talks",
+        "url": "https://www.timesofisrael.com/liveblog_entry/pakistan-declares-two-days-of-vacation-in-islamabad-ahead-of-planned-iran-us-talks/"
+      },
+      {
+        "title": "Trump threatens to renew war if Iran doesn't comply with 'real agreement,' will keep forces in region",
+        "url": "https://www.timesofisrael.com/liveblog_entry/trump-threatens-to-renew-war-if-iran-doesnt-comply-with-truce-will-keep-forces-in-region/"
+      }
+    ]
+  },
+  {
+    "source": "Gov.il News",
+    "url": "https://www.gov.il/en/pages/news",
+    "kind": "secondary",
+    "parser": "gov",
+    "success": false,
+    "fallback": true,
+    "error": "Error: HTTP 403 for https://www.gov.il/en/pages/news",
+    "items": []
+  }
+]
