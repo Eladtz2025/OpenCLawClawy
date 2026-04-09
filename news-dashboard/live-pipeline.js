@@ -4,7 +4,8 @@ const { URL } = require('url');
 
 const OUT_DIR = __dirname;
 const SITE_DIR = path.join(OUT_DIR, 'site');
-const ARCHIVE_DIR = path.join(SITE_DIR, 'archive');
+const LIVE_DIR = path.join(OUT_DIR, 'live-site');
+const ARCHIVE_DIR = path.join(LIVE_DIR, 'archive');
 const STATE_PATH = path.join(OUT_DIR, 'state.json');
 const FINAL_PATH = path.join(OUT_DIR, 'daily-final.json');
 const SUMMARY_PATH = path.join(OUT_DIR, 'daily-summary.json');
@@ -460,6 +461,7 @@ ${TOPICS.map(section).join('')}
 
 async function main() {
   ensureDir(SITE_DIR);
+  ensureDir(LIVE_DIR);
   ensureDir(ARCHIVE_DIR);
 
   const collected = [];
@@ -477,14 +479,14 @@ async function main() {
   fs.writeFileSync(FINAL_PATH, JSON.stringify(items, null, 2), 'utf8');
 
   const dashboard = renderDashboard(items, meta);
-  const latestPath = path.join(SITE_DIR, 'latest.html');
+  const latestPath = path.join(LIVE_DIR, 'latest.html');
   const archivePath = path.join(ARCHIVE_DIR, `${TODAY}.html`);
   fs.writeFileSync(latestPath, dashboard, 'utf8');
   fs.writeFileSync(archivePath, dashboard, 'utf8');
 
   const state = {
     lastPublishedAt: NOW,
-    latestUrl: './news-dashboard/site/latest.html',
+    latestUrl: './news-dashboard/live-site/latest.html',
     archive: fs.readdirSync(ARCHIVE_DIR).filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x)).sort().reverse(),
     topics: Object.fromEntries(collected.map(x => [x.topic.key, x.topicStatus]))
   };
@@ -506,7 +508,7 @@ async function main() {
   fs.writeFileSync(TELEGRAM_SUMMARY_PATH, telegramLines.join('\n'), 'utf8');
   fs.writeFileSync(TELEGRAM_ALERT_PATH, meta.status === 'SUCCESS' ? '' : `סטטוס: ${meta.status}`, 'utf8');
 
-  const rootHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./news-dashboard/site/latest.html?v=${Date.now()}" /></head><body><a href="./news-dashboard/site/latest.html?v=${Date.now()}">Clawy News</a></body></html>`;
+  const rootHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./news-dashboard/live-site/latest.html?v=${Date.now()}" /></head><body><a href="./news-dashboard/live-site/latest.html?v=${Date.now()}">Clawy News Live</a></body></html>`;
   fs.writeFileSync(ROOT_INDEX_PATH, rootHtml, 'utf8');
 
   console.log(JSON.stringify({ status: meta.status, items: items.length, latestPath, archivePath, dryRun: DRY_RUN }, null, 2));

@@ -1,11 +1,8 @@
 {
-  "lastPublishedAt": "2026-04-09T05:09:59.613Z",
-  "latestUrl": "./news-dashboard/site/latest.html",
+  "lastPublishedAt": "2026-04-09T07:38:42.056Z",
+  "latestUrl": "./news-dashboard/live-site/latest.html",
   "archive": [
-    "2026-04-09.html",
-    "2026-04-08.html",
-    "2026-04-05.html",
-    "2026-04-04.html"
+    "2026-04-09.html"
   ],
   "topics": {
     "technology": {

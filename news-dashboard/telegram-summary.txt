@@ -1,2 +1,2 @@
 בוקר טוב
-./news-dashboard/site/latest.html
+./news-dashboard/live-site/latest.html

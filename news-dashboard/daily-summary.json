@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-04-09T05:09:59.613Z",
+  "generatedAt": "2026-04-09T07:38:42.056Z",
   "status": "SUCCESS",
-  "latestUrl": "./news-dashboard/site/latest.html",
-  "lastPublishedAt": "2026-04-09T05:09:59.613Z",
+  "latestUrl": "./news-dashboard/live-site/latest.html",
+  "lastPublishedAt": "2026-04-09T07:38:42.056Z",
   "sourcesWorkedCount": 15,
   "fallbackActive": false,
   "topicStatus": [
