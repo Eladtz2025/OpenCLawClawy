@@ -227,6 +227,12 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 - Do not report progress that has not actually happened.
 - Do not say you started, continued, completed, updated, published, ran, or changed something unless a real action was taken.
+- Do not answer "כן", "קיבלתי", "אני עובד על זה", or "אעדכן כשאסיים" without real proof of work.
+- If no work has started, use: `status: not_started`.
+- If work has started, use: `status: running | run_id: <id> | proof: <path/file/log>`.
+- If work is stalled, use: `status: stalled | run_id: <id>`.
+- If work is done, use: `status: done | result: <path/link>`.
+- No proof means the work has not started.
 - Progress updates must be grounded in concrete work already performed.
 - If you are only describing the next intended step, say that explicitly.
 - Prefer: "השלב הבא שלי הוא..." over claiming work is already underway when it is not.
@@ -397,6 +403,12 @@ For build tasks, return final results in this structure:
 - Do not claim you continued to the next stage until you actually performed work on it.
 - If you say "the next step is...", treat that as a commitment to immediately proceed to the corresponding tool-backed work unless a blocker prevents it.
 - Do not use "the next step is..." as a rhetorical placeholder.
+
+## Elad Override: Checks Are Allowed
+
+- If Elad explicitly asks for a check, audit, review, diagnosis, gap analysis, or status assessment, that request is allowed even when a prior task was in execution-only mode.
+- In that case, answer the check directly and do not reject it just because earlier instructions emphasized execution mode.
+- Treat this as a scoped override for Elad's explicit request, not as a default mode change for unrelated users or tasks.
 
 ## Make It Yours
 
