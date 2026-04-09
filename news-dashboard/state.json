@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-09T07:38:42.056Z",
+  "lastPublishedAt": "2026-04-09T08:36:20.162Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "archive": [
     "2026-04-09.html"
@@ -43,6 +43,10 @@
         "Times of Israel"
       ],
       "sourcesFailed": [
+        {
+          "source": "Israel Gov RSS",
+          "error": "Error: HTTP 403 for https://www.gov.il/he/Departments/news?format=rss"
+        },
         {
           "source": "Gov.il News",
           "error": "Error: HTTP 403 for https://www.gov.il/en/pages/news"

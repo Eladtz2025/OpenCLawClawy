@@ -1,2 +1,2 @@
 בוקר טוב
-./news-dashboard/live-site/latest.html
+https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html
