@@ -1,41 +1,46 @@
 # Approved Source Map
 
 ## Technology
-Primary:
-- Reuters Tech
-- The Verge
+Primary usable:
 - TechCrunch
+- The Verge
 - Official company blogs / newsrooms / filings
-Secondary discovery:
+Secondary usable:
+- Reuters Tech (search/snippet level when fetch is limited)
 - User-approved Telegram tech channels
 
 ## Israel
-Primary:
-- הארץ
-- ynet
-- כאן
-- Reuters
+Primary usable:
+- Reuters (search/snippet level)
+- ynet (search candidate level)
+- הארץ (search/discovery)
 - Official government/security announcements when relevant
 Secondary:
 - Times of Israel
+Note:
+- כאן direct fetch is currently blocked in this runtime, so it should not be a primary fetch dependency.
 
 ## Crypto
-Primary:
-- Reuters
+Primary usable:
 - CoinDesk
-- The Block
-- Bloomberg Crypto
+- Reuters (search/snippet level)
 - Decrypt
 - SEC / filings / exchange announcements / project statements
+Secondary:
+- Bloomberg Crypto
+Note:
+- The Block direct fetch is currently blocked in this runtime, so it should not be a primary fetch dependency.
 
 ## Hapoel Petah Tikva
-Primary:
+Primary target set:
 - Official club source
 - ONE
 - Sport5
-Verification:
+Verification target set:
 - Flashscore
 - Soccerway
+Note:
+- Current runtime retrieval is still weak here, so fixture-first attempts and explicit weak-retrieval labeling are required.
 
 ## Category fallback
 - Crypto: strongest 7-day items if today is weak

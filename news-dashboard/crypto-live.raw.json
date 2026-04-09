@@ -8,6 +8,10 @@
     "fallback": false,
     "items": [
       {
+        "title": "Bitcoin's next big move hinges on oil, and right now it's a total coin flip Analysts say a sustained 15%–16% decline in crude could revive Fed rate cut bets, sending BTC higher.",
+        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-s-next-big-move-hinges-on-oil-and-right-now-it-s-a-total-coin-flip"
+      },
+      {
         "title": "The Protocol: Bernstein says quantum threat to Bitcoin is real but manageable Also: North Korea’s 6-month plot with Drift, Solana Foundation’s new ad and Alchemy AI.",
         "url": "https://www.coindesk.com/tech/2026/04/08/the-protocol-bernstein-says-quantum-threat-to-bitcoin-is-real-but-manageable"
       },
@@ -16,8 +20,8 @@
         "url": "https://www.coindesk.com/markets/2026/04/08/adam-back-denies-he-s-satoshi-nakamoto-after-nyt-report-claims-he-s-bitcoin-s-creator"
       },
       {
-        "title": "CoinDesk 20 performance update: Internet Computer (ICP) rises 12.1% NEAR Protocol (NEAR) joined Internet Computer (ICP) as a top performer, climbing 8.9% from Tuesday.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/08/coindesk-20-performance-update-internet-computer-icp-rises-12-1"
+        "title": "CoinW Partners with Luka Modrić as Global Brand Ambassador",
+        "url": "https://www.coindesk.com/press-release/2026/04/09/coinw-partners-with-luka-modric-as-global-brand-ambassador"
       },
       {
         "title": "Pharos Network Announces $44M Series A Round, Bringing Total Funding to $52M to Scale Onchain Economy",
@@ -28,20 +32,16 @@
         "url": "https://www.coindesk.com/press-release/2026/04/07/bitbase-officially-launches-global-derivatives-platform-aiming-to-reshape-market-standards-via-institutional-rigor-and-awards-for-discipline"
       },
       {
-        "title": "MSX Launches \"Novice & Education\" Initiative to Bridge Knowledge Gap in Tokenized Equity Trading",
-        "url": "https://www.coindesk.com/press-release/2026/04/01/msx-launches-novice-and-education-initiative-to-bridge-knowledge-gap-in-tokenized-equity-trading"
+        "title": "Iran's crypto tanker tolls are the latest step in its sanctions‑busting trade network",
+        "url": "https://www.coindesk.com/policy/2026/04/09/crypto-payments-to-pass-strait-of-hormuz-is-the-next-logical-step-for-iran-s-sanctions-skirting-trade-network"
       },
       {
-        "title": "Bitcoin under $71,000, ETH, SOL, XRP drop as Iran ceasefire frays within 48 hours of being signed",
-        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-under-usd71-000-eth-sol-xrp-drop-as-iran-ceasefire-frays-within-48-hours-of-being-signed"
+        "title": "Iran's crypto tanker tolls are the latest step in its sanctions‑busting trade network",
+        "url": "https://www.coindesk.com/policy/2026/04/09/crypto-payments-to-pass-strait-of-hormuz-is-the-next-logical-step-for-iran-s-sanctions-skirting-trade-network"
       },
       {
-        "title": "Bitcoin under $71,000, ETH, SOL, XRP drop as Iran ceasefire frays within 48 hours of being signed",
-        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-under-usd71-000-eth-sol-xrp-drop-as-iran-ceasefire-frays-within-48-hours-of-being-signed"
-      },
-      {
-        "title": "Morgan Stanley’s bitcoin ETF draws $34 million on day one",
-        "url": "https://www.coindesk.com/markets/2026/04/08/morgan-stanley-s-bitcoin-etf-draws-usd34-million-on-day-one"
+        "title": "Bitcoin's next big move hinges on oil, and right now it's a total coin flip",
+        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-s-next-big-move-hinges-on-oil-and-right-now-it-s-a-total-coin-flip"
       },
       {
         "title": "Bitcoin gets its first working prototype of quantum-resistant wallet rescue tool",
@@ -106,11 +106,11 @@
         "url": "https://decrypt.co/news-explorer?pinned=1373786&title=bernstein-report-reassures-minimal-threat-of-quantum-computing-to-bitcoin-security-and-mining-operations"
       },
       {
-        "title": "Michael Saylor Predicts Bitcoin&#x27;s Bottom at $60,000 Was Driven by Seller Exhaustion and Capital Structure",
+        "title": "Michael Saylor Predicts Bitcoin's Bottom at $60,000 Was Driven by Seller Exhaustion and Capital Structure",
         "url": "https://decrypt.co/news-explorer?pinned=1373782&title=michael-saylor-predicts-bitcoins-bottom-at-60000-was-driven-by-seller-exhaustion-and-capital-structure"
       },
       {
-        "title": "Coinbase&#x27;s EU Growth Hinges on Alignment Between US and EU Regulations, Says Exec",
+        "title": "Coinbase's EU Growth Hinges on Alignment Between US and EU Regulations, Says Exec",
         "url": "https://decrypt.co/news-explorer?pinned=1373735&title=coinbases-eu-growth-hinges-on-alignment-between-us-and-eu-regulations-says-exec"
       },
       {
@@ -130,7 +130,7 @@
         "url": "https://decrypt.co/news-explorer?pinned=1373515&title=is-adam-back-really-bitcoin-creator-satoshi-nakamoto-nyt-says-yes-but-he-denies-it"
       },
       {
-        "title": "Standard Chartered May Merge Zodia Custody&#x27;s Crypto Business With Its Digital Asset Division",
+        "title": "Standard Chartered May Merge Zodia Custody's Crypto Business With Its Digital Asset Division",
         "url": "https://decrypt.co/news-explorer?pinned=1373445&title=standard-chartered-may-merge-zodia-custodys-crypto-business-with-its-digital-asset-division"
       },
       {

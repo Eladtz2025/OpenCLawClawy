@@ -53,12 +53,13 @@ Tier 1:
 4. For sports fixtures, use fixture-verification sources before publishing time/date claims.
 
 ## Collection pipeline
-1. Scan approved source set per category.
-2. Build candidate list.
-3. Remove duplicates.
-4. Score each candidate.
-5. Verify top candidates.
-6. Publish only strongest items.
+1. Scan approved usable source set per category.
+2. From each usable source, review multiple recent same-day items whenever extraction allows.
+3. Build a broad candidate list before any final selection.
+4. Remove duplicates.
+5. Score each candidate.
+6. Verify top candidates.
+7. Publish only the strongest items.
 
 ## Candidate scoring
 Each candidate gets scored on:

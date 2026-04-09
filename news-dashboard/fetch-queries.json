@@ -1,0 +1,18 @@
+{
+  "technology": [
+    "site:techcrunch.com/latest technology AI April 2026",
+    "site:theverge.com/tech technology April 2026"
+  ],
+  "israel": [
+    "site:ynet.co.il/news April 2026",
+    "site:kan.org.il/content/kan-news April 2026"
+  ],
+  "crypto": [
+    "site:coindesk.com/latest-crypto-news April 2026",
+    "site:theblock.co/latest-crypto-news April 2026"
+  ],
+  "hapoel": [
+    "site:one.co.il \"הפועל פתח תקווה\"",
+    "site:sport5.co.il \"הפועל פתח תקווה\""
+  ]
+}

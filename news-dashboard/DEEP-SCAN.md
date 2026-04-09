@@ -1,7 +1,8 @@
 # Deep Scan Rule
 
 ## Rule
-For each strong category source, attempt to review multiple recent same-day items before concluding the category is thin.
+For each usable category source, attempt to review multiple recent same-day items before concluding the category is thin.
+Do not select the final 5 until this broad same-day scan was attempted across the category's usable sources.
 
 ## Practical target
 - preferred: ~10 recent items per usable source when extraction allows
