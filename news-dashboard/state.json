@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-11T15:47:58.347Z",
+  "lastPublishedAt": "2026-04-11T20:31:24.013Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "archive": [
     "2026-04-11.html",
@@ -70,14 +70,19 @@
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 2,
+      "got": 4,
       "fallbackActive": true,
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
         "Walla Sport"
       ],
-      "sourcesFailed": []
+      "sourcesFailed": [
+        {
+          "source": "ynet Hapoel PT Tag",
+          "error": "Error: HTTP 404 for https://www.ynet.co.il/tags/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94"
+        }
+      ]
     }
   }
 }

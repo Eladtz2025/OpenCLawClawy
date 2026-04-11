@@ -19,6 +19,16 @@
     "success": true,
     "items": [
       {
+        "title": "המשחק בין הפועל ירושלים לבית\"ר מחר (ראשון, 20:00) ייערך בטדי עם 30 אלף איש, ההתאחדות הודיעה כי גם חצי הגמר ייערך בירושלים ביום רביעי הקרוב",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/sk3w11b002bl",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הפועל פ\"ת עלתה לפלייאוף העליון אחרי 0:0 עם הפועל ת\"א, מכבי נתניה הוסיפה 0:0 מול הפועל חיפה. מ.ס אשדוד וטבריה סיימו גם הן באותה תוצאה. בני סכנין הצילה את המצב עם 0:2 על ריינה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/s1hkkxu211l",
+        "publishedAt": "2026-04-11"
+      },
+      {
         "title": "חשיפה | בהפועל ת\"א החליטו: שכרו של אליניב ברדה ישודרג בעונה הבאה",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/s1wer00r2zx",
         "publishedAt": "2026-04-11"
@@ -107,18 +117,16 @@
         "title": "בזמן שחלק מהזרים התלבט אם לשוב, הקשר הקפריסאי לא היסס והדגיש את מחויבותו להפועל ת\"א: \"יודע כמה זה חשוב לכם\". הערב (20:30) הוא יעלה בהרכב במשחק החזרה של האדומים לליגה. גם אלטמן, טוריאל ובואטנג יהיו ב-11 של ברדה",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/skuc6mxh11e#autoplay",
         "publishedAt": "2026-04-11"
-      },
-      {
-        "title": "אחרי הניצחון הגדול על הפועל חיפה, מאמן מכבי ת\"א התייחס לתקרית שנחשפה ב-ynet: \"ראיתם שהתכוננו כמו שצריך\". על מרוץ האליפות: \"באר-שבע? הכל תלוי בה\"",
-        "url": "https://www.ynet.co.il/sport/israelisoccer/article/hjog9vxnze",
-        "publishedAt": "2026-04-11"
-      },
-      {
-        "title": "הפועל באר-שבע ממשיכה לאבד גובה: \"שחקנים יצטרכו לתת יותר מעצמם\"",
-        "url": "https://www.ynet.co.il/sport/israelisoccer/article/skbyhojhwx",
-        "publishedAt": "2026-04-11"
       }
     ]
+  },
+  {
+    "source": "ynet Hapoel PT Tag",
+    "url": "https://www.ynet.co.il/tags/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94",
+    "kind": "secondary",
+    "success": false,
+    "error": "Error: HTTP 404 for https://www.ynet.co.il/tags/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94",
+    "items": []
   },
   {
     "source": "Walla Sport",
@@ -127,7 +135,12 @@
     "success": true,
     "items": [
       {
-        "title": "ווטארה ובן שבת פותחים בנתניה, בלאי בהרכב הפועל חיפה",
+        "title": "ייפגשו בפלייאוף התחתון: 0:0 מאכזב לנתניה מול הפועל חיפה היהלומים נהנו מתמיכה של מאות צופים באצטדיון \"מרים\", אך סיפקו יכולת חלשה ולא הצליחו להכניע את ג'רפי. סילבס מסובך בתחתית 22:02 11/04/2026 רענן ברנובסקי ו שלמה וייס",
+        "url": "https://sports.walla.co.il/item/3829606",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "ייפגשו בפלייאוף התחתון: 0:0 לנתניה מול הפועל חיפה | צפו",
         "url": "https://sports.walla.co.il/item/3829606",
         "publishedAt": "2026-04-11"
       }

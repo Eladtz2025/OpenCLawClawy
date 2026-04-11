@@ -6,6 +6,11 @@
     "success": true,
     "items": [
       {
+        "title": "Sam Altman responds to ‘incendiary’ New Yorker article after attack on his home",
+        "url": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/",
+        "publishedAt": null
+      },
+      {
         "title": "Anthropic temporarily banned OpenClaw's creator from accessing Claude",
         "url": "https://techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/",
         "publishedAt": "2026-04-10"
@@ -98,11 +103,6 @@
       {
         "title": "Databricks co-founder wins prestigious ACM award, says ‘AGI is here already'",
         "url": "https://techcrunch.com/2026/04/08/databricks-matei-zaharia-wins-acm-computing-prize-agi/",
-        "publishedAt": "2026-04-08"
-      },
-      {
-        "title": "Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass",
-        "url": "https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/",
         "publishedAt": "2026-04-08"
       }
     ]
@@ -448,23 +448,23 @@
         "publishedAt": "2026-04-11"
       },
       {
+        "title": "22:51 דיווח: מבוי סתום במגעים בין ארה\"ב ואיראן; בישראל נערכים לחידוש המלחמה",
+        "url": "https://www.calcalist.co.il/updates_news/article/skuodrv3ze",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "20:22 מחיר ״הניצחון״: מה לא סיפר נתניהו בנאום לציבור על המציאות החדשה מול איראן",
+        "url": "https://www.calcalist.co.il/local_news/article/bjzj4av3wl",
+        "publishedAt": "2026-04-11"
+      },
+      {
         "title": "18:40 משק הגז הושבת במלחמה, ועוד לא ערוך לסבב הבא",
         "url": "https://www.calcalist.co.il/local_news/article/rkwdord311e",
         "publishedAt": "2026-04-11"
       },
       {
-        "title": "16:54 החלו השיחות בפקיסטן; איראן: \"התקיפות של ישראל הוגבלו לדרום לבנון\"",
-        "url": "https://www.calcalist.co.il/updates_news/article/skuodrv3ze",
-        "publishedAt": "2026-04-11"
-      },
-      {
         "title": "16:42 ציידות שדים ותיירים: הלהיט של נטפליקס שמזניק את התיירות לדרום קוריאה",
         "url": "https://www.calcalist.co.il/local_news/article/rkl7bys2wl",
-        "publishedAt": "2026-04-11"
-      },
-      {
-        "title": "16:22 שלוש עתירות נגד שלושה חוקים שמעלים את ישראל על מסלול של מדינת הלכה",
-        "url": "https://www.calcalist.co.il/local_news/article/rkcvh3w2wx",
         "publishedAt": "2026-04-11"
       },
       {
