@@ -38,28 +38,7 @@ function runPs(command, fallback = null, options = {}) {
   }
 }
 function runOpenClaw(args, options = {}) {
-  const candidates = [
-    { type: 'cmd', path: path.join(process.env.APPDATA || '', 'npm', 'openclaw.cmd') },
-    { type: 'ps1', path: path.join(process.env.APPDATA || '', 'npm', 'openclaw.ps1') }
-  ].filter(x => x.path);
-  for (const candidate of candidates) {
-    if (!fs.existsSync(candidate.path)) continue;
-    try {
-      if (candidate.type === 'cmd') {
-        const out = execFileSync('cmd.exe', ['/d', '/s', '/c', '"' + candidate.path + '" ' + args.map(quoteCmdArg).join(' ')], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 12000, windowsHide: true });
-        return { ok: true, stdout: out.trim(), command: candidate.path };
-      }
-      const out = execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', candidate.path, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 12000, windowsHide: true });
-      return { ok: true, stdout: out.trim(), command: candidate.path };
-    } catch (error) {
-      if (!options.silent) appendLog('OpenClaw CLI failed (' + candidate.path + '): ' + error.message);
-    }
-  }
-  return { ok: false, stdout: '', command: null };
-}
-function quoteCmdArg(value) {
-  const str = String(value ?? '');
-  return '"' + str.replace(/"/g, '""') + '"';
+  return { ok: false, stdout: '', command: null, skipped: true, reason: 'disabled_in_process' };
 }
 function severityRank(status) { return status === 'CRITICAL' ? 3 : status === 'WARNING' ? 2 : status === 'OK' ? 1 : 0; }
 function pickStatus(items) {
@@ -155,16 +134,6 @@ function getJson(command, fallback, options = {}) {
   try { return JSON.parse(out); } catch { return fallback; }
 }
 function readOpenClawCronJobs() {
-  const cli = runOpenClaw(['cron', 'list', '--json'], { timeoutMs: 25000, silent: true });
-  if (cli.ok && cli.stdout) {
-    try {
-      const json = JSON.parse(cli.stdout);
-      if (Array.isArray(json)) return { jobs: json, source: 'openclaw-cli' };
-      if (Array.isArray(json.jobs)) return { jobs: json.jobs, source: 'openclaw-cli' };
-    } catch {
-      appendLog('Failed to parse openclaw cron list JSON');
-    }
-  }
   const statePath = path.join(process.env.USERPROFILE || '', '.openclaw', 'state', 'gateway-cron-jobs.json');
   if (fs.existsSync(statePath)) {
     try {
@@ -173,7 +142,7 @@ function readOpenClawCronJobs() {
       if (Array.isArray(json.jobs)) return { jobs: json.jobs, source: 'state-cache' };
     } catch {}
   }
-  return { jobs: [], source: cli.command ? 'openclaw-cli-failed' : 'unavailable' };
+  return { jobs: [], source: 'unavailable' };
 }
 function computeAlert(summaryStatus, recentIssues) {
   const lastSentAt = previousState.alerts?.last_sent_at ? Date.parse(previousState.alerts.last_sent_at) : 0;

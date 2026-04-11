@@ -1,21 +1,21 @@
 {
   "system_name": "PC Guardian",
-  "generated_at": "2026-04-11T20:45:02.144Z",
+  "generated_at": "2026-04-11T21:00:02.421Z",
   "overall_status": "CRITICAL",
   "computer_status": "CRITICAL",
-  "openclaw_status": "CRITICAL",
+  "openclaw_status": "WARNING",
   "computer_checks": [
     {
       "name": "CPU",
-      "value": 49.83,
+      "value": 52.03,
       "status": "OK",
-      "summary": "CPU 49.8%"
+      "summary": "CPU 52.0%"
     },
     {
       "name": "RAM",
-      "value": 63.64213197969543,
-      "status": "OK",
-      "summary": "RAM 63.6%"
+      "value": 89.59390862944161,
+      "status": "WARNING",
+      "summary": "RAM 89.6%"
     },
     {
       "name": "Disk C:",
@@ -25,9 +25,9 @@
     },
     {
       "name": "Disk Activity",
-      "value": 9.04,
+      "value": 3.97,
       "status": "OK",
-      "summary": "Disk activity 9.0%"
+      "summary": "Disk activity 4.0%"
     },
     {
       "name": "Network Connectivity",
@@ -123,7 +123,7 @@
         },
         {
           "TaskName": "OpenClaw Gateway - Itzhak",
-          "State": 3,
+          "State": 4,
           "TaskPath": "\\"
         },
         {
@@ -168,12 +168,12 @@
         "name": "gateway-18789",
         "url": "http://127.0.0.1:18789/health",
         "port": 18789,
-        "statusCode": 0,
-        "listening": false,
-        "ok": false
+        "statusCode": 200,
+        "listening": true,
+        "ok": true
       },
-      "status": "CRITICAL",
-      "summary": "gateway-18789 port 18789 down"
+      "status": "OK",
+      "summary": "gateway-18789 port 18789 OK"
     },
     {
       "name": "gateway-18790",
@@ -197,12 +197,22 @@
           "OwningProcess": 10052
         },
         {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 3952
+        },
+        {
           "LocalAddress": "127.0.0.1",
           "LocalPort": 18790,
           "OwningProcess": 10052
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 3952
         }
       ],
-      "status": "CRITICAL",
+      "status": "OK",
       "summary": "Ports 18789, 18790"
     },
     {
@@ -215,7 +225,7 @@
         },
         {
           "TaskName": "OpenClaw Gateway - Itzhak",
-          "State": 3,
+          "State": 4,
           "TaskPath": "\\"
         },
         {
@@ -256,7 +266,7 @@
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\agents\\main\\sessions",
-          "SizeMB": 20.7
+          "SizeMB": 21.03
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\browser\\openclaw\\user-data\\Default\\Sessions",
@@ -288,6 +298,39 @@
     }
   ],
   "recent_failures": [
+    {
+      "time": "2026-04-11T21:00:02.421Z",
+      "kind": "RAM",
+      "summary": "RAM 89.6%",
+      "details": 89.59390862944161
+    },
+    {
+      "time": "2026-04-11T21:00:02.421Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-11T21:00:02.421Z",
+      "kind": "Critical Events",
+      "summary": "Critical events: 15",
+      "details": 15
+    },
+    {
+      "time": "2026-04-11T21:00:02.421Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": []
+    },
     {
       "time": "2026-04-11T20:45:02.144Z",
       "kind": "Internet Reachability",
@@ -446,39 +489,6 @@
           "ok": true
         }
       ]
-    },
-    {
-      "time": "2026-04-11T20:36:30.820Z",
-      "kind": "Critical Events",
-      "summary": "Critical events: 15",
-      "details": 15
-    },
-    {
-      "time": "2026-04-11T20:36:30.820Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": []
-    },
-    {
-      "time": "2026-04-11T20:30:02.116Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ]
-    },
-    {
-      "time": "2026-04-11T20:30:02.116Z",
-      "kind": "Critical Events",
-      "summary": "Critical events: 15",
-      "details": 15
     }
   ],
   "last_fixes": [
@@ -598,44 +608,44 @@
   "top_offenders": [
     {
       "name": "SearchIndexer",
-      "cpu": 28012.1,
-      "memoryMb": 64,
+      "cpu": 28021.7,
+      "memoryMb": 50,
       "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
     },
     {
       "name": "System",
-      "cpu": 17763.4,
-      "memoryMb": 9,
+      "cpu": 17835.2,
+      "memoryMb": 7,
       "path": ""
     },
     {
       "name": "MsMpEng",
-      "cpu": 17173.5,
-      "memoryMb": 231,
+      "cpu": 17208.3,
+      "memoryMb": 221,
       "path": ""
     },
     {
       "name": "logioptionsplus_agent",
-      "cpu": 11696.8,
-      "memoryMb": 1140,
+      "cpu": 11733.7,
+      "memoryMb": 851,
       "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
     },
     {
       "name": "WmiPrvSE",
-      "cpu": 3711.1,
-      "memoryMb": 30,
+      "cpu": 3722.9,
+      "memoryMb": 26,
       "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
     },
     {
       "name": "svchost",
-      "cpu": 3504.6,
-      "memoryMb": 19,
+      "cpu": 3514.4,
+      "memoryMb": 18,
       "path": "C:\\WINDOWS\\system32\\svchost.exe"
     },
     {
       "name": "dwm",
-      "cpu": 2398.8,
-      "memoryMb": 69,
+      "cpu": 2398.9,
+      "memoryMb": 42,
       "path": "C:\\WINDOWS\\system32\\dwm.exe"
     }
   ],
@@ -644,9 +654,9 @@
       "name": "gateway-18789",
       "url": "http://127.0.0.1:18789/health",
       "port": 18789,
-      "statusCode": 0,
-      "listening": false,
-      "ok": false
+      "statusCode": 200,
+      "listening": true,
+      "ok": true
     },
     {
       "name": "gateway-18790",
@@ -665,7 +675,7 @@
     },
     {
       "TaskName": "OpenClaw Gateway - Itzhak",
-      "State": 3,
+      "State": 4,
       "TaskPath": "\\"
     },
     {
@@ -762,12 +772,12 @@
   "cron_source": "unavailable",
   "alerts": {
     "configured": true,
-    "last_message": "Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15",
+    "last_message": "PC Guardian Critical: RAM 89.6% | Internet failed: https://www.msftconnecttest.com/connecttest.txt",
     "last_status": "CRITICAL",
     "last_delivery": {
       "sent": false,
-      "mode": "disabled",
-      "reason": "telegram_not_configured"
+      "mode": "telegram",
+      "reason": "Command failed: powershell -NoProfile -ExecutionPolicy Bypass -Command $payload = @'{\"chat_id\":\"-1003566973693\",\"text\":\"PC Guardian Critical: RAM 89.6% | Internet failed: https://www.msftconnecttest.com/connecttest.txt\",\"disable_notification\":false}'@ | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot8375418380:AAF-4Ag53oEBeZlCvq6zOS653iyXbBJIQww/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress\nAt line:1 char:14\r\n+ $payload = @'{\"chat_id\":\"-1003566973693\",\"text\":\"PC Guardian Critical ...\r\n+              ~\r\nNo characters are allowed after a here-string header but before the end of the line.\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : UnexpectedCharactersAfterHereStringHeader\r\n \r\n"
     }
   }
 }
