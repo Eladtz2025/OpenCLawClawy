@@ -6,6 +6,11 @@
     "success": true,
     "items": [
       {
+        "title": "הפועל מבנה פתח תקוה בפלייאוף העליון",
+        "url": "https://www.hapoelpt.com/post/הפועל-מבנה-פתח-תקוה-בפלייאוף-העליון",
+        "publishedAt": "2026-04-11"
+      },
+      {
         "title": "הודעת מועדון 09 04",
         "url": "https://www.hapoelpt.com/post/הודעת-מועדון-09-04",
         "publishedAt": "2026-04-11"
@@ -119,14 +124,6 @@
         "publishedAt": "2026-04-11"
       }
     ]
-  },
-  {
-    "source": "ynet Hapoel PT Tag",
-    "url": "https://www.ynet.co.il/tags/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94",
-    "kind": "secondary",
-    "success": false,
-    "error": "Error: HTTP 404 for https://www.ynet.co.il/tags/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94",
-    "items": []
   },
   {
     "source": "Walla Sport",

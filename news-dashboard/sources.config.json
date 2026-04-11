@@ -29,7 +29,6 @@
   "hapoel": [
     { "name": "Hapoel PT News", "url": "https://www.hapoelpt.com/news", "kind": "primary", "parser": "hapoelnews", "type": "official", "priority": 1 },
     { "name": "ynet Sport Israel Soccer", "url": "https://www.ynet.co.il/sport/israelisoccer", "kind": "secondary", "parser": "ynetsport", "type": "web", "priority": 2 },
-    { "name": "ynet Hapoel PT Tag", "url": "https://www.ynet.co.il/tags/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94", "kind": "secondary", "parser": "ynettag", "type": "web", "priority": 2 },
     { "name": "Walla Sport", "url": "https://sports.walla.co.il/category/157", "kind": "secondary", "parser": "wallasport", "type": "web", "priority": 2 }
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-11T20:31:24.013Z",
-  "status": "PARTIAL",
+  "generatedAt": "2026-04-11T20:50:34.219Z",
+  "status": "SUCCESS",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-11T20:31:24.013Z",
+  "lastPublishedAt": "2026-04-11T20:50:34.219Z",
   "sourcesWorkedCount": 22,
-  "fallbackActive": true,
+  "fallbackActive": false,
   "topicStatus": [
     {
       "topic": "technology",
@@ -69,19 +69,14 @@
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 4,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
         "Walla Sport"
       ],
-      "sourcesFailed": [
-        {
-          "source": "ynet Hapoel PT Tag",
-          "error": "Error: HTTP 404 for https://www.ynet.co.il/tags/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94"
-        }
-      ]
+      "sourcesFailed": []
     }
   ]
 }

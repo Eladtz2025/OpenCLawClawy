@@ -11,11 +11,11 @@
 - [x] root URL redirect exists
 - [x] archive retention for last 7 HTML snapshots
 - [x] archive index page generation
+- [x] source failure count is visible in dashboard metadata
+- [x] Hapoel section can reach 5/5 in the main pipeline
 
 ## Still open
-- [ ] fixture-first Hapoel retrieval path
+- [ ] real external fixture-first Hapoel retrieval path
 - [ ] real 7-day fallback sourcing for weak crypto/hapoel days
-- [ ] stronger source failure transparency in UI
-- [ ] better Hapoel source depth
 - [ ] richer mobile app-like UI density
 - [ ] cleaner Telegram delivery wiring if needed

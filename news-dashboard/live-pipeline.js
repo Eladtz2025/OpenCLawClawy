@@ -202,18 +202,6 @@ const parsers = {
       return { title, url, publishedAt: TODAY };
     }, 120);
   },
-  ynettag(html, source) {
-    return extract(/<a[^>]+href=['"]([^'"]+)['"][^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
-      const url = absolutize(source.url, m[1]);
-      const title = stripTags(m[2]);
-      if (!/ynet\.co\.il\//i.test(url)) return null;
-      if (!/\/article\//i.test(url) && !/#autoplay/i.test(url)) return null;
-      if (!/פתח תקו|פ"ת|הפועל פתח תקווה|הפועל פתח תקוה|עומר פרץ/i.test(title)) return null;
-      if (/הפועל ת"א|הפועל תל אביב|הפועל באר שבע|הפועל חיפה|הפועל ירושלים|מכבי/i.test(title)) return null;
-      if (title.length < 18 || title.length > 220) return null;
-      return { title, url, publishedAt: TODAY };
-    }, 120);
-  },
   maariv(html) {
     return extract(/https:\/\/www\.maariv\.co\.il\/news\/(?:politics|military|world|israel|law)\/article-\d+/g, html, (m) => {
       const url = m[0];
@@ -426,7 +414,6 @@ async function collectSource(source, topicKey) {
 }
 
 function buildHapoelFixtureCandidates() {
-  if (TODAY !== '2026-04-11') return [];
   return [
     {
       id: `hapoel-fixture-${TODAY}-match`,
@@ -560,6 +547,7 @@ async function collectTopic(topic) {
 }
 
 function renderDashboard(items, meta) {
+  const totalFailedSources = meta.topics.reduce((sum, topic) => sum + (topic.sourcesFailed?.length || 0), 0);
   const grouped = Object.fromEntries(TOPICS.map(topic => [topic.key, items.filter(item => item.category === topic.key)]));
   const sectionHtml = TOPICS.map(topic => {
     const itemsForTopic = grouped[topic.key] || [];
@@ -609,7 +597,7 @@ a{color:#8fd3ff;text-decoration:none}
 <main>
 <header>
 <h1>חדשות הבוקר</h1>
-<div class="topmeta"><span>updated: ${escapeHtml(meta.lastUpdated)}</span><span>sources worked: ${escapeHtml(String(meta.sourcesWorkedCount))}</span><span>fallback: ${meta.fallbackActive ? 'yes' : 'no'}</span><span>status: ${escapeHtml(meta.status)}</span></div>
+<div class="topmeta"><span>updated: ${escapeHtml(meta.lastUpdated)}</span><span>sources worked: ${escapeHtml(String(meta.sourcesWorkedCount))}</span><span>sources failed: ${escapeHtml(String(totalFailedSources))}</span><span>fallback: ${meta.fallbackActive ? 'yes' : 'no'}</span><span>status: ${escapeHtml(meta.status)}</span></div>
 </header>
 ${sectionHtml}
 </main>

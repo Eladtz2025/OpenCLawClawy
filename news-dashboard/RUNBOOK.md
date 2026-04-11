@@ -24,9 +24,11 @@
 - The pipeline performs fetch, parse, normalize, dedup, score, select, render, publish, summarize.
 - Topic/source definitions are loaded from `sources.config.json`.
 - Archive retention currently keeps the latest 7 dated HTML snapshots.
+- Dashboard metadata shows worked/failed source counts.
+- Hapoel can currently reach 5/5 inside the main pipeline, but still uses internal fixture support rather than a full external fixture adapter.
 
 ## Remaining work
-- fixture-first Hapoel retrieval
+- real external fixture-first Hapoel retrieval
 - real 7-day fallback for weak days
-- stronger UI transparency for source failures
+- richer UI density if desired
 - optional cleanup of legacy/docs/debug files outside the runtime path
