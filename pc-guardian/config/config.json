@@ -82,9 +82,9 @@
     }
   },
   "dashboard_publish": {
-    "enabled": false,
+    "enabled": true,
     "mode": "copy",
-    "target_dir": "",
+    "target_dir": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\dashboard\\published",
     "repo_dir": "",
     "remote": "origin",
     "branch": "main",

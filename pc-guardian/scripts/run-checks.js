@@ -39,23 +39,27 @@ function runPs(command, fallback = null, options = {}) {
 }
 function runOpenClaw(args, options = {}) {
   const candidates = [
-    path.join(process.env.APPDATA || '', 'npm', 'openclaw.cmd'),
-    path.join(process.env.APPDATA || '', 'npm', 'openclaw.ps1')
-  ].filter(Boolean);
+    { type: 'cmd', path: path.join(process.env.APPDATA || '', 'npm', 'openclaw.cmd') },
+    { type: 'ps1', path: path.join(process.env.APPDATA || '', 'npm', 'openclaw.ps1') }
+  ].filter(x => x.path);
   for (const candidate of candidates) {
-    if (!fs.existsSync(candidate)) continue;
+    if (!fs.existsSync(candidate.path)) continue;
     try {
-      if (candidate.toLowerCase().endsWith('.cmd')) {
-        const out = execFileSync(candidate, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 20000, windowsHide: true });
-        return { ok: true, stdout: out.trim(), command: candidate };
+      if (candidate.type === 'cmd') {
+        const out = execFileSync('cmd.exe', ['/d', '/s', '/c', '"' + candidate.path + '" ' + args.map(quoteCmdArg).join(' ')], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 12000, windowsHide: true });
+        return { ok: true, stdout: out.trim(), command: candidate.path };
       }
-      const out = execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', candidate, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 20000, windowsHide: true });
-      return { ok: true, stdout: out.trim(), command: candidate };
+      const out = execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', candidate.path, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 12000, windowsHide: true });
+      return { ok: true, stdout: out.trim(), command: candidate.path };
     } catch (error) {
-      if (!options.silent) appendLog('OpenClaw CLI failed (' + candidate + '): ' + error.message);
+      if (!options.silent) appendLog('OpenClaw CLI failed (' + candidate.path + '): ' + error.message);
     }
   }
   return { ok: false, stdout: '', command: null };
+}
+function quoteCmdArg(value) {
+  const str = String(value ?? '');
+  return '"' + str.replace(/"/g, '""') + '"';
 }
 function severityRank(status) { return status === 'CRITICAL' ? 3 : status === 'WARNING' ? 2 : status === 'OK' ? 1 : 0; }
 function pickStatus(items) {
@@ -193,22 +197,18 @@ function sendTelegramAlert(alert) {
   const telegram = CONFIG.alerts.telegram || {};
   if (!telegram.bot_token || !telegram.chat_id) return { sent: false, mode: 'disabled', reason: 'telegram_not_configured' };
   if (IS_DRY_RUN) return { sent: true, mode: 'dry-run', reason: 'dry_run' };
-  const payload = {
+  const payload = JSON.stringify({
     chat_id: telegram.chat_id,
     text: formatAlert(alert),
     disable_notification: !!telegram.silent
-  };
+  });
   try {
-    const tempPath = path.join(ROOT, 'state', 'telegram-payload.json');
-    fs.writeFileSync(tempPath, JSON.stringify(payload), 'utf8');
-    const script = [
-      "$payload = Get-Content -Raw -Path '" + tempPath.replace(/'/g, "''") + "' | ConvertFrom-Json",
-      "$body = @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification }",
-      "Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot" + String(telegram.bot_token).replace(/'/g, "''") + "/sendMessage' -Body $body | ConvertTo-Json -Compress"
-    ].join('; ');
-    const out = runPs(script, null, { timeoutMs: 20000, silent: true });
-    safeDeleteFile(tempPath);
-    if (!out) return { sent: false, mode: 'telegram', reason: 'request_failed' };
+    const out = execFileSync('powershell', [
+      '-NoProfile',
+      '-ExecutionPolicy', 'Bypass',
+      '-Command',
+      "$payload = @'" + payload + "'@ | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot" + String(telegram.bot_token).replace(/'/g, "''") + "/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress"
+    ], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: 12000, windowsHide: true }).trim();
     const parsed = JSON.parse(out);
     return { sent: !!parsed.ok, mode: 'telegram', response: parsed };
   } catch (error) {
