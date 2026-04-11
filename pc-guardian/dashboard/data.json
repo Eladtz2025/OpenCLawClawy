@@ -1,33 +1,33 @@
 {
   "system_name": "PC Guardian",
-  "generated_at": "2026-04-08T10:11:53.218Z",
+  "generated_at": "2026-04-11T13:16:39.444Z",
   "overall_status": "WARNING",
   "computer_status": "WARNING",
   "openclaw_status": "WARNING",
   "computer_checks": [
     {
       "name": "CPU",
-      "value": 24.69,
+      "value": 10.01,
       "status": "OK",
-      "summary": "CPU 24.7%"
+      "summary": "CPU 10.0%"
     },
     {
       "name": "RAM",
-      "value": 46.44670050761421,
+      "value": 68.71827411167513,
       "status": "OK",
-      "summary": "RAM 46.4%"
+      "summary": "RAM 68.7%"
     },
     {
       "name": "Disk C:",
-      "value": 225.92,
+      "value": 168.11,
       "status": "OK",
-      "summary": "C: free 225.92GB"
+      "summary": "C: free 168.11GB"
     },
     {
       "name": "Disk Activity",
-      "value": 0.76,
+      "value": 1.36,
       "status": "OK",
-      "summary": "Disk activity 0.8%"
+      "summary": "Disk activity 1.4%"
     },
     {
       "name": "Network Connectivity",
@@ -64,9 +64,9 @@
       "value": {
         "AntivirusEnabled": true,
         "RealTimeProtectionEnabled": true,
-        "QuickScanAge": 0,
+        "QuickScanAge": 3,
         "FullScanAge": 4294967295,
-        "AntivirusSignatureLastUpdated": "/Date(1775607554000)/"
+        "AntivirusSignatureLastUpdated": "/Date(1775884238000)/"
       },
       "status": "OK",
       "summary": "Defender OK"
@@ -189,22 +189,22 @@
         {
           "LocalAddress": "::1",
           "LocalPort": 18790,
-          "OwningProcess": 9148
+          "OwningProcess": 16668
         },
         {
           "LocalAddress": "::1",
           "LocalPort": 18789,
-          "OwningProcess": 3968
+          "OwningProcess": 340
         },
         {
           "LocalAddress": "127.0.0.1",
           "LocalPort": 18790,
-          "OwningProcess": 9148
+          "OwningProcess": 16668
         },
         {
           "LocalAddress": "127.0.0.1",
           "LocalPort": 18789,
-          "OwningProcess": 3968
+          "OwningProcess": 340
         }
       ],
       "status": "OK",
@@ -236,7 +236,7 @@
       "name": "Cron Jobs",
       "value": [],
       "status": "WARNING",
-      "summary": "No cron artifacts found"
+      "summary": "No cron jobs found"
     },
     {
       "name": "Fallback / Model failures",
@@ -261,7 +261,7 @@
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\agents\\main\\sessions",
-          "SizeMB": 16.36
+          "SizeMB": 19.68
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\browser\\openclaw\\user-data\\Default\\Sessions",
@@ -269,7 +269,7 @@
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\logs",
-          "SizeMB": 0.11
+          "SizeMB": 0.14
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
@@ -280,15 +280,61 @@
           "SizeMB": 0
         },
         {
+          "FullName": "C:\\Users\\Itzhak\\.openclaw\\extensions\\.openclaw-install-backups",
+          "SizeMB": 0
+        },
+        {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\skills\\.openclaw-install-backups",
           "SizeMB": 0
         }
       ],
       "status": "OK",
-      "summary": "Growth items: 9"
+      "summary": "Growth items: 10"
     }
   ],
   "recent_failures": [
+    {
+      "time": "2026-04-11T13:16:39.444Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-11T13:16:39.444Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found",
+      "details": []
+    },
+    {
+      "time": "2026-04-11T13:15:57.002Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-11T13:15:57.002Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found",
+      "details": []
+    },
     {
       "time": "2026-04-08T10:11:53.218Z",
       "kind": "Internet Reachability",
@@ -435,6 +481,20 @@
   ],
   "last_fixes": [
     {
+      "time": "2026-04-11T13:15:57.002Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 8751"
+    },
+    {
+      "time": "2026-04-11T13:15:57.002Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 2345"
+    },
+    {
       "time": "2026-04-08T10:11:05.302Z",
       "type": "restart_task",
       "target": "OpenClaw - On Network Reconnect",
@@ -535,34 +595,46 @@
   ],
   "top_offenders": [
     {
-      "name": "powershell",
-      "cpu": 11634.4,
-      "memoryMb": 29,
-      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-    },
-    {
-      "name": "node",
-      "cpu": 1496.5,
-      "memoryMb": 847,
-      "path": "C:\\Program Files\\nodejs\\node.exe"
-    },
-    {
-      "name": "MsMpEng",
-      "cpu": 1362.7,
-      "memoryMb": 241,
-      "path": ""
+      "name": "SearchIndexer",
+      "cpu": 25348.9,
+      "memoryMb": 94,
+      "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
     },
     {
       "name": "System",
-      "cpu": 1106.2,
-      "memoryMb": 10,
+      "cpu": 16098.6,
+      "memoryMb": 8,
       "path": ""
     },
     {
-      "name": "SearchIndexer",
-      "cpu": 788,
-      "memoryMb": 37,
-      "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
+      "name": "MsMpEng",
+      "cpu": 15833.6,
+      "memoryMb": 274,
+      "path": ""
+    },
+    {
+      "name": "logioptionsplus_agent",
+      "cpu": 10343.4,
+      "memoryMb": 4313,
+      "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
+    },
+    {
+      "name": "node",
+      "cpu": 4050.1,
+      "memoryMb": 351,
+      "path": "C:\\Program Files\\nodejs\\node.exe"
+    },
+    {
+      "name": "WmiPrvSE",
+      "cpu": 3362.5,
+      "memoryMb": 32,
+      "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
+    },
+    {
+      "name": "svchost",
+      "cpu": 3198.7,
+      "memoryMb": 23,
+      "path": "C:\\WINDOWS\\system32\\svchost.exe"
     }
   ],
   "gateways": [
@@ -612,5 +684,11 @@
       "StartType": 2
     }
   ],
-  "recent_events": []
+  "recent_events": [],
+  "cron_jobs": [],
+  "alerts": {
+    "configured": true,
+    "last_message": "Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found",
+    "last_status": "WARNING"
+  }
 }

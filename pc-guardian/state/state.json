@@ -1,7 +1,7 @@
 {
   "system_name": "PC Guardian",
   "version": "1.0.0",
-  "last_check": "2026-04-08T10:11:53.218Z",
+  "last_check": "2026-04-11T13:16:39.444Z",
   "overall_status": "WARNING",
   "computer_health": {
     "status": "WARNING",
@@ -12,10 +12,52 @@
   "openclaw_health": {
     "status": "WARNING",
     "issues": [
-      "No cron artifacts found"
+      "No cron jobs found"
     ]
   },
   "recent_failures": [
+    {
+      "time": "2026-04-11T13:16:39.444Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-11T13:16:39.444Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found",
+      "details": []
+    },
+    {
+      "time": "2026-04-11T13:15:57.002Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "time": "2026-04-11T13:15:57.002Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found",
+      "details": []
+    },
     {
       "time": "2026-04-08T10:11:53.218Z",
       "kind": "Internet Reachability",
@@ -162,6 +204,20 @@
   ],
   "last_fixes": [
     {
+      "time": "2026-04-11T13:15:57.002Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 8751"
+    },
+    {
+      "time": "2026-04-11T13:15:57.002Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 2345"
+    },
+    {
       "time": "2026-04-08T10:11:05.302Z",
       "type": "restart_task",
       "target": "OpenClaw - On Network Reconnect",
@@ -262,39 +318,51 @@
   ],
   "top_offenders": [
     {
-      "name": "powershell",
-      "cpu": 11634.4,
-      "memoryMb": 29,
-      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-    },
-    {
-      "name": "node",
-      "cpu": 1496.5,
-      "memoryMb": 847,
-      "path": "C:\\Program Files\\nodejs\\node.exe"
-    },
-    {
-      "name": "MsMpEng",
-      "cpu": 1362.7,
-      "memoryMb": 241,
-      "path": ""
+      "name": "SearchIndexer",
+      "cpu": 25348.9,
+      "memoryMb": 94,
+      "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
     },
     {
       "name": "System",
-      "cpu": 1106.2,
-      "memoryMb": 10,
+      "cpu": 16098.6,
+      "memoryMb": 8,
       "path": ""
     },
     {
-      "name": "SearchIndexer",
-      "cpu": 788,
-      "memoryMb": 37,
-      "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
+      "name": "MsMpEng",
+      "cpu": 15833.6,
+      "memoryMb": 274,
+      "path": ""
+    },
+    {
+      "name": "logioptionsplus_agent",
+      "cpu": 10343.4,
+      "memoryMb": 4313,
+      "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
+    },
+    {
+      "name": "node",
+      "cpu": 4050.1,
+      "memoryMb": 351,
+      "path": "C:\\Program Files\\nodejs\\node.exe"
+    },
+    {
+      "name": "WmiPrvSE",
+      "cpu": 3362.5,
+      "memoryMb": 32,
+      "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
+    },
+    {
+      "name": "svchost",
+      "cpu": 3198.7,
+      "memoryMb": 23,
+      "path": "C:\\WINDOWS\\system32\\svchost.exe"
     }
   ],
   "alerts": {
-    "last_sent_at": null,
-    "last_status": null,
-    "last_summary": null
+    "last_sent_at": "2026-04-11T13:15:57.002Z",
+    "last_status": "WARNING",
+    "last_summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found"
   }
 }

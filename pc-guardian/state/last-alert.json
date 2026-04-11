@@ -1,0 +1,6 @@
+{
+  "sent_at": "2026-04-11T13:15:57.002Z",
+  "channel": "telegram",
+  "status": "WARNING",
+  "message": "PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found"
+}

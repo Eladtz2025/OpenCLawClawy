@@ -29,6 +29,18 @@
 
 `powershell -ExecutionPolicy Bypass -File .\scripts\install-task.ps1`
 
+ברירת המחדל היא הרצה כל 15 דקות.
+
+## Alerts
+
+כרגע המערכת מכינה alert payload לקובץ `state/last-alert.json` ולדשבורד.
+זה מאפשר חיווט נקי ל-Telegram בלי לשלוח הודעות ישירות מתוך Node runtime.
+
+## Cron jobs
+
+בדיקת cron מנסה קודם לקרוא מצב אמיתי מ-`%USERPROFILE%\.openclaw\state\gateway-cron-jobs.json`.
+אם הקובץ לא קיים, הדשבורד יציג שאין cron jobs זמינים לבדיקה.
+
 ## עריכת thresholds וכללי auto-fix
 
 - thresholds: `config/config.json`

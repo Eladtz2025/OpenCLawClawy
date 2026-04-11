@@ -60,3 +60,12 @@
 [2026-04-08T10:12:23.545Z] Overall status: WARNING
 [2026-04-08T10:12:23.545Z] Computer status: WARNING
 [2026-04-08T10:12:23.545Z] OpenClaw status: WARNING
+[2026-04-11T13:16:35.072Z] Overall status: WARNING
+[2026-04-11T13:16:35.072Z] Computer status: WARNING
+[2026-04-11T13:16:35.072Z] OpenClaw status: WARNING
+[2026-04-11T13:16:35.073Z] Alert prepared: PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found
+[2026-04-11T13:16:35.073Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
+[2026-04-11T13:16:35.073Z] Fix cleanup_safe_path target=C:\Users\Itzhak\AppData\Local\Temp result=success
+[2026-04-11T13:17:02.591Z] Overall status: WARNING
+[2026-04-11T13:17:02.591Z] Computer status: WARNING
+[2026-04-11T13:17:02.591Z] OpenClaw status: WARNING
