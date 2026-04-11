@@ -4,9 +4,11 @@
 
 ## מבנה
 
-- `config/config.json` - thresholds, יעדים, נתיבי dashboard ו-alerts
+- `config/config.json` - thresholds, יעדים, נתיבי dashboard, alerts ו-publish
 - `config/rules.json` - allowlists ו-safe policy
 - `state/state.json` - מצב ריצה קטן
+- `state/last-alert.json` - payload אחרון של התראה + סטטוס שליחה
+- `state/fallback-model.json` - מצב fallback פעיל
 - `logs/` - לוגים קצרים עם רוטציה
 - `dashboard/data.json` - פלט JSON לדשבורד
 - `dashboard/index.html` - דשבורד סטטי
@@ -25,33 +27,52 @@
 
 ## התקנת משימה מתוזמנת
 
-פתח PowerShell כמנהל והריץ:
+PowerShell כמנהל:
 
 `powershell -ExecutionPolicy Bypass -File .\scripts\install-task.ps1`
 
-ברירת המחדל היא הרצה כל 15 דקות.
+ברירת המחדל היא הרצה כל 15 דקות, והסקריפט גם מפעיל את המשימה מיד אחרי ההתקנה.
 
-## Alerts
+## Telegram alerts
 
-כרגע המערכת מכינה alert payload לקובץ `state/last-alert.json` ולדשבורד.
-זה מאפשר חיווט נקי ל-Telegram בלי לשלוח הודעות ישירות מתוך Node runtime.
+הגדר ב-`config/config.json`:
+
+- `alerts.telegram.bot_token`
+- `alerts.telegram.chat_id`
+- `alerts.telegram.silent`
+
+אם השדות ריקים, ההתראות לא יישלחו בפועל.
 
 ## Cron jobs
 
-בדיקת cron מנסה קודם לקרוא מצב אמיתי מ-`%USERPROFILE%\.openclaw\state\gateway-cron-jobs.json`.
-אם הקובץ לא קיים, הדשבורד יציג שאין cron jobs זמינים לבדיקה.
+המערכת מנסה קודם `openclaw cron list --json` דרך CLI אמיתי.
+אם זה לא זמין, יש fallback לקריאת cache מקומי מתוך `.openclaw/state/gateway-cron-jobs.json`.
 
-## עריכת thresholds וכללי auto-fix
+## Fallback model
 
-- thresholds: `config/config.json`
-- allowlists ו-safe cleanup: `config/rules.json`
+כאשר מזוהות כשלונות model חוזרים, המערכת כותבת `state/fallback-model.json` במצב `config-override` ומציגה זאת בדשבורד.
+זה כבר לא marker-only, אבל עדיין דורש צרכן חיצוני שיטען את קובץ ה-state הזה ל-runtime בפועל אם רוצים enforcement מלא.
+
+## Scheduled Task health
+
+המערכת מתייחסת ל-`Ready` ו-`Running` כמצב תקין, ולא מנסה restart מיותר למשימות תקינות.
+
+## Publish dashboard
+
+יש תמיכה ב-2 מצבים דרך `dashboard_publish`:
+
+- `copy` - העתקה לתיקיית יעד
+- `git` - העתקה ל-repo נפרד, commit ו-push
+
+כך אין תלות ב-file path מקומי יחיד בצד הצרכן, כל עוד יש יעד publish יציב.
 
 ## מדיניות בטיחות
 
 - אין מחיקה אוטומטית של קבצים חשובים, workspace, backups או user folders.
 - ניקוי מותר רק בתוך safe cleanup paths, ורק לקבצי temp/log ישנים.
 - במצב Critical המערכת מעדיפה stop / restart / disable זמני / alert, ולא מחיקה.
+- disable של cron חוזר מתבצע רק אם יש job מתאים, allowlist תואם, ו-OpenClaw CLI זמין.
 
 ## GitHub / Pages
 
-הדשבורד הסטטי יושב ב-`dashboard/index.html` וניתן לפרסום ב-GitHub Pages.
+הדשבורד הסטטי יושב ב-`dashboard/index.html` וניתן לפרסום ב-GitHub Pages או לכל יעד publish אחר.

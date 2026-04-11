@@ -1,6 +1,6 @@
 {
   "system_name": "PC Guardian",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "monitoring": {
     "interval_minutes": 15,
     "connectivity_targets": [
@@ -74,7 +74,23 @@
     "cooldown_minutes": 20,
     "normal_template": "PC Guardian: תקין.",
     "warning_template": "PC Guardian Warning: {summary}",
-    "critical_template": "PC Guardian Critical: {summary}"
+    "critical_template": "PC Guardian Critical: {summary}",
+    "telegram": {
+      "bot_token": "",
+      "chat_id": "",
+      "silent": false
+    }
+  },
+  "dashboard_publish": {
+    "enabled": false,
+    "mode": "copy",
+    "target_dir": "",
+    "repo_dir": "",
+    "remote": "origin",
+    "branch": "main",
+    "html_file_name": "index.html",
+    "data_file_name": "data.json",
+    "commit_message": "Update PC Guardian dashboard"
   },
   "paths": {
     "state_file": "state/state.json",

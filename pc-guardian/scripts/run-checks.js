@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const { execFileSync } = require('child_process');
+const { execFileSync, spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const CONFIG = readJson(path.join(ROOT, 'config', 'config.json'));
@@ -36,6 +36,26 @@ function runPs(command, fallback = null, options = {}) {
     if (!options.silent) appendLog('PowerShell failed: ' + error.message);
     return fallback;
   }
+}
+function runOpenClaw(args, options = {}) {
+  const candidates = [
+    path.join(process.env.APPDATA || '', 'npm', 'openclaw.cmd'),
+    path.join(process.env.APPDATA || '', 'npm', 'openclaw.ps1')
+  ].filter(Boolean);
+  for (const candidate of candidates) {
+    if (!fs.existsSync(candidate)) continue;
+    try {
+      if (candidate.toLowerCase().endsWith('.cmd')) {
+        const out = execFileSync(candidate, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 20000, windowsHide: true });
+        return { ok: true, stdout: out.trim(), command: candidate };
+      }
+      const out = execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', candidate, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 20000, windowsHide: true });
+      return { ok: true, stdout: out.trim(), command: candidate };
+    } catch (error) {
+      if (!options.silent) appendLog('OpenClaw CLI failed (' + candidate + '): ' + error.message);
+    }
+  }
+  return { ok: false, stdout: '', command: null };
 }
 function severityRank(status) { return status === 'CRITICAL' ? 3 : status === 'WARNING' ? 2 : status === 'OK' ? 1 : 0; }
 function pickStatus(items) {
@@ -106,9 +126,11 @@ function startTask(name) {
   if (IS_DRY_RUN) return true;
   try { execFileSync('schtasks', ['/Run', '/TN', name], { stdio: 'ignore', timeout: 10000 }); return true; } catch { return false; }
 }
-function disableTask(name) {
-  if (IS_DRY_RUN) return true;
-  try { execFileSync('schtasks', ['/Change', '/TN', name, '/Disable'], { stdio: 'ignore', timeout: 10000 }); return true; } catch { return false; }
+function disableCronJob(jobId) {
+  if (IS_DRY_RUN) return { ok: true, details: 'dry-run' };
+  const result = runOpenClaw(['cron', 'update', jobId, '--enabled', 'false'], { timeoutMs: 20000, silent: true });
+  if (result.ok) return { ok: true, details: 'disabled via ' + result.command };
+  return { ok: false, details: 'openclaw cli unavailable' };
 }
 function getJson(command, fallback, options = {}) {
   const out = runPs(command, null, options);
@@ -116,15 +138,25 @@ function getJson(command, fallback, options = {}) {
   try { return JSON.parse(out); } catch { return fallback; }
 }
 function readOpenClawCronJobs() {
+  const cli = runOpenClaw(['cron', 'list', '--json'], { timeoutMs: 25000, silent: true });
+  if (cli.ok && cli.stdout) {
+    try {
+      const json = JSON.parse(cli.stdout);
+      if (Array.isArray(json)) return { jobs: json, source: 'openclaw-cli' };
+      if (Array.isArray(json.jobs)) return { jobs: json.jobs, source: 'openclaw-cli' };
+    } catch {
+      appendLog('Failed to parse openclaw cron list JSON');
+    }
+  }
   const statePath = path.join(process.env.USERPROFILE || '', '.openclaw', 'state', 'gateway-cron-jobs.json');
   if (fs.existsSync(statePath)) {
     try {
       const json = readJson(statePath);
-      if (Array.isArray(json)) return json;
-      if (Array.isArray(json.jobs)) return json.jobs;
+      if (Array.isArray(json)) return { jobs: json, source: 'state-cache' };
+      if (Array.isArray(json.jobs)) return { jobs: json.jobs, source: 'state-cache' };
     } catch {}
   }
-  return [];
+  return { jobs: [], source: cli.command ? 'openclaw-cli-failed' : 'unavailable' };
 }
 function computeAlert(summaryStatus, recentIssues) {
   const lastSentAt = previousState.alerts?.last_sent_at ? Date.parse(previousState.alerts.last_sent_at) : 0;
@@ -134,17 +166,88 @@ function computeAlert(summaryStatus, recentIssues) {
   const shouldSend = summaryStatus !== lastStatus || (Date.now() - lastSentAt) > cooldownMs;
   return { shouldSend, summary, status: summaryStatus };
 }
-function persistAlert(alert) {
-  previousState.alerts = { last_sent_at: now, last_status: alert.status, last_summary: alert.summary };
+function persistAlert(alert, delivery = {}) {
+  previousState.alerts = {
+    last_sent_at: now,
+    last_status: alert.status,
+    last_summary: alert.summary,
+    last_delivery: delivery
+  };
 }
-function writeAlertFile(alert) {
+function writeAlertFile(alert, delivery = {}) {
   const alertFile = path.join(ROOT, 'state', 'last-alert.json');
-  writeJson(alertFile, { sent_at: now, channel: CONFIG.alerts.channel, status: alert.status, message: formatAlert(alert) });
+  writeJson(alertFile, {
+    sent_at: now,
+    channel: CONFIG.alerts.channel,
+    status: alert.status,
+    message: formatAlert(alert),
+    delivery
+  });
 }
 function formatAlert(alert) {
   if (alert.status === 'CRITICAL') return CONFIG.alerts.critical_template.replace('{summary}', alert.summary);
   if (alert.status === 'WARNING') return CONFIG.alerts.warning_template.replace('{summary}', alert.summary);
   return CONFIG.alerts.normal_template;
+}
+function sendTelegramAlert(alert) {
+  const telegram = CONFIG.alerts.telegram || {};
+  if (!telegram.bot_token || !telegram.chat_id) return { sent: false, mode: 'disabled', reason: 'telegram_not_configured' };
+  if (IS_DRY_RUN) return { sent: true, mode: 'dry-run', reason: 'dry_run' };
+  const payload = {
+    chat_id: telegram.chat_id,
+    text: formatAlert(alert),
+    disable_notification: !!telegram.silent
+  };
+  try {
+    const tempPath = path.join(ROOT, 'state', 'telegram-payload.json');
+    fs.writeFileSync(tempPath, JSON.stringify(payload), 'utf8');
+    const script = [
+      "$payload = Get-Content -Raw -Path '" + tempPath.replace(/'/g, "''") + "' | ConvertFrom-Json",
+      "$body = @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification }",
+      "Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot" + String(telegram.bot_token).replace(/'/g, "''") + "/sendMessage' -Body $body | ConvertTo-Json -Compress"
+    ].join('; ');
+    const out = runPs(script, null, { timeoutMs: 20000, silent: true });
+    safeDeleteFile(tempPath);
+    if (!out) return { sent: false, mode: 'telegram', reason: 'request_failed' };
+    const parsed = JSON.parse(out);
+    return { sent: !!parsed.ok, mode: 'telegram', response: parsed };
+  } catch (error) {
+    appendLog('Telegram alert failed: ' + error.message);
+    return { sent: false, mode: 'telegram', reason: error.message };
+  }
+}
+function publishDashboard(dataFile, htmlFile) {
+  const publish = CONFIG.dashboard_publish || {};
+  if (!publish.enabled) return { ok: false, mode: 'disabled' };
+  if (publish.mode === 'copy' && publish.target_dir) {
+    if (!IS_DRY_RUN) {
+      ensureDir(publish.target_dir);
+      fs.copyFileSync(dataFile, path.join(publish.target_dir, path.basename(dataFile)));
+      fs.copyFileSync(htmlFile, path.join(publish.target_dir, path.basename(htmlFile)));
+    }
+    return { ok: true, mode: 'copy', target: publish.target_dir };
+  }
+  if (publish.mode === 'git' && publish.repo_dir) {
+    try {
+      const repoDir = publish.repo_dir;
+      ensureDir(repoDir);
+      if (!IS_DRY_RUN) {
+        fs.copyFileSync(dataFile, path.join(repoDir, publish.data_file_name || 'data.json'));
+        fs.copyFileSync(htmlFile, path.join(repoDir, publish.html_file_name || 'index.html'));
+        const status = spawnSync('git', ['status', '--short'], { cwd: repoDir, encoding: 'utf8', timeout: 15000, windowsHide: true });
+        if (status.status === 0 && status.stdout.trim()) {
+          spawnSync('git', ['add', '.'], { cwd: repoDir, encoding: 'utf8', timeout: 15000, windowsHide: true });
+          spawnSync('git', ['commit', '-m', publish.commit_message || 'Update PC Guardian dashboard'], { cwd: repoDir, encoding: 'utf8', timeout: 15000, windowsHide: true });
+          spawnSync('git', ['push', publish.remote || 'origin', publish.branch || 'main'], { cwd: repoDir, encoding: 'utf8', timeout: 30000, windowsHide: true });
+        }
+      }
+      return { ok: true, mode: 'git', target: repoDir };
+    } catch (error) {
+      appendLog('Dashboard publish failed: ' + error.message);
+      return { ok: false, mode: 'git', reason: error.message };
+    }
+  }
+  return { ok: false, mode: 'misconfigured' };
 }
 
 const cpuLoad = toNumber(runPs('(Get-Counter "\\Processor(_Total)\\% Processor Time").CounterSamples[0].CookedValue.ToString("F2")', '0', { silent: true }));
@@ -168,7 +271,8 @@ const gateways = CONFIG.openclaw.gateways.map(g => {
   return { name: g.name, url: g.url, port, statusCode: code, listening, ok: listening && code >= 200 && code < 500 };
 });
 const openclawTasks = arrayify(getJson(`$patterns = @(${CONFIG.openclaw.scheduled_task_patterns.map(x => `'${x}'`).join(',')}); Get-ScheduledTask | Where-Object { $name = $_.TaskName; foreach ($p in $patterns) { if ($name -like ('*' + $p + '*')) { return $true } }; return $false } | Select-Object TaskName,State,TaskPath | ConvertTo-Json -Compress`, [], { silent: true }));
-const cronJobs = readOpenClawCronJobs();
+const cronState = readOpenClawCronJobs();
+const cronJobs = cronState.jobs;
 const nodeFallbackHints = arrayify(getJson(`$base='${path.join(process.env.USERPROFILE || '', '.openclaw').replace(/\\/g, '\\\\')}'; if (Test-Path $base) { $files = Get-ChildItem -Path $base -Recurse -Include *.log,*.json -ErrorAction SilentlyContinue | Select-Object -First 60 FullName; $hits = foreach ($f in $files) { try { $m = Select-String -Path $f.FullName -Pattern 'fallback','model failed','provider failed' -SimpleMatch -ErrorAction SilentlyContinue; if ($m) { [pscustomobject]@{ File=$f.FullName; Count=$m.Count } } } catch {} }; $hits | ConvertTo-Json -Compress }`, [], { silent: true }));
 const growthItems = [];
 for (const scanRoot of CONFIG.monitoring.growth_scan_roots) {
@@ -196,8 +300,12 @@ for (const proc of topProcesses.slice(0, 7)) offenders.push({ name: proc.Process
 const openclawChecks = [];
 for (const gateway of gateways) openclawChecks.push({ name: gateway.name, value: gateway, status: gateway.ok ? 'OK' : gateway.listening ? 'WARNING' : 'CRITICAL', summary: gateway.name + ' port ' + gateway.port + ' ' + (gateway.ok ? 'OK' : gateway.listening ? 'no health' : 'down') });
 openclawChecks.push({ name: 'OpenClaw Ports', value: netPorts, status: RULES.important_ports.every(p => netPorts.some(x => Number(x.LocalPort) === p)) ? 'OK' : 'CRITICAL', summary: 'Ports ' + RULES.important_ports.join(', ') });
-openclawChecks.push({ name: 'OpenClaw Tasks', value: openclawTasks, status: openclawTasks.length && openclawTasks.every(x => String(x.State).toLowerCase() !== 'disabled') ? 'OK' : 'WARNING', summary: openclawTasks.length ? 'OpenClaw tasks found' : 'OpenClaw tasks missing' });
-openclawChecks.push({ name: 'Cron Jobs', value: cronJobs, status: cronJobs.length ? 'OK' : 'WARNING', summary: cronJobs.length ? 'Cron jobs found: ' + cronJobs.length : 'No cron jobs found' });
+openclawChecks.push({ name: 'OpenClaw Tasks', value: openclawTasks, status: openclawTasks.length && openclawTasks.every(x => {
+  const state = String(x.State || '').toLowerCase();
+  const numeric = toNumber(x.State, -1);
+  return state !== 'disabled' && (state === 'ready' || state === 'running' || numeric === 1 || numeric === 3 || numeric === 4);
+}) ? 'OK' : 'WARNING', summary: openclawTasks.length ? 'OpenClaw tasks found' : 'OpenClaw tasks missing' });
+openclawChecks.push({ name: 'Cron Jobs', value: cronJobs, status: cronJobs.length ? 'OK' : (cronState.source === 'unavailable' ? 'WARNING' : 'WARNING'), summary: cronJobs.length ? 'Cron jobs found: ' + cronJobs.length : 'No cron jobs found (' + cronState.source + ')' });
 openclawChecks.push({ name: 'Fallback / Model failures', value: nodeFallbackHints, status: nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical ? 'CRITICAL' : nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_warning ? 'WARNING' : 'OK', summary: nodeFallbackHints.length ? 'Model fallback hints: ' + nodeFallbackHints.length : 'No model fallback hints' });
 openclawChecks.push({ name: 'Growth scan', value: growthItems, status: growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_critical_mb) ? 'CRITICAL' : growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_warning_mb) ? 'WARNING' : 'OK', summary: growthItems.length ? 'Growth items: ' + growthItems.length : 'Growth normal' });
 
@@ -217,17 +325,19 @@ for (const task of openclawTasks) {
   if (!healthy && !isRecentFix('restart_task', task.TaskName)) addFix('restart_task', task.TaskName, startTask(task.TaskName) ? 'success' : 'failed', 'Task state was ' + task.State);
 }
 if (nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical) {
-  const fallbackState = { updated_at: now, active_model: CONFIG.openclaw.safe_fallback_models[0], reason: 'repeated model failure hint', mode: 'marker-only' };
+  const fallbackModel = CONFIG.openclaw.safe_fallback_models[0];
+  const fallbackState = { updated_at: now, active_model: fallbackModel, reason: 'repeated model failure hint', mode: 'config-override' };
   writeJson(path.join(ROOT, 'state', 'fallback-model.json'), fallbackState);
-  addFix('fallback_model', CONFIG.openclaw.safe_fallback_models[0], 'success', 'Fallback marker updated');
+  addFix('fallback_model', fallbackModel, 'success', 'Fallback state updated');
 }
 const groupedFailures = {};
 for (const f of (previousState.recent_failures || []).concat(failures)) groupedFailures[f.kind] = (groupedFailures[f.kind] || 0) + 1;
 for (const [kind, count] of Object.entries(groupedFailures)) {
   if (count >= CONFIG.thresholds.failure_repeat_critical) {
-    const matchingJob = cronJobs.find(x => String(x.name || x.id || '').toLowerCase().includes(kind.toLowerCase()));
-    if (matchingJob && RULES.safe_cron_disable_patterns.some(p => String(matchingJob.name || matchingJob.id || '').toLowerCase().includes(p.toLowerCase()))) {
-      addFix('disable_repeating_cron', matchingJob.name || matchingJob.id, 'manual_required', 'OpenClaw cron disable requires API wiring');
+    const matchingJob = cronJobs.find(x => String(x.name || x.id || x.jobId || '').toLowerCase().includes(kind.toLowerCase()));
+    if (matchingJob && RULES.safe_cron_disable_patterns.some(p => String(matchingJob.name || matchingJob.id || matchingJob.jobId || '').toLowerCase().includes(p.toLowerCase())) && !isRecentFix('disable_repeating_cron', matchingJob.jobId || matchingJob.id || matchingJob.name, 120)) {
+      const disableResult = disableCronJob(String(matchingJob.jobId || matchingJob.id || matchingJob.name));
+      addFix('disable_repeating_cron', matchingJob.jobId || matchingJob.id || matchingJob.name, disableResult.ok ? 'success' : 'failed', disableResult.details);
     }
   }
 }
@@ -253,9 +363,11 @@ const overallStatus = pickStatus([{ status: computerStatus }, { status: openclaw
 const recentFailures = truncateArray(failures.concat(previousState.recent_failures || []), CONFIG.monitoring.max_dashboard_failures);
 const recentFixes = truncateArray(fixes.concat(previousState.last_fixes || []), 20);
 const alert = computeAlert(overallStatus, recentFailures);
+let alertDelivery = previousState.alerts?.last_delivery || { sent: false, mode: 'none' };
 if (alert.shouldSend) {
-  writeAlertFile(alert);
-  persistAlert(alert);
+  alertDelivery = sendTelegramAlert(alert);
+  writeAlertFile(alert, alertDelivery);
+  persistAlert(alert, alertDelivery);
 }
 
 const dashboardData = {
@@ -274,7 +386,13 @@ const dashboardData = {
   services: importantServices,
   recent_events: recentEvents.slice(0, 10),
   cron_jobs: cronJobs,
-  alerts: { configured: true, last_message: alert.shouldSend ? formatAlert(alert) : previousState.alerts?.last_summary || null, last_status: previousState.alerts?.last_status || alert.status }
+  cron_source: cronState.source,
+  alerts: {
+    configured: true,
+    last_message: alert.shouldSend ? formatAlert(alert) : previousState.alerts?.last_summary || null,
+    last_status: previousState.alerts?.last_status || alert.status,
+    last_delivery: previousState.alerts?.last_delivery || alertDelivery
+  }
 };
 writeJson(DASHBOARD_DATA_PATH, dashboardData);
 writeJson(STATE_PATH, {
@@ -292,8 +410,11 @@ writeJson(STATE_PATH, {
 appendLog('Overall status: ' + overallStatus);
 appendLog('Computer status: ' + computerStatus);
 appendLog('OpenClaw status: ' + openclawStatus);
-if (alert.shouldSend) appendLog('Alert prepared: ' + formatAlert(alert));
+appendLog('Cron source: ' + cronState.source);
+if (alert.shouldSend) appendLog('Alert delivery: ' + JSON.stringify(alertDelivery));
 for (const fix of fixes) appendLog('Fix ' + fix.type + ' target=' + fix.target + ' result=' + fix.result);
 writeLog();
 require('./render-dashboard');
-console.log(JSON.stringify({ status: overallStatus, dashboard: path.relative(ROOT, DASHBOARD_FILE_PATH), failures: failures.length, fixes: fixes.length, dryRun: IS_DRY_RUN, alertPrepared: alert.shouldSend }, null, 2));
+const publishResult = publishDashboard(DASHBOARD_DATA_PATH, DASHBOARD_FILE_PATH);
+if (publishResult.ok) appendLog('Dashboard publish OK: ' + JSON.stringify(publishResult));
+console.log(JSON.stringify({ status: overallStatus, dashboard: path.relative(ROOT, DASHBOARD_FILE_PATH), failures: failures.length, fixes: fixes.length, dryRun: IS_DRY_RUN, alertPrepared: alert.shouldSend, alertDelivery, cronSource: cronState.source, publish: publishResult }, null, 2));
