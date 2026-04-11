@@ -130,6 +130,19 @@ function startTask(name) {
   if (IS_DRY_RUN) return true;
   try { execFileSync('schtasks', ['/Run', '/TN', name], { stdio: 'ignore', timeout: 10000 }); return true; } catch { return false; }
 }
+function endTask(name) {
+  if (IS_DRY_RUN) return true;
+  try { execFileSync('schtasks', ['/End', '/TN', name], { stdio: 'ignore', timeout: 10000 }); return true; } catch { return false; }
+}
+function safeRecoverOpenClawTask(taskName, taskState) {
+  const state = String(taskState || '').toLowerCase();
+  const numericState = toNumber(taskState, -1);
+  const healthy = state === 'ready' || state === 'running' || numericState === 1 || numericState === 3 || numericState === 4;
+  if (healthy) return { attempted: false, result: 'skipped_healthy', details: 'Task healthy: ' + taskState };
+  const ended = endTask(taskName);
+  const started = startTask(taskName);
+  return { attempted: true, result: ended && started ? 'success' : 'failed', details: 'Task state was ' + taskState + ', end=' + ended + ', run=' + started };
+}
 function disableCronJob(jobId) {
   if (IS_DRY_RUN) return { ok: true, details: 'dry-run' };
   const result = runOpenClaw(['cron', 'update', jobId, '--enabled', 'false'], { timeoutMs: 20000, silent: true });
@@ -319,10 +332,9 @@ for (const svc of importantServices) {
   }
 }
 for (const task of openclawTasks) {
-  const state = String(task.State || '').toLowerCase();
-  const numericState = toNumber(task.State, -1);
-  const healthy = state === 'ready' || state === 'running' || numericState === 1 || numericState === 3 || numericState === 4;
-  if (!healthy && !isRecentFix('restart_task', task.TaskName)) addFix('restart_task', task.TaskName, startTask(task.TaskName) ? 'success' : 'failed', 'Task state was ' + task.State);
+  if (isRecentFix('recover_openclaw_task', task.TaskName, 30)) continue;
+  const recovery = safeRecoverOpenClawTask(task.TaskName, task.State);
+  if (recovery.attempted) addFix('recover_openclaw_task', task.TaskName, recovery.result, recovery.details);
 }
 if (nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical) {
   const fallbackModel = CONFIG.openclaw.safe_fallback_models[0];

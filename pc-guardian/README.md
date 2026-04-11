@@ -56,6 +56,8 @@ PowerShell כמנהל:
 ## Scheduled Task health
 
 המערכת מתייחסת ל-`Ready` ו-`Running` כמצב תקין, ולא מנסה restart מיותר למשימות תקינות.
+למשימות OpenClaw יש recovery שמרני בלבד: `schtasks /End` ואז `schtasks /Run`, ורק אם זוהה מצב לא תקין באמת.
+אין stop, disable או kill אגרסיבי ל-OpenClaw tasks מתוך המסלול הזה.
 
 ## Publish dashboard
 

@@ -48,6 +48,7 @@ function shortSummary(text) {
 function humanFix(item) {
   const actionMap = {
     restart_task: 'בוצע ניסיון הפעלה מחדש למשימה',
+    recover_openclaw_task: 'בוצע שחזור בטוח למשימת OpenClaw',
     restart_service: 'בוצע ניסיון הפעלה מחדש לשירות',
     cleanup_safe_path: 'נוקה אזור בטוח',
     fallback_model: 'סומן מעבר לפולבק',
