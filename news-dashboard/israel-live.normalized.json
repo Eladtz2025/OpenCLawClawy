@@ -13,7 +13,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-157xnneb15xxk9eqiner15nx",
@@ -29,7 +29,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txqtez15dxldeoineu157x",
@@ -45,7 +45,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15nxqdeo15dxncdxqten16tx",
@@ -61,7 +61,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txqtev16nxkdez150g16nx",
@@ -77,7 +77,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-itex16rxqneg15ug15zxntes",
@@ -93,7 +93,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-itez16nxlsdxones15mg157x",
@@ -109,7 +109,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15fxkdeo150g15zxptev15xx",
@@ -125,7 +125,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-iter16nxoneuinep16lxkdeo",
@@ -141,7 +141,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-157xnnex157xlcdxkdec15kg",
@@ -157,7 +157,39 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-157xk9ez16dxldeqiner157x",
+    "category": "israel",
+    "title": "מדינות במערב סייעו בבחירת איראן לגופי זכויות אדם באו\"ם: \"בגדו בעקרונות שלהן\"",
+    "source": "ynet News",
+    "sourceUrl": "https://www.ynet.co.il/news/article/b1fwifp2bl",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15dxmdep15xxnsdxkdey15xx",
+    "category": "israel",
+    "title": "אישום בטורקיה נגד נתניהו, בן גביר - וגם גוטליב: \"דורשים עד 4,596 שנות מאסר\"",
+    "source": "ynet News",
+    "sourceUrl": "https://www.ynet.co.il/news/article/rk1s3hw211x#autoplay",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15dxqdeqinex15nxncatineu",
@@ -173,7 +205,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-16nxkteo15nxqnezinec15hx",
@@ -189,7 +221,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15dxqneuiterinei15wg16dx",
@@ -205,7 +237,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txnnex16ug15nxqnetinee",
@@ -221,7 +253,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txodez157xonez150g157x",
@@ -237,7 +269,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15xxkneg16eg15txlteu15nx",
@@ -253,14 +285,14 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-16hxpneo15mg16hxldec16fx",
+    "id": "israel-16rxmdei15xxkydxmdev16bx",
     "category": "israel",
-    "title": "ספרד סולקה מהמפקדה בקריית גת: \"יש לה אובססיה אנטי-ישראלית\"",
+    "title": "תיעוד יוצא דופן מאירלנד: טיפס על מטוס \"הרקולס\" אמריקני - ותקף עם גרזן",
     "source": "ynet News",
-    "sourceUrl": "https://www.ynet.co.il/news/article/bkafr8lnwl",
+    "sourceUrl": "https://www.ynet.co.il/news/article/rjfhpjd211l#autoplay",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
@@ -269,30 +301,14 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-16txodez157xmdev16og15hx",
+    "id": "israel-itee16hxntecineo15xxoii6",
     "category": "israel",
-    "title": "פסימיות בישראל: תוצאות המלחמה עם איראן בולמות נתיב נורמליזציה עם המפרץ",
+    "title": "\"מסמל רוע\": המונים פוצצו בובת ענק של נתניהו בפסחא | התיעוד מספרד והסערה",
     "source": "ynet News",
-    "sourceUrl": "https://www.ynet.co.il/news/article/hkmqzvln11g#autoplay",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-15fxnnev16dxldeqineg15xx",
-    "category": "israel",
-    "title": "חלונות נופצו, נחקר מניע אנטישמי: נזק כבד למסעדה ישראלית במינכן",
-    "source": "ynet News",
-    "sourceUrl": "https://www.ynet.co.il/news/article/bygmjhun11l#autoplay",
+    "sourceUrl": "https://www.ynet.co.il/news/article/sj7llyv311l#autoplay",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
@@ -301,23 +317,135 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-iteb16nxlneq16fxkdec16og",
+    "id": "israel-yxj0awnszsaxmza4ntu0",
     "category": "israel",
-    "title": "\"כשהתקבלת לגולני היית מאושר\". הובא למנוחות טובאל יוסף ליפשיץ, שנפל בלבנון",
-    "source": "ynet News",
-    "sourceUrl": "https://www.ynet.co.il/news/article/hyo11fhhnbl#autoplay",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
+    "title": "article 1308554",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/military/article-1308554",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
     "publishedAt": "2026-04-11",
     "fresh": true,
-    "signalPositive": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntuz",
+    "category": "israel",
+    "title": "article 1308553",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/israel/article-1308553",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntuw",
+    "category": "israel",
+    "title": "article 1308550",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/israel/article-1308550",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntuy",
+    "category": "israel",
+    "title": "article 1308552",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308552",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntmw",
+    "category": "israel",
+    "title": "article 1308530",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308530",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntix",
+    "category": "israel",
+    "title": "article 1308521",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/military/article-1308521",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntey",
+    "category": "israel",
+    "title": "article 1308512",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308512",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntiw",
+    "category": "israel",
+    "title": "article 1308520",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308520",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-yxj0awnszsaxmza4ndgy",
@@ -332,8 +460,8 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-yxj0awnszsaxmza4ndc1",
@@ -348,8 +476,8 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-yxj0awnszsaxmza4ndy5",
@@ -364,8 +492,8 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-yxj0awnszsaxmza4ndy1",
@@ -380,8 +508,8 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-yxj0awnszsaxmza4ndq1",
@@ -396,8 +524,8 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-yxj0awnszsaxmza4ndm1",
@@ -412,15 +540,15 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-yxj0awnszsaxmza4ndi4",
+    "id": "israel-yxj0awnszsaxmza4ntu0",
     "category": "israel",
-    "title": "article 1308428",
+    "title": "article 1308554",
     "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308428",
+    "sourceUrl": "https://www.maariv.co.il/news/military/article-1308554",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -429,14 +557,126 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-yxj0awnszsaxmza4nde1",
+    "id": "israel-yxj0awnszsaxmza4ntuz",
     "category": "israel",
-    "title": "article 1308415",
+    "title": "article 1308553",
     "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308415",
+    "sourceUrl": "https://www.maariv.co.il/news/israel/article-1308553",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntuw",
+    "category": "israel",
+    "title": "article 1308550",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/israel/article-1308550",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntuy",
+    "category": "israel",
+    "title": "article 1308552",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308552",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntmw",
+    "category": "israel",
+    "title": "article 1308530",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308530",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-yxj0awnszsaxmza4ntix",
+    "category": "israel",
+    "title": "article 1308521",
+    "source": "Maariv News",
+    "sourceUrl": "https://www.maariv.co.il/news/military/article-1308521",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15txknew15txqneuinec16nx",
+    "category": "israel",
+    "title": "האזהרה לשלטון והזעם על חיזבאללה: הקולות בלבנון בעד המו\"מ עם ישראל",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20301249",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-16hxpnez16dxldeqineu16bx",
+    "category": "israel",
+    "title": "ספינות הצי האמריקני חצו במצר הורמוז; האיראנים מכחישים",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20300984",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15hxktec15wg157xmdec15qg",
+    "category": "israel",
+    "title": "בגלל מילה אחת: תקף עובד מסעדה - וייכנס למאסר",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/crime/article/20300335",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -445,14 +685,30 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-yxj0awnszsaxmza4ndex",
+    "id": "israel-16dxqdez15ag15pxqnev150g",
     "category": "israel",
-    "title": "article 1308411",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308411",
+    "title": "נשיא דרום קוריאה שיתף סרטון שקרי על צה\"ל - ועורר זעם בישראל",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/other/article/20300316",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15hxodeo15jxldefinep15tx",
+    "category": "israel",
+    "title": "בסרטון שהפיץ, נטען כי חיילים עינו ילד פלשתיני והשליכו אותו מגג - והשוו",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/other/article/20300316",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -461,183 +717,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4nda2",
-    "category": "israel",
-    "title": "article 1308406",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308406",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4mzk0",
-    "category": "israel",
-    "title": "article 1308394",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308394",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndaw",
-    "category": "israel",
-    "title": "article 1308400",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308400",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4mzkx",
-    "category": "israel",
-    "title": "article 1308391",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308391",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndgy",
-    "category": "israel",
-    "title": "article 1308482",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308482",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndc1",
-    "category": "israel",
-    "title": "article 1308475",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308475",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndy5",
-    "category": "israel",
-    "title": "article 1308469",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308469",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndy1",
-    "category": "israel",
-    "title": "article 1308465",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308465",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndq1",
-    "category": "israel",
-    "title": "article 1308445",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308445",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndm1",
-    "category": "israel",
-    "title": "article 1308435",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308435",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-yxj0awnszsaxmza4ndi4",
-    "category": "israel",
-    "title": "article 1308428",
-    "source": "Maariv News",
-    "sourceUrl": "https://www.maariv.co.il/news/world/article-1308428",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-iteq15nxqnev16ig15jxqneq",
@@ -653,7 +733,23 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15zxpnezineu15dxmdep15xx",
+    "category": "israel",
+    "title": "לפי האישום האב הגיע לחצר בי\"ס ברמת גן לאחר שבנו טען שנפגע ע\"י נער אחר,",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/crime/article/20300098",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txqnee15jxmylxncdxqdei",
@@ -669,7 +765,23 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15txqnee15jxmylxncdxlneq",
+    "category": "israel",
+    "title": "הרמטכ\"ל האוגנדי ובנו של הנשיא פרסם שורת ציוצים חריגים, בהם הביע תמיכה",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/other/article/20299957",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-itee15xxkifxqter15ag15dx",
@@ -685,110 +797,14 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-15pxmdev15xxlzog15dxmdeo",
+    "id": "israel-16lxncdxpnezinep15zxldep",
     "category": "israel",
-    "title": "דיווח: איראן איבדה את המעקב אחר המוקשים שהטילה במצרי הורמוז",
+    "title": "על פי שלושה מקורבים למנהיג העליון החדש מוג'תבא חמינאי עוד מתאושש מהפצי",
     "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299286",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-15zxpnezineu15pxmdev15xx",
-    "category": "israel",
-    "title": "לפי הדיווח, ארה״ב התקשתה במעקב אחר הסירות הקטנות שבהן השתמשה איראן להט",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299286",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-15txntev15pxmdei15nxnydx",
-    "category": "israel",
-    "title": "המודיעין בארה\"ב מעריך: לאיראן נותרו אלפי טילים ויכולת להשמיש משגרים",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299248",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-15dxmdeo15dxnydxntex15bx",
-    "category": "israel",
-    "title": "איראן מחזיקה עדיין בארסנל אלפי טילים בליסטיים, שבהם היא יכולה לעשות שי",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299248",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-15txk9eo157xlcdxkdeu15xx",
-    "category": "israel",
-    "title": "הדרמה בהונגריה: טראמפ מבטיח תמיכה כלכלית, 100 אלף התייצבו נגד אורבן",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20299116",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-16txmdey16gg157xktez15dx",
-    "category": "israel",
-    "title": "פיטר מגיאר מציב בפני רה\"מ \"הנצחי\" ויקטור אורבן אתגר של ממש • טראמפ הבט",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20299116",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-15txknez16jxkneg15nxnsdx",
-    "category": "israel",
-    "title": "האיראנים טוענים: ארה\"ב הסכימה לשחרור הנכסים המוקפאים כתנאי למו\"מ, הבית הלבן מכחיש",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/defense/article/20299031",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299793",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -797,14 +813,30 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-16dxptez15lxmsdxlnee16nx",
+    "id": "israel-15txknew15txqneuinec16nx",
     "category": "israel",
-    "title": "נציגי המשלחות למשא ומתן בין ארה\"ב לאיראן הגיעו לפקיסטן, במקביל - ארה\"",
+    "title": "האזהרה לשלטון והזעם על חיזבאללה: הקולות בלבנון בעד המו\"מ עם ישראל",
     "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/defense/article/20299031",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20301249",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15bxlcdxnneqiner15pxmdex",
+    "category": "israel",
+    "title": "זה לא בדיחה: האו\"ם קבע כי איראן תפקח על מדיניות זכויות הנשים",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/other/article/20300461",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -813,7 +845,23 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-15dxldeoinep16fxkywg16nx",
+    "category": "israel",
+    "title": "אור שקד, שליח \"היום\" בארה\"ב",
+    "source": "Israel Hayom News",
+    "sourceUrl": "https://www.israelhayom.co.il/writer/%d7%90%d7%95%d7%a8-%d7%a9%d7%a7%d7%93",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-11",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txkdez16og15txnner1586",
@@ -829,7 +877,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15pxmdev15xxlzog15dxmdeo",
@@ -844,8 +892,8 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txntev15pxmdei15nxnydx",
@@ -860,8 +908,8 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15txk9eo157xlcdxkdeu15xx",
@@ -876,15 +924,15 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-15dxl9eo15kg16nxms3xnnez",
+    "id": "israel-15dxl9etinee16jxknep15kg",
     "category": "israel",
-    "title": "אחרי שי-לי עטרי: המתלוננת השנייה נגד החשוד באונס נחשפת",
+    "title": "אחד מראשי המחאה פורש מהפריימריז בדמוקרטים - וקורא להתאחד סביב בנט",
     "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/crime/article/20298924",
+    "sourceUrl": "https://www.israelhayom.co.il/news/politics/article/20300379",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -893,23 +941,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-15pxmdev15xxlzog15txkdeb",
-    "category": "israel",
-    "title": "דיווח: הבכיר האיראני שדרש שסגנו של טראמפ יוביל את השיחות",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/world-news/article/20298787",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-15hxnydxkneo15kg16dxktet",
@@ -925,39 +957,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-16rxotec15qg15txntep15xx",
-    "category": "israel",
-    "title": "תעלה המשואה: אלו הדמויות שנבחרו להדליק משואות בטקס יום העצמאות",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/politics/article/20293973",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-16dxqteg15nxlnevinei15nx",
-    "category": "israel",
-    "title": "נתניהו עידכן את שרי הקבינט על המו\"מ עם לבנון - וחטף ביקורת קשה",
-    "source": "Israel Hayom News",
-    "sourceUrl": "https://www.israelhayom.co.il/news/politics/article/20293580",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-u3vwcg9ydcbub0kgyw5kihjl",
@@ -973,7 +973,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-vgvjacbjc3jhzwwgvxbkyxrl",
@@ -989,7 +989,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-umvhbcbfc3rhdgugsxnyywvs",
@@ -1005,7 +1005,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-vghlifdlzwtlbmqgrwrpdglv",
@@ -1021,7 +1021,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-v2vla2x5iehpz2hsawdodhmg",
@@ -1037,7 +1037,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-tm9ydgggtmv3ieplcnnlesbu",
@@ -1053,7 +1053,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-ugl0dhnidxjnacbkzxdpc2gg",
@@ -1069,7 +1069,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-rm9yifb1ymxpc2hlcnmgqmvj",
@@ -1085,7 +1085,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-qwjvdxqgvghlifrpbwvzig9m",
@@ -1101,7 +1101,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "israel-qwr2zxj0axnlig9uifrozsbu",
@@ -1117,12 +1117,108 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-v2l0acbqywtpc3rhbib0ywxr",
+    "id": "israel-sxnyywvsig5vdcbwcmvzzw50",
     "category": "israel",
-    "title": "With Pakistan talks underway, Iran state TV says red lines include control of Hormuz, Lebanon truce",
+    "title": "Israel not present at talks on turning ceasefire into a deal",
+    "source": "Times of Israel",
+    "sourceUrl": "https://www.timesofisrael.com/us-iran-talks-begin-in-pakistan-tehran-demands-control-of-hormuz-truce-in-lebanon/",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-vvmsielyyw4gag9szcbkaxjl",
+    "category": "israel",
+    "title": "US, Iran hold direct talks in Pakistan; Tehran demands control of Hormuz, truce in Lebanon",
+    "source": "Times of Israel",
+    "sourceUrl": "https://www.timesofisrael.com/us-iran-talks-begin-in-pakistan-tehran-demands-control-of-hormuz-truce-in-lebanon/",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-sxjhbibkb3vibgvzigrvd24g",
+    "category": "israel",
+    "title": "Iran doubles down on its ‘red lines,' while VP Vance warns US negotiators won't be receptive to Iranian games; Trump claims US starting the process of clearing out Hormuz",
+    "source": "Times of Israel",
+    "sourceUrl": "https://www.timesofisrael.com/us-iran-talks-begin-in-pakistan-tehran-demands-control-of-hormuz-truce-in-lebanon/",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-qxjyaxzpbmcgaw4gugfraxn0",
+    "category": "israel",
+    "title": "Arriving in Pakistan, Iran's top negotiator demands US accept ‘preconditions' before talks start",
+    "source": "Times of Israel",
+    "sourceUrl": "https://www.timesofisrael.com/arriving-in-pakistan-irans-top-negotiator-demands-us-accept-preconditions-before-talks-start/",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-vmfuy2ugd2fybnmgsxjhbibu",
+    "category": "israel",
+    "title": "Vance warns Iran not to ‘play' the US as he departs for peace talks in Pakistan",
+    "source": "Times of Israel",
+    "sourceUrl": "https://www.timesofisrael.com/vance-warns-iran-not-to-play-the-us-as-he-departs-for-peace-talks-in-pakistan/",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-ugfraxn0yw4ncybkzwzlbnnl",
+    "category": "israel",
+    "title": "Pakistan's defense minister calls Israel ‘cancerous' ahead of US-Iran talks in Islamabad",
+    "source": "Times of Israel",
+    "sourceUrl": "https://www.timesofisrael.com/pakistans-defense-minister-calls-israel-cancerous-ahead-of-us-iran-talks-in-islamabad/",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "israel-vhj1bxagc2f5cybvuyboyxmg",
+    "category": "israel",
+    "title": "Trump says US has begun clearing Hormuz mines; Iranian media says vessel turned back after warning",
     "source": "Times of Israel",
     "sourceUrl": "https://www.timesofisrael.com/liveblog-april-11-2026/",
     "sourceKind": "secondary",
@@ -1133,12 +1229,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-vmfuy2usielyyw5pyw4gzgvs",
+    "id": "israel-surgihnhexmgaxqgc3rydwnr",
     "category": "israel",
-    "title": "Vance, Iranian delegates separately meet Pakistani PM in Islamabad * Senior US official denies Washington agreed to release frozen Iranian assets in Qatar, foreign banks, to ensure opening of Hormuz",
+    "title": "IDF says it struck some 200 Hezbollah targets in Lebanon over past day * Syria thwarts Hezbollah plot to attack religious figure in Damascus; Israeli TV says target was rabbi",
     "source": "Times of Israel",
     "sourceUrl": "https://www.timesofisrael.com/liveblog-april-11-2026/",
     "sourceKind": "secondary",
@@ -1149,14 +1245,14 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-vhdvihryb29wcybtb2rlcmf0",
+    "id": "israel-tgviyw5vbibqtsbjyw5jzwxz",
     "category": "israel",
-    "title": "Two troops moderately hurt in clash with Hezbollah gunmen in south Lebanon",
+    "title": "Lebanon PM cancels trip to US as Hezbollah supporters rally in Beirut against talks with Israel",
     "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/liveblog_entry/two-troops-moderately-hurt-in-clash-with-hezbollah-gunmen-in-south-lebanon/",
+    "sourceUrl": "https://www.timesofisrael.com/liveblog_entry/lebanon-pm-cancels-trip-to-us-as-hezbollah-supporters-rally-in-beirut-against-talks-with-israel/",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -1165,14 +1261,14 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "israel-vhj1bxagc2f5cyblbxb0esbv",
+    "id": "israel-uwf0yxi6ielyyw5pyw4gc3ry",
     "category": "israel",
-    "title": "Trump says empty oil tankers heading to US to fill up on 'sweetest' oil and gas",
+    "title": "Qatar: Iranian strikes have slowed but ’not stopped,’ an attack on one Gulf state is an attack on all of us",
     "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/liveblog_entry/trump-says-empty-oil-tankers-heading-to-us-to-fill-up-on-sweetest-oil-and-gas/",
+    "sourceUrl": "https://www.timesofisrael.com/liveblog_entry/qatar-iranian-strikes-have-slowed-but-not-stopped-an-attack-on-one-gulf-state-is-an-attack-on-all-of-us/",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -1181,102 +1277,6 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-sxjhbmlhbibzdgf0zsbuvibz",
-    "category": "israel",
-    "title": "Iranian state TV says Tehran's red lines include authority over Hormuz, ceasefire in Lebanon",
-    "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/liveblog_entry/iranian-state-tv-says-tehrans-red-lines-include-authority-over-hormuz-ceasefire-in-lebanon/",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-tgviyw5vbibzyxlzidewigtp",
-    "category": "israel",
-    "title": "Lebanon says 10 killed in Israeli strikes on south Lebanon",
-    "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/liveblog_entry/lebanon-says-10-killed-in-israeli-strikes-on-south-lebanon/",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-tlluoibib3jtdxogc3rpbgwg",
-    "category": "israel",
-    "title": "NYT: Hormuz still shut because Iran can't find own mines",
-    "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/us-intel-said-to-assess-iran-can-recover-underground-launchers-fire-thousands-of-missiles/",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-vvmgaw50zwwgc2fpzcb0bybh",
-    "category": "israel",
-    "title": "US intel said to assess Iran can recover underground launchers, fire thousands of missiles",
-    "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/us-intel-said-to-assess-iran-can-recover-underground-launchers-fire-thousands-of-missiles/",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-t2zmawnpywxzignvbmnlcm5l",
-    "category": "israel",
-    "title": "Officials concerned Iran will rebuild ballistic capabilities during truce, WSJ says; CNN reports that US intelligence indicates China preparing to ship air defense systems to Iran",
-    "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/us-intel-said-to-assess-iran-can-recover-underground-launchers-fire-thousands-of-missiles/",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "israel-miw1mdatewvhci1vbgqgaw5m",
-    "category": "israel",
-    "title": "2,500-year-old infant mass grave cracks open enigma of biblical-era baby burials",
-    "source": "Times of Israel",
-    "sourceUrl": "https://www.timesofisrael.com/2500-year-old-infant-mass-grave-cracks-open-enigma-of-biblical-era-baby-burials/",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   }
 ]

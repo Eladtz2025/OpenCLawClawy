@@ -139,6 +139,21 @@
         "publishedAt": null
       },
       {
+        "title": "Google says Polymarket bets showing up in News was an ‘error’",
+        "url": "https://www.theverge.com/tech/910691/google-news-polymarket-bets-error",
+        "publishedAt": null
+      },
+      {
+        "title": "Google’s latest Nest Doorbells just hit their lowest prices of the year",
+        "url": "https://www.theverge.com/gadgets/910472/google-nest-doorbell-wired-battery-powered-deal-sale",
+        "publishedAt": null
+      },
+      {
+        "title": "You don’t have to spend more than $50 on a great USB-C dock for your Switch 2",
+        "url": "https://www.theverge.com/gadgets/907645/nintendo-switch-2-genki-jsaux-usb-c-dock-hands-on",
+        "publishedAt": null
+      },
+      {
         "title": "The new show making fun of tech bros",
         "url": "https://www.theverge.com/tech/910422/audacity-artemis-maul-installer",
         "publishedAt": null
@@ -197,21 +212,6 @@
         "title": "Trump Mobile isn’t giving up just yet",
         "url": "https://www.theverge.com/tech/909846/trump-mobile-phone-47-plan-trademark-registration",
         "publishedAt": null
-      },
-      {
-        "title": "its own videoconferencing platform",
-        "url": "https://www.theverge.com/news/868928/politico-reports-frances-government-will-ban-non-european-videoconferencing-software-like-teams-zoom-and-google-meet",
-        "publishedAt": null
-      },
-      {
-        "title": "Amazon Prime Video nearly doubles the price to go ad-free and stream 4K video",
-        "url": "https://www.theverge.com/tech/894466/amazon-prime-video-ultra-ad-free-price-hike",
-        "publishedAt": null
-      },
-      {
-        "title": "Cloudflare made a WordPress for AI agents",
-        "url": "https://www.theverge.com/tech/909730/cloudflare-emdash-wordpress-community",
-        "publishedAt": null
       }
     ]
   },
@@ -237,6 +237,26 @@
         "publishedAt": null
       },
       {
+        "title": "Your article about AI doesn’t need AI art",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910460/new-yorker-david-szauder-illustration-generative-ai",
+        "publishedAt": null
+      },
+      {
+        "title": "My baby deer plushie told me that Mitski’s dad was a CIA operative",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910008/fawn-friends-ai-companion",
+        "publishedAt": null
+      },
+      {
+        "title": "How Iran out-shitposted the White House",
+        "url": "https://www.theverge.com/policy/910401/iran-war-propaganda-blackout-lego-ai-slop",
+        "publishedAt": null
+      },
+      {
+        "title": "threw a Molotov cocktail at his house",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail",
+        "publishedAt": null
+      },
+      {
         "title": "20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house",
         "url": "https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail",
         "publishedAt": null
@@ -244,11 +264,6 @@
       {
         "title": "The Iranian Lego AI video creators credit their virality to ‘heart’",
         "url": "https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu",
-        "publishedAt": null
-      },
-      {
-        "title": "threw a Molotov cocktail at his house",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail",
         "publishedAt": null
       },
       {
@@ -304,21 +319,6 @@
       {
         "title": "OpenAI made economic proposals — here’s what DC thinks of them",
         "url": "https://www.theverge.com/column/908880/openai-made-economic-proposals-heres-what-dc-thinks-of-them",
-        "publishedAt": null
-      },
-      {
-        "title": "Meta is reentering the AI race with a new model called Muse Spark",
-        "url": "https://www.theverge.com/tech/908769/meta-muse-spark-ai-model-launch-rollout",
-        "publishedAt": null
-      },
-      {
-        "title": "The vibes are off at OpenAI",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/908513/the-vibes-are-off-at-openai",
-        "publishedAt": null
-      },
-      {
-        "title": "Unionized ProPublica staff are on strike over AI, layoffs, and wages",
-        "url": "https://www.theverge.com/news/908401/propublica-union-strike-negotiations-ai-layoffs",
         "publishedAt": null
       }
     ]
@@ -448,23 +448,23 @@
         "publishedAt": "2026-04-11"
       },
       {
-        "title": "14:32 איראן העבירה \"קווים אדומים\"; ארה\"ב מכחישה כי הסכימה להפשיר נכסים של טהרן",
+        "title": "18:40 משק הגז הושבת במלחמה, ועוד לא ערוך לסבב הבא",
+        "url": "https://www.calcalist.co.il/local_news/article/rkwdord311e",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "16:54 החלו השיחות בפקיסטן; איראן: \"התקיפות של ישראל הוגבלו לדרום לבנון\"",
         "url": "https://www.calcalist.co.il/updates_news/article/skuodrv3ze",
         "publishedAt": "2026-04-11"
       },
       {
-        "title": "13:48 \"אפליה בלתי חוקית\": יבמ תשלם לממשל האמריקאי 17 מיליון דולר בשל מדיניות גיוון תעסוקתי",
-        "url": "https://www.calcalist.co.il/world_news/article/bk6a1sp3bg",
+        "title": "16:42 ציידות שדים ותיירים: הלהיט של נטפליקס שמזניק את התיירות לדרום קוריאה",
+        "url": "https://www.calcalist.co.il/local_news/article/rkl7bys2wl",
         "publishedAt": "2026-04-11"
       },
       {
-        "title": "12:04 רקטת הגראד של חיזבאללה: מהפכה מפתיעה בארטילריה – ובטרור",
-        "url": "https://www.calcalist.co.il/calcalistech/article/syj69zsn11l",
-        "publishedAt": "2026-04-11"
-      },
-      {
-        "title": "11:34 \"תשאלו את אויבינו\": חברת הדיפנס טק שצנחה בוול סטריט - וקיבלה רוח גבית מטראמפ",
-        "url": "https://www.calcalist.co.il/market/article/hk875dvhzx",
+        "title": "16:22 שלוש עתירות נגד שלושה חוקים שמעלים את ישראל על מסלול של מדינת הלכה",
+        "url": "https://www.calcalist.co.il/local_news/article/rkcvh3w2wx",
         "publishedAt": "2026-04-11"
       },
       {
@@ -513,13 +513,13 @@
         "publishedAt": "2026-04-11"
       },
       {
-        "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
-        "url": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
+        "title": "\"עובד יקר\": הנורמה החדשה בתאגידי ההייטק היא פיטורים במייל",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
         "publishedAt": "2026-04-11"
       },
       {
-        "title": "\"עובד יקר\": הנורמה החדשה בתאגידי ההייטק היא פיטורים במייל",
-        "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
+        "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
         "publishedAt": "2026-04-11"
       },
       {

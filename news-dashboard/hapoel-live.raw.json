@@ -6,11 +6,6 @@
     "success": true,
     "items": [
       {
-        "title": "הודעת מועדון 10 04 לקראת המשחק מול ה ת א",
-        "url": "https://www.hapoelpt.com/post/הודעת-מועדון-10-04-לקראת-המשחק-מול-ה-ת-א",
-        "publishedAt": "2026-04-11"
-      },
-      {
         "title": "הודעת מועדון 09 04",
         "url": "https://www.hapoelpt.com/post/הודעת-מועדון-09-04",
         "publishedAt": "2026-04-11"
@@ -129,7 +124,13 @@
     "source": "Walla Sport",
     "url": "https://sports.walla.co.il/category/157",
     "kind": "secondary",
-    "success": false,
-    "items": []
+    "success": true,
+    "items": [
+      {
+        "title": "ווטארה ובן שבת פותחים בנתניה, בלאי בהרכב הפועל חיפה",
+        "url": "https://sports.walla.co.il/item/3829606",
+        "publishedAt": "2026-04-11"
+      }
+    ]
   }
 ]

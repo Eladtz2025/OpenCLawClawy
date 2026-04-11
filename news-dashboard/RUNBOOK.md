@@ -1,27 +1,32 @@
 # News Engine Runbook
 
-## Completed
-- design/voice/policy/source docs
-- candidate schema
-- state file
-- source config
-- collection plan
-- dedup skeleton
-- scoring skeleton
-- selection skeleton
-- render-app pipeline
-- archive/publish pipeline
-- initial real-source query map
+## Official runtime path
+- Entry point: `node morning-run.js`
+- Main pipeline: `live-pipeline.js`
+- Source configuration: `sources.config.json`
+- Published dashboard: `live-site/latest.html`
+- Archive snapshots: `live-site/archive/YYYY-MM-DD.html`
+- Archive index: `live-site/archive/index.html`
+- Root redirect: `../index.html`
 
-## Remaining
-- tool-driven real query execution in each run
-- normalize search/fetch results into candidates
-- real verification pass
-- weekly fallback live
-- fixture-first hapoel logic
-- 7-day archive index polish
-- cleaner root URL
+## Active outputs
+- `daily-final.json`
+- `daily-summary.json`
+- `state.json`
+- `telegram-summary.txt`
+- `telegram-alert.txt`
+- `*-live.raw.json`
+- `*-live.normalized.json`
+- `*-live.deduped.json`
+- `*-live.selected.json`
 
-## Important note
-Current engine is a hybrid system.
-It should not be described as a fully autonomous local JS newsroom engine.
+## Current reality
+- The pipeline performs fetch, parse, normalize, dedup, score, select, render, publish, summarize.
+- Topic/source definitions are loaded from `sources.config.json`.
+- Archive retention currently keeps the latest 7 dated HTML snapshots.
+
+## Remaining work
+- fixture-first Hapoel retrieval
+- real 7-day fallback for weak days
+- stronger UI transparency for source failures
+- optional cleanup of legacy/docs/debug files outside the runtime path

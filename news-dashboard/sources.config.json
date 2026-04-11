@@ -1,30 +1,34 @@
 {
   "technology": [
-    { "name": "Reuters Tech", "type": "web", "priority": 1 },
-    { "name": "The Verge", "type": "web", "priority": 1 },
-    { "name": "TechCrunch", "type": "web", "priority": 1 },
-    { "name": "Official Company Sources", "type": "official", "priority": 1 }
+    { "name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/", "kind": "primary", "parser": "techcrunch", "type": "web", "priority": 1 },
+    { "name": "The Verge Tech", "url": "https://www.theverge.com/tech", "kind": "primary", "parser": "verge", "type": "web", "priority": 1 },
+    { "name": "The Verge AI", "url": "https://www.theverge.com/ai-artificial-intelligence", "kind": "secondary", "parser": "verge", "type": "web", "priority": 2 },
+    { "name": "Google Blog Technology", "url": "https://blog.google/technology/", "kind": "secondary", "parser": "googleblog", "type": "official", "priority": 2 },
+    { "name": "Calcalist Tech", "url": "https://www.calcalist.co.il/calcalistech", "kind": "secondary", "parser": "calcalist", "type": "web", "priority": 2 }
+  ],
+  "technology2": [
+    { "name": "TechNewsHeb Telegram", "url": "https://t.me/s/TechNewsHeb", "kind": "primary", "parser": "telegram", "type": "telegram", "priority": 1 },
+    { "name": "AI_tg_il Telegram", "url": "https://t.me/s/AI_tg_il", "kind": "primary", "parser": "telegram", "type": "telegram", "priority": 1 },
+    { "name": "botai14 Telegram", "url": "https://t.me/s/botai14", "kind": "secondary", "parser": "telegram", "type": "telegram", "priority": 2 },
+    { "name": "hackit770 Telegram", "url": "https://t.me/s/hackit770", "kind": "secondary", "parser": "telegram", "type": "telegram", "priority": 2 }
   ],
   "israel": [
-    { "name": "Haaretz", "type": "web", "priority": 1 },
-    { "name": "ynet", "type": "web", "priority": 1 },
-    { "name": "Kan", "type": "web", "priority": 1 },
-    { "name": "Reuters", "type": "web", "priority": 1 },
-    { "name": "Official Statements", "type": "official", "priority": 1 }
+    { "name": "ynet News", "url": "https://www.ynet.co.il/news", "kind": "primary", "parser": "ynet", "type": "web", "priority": 1 },
+    { "name": "Maariv News", "url": "https://www.maariv.co.il/news", "kind": "secondary", "parser": "maariv", "type": "web", "priority": 2 },
+    { "name": "Israel Hayom News", "url": "https://www.israelhayom.co.il/news", "kind": "secondary", "parser": "israelhayom", "type": "web", "priority": 2 },
+    { "name": "Times of Israel", "url": "https://www.timesofisrael.com/", "kind": "secondary", "parser": "toi", "type": "web", "priority": 2 }
   ],
   "crypto": [
-    { "name": "Reuters", "type": "web", "priority": 1 },
-    { "name": "CoinDesk", "type": "web", "priority": 1 },
-    { "name": "The Block", "type": "web", "priority": 1 },
-    { "name": "Bloomberg Crypto", "type": "web", "priority": 1 },
-    { "name": "Decrypt", "type": "web", "priority": 1 },
-    { "name": "Primary Filings", "type": "regulator", "priority": 1 }
+    { "name": "CoinDesk", "url": "https://www.coindesk.com/", "kind": "primary", "parser": "coindesk", "type": "web", "priority": 1 },
+    { "name": "CoinDesk Bitcoin", "url": "https://www.coindesk.com/tag/bitcoin/", "kind": "secondary", "parser": "coindesk", "type": "web", "priority": 2 },
+    { "name": "CoinDesk Ethereum", "url": "https://www.coindesk.com/tag/ethereum/", "kind": "secondary", "parser": "coindesk", "type": "web", "priority": 2 },
+    { "name": "CoinDesk XRP", "url": "https://www.coindesk.com/tag/xrp/", "kind": "secondary", "parser": "coindesk", "type": "web", "priority": 2 },
+    { "name": "Decrypt", "url": "https://decrypt.co/", "kind": "secondary", "parser": "decrypt", "type": "web", "priority": 2 },
+    { "name": "SEC Press Releases", "url": "https://www.sec.gov/news/pressreleases", "kind": "secondary", "parser": "sec", "type": "regulator", "priority": 2 }
   ],
   "hapoel": [
-    { "name": "Official Club", "type": "official", "priority": 1 },
-    { "name": "ONE", "type": "web", "priority": 1 },
-    { "name": "Sport5", "type": "web", "priority": 1 },
-    { "name": "Flashscore", "type": "fixture", "priority": 1 },
-    { "name": "Soccerway", "type": "fixture", "priority": 1 }
+    { "name": "Hapoel PT News", "url": "https://www.hapoelpt.com/news", "kind": "primary", "parser": "hapoelnews", "type": "official", "priority": 1 },
+    { "name": "ynet Sport Israel Soccer", "url": "https://www.ynet.co.il/sport/israelisoccer", "kind": "secondary", "parser": "ynetsport", "type": "web", "priority": 2 },
+    { "name": "Walla Sport", "url": "https://sports.walla.co.il/category/157", "kind": "secondary", "parser": "wallasport", "type": "web", "priority": 2 }
   ]
 }

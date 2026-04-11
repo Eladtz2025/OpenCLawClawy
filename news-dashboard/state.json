@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-11T12:06:56.342Z",
+  "lastPublishedAt": "2026-04-11T15:47:58.347Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "archive": [
     "2026-04-11.html",
@@ -70,18 +70,14 @@
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 3,
+      "got": 2,
       "fallbackActive": true,
       "sourcesWorked": [
         "Hapoel PT News",
-        "ynet Sport Israel Soccer"
+        "ynet Sport Israel Soccer",
+        "Walla Sport"
       ],
-      "sourcesFailed": [
-        {
-          "source": "Walla Sport",
-          "error": "no_items"
-        }
-      ]
+      "sourcesFailed": []
     }
   }
 }

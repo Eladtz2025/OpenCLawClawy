@@ -1,5 +1,21 @@
 [
   {
+    "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
+    "category": "crypto",
+    "title": "Crypto perpetuals predict the direction of Wall Street’s Monday open with 89% accuracy, data shows Over half (57%) of Monday market opens is s already reflected in crypto markets' perpetual futures products.",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/crypto-perpetuals-predict-the-direction-of-wall-street-s-monday-open-with-89-accuracy-data-shows",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 4,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
     "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
     "category": "crypto",
     "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
@@ -12,8 +28,8 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 4,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagcgvyzm9y",
@@ -29,7 +45,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qmluyw5jzsbvzmzlcnmgvuff",
@@ -45,7 +61,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibnywlucybhznrl",
@@ -61,7 +77,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-sw5zdgl0dxrpb25zjybiaxrj",
@@ -77,7 +93,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rgf2awqgqmfpbgv54oczcybi",
@@ -93,7 +109,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-wfjqigvkz2vzighpz2hlcib0",
@@ -109,7 +125,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pblcgugfydg5lcnmgd2l0",
@@ -125,7 +141,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-ughhcm9zie5ldhdvcmsgqw5u",
@@ -141,7 +157,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0ymfzzsbpzmzpy2lhbgx5",
@@ -157,12 +173,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagmiwwmjau",
     "category": "crypto",
-    "title": "CoinDesk 20 2,020.76 0.63 %",
+    "title": "CoinDesk 20 2,020.04 0.16 %",
     "source": "CoinDesk",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "primary",
@@ -173,12 +189,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-qml0y29pbiakidcyldk2mi4x",
+    "id": "crypto-qml0y29pbiakidcyldc5ni41",
     "category": "crypto",
-    "title": "Bitcoin $ 72,962.16 0.95 %",
+    "title": "Bitcoin $ 72,796.57 0.46 %",
     "source": "CoinDesk",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "primary",
@@ -189,12 +205,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjcayldi0ns45",
+    "id": "crypto-rxrozxjldw0gjcayldi0oc4w",
     "category": "crypto",
-    "title": "Ethereum $ 2,245.90 1.19 %",
+    "title": "Ethereum $ 2,248.06 1.07 %",
     "source": "CoinDesk",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "primary",
@@ -205,7 +221,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qmh1dgfuighhcybzb2xkidcw",
@@ -221,7 +237,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qmh1dgfuighhcybzb2xkidcw",
@@ -237,23 +253,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "crypto-vhj1bxatymfja2vkifdmrkkg",
-    "category": "crypto",
-    "title": "Trump-backed WLFI token drops 12% to record lows after team defends multi-million lending position",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/10/trump-backed-wlfi-token-drops-12-to-record-lows-after-team-defends-multi-million-lending-position",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
@@ -269,23 +269,39 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-u3rhcibydsbjywxscybdwibh",
+    "id": "crypto-q3j5chrviensyxjpdhkgymls",
     "category": "crypto",
-    "title": "Star Xu calls CZ a ‘liar’ as founders of world’s largest crypto exchanges argue over past allegations",
+    "title": "Crypto Clarity bill has 30% chance of passing this year, Wintermute’s Hammond says",
     "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/business/2026/04/10/star-xu-calls-cz-a-liar-as-founders-of-world-s-largest-crypto-exchanges-argue-over-past-allegations",
+    "sourceUrl": "https://www.coindesk.com/policy/2026/04/11/crypto-clarity-bill-has-30-chance-of-passing-this-year-wintermute-s-hammond-says",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
+    "publishedAt": null,
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
+    "category": "crypto",
+    "title": "Crypto perpetuals predict the direction of Wall Street’s Monday open with 89% accuracy, data shows",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/crypto-perpetuals-predict-the-direction-of-wall-street-s-monday-open-with-89-accuracy-data-shows",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-sg93ienvaw5x4oczcybvcgdy",
@@ -301,23 +317,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "crypto-qmluyw5jzsbvzmzlcnmgvuff",
-    "category": "crypto",
-    "title": "Binance offers UAE staff temporary relocation as Middle East conflict disrupts region",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/business/2026/04/10/binance-offers-uae-staff-temporary-relocation-as-middle-east-conflict-disrupts-region",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibnywlucybhznrl",
@@ -333,7 +333,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rgf2awqgqmfpbgv54oczcybi",
@@ -349,7 +349,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbib0b3bzicq3miww",
@@ -365,7 +365,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibzag9vdhmgywjv",
@@ -381,7 +381,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-v2h5ielyyw4gd2fudhmgy3j5",
@@ -397,7 +397,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u3ryyxrlz3nigjlzifnuukmg",
@@ -413,7 +413,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0ahvtyibtb3zlcyb0bybz",
@@ -429,7 +429,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rxzlcnlvbmxigjlzigf3ywl0",
@@ -445,7 +445,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbidzig5lehqgymln",
@@ -461,7 +461,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-tw9yz2fuifn0yw5szxnigjlz",
@@ -477,23 +477,23 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
+    "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
     "category": "crypto",
-    "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
+    "title": "Crypto perpetuals predict the direction of Wall Street’s Monday open with 89% accuracy, data shows Over half (57%) of Monday market opens is s already reflected in crypto markets' perpetual futures products.",
     "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/crypto-perpetuals-predict-the-direction-of-wall-street-s-monday-open-with-89-accuracy-data-shows",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
-    "signalPositive": false,
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -509,7 +509,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyawvz",
@@ -525,12 +525,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagjdismdiw",
     "category": "crypto",
-    "title": "CoinDesk 20 $2,020.76 0.63 %",
+    "title": "CoinDesk 20 $2,020.04 0.16 %",
     "source": "CoinDesk Bitcoin",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "secondary",
@@ -541,12 +541,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-qml0y29pbiaknzisotyylje2",
+    "id": "crypto-qml0y29pbiaknzisnzk2lju3",
     "category": "crypto",
-    "title": "Bitcoin $72,962.16 0.95 %",
+    "title": "Bitcoin $72,796.57 0.46 %",
     "source": "CoinDesk Bitcoin",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "secondary",
@@ -557,12 +557,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjdismjq1ljkw",
+    "id": "crypto-rxrozxjldw0gjdismjq4lja2",
     "category": "crypto",
-    "title": "Ethereum $2,245.90 1.19 %",
+    "title": "Ethereum $2,248.06 1.07 %",
     "source": "CoinDesk Bitcoin",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "secondary",
@@ -573,7 +573,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-zgvjzw50cmfsaxplzcbhchbs",
@@ -589,7 +589,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-zgvjzw50cmfsaxplzcbmaw5h",
@@ -605,7 +605,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-vg9tiexlzsdziejpdg1pbmug",
@@ -621,7 +621,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-vghlifbyb3rvy29soibczxju",
@@ -637,7 +637,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qwf2zsbsb3nlcybrzxkgcmlz",
@@ -653,7 +653,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u2nod2fiihbsyw5zihnwb3qg",
@@ -669,7 +669,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rxrozxjldw0grm91bmrhdglv",
@@ -685,7 +685,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-vghlifbyb3rvy29soibrdwfu",
@@ -701,7 +701,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-r3jhexnjywxl4oczcybyzxnl",
@@ -717,7 +717,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u29tzsbxdwfudhvtlxjlc2lz",
@@ -733,7 +733,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pbmjhc2xigjlziejhc2ug",
@@ -749,7 +749,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0bwluzsbtywtlcybiawdn",
@@ -765,23 +765,23 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
+    "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
     "category": "crypto",
-    "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
+    "title": "Crypto perpetuals predict the direction of Wall Street’s Monday open with 89% accuracy, data shows Over half (57%) of Monday market opens is s already reflected in crypto markets' perpetual futures products.",
     "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/crypto-perpetuals-predict-the-direction-of-wall-street-s-monday-open-with-89-accuracy-data-shows",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
-    "signalPositive": false,
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -797,7 +797,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyawvz",
@@ -813,12 +813,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagjdismdiw",
     "category": "crypto",
-    "title": "CoinDesk 20 $2,020.76 0.63 %",
+    "title": "CoinDesk 20 $2,020.04 0.16 %",
     "source": "CoinDesk Ethereum",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "secondary",
@@ -829,12 +829,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-qml0y29pbiaknzisotyylje2",
+    "id": "crypto-qml0y29pbiaknzisnzk2lju3",
     "category": "crypto",
-    "title": "Bitcoin $72,962.16 0.95 %",
+    "title": "Bitcoin $72,796.57 0.46 %",
     "source": "CoinDesk Ethereum",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "secondary",
@@ -845,12 +845,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjdismjq1ljkw",
+    "id": "crypto-rxrozxjldw0gjdismjq4lja2",
     "category": "crypto",
-    "title": "Ethereum $2,245.90 1.19 %",
+    "title": "Ethereum $2,248.06 1.07 %",
     "source": "CoinDesk Ethereum",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "secondary",
@@ -861,7 +861,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-wfjqig1hesbizsbszxnzigv4",
@@ -877,7 +877,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q3j5chrvj3mgjdiyncbtawxs",
@@ -893,7 +893,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-t2lslcbzawx2zxigdhjhzglu",
@@ -909,7 +909,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibqdw1wcyb0byak",
@@ -925,7 +925,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-wfjqihryzwfzdxj5igzpcm0g",
@@ -941,7 +941,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-wfjqighvdmvycybuzwfyicqx",
@@ -957,7 +957,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbukamxmgzgvyaxzh",
@@ -973,7 +973,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibqdxn0ihn1cmdl",
@@ -989,7 +989,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qsbodwdligdhccbizxr3zwvu",
@@ -1005,7 +1005,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u29syw5hlcbyulagrvrgcyb0",
@@ -1021,23 +1021,23 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
+    "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
     "category": "crypto",
-    "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
+    "title": "Crypto perpetuals predict the direction of Wall Street’s Monday open with 89% accuracy, data shows Over half (57%) of Monday market opens is s already reflected in crypto markets' perpetual futures products.",
     "source": "CoinDesk XRP",
-    "sourceUrl": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/crypto-perpetuals-predict-the-direction-of-wall-street-s-monday-open-with-89-accuracy-data-shows",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
-    "signalPositive": false,
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -1053,7 +1053,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyawvz",
@@ -1069,12 +1069,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagjdismdiw",
     "category": "crypto",
-    "title": "CoinDesk 20 $2,020.76 0.63 %",
+    "title": "CoinDesk 20 $2,020.04 0.16 %",
     "source": "CoinDesk XRP",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "secondary",
@@ -1085,12 +1085,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-qml0y29pbiaknzisotyylje2",
+    "id": "crypto-qml0y29pbiaknzisnzk2lju3",
     "category": "crypto",
-    "title": "Bitcoin $72,962.16 0.95 %",
+    "title": "Bitcoin $72,796.57 0.46 %",
     "source": "CoinDesk XRP",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "secondary",
@@ -1101,12 +1101,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjdismjq1ljkw",
+    "id": "crypto-rxrozxjldw0gjdismjq4lja2",
     "category": "crypto",
-    "title": "Ethereum $2,245.90 1.19 %",
+    "title": "Ethereum $2,248.06 1.07 %",
     "source": "CoinDesk XRP",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "secondary",
@@ -1117,7 +1117,39 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "crypto-tmv3ifrvb2xziefpbsb0bybn",
+    "category": "crypto",
+    "title": "New Tools Aim to Make AI 'Vibe Coding' Safer for Crypto",
+    "source": "Decrypt",
+    "sourceUrl": "https://decrypt.co/364080/asi-alliance-matterhorn-ai-tools-vibe-coding-crypto",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
+  },
+  {
+    "id": "crypto-rwnvbm9taxn0cybtywlkiefj",
+    "category": "crypto",
+    "title": "Economists Said AI Wouldn’t Take Jobs—Some Now Admit They Got It Wrong",
+    "source": "Decrypt",
+    "sourceUrl": "https://decrypt.co/364008/economists-ai-wouldnt-take-jobs-admit-wrong",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": null,
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-vghpcyanu3bhy2ugsw52ywrl",
@@ -1133,7 +1165,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u3vzcgvjdcbbcnjlc3rlzcbb",
@@ -1149,39 +1181,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "crypto-r2vuifogvghpbmtziefjielz",
-    "category": "crypto",
-    "title": "Gen Z Thinks AI Is Rotting Their Brains, But Can't Stop Using It: Survey",
-    "source": "Decrypt",
-    "sourceUrl": "https://decrypt.co/363976/gen-z-ai-rotting-brains-survey",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
-  },
-  {
-    "id": "crypto-rwxvbibndxnrj3mgu3bhy2vy",
-    "category": "crypto",
-    "title": "Elon Musk's SpaceX Is Nearing Its $1.75 Trillion IPO—Bitget Is Offering Pre-IPO Exposure",
-    "source": "Decrypt",
-    "sourceUrl": "https://decrypt.co/363950/elon-musk-spacex-nearing-1-75-trillion-ipo-bitget-pre-ipo-exposure",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0z2v0ie9mzmvycybtcgfj",
@@ -1197,7 +1197,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rwxvbibndxnrifjvym90ierv",
@@ -1213,7 +1213,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rxhvzhvzieludhjvzhvjzxmg",
@@ -1229,7 +1229,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-wmnhc2ggsxmgu29hcmluzybb",
@@ -1245,7 +1245,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-v29ybgqgtglizxj0esbgaw5h",
@@ -1261,7 +1261,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0vgvuc29yifrbtybub2tl",
@@ -1277,7 +1277,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q3j5chrviev4y2hhbmdliejp",
@@ -1293,7 +1293,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-sg9uzyblb25niexpy2vuc2vz",
@@ -1309,7 +1309,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-smfwyw4ncybecmfmdcbbbwvu",
@@ -1325,7 +1325,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyesbg",
@@ -1341,7 +1341,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-sxmgwfjqiejldhrlcibqcm90",
@@ -1357,7 +1357,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-t0tyifzlbnr1cmvzlcbiyxno",
@@ -1373,7 +1373,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29pbmjhc2usiejpbmfuy2us",
@@ -1389,7 +1389,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-s2fsc2hpie1ha2vzifvwidg5",
@@ -1405,7 +1405,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q3j5chrviezpcm1zienhbibo",
@@ -1421,7 +1421,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rw1lcmdpbmcgvgvjacbidwig",
@@ -1437,7 +1437,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u2tpccb0bybzzwfyy2ggzmll",
@@ -1453,7 +1453,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u2tpccb0bybtywluignvbnrl",
@@ -1469,7 +1469,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-vmfyawfibgugsw5zdxjhbmnl",
@@ -1485,7 +1485,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-uhvibgljierpc3nlbwluyxrp",
@@ -1501,7 +1501,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rurhqvigrmlszxigtwfuywdl",
@@ -1517,7 +1517,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-t25saw5liezvcm1zie1hbmfn",
@@ -1533,7 +1533,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rmlszxigu3vwcg9ydcamifjl",
@@ -1549,7 +1549,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u3rhdglzdgljcyamierhdgeg",
@@ -1565,7 +1565,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u3rhdhv0zxmgjibszwd1bgf0",
@@ -1581,7 +1581,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-tm8tqwn0aw9ulcbjbnrlcnby",
@@ -1597,7 +1597,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-u2vszi1szwd1bgf0b3j5ie9y",
@@ -1613,7 +1613,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-uhvibgljifbldgl0aw9ucybm",
@@ -1629,7 +1629,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rw5mb3jjzw1lbnqgjibmaxrp",
@@ -1645,7 +1645,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qwrtaw5pc3ryyxrpdmuguhjv",
@@ -1661,7 +1661,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-qwrtaw5pc3ryyxrpdmugtgf3",
@@ -1677,7 +1677,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rglzdhjpynv0aw9ucyb0bybi",
@@ -1693,7 +1693,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-rxhhbwluyxrpb24guhjpb3jp",
@@ -1709,7 +1709,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-q29tcgxpyw5jzsbpdxryzwfj",
@@ -1725,7 +1725,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-v2hpc3rszwjsb3dlcibqcm9n",
@@ -1741,7 +1741,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   },
   {
     "id": "crypto-twfya2v0ifn0cnvjdhvyzsbb",
@@ -1757,6 +1757,6 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T12:06:56.342Z"
+    "collectedAt": "2026-04-11T15:47:58.347Z"
   }
 ]

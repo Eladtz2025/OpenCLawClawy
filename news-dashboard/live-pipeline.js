@@ -11,64 +11,36 @@ const SUMMARY_PATH = path.join(OUT_DIR, 'daily-summary.json');
 const TELEGRAM_SUMMARY_PATH = path.join(OUT_DIR, 'telegram-summary.txt');
 const TELEGRAM_ALERT_PATH = path.join(OUT_DIR, 'telegram-alert.txt');
 const ROOT_INDEX_PATH = path.join(OUT_DIR, '..', 'index.html');
+const SOURCES_CONFIG_PATH = path.join(OUT_DIR, 'sources.config.json');
 const PUBLIC_URL = 'https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html';
 const TODAY = new Date().toISOString().slice(0, 10);
 const NOW = new Date().toISOString();
 
-const TOPICS = [
-  {
-    key: 'technology',
-    hebrew: 'טכנולוגיה',
-    sources: [
-      { name: 'TechCrunch AI', url: 'https://techcrunch.com/category/artificial-intelligence/', kind: 'primary', parser: 'techcrunch' },
-      { name: 'The Verge Tech', url: 'https://www.theverge.com/tech', kind: 'primary', parser: 'verge' },
-      { name: 'The Verge AI', url: 'https://www.theverge.com/ai-artificial-intelligence', kind: 'secondary', parser: 'verge' },
-      { name: 'Google Blog Technology', url: 'https://blog.google/technology/', kind: 'secondary', parser: 'googleblog' },
-      { name: 'Calcalist Tech', url: 'https://www.calcalist.co.il/calcalistech', kind: 'secondary', parser: 'calcalist' }
-    ]
-  },
-  {
-    key: 'technology2',
-    hebrew: 'טכנולוגיה #2',
-    sources: [
-      { name: 'TechNewsHeb Telegram', url: 'https://t.me/s/TechNewsHeb', kind: 'primary', parser: 'telegram' },
-      { name: 'AI_tg_il Telegram', url: 'https://t.me/s/AI_tg_il', kind: 'primary', parser: 'telegram' },
-      { name: 'botai14 Telegram', url: 'https://t.me/s/botai14', kind: 'secondary', parser: 'telegram' },
-      { name: 'hackit770 Telegram', url: 'https://t.me/s/hackit770', kind: 'secondary', parser: 'telegram' }
-    ]
-  },
-  {
-    key: 'israel',
-    hebrew: 'ישראל',
-    sources: [
-      { name: 'ynet News', url: 'https://www.ynet.co.il/news', kind: 'primary', parser: 'ynet' },
-      { name: 'Maariv News', url: 'https://www.maariv.co.il/news', kind: 'secondary', parser: 'maariv' },
-      { name: 'Israel Hayom News', url: 'https://www.israelhayom.co.il/news', kind: 'secondary', parser: 'israelhayom' },
-      { name: 'Times of Israel', url: 'https://www.timesofisrael.com/', kind: 'secondary', parser: 'toi' }
-    ]
-  },
-  {
-    key: 'crypto',
-    hebrew: 'קריפטו',
-    sources: [
-      { name: 'CoinDesk', url: 'https://www.coindesk.com/', kind: 'primary', parser: 'coindesk' },
-      { name: 'CoinDesk Bitcoin', url: 'https://www.coindesk.com/tag/bitcoin/', kind: 'secondary', parser: 'coindesk' },
-      { name: 'CoinDesk Ethereum', url: 'https://www.coindesk.com/tag/ethereum/', kind: 'secondary', parser: 'coindesk' },
-      { name: 'CoinDesk XRP', url: 'https://www.coindesk.com/tag/xrp/', kind: 'secondary', parser: 'coindesk' },
-      { name: 'Decrypt', url: 'https://decrypt.co/', kind: 'secondary', parser: 'decrypt' },
-      { name: 'SEC Press Releases', url: 'https://www.sec.gov/news/pressreleases', kind: 'secondary', parser: 'sec' }
-    ]
-  },
-  {
-    key: 'hapoel',
-    hebrew: 'הפועל פתח תקווה',
-    sources: [
-      { name: 'Hapoel PT News', url: 'https://www.hapoelpt.com/news', kind: 'primary', parser: 'hapoelnews' },
-      { name: 'ynet Sport Israel Soccer', url: 'https://www.ynet.co.il/sport/israelisoccer', kind: 'secondary', parser: 'ynetsport' },
-      { name: 'Walla Sport', url: 'https://sports.walla.co.il/category/157', kind: 'secondary', parser: 'wallasport' }
-    ]
-  }
-];
+const TOPIC_LABELS = {
+  technology: 'טכנולוגיה',
+  technology2: 'טכנולוגיה #2',
+  israel: 'ישראל',
+  crypto: 'קריפטו',
+  hapoel: 'הפועל פתח תקווה'
+};
+
+function loadTopics() {
+  const config = JSON.parse(fs.readFileSync(SOURCES_CONFIG_PATH, 'utf8'));
+  return Object.entries(config).map(([key, sources]) => ({
+    key,
+    hebrew: TOPIC_LABELS[key] || key,
+    sources: sources.map(source => ({
+      name: source.name,
+      url: source.url,
+      kind: source.kind,
+      parser: source.parser,
+      type: source.type,
+      priority: source.priority
+    }))
+  }));
+}
+
+const TOPICS = loadTopics();
 
 const SIGNALS = {
   technology: {
@@ -586,6 +558,40 @@ ${sectionHtml}
 </html>`;
 }
 
+function pruneArchives() {
+  const archiveFiles = fs.readdirSync(ARCHIVE_DIR)
+    .filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x))
+    .sort()
+    .reverse();
+  for (const stale of archiveFiles.slice(7)) {
+    fs.unlinkSync(path.join(ARCHIVE_DIR, stale));
+  }
+}
+
+function renderArchiveIndex(archiveFiles) {
+  const links = archiveFiles.map(file => `<li><a href="./${escapeHtml(file)}">${escapeHtml(file.replace('.html', ''))}</a></li>`).join('');
+  return `<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Clawy News Archive</title>
+<style>
+body{margin:0;background:#07111d;color:#eef4ff;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px}
+a{color:#8fd3ff;text-decoration:none}
+li{margin:10px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>ארכיון חדשות</h1>
+<ul>${links}</ul>
+</main>
+</body>
+</html>`;
+}
+
 async function main() {
   ensureDir(LIVE_DIR);
   ensureDir(ARCHIVE_DIR);
@@ -606,11 +612,14 @@ async function main() {
   const dashboard = renderDashboard(items, meta);
   fs.writeFileSync(path.join(LIVE_DIR, 'latest.html'), dashboard, 'utf8');
   fs.writeFileSync(path.join(ARCHIVE_DIR, `${TODAY}.html`), dashboard, 'utf8');
+  pruneArchives();
+  const archiveFiles = fs.readdirSync(ARCHIVE_DIR).filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x)).sort().reverse();
+  fs.writeFileSync(path.join(ARCHIVE_DIR, 'index.html'), renderArchiveIndex(archiveFiles), 'utf8');
 
   const state = {
     lastPublishedAt: NOW,
     latestUrl: './news-dashboard/live-site/latest.html',
-    archive: fs.readdirSync(ARCHIVE_DIR).filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x)).sort().reverse(),
+    archive: archiveFiles,
     topics: Object.fromEntries(results.map(r => [r.topicStatus.topic, r.topicStatus]))
   };
   fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2), 'utf8');

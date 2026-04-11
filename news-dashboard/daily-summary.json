@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-11T12:06:56.342Z",
+  "generatedAt": "2026-04-11T15:47:58.347Z",
   "status": "PARTIAL",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-11T12:06:56.342Z",
-  "sourcesWorkedCount": 21,
+  "lastPublishedAt": "2026-04-11T15:47:58.347Z",
+  "sourcesWorkedCount": 22,
   "fallbackActive": true,
   "topicStatus": [
     {
@@ -69,18 +69,14 @@
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 3,
+      "got": 2,
       "fallbackActive": true,
       "sourcesWorked": [
         "Hapoel PT News",
-        "ynet Sport Israel Soccer"
+        "ynet Sport Israel Soccer",
+        "Walla Sport"
       ],
-      "sourcesFailed": [
-        {
-          "source": "Walla Sport",
-          "error": "no_items"
-        }
-      ]
+      "sourcesFailed": []
     }
   ]
 }

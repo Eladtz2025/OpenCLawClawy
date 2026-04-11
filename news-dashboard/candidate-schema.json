@@ -14,7 +14,7 @@
   ],
   "properties": {
     "id": { "type": "string" },
-    "category": { "type": "string", "enum": ["technology", "israel", "crypto", "hapoel"] },
+    "category": { "type": "string", "enum": ["technology", "technology2", "israel", "crypto", "hapoel"] },
     "title": { "type": "string" },
     "summary": { "type": "string" },
     "why": { "type": "string" },
@@ -25,20 +25,27 @@
     "publishedAt": { "type": "string" },
     "sourceType": { "type": "string", "enum": ["web", "official", "telegram", "fixture", "regulator"] },
     "sourceStrength": { "type": "string", "enum": ["high", "medium", "low"] },
-    "certainty": { "type": "string", "enum": ["מאומת", "חלקית מאומת", "לא ברור"] },
+    "certainty": { "type": "string", "enum": ["מאומת היטב", "מאומת חלקית", "נמוכה", "מאומת", "חלקית מאומת", "לא ברור"] },
     "hype": { "type": "string", "enum": ["נמוכה", "בינונית", "גבוהה"] },
     "worth": { "type": "string", "enum": ["כן", "אולי", "לא"] },
     "action": { "type": "string", "enum": ["לקרוא", "לעקוב", "לדלג"] },
     "score": {
-      "type": "object",
-      "properties": {
-        "significance": { "type": "number" },
-        "reliability": { "type": "number" },
-        "novelty": { "type": "number" },
-        "immediacy": { "type": "number" },
-        "usefulness": { "type": "number" },
-        "total": { "type": "number" }
-      }
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "significance": { "type": "number" },
+            "reliability": { "type": "number" },
+            "novelty": { "type": "number" },
+            "immediacy": { "type": "number" },
+            "usefulness": { "type": "number" },
+            "total": { "type": "number" }
+          }
+        }
+      ]
     },
     "fallbackMode": { "type": "string", "enum": ["today", "weekly"] }
   }
