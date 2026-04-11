@@ -8,10 +8,14 @@ Copy-Item .\dashboard\index.html (Join-Path $PublishedDir 'index.html') -Force
 Copy-Item .\dashboard\data.json (Join-Path $PublishedDir 'data.json') -Force
 
 $RepoRoot = (git rev-parse --show-toplevel).Trim()
-$RelativeRoot = (git rev-parse --show-prefix).Trim()
 $DocsRoot = Join-Path $RepoRoot 'docs\pc-guardian'
 New-Item -ItemType Directory -Force -Path $DocsRoot | Out-Null
 Copy-Item .\dashboard\index.html (Join-Path $DocsRoot 'index.html') -Force
 Copy-Item .\dashboard\data.json (Join-Path $DocsRoot 'data.json') -Force
 
-Write-Output "Published dashboard to $PublishedDir and $DocsRoot"
+$SiteRoot = Join-Path $RepoRoot 'pc-guardian'
+New-Item -ItemType Directory -Force -Path $SiteRoot | Out-Null
+Copy-Item .\dashboard\index.html (Join-Path $SiteRoot 'index.html') -Force
+Copy-Item .\dashboard\data.json (Join-Path $SiteRoot 'data.json') -Force
+
+Write-Output "Published dashboard to $PublishedDir, $DocsRoot and $SiteRoot"
