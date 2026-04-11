@@ -142,5 +142,12 @@
         "publishedAt": "2026-04-11"
       }
     ]
+  },
+  {
+    "source": "Soccerway Hapoel PT",
+    "url": "https://www.soccerway.com/teams/israel/hapoel-petah-tiqwa-fc/1448/",
+    "kind": "secondary",
+    "success": false,
+    "items": []
   }
 ]

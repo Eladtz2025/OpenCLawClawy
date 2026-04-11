@@ -306,6 +306,21 @@ const parsers = {
       if (title.length < 15 || title.length > 220) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url) };
     }, 80);
+  },
+  soccerwayhapoel(html, source) {
+    const pageText = stripTags(html);
+    const out = [];
+    if (/hapoel petah|petah tiqwa|petah tikva/i.test(pageText)) {
+      if (/fixture|fixtures|match|matches|results/i.test(pageText)) {
+        out.push({
+          title: 'Soccerway: Hapoel Petah Tikva fixture and results page verified',
+          url: source.url,
+          publishedAt: TODAY,
+          fixture: true
+        });
+      }
+    }
+    return out;
   }
 };
 
@@ -329,6 +344,7 @@ function makeSummary(topicKey, item) {
   if (topicKey === 'crypto') return `תמונת מצב: ${title.slice(0, 95)}.`;
   if (topicKey === 'israel') return `התפתחות מרכזית: ${title.slice(0, 95)}.`;
   if (item.fixture) return `משחק/לו"ז: ${title.slice(0, 95)}.`;
+  if (item.fallbackMode === 'weekly') return `שווה לעקוב: ${title.slice(0, 95)}.`;
   return `עדכון מועדון: ${title.slice(0, 95)}.`;
 }
 
@@ -336,14 +352,15 @@ function makeWhy(topicKey, item) {
   if (topicKey === 'technology') return 'חדש, חשוב, ויכול להיות שימושי או מסחרי.';
   if (topicKey === 'technology2') return 'יכול לעזור בעבודה, בכלים או בזיהוי הזדמנויות.';
   if (topicKey === 'israel') return 'זו התפתחות מהותית עם חשיבות ציבורית מיידית.';
-  if (topicKey === 'crypto') return 'עשוי להשפיע על כיוון השוק או על הזדמנות מסחר.';
+  if (topicKey === 'crypto') return item.fallbackMode === 'weekly' ? 'זה גיבוי של עד 7 ימים ליום חלש, ועדיין עשוי להיות שימושי למסחר או מעקב.' : 'עשוי להשפיע על כיוון השוק או על הזדמנות מסחר.';
   if (item.fixture) return 'זה פריט fixture ישיר שנותן הקשר מיידי למצב הקבוצה והמשחק הקרוב.';
-  return 'זה עדכון חדש עם חשיבות ישירה להפועל פתח תקווה.';
+  return item.fallbackMode === 'weekly' ? 'זה גיבוי של עד 7 ימים כדי לא להשאיר קטגוריה חלשה בלי הקשר שימושי.' : 'זה עדכון חדש עם חשיבות ישירה להפועל פתח תקווה.';
 }
 
 function scoreItem(topicKey, item, sourceCount) {
   let score = 0;
   if (item.fixture) score += 14;
+  if (item.fallbackMode === 'weekly') score -= 4;
   score += item.sourceKind === 'primary' ? 8 : 5;
   score += item.fresh ? 10 : -10;
   score += item.verificationCount >= 2 ? 5 : 0;
@@ -452,6 +469,14 @@ function buildHapoelFixtureCandidates() {
   ];
 }
 
+function buildWeeklyFallbackCandidates(topicKey, pooled) {
+  const weekly = pooled.filter(item => {
+    const published = item.publishedAt || '';
+    return item.signalPositive && !item.signalNegative && (/2026-04-(0[5-9]|10|11)/.test(published) || /\/2026\/04\/(0[5-9]|10|11)\//.test(item.sourceUrl));
+  });
+  return dedup(weekly).map(item => ({ ...item, fallbackMode: 'weekly' }));
+}
+
 async function collectTopic(topic) {
   const runs = [];
   for (const source of topic.sources) {
@@ -495,7 +520,10 @@ async function collectTopic(topic) {
 
   const freshToday = pooled.filter(item => item.signalPositive && !item.signalNegative && item.publishedAt === TODAY);
   const freshWindow = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh);
-  const candidatePool = freshToday.length >= 5 ? freshToday : freshWindow;
+  let candidatePool = freshToday.length >= 5 ? freshToday : freshWindow;
+  if ((topic.key === 'crypto' || topic.key === 'hapoel') && candidatePool.length < 5) {
+    candidatePool = [...candidatePool, ...buildWeeklyFallbackCandidates(topic.key, pooled)];
+  }
   const perSourceLimited = [];
   const sourceTake = new Map();
   for (const item of dedup(candidatePool)) {
@@ -577,20 +605,22 @@ function renderDashboard(items, meta) {
 <title>Clawy News Live</title>
 <style>
 body{margin:0;background:#07111d;color:#eef4ff;font-family:Segoe UI,Arial,sans-serif}
-main{max-width:1160px;margin:0 auto;padding:20px}
-header{margin-bottom:18px}
+main{max-width:1280px;margin:0 auto;padding:20px}
+header{margin-bottom:18px;position:sticky;top:0;background:#07111df2;backdrop-filter:blur(8px);padding:8px 0 12px;z-index:5}
 .topmeta{display:flex;gap:10px;flex-wrap:wrap;color:#9eb3cf;font-size:13px}
 section{margin:22px 0}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .section-meta{font-size:13px;color:#9eb3cf;margin-bottom:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
-h3{margin:10px 0;font-size:19px;line-height:1.3}
+h3{margin:10px 0;font-size:18px;line-height:1.35}
 p{margin:8px 0;line-height:1.5}
 .why{color:#dce7fb}
 a{color:#8fd3ff;text-decoration:none}
+@media (max-width:700px){main{padding:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}h3{font-size:16px}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>

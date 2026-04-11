@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-04-11T20:50:34.219Z",
+  "generatedAt": "2026-04-11T20:57:30.064Z",
   "status": "SUCCESS",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-11T20:50:34.219Z",
+  "lastPublishedAt": "2026-04-11T20:57:30.064Z",
   "sourcesWorkedCount": 22,
   "fallbackActive": false,
   "topicStatus": [
@@ -76,7 +76,12 @@
         "ynet Sport Israel Soccer",
         "Walla Sport"
       ],
-      "sourcesFailed": []
+      "sourcesFailed": [
+        {
+          "source": "Soccerway Hapoel PT",
+          "error": "no_items"
+        }
+      ]
     }
   ]
 }

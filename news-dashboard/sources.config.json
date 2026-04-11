@@ -29,6 +29,7 @@
   "hapoel": [
     { "name": "Hapoel PT News", "url": "https://www.hapoelpt.com/news", "kind": "primary", "parser": "hapoelnews", "type": "official", "priority": 1 },
     { "name": "ynet Sport Israel Soccer", "url": "https://www.ynet.co.il/sport/israelisoccer", "kind": "secondary", "parser": "ynetsport", "type": "web", "priority": 2 },
-    { "name": "Walla Sport", "url": "https://sports.walla.co.il/category/157", "kind": "secondary", "parser": "wallasport", "type": "web", "priority": 2 }
+    { "name": "Walla Sport", "url": "https://sports.walla.co.il/category/157", "kind": "secondary", "parser": "wallasport", "type": "web", "priority": 2 },
+    { "name": "Soccerway Hapoel PT", "url": "https://www.soccerway.com/teams/israel/hapoel-petah-tiqwa-fc/1448/", "kind": "secondary", "parser": "soccerwayhapoel", "type": "fixture", "priority": 2 }
   ]
 }
