@@ -3,69 +3,107 @@
     "source": "TechCrunch AI",
     "url": "https://techcrunch.com/category/artificial-intelligence/",
     "kind": "primary",
-    "parser": "tc",
     "success": true,
-    "fallback": false,
     "items": [
       {
+        "title": "Anthropic temporarily banned OpenClaw's creator from accessing Claude",
+        "url": "https://techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Stalking victim sues OpenAI, claims ChatGPT fueled her abuser's delusions and ignored her warnings",
+        "url": "https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "TechCrunch is heading to Tokyo — and bringing the Startup Battlefield with it",
+        "url": "https://techcrunch.com/2026/04/10/techcrunch-is-heading-to-tokyo-and-bringing-the-startup-battlefield-with-it/",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Last 24 hours: Save up to $500 on your TechCrunch Disrupt 2026 pass",
+        "url": "https://techcrunch.com/2026/04/10/final-24-hours-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "ChatGPT finally offers $100/month Pro plan",
+        "url": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Florida AG announces investigation into OpenAI over shooting that allegedly involved ChatGPT",
+        "url": "https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "After data breach, $10B-valued startup Mercor is having a month",
+        "url": "https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Meta AI app climbs to No. 5 on the App Store after Muse Spark launch",
+        "url": "https://techcrunch.com/2026/04/09/meta-ai-app-climbs-to-no-5-on-the-app-store-after-muse-spark-launch/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Is Anthropic limiting the release of Mythos to protect the internet — or Anthropic?",
+        "url": "https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Google and Intel deepen AI infrastructure partnership",
+        "url": "https://techcrunch.com/2026/04/09/google-and-intel-deepen-ai-infrastructure-partnership/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Sierra's Bret Taylor says the era of clicking buttons is over",
+        "url": "https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Amazon CEO takes aim at Nvidia, Intel, Starlink, more in annual shareholder letter",
+        "url": "https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Final 2 days to save up to $500 on your TechCrunch Disrupt 2026 ticket",
+        "url": "https://techcrunch.com/2026/04/09/final-2-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-ticket/",
+        "publishedAt": "2026-04-09"
+      },
+      {
         "title": "Poke makes using AI agents as easy as sending a text",
-        "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/"
+        "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+        "publishedAt": "2026-04-08"
       },
       {
         "title": "AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict",
-        "url": "https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/"
+        "url": "https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/",
+        "publishedAt": "2026-04-08"
       },
       {
         "title": "Tubi is the first streamer to launch a native app within ChatGPT",
-        "url": "https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/"
-      },
-      {
-        "title": "Snowflake’s transition from storing data to shipping with it",
-        "url": "https://techcrunch.com/podcast/snowflakes-transition-from-storing-data-to-shipping-with-it/"
-      },
-      {
-        "title": "Why Snowflake is no longer just a data warehouse",
-        "url": "https://techcrunch.com/video/why-snowflake-is-no-longer-just-a-data-warehouse/"
+        "url": "https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/",
+        "publishedAt": "2026-04-08"
       },
       {
         "title": "Astropad's Workbench reimagines remote desktop for AI agents, not IT support",
-        "url": "https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/"
+        "url": "https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/",
+        "publishedAt": "2026-04-08"
       },
       {
         "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
-        "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/"
+        "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/",
+        "publishedAt": "2026-04-08"
       },
       {
         "title": "Databricks co-founder wins prestigious ACM award, says ‘AGI is here already'",
-        "url": "https://techcrunch.com/2026/04/08/databricks-matei-zaharia-wins-acm-computing-prize-agi/"
+        "url": "https://techcrunch.com/2026/04/08/databricks-matei-zaharia-wins-acm-computing-prize-agi/",
+        "publishedAt": "2026-04-08"
       },
       {
         "title": "Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass",
-        "url": "https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/"
-      },
-      {
-        "title": "Atlassian launches visual AI tools and third-party agents in Confluence",
-        "url": "https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/"
-      },
-      {
-        "title": "Google quietly launched an AI dictation app that works offline",
-        "url": "https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/"
-      },
-      {
-        "title": "I can't help rooting for tiny open source AI model maker Arcee",
-        "url": "https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/"
-      },
-      {
-        "title": "Firmus, the ‘Southgate' AI data center builder backed by Nvidia, hits $5.5B valuation",
-        "url": "https://techcrunch.com/2026/04/07/firmus-the-southgate-ai-datacenter-builder-backed-by-nvidia-hits-5-5b-valuation/"
-      },
-      {
-        "title": "Intel signs on to Elon Musk's Terafab chips project",
-        "url": "https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/"
-      },
-      {
-        "title": "Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative",
-        "url": "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/"
+        "url": "https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/",
+        "publishedAt": "2026-04-08"
       }
     ]
   },
@@ -73,69 +111,215 @@
     "source": "The Verge Tech",
     "url": "https://www.theverge.com/tech",
     "kind": "primary",
-    "parser": "verge",
     "success": true,
-    "fallback": false,
     "items": [
       {
         "title": "The homepage The Verge The Verge logo.",
-        "url": "https://www.theverge.com/"
+        "url": "https://www.theverge.com/",
+        "publishedAt": null
+      },
+      {
+        "title": "The Verge The Verge logo.",
+        "url": "https://www.theverge.com/",
+        "publishedAt": null
       },
       {
         "title": "The homepage The Verge The Verge logo.",
-        "url": "https://www.theverge.com/"
+        "url": "https://www.theverge.com/",
+        "publishedAt": null
       },
       {
-        "title": "Insta360’s Snap is a tiny magnetic phone screen for taking rear-camera selfies",
-        "url": "https://www.theverge.com/tech/907670/insta360-snap-usb-c-magsafe-screen-selfies-smartphone-rear-camera"
+        "title": "The MacBook Neo is the best thing to happen to Windows in years",
+        "url": "https://www.theverge.com/tech/909140/microsoft-windows-11-fixes-macbook-neo-response-notepad",
+        "publishedAt": null
       },
       {
-        "title": "Unionized ProPublica staff are on strike over AI, layoffs, and wages",
-        "url": "https://www.theverge.com/news/908401/propublica-union-strike-negotiations-ai-layoffs"
+        "title": "Framework is teasing a lot of Linux for its April 21st event",
+        "url": "https://www.theverge.com/tech/909401/framework-next-gen-linux-teaser",
+        "publishedAt": null
+      },
+      {
+        "title": "The new show making fun of tech bros",
+        "url": "https://www.theverge.com/tech/910422/audacity-artemis-maul-installer",
+        "publishedAt": null
+      },
+      {
+        "title": "Is the ‘Holy Grail of batteries’ finally ready to bless us with its presence?",
+        "url": "https://www.theverge.com/transportation/909480/solid-state-battery-donut-lab-ev-china",
+        "publishedAt": null
+      },
+      {
+        "title": "20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail",
+        "publishedAt": null
+      },
+      {
+        "title": "Microsoft finally lets Windows 11 testers unlock experimental features without ViVeTool",
+        "url": "https://www.theverge.com/news/909659/microsoft-windows-insider-changes-unlock-experimental-features-without-vivetool",
+        "publishedAt": null
+      },
+      {
+        "title": "Amazon Luna axes third-party game purchases",
+        "url": "https://www.theverge.com/tech/910025/amazon-luna-third-party-games-subscriptions",
+        "publishedAt": null
+      },
+      {
+        "title": "The Iranian Lego AI video creators credit their virality to ‘heart’",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu",
+        "publishedAt": null
+      },
+      {
+        "title": "Little Snitch’s software counter surveillance jumps from Mac to Linux",
+        "url": "https://www.theverge.com/tech/909975/little-snitch-linux-launch",
+        "publishedAt": null
+      },
+      {
+        "title": "Congress can finally close a mass surveillance loophole — but will they?",
+        "url": "https://www.theverge.com/policy/909229/fisa-702-reauthorization-davidson-wyden-warrant-reforms",
+        "publishedAt": null
+      },
+      {
+        "title": "Bose’s rugged Soundlink Flex Bluetooth speaker is on sale for up to $50 off",
+        "url": "https://www.theverge.com/gadgets/907744/bose-soundlink-flex-2nd-gen-google-nest-doorbell-deal-sale",
+        "publishedAt": null
+      },
+      {
+        "title": "adding support for the iPhone 17 and its square sensor selfie camera",
+        "url": "https://www.theverge.com/tech/829150/project-indigo-now-supports-the-iphone-17s-selfie-camera",
+        "publishedAt": null
+      },
+      {
+        "title": "Project Indigo camera app",
+        "url": "https://www.theverge.com/tech/694014/adobe-project-indigo-camera-app-hands-on-hdr",
+        "publishedAt": null
+      },
+      {
+        "title": "Trump Mobile isn’t giving up just yet",
+        "url": "https://www.theverge.com/tech/909846/trump-mobile-phone-47-plan-trademark-registration",
+        "publishedAt": null
+      },
+      {
+        "title": "its own videoconferencing platform",
+        "url": "https://www.theverge.com/news/868928/politico-reports-frances-government-will-ban-non-european-videoconferencing-software-like-teams-zoom-and-google-meet",
+        "publishedAt": null
+      },
+      {
+        "title": "Amazon Prime Video nearly doubles the price to go ad-free and stream 4K video",
+        "url": "https://www.theverge.com/tech/894466/amazon-prime-video-ultra-ad-free-price-hike",
+        "publishedAt": null
+      },
+      {
+        "title": "Cloudflare made a WordPress for AI agents",
+        "url": "https://www.theverge.com/tech/909730/cloudflare-emdash-wordpress-community",
+        "publishedAt": null
+      }
+    ]
+  },
+  {
+    "source": "The Verge AI",
+    "url": "https://www.theverge.com/ai-artificial-intelligence",
+    "kind": "secondary",
+    "success": true,
+    "items": [
+      {
+        "title": "The homepage The Verge The Verge logo.",
+        "url": "https://www.theverge.com/",
+        "publishedAt": null
+      },
+      {
+        "title": "The Verge The Verge logo.",
+        "url": "https://www.theverge.com/",
+        "publishedAt": null
+      },
+      {
+        "title": "The homepage The Verge The Verge logo.",
+        "url": "https://www.theverge.com/",
+        "publishedAt": null
+      },
+      {
+        "title": "20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail",
+        "publishedAt": null
+      },
+      {
+        "title": "The Iranian Lego AI video creators credit their virality to ‘heart’",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu",
+        "publishedAt": null
+      },
+      {
+        "title": "threw a Molotov cocktail at his house",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail",
+        "publishedAt": null
+      },
+      {
+        "title": "Fear and loathing at OpenAI",
+        "url": "https://www.theverge.com/podcast/909621/openai-sam-altman-drama-vergecast",
+        "publishedAt": null
+      },
+      {
+        "title": "Gen Z’s love-hate relationship with AI",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/909687/gen-z-doesnt-like-ai-gallup",
+        "publishedAt": null
+      },
+      {
+        "title": "Microsoft starts removing Copilot buttons from Windows 11 apps",
+        "url": "https://www.theverge.com/news/909640/microsoft-removing-copilot-windows-11-buttons",
+        "publishedAt": null
+      },
+      {
+        "title": "ChatGPT has a new $100 per month Pro subscription",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/909599/chatgpt-pro-subscription-new",
+        "publishedAt": null
+      },
+      {
+        "title": "Florida launches investigation into OpenAI",
+        "url": "https://www.theverge.com/policy/909557/openai-florida-investigation",
+        "publishedAt": null
+      },
+      {
+        "title": "Google’s Gemini AI can answer your questions with 3D models and simulations",
+        "url": "https://www.theverge.com/tech/909391/google-gemini-ai-3d-models-simulations",
+        "publishedAt": null
+      },
+      {
+        "title": "The AI industry’s race for profits is now existential",
+        "url": "https://www.theverge.com/podcast/909042/ai-monetization-cliff-anthropic-openai-profitable-ai-existential-moment",
+        "publishedAt": null
+      },
+      {
+        "title": "Google makes it easy to deepfake yourself",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/909104/youtube-shorts-make-ai-avatar",
+        "publishedAt": null
       },
       {
         "title": "Gemini gets notebooks to help you organize projects",
-        "url": "https://www.theverge.com/tech/909031/google-gemini-notebooks-notebooklm"
-      },
-      {
-        "title": "Dyson made a handheld version of its iconic fans",
-        "url": "https://www.theverge.com/tech/907802/dyson-hushjet-mini-cool-handheld-personal-fan-specs-availability"
+        "url": "https://www.theverge.com/tech/909031/google-gemini-notebooks-notebooklm",
+        "publishedAt": null
       },
       {
         "title": "translates speech into your preferred language",
-        "url": "https://www.theverge.com/news/670322/google-meet-gemini-translation-ai-english-spanish"
+        "url": "https://www.theverge.com/news/670322/google-meet-gemini-translation-ai-english-spanish",
+        "publishedAt": null
       },
       {
-        "title": "The AI RAM shortage is also driving up SSD prices",
-        "url": "https://www.theverge.com/tech/908916/ssd-storage-shortages-price-increases"
-      },
-      {
-        "title": "The Neo Effect: How Apple’s cheapest Mac is changing the PC game",
-        "url": "https://www.theverge.com/tech/904705/apple-macbook-neo-news-reviews-mods"
-      },
-      {
-        "title": "Microsoft’s executive shake-up continues as developer division chief resigns",
-        "url": "https://www.theverge.com/tech/908793/microsoft-devdiv-julia-liuson-resignation"
+        "title": "OpenAI made economic proposals — here’s what DC thinks of them",
+        "url": "https://www.theverge.com/column/908880/openai-made-economic-proposals-heres-what-dc-thinks-of-them",
+        "publishedAt": null
       },
       {
         "title": "Meta is reentering the AI race with a new model called Muse Spark",
-        "url": "https://www.theverge.com/tech/908769/meta-muse-spark-ai-model-launch-rollout"
+        "url": "https://www.theverge.com/tech/908769/meta-muse-spark-ai-model-launch-rollout",
+        "publishedAt": null
       },
       {
-        "title": "Amazon’s Smart Thermostat can help lower your energy bills, and it’s down to $62",
-        "url": "https://www.theverge.com/gadgets/908742/amazon-smart-thermostat-samsung-galaxy-buds-4-pro-deal-sale"
+        "title": "The vibes are off at OpenAI",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/908513/the-vibes-are-off-at-openai",
+        "publishedAt": null
       },
       {
-        "title": "classic grey version of the 8BitDo 64 controller",
-        "url": "https://www.theverge.com/news/825309/8bitdo-64-wireless-bluetooth-controller-analogue-3d-retro-gray-color"
-      },
-      {
-        "title": "Xbox’s new era needs games like Forza Horizon 6",
-        "url": "https://www.theverge.com/games/908305/forza-horizon-6-preview-xbox"
-      },
-      {
-        "title": "Tractive’s new dog and cat trackers provide more health insights for your pets",
-        "url": "https://www.theverge.com/tech/907947/tractive-dog-6-xl-cat-mini-pet-trackers-health-monitoring-location"
+        "title": "Unionized ProPublica staff are on strike over AI, layoffs, and wages",
+        "url": "https://www.theverge.com/news/908401/propublica-union-strike-negotiations-ai-layoffs",
+        "publishedAt": null
       }
     ]
   },
@@ -143,69 +327,215 @@
     "source": "Google Blog Technology",
     "url": "https://blog.google/technology/",
     "kind": "secondary",
-    "parser": "google",
     "success": true,
-    "fallback": false,
     "items": [
       {
+        "title": "Google Ads & Commerce blog",
+        "url": "https://blog.google/products/ads-commerce/",
+        "publishedAt": null
+      },
+      {
+        "title": "Google Ads & Commerce blog",
+        "url": "https://blog.google/products/ads-commerce/",
+        "publishedAt": null
+      },
+      {
+        "title": "Google Ads & Commerce blog",
+        "url": "https://blog.google/products/ads-commerce/",
+        "publishedAt": null
+      },
+      {
         "title": "Veo 3.1 Ingredients to Video: More consistency, creativity and control Today, we’re introducing an enhanced version of Veo 3.1 “Ingredients to Video.”",
-        "url": "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-ingredients-to-video/"
+        "url": "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-ingredients-to-video/",
+        "publishedAt": null
       },
       {
         "title": "Measuring progress toward AGI: A cognitive framework",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/"
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/",
+        "publishedAt": null
       },
       {
         "title": "Create new worlds in Project Genie with these 4 tips",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie/"
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie/",
+        "publishedAt": null
       },
       {
         "title": "Advancing AI benchmarking with Game Arena",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/kaggle-game-arena-updates/"
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/kaggle-game-arena-updates/",
+        "publishedAt": null
       },
       {
         "title": "View more from Google DeepMind",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/"
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
+        "publishedAt": null
       },
       {
         "title": "Try notebooks in Gemini to easily keep track of projects",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/"
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/",
+        "publishedAt": null
       },
       {
         "title": "Lyria 3 Pro: Create longer tracks in more Google products",
-        "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/"
+        "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/",
+        "publishedAt": null
       },
       {
         "title": "Introducing “vibe design” with Stitch",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+        "publishedAt": null
       },
       {
         "title": "An update on our mental health work",
-        "url": "https://blog.google/innovation-and-ai/technology/health/mental-health-updates/"
+        "url": "https://blog.google/innovation-and-ai/technology/health/mental-health-updates/",
+        "publishedAt": null
       },
       {
         "title": "Announcing the winners of the MedGemma Impact Challenge",
-        "url": "https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/"
+        "url": "https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/",
+        "publishedAt": null
       },
       {
         "title": "A more personal digital health experience for people in Europe",
-        "url": "https://blog.google/innovation-and-ai/technology/health/google-docmorris-partnership/"
+        "url": "https://blog.google/innovation-and-ai/technology/health/google-docmorris-partnership/",
+        "publishedAt": null
       },
       {
         "title": "Evolving expectations of what’s possible",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/"
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/",
+        "publishedAt": null
       },
       {
         "title": "Quantum frontiers may be closer than they appear",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/"
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/",
+        "publishedAt": null
       },
       {
         "title": "How we’re helping you avoid scams this tax season",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/five-ways-google-helps-you-avoid-scammers/"
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/five-ways-google-helps-you-avoid-scammers/",
+        "publishedAt": null
       },
       {
         "title": "View more from Safety & Security",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/"
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
+        "publishedAt": null
+      },
+      {
+        "title": "Android XR lights up Sphere in Las Vegas for CES.",
+        "url": "https://blog.google/innovation-and-ai/technology/xr-ar/android-xr-sphere-ces-2026/",
+        "publishedAt": null
+      },
+      {
+        "title": "The Android Show: New features for Galaxy XR and a look at future devices",
+        "url": "https://blog.google/products-and-platforms/platforms/android/android-show-xr-edition-updates/",
+        "publishedAt": null
+      }
+    ]
+  },
+  {
+    "source": "Calcalist Tech",
+    "url": "https://www.calcalist.co.il/calcalistech",
+    "kind": "secondary",
+    "success": true,
+    "items": [
+      {
+        "title": "\"עובד יקר\": הנורמה החדשה בתאגידי ההייטק היא פיטורים באמצעות המייל",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "מאורקל, דרך אמזון ועד מטא: תאגידי הטק מפטרים באימייל קר, מהרגע להרגע, חוסמים את הגישה למערכות הארגון, ושולחים מסר לעובדים: אמנם קראנו לכם \"משפחה\" אבל ברגע האמת לא נתייחס אליכם כבני אדם",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "14:32 איראן העבירה \"קווים אדומים\"; ארה\"ב מכחישה כי הסכימה להפשיר נכסים של טהרן",
+        "url": "https://www.calcalist.co.il/updates_news/article/skuodrv3ze",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "13:48 \"אפליה בלתי חוקית\": יבמ תשלם לממשל האמריקאי 17 מיליון דולר בשל מדיניות גיוון תעסוקתי",
+        "url": "https://www.calcalist.co.il/world_news/article/bk6a1sp3bg",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "12:04 רקטת הגראד של חיזבאללה: מהפכה מפתיעה בארטילריה – ובטרור",
+        "url": "https://www.calcalist.co.il/calcalistech/article/syj69zsn11l",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "11:34 \"תשאלו את אויבינו\": חברת הדיפנס טק שצנחה בוול סטריט - וקיבלה רוח גבית מטראמפ",
+        "url": "https://www.calcalist.co.il/market/article/hk875dvhzx",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "מנכ\"ל ריסקיפייד: \"היעדר תואר זה דבר חיובי בעולם היזמות\"",
+        "url": "https://www.calcalist.co.il/article/b1yrjkt4we",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "דיווח: סיסקו במו\"מ לרכישת אסטריקס הישראלית תמורת 250-350 מיליון דולר",
+        "url": "https://www.calcalist.co.il/calcalistech/article/hj9nmlwnbe",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "\"יותר חסימות\": הודו תגביר את הפיקוח על משפיעני רשת ופודקאסטים",
+        "url": "https://www.calcalist.co.il/calcalistech/article/hyqywuih11g",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "בזכות הביקוש הגובר לשבבי AI: הכנסות שיא ל-TSMC הטייוואנית",
+        "url": "https://www.calcalist.co.il/calcalistech/article/hjt3xrl2bg",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "ממה מפחדים בממשל? פגישת החירום שנערכה בוושינגטון בשל המודל החדש של אנתרופיק",
+        "url": "https://www.calcalist.co.il/calcalistech/article/hylttzln11g",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "רק חברות נבחרות יקבלו גישה: מודל ה-AI העוצמתי שאנתרופיק חוששת לשחרר",
+        "url": "https://www.calcalist.co.il/calcalistech/article/h1jb5jbnbl",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "מחיר היעילות: מחקר מצא ששימוש רב ב-AI \"מטגן לעובדים את המוח\"",
+        "url": "https://www.calcalist.co.il/calcalistech/article/r1bkc3siwe",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "המלחמה על המשרד: המעסיקים שדורשים מהעובדים להתייצב – גם תחת אש",
+        "url": "https://www.calcalist.co.il/calcalistech/article/by8rwizswe",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "\"עובד יקר\": הנורמה החדשה בתאגידי ההייטק היא פיטורים במייל",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "רקטת הגראד של חיזבאללה: מהפכה מפתיעה בארטילריה – ובטרור",
+        "url": "https://www.calcalist.co.il/calcalistech/article/syj69zsn11l",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "טיל חוף-ים: כך פועל הנשק האיראני שמאיים על מצר הורמוז",
+        "url": "https://www.calcalist.co.il/calcalistech/article/bkjnmhyibl",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "רק חברות נבחרות יקבלו גישה: מודל ה-AI העוצמתי שאנתרופיק חוששת לשחרר",
+        "url": "https://www.calcalist.co.il/calcalistech/article/h1jb5jbnbl",
+        "publishedAt": "2026-04-11"
       }
     ]
   }

@@ -3,69 +3,381 @@
     "source": "CoinDesk",
     "url": "https://www.coindesk.com/",
     "kind": "primary",
-    "parser": "coindesk",
     "success": true,
-    "fallback": false,
     "items": [
       {
-        "title": "Bitcoin's next big move hinges on oil, and right now it's a total coin flip Analysts say a sustained 15%–16% decline in crude could revive Fed rate cut bets, sending BTC higher.",
-        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-s-next-big-move-hinges-on-oil-and-right-now-it-s-a-total-coin-flip"
+        "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
+        "url": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+        "publishedAt": "2026-04-10"
       },
       {
-        "title": "The Protocol: Bernstein says quantum threat to Bitcoin is real but manageable Also: North Korea’s 6-month plot with Drift, Solana Foundation’s new ad and Alchemy AI.",
-        "url": "https://www.coindesk.com/tech/2026/04/08/the-protocol-bernstein-says-quantum-threat-to-bitcoin-is-real-but-manageable"
+        "title": "CoinDesk 20 performance update: Hedera (HBAR) drops 1.9%, leading index lower Cardando (ADA), down 1.3% from Thursday, was also among the underperformers.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/04/10/coindesk-20-performance-update-hedera-hbar-drops-1-9-leading-index-lower",
+        "publishedAt": "2026-04-10"
       },
       {
-        "title": "Adam Back denies he’s Satoshi Nakamoto after NYT report claims he’s Bitcoin’s creator Similarities reflect shared early research, not proof, said Back. Others have questions too.",
-        "url": "https://www.coindesk.com/markets/2026/04/08/adam-back-denies-he-s-satoshi-nakamoto-after-nyt-report-claims-he-s-bitcoin-s-creator"
+        "title": "Binance offers UAE staff temporary relocation as Middle East conflict disrupts region The crypto exchange said its operations in the United Arab Emirates remain unchanged and that many employees have chosen to remain",
+        "url": "https://www.coindesk.com/business/2026/04/10/binance-offers-uae-staff-temporary-relocation-as-middle-east-conflict-disrupts-region",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Bitcoin gains after core CPI rose a less-than-forecast 0.2% in March. Headline inflation rose 0.9% last month, driven by the sharp rise in energy costs due to the Iran war.",
+        "url": "https://www.coindesk.com/markets/2026/04/10/bitcoin-rises-after-core-cpi-rose-a-less-than-forecast-0-2-in-march",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Institutions' bitcoin positioning lacks conviction; CPI, Iran talks might help Institutions are betting on the bitcoin price hitting $80,000 through call options, but they are also buying downside protection.",
+        "url": "https://www.coindesk.com/daybook-us/2026/04/10/institutions-bitcoin-positioning-lacks-conviction-cpi-iran-talks-might-help",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "David Bailey’s bitcoin holder Nakamoto is trying to stay on Nasdaq with a reverse stock split The stock has plunged roughly 99% from its May 2025 peak as pressure builds on the bitcoin treasury firm.",
+        "url": "https://www.coindesk.com/markets/2026/04/10/david-bailey-s-nakamoto-is-trying-to-stay-on-nasdaq-and-it-s-turning-to-a-reverse-stock-split",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "XRP edges higher to $1.35 on breakout, but bullish momentum still lacks Strong volume pushed price above $1.34, though weak fundamentals and overhead resistance continue to cap follow-through.",
+        "url": "https://www.coindesk.com/markets/2026/04/10/xrp-edges-higher-to-usd1-35-on-breakout-but-bullish-momentum-still-lacks",
+        "publishedAt": "2026-04-10"
       },
       {
         "title": "CoinW Partners with Luka Modrić as Global Brand Ambassador",
-        "url": "https://www.coindesk.com/press-release/2026/04/09/coinw-partners-with-luka-modric-as-global-brand-ambassador"
+        "url": "https://www.coindesk.com/press-release/2026/04/09/coinw-partners-with-luka-modric-as-global-brand-ambassador",
+        "publishedAt": "2026-04-09"
       },
       {
         "title": "Pharos Network Announces $44M Series A Round, Bringing Total Funding to $52M to Scale Onchain Economy",
-        "url": "https://www.coindesk.com/press-release/2026/04/08/pharos-network-announces-usd44m-series-a-round-bringing-total-funding-to-usd52m-to-scale-onchain-economy"
+        "url": "https://www.coindesk.com/press-release/2026/04/08/pharos-network-announces-usd44m-series-a-round-bringing-total-funding-to-usd52m-to-scale-onchain-economy",
+        "publishedAt": "2026-04-08"
       },
       {
         "title": "Bitbase Officially Launches Global Derivatives Platform, Aiming to Reshape Market Standards via \"Institutional Rigor\" and \"Awards for Discipline\"",
-        "url": "https://www.coindesk.com/press-release/2026/04/07/bitbase-officially-launches-global-derivatives-platform-aiming-to-reshape-market-standards-via-institutional-rigor-and-awards-for-discipline"
+        "url": "https://www.coindesk.com/press-release/2026/04/07/bitbase-officially-launches-global-derivatives-platform-aiming-to-reshape-market-standards-via-institutional-rigor-and-awards-for-discipline",
+        "publishedAt": null
       },
       {
-        "title": "Iran's crypto tanker tolls are the latest step in its sanctions‑busting trade network",
-        "url": "https://www.coindesk.com/policy/2026/04/09/crypto-payments-to-pass-strait-of-hormuz-is-the-next-logical-step-for-iran-s-sanctions-skirting-trade-network"
+        "title": "CoinDesk 20 2,020.76 0.63 %",
+        "url": "https://www.coindesk.com/price/cd20",
+        "publishedAt": null
       },
       {
-        "title": "Iran's crypto tanker tolls are the latest step in its sanctions‑busting trade network",
-        "url": "https://www.coindesk.com/policy/2026/04/09/crypto-payments-to-pass-strait-of-hormuz-is-the-next-logical-step-for-iran-s-sanctions-skirting-trade-network"
+        "title": "Bitcoin $ 72,962.16 0.95 %",
+        "url": "https://www.coindesk.com/price/bitcoin",
+        "publishedAt": null
       },
       {
-        "title": "Bitcoin's next big move hinges on oil, and right now it's a total coin flip",
-        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-s-next-big-move-hinges-on-oil-and-right-now-it-s-a-total-coin-flip"
+        "title": "Ethereum $ 2,245.90 1.19 %",
+        "url": "https://www.coindesk.com/price/ethereum",
+        "publishedAt": null
       },
       {
-        "title": "Bitcoin gets its first working prototype of quantum-resistant wallet rescue tool",
-        "url": "https://www.coindesk.com/tech/2026/04/09/bitcoin-gets-first-working-prototype-of-quantum-resistant-wallet-rescue-tool"
+        "title": "Bhutan has sold 70% of its bitcoin in 18 months. It may have stopped BTC mining too.",
+        "url": "https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too",
+        "publishedAt": null
       },
       {
-        "title": "Michael Saylor says bitcoin has likely bottomed, quantum risk overblown",
-        "url": "https://www.coindesk.com/markets/2026/04/08/michael-saylor-says-bitcoin-has-likely-bottomed-quantum-risk-overblown"
+        "title": "Bhutan has sold 70% of its bitcoin in 18 months. It may have stopped BTC mining too.",
+        "url": "https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too",
+        "publishedAt": null
+      },
+      {
+        "title": "Trump-backed WLFI token drops 12% to record lows after team defends multi-million lending position",
+        "url": "https://www.coindesk.com/markets/2026/04/10/trump-backed-wlfi-token-drops-12-to-record-lows-after-team-defends-multi-million-lending-position",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi",
+        "url": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Star Xu calls CZ a ‘liar’ as founders of world’s largest crypto exchanges argue over past allegations",
+        "url": "https://www.coindesk.com/business/2026/04/10/star-xu-calls-cz-a-liar-as-founders-of-world-s-largest-crypto-exchanges-argue-over-past-allegations",
+        "publishedAt": "2026-04-10"
       },
       {
         "title": "How CoinW’s Upgraded Futures Trading Businesses Are Responding Nimbly to Trends",
-        "url": "https://www.coindesk.com/sponsored-content/how-coinw-s-upgraded-futures-trading-businesses-are-responding-nimbly-to-trends"
+        "url": "https://www.coindesk.com/sponsored-content/how-coinw-s-upgraded-futures-trading-businesses-are-responding-nimbly-to-trends",
+        "publishedAt": null
       },
       {
-        "title": "U.S. Treasury proposes demands that stablecoin firms be set to police bad transactions",
-        "url": "https://www.coindesk.com/policy/2026/04/08/u-s-treasury-to-propose-demands-that-stablecoin-firms-be-set-to-police-bad-transactions"
+        "title": "Binance offers UAE staff temporary relocation as Middle East conflict disrupts region",
+        "url": "https://www.coindesk.com/business/2026/04/10/binance-offers-uae-staff-temporary-relocation-as-middle-east-conflict-disrupts-region",
+        "publishedAt": "2026-04-10"
+      }
+    ]
+  },
+  {
+    "source": "CoinDesk Bitcoin",
+    "url": "https://www.coindesk.com/tag/bitcoin/",
+    "kind": "secondary",
+    "success": true,
+    "items": [
+      {
+        "title": "Bitcoin gains after core CPI rose a less-than-forecast 0.2% in March.",
+        "url": "https://www.coindesk.com/markets/2026/04/10/bitcoin-rises-after-core-cpi-rose-a-less-than-forecast-0-2-in-march",
+        "publishedAt": "2026-04-10"
       },
       {
-        "title": "Iran eyes crypto toll for oil tanker transits through Strait of Hormuz, according to FT",
-        "url": "https://www.coindesk.com/markets/2026/04/08/iran-eyes-crypto-toll-for-oil-tanker-transit-through-strait-of-hormuz"
+        "title": "David Bailey’s bitcoin holder Nakamoto is trying to stay on Nasdaq with a reverse stock split",
+        "url": "https://www.coindesk.com/markets/2026/04/10/david-bailey-s-nakamoto-is-trying-to-stay-on-nasdaq-and-it-s-turning-to-a-reverse-stock-split",
+        "publishedAt": "2026-04-10"
       },
       {
-        "title": "Bitcoin is above $70,000 on Iran ceasefire, but rally is turning cautious for good reasons",
-        "url": "https://www.coindesk.com/markets/2026/04/08/bitcoin-is-above-usd70-000-on-iran-ceasefire-but-rally-is-turning-cautious-for-good-reasons"
+        "title": "Bitcoin tops $72,000, but Circle and Bullish drop sharply after downgrades",
+        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-tops-usd72-000-but-circle-and-bullish-drop-sharply-after-downgrades",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Bitcoin shoots above $72,000 as optimism grows over Middle East ceasefire",
+        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-shoots-above-usd72-000-as-optimism-grows-over-middle-east-ceasefire",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Why Iran wants crypto for Strait of Hormuz tolls",
+        "url": "https://www.coindesk.com/video/why-iran-wants-crypto-for-strait-of-hormuz-tolls",
+        "publishedAt": null
+      },
+      {
+        "title": "Strategy’s STRC sees one of its highest volume days, with just one penny of volatility",
+        "url": "https://www.coindesk.com/markets/2026/04/09/strategy-s-strc-sees-one-of-its-highest-volume-days-with-just-one-penny-of-volatility",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Bithumb moves to seize assets over mistaken $8 million bitcoin dispute",
+        "url": "https://www.coindesk.com/business/2026/04/09/bithumb-moves-to-seize-assets-over-mistaken-usd8-million-bitcoin-dispute",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Everyone’s awaiting U.S. inflation figures, but bitcoin traders couldn’t care less",
+        "url": "https://www.coindesk.com/markets/2026/04/09/everyone-s-awaiting-u-s-inflation-figures-but-bitcoin-traders-couldn-t-care-less",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Bitcoin's next big move hinges on oil, and right now it's a total coin flip",
+        "url": "https://www.coindesk.com/markets/2026/04/09/bitcoin-s-next-big-move-hinges-on-oil-and-right-now-it-s-a-total-coin-flip",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "Morgan Stanley’s bitcoin ETF draws $34 million on day one",
+        "url": "https://www.coindesk.com/markets/2026/04/08/morgan-stanley-s-bitcoin-etf-draws-usd34-million-on-day-one",
+        "publishedAt": "2026-04-08"
+      },
+      {
+        "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
+        "url": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Documentation and Governance",
+        "url": "https://indices.coindesk.com/documentation-and-governance",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin Treasuries Theme Week",
+        "url": "https://www.coindesk.com/tag/btc-treasuires-theme-week-2025",
+        "publishedAt": null
+      },
+      {
+        "title": "CoinDesk 20 $2,020.76 0.63 %",
+        "url": "https://www.coindesk.com/price/cd20",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin $72,962.16 0.95 %",
+        "url": "https://www.coindesk.com/price/bitcoin",
+        "publishedAt": null
+      },
+      {
+        "title": "Ethereum $2,245.90 1.19 %",
+        "url": "https://www.coindesk.com/price/ethereum",
+        "publishedAt": null
+      }
+    ]
+  },
+  {
+    "source": "CoinDesk Ethereum",
+    "url": "https://www.coindesk.com/tag/ethereum/",
+    "kind": "secondary",
+    "success": true,
+    "items": [
+      {
+        "title": "decentralized applications (dApps)",
+        "url": "https://www.coindesk.com/learn/what-is-a-dapp-decentralized-apps-explained",
+        "publishedAt": null
+      },
+      {
+        "title": "decentralized finance (DeFi)",
+        "url": "https://www.coindesk.com/tag/defi",
+        "publishedAt": null
+      },
+      {
+        "title": "Tom Lee's Bitmine uplists to NYSE, expands buyback authorization to $4 billion",
+        "url": "https://www.coindesk.com/markets/2026/04/09/tom-lee-s-bitmine-lists-on-nyse-expands-usd4-billion-buyback-as-eth-bet-deepens",
+        "publishedAt": "2026-04-09"
+      },
+      {
+        "title": "The Protocol: Bernstein says quantum threat to Bitcoin is real but manageable",
+        "url": "https://www.coindesk.com/tech/2026/04/08/the-protocol-bernstein-says-quantum-threat-to-bitcoin-is-real-but-manageable",
+        "publishedAt": "2026-04-08"
+      },
+      {
+        "title": "Aave loses key risk manager, Chaos Labs, amid contributor exodus and disputes",
+        "url": "https://www.coindesk.com/tech/2026/04/06/aave-loses-key-risk-manager-chaos-labs-amid-contributor-exodus-and-disputes",
+        "publishedAt": null
+      },
+      {
+        "title": "Schwab plans spot bitcoin, ether trading launch in first half of 2026",
+        "url": "https://www.coindesk.com/business/2026/04/03/schwab-plans-spot-bitcoin-ether-trading-launch-in-first-half-of-2026",
+        "publishedAt": null
+      },
+      {
+        "title": "Ethereum Foundation stakes another $93 million ether, reaching its 70,000 ETH target",
+        "url": "https://www.coindesk.com/markets/2026/04/03/ethereum-foundation-stakes-another-usd93-million-ether-reaching-its-70-000-eth-target",
+        "publishedAt": null
+      },
+      {
+        "title": "The Protocol: Quantum computing could break Bitcoin sooner, says Google",
+        "url": "https://www.coindesk.com/tech/2026/04/01/the-protocol-quantum-computing-could-break-bitcoin-sooner-says-google",
+        "publishedAt": null
+      },
+      {
+        "title": "Grayscale’s research head says tokenization will happen in waves and explains how to play it",
+        "url": "https://www.coindesk.com/markets/2026/04/01/grayscale-s-research-head-says-tokenization-will-happen-in-waves-and-explains-how-to-play-it",
+        "publishedAt": null
+      },
+      {
+        "title": "Some quantum-resistant tokens jump 50% as Google flags risks to Bitcoin security",
+        "url": "https://www.coindesk.com/markets/2026/04/01/the-first-winners-of-the-quantum-crypto-debate-are-already-clear-and-some-of-them-are-up-50",
+        "publishedAt": null
+      },
+      {
+        "title": "Coinbase’s Base to focus on tokenized markets, stablecoins, developers this year",
+        "url": "https://www.coindesk.com/tech/2026/03/31/coinbase-s-base-to-focus-on-tokenized-markets-stablecoins-developers-this-year",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitmine makes biggest ether purchase in 2026 while other digital asset treasuries pull back",
+        "url": "https://www.coindesk.com/business/2026/03/30/bitmine-makes-biggest-ether-purchase-in-2026-while-other-digital-asset-treasuries-pull-back",
+        "publishedAt": null
+      },
+      {
+        "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
+        "url": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Documentation and Governance",
+        "url": "https://indices.coindesk.com/documentation-and-governance",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin Treasuries Theme Week",
+        "url": "https://www.coindesk.com/tag/btc-treasuires-theme-week-2025",
+        "publishedAt": null
+      },
+      {
+        "title": "CoinDesk 20 $2,020.76 0.63 %",
+        "url": "https://www.coindesk.com/price/cd20",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin $72,962.16 0.95 %",
+        "url": "https://www.coindesk.com/price/bitcoin",
+        "publishedAt": null
+      },
+      {
+        "title": "Ethereum $2,245.90 1.19 %",
+        "url": "https://www.coindesk.com/price/ethereum",
+        "publishedAt": null
+      }
+    ]
+  },
+  {
+    "source": "CoinDesk XRP",
+    "url": "https://www.coindesk.com/tag/xrp/",
+    "kind": "secondary",
+    "success": true,
+    "items": [
+      {
+        "title": "XRP may be less exposed to quantum computer threats than bitcoin, experts say",
+        "url": "https://www.coindesk.com/tech/2026/04/10/xrp-may-be-less-exposed-to-quantum-threats-than-bitcoin-experts-say",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Crypto's $224 million inflow rebound was led by mostly one country and XRP",
+        "url": "https://www.coindesk.com/markets/2026/04/07/crypto-s-usd224-million-inflow-rebound-was-led-by-mostly-one-country-and-xrp",
+        "publishedAt": null
+      },
+      {
+        "title": "Oil, silver trading is way more popular than XRP, solana on Hyperliquid",
+        "url": "https://www.coindesk.com/markets/2026/03/23/oil-silver-trading-is-way-more-popular-than-xrp-sol-on-hyperliquid",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin jumps to $70,800 as oil retreats; ether and XRP lag",
+        "url": "https://www.coindesk.com/markets/2026/03/20/bitcoin-jumps-to-usd70-800-as-oil-retreats-ether-and-xrp-lag",
+        "publishedAt": null
+      },
+      {
+        "title": "XRP treasury firm Evernorth discloses $233.7 million impairment on holdings in SPAC filing",
+        "url": "https://www.coindesk.com/business/2026/03/19/xrp-treasury-firm-evernorth-discloses-usd233-7-million-impairment-on-holdings-in-spac-filing",
+        "publishedAt": null
+      },
+      {
+        "title": "XRP hovers near $14 million options battleground that could sway trading",
+        "url": "https://www.coindesk.com/markets/2026/03/18/xrp-hovers-near-usd14-million-options-battleground-that-could-sway-trading",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin’s derivatives-led rally is already unraveling. Prices are back below $75,000",
+        "url": "https://www.coindesk.com/markets/2026/03/17/bitcoin-s-derivatives-led-rally-is-already-unraveling-prices-are-back-below-usd75-000",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin just surged past $75,000. Derivatives seem to be driving the rally.",
+        "url": "https://www.coindesk.com/markets/2026/03/17/bitcoin-just-surged-past-usd75-000-derivatives-are-driving-the-move",
+        "publishedAt": null
+      },
+      {
+        "title": "A huge gap between network use and token value is the most important thing happening in XRP right now",
+        "url": "https://www.coindesk.com/markets/2026/03/13/dnp-xrp-ledger-activity-is-hitting-records-but-why-are-xrp-prices-down-62-from-peak",
+        "publishedAt": null
+      },
+      {
+        "title": "Solana, XRP ETFs take different paths as crypto investors pile in",
+        "url": "https://www.coindesk.com/markets/2026/03/10/solana-etfs-find-institutional-backing-while-xrp-funds-depend-more-on-retail",
+        "publishedAt": null
+      },
+      {
+        "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
+        "url": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+        "publishedAt": "2026-04-10"
+      },
+      {
+        "title": "Documentation and Governance",
+        "url": "https://indices.coindesk.com/documentation-and-governance",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin Treasuries Theme Week",
+        "url": "https://www.coindesk.com/tag/btc-treasuires-theme-week-2025",
+        "publishedAt": null
+      },
+      {
+        "title": "CoinDesk 20 $2,020.76 0.63 %",
+        "url": "https://www.coindesk.com/price/cd20",
+        "publishedAt": null
+      },
+      {
+        "title": "Bitcoin $72,962.16 0.95 %",
+        "url": "https://www.coindesk.com/price/bitcoin",
+        "publishedAt": null
+      },
+      {
+        "title": "Ethereum $2,245.90 1.19 %",
+        "url": "https://www.coindesk.com/price/ethereum",
+        "publishedAt": null
       }
     ]
   },
@@ -73,69 +385,107 @@
     "source": "Decrypt",
     "url": "https://decrypt.co/",
     "kind": "secondary",
-    "parser": "decrypt",
     "success": true,
-    "fallback": false,
     "items": [
       {
-        "title": "Bitcoin Depot ATM Operator Says $3.6 Million in BTC Stolen in Corporate Hack",
-        "url": "https://decrypt.co/363734/bitcoin-depot-atm-operator-3-6-million-btc-stolen-security-breach"
+        "title": "This 'Space Invaders' Clone Game Pays Real Bitcoin—If You're Skilled, Lucky or Rich",
+        "url": "https://decrypt.co/364036/space-invaders-clone-game-pays-real-bitcoin-skilled-lucky-rich",
+        "publishedAt": null
       },
       {
-        "title": "Researchers Propose New Way to Manage Financial Risk When AI Agents Fumble Trades",
-        "url": "https://decrypt.co/363727/agentic-risk-standard-ai-research-finance-trades"
+        "title": "Suspect Arrested After Molotov Cocktail Thrown at Sam Altman’s San Francisco Home",
+        "url": "https://decrypt.co/364007/suspect-arrested-molotov-cocktail-sam-altman-san-francisco",
+        "publishedAt": null
       },
       {
-        "title": "Bitcoin Miner Cango Sells $143 Million in BTC, Slashes Production Costs",
-        "url": "https://decrypt.co/363730/bitcoin-miner-cango-sells-143-million-btc-slashes-production-costs"
+        "title": "Gen Z Thinks AI Is Rotting Their Brains, But Can't Stop Using It: Survey",
+        "url": "https://decrypt.co/363976/gen-z-ai-rotting-brains-survey",
+        "publishedAt": null
       },
       {
-        "title": "Meta Launches Muse Spark, Its Most Capable AI Yet—But Gemini 3.1 Pro Still Leads the Pack",
-        "url": "https://decrypt.co/363691/meta-muse-spark-most-capable-ai-gemini-pro-still-leads"
+        "title": "Elon Musk's SpaceX Is Nearing Its $1.75 Trillion IPO—Bitget Is Offering Pre-IPO Exposure",
+        "url": "https://decrypt.co/363950/elon-musk-spacex-nearing-1-75-trillion-ipo-bitget-pre-ipo-exposure",
+        "publishedAt": null
       },
       {
-        "title": "Stablecoin Issuers Must Adhere to Anti-Money Laundering and Sanctions Programs, Says Treasury",
-        "url": "https://decrypt.co/news-explorer?pinned=1373841&title=stablecoin-issuers-must-adhere-to-anti-money-laundering-and-sanctions-programs-says-treasury"
+        "title": "Bitget Offers SpaceX Exposure Ahead of Planned $1.75 Trillion IPO",
+        "url": "https://decrypt.co/news-explorer?pinned=1376628&amp;title=bitget-offers-spacex-exposure-ahead-of-planned-175-trillion-ipo",
+        "publishedAt": null
       },
       {
-        "title": "Chainalysis Predicts Stablecoins May Exceed Traditional Payment Networks With $1.5 Quadrillion Annual Trading Volume",
-        "url": "https://decrypt.co/news-explorer?pinned=1373797&title=chainalysis-predicts-stablecoins-may-exceed-traditional-payment-networks-with-15-quadrillion-annual-trading-volume"
+        "title": "Elon Musk Robot Dog From NFT Artist Beeple Is Walking Around San Francisco",
+        "url": "https://decrypt.co/news-explorer?pinned=1376617&amp;title=elon-musk-robot-dog-from-nft-artist-beeple-is-walking-around-san-francisco",
+        "publishedAt": null
       },
       {
-        "title": "Bernstein Report Reassures Minimal Threat of Quantum Computing to Bitcoin Security and Mining Operations",
-        "url": "https://decrypt.co/news-explorer?pinned=1373786&title=bernstein-report-reassures-minimal-threat-of-quantum-computing-to-bitcoin-security-and-mining-operations"
+        "title": "Exodus Introduces \"Exodus Pay\" for Crypto Payments in Select States",
+        "url": "https://decrypt.co/news-explorer?pinned=1376550&amp;title=exodus-introduces-exodus-pay-for-crypto-payments-in-select-states",
+        "publishedAt": null
       },
       {
-        "title": "Michael Saylor Predicts Bitcoin's Bottom at $60,000 Was Driven by Seller Exhaustion and Capital Structure",
-        "url": "https://decrypt.co/news-explorer?pinned=1373782&title=michael-saylor-predicts-bitcoins-bottom-at-60000-was-driven-by-seller-exhaustion-and-capital-structure"
+        "title": "Zcash Is Soaring Again as Myriad Traders Predict $420 Price Ahead",
+        "url": "https://decrypt.co/news-explorer?pinned=1376551&amp;title=zcash-is-soaring-again-as-myriad-traders-predict-420-price-ahead",
+        "publishedAt": null
       },
       {
-        "title": "Coinbase's EU Growth Hinges on Alignment Between US and EU Regulations, Says Exec",
-        "url": "https://decrypt.co/news-explorer?pinned=1373735&title=coinbases-eu-growth-hinges-on-alignment-between-us-and-eu-regulations-says-exec"
+        "title": "World Liberty Financial's WLFI Token Plummets Amid Controversy Over DeFi Loan, Token Unlocks",
+        "url": "https://decrypt.co/news-explorer?pinned=1376471&amp;title=world-liberty-financials-wlfi-token-plummets-amid-controversy-over-defi-loan-token-unlocks",
+        "publishedAt": null
       },
       {
-        "title": "Hyperliquid Users Hit With Massive Liquidations Due to Plunging Oil Prices",
-        "url": "https://decrypt.co/news-explorer?pinned=1373710&title=hyperliquid-users-hit-with-massive-liquidations-due-to-plunging-oil-prices"
+        "title": "BitTensor TAO Token Dives as Departing AI Builder Alleges 'Decentralization Theater'",
+        "url": "https://decrypt.co/news-explorer?pinned=1376449&amp;title=bittensor-tao-token-dives-as-departing-ai-builder-alleges-decentralization-theater",
+        "publishedAt": null
       },
       {
-        "title": "Cloudflare Prioritizes Post-Quantum Authentication By 2029 to Protect Against Cryptography Threats",
-        "url": "https://decrypt.co/news-explorer?pinned=1373698&title=cloudflare-prioritizes-post-quantum-authentication-by-2029-to-protect-against-cryptography-threats"
+        "title": "Crypto Exchange Binance Offers UAE Staff Relocation Options Amid Iran War",
+        "url": "https://decrypt.co/news-explorer?pinned=1376219&amp;title=crypto-exchange-binance-offers-uae-staff-relocation-options-amid-iran-war",
+        "publishedAt": null
       },
       {
-        "title": "Bored Ape Yacht Club Creator Yuga Labs Settles Copyright Lawsuit With Ryder Ripps",
-        "url": "https://decrypt.co/news-explorer?pinned=1373674&title=bored-ape-yacht-club-creator-yuga-labs-settles-copyright-lawsuit-with-ryder-ripps"
+        "title": "Hong Kong Licenses HSBC and Standard Chartered-Led Group to Issue Stablecoins",
+        "url": "https://decrypt.co/news-explorer?pinned=1376003&amp;title=hong-kong-licenses-hsbc-and-standard-chartered-led-group-to-issue-stablecoins",
+        "publishedAt": null
       },
       {
-        "title": "Is Adam Back Really Bitcoin Creator Satoshi Nakamoto? NYT Says Yes, But He Denies It",
-        "url": "https://decrypt.co/news-explorer?pinned=1373515&title=is-adam-back-really-bitcoin-creator-satoshi-nakamoto-nyt-says-yes-but-he-denies-it"
+        "title": "Japan's Draft Amendment Would Classify Cryptocurrencies As Financial Products",
+        "url": "https://decrypt.co/news-explorer?pinned=1375986&amp;title=japans-draft-amendment-would-classify-cryptocurrencies-as-financial-products",
+        "publishedAt": null
       },
       {
-        "title": "Standard Chartered May Merge Zodia Custody's Crypto Business With Its Digital Asset Division",
-        "url": "https://decrypt.co/news-explorer?pinned=1373445&title=standard-chartered-may-merge-zodia-custodys-crypto-business-with-its-digital-asset-division"
+        "title": "Bitcoin Treasury Firm Nakamoto Weighs Reverse Stock Split With Price Below $1",
+        "url": "https://decrypt.co/news-explorer?pinned=1375978&amp;title=bitcoin-treasury-firm-nakamoto-weighs-reverse-stock-split-with-price-below-1",
+        "publishedAt": null
       },
       {
-        "title": "SEC Enforcement Actions Fell in 2025 as Regulator Took Friendlier Approach to Crypto",
-        "url": "https://decrypt.co/news-explorer?pinned=1373411&title=sec-enforcement-actions-fell-in-2025-as-regulator-took-friendlier-approach-to-crypto"
+        "title": "Is XRP Better Protected Against Quantum Computing Than Bitcoin?",
+        "url": "https://decrypt.co/news-explorer?pinned=1375885&amp;title=is-xrp-better-protected-against-quantum-computing-than-bitcoin",
+        "publishedAt": null
+      },
+      {
+        "title": "OKX Ventures, HashKey Capital Invest in CAEX to Meet Vietnam's Regulated Crypto Trading Requirements",
+        "url": "https://decrypt.co/news-explorer?pinned=1375767&amp;title=okx-ventures-hashkey-capital-invest-in-caex-to-meet-vietnams-regulated-crypto-trading-requirements",
+        "publishedAt": null
+      },
+      {
+        "title": "Coinbase, Binance, US Secret Service, and UK's NCA Froze $12 Million in Stolen Crypto Funds",
+        "url": "https://decrypt.co/news-explorer?pinned=1375677&amp;title=coinbase-binance-us-secret-service-and-uks-nca-froze-12-million-in-stolen-crypto-funds",
+        "publishedAt": null
+      },
+      {
+        "title": "Kalshi Makes Up 89% of US Prediction Market, Says Bank of America",
+        "url": "https://decrypt.co/news-explorer?pinned=1375377&amp;title=kalshi-makes-up-89-of-us-prediction-market-says-bank-of-america",
+        "publishedAt": null
+      },
+      {
+        "title": "Crypto Firms Can Now Access Treasury's Cybersecurity Info to Bolster Defense Against Attacks",
+        "url": "https://decrypt.co/news-explorer?pinned=1375242&amp;title=crypto-firms-can-now-access-treasurys-cybersecurity-info-to-bolster-defense-against-attacks",
+        "publishedAt": null
+      },
+      {
+        "title": "Emerging Tech Hub Exploring Ahead of the Cutting Edge Discover Now",
+        "url": "https://decrypt.co/emerge",
+        "publishedAt": null
       }
     ]
   },
@@ -143,69 +493,107 @@
     "source": "SEC Press Releases",
     "url": "https://www.sec.gov/news/pressreleases",
     "kind": "secondary",
-    "parser": "sec",
     "success": true,
-    "fallback": false,
     "items": [
       {
+        "title": "Skip to search field",
+        "url": "https://www.sec.gov/news/pressreleases#global-search-box",
+        "publishedAt": null
+      },
+      {
+        "title": "Skip to main content",
+        "url": "https://www.sec.gov/news/pressreleases#main-content",
+        "publishedAt": null
+      },
+      {
         "title": "Variable Insurance Products Search",
-        "url": "https://www.sec.gov/search-filings/variable-insurance-products-search"
+        "url": "https://www.sec.gov/search-filings/variable-insurance-products-search",
+        "publishedAt": null
       },
       {
         "title": "Public Dissemination Service (PDS)",
-        "url": "https://www.sec.gov/search-filings/public-dissemination-service-system-contact"
+        "url": "https://www.sec.gov/search-filings/public-dissemination-service-system-contact",
+        "publishedAt": null
       },
       {
         "title": "EDGAR Filer Management Portal",
-        "url": "https://www.filermanagement.edgarfiling.sec.gov/filermgmt/Welcome/EDGARFilerMgmtMain.htm"
+        "url": "https://www.filermanagement.edgarfiling.sec.gov/filermgmt/Welcome/EDGARFilerMgmtMain.htm",
+        "publishedAt": null
       },
       {
         "title": "Online Forms Management Portal",
-        "url": "https://www.onlineforms.edgarfiling.sec.gov/Welcome/EDGAROnlineFormsLogin.htm"
+        "url": "https://www.onlineforms.edgarfiling.sec.gov/Welcome/EDGAROnlineFormsLogin.htm",
+        "publishedAt": null
       },
       {
         "title": "Filer Support & Resources",
-        "url": "https://www.sec.gov/submit-filings/filer-support-resources"
+        "url": "https://www.sec.gov/submit-filings/filer-support-resources",
+        "publishedAt": null
       },
       {
         "title": "Statistics & Data Visualizations",
-        "url": "https://www.sec.gov/data-research/statistics-data-visualizations"
+        "url": "https://www.sec.gov/data-research/statistics-data-visualizations",
+        "publishedAt": null
+      },
+      {
+        "title": "Statutes & Regulations",
+        "url": "https://www.sec.gov/rules-regulations/statutes-regulations",
+        "publishedAt": null
       },
       {
         "title": "No-Action, Interpretive, and Exemptive Letters",
-        "url": "https://www.sec.gov/rules-regulations/no-action-interpretive-exemptive-letters"
+        "url": "https://www.sec.gov/rules-regulations/no-action-interpretive-exemptive-letters",
+        "publishedAt": null
       },
       {
         "title": "Self-Regulatory Organization Rulemaking",
-        "url": "https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking"
+        "url": "https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking",
+        "publishedAt": null
       },
       {
         "title": "Public Petitions for Rulemaking",
-        "url": "https://www.sec.gov/rules-regulations/petitions-rulemaking-submitted-to-sec"
+        "url": "https://www.sec.gov/rules-regulations/petitions-rulemaking-submitted-to-sec",
+        "publishedAt": null
+      },
+      {
+        "title": "Enforcement & Litigation",
+        "url": "https://www.sec.gov/enforcement-litigation",
+        "publishedAt": null
       },
       {
         "title": "Administrative Proceedings",
-        "url": "https://www.sec.gov/enforcement-litigation/administrative-proceedings"
+        "url": "https://www.sec.gov/enforcement-litigation/administrative-proceedings",
+        "publishedAt": null
       },
       {
         "title": "Administrative Law Judge Orders and Initial Decisions",
-        "url": "https://www.sec.gov/enforcement-litigation/administrative-law-judge-orders-initial-decisions"
+        "url": "https://www.sec.gov/enforcement-litigation/administrative-law-judge-orders-initial-decisions",
+        "publishedAt": null
       },
       {
         "title": "Distributions to Harmed Investors",
-        "url": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors"
+        "url": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors",
+        "publishedAt": null
+      },
+      {
+        "title": "Examination Priorities",
+        "url": "https://www.sec.gov/compliance/examination-priorities",
+        "publishedAt": null
       },
       {
         "title": "Compliance Outreach Program",
-        "url": "https://www.sec.gov/compliance/compliance-outreach-program"
+        "url": "https://www.sec.gov/compliance/compliance-outreach-program",
+        "publishedAt": null
+      },
+      {
+        "title": "Whistleblower Program",
+        "url": "https://www.sec.gov/enforcement-litigation/whistleblower-program",
+        "publishedAt": null
       },
       {
         "title": "Market Structure Analytics",
-        "url": "https://www.sec.gov/featured-topics/market-structure-analytics"
-      },
-      {
-        "title": "Saving and Investing for Military Personnel",
-        "url": "https://www.sec.gov/featured-topics/saving-investing-military-personnel"
+        "url": "https://www.sec.gov/featured-topics/market-structure-analytics",
+        "publishedAt": null
       }
     ]
   }

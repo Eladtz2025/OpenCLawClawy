@@ -1,144 +1,135 @@
 [
   {
-    "source": "Hapoel PT Official",
-    "url": "https://www.hapoelpt.com/",
+    "source": "Hapoel PT News",
+    "url": "https://www.hapoelpt.com/news",
     "kind": "primary",
-    "parser": "hapoel",
     "success": true,
-    "fallback": false,
     "items": [
       {
-        "title": "הודעת מועדון 22 03",
-        "url": "https://www.hapoelpt.com/post/הודעת-מועדון-22-03"
+        "title": "הודעת מועדון 10 04 לקראת המשחק מול ה ת א",
+        "url": "https://www.hapoelpt.com/post/הודעת-מועדון-10-04-לקראת-המשחק-מול-ה-ת-א",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "training ashdod",
-        "url": "https://www.hapoelpt.com/post/training-ashdod"
-      },
-      {
-        "title": "הודעת מועדון 22 03",
-        "url": "https://www.hapoelpt.com/post/הודעת-מועדון-22-03"
-      },
-      {
-        "title": "training ramat hasharon",
-        "url": "https://www.hapoelpt.com/post/training-ramat-hasharon"
-      },
-      {
-        "title": "training hpt israel youth",
-        "url": "https://www.hapoelpt.com/post/training-hpt-israel-youth"
-      },
-      {
-        "title": "training maccabi tlv",
-        "url": "https://www.hapoelpt.com/post/training-maccabi-tlv"
+        "title": "הודעת מועדון 09 04",
+        "url": "https://www.hapoelpt.com/post/הודעת-מועדון-09-04",
+        "publishedAt": "2026-04-11"
       }
     ]
   },
   {
-    "source": "ONE Hapoel PT",
-    "url": "https://www.one.co.il/",
+    "source": "ynet Sport Israel Soccer",
+    "url": "https://www.ynet.co.il/sport/israelisoccer",
     "kind": "secondary",
-    "parser": "one",
     "success": true,
-    "fallback": false,
     "items": [
       {
-        "title": "19:30 הפועל ב\"ש בני יהודה",
-        "url": "https://www.one.co.il/live/match/470716"
+        "title": "חשיפה | בהפועל ת\"א החליטו: שכרו של אליניב ברדה ישודרג בעונה הבאה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/s1wer00r2zx",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "19:30 הפועל ת\"א אולימפיאקוס",
-        "url": "https://www.one.co.il/live/match/463107"
+        "title": "מאמן הפועל ת\"א ירוויח 70 אלף שקל לחודש, הסכום הגבוה ביותר שהרוויח עד כה בקריירה. בנוסף, האדומים צפויים להציע לו להאריך את חוזהו, כאשר הנוכחי מסתיים בסיום העונה הבאה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/s1wer00r2zx",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "15:00 עירוני מודיעין הפועל ר\"ג",
-        "url": "https://www.one.co.il/live/match/474550"
+        "title": "דווקא אחרי העלייה לגמר הגביע: מכת פציעות בהפועל באר-שבע",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/r1116sts311e",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "15:00 הפועל כפ\"ס מ.ס כפר קאסם",
-        "url": "https://www.one.co.il/live/match/474551"
+        "title": "בלעדי | עומר פרץ סיכם לשנתיים נוספות בהפועל פ\"ת וישודרג ב־33 אחוז",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/b1viu00rn11g",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "15:00 הפועל כפר שלם הפועל חדרה",
-        "url": "https://www.one.co.il/live/match/474552"
+        "title": "אחרי דרמה גדולה: הפועל באר-שבע העפילה לגמר גביע המדינה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/hklitxbnzx",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "15:00 הפועל ראשל\"צ הפועל עכו",
-        "url": "https://www.one.co.il/live/match/474553"
+        "title": "הפרויקט המיוחד של הפועל ירושלים: הקבוצה שעוזרת להתמודד עם פוסט-טראומה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/sksgkee3be",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "15:00 הפועל רעננה הפועל עפולה",
-        "url": "https://www.one.co.il/live/match/474556"
+        "title": "ברדה והפועל ת\"א: חיבור שהדליק ניצוץ | טור",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/sy3gbzr211l",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "היחס להפתעה של בני יהודה מול הפועל ב\"ש ב-'Winner' קבעו: היחס לניצחון של הדרומיים בחצי גמר הגביע הוא פי 1.30, כשסנסציה כתומה שווה ליחס של פי 7.20. וגם: הפועל ומכבי ת\"א ביורוליג 3",
-        "url": "https://www.one.co.il/Article/25-26/1,699,11,55052/519228.html?ref=hp"
+        "title": "כך הציל אליניב ברדה את הפועל ת\"א - ואת הקריירה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/by3bq4nh11e",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "\"הבחירה שלכם מעידה על תעצומות נפש\" בעלי הפועל חיפה יואב כץ שלח לשחקנים הזרים שנשארו בארץ בזמן הלחימה עם איראן מכתב ובו כתב: \"מביע את הערכתי, זה אופי יוצא דופן ומחויבות אמיתית\" 13",
-        "url": "https://www.one.co.il/Article/25-26/1,1,1,53337/519205.html?ref=hp"
+        "title": "הבולגרי, הזר היחיד של הפועל ת\"א שנשאר עד כה בחו\"ל, יטוס ארצה ויגיע בתחילת השבוע הבא כדי להצטרף מחדש לאדומים",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/h1iudlv211x",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "בלי ספינים: חיפה עשתה טעות גדולה בפגרה האזינו: בלי קשר לטעות השיפוט בפנדל נגד הפועל תל אביב, הירוקים לא התכוננו טוב לחזרת המשחקים ונראו רע. וגם: הספינים, התדמית של אזולאי והזרים 59",
-        "url": "https://www.one.co.il/Article/25-26/1,1,4,126491/519065.html?ref=hp"
+        "title": "מאמן הפועל באר-שבע, מחזיקת הגביע, דיבר לקראת המפגש עם בני יהודה ביום חמישי (19:30): \"אנחנו רוצים לשמור על מה ששלנו, צריך להיות מרוכזים\". אלי לוי: \"לא מעניין אותי אם סופרים אותנו או לא, יש לי ביטחון בקבוצה שלי\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/h1dy1vgn11g",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "אליניב ברדה בנה קבוצה שלא תלויה באף שחקן החיסורים בקישור, החזרה של מאיימבו והיציבות שהכניס להגנה, לויזו, עומק הסגל והאם יש סיכוי לאליפות סנסציונית? האזינו לפודקאסט הפועל תל אביב 37",
-        "url": "https://www.one.co.il/Article/25-26/1,1,5,75533/519072.html?ref=hp"
+        "title": "ועדת השיפוט פרסמה את הדוח שלה לאחר ההתמודדות שבה הפסידו הירוקים 2:0 להפועל ת\"א, וקבעו כי התערבות ה-VAR במקרה של הפנדל הראשון לזכות האדומים הייתה שגויה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/bjaoqvmnzl",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הנאום המפתיע של מנכ\"ל הפועל ת\"א: \"רק התחלנו, הקבוצה הזו יכולה לעשות הכול\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/bjpbvrg2we",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "גיא פרימור נכנס לחדר ההלבשה לאחר הניצחון של האדומים 0:2 על מכבי חיפה, ושיבח את השחקנים: \"אתם עושים את כולנו שמחים, אתם משמחים את האוהדים שלנו והופכים את הפועל ת\"א למקום כל-כך מיוחד\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/bjpbvrg2we",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "השיא ההיסטורי של הפועל ת\"א: \"פגענו בול בכל אחד מהשחקנים הזרים\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/bkxvyzgn11g",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הירוקים ראו אתמול את המקום הרביעי מתרחק אחרי ההפסד 2:0 להפועל ת\"א, שבו נשרקו שני פנדלים לטובת האדומים. \"שיפוט שערוריה\", אמרו שם",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/b1s9lqzh11x",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "דריכות במכבי חיפה: \"רוצים לצמצם את הפער מהפועל ת\"א\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/hy6e4bg3we#autoplay",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הרב נתנאל סנדרו בוחניק סיפר לתלמידיו על מצבו של קשר הפועל באר-שבע: \"לקחתי לו את התפילין לבדיקה וגילו שב'וכתבתם' ה-ת' ו-מ' היו מודבקות. פסולות. תהפכו את האותיות ומה מקבלים? מת\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/sk0oexz211g",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "בזמן שחלק מהזרים התלבט אם לשוב, הקשר הקפריסאי לא היסס והדגיש את מחויבותו להפועל ת\"א: \"יודע כמה זה חשוב לכם\". הערב (20:30) הוא יעלה בהרכב במשחק החזרה של האדומים לליגה. גם אלטמן, טוריאל ובואטנג יהיו ב-11 של ברדה",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/skuc6mxh11e#autoplay",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "אחרי הניצחון הגדול על הפועל חיפה, מאמן מכבי ת\"א התייחס לתקרית שנחשפה ב-ynet: \"ראיתם שהתכוננו כמו שצריך\". על מרוץ האליפות: \"באר-שבע? הכל תלוי בה\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/hjog9vxnze",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הפועל באר-שבע ממשיכה לאבד גובה: \"שחקנים יצטרכו לתת יותר מעצמם\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/skbyhojhwx",
+        "publishedAt": "2026-04-11"
       }
     ]
   },
   {
-    "source": "Sport5",
-    "url": "https://www.sport5.co.il/",
+    "source": "Walla Sport",
+    "url": "https://sports.walla.co.il/category/157",
     "kind": "secondary",
-    "parser": "sport5",
-    "success": true,
-    "fallback": false,
-    "items": [
-      {
-        "title": "המנהלת הודיעה כי בית\"ר-הפועל י-ם נדחה ובכך תתאפשר כניסת קהל. כל הפרטים",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=539614"
-      },
-      {
-        "title": "בית הדין דחה את ערעורו של בעלי הפועל ת\"א, שיאלץ לשלם סכום נכבד",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=274&docID=539667"
-      },
-      {
-        "title": "בדרך לפיינל 4? התחזית העדכנית להפועל ת\"א",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=405&docID=539662"
-      },
-      {
-        "title": "פערים במו\"מ: הצעת הפועל פ\"ת לעומר פרץ",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=11840&docID=539632"
-      },
-      {
-        "title": "בקבוצה קיבלו ביטחון לקראת הפועל חיפה. גיל לב פנה למנהלת ולראש העיר",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=539618"
-      },
-      {
-        "title": "בית\"ר ממשיכה בהכנות לקראת הפועל י-ם. ברק יצחקי יחזור ל-4:3:3",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=539605"
-      },
-      {
-        "title": "מכבי תלויה בהפועל? התרחישים ביורוליג",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=405&docID=539540"
-      },
-      {
-        "title": "השורד איטודיס: הנוקאאוט של הפועל ת\"א",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=405&docID=539543"
-      },
-      {
-        "title": "אם יעפילו לפלייאוף: המענק של שחקני הפועל",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=11840&docID=539530"
-      },
-      {
-        "title": "רשמה 39:40 בחוץ על המוליכה. 28:31 להפועל ראשל\"צ על הפועל אשדוד",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=616&docID=539419"
-      },
-      {
-        "title": "כך הפועל עשויה לקבוע את גורלה של מכבי",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=11252&docID=539291"
-      }
-    ]
+    "success": false,
+    "items": []
   }
 ]

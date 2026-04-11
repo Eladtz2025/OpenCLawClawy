@@ -3,69 +3,323 @@
     "source": "ynet News",
     "url": "https://www.ynet.co.il/news",
     "kind": "primary",
-    "parser": "ynet",
     "success": true,
-    "fallback": false,
     "items": [
       {
-        "title": "מטחים לקריית שמונה, חוסל מזכירו של מזכ\"ל חיזבאללה נעים קאסם",
-        "url": "https://www.ynet.co.il/news/blogs/article/bkwfnje2zg#autoplay"
+        "title": "רבבות בעצרת אנטי-אורבן בבודפשט, עם האמנים הגדולים במדינה | צפו",
+        "url": "https://www.ynet.co.il/news/article/ryixjqwhzx#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "הצעד שהביא לאזהרת הרמטכ\"ל ונשמר בסוד: הקבינט אישר 34 יישובים ביו\"ש",
-        "url": "https://www.ynet.co.il/news/article/r14vvrnhbe"
+        "title": "מלכודת בינת ג'ביל: כך צה\"ל כיתר עשרות מחבלי חיזבאללה | צפו במפה",
+        "url": "https://www.ynet.co.il/news/article/r11grpdnwl#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "עוד 3 שבועות, ועד כיתות ט': קיש מקדם את הרחבת \"ביה\"ס של החופש הגדול\"",
-        "url": "https://www.ynet.co.il/news/article/r1aqtp43zl#autoplay"
+        "title": "התיאור המפורט ביותר על מצבו של מוג'תבא - ומתי ייצא מהמסתור",
+        "url": "https://www.ynet.co.il/news/article/rkrtbdw3bg#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "\"המדינות נבחנו ונכשלו? חלק\": הודאת מזכ\"ל נאט\"ו, אחרי פגישה עם טראמפ",
-        "url": "https://www.ynet.co.il/news/article/syzo12vh11g"
+        "title": "ישראל תקפה את נשיא דרום קוריאה: \"תבדוק לפני שאתה מפרסם\"",
+        "url": "https://www.ynet.co.il/news/article/skc4vtvhwl",
+        "publishedAt": "2026-04-11"
       },
       {
         "title": "התושבים שעוזבים מספרים: \"איראן נהרסת לנגד עינינו\"",
-        "url": "https://www.ynet.co.il/news/article/sjtuircsbg#autoplay"
+        "url": "https://www.ynet.co.il/news/article/sjtuircsbg#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
         "title": "\"חתרנו למגע - ואיבדנו את הטובים ביותר\": מג\"ד הנח\"ל משחזר את הקרב הקשה בלבנון",
-        "url": "https://www.ynet.co.il/news/article/yokra14729180"
+        "url": "https://www.ynet.co.il/news/article/yokra14729180",
+        "publishedAt": "2026-04-11"
       },
       {
         "title": "\"ישו נגד מוחמד\": הגסת' רואה במלחמה כעימות דתי, ואפילו האפיפיור לא שותק",
-        "url": "https://www.ynet.co.il/news/article/h191yv0jbe"
+        "url": "https://www.ynet.co.il/news/article/h191yv0jbe",
+        "publishedAt": "2026-04-11"
       },
       {
         "title": "חברם לצוות של הרוגי הנח\"ל: \"מקסים היה התרופה שלנו, גלעד תמיד הצטיין\"",
-        "url": "https://www.ynet.co.il/news/article/r1keafks11x"
+        "url": "https://www.ynet.co.il/news/article/r1keafks11x",
+        "publishedAt": "2026-04-11"
       },
       {
         "title": "\"בשנה שעברה בעזה, עכשיו בגבול לבנון\": עם הלוחמים שחגגו את הסדר במוצב",
-        "url": "https://www.ynet.co.il/news/article/yokra14728489"
+        "url": "https://www.ynet.co.il/news/article/yokra14728489",
+        "publishedAt": "2026-04-11"
       },
       {
         "title": "מלחמה בלי סוף: האיומים האיראניים - והתרחישים שישחקו לטובתם",
-        "url": "https://www.ynet.co.il/news/article/sy11t1tijbl#autoplay"
+        "url": "https://www.ynet.co.il/news/article/sy11t1tijbl#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "ביטחוני - פוליטי - מדיני",
-        "url": "https://www.ynet.co.il/news/category/185"
+        "title": "אשת חיל - הגרסה הקרבית: \"שרות בסוואנה שירי שבת בדרך ללחימה\"",
+        "url": "https://www.ynet.co.il/news/article/rkblhdsh11e",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "עוד בביטחוני - פוליטי - מדיני",
-        "url": "https://www.ynet.co.il/news/category/185"
+        "title": "שגרירי לבנון וישראל בארה\"ב שוחחו - וייפגשו בשבוע הבא",
+        "url": "https://www.ynet.co.il/news/article/rjofyhlnzg#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "צה\"ל: חיסלנו מחבל של חמאס שעבד במסווה של עיתונאי אל-ג'זירה",
-        "url": "https://www.ynet.co.il/news/article/byy11xkhn11x#autoplay"
+        "title": "ארה\"ב על נאום הרחבת גבולות ישראל של סמוטריץ': \"טראמפ לא תומך בסיפוח הגדה\"",
+        "url": "https://www.ynet.co.il/news/article/hjyxlpu2zx#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "טובאל קיבל הצטיינות על השירות בעזה: \"לא הספיק לנוח ועבר ללבנון. משם הוא כבר לא חזר אלינו\"",
-        "url": "https://www.ynet.co.il/news/article/sjpfqxv3zg#autoplay"
+        "title": "הלחץ ירד מביירות: עשרות מחבלי חיזבאללה מכותרים בבינת ג'ביל",
+        "url": "https://www.ynet.co.il/news/article/bjl2f9l3be#autoplay",
+        "publishedAt": "2026-04-11"
       },
       {
-        "title": "הפער הבלתי נסבל בין מילים וטילים: ההבטחות של נתניהו מול המציאות הכואבת | פרשנות",
-        "url": "https://www.ynet.co.il/news/article/bjl2pln3zl#autoplay"
+        "title": "הסימנים מסביבת טראמפ: הנשיא לא יגיע לישראל ביום העצמאות",
+        "url": "https://www.ynet.co.il/news/article/r1id3ki3wl#autoplay",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "ואנס הזהיר, באיראן משגרים מסרים סותרים על לבנון",
+        "url": "https://www.ynet.co.il/news/article/sjcmwfin11g#autoplay",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "ספרד סולקה מהמפקדה בקריית גת: \"יש לה אובססיה אנטי-ישראלית\"",
+        "url": "https://www.ynet.co.il/news/article/bkafr8lnwl",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "פסימיות בישראל: תוצאות המלחמה עם איראן בולמות נתיב נורמליזציה עם המפרץ",
+        "url": "https://www.ynet.co.il/news/article/hkmqzvln11g#autoplay",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "חלונות נופצו, נחקר מניע אנטישמי: נזק כבד למסעדה ישראלית במינכן",
+        "url": "https://www.ynet.co.il/news/article/bygmjhun11l#autoplay",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "\"כשהתקבלת לגולני היית מאושר\". הובא למנוחות טובאל יוסף ליפשיץ, שנפל בלבנון",
+        "url": "https://www.ynet.co.il/news/article/hyo11fhhnbl#autoplay",
+        "publishedAt": "2026-04-11"
+      }
+    ]
+  },
+  {
+    "source": "Maariv News",
+    "url": "https://www.maariv.co.il/news",
+    "kind": "secondary",
+    "success": true,
+    "items": [
+      {
+        "title": "article 1308482",
+        "url": "https://www.maariv.co.il/news/world/article-1308482",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308475",
+        "url": "https://www.maariv.co.il/news/world/article-1308475",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308469",
+        "url": "https://www.maariv.co.il/news/world/article-1308469",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308465",
+        "url": "https://www.maariv.co.il/news/world/article-1308465",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308445",
+        "url": "https://www.maariv.co.il/news/world/article-1308445",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308435",
+        "url": "https://www.maariv.co.il/news/world/article-1308435",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308428",
+        "url": "https://www.maariv.co.il/news/world/article-1308428",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308415",
+        "url": "https://www.maariv.co.il/news/world/article-1308415",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308411",
+        "url": "https://www.maariv.co.il/news/world/article-1308411",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308406",
+        "url": "https://www.maariv.co.il/news/world/article-1308406",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308394",
+        "url": "https://www.maariv.co.il/news/world/article-1308394",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308400",
+        "url": "https://www.maariv.co.il/news/world/article-1308400",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308391",
+        "url": "https://www.maariv.co.il/news/world/article-1308391",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308482",
+        "url": "https://www.maariv.co.il/news/world/article-1308482",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308475",
+        "url": "https://www.maariv.co.il/news/world/article-1308475",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308469",
+        "url": "https://www.maariv.co.il/news/world/article-1308469",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308465",
+        "url": "https://www.maariv.co.il/news/world/article-1308465",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308445",
+        "url": "https://www.maariv.co.il/news/world/article-1308445",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308435",
+        "url": "https://www.maariv.co.il/news/world/article-1308435",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "article 1308428",
+        "url": "https://www.maariv.co.il/news/world/article-1308428",
+        "publishedAt": "2026-04-11"
+      }
+    ]
+  },
+  {
+    "source": "Israel Hayom News",
+    "url": "https://www.israelhayom.co.il/news",
+    "kind": "secondary",
+    "success": true,
+    "items": [
+      {
+        "title": "\"אירוע טראומתי\": אב הכה נער בבי\"ס יסודי במרכז, ויישלח לעבודות שירות",
+        "url": "https://www.israelhayom.co.il/news/crime/article/20300098",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הרמטכ\"ל שעומד לצד ישראל מפתיע: \"ארה\"ב תסבול על הפעולות באיראן\"",
+        "url": "https://www.israelhayom.co.il/news/world-news/other/article/20299957",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "\"מוג'תבא איבד רגל, פניו התעוותו - אבל הוא עדיין חד\"",
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299793",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "דיווח: איראן איבדה את המעקב אחר המוקשים שהטילה במצרי הורמוז",
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299286",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "לפי הדיווח, ארה״ב התקשתה במעקב אחר הסירות הקטנות שבהן השתמשה איראן להט",
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299286",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "המודיעין בארה\"ב מעריך: לאיראן נותרו אלפי טילים ויכולת להשמיש משגרים",
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299248",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "איראן מחזיקה עדיין בארסנל אלפי טילים בליסטיים, שבהם היא יכולה לעשות שי",
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299248",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הדרמה בהונגריה: טראמפ מבטיח תמיכה כלכלית, 100 אלף התייצבו נגד אורבן",
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20299116",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "פיטר מגיאר מציב בפני רה\"מ \"הנצחי\" ויקטור אורבן אתגר של ממש • טראמפ הבט",
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20299116",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "האיראנים טוענים: ארה\"ב הסכימה לשחרור הנכסים המוקפאים כתנאי למו\"מ, הבית הלבן מכחיש",
+        "url": "https://www.israelhayom.co.il/news/defense/article/20299031",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "נציגי המשלחות למשא ומתן בין ארה\"ב לאיראן הגיעו לפקיסטן, במקביל - ארה\"",
+        "url": "https://www.israelhayom.co.il/news/defense/article/20299031",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הבית הלבן: \"אין הסכם לשחרור הנכסים האיראניים המוקפאים\"",
+        "url": "https://www.israelhayom.co.il/news/geopolitics/article/20299534",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "דיווח: איראן איבדה את המעקב אחר המוקשים שהטילה במצרי הורמוז",
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299286",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "המודיעין בארה\"ב מעריך: לאיראן נותרו אלפי טילים ויכולת להשמיש משגרים",
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20299248",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "הדרמה בהונגריה: טראמפ מבטיח תמיכה כלכלית, 100 אלף התייצבו נגד אורבן",
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20299116",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "אחרי שי-לי עטרי: המתלוננת השנייה נגד החשוד באונס נחשפת",
+        "url": "https://www.israelhayom.co.il/news/crime/article/20298924",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "דיווח: הבכיר האיראני שדרש שסגנו של טראמפ יוביל את השיחות",
+        "url": "https://www.israelhayom.co.il/news/world-news/article/20298787",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "בן ארי נגד דרעי: \"משקר בלי למצמץ, ובעיקר עסקן קטן חסר לב\"",
+        "url": "https://www.israelhayom.co.il/news/politics/article/20296273",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "תעלה המשואה: אלו הדמויות שנבחרו להדליק משואות בטקס יום העצמאות",
+        "url": "https://www.israelhayom.co.il/news/politics/article/20293973",
+        "publishedAt": "2026-04-11"
+      },
+      {
+        "title": "נתניהו עידכן את שרי הקבינט על המו\"מ עם לבנון - וחטף ביקורת קשה",
+        "url": "https://www.israelhayom.co.il/news/politics/article/20293580",
+        "publishedAt": "2026-04-11"
       }
     ]
   },
@@ -73,88 +327,108 @@
     "source": "Times of Israel",
     "url": "https://www.timesofisrael.com/",
     "kind": "secondary",
-    "parser": "toi",
     "success": true,
-    "fallback": false,
     "items": [
       {
         "title": "Support ToI and remove all ads",
-        "url": "https://crm.timesofisrael.com/sign-up"
+        "url": "https://crm.timesofisrael.com/sign-up",
+        "publishedAt": null
       },
       {
         "title": "Tech Israel Updates from Silicon Wadi",
-        "url": "https://www.timesofisrael.com/tech-israel-edition/"
+        "url": "https://www.timesofisrael.com/tech-israel-edition/",
+        "publishedAt": null
       },
       {
         "title": "Real Estate Israel Monthly Update",
-        "url": "https://www.timesofisrael.com/real-estate-israel-edition/"
+        "url": "https://www.timesofisrael.com/real-estate-israel-edition/",
+        "publishedAt": null
       },
       {
         "title": "The Weekend Edition The Best Reads of the Week",
-        "url": "https://www.timesofisrael.com/the-weekend-edition/"
+        "url": "https://www.timesofisrael.com/the-weekend-edition/",
+        "publishedAt": null
       },
       {
         "title": "Weekly Highlights Choice Voices From The Blogs",
-        "url": "https://www.timesofisrael.com/the-blogs-edition/"
+        "url": "https://www.timesofisrael.com/the-blogs-edition/",
+        "publishedAt": null
       },
       {
         "title": "North New Jersey The Jewish Standard",
-        "url": "https://jewishstandard.timesofisrael.com/"
+        "url": "https://jewishstandard.timesofisrael.com/",
+        "publishedAt": null
       },
       {
         "title": "Pittsburgh Jewish Chronicle",
-        "url": "https://jewishchronicle.timesofisrael.com/"
+        "url": "https://jewishchronicle.timesofisrael.com/",
+        "publishedAt": null
       },
       {
         "title": "For Publishers Become a Partner",
-        "url": "https://www.timesofisrael.com/local/"
+        "url": "https://www.timesofisrael.com/local/",
+        "publishedAt": null
       },
       {
         "title": "About The Times of Israel",
-        "url": "https://www.timesofisrael.com/about/"
+        "url": "https://www.timesofisrael.com/about/",
+        "publishedAt": null
       },
       {
         "title": "Advertise on The Times of Israel",
-        "url": "https://www.timesofisrael.com/advertise/"
+        "url": "https://www.timesofisrael.com/advertise/",
+        "publishedAt": null
       },
       {
-        "title": "IDF says it killed Hezbollah chief's secretary as rocket fire from Lebanon persists",
-        "url": "https://www.timesofisrael.com/liveblog-april-09-2026/"
+        "title": "With Pakistan talks underway, Iran state TV says red lines include control of Hormuz, Lebanon truce",
+        "url": "https://www.timesofisrael.com/liveblog-april-11-2026/",
+        "publishedAt": null
       },
       {
-        "title": "Saudi, Iranian FMs officially speak for first time since war began",
-        "url": "https://www.timesofisrael.com/liveblog_entry/saudi-iranian-fms-officially-speak-for-first-time-since-war-began/"
+        "title": "Vance, Iranian delegates separately meet Pakistani PM in Islamabad * Senior US official denies Washington agreed to release frozen Iranian assets in Qatar, foreign banks, to ensure opening of Hormuz",
+        "url": "https://www.timesofisrael.com/liveblog-april-11-2026/",
+        "publishedAt": null
       },
       {
-        "title": "Education Ministry to extend summer programs, add middle school catch-up initiative after weeks of closures",
-        "url": "https://www.timesofisrael.com/liveblog_entry/education-ministry-to-extend-summer-programs-add-middle-school-catch-up-initiative-after-weeks-of-closures/"
+        "title": "Two troops moderately hurt in clash with Hezbollah gunmen in south Lebanon",
+        "url": "https://www.timesofisrael.com/liveblog_entry/two-troops-moderately-hurt-in-clash-with-hezbollah-gunmen-in-south-lebanon/",
+        "publishedAt": null
       },
       {
-        "title": "Iran-linked group claims to hack ex-IDF chief's devices, posts footage of work and family life",
-        "url": "https://www.timesofisrael.com/liveblog_entry/iran-linked-group-claims-to-hack-ex-idf-chiefs-devices-posts-footage-of-work-and-family-life/"
+        "title": "Trump says empty oil tankers heading to US to fill up on 'sweetest' oil and gas",
+        "url": "https://www.timesofisrael.com/liveblog_entry/trump-says-empty-oil-tankers-heading-to-us-to-fill-up-on-sweetest-oil-and-gas/",
+        "publishedAt": null
       },
       {
-        "title": "Italy, Spain, China join chorus of condemnations against Lebanon strikes, say they were truce violation",
-        "url": "https://www.timesofisrael.com/liveblog_entry/italy-spain-china-join-chorus-of-condemnations-against-lebanon-strikes-say-they-were-truce-violation/"
+        "title": "Iranian state TV says Tehran's red lines include authority over Hormuz, ceasefire in Lebanon",
+        "url": "https://www.timesofisrael.com/liveblog_entry/iranian-state-tv-says-tehrans-red-lines-include-authority-over-hormuz-ceasefire-in-lebanon/",
+        "publishedAt": null
+      },
+      {
+        "title": "Lebanon says 10 killed in Israeli strikes on south Lebanon",
+        "url": "https://www.timesofisrael.com/liveblog_entry/lebanon-says-10-killed-in-israeli-strikes-on-south-lebanon/",
+        "publishedAt": null
+      },
+      {
+        "title": "NYT: Hormuz still shut because Iran can't find own mines",
+        "url": "https://www.timesofisrael.com/us-intel-said-to-assess-iran-can-recover-underground-launchers-fire-thousands-of-missiles/",
+        "publishedAt": null
+      },
+      {
+        "title": "US intel said to assess Iran can recover underground launchers, fire thousands of missiles",
+        "url": "https://www.timesofisrael.com/us-intel-said-to-assess-iran-can-recover-underground-launchers-fire-thousands-of-missiles/",
+        "publishedAt": null
+      },
+      {
+        "title": "Officials concerned Iran will rebuild ballistic capabilities during truce, WSJ says; CNN reports that US intelligence indicates China preparing to ship air defense systems to Iran",
+        "url": "https://www.timesofisrael.com/us-intel-said-to-assess-iran-can-recover-underground-launchers-fire-thousands-of-missiles/",
+        "publishedAt": null
+      },
+      {
+        "title": "2,500-year-old infant mass grave cracks open enigma of biblical-era baby burials",
+        "url": "https://www.timesofisrael.com/2500-year-old-infant-mass-grave-cracks-open-enigma-of-biblical-era-baby-burials/",
+        "publishedAt": null
       }
     ]
-  },
-  {
-    "source": "Israel Gov RSS",
-    "url": "https://www.gov.il/he/Departments/news?format=rss",
-    "kind": "secondary",
-    "parser": "rssgov",
-    "success": false,
-    "fallback": true,
-    "items": []
-  },
-  {
-    "source": "Gov.il News",
-    "url": "https://www.gov.il/en/pages/news",
-    "kind": "secondary",
-    "parser": "gov",
-    "success": false,
-    "fallback": true,
-    "items": []
   }
 ]

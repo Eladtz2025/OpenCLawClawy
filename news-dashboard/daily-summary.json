@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-09T09:17:26.492Z",
-  "status": "SUCCESS",
+  "generatedAt": "2026-04-11T12:06:56.342Z",
+  "status": "PARTIAL",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-09T09:17:26.492Z",
-  "sourcesWorkedCount": 15,
-  "fallbackActive": false,
+  "lastPublishedAt": "2026-04-11T12:06:56.342Z",
+  "sourcesWorkedCount": 21,
+  "fallbackActive": true,
   "topicStatus": [
     {
       "topic": "technology",
@@ -15,7 +15,9 @@
       "sourcesWorked": [
         "TechCrunch AI",
         "The Verge Tech",
-        "Google Blog Technology"
+        "The Verge AI",
+        "Google Blog Technology",
+        "Calcalist Tech"
       ],
       "sourcesFailed": []
     },
@@ -41,18 +43,11 @@
       "fallbackActive": false,
       "sourcesWorked": [
         "ynet News",
+        "Maariv News",
+        "Israel Hayom News",
         "Times of Israel"
       ],
-      "sourcesFailed": [
-        {
-          "source": "Israel Gov RSS",
-          "error": "no_items"
-        },
-        {
-          "source": "Gov.il News",
-          "error": "no_items"
-        }
-      ]
+      "sourcesFailed": []
     },
     {
       "topic": "crypto",
@@ -62,6 +57,9 @@
       "fallbackActive": false,
       "sourcesWorked": [
         "CoinDesk",
+        "CoinDesk Bitcoin",
+        "CoinDesk Ethereum",
+        "CoinDesk XRP",
         "Decrypt",
         "SEC Press Releases"
       ],
@@ -71,14 +69,18 @@
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 3,
+      "fallbackActive": true,
       "sourcesWorked": [
-        "Hapoel PT Official",
-        "ONE Hapoel PT",
-        "Sport5"
+        "Hapoel PT News",
+        "ynet Sport Israel Soccer"
       ],
-      "sourcesFailed": []
+      "sourcesFailed": [
+        {
+          "source": "Walla Sport",
+          "error": "no_items"
+        }
+      ]
     }
   ]
 }
