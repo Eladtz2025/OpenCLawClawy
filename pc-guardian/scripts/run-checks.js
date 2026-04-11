@@ -179,21 +179,25 @@ function sendTelegramAlert(alert) {
   const telegram = CONFIG.alerts.telegram || {};
   if (!telegram.bot_token || !telegram.chat_id) return { sent: false, mode: 'disabled', reason: 'telegram_not_configured' };
   if (IS_DRY_RUN) return { sent: true, mode: 'dry-run', reason: 'dry_run' };
-  const payload = JSON.stringify({
+  const tempPath = path.join(ROOT, 'state', 'telegram-payload.json');
+  const payload = {
     chat_id: telegram.chat_id,
     text: formatAlert(alert),
     disable_notification: !!telegram.silent
-  });
+  };
   try {
+    fs.writeFileSync(tempPath, JSON.stringify(payload), 'utf8');
     const out = execFileSync('powershell', [
       '-NoProfile',
       '-ExecutionPolicy', 'Bypass',
       '-Command',
-      "$payload = @'" + payload + "'@ | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot" + String(telegram.bot_token).replace(/'/g, "''") + "/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress"
+      "$payload = Get-Content -Raw -Path '" + tempPath.replace(/'/g, "''") + "' | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot" + String(telegram.bot_token).replace(/'/g, "''") + "/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress"
     ], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: 12000, windowsHide: true }).trim();
+    safeDeleteFile(tempPath);
     const parsed = JSON.parse(out);
     return { sent: !!parsed.ok, mode: 'telegram', response: parsed };
   } catch (error) {
+    safeDeleteFile(tempPath);
     appendLog('Telegram alert failed: ' + error.message);
     return { sent: false, mode: 'telegram', reason: error.message };
   }
