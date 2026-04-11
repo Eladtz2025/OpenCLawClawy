@@ -76,8 +76,8 @@
     "warning_template": "PC Guardian Warning: {summary}",
     "critical_template": "PC Guardian Critical: {summary}",
     "telegram": {
-      "bot_token": "",
-      "chat_id": "",
+      "bot_token": "8375418380:AAF-4Ag53oEBeZlCvq6zOS653iyXbBJIQww",
+      "chat_id": "-1003566973693",
       "silent": false
     }
   },
