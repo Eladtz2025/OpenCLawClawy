@@ -3,4 +3,4 @@ $ProjectRoot = Split-Path -Parent $PSScriptRoot
 Set-Location $ProjectRoot
 
 node .\scripts\run-checks.js *> .\logs\last-run.txt
-powershell -ExecutionPolicy Bypass -File .\scripts\publish-dashboard.ps1 *> .\logs\last-publish.txt
+Write-Output "run-checks completed"
