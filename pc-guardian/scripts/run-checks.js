@@ -144,13 +144,71 @@ function readOpenClawCronJobs() {
   }
   return { jobs: [], source: 'unavailable' };
 }
-function computeAlert(summaryStatus, recentIssues) {
+function computeAlert(summaryStatus, recentIssues, context = {}) {
   const lastSentAt = previousState.alerts?.last_sent_at ? Date.parse(previousState.alerts.last_sent_at) : 0;
   const lastStatus = previousState.alerts?.last_status || null;
   const cooldownMs = (CONFIG.alerts.cooldown_minutes || 20) * 60 * 1000;
   const summary = recentIssues.slice(0, 2).map(x => x.summary).join(' | ') || 'תקין';
   const shouldSend = summaryStatus !== lastStatus || (Date.now() - lastSentAt) > cooldownMs;
-  return { shouldSend, summary, status: summaryStatus };
+  const message = buildHumanAlert(summaryStatus, context);
+  return { shouldSend, summary, status: summaryStatus, message };
+}
+function buildHumanAlert(status, context = {}) {
+  const lines = [];
+  const pingOk = (context.pingResults || []).filter(x => x.ok).map(x => x.target);
+  const webFailed = (context.webResults || []).filter(x => !x.ok).map(x => x.target);
+  const eventCount = Array.isArray(context.recentEvents) ? context.recentEvents.length : 0;
+  const topEventProviders = [...new Set((context.recentEvents || []).map(x => x.ProviderName).filter(Boolean))].slice(0, 3);
+  const cronUnavailable = context.cronSource === 'unavailable';
+
+  if (status === 'CRITICAL') {
+    lines.push('PC Guardian, התראה קריטית');
+    if (webFailed.length && eventCount) lines.push('יש כרגע בעיית גישה חלקית לאינטרנט, ובנוסף נרשמו ' + eventCount + ' שגיאות מערכת בזמן האחרון.');
+    else if (webFailed.length) lines.push('יש כרגע בעיית גישה חלקית לאינטרנט שמשפיעה על חלק מהשירותים שיוצאים החוצה.');
+    else if (eventCount) lines.push('נרשמו ' + eventCount + ' שגיאות מערכת בזמן האחרון, וזה עלול להשפיע על יציבות המחשב או השירותים שרצים עליו.');
+  } else if (status === 'WARNING') {
+    lines.push('PC Guardian, אזהרה');
+    if (webFailed.length && cronUnavailable) lines.push('יש בעיית גישה חלקית לאינטרנט, ובנוסף כרגע אין מידע זמין על cron jobs של OpenClaw.');
+    else if (webFailed.length) lines.push('יש בעיית גישה חלקית לאינטרנט.');
+    else if (cronUnavailable) lines.push('כרגע אין מידע זמין על cron jobs של OpenClaw.');
+    else lines.push('זוהתה חריגה שדורשת תשומת לב.');
+  } else {
+    lines.push('PC Guardian');
+    lines.push('המערכת תקינה כרגע.');
+  }
+
+  const impact = [];
+  if (webFailed.length) impact.push('חלק מהבדיקות, ההתראות או האינטגרציות שצריכות גישה החוצה עלולות להיכשל');
+  if (eventCount) impact.push('ייתכן שיש פגיעה ביציבות המערכת או של רכיב מסוים, בהתאם לשגיאות שנרשמו');
+  if (cronUnavailable) impact.push('כרגע אין תמונת מצב מלאה על cron jobs של OpenClaw');
+  if (impact.length) {
+    lines.push('');
+    lines.push('מה זה משפיע');
+    for (const item of impact) lines.push('- ' + item);
+  }
+
+  const checked = [];
+  if (pingOk.length) checked.push('יש תקשורת ל: ' + pingOk.join(', '));
+  if (webFailed.length) checked.push('נכשל יעד אינטרנט חיצוני: ' + webFailed.join(', '));
+  if (eventCount) checked.push('נמצאו ' + eventCount + ' שגיאות מערכת אחרונות' + (topEventProviders.length ? ', בעיקר מ: ' + topEventProviders.join(', ') : ''));
+  if (cronUnavailable) checked.push('אין כרגע cache זמין של cron jobs מקומיים');
+  if (checked.length) {
+    lines.push('');
+    lines.push('מה כבר נבדק');
+    for (const item of checked) lines.push('- ' + item);
+  }
+
+  const actions = [];
+  if (webFailed.length && topEventProviders.some(x => /Netwtw|Wi-?Fi|WLAN/i.test(x))) actions.push('להפעיל מחדש את מתאם הרשת אם מורגשת תקלה בפועל');
+  if (webFailed.length && !topEventProviders.some(x => /Netwtw|Wi-?Fi|WLAN/i.test(x))) actions.push('להמשיך מעקב, או לבצע recovery לרשת אם השירותים החיצוניים באמת מושפעים');
+  if (eventCount) actions.push('לבדוק את רצף השגיאות האחרון סביב הרכיבים: ' + (topEventProviders.join(', ') || 'Event Viewer'));
+  if (cronUnavailable) actions.push('אם חשוב ניטור cron אמיתי, לחבר מקור מצב יציב ל-cron jobs של OpenClaw');
+  if (!actions.length) actions.push('להמשיך מעקב, כרגע לא נדרשת פעולה');
+  lines.push('');
+  lines.push('הפעולה הבאה המומלצת');
+  actions.slice(0, 3).forEach((item, index) => lines.push((index + 1) + '. ' + item));
+
+  return lines.join('\n');
 }
 function persistAlert(alert, delivery = {}) {
   previousState.alerts = {
@@ -171,9 +229,11 @@ function writeAlertFile(alert, delivery = {}) {
   });
 }
 function formatAlert(alert) {
-  if (alert.status === 'CRITICAL') return CONFIG.alerts.critical_template.replace('{summary}', alert.summary);
-  if (alert.status === 'WARNING') return CONFIG.alerts.warning_template.replace('{summary}', alert.summary);
-  return CONFIG.alerts.normal_template;
+  return alert.message || (alert.status === 'CRITICAL'
+    ? CONFIG.alerts.critical_template.replace('{summary}', alert.summary)
+    : alert.status === 'WARNING'
+      ? CONFIG.alerts.warning_template.replace('{summary}', alert.summary)
+      : CONFIG.alerts.normal_template);
 }
 function sendTelegramAlert(alert) {
   const telegram = CONFIG.alerts.telegram || {};
@@ -347,7 +407,7 @@ const openclawStatus = pickStatus(openclawChecks);
 const overallStatus = pickStatus([{ status: computerStatus }, { status: openclawStatus }]);
 const recentFailures = truncateArray(failures.concat(previousState.recent_failures || []), CONFIG.monitoring.max_dashboard_failures);
 const recentFixes = truncateArray(fixes.concat(previousState.last_fixes || []), 20);
-const alert = computeAlert(overallStatus, recentFailures);
+const alert = computeAlert(overallStatus, recentFailures, { pingResults, webResults, recentEvents, cronSource: cronState.source });
 let alertDelivery = previousState.alerts?.last_delivery || { sent: false, mode: 'none' };
 if (alert.shouldSend) {
   alertDelivery = sendTelegramAlert(alert);

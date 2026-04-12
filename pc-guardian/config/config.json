@@ -2,7 +2,7 @@
   "system_name": "PC Guardian",
   "version": "1.1.0",
   "monitoring": {
-    "interval_minutes": 15,
+    "interval_minutes": 120,
     "connectivity_targets": [
       "1.1.1.1",
       "8.8.8.8"
