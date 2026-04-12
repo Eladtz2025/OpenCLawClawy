@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { URL } = require('url');
+const { applyEditorSelection } = require('./news-editor-runner');
 
 const OUT_DIR = __dirname;
 const LIVE_DIR = path.join(OUT_DIR, 'live-site');
@@ -628,7 +629,10 @@ async function collectTopic(topic) {
   });
 
   let selected = diversify(scored);
-  if (selected.length < 5) {
+  const editorResult = applyEditorSelection(topic.key, scored);
+  if (editorResult.ok && Array.isArray(editorResult.selected) && editorResult.selected.length > 0) {
+    selected = editorResult.selected.slice(0, 5);
+  } else if (selected.length < 5) {
     const missing = scored.filter(item => !selected.some(chosen => chosen.id === item.id)).slice(0, 5 - selected.length);
     selected = [...selected, ...missing];
   }
@@ -640,7 +644,9 @@ async function collectTopic(topic) {
     got: selected.length,
     fallbackActive: selected.length < 5,
     sourcesWorked: runs.filter(r => r.success).map(r => r.source),
-    sourcesFailed: runs.filter(r => !r.success).map(r => ({ source: r.source, error: r.error || 'no_items' }))
+    sourcesFailed: runs.filter(r => !r.success).map(r => ({ source: r.source, error: r.error || 'no_items' })),
+    editorApplied: Boolean(editorResult.ok),
+    editorError: editorResult.ok ? null : (editorResult.error || null)
   };
 
   fs.writeFileSync(path.join(OUT_DIR, `${topic.key}-live.raw.json`), JSON.stringify(runs, null, 2), 'utf8');
@@ -668,7 +674,7 @@ function renderDashboard(items, meta) {
     return `
       <section>
         <div class="section-head"><h2>${escapeHtml(topic.hebrew)}</h2><span>${itemsForTopic.length}/5</span></div>
-        <div class="section-meta">worked: ${topicMeta?.sourcesWorked.length || 0} · failed: ${topicMeta?.sourcesFailed.length || 0} · fallback: ${topicMeta?.fallbackActive ? 'yes' : 'no'}</div>
+        <div class="section-meta">worked: ${topicMeta?.sourcesWorked.length || 0} · failed: ${topicMeta?.sourcesFailed.length || 0} · fallback: ${topicMeta?.fallbackActive ? 'yes' : 'no'} · editor: ${topicMeta?.editorApplied ? 'on' : 'fallback'}</div>
         <div class="grid">${cards}</div>
       </section>
     `;
