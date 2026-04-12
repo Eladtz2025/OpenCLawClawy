@@ -148,29 +148,40 @@ function computeAlert(summaryStatus, recentIssues, context = {}) {
   const lastSentAt = previousState.alerts?.last_sent_at ? Date.parse(previousState.alerts.last_sent_at) : 0;
   const lastStatus = previousState.alerts?.last_status || null;
   const cooldownMs = (CONFIG.alerts.cooldown_minutes || 20) * 60 * 1000;
-  const summary = recentIssues.slice(0, 2).map(x => x.summary).join(' | ') || 'תקין';
-  const shouldSend = summaryStatus !== lastStatus || (Date.now() - lastSentAt) > cooldownMs;
-  const message = buildHumanAlert(summaryStatus, context);
-  return { shouldSend, summary, status: summaryStatus, message };
+  const alertableIssues = recentIssues.filter(issue => !isDashboardOnlyIssue(issue));
+  const effectiveStatus = pickStatus(alertableIssues.map(issue => ({ status: classifyIssueSeverity(issue) })));
+  const summary = alertableIssues.slice(0, 2).map(x => x.summary).join(' | ') || 'תקין';
+  const shouldSend = effectiveStatus !== 'OK' && (effectiveStatus !== lastStatus || (Date.now() - lastSentAt) > cooldownMs);
+  const message = effectiveStatus === 'OK' ? null : buildHumanAlert(effectiveStatus, context, alertableIssues);
+  return { shouldSend, summary, status: effectiveStatus, rawStatus: summaryStatus, message };
 }
-function buildHumanAlert(status, context = {}) {
+function isDashboardOnlyIssue(issue) {
+  const kind = String(issue?.kind || '');
+  const summary = String(issue?.summary || '');
+  return kind === 'Internet Reachability' || /msftconnecttest\.com/i.test(summary);
+}
+function classifyIssueSeverity(issue) {
+  const kind = String(issue?.kind || '');
+  if (kind === 'Critical Events') return 'CRITICAL';
+  if (kind === 'Internet Reachability') return 'OK';
+  return issue?.status || 'WARNING';
+}
+function buildHumanAlert(status, context = {}, issues = []) {
   const lines = [];
   const pingOk = (context.pingResults || []).filter(x => x.ok).map(x => x.target);
   const webFailed = (context.webResults || []).filter(x => !x.ok).map(x => x.target);
   const eventCount = Array.isArray(context.recentEvents) ? context.recentEvents.length : 0;
   const topEventProviders = [...new Set((context.recentEvents || []).map(x => x.ProviderName).filter(Boolean))].slice(0, 3);
   const cronUnavailable = context.cronSource === 'unavailable';
+  const relevantKinds = issues.map(x => String(x.kind || ''));
 
   if (status === 'CRITICAL') {
     lines.push('PC Guardian, התראה קריטית');
-    if (webFailed.length && eventCount) lines.push('יש כרגע בעיית גישה חלקית לאינטרנט, ובנוסף נרשמו ' + eventCount + ' שגיאות מערכת בזמן האחרון.');
-    else if (webFailed.length) lines.push('יש כרגע בעיית גישה חלקית לאינטרנט שמשפיעה על חלק מהשירותים שיוצאים החוצה.');
-    else if (eventCount) lines.push('נרשמו ' + eventCount + ' שגיאות מערכת בזמן האחרון, וזה עלול להשפיע על יציבות המחשב או השירותים שרצים עליו.');
+    if (relevantKinds.includes('Critical Events')) lines.push('נרשמו ' + eventCount + ' שגיאות מערכת בזמן האחרון, וזה עלול להשפיע על יציבות המחשב או השירותים שרצים עליו.');
+    else lines.push('זוהתה תקלה קריטית שדורשת טיפול.');
   } else if (status === 'WARNING') {
     lines.push('PC Guardian, אזהרה');
-    if (webFailed.length && cronUnavailable) lines.push('יש בעיית גישה חלקית לאינטרנט, ובנוסף כרגע אין מידע זמין על cron jobs של OpenClaw.');
-    else if (webFailed.length) lines.push('יש בעיית גישה חלקית לאינטרנט.');
-    else if (cronUnavailable) lines.push('כרגע אין מידע זמין על cron jobs של OpenClaw.');
+    if (cronUnavailable && relevantKinds.includes('Cron Jobs')) lines.push('כרגע אין מידע זמין על cron jobs של OpenClaw.');
     else lines.push('זוהתה חריגה שדורשת תשומת לב.');
   } else {
     lines.push('PC Guardian');
@@ -178,9 +189,8 @@ function buildHumanAlert(status, context = {}) {
   }
 
   const impact = [];
-  if (webFailed.length) impact.push('חלק מהבדיקות, ההתראות או האינטגרציות שצריכות גישה החוצה עלולות להיכשל');
-  if (eventCount) impact.push('ייתכן שיש פגיעה ביציבות המערכת או של רכיב מסוים, בהתאם לשגיאות שנרשמו');
-  if (cronUnavailable) impact.push('כרגע אין תמונת מצב מלאה על cron jobs של OpenClaw');
+  if (relevantKinds.includes('Critical Events')) impact.push('ייתכן שיש פגיעה ביציבות המערכת או של רכיב מסוים, בהתאם לשגיאות שנרשמו');
+  if (cronUnavailable && relevantKinds.includes('Cron Jobs')) impact.push('כרגע אין תמונת מצב מלאה על cron jobs של OpenClaw');
   if (impact.length) {
     lines.push('');
     lines.push('מה זה משפיע');
@@ -189,9 +199,8 @@ function buildHumanAlert(status, context = {}) {
 
   const checked = [];
   if (pingOk.length) checked.push('יש תקשורת ל: ' + pingOk.join(', '));
-  if (webFailed.length) checked.push('נכשל יעד אינטרנט חיצוני: ' + webFailed.join(', '));
-  if (eventCount) checked.push('נמצאו ' + eventCount + ' שגיאות מערכת אחרונות' + (topEventProviders.length ? ', בעיקר מ: ' + topEventProviders.join(', ') : ''));
-  if (cronUnavailable) checked.push('אין כרגע cache זמין של cron jobs מקומיים');
+  if (relevantKinds.includes('Critical Events') && eventCount) checked.push('נמצאו ' + eventCount + ' שגיאות מערכת אחרונות' + (topEventProviders.length ? ', בעיקר מ: ' + topEventProviders.join(', ') : ''));
+  if (cronUnavailable && relevantKinds.includes('Cron Jobs')) checked.push('אין כרגע cache זמין של cron jobs מקומיים');
   if (checked.length) {
     lines.push('');
     lines.push('מה כבר נבדק');
@@ -199,10 +208,8 @@ function buildHumanAlert(status, context = {}) {
   }
 
   const actions = [];
-  if (webFailed.length && topEventProviders.some(x => /Netwtw|Wi-?Fi|WLAN/i.test(x))) actions.push('להפעיל מחדש את מתאם הרשת אם מורגשת תקלה בפועל');
-  if (webFailed.length && !topEventProviders.some(x => /Netwtw|Wi-?Fi|WLAN/i.test(x))) actions.push('להמשיך מעקב, או לבצע recovery לרשת אם השירותים החיצוניים באמת מושפעים');
-  if (eventCount) actions.push('לבדוק את רצף השגיאות האחרון סביב הרכיבים: ' + (topEventProviders.join(', ') || 'Event Viewer'));
-  if (cronUnavailable) actions.push('אם חשוב ניטור cron אמיתי, לחבר מקור מצב יציב ל-cron jobs של OpenClaw');
+  if (relevantKinds.includes('Critical Events')) actions.push('לבדוק את רצף השגיאות האחרון סביב הרכיבים: ' + (topEventProviders.join(', ') || 'Event Viewer'));
+  if (cronUnavailable && relevantKinds.includes('Cron Jobs')) actions.push('אם חשוב ניטור cron אמיתי, לחבר מקור מצב יציב ל-cron jobs של OpenClaw');
   if (!actions.length) actions.push('להמשיך מעקב, כרגע לא נדרשת פעולה');
   lines.push('');
   lines.push('הפעולה הבאה המומלצת');
