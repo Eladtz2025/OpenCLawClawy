@@ -1,33 +1,33 @@
 {
   "system_name": "PC Guardian",
-  "generated_at": "2026-04-12T05:39:39.468Z",
+  "generated_at": "2026-04-12T07:51:17.074Z",
   "overall_status": "WARNING",
   "computer_status": "WARNING",
   "openclaw_status": "WARNING",
   "computer_checks": [
     {
       "name": "CPU",
-      "value": 5.33,
+      "value": 3.88,
       "status": "OK",
-      "summary": "CPU 5.3%"
+      "summary": "CPU 3.9%"
     },
     {
       "name": "RAM",
-      "value": 56.027918781725894,
+      "value": 45.49492385786802,
       "status": "OK",
-      "summary": "RAM 56.0%"
+      "summary": "RAM 45.5%"
     },
     {
       "name": "Disk C:",
-      "value": 162.92,
+      "value": 162.79,
       "status": "OK",
-      "summary": "C: free 162.92GB"
+      "summary": "C: free 162.79GB"
     },
     {
       "name": "Disk Activity",
-      "value": 2.18,
+      "value": 0.03,
       "status": "OK",
-      "summary": "Disk activity 2.2%"
+      "summary": "Disk activity 0.0%"
     },
     {
       "name": "Network Connectivity",
@@ -194,22 +194,22 @@
         {
           "LocalAddress": "::1",
           "LocalPort": 18790,
-          "OwningProcess": 10052
+          "OwningProcess": 12016
         },
         {
           "LocalAddress": "::1",
           "LocalPort": 18789,
-          "OwningProcess": 3952
+          "OwningProcess": 12776
         },
         {
           "LocalAddress": "127.0.0.1",
           "LocalPort": 18790,
-          "OwningProcess": 10052
+          "OwningProcess": 12016
         },
         {
           "LocalAddress": "127.0.0.1",
           "LocalPort": 18789,
-          "OwningProcess": 3952
+          "OwningProcess": 12776
         }
       ],
       "status": "OK",
@@ -254,7 +254,7 @@
       "value": [
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
-          "SizeMB": 0.05
+          "SizeMB": 0.06
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\skills\\.openclaw-install-backups",
@@ -266,7 +266,7 @@
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\agents\\main\\sessions",
-          "SizeMB": 21.88
+          "SizeMB": 22.48
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\browser\\openclaw\\user-data\\Default\\Sessions",
@@ -274,11 +274,11 @@
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\logs",
-          "SizeMB": 0.14
+          "SizeMB": 0.15
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
-          "SizeMB": 0.05
+          "SizeMB": 0.06
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\backups",
@@ -298,6 +298,52 @@
     }
   ],
   "recent_failures": [
+    {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
+    },
     {
       "time": "2026-04-12T05:39:39.468Z",
       "kind": "Internet Reachability",
@@ -464,48 +510,6 @@
     },
     {
       "time": "2026-04-12T04:09:04.263Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": []
-    },
-    {
-      "time": "2026-04-12T04:08:32.360Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ]
-    },
-    {
-      "time": "2026-04-12T04:08:32.360Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": []
-    },
-    {
-      "time": "2026-04-12T04:00:01.376Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ]
-    },
-    {
-      "time": "2026-04-12T04:00:01.376Z",
       "kind": "Cron Jobs",
       "summary": "No cron jobs found (unavailable)",
       "details": []
@@ -642,44 +646,44 @@
   "top_offenders": [
     {
       "name": "SearchIndexer",
-      "cpu": 28693,
-      "memoryMb": 50,
+      "cpu": 28813.5,
+      "memoryMb": 33,
       "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
     },
     {
       "name": "System",
-      "cpu": 19503.7,
-      "memoryMb": 9,
+      "cpu": 19955,
+      "memoryMb": 6,
       "path": ""
     },
     {
       "name": "MsMpEng",
-      "cpu": 18440.7,
-      "memoryMb": 245,
+      "cpu": 18751.7,
+      "memoryMb": 205,
       "path": ""
     },
     {
       "name": "logioptionsplus_agent",
-      "cpu": 13644.8,
-      "memoryMb": 2261,
+      "cpu": 14081.5,
+      "memoryMb": 219,
       "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
     },
     {
       "name": "WmiPrvSE",
-      "cpu": 4190.7,
-      "memoryMb": 29,
+      "cpu": 4296.9,
+      "memoryMb": 27,
       "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
     },
     {
       "name": "svchost",
-      "cpu": 3900.5,
-      "memoryMb": 19,
+      "cpu": 3988.4,
+      "memoryMb": 17,
       "path": "C:\\WINDOWS\\system32\\svchost.exe"
     },
     {
       "name": "Memory Compression",
-      "cpu": 2546.9,
-      "memoryMb": 266,
+      "cpu": 2628,
+      "memoryMb": 481,
       "path": ""
     }
   ],
@@ -735,6 +739,76 @@
   "cron_source": "unavailable",
   "insights": [
     {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
       "time": "2026-04-12T05:39:39.468Z",
       "kind": "Internet Reachability",
       "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
@@ -752,7 +826,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -764,8 +838,8 @@
       "status": "WARNING",
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     },
@@ -786,7 +860,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -797,8 +871,8 @@
       "details": [],
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     },
@@ -819,7 +893,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -830,8 +904,8 @@
       "details": [],
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     },
@@ -852,7 +926,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -863,8 +937,8 @@
       "details": [],
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     },
@@ -885,7 +959,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -896,8 +970,8 @@
       "details": [],
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     },
@@ -918,7 +992,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -929,8 +1003,8 @@
       "details": [],
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     },
@@ -951,7 +1025,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -962,8 +1036,8 @@
       "details": [],
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     },
@@ -984,7 +1058,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -995,74 +1069,8 @@
       "details": [],
       "insight": {
         "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
-        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
-      }
-    },
-    {
-      "time": "2026-04-12T04:08:32.360Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "insight": {
-        "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
-        "next": "להשאיר בדשבורד בלבד, ללא התראה"
-      }
-    },
-    {
-      "time": "2026-04-12T04:08:32.360Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "insight": {
-        "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
-        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
-      }
-    },
-    {
-      "time": "2026-04-12T04:00:01.376Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "insight": {
-        "severity": "INFO",
-        "confidence": "low",
-        "impact": "כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו",
-        "next": "להשאיר בדשבורד בלבד, ללא התראה"
-      }
-    },
-    {
-      "time": "2026-04-12T04:00:01.376Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "insight": {
-        "severity": "INFO",
-        "confidence": "medium",
-        "impact": "אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
     }

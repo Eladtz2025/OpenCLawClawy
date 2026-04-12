@@ -150,12 +150,20 @@ function issueInsight(issue, context = {}) {
   const summary = String(issue?.summary || '');
   const providers = [...new Set((context.recentEvents || []).map(x => x.ProviderName).filter(Boolean))];
   const hasWifiSignal = providers.some(x => /Netwtw|Wi-?Fi|WLAN/i.test(x));
+  const gatewayCount = Array.isArray(context.gateways) ? context.gateways.length : 0;
+  const healthyGateways = (context.gateways || []).filter(x => x.ok).length;
+  const openclawTaskCount = Array.isArray(context.openclawTasks) ? context.openclawTasks.length : 0;
+  const runningOpenclawTasks = (context.openclawTasks || []).filter(x => {
+    const state = String(x.State || '').toLowerCase();
+    const numeric = toNumber(x.State, -1);
+    return state === 'ready' || state === 'running' || numeric === 1 || numeric === 3 || numeric === 4;
+  }).length;
 
   if (kind === 'Internet Reachability' || /msftconnecttest\.com/i.test(summary)) {
     return {
       severity: 'INFO',
       confidence: 'low',
-      impact: 'כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו',
+      impact: 'כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור',
       next: 'להשאיר בדשבורד בלבד, ללא התראה'
     };
   }
@@ -163,24 +171,33 @@ function issueInsight(issue, context = {}) {
     return {
       severity: issue.status === 'CRITICAL' ? 'CRITICAL' : 'WARNING',
       confidence: providers.length ? 'high' : 'medium',
-      impact: hasWifiSignal ? 'יש סימנים לתקלה ברכיב רשת, מה שעלול להשפיע על יציבות או קישוריות' : 'נרשמו שגיאות מערכת עם פוטנציאל להשפעה תפעולית',
+      impact: hasWifiSignal ? 'יש סימנים לתקלה ברכיב רשת, מה שעלול להשפיע על קישוריות ויציבות' : 'נרשמו שגיאות מערכת עם פוטנציאל להשפעה תפעולית',
       next: 'לבדוק את רצף ה-Event Viewer סביב ' + (providers.slice(0, 3).join(', ') || 'הרכיב הבעייתי')
     };
   }
   if (kind === 'Cron Jobs') {
     return {
       severity: 'INFO',
-      confidence: 'medium',
-      impact: 'אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה',
+      confidence: context.cronSource === 'unavailable' ? 'low' : 'medium',
+      impact: 'אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה',
       next: 'להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב'
     };
   }
   if (/gateway/i.test(kind) || /OpenClaw/i.test(kind)) {
+    const confidence = gatewayCount && healthyGateways < gatewayCount ? 'high' : openclawTaskCount && runningOpenclawTasks < openclawTaskCount ? 'high' : 'medium';
     return {
       severity: issue.status === 'CRITICAL' ? 'CRITICAL' : 'WARNING',
-      confidence: 'high',
+      confidence,
       impact: 'עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי',
       next: 'לבצע recovery בטוח רק אם המצב נשאר לא תקין'
+    };
+  }
+  if (kind === 'Important Tasks') {
+    return {
+      severity: 'WARNING',
+      confidence: 'medium',
+      impact: 'עשוי להשפיע על אוטומציות או משימות רקע חשובות',
+      next: 'לבדוק אם המשימה החסרה או המושבתת באמת נדרשת כרגע'
     };
   }
   return {
@@ -443,7 +460,7 @@ const openclawStatus = pickStatus(openclawChecks);
 const overallStatus = pickStatus([{ status: computerStatus }, { status: openclawStatus }]);
 const recentFailures = truncateArray(failures.concat(previousState.recent_failures || []), CONFIG.monitoring.max_dashboard_failures);
 const recentFixes = truncateArray(fixes.concat(previousState.last_fixes || []), 20);
-const alert = computeAlert(overallStatus, recentFailures, { pingResults, webResults, recentEvents, cronSource: cronState.source });
+const alert = computeAlert(overallStatus, recentFailures, { pingResults, webResults, recentEvents, cronSource: cronState.source, gateways, openclawTasks });
 let alertDelivery = previousState.alerts?.last_delivery || { sent: false, mode: 'none' };
 if (alert.shouldSend) {
   alertDelivery = sendTelegramAlert(alert);
