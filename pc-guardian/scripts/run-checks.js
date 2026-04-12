@@ -41,6 +41,7 @@ function runOpenClaw(args, options = {}) {
   return { ok: false, stdout: '', command: null, skipped: true, reason: 'disabled_in_process' };
 }
 function severityRank(status) { return status === 'CRITICAL' ? 3 : status === 'WARNING' ? 2 : status === 'OK' ? 1 : 0; }
+function confidenceRank(level) { return level === 'high' ? 3 : level === 'medium' ? 2 : 1; }
 function pickStatus(items) {
   let status = 'OK';
   for (const item of items) if (severityRank(item.status) > severityRank(status)) status = item.status;
@@ -76,7 +77,7 @@ function writeLog() {
   fs.writeFileSync(file, merged.join(os.EOL) + os.EOL, 'utf8');
   rotateLogs();
 }
-function addFailure(kind, summary, details) { failures.push({ time: now, kind, summary, details }); }
+function addFailure(kind, summary, details, statusHint = null) { failures.push({ time: now, kind, summary, details, status: statusHint }); }
 function addFix(type, target, result, details) { fixes.push({ time: now, type, target, result, details }); }
 function cleanupOldFiles(rule, days) {
   const cutoff = Date.now() - days * 24 * 60 * 60 * 1000;
@@ -144,76 +145,104 @@ function readOpenClawCronJobs() {
   }
   return { jobs: [], source: 'unavailable' };
 }
+function issueInsight(issue, context = {}) {
+  const kind = String(issue?.kind || '');
+  const summary = String(issue?.summary || '');
+  const providers = [...new Set((context.recentEvents || []).map(x => x.ProviderName).filter(Boolean))];
+  const hasWifiSignal = providers.some(x => /Netwtw|Wi-?Fi|WLAN/i.test(x));
+
+  if (kind === 'Internet Reachability' || /msftconnecttest\.com/i.test(summary)) {
+    return {
+      severity: 'INFO',
+      confidence: 'low',
+      impact: 'כנראה משפיע רק על יעד בדיקה חיצוני אחד, לא בהכרח על חיבור האינטרנט עצמו',
+      next: 'להשאיר בדשבורד בלבד, ללא התראה'
+    };
+  }
+  if (kind === 'Critical Events') {
+    return {
+      severity: issue.status === 'CRITICAL' ? 'CRITICAL' : 'WARNING',
+      confidence: providers.length ? 'high' : 'medium',
+      impact: hasWifiSignal ? 'יש סימנים לתקלה ברכיב רשת, מה שעלול להשפיע על יציבות או קישוריות' : 'נרשמו שגיאות מערכת עם פוטנציאל להשפעה תפעולית',
+      next: 'לבדוק את רצף ה-Event Viewer סביב ' + (providers.slice(0, 3).join(', ') || 'הרכיב הבעייתי')
+    };
+  }
+  if (kind === 'Cron Jobs') {
+    return {
+      severity: 'INFO',
+      confidence: 'medium',
+      impact: 'אין תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה',
+      next: 'להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב'
+    };
+  }
+  if (/gateway/i.test(kind) || /OpenClaw/i.test(kind)) {
+    return {
+      severity: issue.status === 'CRITICAL' ? 'CRITICAL' : 'WARNING',
+      confidence: 'high',
+      impact: 'עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי',
+      next: 'לבצע recovery בטוח רק אם המצב נשאר לא תקין'
+    };
+  }
+  return {
+    severity: issue.status === 'CRITICAL' ? 'CRITICAL' : 'WARNING',
+    confidence: 'medium',
+    impact: 'דורש בדיקה תפעולית לפי הרכיב שדווח',
+    next: 'לבדוק אם יש השפעה אמיתית לפני פעולה'
+  };
+}
 function computeAlert(summaryStatus, recentIssues, context = {}) {
   const lastSentAt = previousState.alerts?.last_sent_at ? Date.parse(previousState.alerts.last_sent_at) : 0;
   const lastStatus = previousState.alerts?.last_status || null;
   const cooldownMs = (CONFIG.alerts.cooldown_minutes || 20) * 60 * 1000;
-  const alertableIssues = recentIssues.filter(issue => !isDashboardOnlyIssue(issue));
-  const effectiveStatus = pickStatus(alertableIssues.map(issue => ({ status: classifyIssueSeverity(issue) })));
+  const enriched = recentIssues.map(issue => ({ ...issue, insight: issueInsight(issue, context) }));
+  const alertableIssues = enriched.filter(issue => issue.insight.severity !== 'INFO' && issue.insight.confidence !== 'low');
+  const effectiveStatus = pickStatus(alertableIssues.map(issue => ({ status: issue.insight.severity === 'CRITICAL' ? 'CRITICAL' : 'WARNING' })));
   const summary = alertableIssues.slice(0, 2).map(x => x.summary).join(' | ') || 'תקין';
   const shouldSend = effectiveStatus !== 'OK' && (effectiveStatus !== lastStatus || (Date.now() - lastSentAt) > cooldownMs);
   const message = effectiveStatus === 'OK' ? null : buildHumanAlert(effectiveStatus, context, alertableIssues);
-  return { shouldSend, summary, status: effectiveStatus, rawStatus: summaryStatus, message };
-}
-function isDashboardOnlyIssue(issue) {
-  const kind = String(issue?.kind || '');
-  const summary = String(issue?.summary || '');
-  return kind === 'Internet Reachability' || /msftconnecttest\.com/i.test(summary);
-}
-function classifyIssueSeverity(issue) {
-  const kind = String(issue?.kind || '');
-  if (kind === 'Critical Events') return 'CRITICAL';
-  if (kind === 'Internet Reachability') return 'OK';
-  return issue?.status || 'WARNING';
+  return { shouldSend, summary, status: effectiveStatus, rawStatus: summaryStatus, message, alertableIssues, enrichedIssues: enriched };
 }
 function buildHumanAlert(status, context = {}, issues = []) {
   const lines = [];
   const pingOk = (context.pingResults || []).filter(x => x.ok).map(x => x.target);
-  const webFailed = (context.webResults || []).filter(x => !x.ok).map(x => x.target);
   const eventCount = Array.isArray(context.recentEvents) ? context.recentEvents.length : 0;
-  const topEventProviders = [...new Set((context.recentEvents || []).map(x => x.ProviderName).filter(Boolean))].slice(0, 3);
-  const cronUnavailable = context.cronSource === 'unavailable';
-  const relevantKinds = issues.map(x => String(x.kind || ''));
 
   if (status === 'CRITICAL') {
     lines.push('PC Guardian, התראה קריטית');
-    if (relevantKinds.includes('Critical Events')) lines.push('נרשמו ' + eventCount + ' שגיאות מערכת בזמן האחרון, וזה עלול להשפיע על יציבות המחשב או השירותים שרצים עליו.');
-    else lines.push('זוהתה תקלה קריטית שדורשת טיפול.');
+    lines.push(issues[0]?.insight?.impact || 'זוהתה תקלה קריטית שדורשת טיפול.');
   } else if (status === 'WARNING') {
     lines.push('PC Guardian, אזהרה');
-    if (cronUnavailable && relevantKinds.includes('Cron Jobs')) lines.push('כרגע אין מידע זמין על cron jobs של OpenClaw.');
-    else lines.push('זוהתה חריגה שדורשת תשומת לב.');
+    lines.push(issues[0]?.insight?.impact || 'זוהתה חריגה שדורשת תשומת לב.');
   } else {
     lines.push('PC Guardian');
     lines.push('המערכת תקינה כרגע.');
   }
 
-  const impact = [];
-  if (relevantKinds.includes('Critical Events')) impact.push('ייתכן שיש פגיעה ביציבות המערכת או של רכיב מסוים, בהתאם לשגיאות שנרשמו');
-  if (cronUnavailable && relevantKinds.includes('Cron Jobs')) impact.push('כרגע אין תמונת מצב מלאה על cron jobs של OpenClaw');
+  const impact = [...new Set(issues.map(x => x.insight?.impact).filter(Boolean))];
   if (impact.length) {
     lines.push('');
     lines.push('מה זה משפיע');
-    for (const item of impact) lines.push('- ' + item);
+    impact.slice(0, 3).forEach(item => lines.push('- ' + item));
   }
 
   const checked = [];
   if (pingOk.length) checked.push('יש תקשורת ל: ' + pingOk.join(', '));
-  if (relevantKinds.includes('Critical Events') && eventCount) checked.push('נמצאו ' + eventCount + ' שגיאות מערכת אחרונות' + (topEventProviders.length ? ', בעיקר מ: ' + topEventProviders.join(', ') : ''));
-  if (cronUnavailable && relevantKinds.includes('Cron Jobs')) checked.push('אין כרגע cache זמין של cron jobs מקומיים');
+  if (eventCount) checked.push('נסרקו אירועי מערכת מה-' + CONFIG.monitoring.recent_event_hours + ' שעות האחרונות');
+  issues.forEach(issue => {
+    if (issue.kind === 'Critical Events') checked.push('זוהו ' + eventCount + ' אירועי שגיאה ברמת System');
+    if (issue.kind === 'Cron Jobs') checked.push('אין כרגע cache זמין של cron jobs מקומיים');
+    if (/gateway/i.test(issue.kind)) checked.push('נבדק health ל-gateway המקומי');
+  });
   if (checked.length) {
     lines.push('');
     lines.push('מה כבר נבדק');
-    for (const item of checked) lines.push('- ' + item);
+    [...new Set(checked)].slice(0, 4).forEach(item => lines.push('- ' + item));
   }
 
-  const actions = [];
-  if (relevantKinds.includes('Critical Events')) actions.push('לבדוק את רצף השגיאות האחרון סביב הרכיבים: ' + (topEventProviders.join(', ') || 'Event Viewer'));
-  if (cronUnavailable && relevantKinds.includes('Cron Jobs')) actions.push('אם חשוב ניטור cron אמיתי, לחבר מקור מצב יציב ל-cron jobs של OpenClaw');
-  if (!actions.length) actions.push('להמשיך מעקב, כרגע לא נדרשת פעולה');
+  const actions = [...new Set(issues.map(x => x.insight?.next).filter(Boolean))];
   lines.push('');
   lines.push('הפעולה הבאה המומלצת');
-  actions.slice(0, 3).forEach((item, index) => lines.push((index + 1) + '. ' + item));
+  (actions.length ? actions : ['להמשיך מעקב, כרגע לא נדרשת פעולה']).slice(0, 3).forEach((item, index) => lines.push((index + 1) + '. ' + item));
 
   return lines.join('\n');
 }
@@ -358,11 +387,11 @@ openclawChecks.push({ name: 'OpenClaw Tasks', value: openclawTasks, status: open
   const numeric = toNumber(x.State, -1);
   return state !== 'disabled' && (state === 'ready' || state === 'running' || numeric === 1 || numeric === 3 || numeric === 4);
 }) ? 'OK' : 'WARNING', summary: openclawTasks.length ? 'OpenClaw tasks found' : 'OpenClaw tasks missing' });
-openclawChecks.push({ name: 'Cron Jobs', value: cronJobs, status: cronJobs.length ? 'OK' : (cronState.source === 'unavailable' ? 'WARNING' : 'WARNING'), summary: cronJobs.length ? 'Cron jobs found: ' + cronJobs.length : 'No cron jobs found (' + cronState.source + ')' });
+openclawChecks.push({ name: 'Cron Jobs', value: cronJobs, status: cronJobs.length ? 'OK' : 'WARNING', summary: cronJobs.length ? 'Cron jobs found: ' + cronJobs.length : 'No cron jobs found (' + cronState.source + ')' });
 openclawChecks.push({ name: 'Fallback / Model failures', value: nodeFallbackHints, status: nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical ? 'CRITICAL' : nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_warning ? 'WARNING' : 'OK', summary: nodeFallbackHints.length ? 'Model fallback hints: ' + nodeFallbackHints.length : 'No model fallback hints' });
 openclawChecks.push({ name: 'Growth scan', value: growthItems, status: growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_critical_mb) ? 'CRITICAL' : growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_warning_mb) ? 'WARNING' : 'OK', summary: growthItems.length ? 'Growth items: ' + growthItems.length : 'Growth normal' });
 
-for (const item of checks.concat(openclawChecks)) if (item.status !== 'OK') addFailure(item.name, item.summary, item.value);
+for (const item of checks.concat(openclawChecks)) if (item.status !== 'OK') addFailure(item.name, item.summary, item.value, item.status);
 
 for (const svc of importantServices) {
   const running = toNumber(svc.Status, svc.Status) === 4 || String(svc.Status).toLowerCase() === 'running';
@@ -439,6 +468,7 @@ const dashboardData = {
   recent_events: recentEvents.slice(0, 10),
   cron_jobs: cronJobs,
   cron_source: cronState.source,
+  insights: alert.enrichedIssues || [],
   alerts: {
     configured: true,
     last_message: alert.shouldSend ? formatAlert(alert) : previousState.alerts?.last_summary || null,
