@@ -8,12 +8,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
+    "publishedAt": "2026-04-11T00:00:00",
     "fresh": false,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qw50ahjvcgljihrlbxbvcmfy",
@@ -24,12 +24,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
+    "publishedAt": "2026-04-10T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-u3rhbgtpbmcgdmljdgltihn1",
@@ -40,12 +40,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
+    "publishedAt": "2026-04-10T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vgvjaenydw5jacbpcybozwfk",
@@ -56,12 +56,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
+    "publishedAt": "2026-04-10T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-tgfzdcayncbob3vyczogu2f2",
@@ -72,12 +72,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-10",
-    "fresh": true,
+    "publishedAt": "2026-04-10T00:00:00",
+    "fresh": false,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-q2hhdedqvcbmaw5hbgx5ig9m",
@@ -88,12 +88,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-rmxvcmlkysbbrybhbm5vdw5j",
@@ -104,12 +104,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qwz0zxigzgf0ysbicmvhy2gs",
@@ -120,12 +120,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-twv0ysbbssbhchagy2xpbwjz",
@@ -136,12 +136,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-sxmgqw50ahjvcgljigxpbwl0",
@@ -152,12 +152,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xligfuzcbjbnrlbcbk",
@@ -168,12 +168,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-u2llcnjhj3mgqnjldcbuyxls",
@@ -184,12 +184,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qw1hem9uienftyb0ywtlcybh",
@@ -200,12 +200,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-rmluywwgmibkyxlzihrvihnh",
@@ -216,12 +216,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-09",
-    "fresh": true,
+    "publishedAt": "2026-04-09T00:00:00",
+    "fresh": false,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-ug9rzsbtywtlcyb1c2luzybb",
@@ -232,12 +232,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-08",
+    "publishedAt": "2026-04-08T00:00:00",
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qvdtigjvc3mgzxhwbgfpbnmg",
@@ -248,12 +248,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-08",
+    "publishedAt": "2026-04-08T00:00:00",
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vhviasbpcyb0agugzmlyc3qg",
@@ -264,12 +264,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-08",
+    "publishedAt": "2026-04-08T00:00:00",
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qxn0cm9wywqncybxb3jrymvu",
@@ -280,12 +280,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-08",
+    "publishedAt": "2026-04-08T00:00:00",
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-t3blbkfjihjlbgvhc2vzigeg",
@@ -296,12 +296,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-08",
+    "publishedAt": "2026-04-08T00:00:00",
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-rgf0ywjyawnrcybjby1mb3vu",
@@ -312,12 +312,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-08",
+    "publishedAt": "2026-04-08T00:00:00",
     "fresh": false,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlighvbwvwywdlifrozsbw",
@@ -328,12 +328,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlifzlcmdlifrozsbwzxjn",
@@ -344,12 +344,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlighvbwvwywdlifrozsbw",
@@ -360,12 +360,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlie1hy0jvb2sgtmvviglz",
@@ -376,12 +376,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-rnjhbwv3b3jriglzihrlyxnp",
@@ -392,12 +392,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xlihnhexmgug9sew1h",
@@ -408,12 +408,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xl4oczcybsyxrlc3qg",
@@ -424,12 +424,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-ww91igrvbukamxqgagf2zsb0",
@@ -440,12 +440,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlig5ldybzag93ig1ha2lu",
@@ -456,12 +456,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-sxmgdghliokamehvbhkgr3jh",
@@ -472,12 +472,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-mjatewvhci1vbgqgbwfuigfy",
@@ -488,12 +488,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-twljcm9zb2z0igzpbmfsbhkg",
@@ -504,12 +504,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qw1hem9uiex1bmegyxhlcyb0",
@@ -520,12 +520,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlielyyw5pyw4gtgvnbybb",
@@ -536,12 +536,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-tgl0dgxlifnuaxrjaokamxmg",
@@ -552,12 +552,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-q29uz3jlc3mgy2fuigzpbmfs",
@@ -568,12 +568,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qm9zzekamxmgcnvnz2vkifnv",
@@ -584,12 +584,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-ywrkaw5nihn1chbvcnqgzm9y",
@@ -600,12 +600,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-uhjvamvjdcbjbmrpz28gy2ft",
@@ -616,12 +616,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vhj1bxagtw9iawxliglzbuka",
@@ -632,12 +632,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlighvbwvwywdlifrozsbw",
@@ -648,12 +648,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlifzlcmdlifrozsbwzxjn",
@@ -664,12 +664,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlighvbwvwywdlifrozsbw",
@@ -680,12 +680,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-ww91cibhcnrpy2xligfib3v0",
@@ -696,12 +696,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-txkgymfiesbkzwvyihbsdxno",
@@ -712,12 +712,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-sg93ielyyw4gb3v0lxnoaxrw",
@@ -728,12 +728,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-dghyzxcgysbnb2xvdg92ignv",
@@ -744,12 +744,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-mjatewvhci1vbgqgbwfuigfy",
@@ -760,12 +760,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghlielyyw5pyw4gtgvnbybb",
@@ -776,12 +776,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-rmvhcibhbmqgbg9hdghpbmcg",
@@ -792,12 +792,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r2vuifrigjlzigxvdmutagf0",
@@ -808,12 +808,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-twljcm9zb2z0ihn0yxj0cyby",
@@ -824,12 +824,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-q2hhdedqvcboyxmgysbuzxcg",
@@ -840,12 +840,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-rmxvcmlkysbsyxvuy2hlcybp",
@@ -856,12 +856,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xl4oczcybhzw1pbmkg",
@@ -872,12 +872,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghliefjigluzhvzdhj54ocz",
@@ -888,12 +888,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xlig1ha2vzigl0igvh",
@@ -904,12 +904,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r2vtaw5pigdldhmgbm90zwjv",
@@ -920,12 +920,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-dhjhbnnsyxrlcybzcgvly2gg",
@@ -936,12 +936,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-t3blbkfjig1hzgugzwnvbm9t",
@@ -952,12 +952,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xliefkcyamienvbw1l",
@@ -968,12 +968,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xliefkcyamienvbw1l",
@@ -984,12 +984,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-r29vz2xliefkcyamienvbw1l",
@@ -1000,12 +1000,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vmvvidmumsbjbmdyzwrpzw50",
@@ -1016,12 +1016,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-twvhc3vyaw5nihbyb2dyzxnz",
@@ -1032,12 +1032,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-q3jlyxrlig5ldyb3b3jszhmg",
@@ -1048,12 +1048,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qwr2yw5jaw5niefjigjlbmno",
@@ -1064,12 +1064,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vmlldybtb3jligzyb20gr29v",
@@ -1080,12 +1080,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vhj5ig5vdgvib29rcybpbibh",
@@ -1096,12 +1096,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-thlyawegmybqcm86ienyzwf0",
@@ -1112,12 +1112,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-sw50cm9kdwnpbmcg4occdmli",
@@ -1128,12 +1128,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qw4gdxbkyxrlig9uig91cibt",
@@ -1144,12 +1144,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qw5ub3vuy2luzyb0agugd2lu",
@@ -1160,12 +1160,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qsbtb3jlihblcnnvbmfsigrp",
@@ -1176,12 +1176,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-rxzvbhzpbmcgzxhwzwn0yxrp",
@@ -1192,12 +1192,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-uxvhbnr1bsbmcm9udgllcnmg",
@@ -1208,12 +1208,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-sg93ihdl4oczcmugagvscglu",
@@ -1224,12 +1224,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vmlldybtb3jligzyb20gu2fm",
@@ -1240,12 +1240,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-qw5kcm9pzcbyuibsawdodhmg",
@@ -1256,12 +1256,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-vghliefuzhjvawqgu2hvdzog",
@@ -1272,12 +1272,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": null,
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-itei15xxkdetinez16fxqci6",
@@ -1288,12 +1288,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-157xknev16jxp9eclcdxk9eo",
@@ -1304,76 +1304,76 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
-    "id": "technology-mji6nteg15pxmdev15xxlzog",
+    "id": "technology-mdy6ndgg15xxkneg16eg15fx",
     "category": "technology",
-    "title": "22:51 דיווח: מבוי סתום במגעים בין ארה\"ב ואיראן; בישראל נערכים לחידוש המלחמה",
+    "title": "06:48 ואנס חוזר לארה\"ב: \"לא הגענו להסכם, איראן מסרבת לוותר על פרויקט הגרעין\"",
     "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/updates_news/article/skuodrv3ze",
+    "sourceUrl": "https://www.calcalist.co.il/world_news/article/rygmecdnwx",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
-    "id": "technology-mja6mjig157xl9ez16gg17tx",
+    "id": "technology-mdy6ndagitek16jxldez16fx",
     "category": "technology",
-    "title": "20:22 מחיר ״הניצחון״: מה לא סיפר נתניהו בנאום לציבור על המציאות החדשה מול איראן",
+    "title": "06:40 \"פרויקט הֵייל מרי\": להיתקע בחלל עם ריאן גוסלינג",
     "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/local_news/article/bjzj4av3wl",
+    "sourceUrl": "https://www.calcalist.co.il/style/article/ryyv1gdh11g",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
-    "id": "technology-mtg6ndag157xqdenineu15lx",
+    "id": "technology-mdy6ndag15jxldey16dxlneq",
     "category": "technology",
-    "title": "18:40 משק הגז הושבת במלחמה, ועוד לא ערוך לסבב הבא",
+    "title": "06:40 טוטנהאם מציגה: שער היציאה מהפרמייר־ליג",
     "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/local_news/article/rkwdord311e",
+    "sourceUrl": "https://www.calcalist.co.il/sport_news/article/b1u00hg00n11g",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
-    "id": "technology-mty6ndig16bxmdez15pxldeq",
+    "id": "technology-mdy6mzug15dxqney157xmdeh",
     "category": "technology",
-    "title": "16:42 ציידות שדים ותיירים: הלהיט של נטפליקס שמזניק את התיירות לדרום קוריאה",
+    "title": "06:35 ארטמיס 2: המשימה לירח שהפכה ללהיט ריאליטי",
     "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/local_news/article/rkl7bys2wl",
+    "sourceUrl": "https://www.calcalist.co.il/style/article/rjz3ewonbg",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-157xonebitecineo15nxoden",
@@ -1384,12 +1384,28 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
+  },
+  {
+    "id": "technology-157xnnex157xldeqlcdxntex",
+    "category": "technology",
+    "title": "מלחמות, מחסור בחומרי גלם ופגעי אקלים חונקים את ה־AI",
+    "source": "Calcalist Tech",
+    "sourceUrl": "https://www.calcalist.co.il/calcalistech/article/rkaekjo2wg",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-15pxmdev15xxlzog16hxmdeh",
@@ -1400,28 +1416,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
-  },
-  {
-    "id": "technology-itez15xxqteoinex16hxmdee",
-    "category": "technology",
-    "title": "\"יותר חסימות\": הודו תגביר את הפיקוח על משפיעני רשת ופודקאסטים",
-    "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/calcalistech/article/hyqywuih11g",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-15hxlteb15xxqidxlner15nx",
@@ -1432,12 +1432,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-157xnteuinee16txl9et15nx",
@@ -1448,12 +1448,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "verificationCount": 2,
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-16jxpydxl9er16jxldeqineg",
@@ -1464,12 +1464,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-ntulinee15txnten16bxldei",
@@ -1480,12 +1480,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-157xl9ez16gg15txmdei15nx",
@@ -1496,12 +1496,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-15txntec15fxnteuinei15wg",
@@ -1512,12 +1512,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-itei15xxkdetinez16fxqci6",
@@ -1528,28 +1528,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
-  },
-  {
-    "id": "technology-ntulinee15txnten16bxldei",
-    "category": "technology",
-    "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
-    "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-16jxp9ey16og15txkteo15dx",
@@ -1560,12 +1544,28 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
+  },
+  {
+    "id": "technology-ntulinee15txnten16bxldei",
+    "category": "technology",
+    "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
+    "source": "Calcalist Tech",
+    "sourceUrl": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "technology-15jxmdecinex15xxoy3xmded",
@@ -1576,27 +1576,27 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
-    "id": "technology-16jxpydxl9er16jxldeqineg",
+    "id": "technology-157xnteuinee16txl9et15nx",
     "category": "technology",
-    "title": "רק חברות נבחרות יקבלו גישה: מודל ה-AI העוצמתי שאנתרופיק חוששת לשחרר",
+    "title": "ממה מפחדים בממשל? פגישת החירום שנערכה בוושינגטון בשל המודל החדש של אנתרופיק",
     "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/calcalistech/article/h1jb5jbnbl",
+    "sourceUrl": "https://www.calcalist.co.il/calcalistech/article/hylttzln11g",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
-    "signalPositive": true,
+    "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   }
 ]

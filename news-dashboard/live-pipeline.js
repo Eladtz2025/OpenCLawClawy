@@ -133,15 +133,41 @@ async function fetchText(url) {
 
 function inferPublishedAt(title, url, htmlSnippet = '') {
   const hay = `${title} ${url} ${htmlSnippet}`;
-  const match = hay.match(/(2026[-\/](04)[-\/](0[89]|10))/);
-  if (match) return `${match[1].replace(/\//g, '-')}`;
+  const dateMatch = hay.match(/(20\d\d[-\/](\d\d)[-\/](\d\d))/);
+  if (dateMatch) {
+    const date = dateMatch[1].replace(/\//g, '-');
+    const timeMatch = hay.match(/(\d{1,2}):(\d{2})/);
+    if (timeMatch) return `${date}T${timeMatch[1].padStart(2, '0')}:${timeMatch[2]}:00`;
+    return `${date}T00:00:00`;
+  }
   return null;
 }
 
-function fallbackDate() {
-  const d = new Date();
-  d.setUTCDate(d.getUTCDate() - 1);
-  return d.toISOString().slice(0, 10);
+function normalizePublishedAt(value) {
+  if (!value) return `${TODAY}T00:00:00`;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return `${value}T00:00:00`;
+  return value;
+}
+
+function getWindowStartIso() {
+  const fallback = new Date(Date.now() - 24 * 60 * 60 * 1000);
+  return fallback.toISOString();
+}
+
+const WINDOW_START_ISO = getWindowStartIso();
+
+function formatHebrewDateTime(isoValue) {
+  const date = new Date(isoValue);
+  if (Number.isNaN(date.getTime())) return isoValue;
+  return new Intl.DateTimeFormat('he-IL', {
+    timeZone: 'Asia/Jerusalem',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).format(date);
 }
 
 const parsers = {
@@ -333,8 +359,13 @@ function topicSignals(topicKey, text, url) {
 }
 
 function isFresh(item) {
-  const yesterday = fallbackDate();
-  return item.publishedAt === TODAY || item.publishedAt === yesterday || /\/2026\/04\/(09|10)\//.test(item.url) || /2026-04-(09|10)/.test(item.url);
+  const publishedValue = normalizePublishedAt(item.publishedAt);
+  const published = new Date(publishedValue);
+  const windowStart = new Date(WINDOW_START_ISO);
+  if (!Number.isNaN(published.getTime()) && !Number.isNaN(windowStart.getTime())) {
+    return published.getTime() >= windowStart.getTime();
+  }
+  return publishedValue.slice(0, 10) === TODAY;
 }
 
 function makeSummary(topicKey, item) {
@@ -500,7 +531,7 @@ async function collectTopic(topic) {
         sourceKind: run.kind,
         sourceType: run.kind,
         sourceStrength: run.kind === 'primary' ? 'high' : 'medium',
-        publishedAt: raw.publishedAt,
+        publishedAt: normalizePublishedAt(raw.publishedAt),
         fresh: isFresh(raw),
         signalPositive: signals.positive,
         signalNegative: signals.negative,
@@ -518,7 +549,7 @@ async function collectTopic(topic) {
     item.verificationCount = pooled.filter(other => other !== item && other.title.toLowerCase() === item.title.toLowerCase()).length + 1;
   }
 
-  const freshToday = pooled.filter(item => item.signalPositive && !item.signalNegative && item.publishedAt === TODAY);
+  const freshToday = pooled.filter(item => item.signalPositive && !item.signalNegative && normalizePublishedAt(item.publishedAt).slice(0, 10) === TODAY);
   const freshWindow = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh);
   let candidatePool = freshToday.length >= 5 ? freshToday : freshWindow;
   if ((topic.key === 'crypto' || topic.key === 'hapoel') && candidatePool.length < 5) {
@@ -547,9 +578,15 @@ async function collectTopic(topic) {
       hype: 'נמוכה',
       worth: 'כן',
       action: 'לקרוא',
-      score: scoreItem(topic.key, item, bySource[item.source] || 1)
+      score: scoreItem(topic.key, item, bySource[item.source] || 1),
+      publishedLabel: formatHebrewDateTime(item.publishedAt)
     };
-  }).sort((a, b) => b.score - a.score);
+  }).sort((a, b) => {
+    const aTime = new Date(normalizePublishedAt(a.publishedAt)).getTime();
+    const bTime = new Date(normalizePublishedAt(b.publishedAt)).getTime();
+    if (!Number.isNaN(aTime) && !Number.isNaN(bTime) && bTime !== aTime) return bTime - aTime;
+    return b.score - a.score;
+  });
 
   let selected = diversify(scored);
   if (selected.length < 5) {
@@ -582,7 +619,7 @@ function renderDashboard(items, meta) {
     const topicMeta = meta.topics.find(t => t.topic === topic.key);
     const cards = itemsForTopic.map(item => `
       <article class="card">
-        <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span><span class="tag">${item.publishedAt === TODAY ? '24h' : 'אתמול'}</span></div>
+        <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span><span class="tag">${escapeHtml(item.publishedLabel || item.publishedAt)}</span></div>
         <h3>${escapeHtml(item.summary)}</h3>
         <p>${escapeHtml(item.why)}</p>
         <div class="bottom"><span>אימות ${escapeHtml(String(item.verificationCount))}</span><a href="${escapeHtml(item.sourceUrl)}">מקור</a></div>

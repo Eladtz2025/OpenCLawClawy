@@ -8,12 +8,12 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txldet16lxqidxntev16lx",
@@ -24,12 +24,44 @@
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
+  },
+  {
+    "id": "hapoel-15txpnev16lxncdxqilxkcdx",
+    "category": "hapoel",
+    "title": "הפועל ת\"א שוב נראתה נורא במשחק חוץ: \"מאזן של קבוצת תחתית\"",
+    "source": "ynet Sport Israel Soccer",
+    "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/h1vykqd2we",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": true,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T04:48:02.538Z"
+  },
+  {
+    "id": "hapoel-15txknet15xxntez150g157x",
+    "category": "hapoel",
+    "title": "האדומים מתוסכלים לאחר ה-0:0 מול הפועל פ\"ת, שקבע כי הקבוצה תסיים את העונה הסדירה במקום הרביעי: \"הפועל פ\"ת עשתה בונקר משחק שלם, ואנחנו קיבלנו החלטות רעות בהתקפה\"",
+    "source": "ynet Sport Israel Soccer",
+    "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/h1vykqd2we",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txntep15fxpydxkdez158g",
@@ -40,12 +72,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txpnev16lxncdxpclxqidx",
@@ -56,12 +88,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15fxqdez16txlcb8iner15tx",
@@ -72,12 +104,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-157xknee158g15txpnev16lx",
@@ -88,12 +120,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15pxldev16fxkcdxknex16jx",
@@ -104,12 +136,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15hxnnei15pxmsb8inei15xx",
@@ -120,12 +152,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15dxl9eo15kg15pxqnee15qg",
@@ -136,12 +168,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txpneo15xxmden15gg15tx",
@@ -152,12 +184,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15hxqnet15qg15xxlnek15xx",
@@ -168,12 +200,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15vxmidxlnem15nxncdxknec",
@@ -184,12 +216,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txkdev15zxkteo15ksineu",
@@ -200,12 +232,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-157xknee158g15txpnev16lx",
@@ -216,12 +248,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15xxotet16og15txqdez16tx",
@@ -232,12 +264,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txoneq15xxnsdxlnee16tx",
@@ -248,12 +280,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15lxmdeqinek16jxmdee15xx",
@@ -264,12 +296,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txqdez15ag15txlnez16hx",
@@ -280,12 +312,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15txmdeo15xxp9ez150g16jx",
@@ -296,12 +328,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15pxqnez15vxldeqiner157x",
@@ -312,44 +344,12 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
-  },
-  {
-    "id": "hapoel-15txqnerineg16rxoneq15wg",
-    "category": "hapoel",
-    "title": "הרב נתנאל סנדרו בוחניק סיפר לתלמידיו על מצבו של קשר הפועל באר-שבע: \"לקחתי לו את התפילין לבדיקה וגילו שב'וכתבתם' ה-ת' ו-מ' היו מודבקות. פסולות. תהפכו את האותיות ומה מקבלים? מת\"",
-    "source": "ynet Sport Israel Soccer",
-    "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/sk0oexz211g",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
-  },
-  {
-    "id": "hapoel-15hxltee158g16nxl9ec16cg",
-    "category": "hapoel",
-    "title": "בזמן שחלק מהזרים התלבט אם לשוב, הקשר הקפריסאי לא היסס והדגיש את מחויבותו להפועל ת\"א: \"יודע כמה זה חשוב לכם\". הערב (20:30) הוא יעלה בהרכב במשחק החזרה של האדומים לליגה. גם אלטמן, טוריאל ובואטנג יהיו ב-11 של ברדה",
-    "source": "ynet Sport Israel Soccer",
-    "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/skuc6mxh11e#autoplay",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": true,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
     "id": "hapoel-15nxmdek15lxqdeviner16tx",
@@ -360,31 +360,31 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
-    "id": "hapoel-15nxmdek15lxqdeviner16tx",
+    "id": "hapoel-16qi16og15fxldes15lxqidx",
     "category": "hapoel",
-    "title": "ייפגשו בפלייאוף התחתון: 0:0 לנתניה מול הפועל חיפה | צפו",
+    "title": "פ\"ת חוגגת פלייאוף, הארכת החוזה של פרץ בימים הקרובים",
     "source": "Walla Sport",
-    "sourceUrl": "https://sports.walla.co.il/item/3829606",
+    "sourceUrl": "https://sports.walla.co.il/item/3829802",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12T00:00:00",
     "fresh": true,
     "signalPositive": true,
-    "signalNegative": true,
+    "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z"
+    "collectedAt": "2026-04-12T04:48:02.538Z"
   },
   {
-    "id": "hapoel-fixture-2026-04-11-match",
+    "id": "hapoel-fixture-2026-04-12-match",
     "category": "hapoel",
     "title": "הפועל פתח תקווה מול הפועל באר שבע, משחק מפתח במאבק על הפלייאוף העליון",
     "source": "Hapoel Fixture Rule",
@@ -392,16 +392,16 @@
     "sourceKind": "primary",
     "sourceType": "fixture",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z",
+    "collectedAt": "2026-04-12T04:48:02.538Z",
     "fixture": true
   },
   {
-    "id": "hapoel-fixture-2026-04-11-playoff",
+    "id": "hapoel-fixture-2026-04-12-playoff",
     "category": "hapoel",
     "title": "הפועל פתח תקווה מגיעה למחזור עם יעד ברור, להבטיח מקום בפלייאוף העליון",
     "source": "Hapoel Fixture Rule",
@@ -409,12 +409,12 @@
     "sourceKind": "primary",
     "sourceType": "fixture",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-11",
+    "publishedAt": "2026-04-12",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-11T20:57:30.064Z",
+    "collectedAt": "2026-04-12T04:48:02.538Z",
     "fixture": true
   }
 ]
