@@ -16,9 +16,15 @@ function statusLabel(status) {
   return 'OK';
 }
 
+function statusLabelHe(status) {
+  if (status === 'WARNING') return 'אזהרה';
+  if (status === 'CRITICAL') return 'קריטי';
+  return 'תקין';
+}
+
 function badge(status) {
   const cls = status === 'OK' ? 'ok' : status === 'WARNING' ? 'warn' : 'crit';
-  return '<span class="badge ' + cls + '">' + esc(statusLabel(status)) + '</span>';
+  return '<span class="badge ' + cls + '">' + esc(statusLabelHe(status)) + '</span>';
 }
 
 function renderChecks(items) {
@@ -35,8 +41,9 @@ function card(title, value, sub = '', tone = '') {
 
 function shortSummary(text) {
   return String(text || '')
-    .replace('Internet failed:', 'אין גישה אל:')
+    .replace('Internet failed:', 'יעד אינטרנט חיצוני לא נגיש:')
     .replace('No cron artifacts found', 'לא זוהו cron jobs')
+    .replace('No cron jobs found (unavailable)', 'אין כרגע מידע על cron jobs')
     .replace('Defender OK', 'Defender תקין')
     .replace('Firewall OK', 'Firewall תקין')
     .replace('Growth items:', 'נמצאו תיקיות למעקב:')
@@ -61,10 +68,24 @@ function humanFix(item) {
   return { ...item, action, result, target: item.target };
 }
 
-function priorityFromFailure(item) {
+function classifyIssue(item) {
   const summary = shortSummary(item.summary);
-  const urgency = item.kind === 'Cron Jobs' ? 'Warning' : item.kind === 'Internet Reachability' ? 'Warning' : 'Critical';
-  return { title: summary, urgency, kind: item.kind };
+  if (item.kind === 'Internet Reachability' || /msftconnecttest\.com/i.test(String(item.summary || ''))) {
+    return { title: summary, urgency: 'Info', effect: 'עשוי להשפיע רק על בדיקות reachability חיצוניות', next: 'להשאיר בדשבורד בלבד, אין צורך בהתראה' };
+  }
+  if (item.kind === 'Critical Events') {
+    return { title: summary, urgency: 'Critical', effect: 'עשוי להעיד על פגיעה ביציבות רכיב או מערכת', next: 'לבדוק את רצף האירועים האחרון ולזהות רכיב חוזר' };
+  }
+  if (item.kind === 'Cron Jobs') {
+    return { title: summary, urgency: 'Warning', effect: 'אין כרגע תמונת מצב מלאה על cron jobs של OpenClaw', next: 'לחבר מקור מצב יציב אם cron חשוב לניטור' };
+  }
+  return { title: summary, urgency: item.status === 'CRITICAL' ? 'Critical' : 'Warning', effect: 'דורש תשומת לב תפעולית', next: 'לבדוק את הרכיב הרלוונטי ולהחליט אם נדרש recovery' };
+}
+
+function urgencyPill(urgency) {
+  if (urgency === 'Critical') return '<span class="pill crit">קריטי</span>';
+  if (urgency === 'Warning') return '<span class="pill warn">אזהרה</span>';
+  return '<span class="pill soft">מידע</span>';
 }
 
 function offenderLevel(item, index) {
@@ -74,17 +95,17 @@ function offenderLevel(item, index) {
 }
 
 const recentFailures = data.recent_failures || [];
-const lastCriticalEvent = recentFailures.find(x => /critical/i.test(String(x.kind)) || /critical/i.test(String(x.summary))) || null;
+const classifiedIssues = recentFailures.slice(0, 8).map(classifyIssue);
+const actionableIssues = classifiedIssues.filter(x => x.urgency !== 'Info');
+const infoIssues = classifiedIssues.filter(x => x.urgency === 'Info');
+const lastFixes = (data.last_fixes || []).slice(0, 6).map(humanFix);
+const nonOkChecks = [...(data.computer_checks || []), ...(data.openclaw_checks || [])].filter(x => x.status !== 'OK');
+const overallReason = actionableIssues.length ? actionableIssues[0].title : nonOkChecks.length ? shortSummary(nonOkChecks[0].summary) : 'כל הבדיקות האחרונות תקינות';
+const problemCount = actionableIssues.length;
 const systemsNeedingReview = [];
 if (data.computer_status !== 'OK') systemsNeedingReview.push('המחשב');
 if (data.openclaw_status !== 'OK') systemsNeedingReview.push('OpenClaw');
-
-const openIssues = recentFailures.slice(0, 6).map(priorityFromFailure);
-const lastFixes = (data.last_fixes || []).slice(0, 6).map(humanFix);
-const nonOkChecks = [...(data.computer_checks || []), ...(data.openclaw_checks || [])].filter(x => x.status !== 'OK');
-const overallReason = nonOkChecks.length ? shortSummary(nonOkChecks[0].summary) : 'כל הבדיקות האחרונות תקינות';
-const problemCount = nonOkChecks.length;
-const topPriorities = openIssues.slice(0, 3);
+const lastCriticalIssue = classifiedIssues.find(x => x.urgency === 'Critical') || null;
 
 const html = `<!doctype html>
 <html lang="he" dir="rtl">
@@ -94,9 +115,9 @@ const html = `<!doctype html>
   <title>${esc(data.system_name)}</title>
   <style>
     body{font-family:Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e5e7eb;margin:0;padding:18px}
-    .wrap{max-width:1200px;margin:0 auto}
+    .wrap{max-width:1280px;margin:0 auto}
     h1,h2,h3{margin:0 0 12px}
-    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-bottom:18px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-bottom:18px}
     .hero-card,.card{background:#111827;border:1px solid #243046;border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.18)}
     .hero-card{padding:22px}
     .hero-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
@@ -121,11 +142,13 @@ const html = `<!doctype html>
     .item strong{display:block;margin-bottom:6px;font-size:16px}
     .priority{border-right:4px solid #f6e05e}
     .priority.critline{border-right-color:#feb2b2}
+    .priority.info{border-right-color:#94a3b8}
     .pill{display:inline-block;margin-top:8px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800}
     .section-title{margin-bottom:10px;font-size:22px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media (max-width: 900px){
       body{padding:14px}
-      .hero,.columns{grid-template-columns:1fr}
+      .hero,.columns,.two-col{grid-template-columns:1fr}
       .hero-main{font-size:28px}
       .hero-meta{grid-template-columns:1fr}
       .value{font-size:24px}
@@ -140,47 +163,63 @@ const html = `<!doctype html>
       <div class="hero-title">
         <div>
           <div class="muted">מצב כללי</div>
-          <div class="hero-main">${esc(statusLabel(data.overall_status))}</div>
+          <div class="hero-main">${esc(statusLabelHe(data.overall_status))}</div>
         </div>
         <div>${badge(data.overall_status)}</div>
       </div>
       <div class="hero-sub">${esc(overallReason)}</div>
       <div class="hero-meta">
-        ${card('בדיקות בבעיה', esc(problemCount), problemCount ? 'דורש תשומת לב' : 'אין בעיות פתוחות')}
-        ${card('מערכות בבעיה', esc(systemsNeedingReview.length), systemsNeedingReview.join(', ') || 'הכול תקין')}
-        ${card('בדיקה אחרונה', esc(data.generated_at), 'עודכן עכשיו')}
+        ${card('בעיות שדורשות פעולה', esc(problemCount), problemCount ? 'רק פריטים עם משמעות תפעולית' : 'אין כרגע בעיות פתוחות')} 
+        ${card('מערכות בבעיה', esc(systemsNeedingReview.length), systemsNeedingReview.join(', ') || 'הכול תקין')} 
+        ${card('בדיקה אחרונה', esc(data.generated_at), 'עודכן אוטומטית')} 
       </div>
     </div>
     <div class="stack">
-      ${card('מצב מחשב', badge(data.computer_status), data.computer_status === 'OK' ? 'ללא חריגות משמעותיות' : 'יש נקודות שדורשות בדיקה')}
-      ${card('מצב OpenClaw', badge(data.openclaw_status), data.openclaw_status === 'OK' ? 'יציב' : 'יש פריטים פתוחים')}
-      ${card('אירוע קריטי אחרון', lastCriticalEvent ? esc(shortSummary(lastCriticalEvent.summary)) : 'אין', lastCriticalEvent ? esc(lastCriticalEvent.time) : 'לא זוהה')}
+      ${card('מצב מחשב', badge(data.computer_status), data.computer_status === 'OK' ? 'ללא חריגות משמעותיות' : 'יש נקודות שדורשות בדיקה')} 
+      ${card('מצב OpenClaw', badge(data.openclaw_status), data.openclaw_status === 'OK' ? 'יציב' : 'יש פריטים פתוחים')} 
+      ${card('החריגה הקריטית האחרונה', lastCriticalIssue ? esc(lastCriticalIssue.title) : 'אין', lastCriticalIssue ? esc(lastCriticalIssue.effect) : 'לא זוהתה')} 
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <h2 class="section-title">דורש טיפול עכשיו</h2>
-      <div class="list">${topPriorities.length ? topPriorities.map(item => '<div class="item priority ' + (item.urgency === 'Critical' ? 'critline' : '') + '"><strong>' + esc(item.title) + '</strong><span class="pill ' + (item.urgency === 'Critical' ? 'crit' : 'warn') + '">' + esc(item.urgency) + '</span></div>').join('') : '<div class="item"><strong>אין כרגע</strong><div class="muted">לא זוהו דברים דחופים.</div></div>'}</div>
+      <div class="list">${actionableIssues.length ? actionableIssues.slice(0,3).map(item => '<div class="item priority ' + (item.urgency === 'Critical' ? 'critline' : '') + '"><strong>' + esc(item.title) + '</strong><div class="muted">' + esc(item.effect) + '</div>' + urgencyPill(item.urgency) + '<div class="sub">פעולה מומלצת: ' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין כרגע</strong><div class="muted">לא זוהו דברים דחופים.</div></div>'}</div>
     </div>
-    ${card('מה עדיין פתוח', esc(openIssues.length ? openIssues[0].title : 'אין'), openIssues.length > 1 ? 'ועוד ' + (openIssues.length - 1) + ' פריטים' : 'ללא פריטים נוספים')}
+    ${card('מידע בלבד', esc(infoIssues.length), infoIssues.length ? 'נשאר בדשבורד, בלי לשלוח התראה' : 'אין פריטי מידע פתוחים')}
     ${card('מה תוקן אוטומטית', esc(lastFixes.length ? lastFixes[0].action : 'אין'), lastFixes.length ? lastFixes[0].target + ' · ' + lastFixes[0].result : 'לא בוצעו תיקונים לאחרונה')}
-    ${card('מה רק Warning', esc(openIssues.filter(x => x.urgency === 'Warning').length), 'לא קריטי, אבל כדאי לבדוק')}
+    ${card('תמונת מצב OpenClaw', esc(data.cron_source || data.cronSource || 'לא ידוע'), 'gateway/tasks/cron/alerts במקום אחד')}
   </div>
 
   <div class="columns">
     <div class="stack">
       <div class="card">
-        <h2 class="section-title">תקלות אחרונות</h2>
-        <table><thead><tr><th>מתי</th><th>נושא</th><th>מה קורה</th></tr></thead><tbody>${renderSimple(recentFailures.slice(0,8).map(item => ({ time: item.time, kind: item.kind === 'Internet Reachability' ? 'גישה לאינטרנט' : item.kind === 'Cron Jobs' ? 'Cron jobs' : item.kind, summary: shortSummary(item.summary) })), ['time','kind','summary'])}</tbody></table>
+        <h2 class="section-title">מה זה משפיע</h2>
+        <div class="list">${actionableIssues.length ? actionableIssues.slice(0,4).map(item => '<div class="item"><strong>' + esc(item.title) + '</strong><div>' + esc(item.effect) + '</div><div class="sub">הצעד הבא: ' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין השפעה תפעולית חריגה</strong><div class="muted">כרגע אין פריטים שדורשים תגובה.</div></div>'}</div>
       </div>
       <div class="card">
-        <h2 class="section-title">תוקן אוטומטית</h2>
-        <table><thead><tr><th>מתי</th><th>מה בוצע</th><th>יעד</th><th>תוצאה</th></tr></thead><tbody>${renderSimple(lastFixes, ['time','action','target','result'])}</tbody></table>
+        <h2 class="section-title">מה כבר נבדק</h2>
+        <div class="two-col">
+          ${card('Ping targets', esc((data.computer_checks || []).find(x => x.name === 'Network Connectivity')?.summary || 'לא זמין'), 'בדיקת תקשורת בסיסית')}
+          ${card('Internet targets', esc((data.computer_checks || []).find(x => x.name === 'Internet Reachability')?.summary || 'לא זמין'), 'בדיקת reachability חיצונית')}
+          ${card('Gateway health', esc((data.gateways || []).map(g => g.ok ? g.name + ' תקין' : g.name + ' בעייתי').join(' | ') || 'לא זמין'), 'בדיקת health מקומית')}
+          ${card('Cron visibility', esc(data.cron_source || data.cronSource || 'לא זמין'), 'מקור המידע על cron jobs')}
+        </div>
+      </div>
+      <div class="card">
+        <h2 class="section-title">תקלות אחרונות</h2>
+        <table><thead><tr><th>מתי</th><th>נושא</th><th>משמעות</th></tr></thead><tbody>${renderSimple(recentFailures.slice(0,8).map(item => {
+          const classified = classifyIssue(item);
+          return { time: item.time, kind: item.kind === 'Internet Reachability' ? 'מידע רשת' : item.kind === 'Cron Jobs' ? 'Cron jobs' : item.kind, summary: classified.effect };
+        }), ['time','kind','summary'])}</tbody></table>
       </div>
     </div>
 
     <div class="stack">
+      <div class="card">
+        <h2 class="section-title">פריטי מידע בלבד</h2>
+        <div class="list">${infoIssues.length ? infoIssues.map(item => '<div class="item priority info"><strong>' + esc(item.title) + '</strong><div class="muted">' + esc(item.effect) + '</div><div class="sub">' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין כרגע</strong><div class="muted">כל החריגות הפעילות הן בעלות משמעות תפעולית או שאין חריגות כלל.</div></div>'}</div>
+      </div>
       <div class="card">
         <h2 class="section-title">Top offenders</h2>
         <div class="list">${(data.top_offenders || []).slice(0,5).map((item, index) => {
@@ -195,6 +234,10 @@ const html = `<!doctype html>
       <div class="card">
         <h2 class="section-title">מצב OpenClaw</h2>
         <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody>${renderChecks(data.openclaw_checks || [])}</tbody></table>
+      </div>
+      <div class="card">
+        <h2 class="section-title">תוקן אוטומטית</h2>
+        <table><thead><tr><th>מתי</th><th>מה בוצע</th><th>יעד</th><th>תוצאה</th></tr></thead><tbody>${renderSimple(lastFixes, ['time','action','target','result'])}</tbody></table>
       </div>
     </div>
   </div>
