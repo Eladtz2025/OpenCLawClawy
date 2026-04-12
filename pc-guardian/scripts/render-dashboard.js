@@ -10,12 +10,6 @@ function esc(value) {
   return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function statusLabel(status) {
-  if (status === 'WARNING') return 'Warning';
-  if (status === 'CRITICAL') return 'Critical';
-  return 'OK';
-}
-
 function statusLabelHe(status) {
   if (status === 'WARNING') return 'אזהרה';
   if (status === 'CRITICAL') return 'קריטי';
@@ -25,6 +19,12 @@ function statusLabelHe(status) {
 function badge(status) {
   const cls = status === 'OK' ? 'ok' : status === 'WARNING' ? 'warn' : 'crit';
   return '<span class="badge ' + cls + '">' + esc(statusLabelHe(status)) + '</span>';
+}
+
+function confidencePill(level = 'medium') {
+  const cls = level === 'high' ? 'crit' : level === 'medium' ? 'warn' : 'soft';
+  const text = level === 'high' ? 'ביטחון גבוה' : level === 'medium' ? 'ביטחון בינוני' : 'ביטחון נמוך';
+  return '<span class="pill ' + cls + '">' + esc(text) + '</span>';
 }
 
 function renderChecks(items) {
@@ -68,18 +68,16 @@ function humanFix(item) {
   return { ...item, action, result, target: item.target };
 }
 
-function classifyIssue(item) {
-  const summary = shortSummary(item.summary);
-  if (item.kind === 'Internet Reachability' || /msftconnecttest\.com/i.test(String(item.summary || ''))) {
-    return { title: summary, urgency: 'Info', effect: 'עשוי להשפיע רק על בדיקות reachability חיצוניות', next: 'להשאיר בדשבורד בלבד, אין צורך בהתראה' };
-  }
-  if (item.kind === 'Critical Events') {
-    return { title: summary, urgency: 'Critical', effect: 'עשוי להעיד על פגיעה ביציבות רכיב או מערכת', next: 'לבדוק את רצף האירועים האחרון ולזהות רכיב חוזר' };
-  }
-  if (item.kind === 'Cron Jobs') {
-    return { title: summary, urgency: 'Warning', effect: 'אין כרגע תמונת מצב מלאה על cron jobs של OpenClaw', next: 'לחבר מקור מצב יציב אם cron חשוב לניטור' };
-  }
-  return { title: summary, urgency: item.status === 'CRITICAL' ? 'Critical' : 'Warning', effect: 'דורש תשומת לב תפעולית', next: 'לבדוק את הרכיב הרלוונטי ולהחליט אם נדרש recovery' };
+function classifyIssue(item, index) {
+  const insight = (data.insights || [])[index]?.insight || {};
+  const severity = insight.severity === 'INFO' ? 'Info' : insight.severity === 'CRITICAL' ? 'Critical' : 'Warning';
+  return {
+    title: shortSummary(item.summary),
+    urgency: severity,
+    confidence: insight.confidence || 'medium',
+    effect: insight.impact || 'דורש תשומת לב תפעולית',
+    next: insight.next || 'לבדוק את הרכיב הרלוונטי ולהחליט אם נדרש recovery'
+  };
 }
 
 function urgencyPill(urgency) {
@@ -119,41 +117,24 @@ const html = `<!doctype html>
     h1,h2,h3{margin:0 0 12px}
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-bottom:18px}
     .hero-card,.card{background:#111827;border:1px solid #243046;border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.18)}
-    .hero-card{padding:22px}
-    .hero-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
-    .hero-main{font-size:34px;font-weight:800;line-height:1.1}
-    .hero-sub{font-size:16px;color:#dbe3f0;line-height:1.6}
+    .hero-card{padding:22px}.hero-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .hero-main{font-size:34px;font-weight:800;line-height:1.1}.hero-sub{font-size:16px;color:#dbe3f0;line-height:1.6}
     .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
-    .label{color:#94a3b8;font-size:13px;margin-bottom:8px}
-    .value{font-size:26px;font-weight:700}
-    .sub{margin-top:8px;color:#cbd5e1;font-size:15px;line-height:1.55}
-    .muted{color:#94a3b8;font-size:14px}
+    .label{color:#94a3b8;font-size:13px;margin-bottom:8px}.value{font-size:26px;font-weight:700}
+    .sub{margin-top:8px;color:#cbd5e1;font-size:15px;line-height:1.55}.muted{color:#94a3b8;font-size:14px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0}
-    .columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .stack{display:grid;gap:16px}
+    .columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}.stack{display:grid;gap:16px}
     .badge{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px}
     .ok{background:#123524;color:#9ae6b4}.warn{background:#43320b;color:#f6e05e}.crit{background:#4a1f1f;color:#feb2b2}.soft{background:#1e293b;color:#cbd5e1}
     table{width:100%;border-collapse:collapse;background:#111827;border-radius:14px;overflow:hidden}
     th,td{padding:12px 12px;border-bottom:1px solid #243046;text-align:right;vertical-align:top;font-size:14px}
-    th{background:#162033;color:#cbd5e1}
-    tr:last-child td{border-bottom:none}
-    .list{display:grid;gap:12px}
-    .item{padding:14px;border:1px solid #243046;border-radius:14px;background:#0f172a}
-    .item strong{display:block;margin-bottom:6px;font-size:16px}
-    .priority{border-right:4px solid #f6e05e}
-    .priority.critline{border-right-color:#feb2b2}
-    .priority.info{border-right-color:#94a3b8}
-    .pill{display:inline-block;margin-top:8px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800}
-    .section-title{margin-bottom:10px;font-size:22px}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width: 900px){
-      body{padding:14px}
-      .hero,.columns,.two-col{grid-template-columns:1fr}
-      .hero-main{font-size:28px}
-      .hero-meta{grid-template-columns:1fr}
-      .value{font-size:24px}
-      th,td{padding:11px 10px;font-size:15px}
-    }
+    th{background:#162033;color:#cbd5e1} tr:last-child td{border-bottom:none}
+    .list{display:grid;gap:12px}.item{padding:14px;border:1px solid #243046;border-radius:14px;background:#0f172a}
+    .item strong{display:block;margin-bottom:6px;font-size:16px}.priority{border-right:4px solid #f6e05e}
+    .priority.critline{border-right-color:#feb2b2}.priority.info{border-right-color:#94a3b8}
+    .pill{display:inline-block;margin-top:8px;margin-left:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .section-title{margin-bottom:10px;font-size:22px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 900px){body{padding:14px}.hero,.columns,.two-col{grid-template-columns:1fr}.hero-main{font-size:28px}.hero-meta{grid-template-columns:1fr}.value{font-size:24px}th,td{padding:11px 10px;font-size:15px}}
   </style>
 </head>
 <body>
@@ -161,30 +142,27 @@ const html = `<!doctype html>
   <div class="hero">
     <div class="hero-card">
       <div class="hero-title">
-        <div>
-          <div class="muted">מצב כללי</div>
-          <div class="hero-main">${esc(statusLabelHe(data.overall_status))}</div>
-        </div>
+        <div><div class="muted">מצב כללי</div><div class="hero-main">${esc(statusLabelHe(data.overall_status))}</div></div>
         <div>${badge(data.overall_status)}</div>
       </div>
       <div class="hero-sub">${esc(overallReason)}</div>
       <div class="hero-meta">
-        ${card('בעיות שדורשות פעולה', esc(problemCount), problemCount ? 'רק פריטים עם משמעות תפעולית' : 'אין כרגע בעיות פתוחות')} 
-        ${card('מערכות בבעיה', esc(systemsNeedingReview.length), systemsNeedingReview.join(', ') || 'הכול תקין')} 
-        ${card('בדיקה אחרונה', esc(data.generated_at), 'עודכן אוטומטית')} 
+        ${card('בעיות שדורשות פעולה', esc(problemCount), problemCount ? 'רק פריטים עם משמעות תפעולית' : 'אין כרגע בעיות פתוחות')}
+        ${card('מערכות בבעיה', esc(systemsNeedingReview.length), systemsNeedingReview.join(', ') || 'הכול תקין')}
+        ${card('בדיקה אחרונה', esc(data.generated_at), 'עודכן אוטומטית')}
       </div>
     </div>
     <div class="stack">
-      ${card('מצב מחשב', badge(data.computer_status), data.computer_status === 'OK' ? 'ללא חריגות משמעותיות' : 'יש נקודות שדורשות בדיקה')} 
-      ${card('מצב OpenClaw', badge(data.openclaw_status), data.openclaw_status === 'OK' ? 'יציב' : 'יש פריטים פתוחים')} 
-      ${card('החריגה הקריטית האחרונה', lastCriticalIssue ? esc(lastCriticalIssue.title) : 'אין', lastCriticalIssue ? esc(lastCriticalIssue.effect) : 'לא זוהתה')} 
+      ${card('מצב מחשב', badge(data.computer_status), data.computer_status === 'OK' ? 'ללא חריגות משמעותיות' : 'יש נקודות שדורשות בדיקה')}
+      ${card('מצב OpenClaw', badge(data.openclaw_status), data.openclaw_status === 'OK' ? 'יציב' : 'יש פריטים פתוחים')}
+      ${card('החריגה הקריטית האחרונה', lastCriticalIssue ? esc(lastCriticalIssue.title) : 'אין', lastCriticalIssue ? esc(lastCriticalIssue.effect) : 'לא זוהתה')}
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <h2 class="section-title">דורש טיפול עכשיו</h2>
-      <div class="list">${actionableIssues.length ? actionableIssues.slice(0,3).map(item => '<div class="item priority ' + (item.urgency === 'Critical' ? 'critline' : '') + '"><strong>' + esc(item.title) + '</strong><div class="muted">' + esc(item.effect) + '</div>' + urgencyPill(item.urgency) + '<div class="sub">פעולה מומלצת: ' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין כרגע</strong><div class="muted">לא זוהו דברים דחופים.</div></div>'}</div>
+      <div class="list">${actionableIssues.length ? actionableIssues.slice(0,3).map(item => '<div class="item priority ' + (item.urgency === 'Critical' ? 'critline' : '') + '"><strong>' + esc(item.title) + '</strong><div class="muted">' + esc(item.effect) + '</div>' + urgencyPill(item.urgency) + confidencePill(item.confidence) + '<div class="sub">פעולה מומלצת: ' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין כרגע</strong><div class="muted">לא זוהו דברים דחופים.</div></div>'}</div>
     </div>
     ${card('מידע בלבד', esc(infoIssues.length), infoIssues.length ? 'נשאר בדשבורד, בלי לשלוח התראה' : 'אין פריטי מידע פתוחים')}
     ${card('מה תוקן אוטומטית', esc(lastFixes.length ? lastFixes[0].action : 'אין'), lastFixes.length ? lastFixes[0].target + ' · ' + lastFixes[0].result : 'לא בוצעו תיקונים לאחרונה')}
@@ -195,7 +173,7 @@ const html = `<!doctype html>
     <div class="stack">
       <div class="card">
         <h2 class="section-title">מה זה משפיע</h2>
-        <div class="list">${actionableIssues.length ? actionableIssues.slice(0,4).map(item => '<div class="item"><strong>' + esc(item.title) + '</strong><div>' + esc(item.effect) + '</div><div class="sub">הצעד הבא: ' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין השפעה תפעולית חריגה</strong><div class="muted">כרגע אין פריטים שדורשים תגובה.</div></div>'}</div>
+        <div class="list">${actionableIssues.length ? actionableIssues.slice(0,4).map(item => '<div class="item"><strong>' + esc(item.title) + '</strong>' + urgencyPill(item.urgency) + confidencePill(item.confidence) + '<div class="sub">' + esc(item.effect) + '</div><div class="sub">הצעד הבא: ' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין השפעה תפעולית חריגה</strong><div class="muted">כרגע אין פריטים שדורשים תגובה.</div></div>'}</div>
       </div>
       <div class="card">
         <h2 class="section-title">מה כבר נבדק</h2>
@@ -208,24 +186,18 @@ const html = `<!doctype html>
       </div>
       <div class="card">
         <h2 class="section-title">תקלות אחרונות</h2>
-        <table><thead><tr><th>מתי</th><th>נושא</th><th>משמעות</th></tr></thead><tbody>${renderSimple(recentFailures.slice(0,8).map(item => {
-          const classified = classifyIssue(item);
-          return { time: item.time, kind: item.kind === 'Internet Reachability' ? 'מידע רשת' : item.kind === 'Cron Jobs' ? 'Cron jobs' : item.kind, summary: classified.effect };
-        }), ['time','kind','summary'])}</tbody></table>
+        <table><thead><tr><th>מתי</th><th>נושא</th><th>משמעות</th></tr></thead><tbody>${renderSimple(recentFailures.slice(0,8).map((item, idx) => { const classified = classifyIssue(item, idx); return { time: item.time, kind: item.kind === 'Internet Reachability' ? 'מידע רשת' : item.kind === 'Cron Jobs' ? 'Cron jobs' : item.kind, summary: classified.effect + ' · ' + (classified.confidence === 'high' ? 'ביטחון גבוה' : classified.confidence === 'medium' ? 'ביטחון בינוני' : 'ביטחון נמוך') }; }), ['time','kind','summary'])}</tbody></table>
       </div>
     </div>
 
     <div class="stack">
       <div class="card">
         <h2 class="section-title">פריטי מידע בלבד</h2>
-        <div class="list">${infoIssues.length ? infoIssues.map(item => '<div class="item priority info"><strong>' + esc(item.title) + '</strong><div class="muted">' + esc(item.effect) + '</div><div class="sub">' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין כרגע</strong><div class="muted">כל החריגות הפעילות הן בעלות משמעות תפעולית או שאין חריגות כלל.</div></div>'}</div>
+        <div class="list">${infoIssues.length ? infoIssues.map(item => '<div class="item priority info"><strong>' + esc(item.title) + '</strong>' + confidencePill(item.confidence) + '<div class="muted">' + esc(item.effect) + '</div><div class="sub">' + esc(item.next) + '</div></div>').join('') : '<div class="item"><strong>אין כרגע</strong><div class="muted">כל החריגות הפעילות הן בעלות משמעות תפעולית או שאין חריגות כלל.</div></div>'}</div>
       </div>
       <div class="card">
         <h2 class="section-title">Top offenders</h2>
-        <div class="list">${(data.top_offenders || []).slice(0,5).map((item, index) => {
-          const level = offenderLevel(item, index);
-          return '<div class="item"><strong>' + esc(item.name) + '</strong><div>CPU: ' + esc(item.cpu) + '</div><div>זיכרון: ' + esc(item.memoryMb) + ' MB</div><div class="muted">' + esc(item.path || 'ללא נתיב') + '</div><span class="pill ' + level.cls + '">' + esc(level.label) + '</span></div>';
-        }).join('')}</div>
+        <div class="list">${(data.top_offenders || []).slice(0,5).map((item, index) => { const level = offenderLevel(item, index); return '<div class="item"><strong>' + esc(item.name) + '</strong><div>CPU: ' + esc(item.cpu) + '</div><div>זיכרון: ' + esc(item.memoryMb) + ' MB</div><div class="muted">' + esc(item.path || 'ללא נתיב') + '</div><span class="pill ' + level.cls + '">' + esc(level.label) + '</span></div>'; }).join('')}</div>
       </div>
       <div class="card">
         <h2 class="section-title">מצב מחשב</h2>
