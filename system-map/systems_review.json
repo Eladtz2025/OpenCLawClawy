@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-08T11:57:45.955Z",
+  "generated_at": "2026-04-12T07:59:59.611Z",
   "reviews": [
     {
-      "system_id": "openclaw-itzhak-main",
-      "display_name": "Main Bot, Itzhak",
+      "system_id": "runtime-clawy-itzhak",
+      "display_name": "Clawy Runtime",
       "owner": "Itzhak",
       "status": "active",
       "overall_score": {
@@ -15,8 +15,8 @@
       "recommendation": "improve later",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-08T11:57:45.955Z",
-      "last_updated_if_known": "2026-04-07T15:28:45.140Z",
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "2026-04-11T22:07:05.223Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
@@ -25,7 +25,7 @@
         "full exec",
         "config residue"
       ],
-      "short_summary": "Works, but safety is weak.",
+      "short_summary": "Stable runtime, weak safety.",
       "scores": {
         "architecture_score": {
           "score": 6.5,
@@ -75,8 +75,296 @@
       }
     },
     {
-      "system_id": "openclaw-openclaw-main",
-      "display_name": "Main Bot, Openclaw",
+      "system_id": "system-pc-guardian",
+      "display_name": "PC Guardian",
+      "owner": "Itzhak",
+      "status": "unknown",
+      "overall_score": {
+        "score": 6.3,
+        "rating": "acceptable",
+        "explanation": "Conservative average of review metrics."
+      },
+      "weight": "light",
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian",
+      "key_risks": [
+        "scope not fully verified",
+        "needs clearer boundaries"
+      ],
+      "short_summary": "Looks real, not fully verified yet.",
+      "scores": {
+        "architecture_score": {
+          "score": 6,
+          "rating": "acceptable",
+          "explanation": "Folder is clearly isolated."
+        },
+        "clarity_score": {
+          "score": 6,
+          "rating": "acceptable",
+          "explanation": "Name and scope are readable."
+        },
+        "runtime_weight_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "No evidence of heavy runtime."
+        },
+        "resource_fit_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "Seems lightweight enough."
+        },
+        "maintainability_score": {
+          "score": 6,
+          "rating": "acceptable",
+          "explanation": "Fairly maintainable by structure."
+        },
+        "safety_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "No direct unsafe exposure found here."
+        },
+        "noise_score": {
+          "score": 6.5,
+          "rating": "acceptable",
+          "explanation": "Not especially noisy."
+        },
+        "residue_risk_score": {
+          "score": 6,
+          "rating": "acceptable",
+          "explanation": "Some uncertainty remains."
+        },
+        "reliability_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Activity not fully confirmed."
+        }
+      }
+    },
+    {
+      "system_id": "system-system-map",
+      "display_name": "System Map",
+      "owner": "Itzhak",
+      "status": "active",
+      "overall_score": {
+        "score": 7.3,
+        "rating": "acceptable",
+        "explanation": "Conservative average of review metrics."
+      },
+      "weight": "light",
+      "recommendation": "improve later",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "2026-04-12T07:59:59.611Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\system-map",
+      "key_risks": [
+        "mapping still evolving",
+        "depends on conservative inference"
+      ],
+      "short_summary": "Active and useful, still being refined.",
+      "scores": {
+        "architecture_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "Simple local structure."
+        },
+        "clarity_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "Readable model and output files."
+        },
+        "runtime_weight_score": {
+          "score": 8,
+          "rating": "good",
+          "explanation": "Very light runtime profile."
+        },
+        "resource_fit_score": {
+          "score": 8,
+          "rating": "good",
+          "explanation": "Good fit for this machine."
+        },
+        "maintainability_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "Maintainable, but still evolving."
+        },
+        "safety_score": {
+          "score": 8,
+          "rating": "good",
+          "explanation": "Read-only style is safer."
+        },
+        "noise_score": {
+          "score": 7.5,
+          "rating": "good",
+          "explanation": "Low noise overall."
+        },
+        "residue_risk_score": {
+          "score": 6.5,
+          "rating": "acceptable",
+          "explanation": "Some builder artifacts remain."
+        },
+        "reliability_score": {
+          "score": 6.5,
+          "rating": "acceptable",
+          "explanation": "Useful, but current mapping was incomplete."
+        }
+      }
+    },
+    {
+      "system_id": "system-news-editor",
+      "display_name": "News Editor",
+      "owner": "Itzhak",
+      "status": "unknown",
+      "overall_score": {
+        "score": 5.6,
+        "rating": "weak",
+        "explanation": "Conservative average of review metrics."
+      },
+      "weight": "moderate",
+      "recommendation": "manual review",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\news-dashboard",
+      "key_risks": [
+        "workflow not fully verified",
+        "possible residue from experiments"
+      ],
+      "short_summary": "Clearly exists, but needs verification.",
+      "scores": {
+        "architecture_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Seems project-based, not yet fully mapped."
+        },
+        "clarity_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Purpose is fairly clear from folder."
+        },
+        "runtime_weight_score": {
+          "score": 6,
+          "rating": "acceptable",
+          "explanation": "Likely moderate at most."
+        },
+        "resource_fit_score": {
+          "score": 6.5,
+          "rating": "acceptable",
+          "explanation": "Probably acceptable locally."
+        },
+        "maintainability_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Looks medium, not polished enough."
+        },
+        "safety_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "No obvious unsafe exposure found."
+        },
+        "noise_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Some project noise likely exists."
+        },
+        "residue_risk_score": {
+          "score": 4.5,
+          "rating": "weak",
+          "explanation": "Experiment residue is possible."
+        },
+        "reliability_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Operational state still unclear."
+        }
+      }
+    },
+    {
+      "system_id": "system-image-generator",
+      "display_name": "Image Generator",
+      "owner": "Itzhak",
+      "status": "unknown",
+      "overall_score": {
+        "score": 4.9,
+        "rating": "weak",
+        "explanation": "Conservative average of review metrics."
+      },
+      "weight": "heavy",
+      "recommendation": "needs cleanup",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\image-team",
+      "key_risks": [
+        "old run residue",
+        "unclear current activity"
+      ],
+      "short_summary": "Looks useful, but residue is visible.",
+      "scores": {
+        "architecture_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Project exists but not fully structured in current map."
+        },
+        "clarity_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Intent is visible, operation is not."
+        },
+        "runtime_weight_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Image systems can get heavier quickly."
+        },
+        "resource_fit_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Fit is only moderate without active validation."
+        },
+        "maintainability_score": {
+          "score": 4.5,
+          "rating": "weak",
+          "explanation": "Residue hurts maintainability."
+        },
+        "safety_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "No major exposure found."
+        },
+        "noise_score": {
+          "score": 4.5,
+          "rating": "weak",
+          "explanation": "Run artifacts create noise."
+        },
+        "residue_risk_score": {
+          "score": 3.5,
+          "rating": "critical",
+          "explanation": "Residue is clearly present."
+        },
+        "reliability_score": {
+          "score": 4.5,
+          "rating": "weak",
+          "explanation": "Current live status is unclear."
+        }
+      }
+    },
+    {
+      "system_id": "runtime-pinch-openclaw",
+      "display_name": "Pinch Runtime",
       "owner": "Openclaw",
       "status": "active",
       "overall_score": {
@@ -88,17 +376,17 @@
       "recommendation": "manual review",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-08T11:57:45.955Z",
+      "last_checked": "2026-04-12T07:59:59.611Z",
       "last_updated_if_known": "2026-04-07T13:34:35.928Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
-      "workspace_path": "C:\\Users\\OpenClaw\\.openclaw\\workspace",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace",
       "key_risks": [
         "open group access",
         "full exec",
         "unverified fallback"
       ],
-      "short_summary": "Usable, but needs review.",
+      "short_summary": "Usable runtime, but safety needs work.",
       "scores": {
         "architecture_score": {
           "score": 6,
@@ -148,75 +436,146 @@
       }
     },
     {
-      "system_id": "workspace-custom-systems",
-      "display_name": "Custom Projects Cluster",
-      "owner": "Itzhak",
+      "system_id": "system-transcribe",
+      "display_name": "Transcribe",
+      "owner": "Openclaw",
       "status": "unknown",
       "overall_score": {
-        "score": 4,
+        "score": 5.9,
         "rating": "weak",
         "explanation": "Conservative average of review metrics."
       },
-      "weight": "heavy",
-      "recommendation": "needs cleanup",
-      "needs_cleanup": true,
-      "needs_redesign": true,
-      "last_checked": "2026-04-08T11:57:45.955Z",
+      "weight": "moderate",
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
-      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace\\transcription-team",
       "key_risks": [
-        "mixed active and stale work",
-        "git residue",
-        "unclear boundaries"
+        "workflow not verified",
+        "possible stale outputs"
       ],
-      "short_summary": "Messy and hard to manage.",
+      "short_summary": "Present, but needs verification.",
       "scores": {
         "architecture_score": {
-          "score": 4,
-          "rating": "weak",
-          "explanation": "Not one clean architecture."
-        },
-        "clarity_score": {
-          "score": 3.5,
-          "rating": "critical",
-          "explanation": "Low clarity."
-        },
-        "runtime_weight_score": {
-          "score": 4.5,
-          "rating": "weak",
-          "explanation": "Heavy enough to matter."
-        },
-        "resource_fit_score": {
-          "score": 4.5,
-          "rating": "weak",
-          "explanation": "Only partial fit."
-        },
-        "maintainability_score": {
-          "score": 3.5,
-          "rating": "critical",
-          "explanation": "Hard to maintain as-is."
-        },
-        "safety_score": {
           "score": 6,
           "rating": "acceptable",
-          "explanation": "Less exposed than the bots."
+          "explanation": "Folder is isolated enough."
+        },
+        "clarity_score": {
+          "score": 6,
+          "rating": "acceptable",
+          "explanation": "Purpose is readable."
+        },
+        "runtime_weight_score": {
+          "score": 6.5,
+          "rating": "acceptable",
+          "explanation": "Likely moderate."
+        },
+        "resource_fit_score": {
+          "score": 6.5,
+          "rating": "acceptable",
+          "explanation": "Probably okay for this machine."
+        },
+        "maintainability_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Needs validation, not yet strong."
+        },
+        "safety_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "No direct unsafe exposure found."
         },
         "noise_score": {
-          "score": 3.5,
-          "rating": "critical",
-          "explanation": "Too noisy."
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Probably moderate."
         },
         "residue_risk_score": {
-          "score": 3,
-          "rating": "critical",
-          "explanation": "High residue risk."
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Some stale outputs may exist."
         },
         "reliability_score": {
-          "score": 3.5,
-          "rating": "critical",
-          "explanation": "Active state is unclear."
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Live state not confirmed."
+        }
+      }
+    },
+    {
+      "system_id": "system-posts-social",
+      "display_name": "Posts, Facebook and Instagram",
+      "owner": "Openclaw",
+      "status": "unknown",
+      "overall_score": {
+        "score": 5.3,
+        "rating": "weak",
+        "explanation": "Conservative average of review metrics."
+      },
+      "weight": "moderate",
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": true,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace\\video-editor-team",
+      "key_risks": [
+        "exact scope inferred conservatively",
+        "workflow not verified"
+      ],
+      "short_summary": "Likely social content pipeline, still needs confirmation.",
+      "scores": {
+        "architecture_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Project exists, but mapping is still inferred."
+        },
+        "clarity_score": {
+          "score": 4.5,
+          "rating": "weak",
+          "explanation": "Name does not fully match the business label."
+        },
+        "runtime_weight_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Probably moderate."
+        },
+        "resource_fit_score": {
+          "score": 5.5,
+          "rating": "weak",
+          "explanation": "Acceptable, but unverified."
+        },
+        "maintainability_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Medium at best until verified."
+        },
+        "safety_score": {
+          "score": 7,
+          "rating": "acceptable",
+          "explanation": "No obvious unsafe exposure found."
+        },
+        "noise_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Moderate."
+        },
+        "residue_risk_score": {
+          "score": 5,
+          "rating": "weak",
+          "explanation": "Some project residue may exist."
+        },
+        "reliability_score": {
+          "score": 4.5,
+          "rating": "weak",
+          "explanation": "Operational state remains unclear."
         }
       }
     }

@@ -1,51 +1,60 @@
 {
-  "generated_at": "2026-04-08T11:57:45.955Z",
+  "generated_at": "2026-04-12T07:59:59.611Z",
   "summary": {
-    "total_systems": 3,
+    "total_systems": 8,
     "heavy_systems": 1,
-    "needs_cleanup": 3,
+    "needs_cleanup": 4,
     "closest_to_10_count": 0
   },
   "top_priorities": [
-    "Main Bot, Itzhak",
-    "Main Bot, Openclaw",
-    "Custom Projects Cluster"
+    "Clawy Runtime",
+    "PC Guardian",
+    "News Editor",
+    "Image Generator",
+    "Pinch Runtime",
+    "Transcribe",
+    "Posts, Facebook and Instagram"
   ],
   "requires_attention_now": [
-    "Custom Projects Cluster"
+    "PC Guardian",
+    "News Editor",
+    "Image Generator",
+    "Transcribe",
+    "Posts, Facebook and Instagram"
   ],
   "top_heavy_systems": [
-    "Custom Projects Cluster"
+    "Image Generator"
   ],
   "systems_needing_cleanup": [
-    "Main Bot, Itzhak",
-    "Main Bot, Openclaw",
-    "Custom Projects Cluster"
+    "Clawy Runtime",
+    "News Editor",
+    "Image Generator",
+    "Pinch Runtime"
   ],
   "systems_needing_redesign": [
-    "Custom Projects Cluster"
+    "Posts, Facebook and Instagram"
   ],
   "closest_to_10": [
     {
-      "display_name": "Main Bot, Itzhak",
-      "overall_score": 5.7
+      "display_name": "System Map",
+      "overall_score": 7.3
     },
     {
-      "display_name": "Main Bot, Openclaw",
-      "overall_score": 5.4
+      "display_name": "PC Guardian",
+      "overall_score": 6.3
     },
     {
-      "display_name": "Custom Projects Cluster",
-      "overall_score": 4
+      "display_name": "Transcribe",
+      "overall_score": 5.9
     }
   ],
   "systems": [
     {
-      "system_id": "openclaw-itzhak-main",
+      "system_id": "runtime-clawy-itzhak",
       "name": "OpenClaw Itzhak Main",
-      "display_name": "Main Bot, Itzhak",
+      "display_name": "Clawy Runtime",
       "owner": "Itzhak",
-      "purpose": "Primary OpenClaw bot.",
+      "purpose": "Primary OpenClaw runtime for Clawy.",
       "status": "active",
       "overall_score": 5.7,
       "overall_rating": "weak",
@@ -53,8 +62,8 @@
       "recommendation": "improve later",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-08T11:57:45.955Z",
-      "last_updated_if_known": "2026-04-07T15:28:45.140Z",
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "2026-04-11T22:07:05.223Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
@@ -63,7 +72,7 @@
         "full exec",
         "config residue"
       ],
-      "short_summary": "Works, but safety is weak.",
+      "short_summary": "Stable runtime, weak safety.",
       "source_details": {
         "related_ports": [
           18789,
@@ -96,11 +105,127 @@
       }
     },
     {
-      "system_id": "openclaw-openclaw-main",
+      "system_id": "system-pc-guardian",
+      "name": "pc-guardian",
+      "display_name": "PC Guardian",
+      "owner": "Itzhak",
+      "purpose": "PC monitoring and guardian system.",
+      "status": "unknown",
+      "overall_score": 6.3,
+      "overall_rating": "acceptable",
+      "weight": "light",
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian",
+      "key_risks": [
+        "scope not fully verified",
+        "needs clearer boundaries"
+      ],
+      "short_summary": "Looks real, not fully verified yet.",
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "system-system-map",
+      "name": "system-map",
+      "display_name": "System Map",
+      "owner": "Itzhak",
+      "purpose": "OpenClaw system mapping and review dashboard.",
+      "status": "active",
+      "overall_score": 7.3,
+      "overall_rating": "acceptable",
+      "weight": "light",
+      "recommendation": "improve later",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "2026-04-12T07:59:59.611Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\system-map",
+      "key_risks": [
+        "mapping still evolving",
+        "depends on conservative inference"
+      ],
+      "short_summary": "Active and useful, still being refined.",
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "system-news-editor",
+      "name": "news-dashboard",
+      "display_name": "News Editor",
+      "owner": "Itzhak",
+      "purpose": "News collection, editing and dashboarding system.",
+      "status": "unknown",
+      "overall_score": 5.6,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "recommendation": "manual review",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\news-dashboard",
+      "key_risks": [
+        "workflow not fully verified",
+        "possible residue from experiments"
+      ],
+      "short_summary": "Clearly exists, but needs verification.",
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "system-image-generator",
+      "name": "image-team",
+      "display_name": "Image Generator",
+      "owner": "Itzhak",
+      "purpose": "Image generation workflow system.",
+      "status": "unknown",
+      "overall_score": 4.9,
+      "overall_rating": "weak",
+      "weight": "heavy",
+      "recommendation": "needs cleanup",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\image-team",
+      "key_risks": [
+        "old run residue",
+        "unclear current activity"
+      ],
+      "short_summary": "Looks useful, but residue is visible.",
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "runtime-pinch-openclaw",
       "name": "OpenClaw Openclaw Main",
-      "display_name": "Main Bot, Openclaw",
+      "display_name": "Pinch Runtime",
       "owner": "Openclaw",
-      "purpose": "Secondary OpenClaw bot.",
+      "purpose": "Primary OpenClaw runtime for Pinch.",
       "status": "active",
       "overall_score": 5.4,
       "overall_rating": "weak",
@@ -108,17 +233,17 @@
       "recommendation": "manual review",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-08T11:57:45.955Z",
+      "last_checked": "2026-04-12T07:59:59.611Z",
       "last_updated_if_known": "2026-04-07T13:34:35.928Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
-      "workspace_path": "C:\\Users\\OpenClaw\\.openclaw\\workspace",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace",
       "key_risks": [
         "open group access",
         "full exec",
         "unverified fallback"
       ],
-      "short_summary": "Usable, but needs review.",
+      "short_summary": "Usable runtime, but safety needs work.",
       "source_details": {
         "related_ports": [
           18790,
@@ -134,29 +259,57 @@
       }
     },
     {
-      "system_id": "workspace-custom-systems",
-      "name": "Workspace Custom Systems Cluster",
-      "display_name": "Custom Projects Cluster",
-      "owner": "Itzhak",
-      "purpose": "Mixed custom workspace projects.",
+      "system_id": "system-transcribe",
+      "name": "transcription-team",
+      "display_name": "Transcribe",
+      "owner": "Openclaw",
+      "purpose": "Transcription workflow system.",
       "status": "unknown",
-      "overall_score": 4,
+      "overall_score": 5.9,
       "overall_rating": "weak",
-      "weight": "heavy",
-      "recommendation": "needs cleanup",
-      "needs_cleanup": true,
-      "needs_redesign": true,
-      "last_checked": "2026-04-08T11:57:45.955Z",
+      "weight": "moderate",
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-12T07:59:59.611Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
-      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace\\transcription-team",
       "key_risks": [
-        "mixed active and stale work",
-        "git residue",
-        "unclear boundaries"
+        "workflow not verified",
+        "possible stale outputs"
       ],
-      "short_summary": "Messy and hard to manage.",
+      "short_summary": "Present, but needs verification.",
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "system-posts-social",
+      "name": "video-editor-team",
+      "display_name": "Posts, Facebook and Instagram",
+      "owner": "Openclaw",
+      "purpose": "Social posts production workflow, likely for Facebook and Instagram.",
+      "status": "unknown",
+      "overall_score": 5.3,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": true,
+      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace\\video-editor-team",
+      "key_risks": [
+        "exact scope inferred conservatively",
+        "workflow not verified"
+      ],
+      "short_summary": "Likely social content pipeline, still needs confirmation.",
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
