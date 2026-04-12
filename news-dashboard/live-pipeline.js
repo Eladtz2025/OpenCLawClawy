@@ -487,7 +487,7 @@ async function collectSource(source) {
   const html = await fetchText(source.url);
   const parser = parsers[source.parser];
   if (!parser) throw new Error(`No parser for ${source.parser}`);
-  const items = parser(html).slice(0, 20);
+  const items = parser(html, source).slice(0, 20);
   return {
     source: source.name,
     url: source.url,
