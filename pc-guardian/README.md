@@ -59,6 +59,17 @@ PowerShell כמנהל:
 למשימות OpenClaw יש recovery שמרני בלבד: `schtasks /End` ואז `schtasks /Run`, ורק אם זוהה מצב לא תקין באמת.
 אין stop, disable או kill אגרסיבי ל-OpenClaw tasks מתוך המסלול הזה.
 
+## Investigation Subagent layer
+
+נוספה שכבת חקירה משלימה:
+
+- `scripts/investigate-incident.js` - יוצר דוח חקירה מקומי לפי החריגות האחרונות
+- `scripts/run-investigation.ps1` - wrapper להרצה בטוחה עם לוג
+- `state/investigations/` - ארטיפקטים של דוחות חקירה
+
+כרגע זו שכבת escalation מקומית ושמרנית, לא agent אוטונומי שפועל על המערכת.
+היא מיועדת להעמיק רק אחרי זיהוי, לא להחליף את ליבת הניטור.
+
 ## Publish dashboard
 
 יש תמיכה ב-2 מצבים דרך `dashboard_publish`:

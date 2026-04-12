@@ -48,6 +48,14 @@
     "old_log_days": 14
   },
   "openclaw": {
+    "investigation": {
+      "enabled": true,
+      "trigger_on": [
+        "CRITICAL"
+      ],
+      "min_confidence": "high",
+      "max_reports": 20
+    },
     "gateways": [
       {
         "name": "gateway-18789",

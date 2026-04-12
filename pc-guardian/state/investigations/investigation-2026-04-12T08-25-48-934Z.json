@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-04-12T08:25:48.934Z",
+  "system_name": "PC Guardian",
+  "overall_status": "WARNING",
+  "triggered": false,
+  "incidents": [
+    {
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "severity": "INFO",
+      "confidence": "low",
+      "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+      "next": "להשאיר בדשבורד בלבד, ללא התראה"
+    },
+    {
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "severity": "INFO",
+      "confidence": "low",
+      "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+      "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+    },
+    {
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "severity": "INFO",
+      "confidence": "low",
+      "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+      "next": "להשאיר בדשבורד בלבד, ללא התראה"
+    },
+    {
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "severity": "INFO",
+      "confidence": "low",
+      "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+      "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+    },
+    {
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "severity": "INFO",
+      "confidence": "low",
+      "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+      "next": "להשאיר בדשבורד בלבד, ללא התראה"
+    }
+  ],
+  "recommendations": [
+    {
+      "title": "No escalation",
+      "next": "No subagent escalation needed",
+      "reason": "No high-confidence critical incident found"
+    }
+  ]
+}
