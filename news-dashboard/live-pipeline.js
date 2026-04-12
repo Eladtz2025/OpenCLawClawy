@@ -24,6 +24,29 @@ const TOPIC_LABELS = {
   hapoel: 'הפועל פתח תקווה'
 };
 
+const SIGNALS = {
+  technology: {
+    positive: /ai|agent|model|chip|startup|launch|release|openai|google|anthropic|meta|microsoft|amazon|api|developer/i,
+    negative: /podcast|newsletter|event|career|jobs|privacy|terms|contact/i
+  },
+  technology2: {
+    positive: /ai|מודל|השיק|השיקה|openai|gemini|claude|agent|tool|מוצר|קודקס|anthropic|google/i,
+    negative: /קורס|הרצאה|קבוצה|קהילה|תגובה|דעה/i
+  },
+  israel: {
+    positive: /איראן|עזה|לבנון|חיזבאללה|ביטחון|צה"ל|כנסת|ממשלה|פיקוד העורף|טראמפ|הורמוז|מלחמה|קבינט|חטו|ירי/i,
+    negative: /פודקאסט|newsletter|travel|culture|magazine|opinion/i
+  },
+  crypto: {
+    positive: /bitcoin|btc|eth|sol|xrp|etf|crypto|token|wallet|exchange|blockchain|sec|regulation/i,
+    negative: /podcast|newsletter|sponsored|prediction|game|clone/i
+  },
+  hapoel: {
+    positive: /הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה|עומר פרץ|שחקן|סגל|מאמן|משחק|אימון|פלייאוף|מחזור|שער|training|club announcement|הודעת מועדון/i,
+    negative: /shop|store|price|חולצה|privacy|terms|community|academy|school|הפועל ת"א|הפועל חיפה|הפועל ירושלים|בני יהודה|בית"ר|מכבי|יורוליג/i
+  }
+};
+
 function loadTopics() {
   const config = JSON.parse(fs.readFileSync(SOURCES_CONFIG_PATH, 'utf8'));
   return Object.entries(config).map(([key, sources]) => ({
@@ -41,29 +64,6 @@ function loadTopics() {
 }
 
 const TOPICS = loadTopics();
-
-const SIGNALS = {
-  technology: {
-    positive: /ai|agent|model|chip|startup|launch|release|openai|google|anthropic|meta|microsoft|amazon|api|developer/i,
-    negative: /podcast|newsletter|event|career|jobs|privacy|terms|contact/i
-  },
-  technology2: {
-    positive: /ai|מודל|השיק|השיקה|openai|gemini|claude|agent|tool|מוצר|קודקס|anthropic|google/i,
-    negative: /קורס|הרצאה|קבוצה|קהילה|תגובה|דעה/i
-  },
-  israel: {
-    positive: /איראן|עזה|לבנון|חיזבאללה|ביטחון|צה"ל|כנסת|ממשלה|פיקוד העורף|טראמפ|הורמוז|מלחמה|קבינט|חטו|ירי/i,
-    negative: /פודקאסט|newsletter|travel|culture|magazine|opinion/i
-  },
-  crypto: {
-    positive: /bitcoin|btc|eth|sol|xrp|etf|crypto|token|wallet|exchange|blockchain|sec|regulation/i,
-    negative: /podcast|newsletter|sponsored|prediction/i
-  },
-  hapoel: {
-    positive: /הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה|עומר פרץ|שחקן|סגל|מאמן|משחק|אימון|פלייאוף|מחזור|שער|training|club announcement|הודעת מועדון/i,
-    negative: /shop|store|price|חולצה|privacy|terms|community|academy|school|הפועל ת"א|הפועל חיפה|הפועל ירושלים|הפועל באר שבע|בני יהודה|בית"ר|מכבי|יורוליג/i
-  }
-};
 
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -91,6 +91,26 @@ function stripTags(html = '') {
     .replace(/[\u200e\u200f\u202a-\u202e]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim());
+}
+
+function normalizeWhitespace(text = '') {
+  return String(text)
+    .replace(/[\u200e\u200f\u202a-\u202e]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function stripTrailingJunk(text = '') {
+  return normalizeWhitespace(String(text).replace(/[.।…,:;\-–—\s]+$/g, ''));
+}
+
+function smartTrim(text = '', maxLength = 140) {
+  const clean = normalizeWhitespace(text);
+  if (clean.length <= maxLength) return stripTrailingJunk(clean);
+  const sliced = clean.slice(0, maxLength + 1);
+  const lastSpace = sliced.lastIndexOf(' ');
+  const trimmed = lastSpace > Math.floor(maxLength * 0.6) ? sliced.slice(0, lastSpace) : sliced.slice(0, maxLength);
+  return stripTrailingJunk(trimmed);
 }
 
 function escapeHtml(value = '') {
@@ -177,6 +197,34 @@ function formatHebrewDateTime(isoValue) {
   }).format(date);
 }
 
+function looksGenericHeadline(title = '', url = '') {
+  const hay = `${title} ${url}`.toLowerCase();
+  return /view more|blog\.?$|homepage|category|tag\/|price\/|theme week|newsletter|podcast|daily edition|market wrap|explainer|search-filings|public dissemination service|variable insurance products search/.test(hay);
+}
+
+function cleanTitle(title = '') {
+  return stripTrailingJunk(decodeEntities(title)
+    .replace(/^מה חדש:\s*/i, '')
+    .replace(/^כדאי לדעת:\s*/i, '')
+    .replace(/^התפתחות מרכזית:\s*/i, '')
+    .replace(/^תמונת מצב:\s*/i, '')
+    .replace(/^עדכון מועדון:\s*/i, '')
+    .replace(/^משחק\/לו"ז:\s*/i, '')
+    .replace(/\s+/g, ' '));
+}
+
+function isWeakCandidate(topicKey, item) {
+  const title = cleanTitle(item.title || '');
+  const hay = `${title} ${item.sourceUrl || ''}`.toLowerCase();
+  if (looksGenericHeadline(title, item.sourceUrl)) return true;
+  if (title.length < 22) return true;
+  if (/^\$?\s*\d+[\d,.:\s%]+$/.test(title)) return true;
+  if (topicKey === 'crypto' && /price\/(bitcoin|ethereum|xrp)|\bbitcoin \$|\bethereum \$|\bxrp \$|search-filings|public dissemination service|variable insurance/i.test(hay)) return true;
+  if (topicKey === 'technology' && /google ads & commerce blog|google deepmind/.test(hay)) return true;
+  if (topicKey === 'technology' && /molotov cocktail at his house/i.test(hay)) return true;
+  return false;
+}
+
 const parsers = {
   techcrunch(html, source) {
     return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
@@ -193,6 +241,8 @@ const parsers = {
       const title = stripTags(m[2]);
       if (!/theverge\.com\//i.test(url)) return null;
       if (title.length < 25 || title.length > 180) return null;
+      if (/^(read more|continue reading|share this story)$/i.test(title)) return null;
+      if (/^[a-z].*house$/i.test(title) && title.length < 45) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 40);
   },
@@ -202,6 +252,7 @@ const parsers = {
       const title = stripTags(m[2]);
       if (!/blog\.google\//i.test(url)) return null;
       if (title.length < 25 || title.length > 180) return null;
+      if (looksGenericHeadline(title, url)) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 40);
   },
@@ -220,7 +271,7 @@ const parsers = {
     const dates = [...html.matchAll(/<a[^>]+class="tgme_widget_message_date"[^>]+href="([^"]+)"/gi)];
     const out = [];
     for (let i = 0; i < Math.min(texts.length, dates.length) && out.length < 20; i += 1) {
-      const title = stripTags(texts[i][1]).slice(0, 180);
+      const title = stripTags(texts[i][1]).slice(0, 220);
       if (title.length < 30) continue;
       out.push({ title, url: absolutize(source.url, dates[i][1]), publishedAt: TODAY });
     }
@@ -268,6 +319,7 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/coindesk\.com\//i.test(url)) return null;
+      if (looksGenericHeadline(title, url)) return null;
       if (title.length < 25 || title.length > 220) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url) };
     }, 80);
@@ -286,6 +338,7 @@ const parsers = {
       const url = absolutize('https://www.sec.gov/news/pressreleases', m[1]);
       const title = stripTags(m[2]);
       if (!/sec\.gov\//i.test(url)) return null;
+      if (!/\/news\/press-release\//i.test(url)) return null;
       if (title.length < 20 || title.length > 220) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url) };
     }, 60);
@@ -304,7 +357,7 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/\/sport\/israelisoccer\/article\//i.test(url)) return null;
-      if (!/פתח תקו|פ"ת|עומר פרץ|הפועל/i.test(title)) return null;
+      if (!/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה/i.test(title)) return null;
       if (title.length < 20 || title.length > 220) return null;
       return { title, url, publishedAt: TODAY };
     }, 60);
@@ -314,44 +367,22 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/sports\.walla\.co\.il\/item\//i.test(url)) return null;
-      if (!/פתח תקו|פ"ת|עומר פרץ|הפועל/i.test(title)) return null;
-      if (/הפועל ת"א|הפועל תל אביב|הפועל באר שבע|בית"ר|מכבי/i.test(title)) return null;
+      if (!/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה/i.test(title)) return null;
+      if (/הפועל חיפה|הפועל ירושלים|מכבי|בית"ר/i.test(title) && !/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה/i.test(title)) return null;
       if (title.length < 20 || title.length > 220) return null;
       return { title, url, publishedAt: TODAY };
-    }, 80);
-  },
-  one(html, source) {
-    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
-      const url = absolutize(source.url, m[1]);
-      const title = stripTags(m[2]);
-      if (!/one\.co\.il\//i.test(url)) return null;
-      if (!/פתח תקו|פ"ת|עומר פרץ|הפועל/i.test(`${title} ${url}`)) return null;
-      if (title.length < 15 || title.length > 220) return null;
-      return { title, url, publishedAt: inferPublishedAt(title, url) };
-    }, 80);
-  },
-  sport5(html, source) {
-    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
-      const url = absolutize(source.url, m[1]);
-      const title = stripTags(m[2]);
-      if (!/sport5\.co\.il\//i.test(url)) return null;
-      if (!/פתח תקו|פ"ת|עומר פרץ|הפועל/i.test(`${title} ${url}`)) return null;
-      if (title.length < 15 || title.length > 220) return null;
-      return { title, url, publishedAt: inferPublishedAt(title, url) };
     }, 80);
   },
   soccerwayhapoel(html, source) {
     const pageText = stripTags(html);
     const out = [];
-    if (/hapoel petah|petah tiqwa|petah tikva/i.test(pageText)) {
-      if (/fixture|fixtures|match|matches|results/i.test(pageText)) {
-        out.push({
-          title: 'Soccerway: Hapoel Petah Tikva fixture and results page verified',
-          url: source.url,
-          publishedAt: TODAY,
-          fixture: true
-        });
-      }
+    if (/hapoel petah|petah tiqwa|petah tikva/i.test(pageText) && /fixture|fixtures|match|matches|results/i.test(pageText)) {
+      out.push({
+        title: 'Hapoel Petah Tikva fixture and results page verified',
+        url: source.url,
+        publishedAt: TODAY,
+        fixture: true
+      });
     }
     return out;
   }
@@ -376,27 +407,23 @@ function isFresh(item) {
 }
 
 function makeSummary(topicKey, item) {
-  const title = item.title.replace(/\s+/g, ' ').trim();
-  if (topicKey === 'technology') return `מה חדש: ${title.slice(0, 95)}.`;
-  if (topicKey === 'technology2') return `כדאי לדעת: ${title.slice(0, 95)}.`;
-  if (topicKey === 'crypto') return `תמונת מצב: ${title.slice(0, 95)}.`;
-  if (topicKey === 'israel') return `התפתחות מרכזית: ${title.slice(0, 95)}.`;
-  if (item.fixture) return `משחק/לו"ז: ${title.slice(0, 95)}.`;
-  if (item.fallbackMode === 'weekly') return `שווה לעקוב: ${title.slice(0, 95)}.`;
-  return `עדכון מועדון: ${title.slice(0, 95)}.`;
+  return smartTrim(cleanTitle(item.title), topicKey === 'crypto' ? 110 : 120);
 }
 
 function makeWhy(topicKey, item) {
-  if (topicKey === 'technology') return 'חדש, חשוב, ויכול להיות שימושי או מסחרי.';
-  if (topicKey === 'technology2') return 'יכול לעזור בעבודה, בכלים או בזיהוי הזדמנויות.';
-  if (topicKey === 'israel') return 'זו התפתחות מהותית עם חשיבות ציבורית מיידית.';
-  if (topicKey === 'crypto') return item.fallbackMode === 'weekly' ? 'זה גיבוי של עד 7 ימים ליום חלש, ועדיין עשוי להיות שימושי למסחר או מעקב.' : 'עשוי להשפיע על כיוון השוק או על הזדמנות מסחר.';
-  if (item.fixture) return 'זה פריט fixture ישיר שנותן הקשר מיידי למצב הקבוצה והמשחק הקרוב.';
-  return item.fallbackMode === 'weekly' ? 'זה גיבוי של עד 7 ימים כדי לא להשאיר קטגוריה חלשה בלי הקשר שימושי.' : 'זה עדכון חדש עם חשיבות ישירה להפועל פתח תקווה.';
+  if (topicKey === 'technology') return 'פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.';
+  if (topicKey === 'technology2') return 'איתות שימושי מהשטח, מכלים וקהילות שעשוי להיות רלוונטי לעבודה.';
+  if (topicKey === 'israel') return 'התפתחות חדשותית עם חשיבות ציבורית מיידית.';
+  if (topicKey === 'crypto') return item.fallbackMode === 'weekly' ? 'פריט גיבוי מהימים האחרונים, עדיין עם ערך להבנת הכיוון.' : 'אירוע או תזוזה עם השפעה אפשרית על השוק.';
+  if (item.fixture) return 'פריט לו"ז או הקשר ישיר למצב הקבוצה והמשחק הקרוב.';
+  return item.fallbackMode === 'weekly' ? 'עדכון גיבוי מהימים האחרונים שעדיין קשור ישירות לקבוצה.' : 'עדכון מועדון או קבוצה עם חשיבות ישירה להפועל פתח תקווה.';
 }
 
 function scoreItem(topicKey, item, sourceCount) {
   let score = 0;
+  const clean = cleanTitle(item.title || '');
+  const t = `${clean} ${item.sourceUrl}`.toLowerCase();
+
   if (item.fixture) score += 14;
   if (item.fallbackMode === 'weekly') score -= 4;
   score += item.sourceKind === 'primary' ? 8 : 5;
@@ -405,22 +432,24 @@ function scoreItem(topicKey, item, sourceCount) {
   score += item.signalPositive ? 4 : 0;
   score -= item.signalNegative ? 12 : 0;
   score -= Math.max(0, sourceCount - 2);
+  if (looksGenericHeadline(clean, item.sourceUrl)) score -= 18;
+  if (/\.$/.test(clean)) score -= 2;
 
-  const t = `${item.title} ${item.sourceUrl}`.toLowerCase();
   if (topicKey === 'technology' || topicKey === 'technology2') {
-    if (/openai|anthropic|google|gemini|claude|agent|api|tool|startup|funding|launch|release|codex|automation/i.test(t)) score += 8;
-    if (/money|revenue|pricing|ads|marketplace|funding|trade|bitcoin treasury/i.test(t)) score += 4;
+    if (/openai|anthropic|google|gemini|claude|agent|api|tool|startup|funding|launch|release|codex|automation|chip|semiconductor|deepmind/i.test(t)) score += 8;
+    if (/pricing|ads|marketplace|funding|revenue/.test(t)) score += 2;
   }
   if (topicKey === 'crypto') {
-    if (/bitcoin|btc|ethereum|eth|xrp|etf|sec|token|price|market|exchange/i.test(t)) score += 9;
-    if (/profit|surge|breakout|adoption|institutional|approval/i.test(t)) score += 4;
+    if (/bitcoin|btc|ethereum|eth|xrp|etf|sec|token|market|exchange|regulation/i.test(t)) score += 9;
+    if (/profit|surge|breakout|adoption|institutional|approval|liquidation|selloff/.test(t)) score += 4;
+    if (/price\//.test(t)) score -= 12;
   }
   if (topicKey === 'israel') {
-    if (/איראן|עזה|לבנון|חיזבאללה|צה"ל|ממשלה|כנסת|ביטחון|ירי|קבינט|חטו/i.test(t)) score += 8;
+    if (/איראן|עזה|לבנון|חיזבאללה|כנסת|ממשלה|ביטחון|צה"ל|מלחמה|קבינט|חטופים|טראמפ/.test(clean)) score += 8;
   }
   if (topicKey === 'hapoel') {
-    if (/הפועל פ"ת|הפועל פתח תקווה|עומר פרץ|שחקן|סגל|מאמן|משחק|אימון|פלייאוף/i.test(t)) score += 8;
-    if (/הפועל תל אביב|הפועל ת"א|באר שבע|מכבי חיפה|מכבי תל אביב|בית"ר/i.test(t)) score -= 8;
+    if (/הפועל פ"ת|הפועל פתח תקווה|עומר פרץ|פלייאוף|מחזור|מאמן|סגל|משחק/.test(clean)) score += 8;
+    if (/הפועל חיפה|הפועל ירושלים|מכבי|בית"ר/.test(clean) && !/הפועל פ"ת|הפועל פתח תקווה/.test(clean)) score -= 8;
   }
   return score;
 }
@@ -429,7 +458,7 @@ function dedup(items) {
   const seen = new Set();
   const out = [];
   for (const item of items) {
-    const key = item.title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    const key = cleanTitle(item.title).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
     if (!key || seen.has(key)) continue;
     seen.add(key);
     out.push(item);
@@ -443,7 +472,7 @@ function diversify(items) {
   const titleCaps = new Set();
   for (const item of items) {
     const current = sourceCaps.get(item.source) || 0;
-    const softKey = item.title.toLowerCase().split(' ').slice(0, 6).join(' ');
+    const softKey = cleanTitle(item.title).toLowerCase().split(' ').slice(0, 6).join(' ');
     if (current >= 2) continue;
     if (titleCaps.has(softKey)) continue;
     chosen.push(item);
@@ -454,11 +483,11 @@ function diversify(items) {
   return chosen;
 }
 
-async function collectSource(source, topicKey) {
+async function collectSource(source) {
   const html = await fetchText(source.url);
   const parser = parsers[source.parser];
   if (!parser) throw new Error(`No parser for ${source.parser}`);
-  const items = parser(html, source).slice(0, 20);
+  const items = parser(html).slice(0, 20);
   return {
     source: source.name,
     url: source.url,
@@ -473,7 +502,7 @@ function buildHapoelFixtureCandidates() {
     {
       id: `hapoel-fixture-${TODAY}-match`,
       category: 'hapoel',
-      title: 'הפועל פתח תקווה מול הפועל באר שבע, משחק מפתח במאבק על הפלייאוף העליון',
+      title: 'הפועל פתח תקווה מגיעה למחזור עם יעד ברור, להבטיח מקום בפלייאוף העליון',
       source: 'Hapoel Fixture Rule',
       sourceUrl: 'https://www.hapoelpt.com/post/_9943',
       sourceKind: 'primary',
@@ -490,7 +519,7 @@ function buildHapoelFixtureCandidates() {
     {
       id: `hapoel-fixture-${TODAY}-playoff`,
       category: 'hapoel',
-      title: 'הפועל פתח תקווה מגיעה למחזור עם יעד ברור, להבטיח מקום בפלייאוף העליון',
+      title: 'הפועל פתח תקווה מול הפועל באר שבע, משחק מפתח במאבק על הפלייאוף העליון',
       source: 'Hapoel Fixture Rule',
       sourceUrl: 'https://www.hapoelpt.com/post/_9943',
       sourceKind: 'primary',
@@ -519,7 +548,7 @@ async function collectTopic(topic) {
   const runs = [];
   for (const source of topic.sources) {
     try {
-      runs.push(await collectSource(source, topic.key));
+      runs.push(await collectSource(source));
     } catch (error) {
       runs.push({ source: source.name, url: source.url, kind: source.kind, success: false, error: String(error), items: [] });
     }
@@ -543,7 +572,8 @@ async function collectTopic(topic) {
         signalPositive: signals.positive,
         signalNegative: signals.negative,
         verificationCount: 1,
-        collectedAt: NOW
+        collectedAt: NOW,
+        fixture: Boolean(raw.fixture)
       });
     }
   }
@@ -553,15 +583,19 @@ async function collectTopic(topic) {
   }
 
   for (const item of pooled) {
-    item.verificationCount = pooled.filter(other => other !== item && other.title.toLowerCase() === item.title.toLowerCase()).length + 1;
+    item.verificationCount = pooled.filter(other => other !== item && cleanTitle(other.title).toLowerCase() === cleanTitle(item.title).toLowerCase()).length + 1;
   }
 
-  const freshToday = pooled.filter(item => item.signalPositive && !item.signalNegative && normalizePublishedAt(item.publishedAt).slice(0, 10) === TODAY);
-  const freshWindow = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh);
-  let candidatePool = freshToday.length >= 5 ? freshToday : freshWindow;
+  const strongFresh = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh && !isWeakCandidate(topic.key, item));
+  const freshToday = strongFresh.filter(item => normalizePublishedAt(item.publishedAt).slice(0, 10) === TODAY);
+  let candidatePool = freshToday.length >= 5 ? freshToday : strongFresh;
   if ((topic.key === 'crypto' || topic.key === 'hapoel') && candidatePool.length < 5) {
-    candidatePool = [...candidatePool, ...buildWeeklyFallbackCandidates(topic.key, pooled)];
+    candidatePool = [...candidatePool, ...buildWeeklyFallbackCandidates(topic.key, pooled).filter(item => !isWeakCandidate(topic.key, item))];
   }
+  if (candidatePool.length < 5) {
+    candidatePool = [...candidatePool, ...pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh && !isWeakCandidate(topic.key, item))];
+  }
+
   const perSourceLimited = [];
   const sourceTake = new Map();
   for (const item of dedup(candidatePool)) {
@@ -570,29 +604,27 @@ async function collectTopic(topic) {
     perSourceLimited.push(item);
     sourceTake.set(item.source, current + 1);
   }
-  const deduped = perSourceLimited;
-  const bySource = Object.fromEntries(runs.map(run => [run.source, deduped.filter(item => item.source === run.source).length]));
-  const scored = deduped.map(item => {
+
+  const bySource = Object.fromEntries(runs.map(run => [run.source, perSourceLimited.filter(item => item.source === run.source).length]));
+  const scored = perSourceLimited.map(item => {
     let certainty = 'נמוכה';
     if (item.verificationCount >= 3) certainty = 'מאומת היטב';
     else if (item.verificationCount === 2) certainty = 'מאומת חלקית';
     else if (item.sourceKind === 'primary') certainty = 'מאומת חלקית';
     return {
       ...item,
-      certainty,
       summary: makeSummary(topic.key, item),
       why: makeWhy(topic.key, item),
-      hype: 'נמוכה',
-      worth: 'כן',
-      action: 'לקרוא',
+      certainty,
       score: scoreItem(topic.key, item, bySource[item.source] || 1),
       publishedLabel: formatHebrewDateTime(item.publishedAt)
     };
   }).sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
     const aTime = new Date(normalizePublishedAt(a.publishedAt)).getTime();
     const bTime = new Date(normalizePublishedAt(b.publishedAt)).getTime();
     if (!Number.isNaN(aTime) && !Number.isNaN(bTime) && bTime !== aTime) return bTime - aTime;
-    return b.score - a.score;
+    return 0;
   });
 
   let selected = diversify(scored);
@@ -600,6 +632,7 @@ async function collectTopic(topic) {
     const missing = scored.filter(item => !selected.some(chosen => chosen.id === item.id)).slice(0, 5 - selected.length);
     selected = [...selected, ...missing];
   }
+
   const topicStatus = {
     topic: topic.key,
     label: topic.hebrew,
@@ -655,13 +688,12 @@ header{margin-bottom:18px;position:sticky;top:0;background:#07111df2;backdrop-fi
 section{margin:22px 0}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .section-meta{font-size:13px;color:#9eb3cf;margin-bottom:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
-h3{margin:10px 0;font-size:18px;line-height:1.35}
-p{margin:8px 0;line-height:1.5}
-.why{color:#dce7fb}
+h3{margin:10px 0;font-size:18px;line-height:1.45}
+p{margin:8px 0;line-height:1.6;color:#dce7fb}
 a{color:#8fd3ff;text-decoration:none}
 @media (max-width:700px){main{padding:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}h3{font-size:16px}}
 @media (max-width:520px){.grid{grid-template-columns:1fr}}
