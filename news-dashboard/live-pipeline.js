@@ -408,16 +408,11 @@ function isFresh(item) {
 }
 
 function makeSummary(topicKey, item) {
-  return smartTrim(cleanTitle(item.title), topicKey === 'crypto' ? 110 : 120);
+  return smartTrim(cleanTitle(item.title), topicKey === 'crypto' ? 150 : 170);
 }
 
-function makeWhy(topicKey, item) {
-  if (topicKey === 'technology') return 'פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.';
-  if (topicKey === 'technology2') return 'איתות שימושי מהשטח, מכלים וקהילות שעשוי להיות רלוונטי לעבודה.';
-  if (topicKey === 'israel') return 'התפתחות חדשותית עם חשיבות ציבורית מיידית.';
-  if (topicKey === 'crypto') return item.fallbackMode === 'weekly' ? 'פריט גיבוי מהימים האחרונים, עדיין עם ערך להבנת הכיוון.' : 'אירוע או תזוזה עם השפעה אפשרית על השוק.';
-  if (item.fixture) return 'פריט לו"ז או הקשר ישיר למצב הקבוצה והמשחק הקרוב.';
-  return item.fallbackMode === 'weekly' ? 'עדכון גיבוי מהימים האחרונים שעדיין קשור ישירות לקבוצה.' : 'עדכון מועדון או קבוצה עם חשיבות ישירה להפועל פתח תקווה.';
+function makeWhy() {
+  return 'למה זה חשוב';
 }
 
 function scoreItem(topicKey, item, sourceCount) {
@@ -664,11 +659,12 @@ function renderDashboard(items, meta) {
     const itemsForTopic = grouped[topic.key] || [];
     const topicMeta = meta.topics.find(t => t.topic === topic.key);
     const cards = itemsForTopic.map(item => `
-      <article class="card">
+      <article class="card" onclick="window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span><span class="tag">${escapeHtml(item.publishedLabel || item.publishedAt)}</span></div>
         <h3>${escapeHtml(item.summary)}</h3>
-        <p>${escapeHtml(item.why)}</p>
-        <div class="bottom"><span>אימות ${escapeHtml(String(item.verificationCount))}</span><a href="${escapeHtml(item.sourceUrl)}">מקור</a></div>
+        <p class="why-label">${escapeHtml(item.why)}</p>
+        <p class="why-body">${escapeHtml(item.editorNote || '')}</p>
+        <div class="bottom"><span>אימות ${escapeHtml(String(item.verificationCount))}</span></div>
       </article>
     `).join('');
     return `
@@ -695,11 +691,14 @@ section{margin:22px 0}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .section-meta{font-size:13px;color:#9eb3cf;margin-bottom:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer}
+.card:hover{border-color:#315277;transform:translateY(-1px)}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
-h3{margin:10px 0;font-size:18px;line-height:1.45}
-p{margin:8px 0;line-height:1.6;color:#dce7fb}
+h3{margin:10px 0;font-size:18px;line-height:1.55;white-space:pre-line}
+p{margin:8px 0;line-height:1.7;color:#dce7fb}
+.why-label{margin-bottom:4px;font-size:12px;color:#9eb3cf}
+.why-body{margin-top:0;white-space:pre-line}
 a{color:#8fd3ff;text-decoration:none}
 @media (max-width:700px){main{padding:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}h3{font-size:16px}}
 @media (max-width:520px){.grid{grid-template-columns:1fr}}

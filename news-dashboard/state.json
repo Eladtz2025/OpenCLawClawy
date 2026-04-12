@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-12T13:11:04.313Z",
+  "lastPublishedAt": "2026-04-12T13:49:09.964Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "archive": [
     "2026-04-12.html",
@@ -45,7 +45,7 @@
       "topic": "israel",
       "label": "ישראל",
       "wanted": 5,
-      "got": 3,
+      "got": 4,
       "fallbackActive": true,
       "sourcesWorked": [
         "ynet News",

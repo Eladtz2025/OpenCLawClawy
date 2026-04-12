@@ -13,14 +13,15 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
     "summary": "The AI code wars are heating up",
-    "why": "פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.",
+    "why": "למה זה חשוב",
     "certainty": "מאומת חלקית",
     "score": 28,
     "publishedLabel": "12.04.2026, 15:00",
-    "editorialScore": 40
+    "editorialScore": 40,
+    "editorNote": "מה באמת קרה: The AI code wars are heating up.\nהערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.\nרמת הוודאות כרגע היא מאומת חלקית, והמקור הוא The Verge AI."
   },
   {
     "id": "technology-mjatewvhci1vbgqgbwfuigfy",
@@ -36,14 +37,15 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
     "summary": "20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house",
-    "why": "פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.",
+    "why": "למה זה חשוב",
     "certainty": "מאומת חלקית",
     "score": 28,
     "publishedLabel": "12.04.2026, 15:00",
-    "editorialScore": 30
+    "editorialScore": 30,
+    "editorNote": "מה באמת קרה: 20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house.\nהערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.\nרמת הוודאות כרגע היא מאומת חלקית, והמקור הוא The Verge AI."
   },
   {
     "id": "technology-157xnnex157xldeqlcdxntex",
@@ -54,19 +56,20 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T13:05:56.333652Z",
+    "publishedAt": "2026-04-12T13:36:18.037682Z",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
     "summary": "מלחמות, מחסור בחומרי גלם ופגעי אקלים חונקים את ה־AI",
-    "why": "פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.",
+    "why": "למה זה חשוב",
     "certainty": "נמוכה",
     "score": 17,
-    "publishedLabel": "12.04.2026, 16:05",
-    "editorialScore": 29
+    "publishedLabel": "12.04.2026, 16:36",
+    "editorialScore": 29,
+    "editorNote": "מה באמת קרה: מלחמות, מחסור בחומרי גלם ופגעי אקלים חונקים את ה־AI.\nהערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.\nרמת הוודאות כרגע היא נמוכה, והמקור הוא Calcalist Tech."
   },
   {
     "id": "technology-15hxlteb15xxqidxlner15nx",
@@ -77,18 +80,19 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T13:05:56.333652Z",
+    "publishedAt": "2026-04-12T13:36:18.037682Z",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
     "summary": "בזכות הביקוש הגובר לשבבי AI: הכנסות שיא ל-TSMC הטייוואנית",
-    "why": "פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.",
+    "why": "למה זה חשוב",
     "certainty": "נמוכה",
     "score": 17,
-    "publishedLabel": "12.04.2026, 16:05",
-    "editorialScore": 29
+    "publishedLabel": "12.04.2026, 16:36",
+    "editorialScore": 29,
+    "editorNote": "מה באמת קרה: בזכות הביקוש הגובר לשבבי AI: הכנסות שיא ל-TSMC הטייוואנית.\nהערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.\nרמת הוודאות כרגע היא נמוכה, והמקור הוא Calcalist Tech."
   }
 ]

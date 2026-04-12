@@ -6,6 +6,11 @@
     "success": true,
     "items": [
       {
+        "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain supply favor a rally in bitcoin even as war risks linger.",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
+        "publishedAt": "2026-04-12T00:00:00"
+      },
+      {
         "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
         "url": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
         "publishedAt": "2026-04-12T00:00:00"
@@ -31,11 +36,6 @@
         "publishedAt": "2026-04-11T00:00:00"
       },
       {
-        "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily.",
-        "url": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
-        "publishedAt": "2026-04-10T00:00:00"
-      },
-      {
         "title": "CoinW Partners with Luka Modrić as Global Brand Ambassador",
         "url": "https://www.coindesk.com/press-release/2026/04/09/coinw-partners-with-luka-modric-as-global-brand-ambassador",
         "publishedAt": "2026-04-09T00:00:00"
@@ -51,14 +51,14 @@
         "publishedAt": "2026-04-07T00:00:00"
       },
       {
-        "title": "Bitcoin and other cryptos fall as U.S., Iranian negotiators fail to reach war resolution",
-        "url": "https://www.coindesk.com/markets/2026/04/11/bitcoin-and-other-cryptos-fall-as-u-s-iranian-negotiators-fail-to-reach-war-resolution",
-        "publishedAt": "2026-04-11T00:00:00"
+        "title": "Bitcoin slips below $71,000 as Trump orders blockade of Strait of Hormuz",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-slips-below-usd71-000-as-trump-orders-blockade-of-strait-of-hormuz",
+        "publishedAt": "2026-04-12T00:00:00"
       },
       {
-        "title": "Bitcoin and other cryptos fall as U.S., Iranian negotiators fail to reach war resolution",
-        "url": "https://www.coindesk.com/markets/2026/04/11/bitcoin-and-other-cryptos-fall-as-u-s-iranian-negotiators-fail-to-reach-war-resolution",
-        "publishedAt": "2026-04-11T00:00:00"
+        "title": "Bitcoin slips below $71,000 as Trump orders blockade of Strait of Hormuz",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-slips-below-usd71-000-as-trump-orders-blockade-of-strait-of-hormuz",
+        "publishedAt": "2026-04-12T00:00:00"
       },
       {
         "title": "Tron’s Justin Sun slams Trump-backed WLFI for treating users as ‘personal ATM’ after $75 Million DeFi loan",
@@ -66,9 +66,9 @@
         "publishedAt": "2026-04-12T00:00:00"
       },
       {
-        "title": "Musk’s SpaceX holds $603 million in bitcoin despite $5 billion loss stemming from xAI",
-        "url": "https://www.coindesk.com/markets/2026/04/11/musk-s-spacex-holds-usd603-million-in-bitcoin-despite-usd5-billion-loss-stemming-from-xai",
-        "publishedAt": "2026-04-11T00:00:00"
+        "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
+        "publishedAt": "2026-04-12T00:00:00"
       },
       {
         "title": "Bhutan has sold 70% of its bitcoin in 18 months. It may have stopped BTC mining too.",
@@ -79,6 +79,11 @@
         "title": "How CoinW’s Upgraded Futures Trading Businesses Are Responding Nimbly to Trends",
         "url": "https://www.coindesk.com/sponsored-content/how-coinw-s-upgraded-futures-trading-businesses-are-responding-nimbly-to-trends",
         "publishedAt": null
+      },
+      {
+        "title": "Bitcoin and other cryptos fall as U.S., Iranian negotiators fail to reach war resolution",
+        "url": "https://www.coindesk.com/markets/2026/04/11/bitcoin-and-other-cryptos-fall-as-u-s-iranian-negotiators-fail-to-reach-war-resolution",
+        "publishedAt": "2026-04-11T00:00:00"
       },
       {
         "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event",
@@ -99,11 +104,6 @@
         "title": "Crypto perpetuals predict the direction of Wall Street’s Monday open with 89% accuracy, data shows",
         "url": "https://www.coindesk.com/markets/2026/04/11/crypto-perpetuals-predict-the-direction-of-wall-street-s-monday-open-with-89-accuracy-data-shows",
         "publishedAt": "2026-04-11T00:00:00"
-      },
-      {
-        "title": "$1.6 billion Ether Machine SPAC deal collapses over unfavorable market",
-        "url": "https://www.coindesk.com/business/2026/04/11/usd1-6-billion-ether-machine-spac-deal-collapses-over-unfavorable-market",
-        "publishedAt": "2026-04-11T00:00:00"
       }
     ]
   },
@@ -113,6 +113,16 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "Bitcoin slips below $71,000 as Trump orders blockade of Strait of Hormuz",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-slips-below-usd71-000-as-trump-orders-blockade-of-strait-of-hormuz",
+        "publishedAt": "2026-04-12T00:00:00"
+      },
+      {
+        "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
+        "publishedAt": "2026-04-12T00:00:00"
+      },
       {
         "title": "Bitcoin signals potential seller exhaustion as realized losses decline",
         "url": "https://www.coindesk.com/markets/2026/04/11/bitcoin-signals-potential-seller-exhaustion-as-realized-losses-decline",
@@ -154,18 +164,8 @@
         "publishedAt": "2026-04-09T00:00:00"
       },
       {
-        "title": "Bithumb moves to seize assets over mistaken $8 million bitcoin dispute",
-        "url": "https://www.coindesk.com/business/2026/04/09/bithumb-moves-to-seize-assets-over-mistaken-usd8-million-bitcoin-dispute",
-        "publishedAt": "2026-04-09T00:00:00"
-      },
-      {
-        "title": "Everyone’s awaiting U.S. inflation figures, but bitcoin traders couldn’t care less",
-        "url": "https://www.coindesk.com/markets/2026/04/09/everyone-s-awaiting-u-s-inflation-figures-but-bitcoin-traders-couldn-t-care-less",
-        "publishedAt": "2026-04-09T00:00:00"
-      },
-      {
-        "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
-        "url": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
+        "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain supply favor a rally in bitcoin even as war risks linger.",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
         "publishedAt": "2026-04-12T00:00:00"
       },
       {
@@ -237,8 +237,8 @@
         "publishedAt": "2026-03-31T00:00:00"
       },
       {
-        "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
-        "url": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
+        "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain supply favor a rally in bitcoin even as war risks linger.",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
         "publishedAt": "2026-04-12T00:00:00"
       },
       {
@@ -305,8 +305,8 @@
         "publishedAt": "2026-03-10T00:00:00"
       },
       {
-        "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
-        "url": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
+        "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain supply favor a rally in bitcoin even as war risks linger.",
+        "url": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
         "publishedAt": "2026-04-12T00:00:00"
       },
       {

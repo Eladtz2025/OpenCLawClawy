@@ -13,11 +13,14 @@ section{margin:22px 0}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .section-meta{font-size:13px;color:#9eb3cf;margin-bottom:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer}
+.card:hover{border-color:#315277;transform:translateY(-1px)}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
-h3{margin:10px 0;font-size:18px;line-height:1.45}
-p{margin:8px 0;line-height:1.6;color:#dce7fb}
+h3{margin:10px 0;font-size:18px;line-height:1.55;white-space:pre-line}
+p{margin:8px 0;line-height:1.7;color:#dce7fb}
+.why-label{margin-bottom:4px;font-size:12px;color:#9eb3cf}
+.why-body{margin-top:0;white-space:pre-line}
 a{color:#8fd3ff;text-decoration:none}
 @media (max-width:700px){main{padding:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}h3{font-size:16px}}
 @media (max-width:520px){.grid{grid-template-columns:1fr}}
@@ -27,39 +30,51 @@ a{color:#8fd3ff;text-decoration:none}
 <main>
 <header>
 <h1>חדשות הבוקר</h1>
-<div class="topmeta"><span>updated: 2026-04-12T13:11:04.313Z</span><span>sources worked: 20</span><span>sources failed: 3</span><span>fallback: yes</span><span>status: PARTIAL</span></div>
+<div class="topmeta"><span>updated: 2026-04-12T13:49:09.964Z</span><span>sources worked: 20</span><span>sources failed: 3</span><span>fallback: yes</span><span>status: PARTIAL</span></div>
 </header>
 
       <section>
         <div class="section-head"><h2>טכנולוגיה</h2><span>4/5</span></div>
         <div class="section-meta">worked: 5 · failed: 0 · fallback: yes · editor: on</div>
         <div class="grid">
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">The Verge AI</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 15:00</span></div>
         <h3>The AI code wars are heating up</h3>
-        <p>פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.</p>
-        <div class="bottom"><span>אימות 2</span><a href="https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: The AI code wars are heating up.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא The Verge AI.</p>
+        <div class="bottom"><span>אימות 2</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">The Verge AI</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 15:00</span></div>
         <h3>20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house</h3>
-        <p>פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.</p>
-        <div class="bottom"><span>אימות 2</span><a href="https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: 20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא The Verge AI.</p>
+        <div class="bottom"><span>אימות 2</span></div>
       </article>
     
-      <article class="card">
-        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 16:05</span></div>
+      <article class="card" onclick="window.open('https://www.calcalist.co.il/calcalistech/article/rkaekjo2wg','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.calcalist.co.il/calcalistech/article/rkaekjo2wg','_blank','noopener,noreferrer')}">
+        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 16:36</span></div>
         <h3>מלחמות, מחסור בחומרי גלם ופגעי אקלים חונקים את ה־AI</h3>
-        <p>פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.calcalist.co.il/calcalistech/article/rkaekjo2wg">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: מלחמות, מחסור בחומרי גלם ופגעי אקלים חונקים את ה־AI.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא Calcalist Tech.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
-        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 16:05</span></div>
+      <article class="card" onclick="window.open('https://www.calcalist.co.il/calcalistech/article/hjt3xrl2bg','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.calcalist.co.il/calcalistech/article/hjt3xrl2bg','_blank','noopener,noreferrer')}">
+        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 16:36</span></div>
         <h3>בזכות הביקוש הגובר לשבבי AI: הכנסות שיא ל-TSMC הטייוואנית</h3>
-        <p>פיתוח, מוצר או מהלך שיכול להשפיע על השוק או על עבודה עם AI.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.calcalist.co.il/calcalistech/article/hjt3xrl2bg">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: בזכות הביקוש הגובר לשבבי AI: הכנסות שיא ל-TSMC הטייוואנית.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא Calcalist Tech.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     </div>
       </section>
@@ -68,66 +83,100 @@ a{color:#8fd3ff;text-decoration:none}
         <div class="section-head"><h2>טכנולוגיה #2</h2><span>5/5</span></div>
         <div class="section-meta">worked: 4 · failed: 0 · fallback: no · editor: on</div>
         <div class="grid">
-      <article class="card">
+      <article class="card" onclick="window.open('https://t.me/TechNewsHeb/8583','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/TechNewsHeb/8583','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">TechNewsHeb Telegram</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>הנה הצעה מעולה לשדרוג העבודה שלך עם Claude Code: אנחנו מציגים בפניכם אוצר של ממש: 80+ יכולות חדשות עבור Claude Code</h3>
-        <p>איתות שימושי מהשטח, מכלים וקהילות שעשוי להיות רלוונטי לעבודה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://t.me/TechNewsHeb/8583">מקור</a></div>
+        <h3>הנה הצעה מעולה לשדרוג העבודה שלך עם Claude Code: אנחנו מציגים בפניכם אוצר של ממש: 80+ יכולות חדשות עבור Claude Code – מצאנו ספרייה ענקית שיהפוך את הבינה המלאכותית שלכם</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: הנה הצעה מעולה לשדרוג העבודה שלך עם Claude Code: אנחנו מציגים בפניכם אוצר של ממש: 80+ יכולות חדשות עבור Claude Code – מצאנו ספרייה ענקית שיהפוך את הבינה המלאכותית שלכם לאולר שווייצרי אמיתי, עם הכשרה ל-13 תפקידים מקצועיים.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא TechNewsHeb Telegram.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://t.me/TechNewsHeb/8584','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/TechNewsHeb/8584','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">TechNewsHeb Telegram</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>שר האוצר האמריקאי סקוט בסנט קיים פגישת חירום עם ראשי הבנקים הגדולים, ביניהם גולדמן זאקס וסיטי, בשל איומי הסייבר שמציב</h3>
-        <p>איתות שימושי מהשטח, מכלים וקהילות שעשוי להיות רלוונטי לעבודה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://t.me/TechNewsHeb/8584">מקור</a></div>
+        <h3>שר האוצר האמריקאי סקוט בסנט קיים פגישת חירום עם ראשי הבנקים הגדולים, ביניהם גולדמן זאקס וסיטי, בשל איומי הסייבר שמציב Claude Mythos – המודל החדש והעוצמתי של Anthropic</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: שר האוצר האמריקאי סקוט בסנט קיים פגישת חירום עם ראשי הבנקים הגדולים, ביניהם גולדמן זאקס וסיטי, בשל איומי הסייבר שמציב Claude Mythos – המודל החדש והעוצמתי של Anthropic. הדאגה המרכזית נובעת מיכולתו המדהימה של המודל לאתר אל.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא TechNewsHeb Telegram.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://t.me/AI_tg_il/2233','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/AI_tg_il/2233','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">AI_tg_il Telegram</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>מתחרה לננו בננה? נראה שבקרוב נקבל מודל תמונות חדש מOpenAI. בארנה הופיעו כמה מודלים חדשים עם שמות קוד maskingtape</h3>
-        <p>איתות שימושי מהשטח, מכלים וקהילות שעשוי להיות רלוונטי לעבודה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://t.me/AI_tg_il/2228">מקור</a></div>
+        <h3>רוצים לנסות את המודלים הפתוחים של גוגל? לגוגל יש אפליקציה רשמית בדיוק בשביל זה - הרצה של מודלים מקומית על הטלפון שלכם ללא צורך בחיבור לאינטרנט. להורדה: 📱 אייפון</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: רוצים לנסות את המודלים הפתוחים של גוגל? לגוגל יש אפליקציה רשמית בדיוק בשביל זה - הרצה של מודלים מקומית על הטלפון שלכם ללא צורך בחיבור לאינטרנט. להורדה: 📱 אייפון: https://apps.apple.com/us/app/google-ai-edge-gallery/id67.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא AI_tg_il Telegram.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
-        <div class="topline"><span class="tag">AI_tg_il Telegram</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>רוצים לנסות את המודלים הפתוחים של גוגל? לגוגל יש אפליקציה רשמית בדיוק בשביל זה - הרצה של מודלים מקומית על הטלפון שלכם</h3>
-        <p>איתות שימושי מהשטח, מכלים וקהילות שעשוי להיות רלוונטי לעבודה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://t.me/AI_tg_il/2233">מקור</a></div>
-      </article>
-    
-      <article class="card">
+      <article class="card" onclick="window.open('https://t.me/botai14/1143','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/botai14/1143','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">botai14 Telegram</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>השירות GitReverse הופך רפוזיטוריות ב-GitHub לפרומפטים תוך שניות. הוא מנתח מבנה ופונקציות ומייצר הוראות מדויקות ל-AI</h3>
-        <p>איתות שימושי מהשטח, מכלים וקהילות שעשוי להיות רלוונטי לעבודה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://t.me/botai14/1143">מקור</a></div>
+        <h3>השירות GitReverse הופך רפוזיטוריות ב-GitHub לפרומפטים תוך שניות. הוא מנתח מבנה ופונקציות ומייצר הוראות מדויקות ל-AI לשימוש ב-Codex, Cursor או Claude. נסו בחינם</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: השירות GitReverse הופך רפוזיטוריות ב-GitHub לפרומפטים תוך שניות. הוא מנתח מבנה ופונקציות ומייצר הוראות מדויקות ל-AI לשימוש ב-Codex, Cursor או Claude. נסו בחינם: https://www.gitreverse.com/ https://t.me/botai14.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא botai14 Telegram.</p>
+        <div class="bottom"><span>אימות 1</span></div>
+      </article>
+    
+      <article class="card" onclick="window.open('https://t.me/botai14/1153','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/botai14/1153','_blank','noopener,noreferrer')}">
+        <div class="topline"><span class="tag">botai14 Telegram</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
+        <h3>מיקרוסופט השיקה את MAI-1 מודל AI חינמי לתמלול דיבור שמעולה מ-Gemini במבחן FLEUR 🚀 . ניתן להעלות קבצים או להקליט בדפדפן – מהיר ומתאים להרצאות וראיונות 🎙️ . נסו בחינם</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: מיקרוסופט השיקה את MAI-1 מודל AI חינמי לתמלול דיבור שמעולה מ-Gemini במבחן FLEUR 🚀 . ניתן להעלות קבצים או להקליט בדפדפן – מהיר ומתאים להרצאות וראיונות 🎙️ . נסו בחינם כאן: כאן. https://t.me/botai14.
+הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא botai14 Telegram.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     </div>
       </section>
     
       <section>
-        <div class="section-head"><h2>ישראל</h2><span>3/5</span></div>
+        <div class="section-head"><h2>ישראל</h2><span>4/5</span></div>
         <div class="section-meta">worked: 4 · failed: 0 · fallback: yes · editor: on</div>
         <div class="grid">
-      <article class="card">
-        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>הכוח הנשי: בנט פרסם 2 מועמדות ברשימתו החדשה לכנסת</h3>
-        <p>התפתחות חדשותית עם חשיבות ציבורית מיידית.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.israelhayom.co.il/news/politics/article/20303885">מקור</a></div>
-      </article>
-    
-      <article class="card">
-        <div class="topline"><span class="tag">ynet News</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 12:18</span></div>
+      <article class="card" onclick="window.open('https://www.ynet.co.il/news/article/ryxwpytnbl#autoplay','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.ynet.co.il/news/article/ryxwpytnbl#autoplay','_blank','noopener,noreferrer')}">
+        <div class="topline"><span class="tag">ynet News</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 16:34</span></div>
         <h3>זמיר לצה&quot;ל: כוננות מיידית לחזרה למלחמה עם איראן</h3>
-        <p>התפתחות חדשותית עם חשיבות ציבורית מיידית.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.ynet.co.il/news/article/ryxwpytnbl#autoplay">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: זמיר לצה&quot;ל: כוננות מיידית לחזרה למלחמה עם איראן.
+כדאי לפתוח את הכתבה רק אם אתה רוצה להבין האם זו התפתחות מדינית, ביטחונית או פוליטית עם השלכה מיידית.
+רמת הוודאות כרגע היא מאומת חלקית, והמידע מגיע דרך ynet News.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
-        <div class="topline"><span class="tag">ynet News</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 12:18</span></div>
+      <article class="card" onclick="window.open('https://www.ynet.co.il/news/article/h1gglxy3wl#autoplay','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.ynet.co.il/news/article/h1gglxy3wl#autoplay','_blank','noopener,noreferrer')}">
+        <div class="topline"><span class="tag">ynet News</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 16:34</span></div>
         <h3>הרמטכ&quot;ל נגד ביסמוט ומזכיר הממשלה: לא הבעתי תמיכה בנוסח של הקואליציה</h3>
-        <p>התפתחות חדשותית עם חשיבות ציבורית מיידית.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.ynet.co.il/news/article/h1gglxy3wl#autoplay">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: הרמטכ&quot;ל נגד ביסמוט ומזכיר הממשלה: לא הבעתי תמיכה בנוסח של הקואליציה.
+כדאי לפתוח את הכתבה רק אם אתה רוצה להבין האם זו התפתחות מדינית, ביטחונית או פוליטית עם השלכה מיידית.
+רמת הוודאות כרגע היא מאומת חלקית, והמידע מגיע דרך ynet News.</p>
+        <div class="bottom"><span>אימות 1</span></div>
+      </article>
+    
+      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/defense/article/20307958','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/defense/article/20307958','_blank','noopener,noreferrer')}">
+        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
+        <h3>&quot;הרמטכ״ל הדגיש את הצורך בקידום מענה חקיקתי כולל&quot;, הבהירו בדובר צה&quot;ל, ב</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: &quot;הרמטכ״ל הדגיש את הצורך בקידום מענה חקיקתי כולל&quot;, הבהירו בדובר צה&quot;ל, ב.
+כדאי לפתוח את הכתבה רק אם אתה רוצה להבין האם זו התפתחות מדינית, ביטחונית או פוליטית עם השלכה מיידית.
+רמת הוודאות כרגע היא נמוכה, והמידע מגיע דרך Israel Hayom News.</p>
+        <div class="bottom"><span>אימות 1</span></div>
+      </article>
+    
+      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20308146','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20308146','_blank','noopener,noreferrer')}">
+        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
+        <h3>שינוי כיוון במפרץ: האם זה הקלף המנצח של טראמפ מול איראן?</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: שינוי כיוון במפרץ: האם זה הקלף המנצח של טראמפ מול איראן?.
+כדאי לפתוח את הכתבה רק אם אתה רוצה להבין האם זו התפתחות מדינית, ביטחונית או פוליטית עם השלכה מיידית.
+רמת הוודאות כרגע היא נמוכה, והמידע מגיע דרך Israel Hayom News.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     </div>
       </section>
@@ -136,39 +185,54 @@ a{color:#8fd3ff;text-decoration:none}
         <div class="section-head"><h2>קריפטו</h2><span>5/5</span></div>
         <div class="section-meta">worked: 5 · failed: 1 · fallback: no · editor: on</div>
         <div class="grid">
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">CoinDesk</span><span class="tag">מאומת היטב</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales</h3>
-        <p>אירוע או תזוזה עם השפעה אפשרית על השוק.</p>
-        <div class="bottom"><span>אימות 4</span><a href="https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event">מקור</a></div>
+        <h3>Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain supply favor a rally in bitcoin even as war risks linger..
+השאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.
+רמת הוודאות כרגע היא מאומת היטב, והמקור הוא CoinDesk.</p>
+        <div class="bottom"><span>אימות 4</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">CoinDesk</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>XRP drops to $1.33 as bitcoin weakness pulls down majors Sudden selloff triggered liquidation-style move, with</h3>
-        <p>אירוע או תזוזה עם השפעה אפשרית על השוק.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.coindesk.com/markets/2026/04/12/xrp-drops-to-usd1-33-as-bitcoin-weakness-pulls-down-majors">מקור</a></div>
+        <h3>Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger.
+השאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא CoinDesk.</p>
+        <div class="bottom"><span>אימות 2</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://decrypt.co/364030/not-going-stop-bitcoin-morgan-stanley-weighs-tokenization-tax-solutions','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://decrypt.co/364030/not-going-stop-bitcoin-morgan-stanley-weighs-tokenization-tax-solutions','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">Decrypt</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
         <h3>'Not Going to Stop at Bitcoin': Morgan Stanley Weighs Tokenization, Tax Solutions in Crypto Push</h3>
-        <p>אירוע או תזוזה עם השפעה אפשרית על השוק.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://decrypt.co/364030/not-going-stop-bitcoin-morgan-stanley-weighs-tokenization-tax-solutions">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: 'Not Going to Stop at Bitcoin': Morgan Stanley Weighs Tokenization, Tax Solutions in Crypto Push.
+השאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא Decrypt.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://decrypt.co/news-explorer?pinned=1376471&amp;amp;title=world-liberty-financials-wlfi-token-plummets-amid-controversy-over-defi-loan-token-unlocks','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://decrypt.co/news-explorer?pinned=1376471&amp;amp;title=world-liberty-financials-wlfi-token-plummets-amid-controversy-over-defi-loan-token-unlocks','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">Decrypt</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
         <h3>World Liberty Financial's WLFI Token Plummets Amid Controversy Over DeFi Loan, Token Unlocks</h3>
-        <p>אירוע או תזוזה עם השפעה אפשרית על השוק.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://decrypt.co/news-explorer?pinned=1376471&amp;amp;title=world-liberty-financials-wlfi-token-plummets-amid-controversy-over-defi-loan-token-unlocks">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: World Liberty Financial's WLFI Token Plummets Amid Controversy Over DeFi Loan, Token Unlocks.
+השאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא Decrypt.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.coindesk.com/video/why-iran-wants-crypto-for-strait-of-hormuz-tolls','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.coindesk.com/video/why-iran-wants-crypto-for-strait-of-hormuz-tolls','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">CoinDesk Bitcoin</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
         <h3>Why Iran wants crypto for Strait of Hormuz tolls</h3>
-        <p>אירוע או תזוזה עם השפעה אפשרית על השוק.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.coindesk.com/video/why-iran-wants-crypto-for-strait-of-hormuz-tolls">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: Why Iran wants crypto for Strait of Hormuz tolls.
+השאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא CoinDesk Bitcoin.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     </div>
       </section>
@@ -177,39 +241,54 @@ a{color:#8fd3ff;text-decoration:none}
         <div class="section-head"><h2>הפועל פתח תקווה</h2><span>5/5</span></div>
         <div class="section-meta">worked: 2 · failed: 2 · fallback: no · editor: on</div>
         <div class="grid">
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.hapoelpt.com/post/_9943','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.hapoelpt.com/post/_9943','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">Hapoel Fixture Rule</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 03:00</span></div>
         <h3>הפועל פתח תקווה מגיעה למחזור עם יעד ברור, להבטיח מקום בפלייאוף העליון</h3>
-        <p>פריט לו&quot;ז או הקשר ישיר למצב הקבוצה והמשחק הקרוב.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.hapoelpt.com/post/_9943">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: הפועל פתח תקווה מגיעה למחזור עם יעד ברור, להבטיח מקום בפלייאוף העליון.
+המטרה של התקציר הזה היא לעזור לך להבין מהר אם שווה להיכנס לכתבה המלאה.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא Hapoel Fixture Rule.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.hapoelpt.com/post/_9943','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.hapoelpt.com/post/_9943','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">Hapoel Fixture Rule</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 03:00</span></div>
         <h3>הפועל פתח תקווה מול הפועל באר שבע, משחק מפתח במאבק על הפלייאוף העליון</h3>
-        <p>פריט לו&quot;ז או הקשר ישיר למצב הקבוצה והמשחק הקרוב.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.hapoelpt.com/post/_9943">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: הפועל פתח תקווה מול הפועל באר שבע, משחק מפתח במאבק על הפלייאוף העליון.
+המטרה של התקציר הזה היא לעזור לך להבין מהר אם שווה להיכנס לכתבה המלאה.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא Hapoel Fixture Rule.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.hapoelpt.com/post/הפועל-מבנה-פתח-תקוה-בפלייאוף-העליון','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.hapoelpt.com/post/הפועל-מבנה-פתח-תקוה-בפלייאוף-העליון','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">Hapoel PT News</span><span class="tag">מאומת חלקית</span><span class="tag">12.04.2026, 00:00</span></div>
         <h3>הפועל מבנה פתח תקוה בפלייאוף העליון</h3>
-        <p>עדכון מועדון או קבוצה עם חשיבות ישירה להפועל פתח תקווה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.hapoelpt.com/post/הפועל-מבנה-פתח-תקוה-בפלייאוף-העליון">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: הפועל מבנה פתח תקוה בפלייאוף העליון.
+המטרה של התקציר הזה היא לעזור לך להבין מהר אם שווה להיכנס לכתבה המלאה.
+רמת הוודאות כרגע היא מאומת חלקית, והמקור הוא Hapoel PT News.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.ynet.co.il/sport/israelisoccer/article/h1vykqd2we','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.ynet.co.il/sport/israelisoccer/article/h1vykqd2we','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">ynet Sport Israel Soccer</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
-        <h3>האדומים מתוסכלים לאחר ה-0:0 מול הפועל פ&quot;ת, שקבע כי הקבוצה תסיים את העונה הסדירה במקום הרביעי: &quot;הפועל פ&quot;ת עשתה בונקר משחק</h3>
-        <p>עדכון מועדון או קבוצה עם חשיבות ישירה להפועל פתח תקווה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.ynet.co.il/sport/israelisoccer/article/h1vykqd2we">מקור</a></div>
+        <h3>האדומים מתוסכלים לאחר ה-0:0 מול הפועל פ&quot;ת, שקבע כי הקבוצה תסיים את העונה הסדירה במקום הרביעי: &quot;הפועל פ&quot;ת עשתה בונקר משחק שלם, ואנחנו קיבלנו החלטות רעות בהתקפה&quot;</h3>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: האדומים מתוסכלים לאחר ה-0:0 מול הפועל פ&quot;ת, שקבע כי הקבוצה תסיים את העונה הסדירה במקום הרביעי: &quot;הפועל פ&quot;ת עשתה בונקר משחק שלם, ואנחנו קיבלנו החלטות רעות בהתקפה&quot;.
+המטרה של התקציר הזה היא לעזור לך להבין מהר אם שווה להיכנס לכתבה המלאה.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא ynet Sport Israel Soccer.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card">
+      <article class="card" onclick="window.open('https://www.ynet.co.il/sport/israelisoccer/article/b1viu00rn11g','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.ynet.co.il/sport/israelisoccer/article/b1viu00rn11g','_blank','noopener,noreferrer')}">
         <div class="topline"><span class="tag">ynet Sport Israel Soccer</span><span class="tag">נמוכה</span><span class="tag">12.04.2026, 00:00</span></div>
         <h3>בלעדי | עומר פרץ סיכם לשנתיים נוספות בהפועל פ&quot;ת וישודרג ב־33 אחוז</h3>
-        <p>עדכון מועדון או קבוצה עם חשיבות ישירה להפועל פתח תקווה.</p>
-        <div class="bottom"><span>אימות 1</span><a href="https://www.ynet.co.il/sport/israelisoccer/article/b1viu00rn11g">מקור</a></div>
+        <p class="why-label">למה זה חשוב</p>
+        <p class="why-body">מה באמת קרה: בלעדי | עומר פרץ סיכם לשנתיים נוספות בהפועל פ&quot;ת וישודרג ב־33 אחוז.
+המטרה של התקציר הזה היא לעזור לך להבין מהר אם שווה להיכנס לכתבה המלאה.
+רמת הוודאות כרגע היא נמוכה, והמקור הוא ynet Sport Israel Soccer.</p>
+        <div class="bottom"><span>אימות 1</span></div>
       </article>
     </div>
       </section>

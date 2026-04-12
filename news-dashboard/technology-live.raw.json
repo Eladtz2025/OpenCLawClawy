@@ -139,6 +139,16 @@
         "publishedAt": "2026-04-09T16:00:00+00:00"
       },
       {
+        "title": "The Hisense UR9 is a great first shot against OLED’s bow",
+        "url": "https://www.theverge.com/tech/910537/hisense-ur9-rgb-led-tv-review",
+        "publishedAt": "2026-04-09T16:00:00+00:00"
+      },
+      {
+        "title": "How AT&T created the most iconic phone ever",
+        "url": "https://www.theverge.com/podcast/910725/western-electric-500-att-version-history",
+        "publishedAt": "2026-04-09T16:00:00+00:00"
+      },
+      {
         "title": "The AI code wars are heating up",
         "url": "https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic",
         "publishedAt": "2026-04-09T16:00:00+00:00"
@@ -201,16 +211,6 @@
       {
         "title": "Congress can finally close a mass surveillance loophole — but will they?",
         "url": "https://www.theverge.com/policy/909229/fisa-702-reauthorization-davidson-wyden-warrant-reforms",
-        "publishedAt": "2026-04-09T16:00:00+00:00"
-      },
-      {
-        "title": "Bose’s rugged Soundlink Flex Bluetooth speaker is on sale for up to $50 off",
-        "url": "https://www.theverge.com/gadgets/907744/bose-soundlink-flex-2nd-gen-google-nest-doorbell-deal-sale",
-        "publishedAt": "2026-04-09T16:00:00+00:00"
-      },
-      {
-        "title": "adding support for the iPhone 17 and its square sensor selfie camera",
-        "url": "https://www.theverge.com/tech/829150/project-indigo-now-supports-the-iphone-17s-selfie-camera",
         "publishedAt": "2026-04-09T16:00:00+00:00"
       }
     ]
@@ -440,102 +440,102 @@
       {
         "title": "\"עובד יקר\": הנורמה החדשה בתאגידי ההייטק היא פיטורים באמצעות המייל",
         "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "מאורקל, דרך אמזון ועד מטא: תאגידי הטק מפטרים באימייל קר, מהרגע להרגע, חוסמים את הגישה למערכות הארגון, ושולחים מסר לעובדים: אמנם קראנו לכם \"משפחה\" אבל ברגע האמת לא נתייחס אליכם כבני אדם",
         "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
+      },
+      {
+        "title": "16:14 הירוקים נגד קידום חוות שרתים כתשתית לאומית: \"אפקט דומינו הרסני\"",
+        "url": "https://www.calcalist.co.il/real-estate/article/sjowlzt2wg",
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
+      },
+      {
+        "title": "16:12 טראמפ: \"מטילים מצור ימי על מצר הורמוז\"",
+        "url": "https://www.calcalist.co.il/world_news/article/sjezfzt2bg",
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "15:40 הבעל לא ידע על הרומן וקבע את אשתו כמוטבת - הוריו התנגדו, מה נפסק?",
         "url": "https://www.calcalist.co.il/local_news/article/h17x2ztn11g",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "14:48 פיקאסו ב-100 יורו? ציור של האמן יחולק בהגרלה כדי לגייס כסף לחקר אלצהיימר",
         "url": "https://www.calcalist.co.il/world_news/article/bkmuxzyhwg",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
-      },
-      {
-        "title": "13:52 BYD פותחת בסין תחנות טעינה מהירה ביחד עם סניפי דרייב ת'רו של KFC, הכל בפחות מעשר דקות",
-        "url": "https://www.calcalist.co.il/world_news/article/syhpilt211l",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
-      },
-      {
-        "title": "13:30 סולברג: \"יש תחושה של חידלון מוחלט בפעילות המשטרה בנושא המשתמטים\"",
-        "url": "https://www.calcalist.co.il/local_news/article/s1pxkrun11l",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "מנכ\"ל ריסקיפייד: \"היעדר תואר זה דבר חיובי בעולם היזמות\"",
         "url": "https://www.calcalist.co.il/article/b1yrjkt4we",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "אחרי מכירת הבנק לישראכרט: עשרות עובדים יפוטרו מזרוע הטכנולוגיה של אש",
         "url": "https://www.calcalist.co.il/calcalistech/article/rk131ek2wx",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "מלחמות, מחסור בחומרי גלם ופגעי אקלים חונקים את ה־AI",
         "url": "https://www.calcalist.co.il/calcalistech/article/rkaekjo2wg",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "בזכות הביקוש הגובר לשבבי AI: הכנסות שיא ל-TSMC הטייוואנית",
         "url": "https://www.calcalist.co.il/calcalistech/article/hjt3xrl2bg",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "ממה מפחדים בממשל? פגישת החירום שנערכה בוושינגטון בשל המודל החדש של אנתרופיק",
         "url": "https://www.calcalist.co.il/calcalistech/article/hylttzln11g",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "רק חברות נבחרות יקבלו גישה: מודל ה-AI העוצמתי שאנתרופיק חוששת לשחרר",
         "url": "https://www.calcalist.co.il/calcalistech/article/h1jb5jbnbl",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
         "url": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "מחיר היעילות: מחקר מצא ששימוש רב ב-AI \"מטגן לעובדים את המוח\"",
         "url": "https://www.calcalist.co.il/calcalistech/article/r1bkc3siwe",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "המלחמה על המשרד: המעסיקים שדורשים מהעובדים להתייצב – גם תחת אש",
         "url": "https://www.calcalist.co.il/calcalistech/article/by8rwizswe",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "\"עובד יקר\": הנורמה החדשה בתאגידי ההייטק - פיטורים במייל",
         "url": "https://www.calcalist.co.il/calcalistech/article/bkxlya4hbg",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "רקטת הגראד של חיזבאללה: מהפכה מפתיעה בארטילריה – ובטרור",
         "url": "https://www.calcalist.co.il/calcalistech/article/syj69zsn11l",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "55% מהמקצועות עומדים להשתנות דרמטית: האם המשרה שלכם בטוחה?",
         "url": "https://www.calcalist.co.il/calcalistech/article/bkxfzb11nwl",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "טיל חוף-ים: כך פועל הנשק האיראני שמאיים על מצר הורמוז",
         "url": "https://www.calcalist.co.il/calcalistech/article/bkjnmhyibl",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       },
       {
         "title": "ממה מפחדים בממשל? פגישת החירום שנערכה בוושינגטון בשל המודל החדש של אנתרופיק",
         "url": "https://www.calcalist.co.il/calcalistech/article/hylttzln11g",
-        "publishedAt": "2026-04-12T13:05:56.333652Z"
+        "publishedAt": "2026-04-12T13:36:18.037682Z"
       }
     ]
   }

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-04-12T13:11:04.313Z",
+  "generatedAt": "2026-04-12T13:49:09.964Z",
   "status": "PARTIAL",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-12T13:11:04.313Z",
+  "lastPublishedAt": "2026-04-12T13:49:09.964Z",
   "sourcesWorkedCount": 20,
   "fallbackActive": true,
   "topicStatus": [
@@ -43,7 +43,7 @@
       "topic": "israel",
       "label": "ישראל",
       "wanted": 5,
-      "got": 3,
+      "got": 4,
       "fallbackActive": true,
       "sourcesWorked": [
         "ynet News",

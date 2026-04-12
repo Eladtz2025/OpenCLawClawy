@@ -1,10 +1,10 @@
 [
   {
-    "id": "crypto-vhj1bxagdg9rzw4gc2vlcyb3",
+    "id": "crypto-qml0y29pbibhbmfsexn0cybm",
     "category": "crypto",
-    "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
+    "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain supply favor a rally in bitcoin even as war risks linger.",
     "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
@@ -13,21 +13,22 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
-    "summary": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales",
-    "why": "אירוע או תזוזה עם השפעה אפשרית על השוק.",
+    "summary": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain",
+    "why": "למה זה חשוב",
     "certainty": "מאומת היטב",
-    "score": 35,
+    "score": 36,
     "publishedLabel": "12.04.2026, 00:00",
-    "editorialScore": 47
+    "editorialScore": 48,
+    "editorNote": "מה באמת קרה: Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger Key factors, such as ETF flows, macro factors and on-chain supply favor a rally in bitcoin even as war risks linger..\nהשאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.\nרמת הוודאות כרגע היא מאומת היטב, והמקור הוא CoinDesk."
   },
   {
-    "id": "crypto-wfjqigryb3bzihrvicqxljmz",
+    "id": "crypto-qml0y29pbibhbmfsexn0cybm",
     "category": "crypto",
-    "title": "XRP drops to $1.33 as bitcoin weakness pulls down majors Sudden selloff triggered liquidation-style move, with weak recovery reinforcing bearish structure despite compressed volatility setup.",
+    "title": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger",
     "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/xrp-drops-to-usd1-33-as-bitcoin-weakness-pulls-down-majors",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/bitcoin-analysts-flag-triggers-for-a-massive-surge-to-usd88-000-even-as-war-risks-linger",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
@@ -35,15 +36,16 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "verificationCount": 2,
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
-    "summary": "XRP drops to $1.33 as bitcoin weakness pulls down majors Sudden selloff triggered liquidation-style move, with",
-    "why": "אירוע או תזוזה עם השפעה אפשרית על השוק.",
+    "summary": "Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger",
+    "why": "למה זה חשוב",
     "certainty": "מאומת חלקית",
-    "score": 34,
+    "score": 36,
     "publishedLabel": "12.04.2026, 00:00",
-    "editorialScore": 46
+    "editorialScore": 48,
+    "editorNote": "מה באמת קרה: Bitcoin analysts flag triggers for a massive surge to $88,000 even as war risks linger.\nהשאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.\nרמת הוודאות כרגע היא מאומת חלקית, והמקור הוא CoinDesk."
   },
   {
     "id": "crypto-j05vdcbhb2luzyb0bybtdg9w",
@@ -59,14 +61,15 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
     "summary": "'Not Going to Stop at Bitcoin': Morgan Stanley Weighs Tokenization, Tax Solutions in Crypto Push",
-    "why": "אירוע או תזוזה עם השפעה אפשרית על השוק.",
+    "why": "למה זה חשוב",
     "certainty": "נמוכה",
     "score": 24,
     "publishedLabel": "12.04.2026, 00:00",
-    "editorialScore": 36
+    "editorialScore": 36,
+    "editorNote": "מה באמת קרה: 'Not Going to Stop at Bitcoin': Morgan Stanley Weighs Tokenization, Tax Solutions in Crypto Push.\nהשאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.\nרמת הוודאות כרגע היא נמוכה, והמקור הוא Decrypt."
   },
   {
     "id": "crypto-v29ybgqgtglizxj0esbgaw5h",
@@ -82,14 +85,15 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
     "summary": "World Liberty Financial's WLFI Token Plummets Amid Controversy Over DeFi Loan, Token Unlocks",
-    "why": "אירוע או תזוזה עם השפעה אפשרית על השוק.",
+    "why": "למה זה חשוב",
     "certainty": "נמוכה",
     "score": 24,
     "publishedLabel": "12.04.2026, 00:00",
-    "editorialScore": 36
+    "editorialScore": 36,
+    "editorNote": "מה באמת קרה: World Liberty Financial's WLFI Token Plummets Amid Controversy Over DeFi Loan, Token Unlocks.\nהשאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.\nרמת הוודאות כרגע היא נמוכה, והמקור הוא Decrypt."
   },
   {
     "id": "crypto-v2h5ielyyw4gd2fudhmgy3j5",
@@ -105,13 +109,14 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "collectedAt": "2026-04-12T13:49:09.964Z",
     "fixture": false,
     "summary": "Why Iran wants crypto for Strait of Hormuz tolls",
-    "why": "אירוע או תזוזה עם השפעה אפשרית על השוק.",
+    "why": "למה זה חשוב",
     "certainty": "נמוכה",
     "score": 19,
     "publishedLabel": "12.04.2026, 00:00",
-    "editorialScore": 31
+    "editorialScore": 31,
+    "editorNote": "מה באמת קרה: Why Iran wants crypto for Strait of Hormuz tolls.\nהשאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.\nרמת הוודאות כרגע היא נמוכה, והמקור הוא CoinDesk Bitcoin."
   }
 ]

@@ -51,6 +51,33 @@ function scoreEditorial(topicKey, item) {
   return score;
 }
 
+function buildEditorNote(topicKey, item) {
+  const title = cleanTitle(item.title || item.summary || '');
+  const source = item.source || '';
+  const certainty = item.certainty || '';
+  const lines = [];
+
+  if (topicKey === 'technology' || topicKey === 'technology2') {
+    lines.push(`מה באמת קרה: ${title}.`);
+    lines.push('הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.');
+    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמקור הוא ${source}.`);
+  } else if (topicKey === 'israel') {
+    lines.push(`מה באמת קרה: ${title}.`);
+    lines.push('כדאי לפתוח את הכתבה רק אם אתה רוצה להבין האם זו התפתחות מדינית, ביטחונית או פוליטית עם השלכה מיידית.');
+    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמידע מגיע דרך ${source}.`);
+  } else if (topicKey === 'crypto') {
+    lines.push(`מה באמת קרה: ${title}.`);
+    lines.push('השאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.');
+    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמקור הוא ${source}.`);
+  } else {
+    lines.push(`מה באמת קרה: ${title}.`);
+    lines.push('המטרה של התקציר הזה היא לעזור לך להבין מהר אם שווה להיכנס לכתבה המלאה.');
+    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמקור הוא ${source}.`);
+  }
+
+  return lines.filter(Boolean).join('\n');
+}
+
 function chooseTop(topicKey, candidates, wanted = 5) {
   const rescored = candidates.map(item => ({ ...item, editorialScore: scoreEditorial(topicKey, item) }));
   rescored.sort((a, b) => b.editorialScore - a.editorialScore || Number(b.score || 0) - Number(a.score || 0));
@@ -64,7 +91,11 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     if (!key || seen.has(key)) continue;
     const sourceCount = sourceCaps.get(item.source) || 0;
     if (sourceCount >= 2) continue;
-    out.push({ ...item, summary: cleanTitle(item.summary || item.title || '') });
+    out.push({
+      ...item,
+      summary: cleanTitle(item.summary || item.title || ''),
+      editorNote: buildEditorNote(topicKey, item)
+    });
     seen.add(key);
     sourceCaps.set(item.source, sourceCount + 1);
     if (out.length >= wanted) break;
