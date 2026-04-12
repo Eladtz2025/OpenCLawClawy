@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-04-12T04:53:03.549Z",
-  "status": "SUCCESS",
+  "generatedAt": "2026-04-12T13:11:04.313Z",
+  "status": "PARTIAL",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-12T04:53:03.549Z",
-  "sourcesWorkedCount": 22,
-  "fallbackActive": false,
+  "lastPublishedAt": "2026-04-12T13:11:04.313Z",
+  "sourcesWorkedCount": 20,
+  "fallbackActive": true,
   "topicStatus": [
     {
       "topic": "technology",
       "label": "טכנולוגיה",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 4,
+      "fallbackActive": true,
       "sourcesWorked": [
         "TechCrunch AI",
         "The Verge Tech",
@@ -19,7 +19,9 @@
         "Google Blog Technology",
         "Calcalist Tech"
       ],
-      "sourcesFailed": []
+      "sourcesFailed": [],
+      "editorApplied": true,
+      "editorError": null
     },
     {
       "topic": "technology2",
@@ -33,21 +35,25 @@
         "botai14 Telegram",
         "hackit770 Telegram"
       ],
-      "sourcesFailed": []
+      "sourcesFailed": [],
+      "editorApplied": true,
+      "editorError": null
     },
     {
       "topic": "israel",
       "label": "ישראל",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 3,
+      "fallbackActive": true,
       "sourcesWorked": [
         "ynet News",
         "Maariv News",
         "Israel Hayom News",
         "Times of Israel"
       ],
-      "sourcesFailed": []
+      "sourcesFailed": [],
+      "editorApplied": true,
+      "editorError": null
     },
     {
       "topic": "crypto",
@@ -60,10 +66,16 @@
         "CoinDesk Bitcoin",
         "CoinDesk Ethereum",
         "CoinDesk XRP",
-        "Decrypt",
-        "SEC Press Releases"
+        "Decrypt"
       ],
-      "sourcesFailed": []
+      "sourcesFailed": [
+        {
+          "source": "SEC Press Releases",
+          "error": "no_items"
+        }
+      ],
+      "editorApplied": true,
+      "editorError": null
     },
     {
       "topic": "hapoel",
@@ -73,15 +85,20 @@
       "fallbackActive": false,
       "sourcesWorked": [
         "Hapoel PT News",
-        "ynet Sport Israel Soccer",
-        "Walla Sport"
+        "ynet Sport Israel Soccer"
       ],
       "sourcesFailed": [
+        {
+          "source": "Walla Sport",
+          "error": "no_items"
+        },
         {
           "source": "Soccerway Hapoel PT",
           "error": "no_items"
         }
-      ]
+      ],
+      "editorApplied": true,
+      "editorError": null
     }
   ]
 }

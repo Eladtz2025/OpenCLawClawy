@@ -1,5 +1,39 @@
 [
   {
+    "id": "crypto-vhj1bxagdg9rzw4gc2vlcyb3",
+    "category": "crypto",
+    "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 4,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-wfjqigryb3bzihrvicqxljmz",
+    "category": "crypto",
+    "title": "XRP drops to $1.33 as bitcoin weakness pulls down majors Sudden selloff triggered liquidation-style move, with weak recovery reinforcing bearish structure despite compressed volatility setup.",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/xrp-drops-to-usd1-33-as-bitcoin-weakness-pulls-down-majors",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
     "id": "crypto-qml0y29pbibzawduywxzihbv",
     "category": "crypto",
     "title": "Bitcoin signals potential seller exhaustion as realized losses decline On-chain data points to easing selling pressure, with realized losses falling and spot markets shifting toward net buying.",
@@ -12,8 +46,9 @@
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-jdeunibiawxsaw9uiev0agvy",
@@ -29,7 +64,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
@@ -45,7 +81,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
@@ -61,71 +98,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagcgvyzm9y",
-    "category": "crypto",
-    "title": "CoinDesk 20 performance update: Hedera (HBAR) drops 1.9%, leading index lower Cardando (ADA), down 1.3% from Thursday, was also among the underperformers.",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/coindesk-indices/2026/04/10/coindesk-20-performance-update-hedera-hbar-drops-1-9-leading-index-lower",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-10T00:00:00",
-    "fresh": false,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qmluyw5jzsbvzmzlcnmgvuff",
-    "category": "crypto",
-    "title": "Binance offers UAE staff temporary relocation as Middle East conflict disrupts region The crypto exchange said its operations in the United Arab Emirates remain unchanged and that many employees have chosen to remain",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/business/2026/04/10/binance-offers-uae-staff-temporary-relocation-as-middle-east-conflict-disrupts-region",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-10T00:00:00",
-    "fresh": false,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qml0y29pbibnywlucybhznrl",
-    "category": "crypto",
-    "title": "Bitcoin gains after core CPI rose a less-than-forecast 0.2% in March. Headline inflation rose 0.9% last month, driven by the sharp rise in energy costs due to the Iran war.",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/10/bitcoin-rises-after-core-cpi-rose-a-less-than-forecast-0-2-in-march",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-10T00:00:00",
-    "fresh": false,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-sw5zdgl0dxrpb25zjybiaxrj",
-    "category": "crypto",
-    "title": "Institutions' bitcoin positioning lacks conviction; CPI, Iran talks might help Institutions are betting on the bitcoin price hitting $80,000 through call options, but they are also buying downside protection.",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/daybook-us/2026/04/10/institutions-bitcoin-positioning-lacks-conviction-cpi-iran-talks-might-help",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-10T00:00:00",
-    "fresh": false,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-q29pblcgugfydg5lcnmgd2l0",
@@ -141,7 +115,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-ughhcm9zie5ldhdvcmsgqw5u",
@@ -157,7 +132,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0ymfzzsbpzmzpy2lhbgx5",
@@ -173,87 +149,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagmsw5oduu",
-    "category": "crypto",
-    "title": "CoinDesk 20 1,985.63 1.75 %",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/price/cd20",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qml0y29pbiakidcxldu5mi42",
-    "category": "crypto",
-    "title": "Bitcoin $ 71,592.64 1.70 %",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/price/bitcoin",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rxrozxjldw0gjcayldixnc4y",
-    "category": "crypto",
-    "title": "Ethereum $ 2,214.28 1.22 %",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/price/ethereum",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qmh1dgfuighhcybzb2xkidcw",
-    "category": "crypto",
-    "title": "Bhutan has sold 70% of its bitcoin in 18 months. It may have stopped BTC mining too.",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-11T00:00:00",
-    "fresh": false,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qmh1dgfuighhcybzb2xkidcw",
-    "category": "crypto",
-    "title": "Bhutan has sold 70% of its bitcoin in 18 months. It may have stopped BTC mining too.",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-11T00:00:00",
-    "fresh": false,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbibhbmqgb3rozxig",
@@ -268,15 +165,50 @@
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "verificationCount": 2,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
-    "id": "crypto-q3j5chrviensyxjpdhkgymls",
+    "id": "crypto-qml0y29pbibhbmqgb3rozxig",
     "category": "crypto",
-    "title": "Crypto Clarity bill has 30% chance of passing this year, Wintermute’s Hammond says",
+    "title": "Bitcoin and other cryptos fall as U.S., Iranian negotiators fail to reach war resolution",
     "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/policy/2026/04/11/crypto-clarity-bill-has-30-chance-of-passing-this-year-wintermute-s-hammond-says",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/bitcoin-and-other-cryptos-fall-as-u-s-iranian-negotiators-fail-to-reach-war-resolution",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-11T00:00:00",
+    "fresh": false,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-vhjvbukamxmgsnvzdgluifn1",
+    "category": "crypto",
+    "title": "Tron’s Justin Sun slams Trump-backed WLFI for treating users as ‘personal ATM’ after $75 Million DeFi loan",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/tron-s-justin-sun-slams-trump-backed-wlfi-for-treating-users-as-personal-atm-after-usd75-million-defi-loan",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-txvzakamxmgu3bhy2vyighvb",
+    "category": "crypto",
+    "title": "Musk’s SpaceX holds $603 million in bitcoin despite $5 billion loss stemming from xAI",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/musk-s-spacex-holds-usd603-million-in-bitcoin-despite-usd5-billion-loss-stemming-from-xai",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
@@ -285,23 +217,25 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
-    "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
+    "id": "crypto-qmh1dgfuighhcybzb2xkidcw",
     "category": "crypto",
-    "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi",
+    "title": "Bhutan has sold 70% of its bitcoin in 18 months. It may have stopped BTC mining too.",
     "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
-    "publishedAt": "2026-04-10T00:00:00",
+    "publishedAt": "2026-04-11T00:00:00",
     "fresh": false,
-    "signalPositive": false,
+    "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-sg93ienvaw5x4oczcybvcgdy",
@@ -317,7 +251,93 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-vhj1bxagdg9rzw4gc2vlcyb3",
+    "category": "crypto",
+    "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
+    "category": "crypto",
+    "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-10T00:00:00",
+    "fresh": false,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-vhj1bxatymfja2vkifdmrkkg",
+    "category": "crypto",
+    "title": "Trump-backed WLFI token drops 12% to record lows after team defends multi-million lending position",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/10/trump-backed-wlfi-token-drops-12-to-record-lows-after-team-defends-multi-million-lending-position",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-10T00:00:00",
+    "fresh": false,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
+    "category": "crypto",
+    "title": "Crypto perpetuals predict the direction of Wall Street’s Monday open with 89% accuracy, data shows",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/crypto-perpetuals-predict-the-direction-of-wall-street-s-monday-open-with-89-accuracy-data-shows",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-11T00:00:00",
+    "fresh": false,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-jdeunibiawxsaw9uiev0agvy",
+    "category": "crypto",
+    "title": "$1.6 billion Ether Machine SPAC deal collapses over unfavorable market",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/business/2026/04/11/usd1-6-billion-ether-machine-spac-deal-collapses-over-unfavorable-market",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-11T00:00:00",
+    "fresh": false,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbibzawduywxzihbv",
@@ -333,7 +353,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbiwgynjvywrlcibt",
@@ -349,7 +370,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbibnywlucybhznrl",
@@ -365,7 +387,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rgf2awqgqmfpbgv54oczcybi",
@@ -381,7 +404,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbib0b3bzicq3miww",
@@ -397,7 +421,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbibzag9vdhmgywjv",
@@ -413,7 +438,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-v2h5ielyyw4gd2fudhmgy3j5",
@@ -429,7 +455,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-u3ryyxrlz3nigjlzifnuukmg",
@@ -445,7 +472,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0ahvtyibtb3zlcyb0bybz",
@@ -461,7 +489,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rxzlcnlvbmxigjlzigf3ywl0",
@@ -477,23 +506,25 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
-    "id": "crypto-qml0y29pbibzawduywxzihbv",
+    "id": "crypto-vhj1bxagdg9rzw4gc2vlcyb3",
     "category": "crypto",
-    "title": "Bitcoin signals potential seller exhaustion as realized losses decline On-chain data points to easing selling pressure, with realized losses falling and spot markets shifting toward net buying.",
+    "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
     "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/bitcoin-signals-potential-seller-exhaustion-as-realized-losses-decline",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11T00:00:00",
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -509,71 +540,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qml0y29pbibucmvhc3vyawvz",
-    "category": "crypto",
-    "title": "Bitcoin Treasuries Theme Week",
-    "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/tag/btc-treasuires-theme-week-2025",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagjdesotg1",
-    "category": "crypto",
-    "title": "CoinDesk 20 $1,985.63 1.75 %",
-    "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/price/cd20",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qml0y29pbiaknzesntkyljy0",
-    "category": "crypto",
-    "title": "Bitcoin $71,592.64 1.70 %",
-    "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/price/bitcoin",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rxrozxjldw0gjdismje0lji4",
-    "category": "crypto",
-    "title": "Ethereum $2,214.28 1.22 %",
-    "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/price/ethereum",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-zgvjzw50cmfsaxplzcbhchbs",
@@ -589,23 +557,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-zgvjzw50cmfsaxplzcbmaw5h",
-    "category": "crypto",
-    "title": "decentralized finance (DeFi)",
-    "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/tag/defi",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-jdeunibiawxsaw9uiev0agvy",
@@ -620,8 +573,9 @@
     "fresh": false,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "verificationCount": 2,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-vg9tiexlzsdziejpdg1pbmug",
@@ -637,7 +591,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-vghlifbyb3rvy29soibczxju",
@@ -653,7 +608,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qwf2zsbsb3nlcybrzxkgcmlz",
@@ -669,7 +625,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-u2nod2fiihbsyw5zihnwb3qg",
@@ -685,7 +642,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rxrozxjldw0grm91bmrhdglv",
@@ -701,7 +659,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-vghlifbyb3rvy29soibrdwfu",
@@ -717,7 +676,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-r3jhexnjywxl4oczcybyzxnl",
@@ -733,7 +693,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-u29tzsbxdwfudhvtlxjlc2lz",
@@ -749,7 +710,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-q29pbmjhc2xigjlziejhc2ug",
@@ -765,23 +727,25 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
-    "id": "crypto-qml0y29pbibzawduywxzihbv",
+    "id": "crypto-vhj1bxagdg9rzw4gc2vlcyb3",
     "category": "crypto",
-    "title": "Bitcoin signals potential seller exhaustion as realized losses decline On-chain data points to easing selling pressure, with realized losses falling and spot markets shifting toward net buying.",
+    "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
     "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/bitcoin-signals-potential-seller-exhaustion-as-realized-losses-decline",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11T00:00:00",
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -797,71 +761,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qml0y29pbibucmvhc3vyawvz",
-    "category": "crypto",
-    "title": "Bitcoin Treasuries Theme Week",
-    "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/tag/btc-treasuires-theme-week-2025",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagjdesotg1",
-    "category": "crypto",
-    "title": "CoinDesk 20 $1,985.63 1.75 %",
-    "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/price/cd20",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qml0y29pbiaknzesntkyljy0",
-    "category": "crypto",
-    "title": "Bitcoin $71,592.64 1.70 %",
-    "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/price/bitcoin",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rxrozxjldw0gjdismje0lji4",
-    "category": "crypto",
-    "title": "Ethereum $2,214.28 1.22 %",
-    "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/price/ethereum",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-wfjqig1hesbizsbszxnzigv4",
@@ -877,7 +778,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-q3j5chrvj3mgjdiyncbtawxs",
@@ -893,7 +795,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-t2lslcbzawx2zxigdhjhzglu",
@@ -909,7 +812,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbibqdw1wcyb0byak",
@@ -925,7 +829,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-wfjqihryzwfzdxj5igzpcm0g",
@@ -941,7 +846,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-wfjqighvdmvycybuzwfyicqx",
@@ -957,7 +863,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbukamxmgzgvyaxzh",
@@ -973,7 +880,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbibqdxn0ihn1cmdl",
@@ -989,7 +897,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qsbodwdligdhccbizxr3zwvu",
@@ -1005,7 +914,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-u29syw5hlcbyulagrvrgcyb0",
@@ -1021,23 +931,25 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
-    "id": "crypto-qml0y29pbibzawduywxzihbv",
+    "id": "crypto-vhj1bxagdg9rzw4gc2vlcyb3",
     "category": "crypto",
-    "title": "Bitcoin signals potential seller exhaustion as realized losses decline On-chain data points to easing selling pressure, with realized losses falling and spot markets shifting toward net buying.",
+    "title": "Trump token sees whale accumulation ahead of Mar-a-Lago gala; senators raise questions over event Some whales have withdrawn large amounts of TRUMP tokens to private wallets, according to Lookonchain.",
     "source": "CoinDesk XRP",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/11/bitcoin-signals-potential-seller-exhaustion-as-realized-losses-decline",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/12/trump-token-sees-whale-accumulation-ahead-of-mar-a-lago-gala-senators-raise-questions-over-event",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-11T00:00:00",
-    "fresh": false,
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -1053,14 +965,15 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
-    "id": "crypto-qml0y29pbibucmvhc3vyawvz",
+    "id": "crypto-vghlcmxigjlzigegv2f5ihrv",
     "category": "crypto",
-    "title": "Bitcoin Treasuries Theme Week",
-    "source": "CoinDesk XRP",
-    "sourceUrl": "https://www.coindesk.com/tag/btc-treasuires-theme-week-2025",
+    "title": "There’s a Way to Make Bitcoin Safe From Quantum Without a Fork, Researchers Say",
+    "source": "Decrypt",
+    "sourceUrl": "https://decrypt.co/364092/quantum-safe-bitcoin-transactions-without-fork",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -1068,56 +981,9 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagjdesotg1",
-    "category": "crypto",
-    "title": "CoinDesk 20 $1,985.63 1.75 %",
-    "source": "CoinDesk XRP",
-    "sourceUrl": "https://www.coindesk.com/price/cd20",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qml0y29pbiaknzesntkyljy0",
-    "category": "crypto",
-    "title": "Bitcoin $71,592.64 1.70 %",
-    "source": "CoinDesk XRP",
-    "sourceUrl": "https://www.coindesk.com/price/bitcoin",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rxrozxjldw0gjdismje0lji4",
-    "category": "crypto",
-    "title": "Ethereum $2,214.28 1.22 %",
-    "source": "CoinDesk XRP",
-    "sourceUrl": "https://www.coindesk.com/price/ethereum",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-j05vdcbhb2luzyb0bybtdg9w",
@@ -1133,7 +999,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-tmv3ifrvb2xziefpbsb0bybn",
@@ -1149,7 +1016,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rwnvbm9taxn0cybtywlkiefj",
@@ -1165,23 +1033,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-vghpcyanu3bhy2ugsw52ywrl",
-    "category": "crypto",
-    "title": "This 'Space Invaders' Clone Game Pays Real Bitcoin—If You're Skilled, Lucky or Rich",
-    "source": "Decrypt",
-    "sourceUrl": "https://decrypt.co/364036/space-invaders-clone-game-pays-real-bitcoin-skilled-lucky-rich",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0z2v0ie9mzmvycybtcgfj",
@@ -1197,7 +1050,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rwxvbibndxnrifjvym90ierv",
@@ -1213,7 +1067,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rxhvzhvzieludhjvzhvjzxmg",
@@ -1229,7 +1084,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-wmnhc2ggsxmgu29hcmluzybb",
@@ -1245,7 +1101,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-v29ybgqgtglizxj0esbgaw5h",
@@ -1261,7 +1118,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0vgvuc29yifrbtybub2tl",
@@ -1277,7 +1135,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-q3j5chrviev4y2hhbmdliejp",
@@ -1293,7 +1152,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-sg9uzyblb25niexpy2vuc2vz",
@@ -1309,7 +1169,8 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-smfwyw4ncybecmfmdcbbbwvu",
@@ -1325,7 +1186,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyesbg",
@@ -1341,7 +1203,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-sxmgwfjqiejldhrlcibqcm90",
@@ -1357,7 +1220,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-t0tyifzlbnr1cmvzlcbiyxno",
@@ -1373,7 +1237,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-q29pbmjhc2usiejpbmfuy2us",
@@ -1389,7 +1254,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-s2fsc2hpie1ha2vzifvwidg5",
@@ -1405,7 +1271,8 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-q3j5chrviezpcm1zienhbibo",
@@ -1421,7 +1288,8 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   },
   {
     "id": "crypto-rw1lcmdpbmcgvgvjacbidwig",
@@ -1437,326 +1305,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-u2tpccb0bybzzwfyy2ggzmll",
-    "category": "crypto",
-    "title": "Skip to search field",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/news/pressreleases#global-search-box",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-u2tpccb0bybtywluignvbnrl",
-    "category": "crypto",
-    "title": "Skip to main content",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/news/pressreleases#main-content",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-vmfyawfibgugsw5zdxjhbmnl",
-    "category": "crypto",
-    "title": "Variable Insurance Products Search",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/search-filings/variable-insurance-products-search",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-uhvibgljierpc3nlbwluyxrp",
-    "category": "crypto",
-    "title": "Public Dissemination Service (PDS)",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/search-filings/public-dissemination-service-system-contact",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rurhqvigrmlszxigtwfuywdl",
-    "category": "crypto",
-    "title": "EDGAR Filer Management Portal",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.filermanagement.edgarfiling.sec.gov/filermgmt/Welcome/EDGARFilerMgmtMain.htm",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-t25saw5liezvcm1zie1hbmfn",
-    "category": "crypto",
-    "title": "Online Forms Management Portal",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.onlineforms.edgarfiling.sec.gov/Welcome/EDGAROnlineFormsLogin.htm",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rmlszxigu3vwcg9ydcamifjl",
-    "category": "crypto",
-    "title": "Filer Support & Resources",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/submit-filings/filer-support-resources",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-u3rhdglzdgljcyamierhdgeg",
-    "category": "crypto",
-    "title": "Statistics & Data Visualizations",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/data-research/statistics-data-visualizations",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-u3rhdhv0zxmgjibszwd1bgf0",
-    "category": "crypto",
-    "title": "Statutes & Regulations",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/rules-regulations/statutes-regulations",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-tm8tqwn0aw9ulcbjbnrlcnby",
-    "category": "crypto",
-    "title": "No-Action, Interpretive, and Exemptive Letters",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/rules-regulations/no-action-interpretive-exemptive-letters",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-u2vszi1szwd1bgf0b3j5ie9y",
-    "category": "crypto",
-    "title": "Self-Regulatory Organization Rulemaking",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-uhvibgljifbldgl0aw9ucybm",
-    "category": "crypto",
-    "title": "Public Petitions for Rulemaking",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/rules-regulations/petitions-rulemaking-submitted-to-sec",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rw5mb3jjzw1lbnqgjibmaxrp",
-    "category": "crypto",
-    "title": "Enforcement & Litigation",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/enforcement-litigation",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qwrtaw5pc3ryyxrpdmuguhjv",
-    "category": "crypto",
-    "title": "Administrative Proceedings",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/enforcement-litigation/administrative-proceedings",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-qwrtaw5pc3ryyxrpdmugtgf3",
-    "category": "crypto",
-    "title": "Administrative Law Judge Orders and Initial Decisions",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/enforcement-litigation/administrative-law-judge-orders-initial-decisions",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rglzdhjpynv0aw9ucyb0bybi",
-    "category": "crypto",
-    "title": "Distributions to Harmed Investors",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-rxhhbwluyxrpb24guhjpb3jp",
-    "category": "crypto",
-    "title": "Examination Priorities",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/compliance/examination-priorities",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-q29tcgxpyw5jzsbpdxryzwfj",
-    "category": "crypto",
-    "title": "Compliance Outreach Program",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/compliance/compliance-outreach-program",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-v2hpc3rszwjsb3dlcibqcm9n",
-    "category": "crypto",
-    "title": "Whistleblower Program",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/enforcement-litigation/whistleblower-program",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
-  },
-  {
-    "id": "crypto-twfya2v0ifn0cnvjdhvyzsbb",
-    "category": "crypto",
-    "title": "Market Structure Analytics",
-    "source": "SEC Press Releases",
-    "sourceUrl": "https://www.sec.gov/featured-topics/market-structure-analytics",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:53:03.549Z"
+    "collectedAt": "2026-04-12T13:11:04.313Z",
+    "fixture": false
   }
 ]
