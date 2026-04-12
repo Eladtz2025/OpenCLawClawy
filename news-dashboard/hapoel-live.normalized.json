@@ -13,7 +13,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txldet16lxqidxntev16lx",
@@ -29,7 +29,23 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
+  },
+  {
+    "id": "hapoel-15txknet15xxntez150g15dx",
+    "category": "hapoel",
+    "title": "האדומים או הצהובים? שחקני העבר מנתחים את הדרבי הירושלמי הגדול שייערך הערב (20:00). יאיר אסייג: \"יש להפועל צ'אנס להוציא משהו מהמשחק הזה\". אלי אוחנה: \"הגיע הזמן שבית\"ר תשבור את הרצף השלילי\".",
+    "source": "ynet Sport Israel Soccer",
+    "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/sktrjawnbl",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-12T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": true,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txpnev16lxncdxqilxkcdx",
@@ -45,7 +61,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txknet15xxntez150g157x",
@@ -61,7 +77,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txntep15fxpydxkdez158g",
@@ -77,7 +93,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txpnev16lxncdxpclxqidx",
@@ -93,7 +109,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15fxqdez16txlcb8iner15tx",
@@ -109,7 +125,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-157xknee158g15txpnev16lx",
@@ -125,7 +141,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15pxldev16fxkcdxknex16jx",
@@ -141,7 +157,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15hxnnei15pxmsb8inei15xx",
@@ -157,7 +173,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15dxl9eo15kg15pxqnee15qg",
@@ -173,7 +189,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txpneo15xxmden15gg15tx",
@@ -189,7 +205,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15hxqnet15qg15xxlnek15xx",
@@ -205,7 +221,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15vxmidxlnem15nxncdxknec",
@@ -221,7 +237,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txkdev15zxkteo15ksineu",
@@ -237,7 +253,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-157xknee158g15txpnev16lx",
@@ -253,7 +269,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15xxotet16og15txqdez16tx",
@@ -269,7 +285,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txoneq15xxnsdxlnee16tx",
@@ -285,7 +301,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15lxmdeqinek16jxmdee15xx",
@@ -301,7 +317,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txqdez15ag15txlnez16hx",
@@ -317,7 +333,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15txmdeo15xxp9ez150g16jx",
@@ -333,23 +349,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
-  },
-  {
-    "id": "hapoel-15pxqnez15vxldeqiner157x",
-    "category": "hapoel",
-    "title": "דריכות במכבי חיפה: \"רוצים לצמצם את הפער מהפועל ת\"א\"",
-    "source": "ynet Sport Israel Soccer",
-    "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/hy6e4bg3we#autoplay",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-12T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": true,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-15nxmdek15lxqdeviner16tx",
@@ -365,7 +365,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-16qi16og15fxldes15lxqidx",
@@ -381,7 +381,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "hapoel-fixture-2026-04-12-match",
@@ -397,7 +397,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z",
+    "collectedAt": "2026-04-12T04:53:03.549Z",
     "fixture": true
   },
   {
@@ -414,7 +414,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z",
+    "collectedAt": "2026-04-12T04:53:03.549Z",
     "fixture": true
   }
 ]

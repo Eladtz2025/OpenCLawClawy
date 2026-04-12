@@ -131,8 +131,15 @@ async function fetchText(url) {
   return text;
 }
 
-function inferPublishedAt(title, url, htmlSnippet = '') {
+function inferPublishedAt(title, url, htmlSnippet = '', pageHtml = '') {
   const hay = `${title} ${url} ${htmlSnippet}`;
+  const pageHay = String(pageHtml || '');
+  const directIso = pageHay.match(/"datePublished":"([^"]+)"/i)
+    || pageHay.match(/"date_created":"([^"]+)"/i)
+    || pageHay.match(/datetime="([^"]+)"/i)
+    || pageHay.match(/<!--date generated - ([^ ]+)-->/i)
+    || pageHay.match(/"uploadDate":"([^"]+)"/i);
+  if (directIso) return directIso[1];
   const dateMatch = hay.match(/(20\d\d[-\/](\d\d)[-\/](\d\d))/);
   if (dateMatch) {
     const date = dateMatch[1].replace(/\//g, '-');
@@ -177,7 +184,7 @@ const parsers = {
       const title = stripTags(m[2]);
       if (!/techcrunch\.com\/20\d\d\//i.test(url)) return null;
       if (title.length < 25 || title.length > 180) return null;
-      return { title, url, publishedAt: inferPublishedAt(title, url) };
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 40);
   },
   verge(html, source) {
@@ -186,7 +193,7 @@ const parsers = {
       const title = stripTags(m[2]);
       if (!/theverge\.com\//i.test(url)) return null;
       if (title.length < 25 || title.length > 180) return null;
-      return { title, url, publishedAt: inferPublishedAt(title, url) };
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 40);
   },
   googleblog(html, source) {
@@ -195,7 +202,7 @@ const parsers = {
       const title = stripTags(m[2]);
       if (!/blog\.google\//i.test(url)) return null;
       if (title.length < 25 || title.length > 180) return null;
-      return { title, url, publishedAt: inferPublishedAt(title, url) };
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 40);
   },
   calcalist(html, source) {
@@ -205,7 +212,7 @@ const parsers = {
       if (!/calcalist\.co\.il\//i.test(url)) return null;
       if (/smbc|conference|marketmoney|podcast/i.test(url + ' ' + title)) return null;
       if (title.length < 25 || title.length > 220) return null;
-      return { title, url, publishedAt: inferPublishedAt(title, url) || TODAY };
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) || `${TODAY}T00:00:00` };
     }, 80);
   },
   telegram(html, source) {
@@ -225,7 +232,7 @@ const parsers = {
       const title = stripTags(m[2]);
       if (!/\/news\/article\//i.test(url)) return null;
       if (title.length < 25 || title.length > 220) return null;
-      return { title, url, publishedAt: TODAY };
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) || `${TODAY}T00:00:00` };
     }, 120);
   },
   maariv(html) {

@@ -13,7 +13,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-jdeunibiawxsaw9uiev0agvy",
@@ -29,7 +29,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q3j5chrvihblcnbldhvhbhmg",
@@ -45,7 +45,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
@@ -61,7 +61,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagcgvyzm9y",
@@ -77,7 +77,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qmluyw5jzsbvzmzlcnmgvuff",
@@ -93,7 +93,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibnywlucybhznrl",
@@ -109,7 +109,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-sw5zdgl0dxrpb25zjybiaxrj",
@@ -125,7 +125,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pblcgugfydg5lcnmgd2l0",
@@ -141,7 +141,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-ughhcm9zie5ldhdvcmsgqw5u",
@@ -157,7 +157,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0ymfzzsbpzmzpy2lhbgx5",
@@ -173,12 +173,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagmsw5oduu",
     "category": "crypto",
-    "title": "CoinDesk 20 1,985.67 1.75 %",
+    "title": "CoinDesk 20 1,985.63 1.75 %",
     "source": "CoinDesk",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "primary",
@@ -189,12 +189,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-qml0y29pbiakidcxldu0oc4y",
+    "id": "crypto-qml0y29pbiakidcxldu5mi42",
     "category": "crypto",
-    "title": "Bitcoin $ 71,548.24 1.76 %",
+    "title": "Bitcoin $ 71,592.64 1.70 %",
     "source": "CoinDesk",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "primary",
@@ -205,12 +205,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjcayldixmy4w",
+    "id": "crypto-rxrozxjldw0gjcayldixnc4y",
     "category": "crypto",
-    "title": "Ethereum $ 2,213.00 1.28 %",
+    "title": "Ethereum $ 2,214.28 1.22 %",
     "source": "CoinDesk",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "primary",
@@ -221,7 +221,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qmh1dgfuighhcybzb2xkidcw",
@@ -237,7 +237,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qmh1dgfuighhcybzb2xkidcw",
@@ -253,7 +253,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibhbmqgb3rozxig",
@@ -269,7 +269,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q3j5chrviensyxjpdhkgymls",
@@ -285,7 +285,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rmvkzxjhbcbqdwrnzsbibg9j",
@@ -301,7 +301,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-sg93ienvaw5x4oczcybvcgdy",
@@ -317,7 +317,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibzawduywxzihbv",
@@ -333,7 +333,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbiwgynjvywrlcibt",
@@ -349,7 +349,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibnywlucybhznrl",
@@ -365,7 +365,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rgf2awqgqmfpbgv54oczcybi",
@@ -381,7 +381,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbib0b3bzicq3miww",
@@ -397,7 +397,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibzag9vdhmgywjv",
@@ -413,7 +413,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-v2h5ielyyw4gd2fudhmgy3j5",
@@ -429,7 +429,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u3ryyxrlz3nigjlzifnuukmg",
@@ -445,7 +445,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0ahvtyibtb3zlcyb0bybz",
@@ -461,7 +461,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rxzlcnlvbmxigjlzigf3ywl0",
@@ -477,7 +477,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibzawduywxzihbv",
@@ -493,7 +493,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -509,7 +509,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyawvz",
@@ -525,12 +525,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagjdesotg1",
     "category": "crypto",
-    "title": "CoinDesk 20 $1,985.67 1.75 %",
+    "title": "CoinDesk 20 $1,985.63 1.75 %",
     "source": "CoinDesk Bitcoin",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "secondary",
@@ -541,12 +541,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-qml0y29pbiaknzesntq4lji0",
+    "id": "crypto-qml0y29pbiaknzesntkyljy0",
     "category": "crypto",
-    "title": "Bitcoin $71,548.24 1.76 %",
+    "title": "Bitcoin $71,592.64 1.70 %",
     "source": "CoinDesk Bitcoin",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "secondary",
@@ -557,12 +557,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjdismjezljaw",
+    "id": "crypto-rxrozxjldw0gjdismje0lji4",
     "category": "crypto",
-    "title": "Ethereum $2,213.00 1.28 %",
+    "title": "Ethereum $2,214.28 1.22 %",
     "source": "CoinDesk Bitcoin",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "secondary",
@@ -573,7 +573,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-zgvjzw50cmfsaxplzcbhchbs",
@@ -589,7 +589,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-zgvjzw50cmfsaxplzcbmaw5h",
@@ -605,7 +605,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-jdeunibiawxsaw9uiev0agvy",
@@ -621,7 +621,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-vg9tiexlzsdziejpdg1pbmug",
@@ -637,7 +637,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-vghlifbyb3rvy29soibczxju",
@@ -653,7 +653,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qwf2zsbsb3nlcybrzxkgcmlz",
@@ -669,7 +669,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u2nod2fiihbsyw5zihnwb3qg",
@@ -685,7 +685,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rxrozxjldw0grm91bmrhdglv",
@@ -701,7 +701,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-vghlifbyb3rvy29soibrdwfu",
@@ -717,7 +717,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-r3jhexnjywxl4oczcybyzxnl",
@@ -733,7 +733,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u29tzsbxdwfudhvtlxjlc2lz",
@@ -749,7 +749,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pbmjhc2xigjlziejhc2ug",
@@ -765,7 +765,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibzawduywxzihbv",
@@ -781,7 +781,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -797,7 +797,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyawvz",
@@ -813,12 +813,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagjdesotg1",
     "category": "crypto",
-    "title": "CoinDesk 20 $1,985.67 1.75 %",
+    "title": "CoinDesk 20 $1,985.63 1.75 %",
     "source": "CoinDesk Ethereum",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "secondary",
@@ -829,12 +829,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-qml0y29pbiaknzesntq4lji0",
+    "id": "crypto-qml0y29pbiaknzesntkyljy0",
     "category": "crypto",
-    "title": "Bitcoin $71,548.24 1.76 %",
+    "title": "Bitcoin $71,592.64 1.70 %",
     "source": "CoinDesk Ethereum",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "secondary",
@@ -845,12 +845,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjdismjezljaw",
+    "id": "crypto-rxrozxjldw0gjdismje0lji4",
     "category": "crypto",
-    "title": "Ethereum $2,213.00 1.28 %",
+    "title": "Ethereum $2,214.28 1.22 %",
     "source": "CoinDesk Ethereum",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "secondary",
@@ -861,7 +861,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-wfjqig1hesbizsbszxnzigv4",
@@ -877,7 +877,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q3j5chrvj3mgjdiyncbtawxs",
@@ -893,7 +893,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-t2lslcbzawx2zxigdhjhzglu",
@@ -909,7 +909,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibqdw1wcyb0byak",
@@ -925,7 +925,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-wfjqihryzwfzdxj5igzpcm0g",
@@ -941,7 +941,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-wfjqighvdmvycybuzwfyicqx",
@@ -957,7 +957,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbukamxmgzgvyaxzh",
@@ -973,7 +973,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibqdxn0ihn1cmdl",
@@ -989,7 +989,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qsbodwdligdhccbizxr3zwvu",
@@ -1005,7 +1005,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u29syw5hlcbyulagrvrgcyb0",
@@ -1021,7 +1021,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibzawduywxzihbv",
@@ -1037,7 +1037,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rg9jdw1lbnrhdglvbibhbmqg",
@@ -1053,7 +1053,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyawvz",
@@ -1069,12 +1069,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pbkrlc2sgmjagjdesotg1",
     "category": "crypto",
-    "title": "CoinDesk 20 $1,985.67 1.75 %",
+    "title": "CoinDesk 20 $1,985.63 1.75 %",
     "source": "CoinDesk XRP",
     "sourceUrl": "https://www.coindesk.com/price/cd20",
     "sourceKind": "secondary",
@@ -1085,12 +1085,12 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-qml0y29pbiaknzesntq4lji0",
+    "id": "crypto-qml0y29pbiaknzesntkyljy0",
     "category": "crypto",
-    "title": "Bitcoin $71,548.24 1.76 %",
+    "title": "Bitcoin $71,592.64 1.70 %",
     "source": "CoinDesk XRP",
     "sourceUrl": "https://www.coindesk.com/price/bitcoin",
     "sourceKind": "secondary",
@@ -1101,12 +1101,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
-    "id": "crypto-rxrozxjldw0gjdismjezljaw",
+    "id": "crypto-rxrozxjldw0gjdismje0lji4",
     "category": "crypto",
-    "title": "Ethereum $2,213.00 1.28 %",
+    "title": "Ethereum $2,214.28 1.22 %",
     "source": "CoinDesk XRP",
     "sourceUrl": "https://www.coindesk.com/price/ethereum",
     "sourceKind": "secondary",
@@ -1117,7 +1117,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-j05vdcbhb2luzyb0bybtdg9w",
@@ -1133,7 +1133,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-tmv3ifrvb2xziefpbsb0bybn",
@@ -1149,7 +1149,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rwnvbm9taxn0cybtywlkiefj",
@@ -1165,7 +1165,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-vghpcyanu3bhy2ugsw52ywrl",
@@ -1181,7 +1181,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0z2v0ie9mzmvycybtcgfj",
@@ -1197,7 +1197,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rwxvbibndxnrifjvym90ierv",
@@ -1213,7 +1213,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rxhvzhvzieludhjvzhvjzxmg",
@@ -1229,7 +1229,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-wmnhc2ggsxmgu29hcmluzybb",
@@ -1245,7 +1245,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-v29ybgqgtglizxj0esbgaw5h",
@@ -1261,7 +1261,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0vgvuc29yifrbtybub2tl",
@@ -1277,7 +1277,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q3j5chrviev4y2hhbmdliejp",
@@ -1293,7 +1293,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-sg9uzyblb25niexpy2vuc2vz",
@@ -1309,7 +1309,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-smfwyw4ncybecmfmdcbbbwvu",
@@ -1325,7 +1325,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qml0y29pbibucmvhc3vyesbg",
@@ -1341,7 +1341,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-sxmgwfjqiejldhrlcibqcm90",
@@ -1357,7 +1357,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-t0tyifzlbnr1cmvzlcbiyxno",
@@ -1373,7 +1373,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29pbmjhc2usiejpbmfuy2us",
@@ -1389,7 +1389,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-s2fsc2hpie1ha2vzifvwidg5",
@@ -1405,7 +1405,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q3j5chrviezpcm1zienhbibo",
@@ -1421,7 +1421,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rw1lcmdpbmcgvgvjacbidwig",
@@ -1437,7 +1437,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u2tpccb0bybzzwfyy2ggzmll",
@@ -1453,7 +1453,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u2tpccb0bybtywluignvbnrl",
@@ -1469,7 +1469,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-vmfyawfibgugsw5zdxjhbmnl",
@@ -1485,7 +1485,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-uhvibgljierpc3nlbwluyxrp",
@@ -1501,7 +1501,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rurhqvigrmlszxigtwfuywdl",
@@ -1517,7 +1517,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-t25saw5liezvcm1zie1hbmfn",
@@ -1533,7 +1533,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rmlszxigu3vwcg9ydcamifjl",
@@ -1549,7 +1549,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u3rhdglzdgljcyamierhdgeg",
@@ -1565,7 +1565,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u3rhdhv0zxmgjibszwd1bgf0",
@@ -1581,7 +1581,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-tm8tqwn0aw9ulcbjbnrlcnby",
@@ -1597,7 +1597,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-u2vszi1szwd1bgf0b3j5ie9y",
@@ -1613,7 +1613,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-uhvibgljifbldgl0aw9ucybm",
@@ -1629,7 +1629,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rw5mb3jjzw1lbnqgjibmaxrp",
@@ -1645,7 +1645,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qwrtaw5pc3ryyxrpdmuguhjv",
@@ -1661,7 +1661,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-qwrtaw5pc3ryyxrpdmugtgf3",
@@ -1677,7 +1677,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rglzdhjpynv0aw9ucyb0bybi",
@@ -1693,7 +1693,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-rxhhbwluyxrpb24guhjpb3jp",
@@ -1709,7 +1709,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-q29tcgxpyw5jzsbpdxryzwfj",
@@ -1725,7 +1725,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-v2hpc3rszwjsb3dlcibqcm9n",
@@ -1741,7 +1741,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   },
   {
     "id": "crypto-twfya2v0ifn0cnvjdhvyzsbb",
@@ -1757,6 +1757,6 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-12T04:48:02.538Z"
+    "collectedAt": "2026-04-12T04:53:03.549Z"
   }
 ]
