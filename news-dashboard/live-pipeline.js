@@ -4,17 +4,15 @@ const { URL } = require('url');
 const { applyEditorSelection } = require('./news-editor-runner');
 
 const OUT_DIR = __dirname;
-const LIVE_DIR = path.join(OUT_DIR, 'live-site');
-const ARCHIVE_DIR = path.join(LIVE_DIR, 'archive');
 const STATE_PATH = path.join(OUT_DIR, 'state.json');
 const FINAL_PATH = path.join(OUT_DIR, 'daily-final.json');
 const SUMMARY_PATH = path.join(OUT_DIR, 'daily-summary.json');
 const TELEGRAM_SUMMARY_PATH = path.join(OUT_DIR, 'telegram-summary.txt');
 const TELEGRAM_ALERT_PATH = path.join(OUT_DIR, 'telegram-alert.txt');
-const ROOT_INDEX_PATH = path.join(OUT_DIR, '..', 'index.html');
 const SOURCES_CONFIG_PATH = path.join(OUT_DIR, 'sources.config.json');
-const PUBLIC_URL = 'https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html';
+const PUBLIC_URL_BASE = 'https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site';
 const TODAY = new Date().toISOString().slice(0, 10);
+const PUBLIC_URL = `${PUBLIC_URL_BASE}/${TODAY}.html`;
 const NOW = new Date().toISOString();
 
 const TOPIC_LABELS = {
@@ -150,6 +148,50 @@ async function fetchText(url) {
   const text = await res.text();
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return text;
+}
+
+function extractMetaDescription(html = '') {
+  const match = String(html).match(/<meta[^>]+(?:name=["']description["']|property=["']og:description["'])[^>]+content=["']([^"']+)["'][^>]*>/i)
+    || String(html).match(/<meta[^>]+content=["']([^"']+)["'][^>]+(?:name=["']description["']|property=["']og:description["'])[^>]*>/i);
+  return match ? normalizeWhitespace(decodeEntities(match[1])) : '';
+}
+
+function splitParagraphsFromHtml(html = '') {
+  const paragraphs = [];
+  const regex = /<(p|h2|h3|li)[^>]*>([\s\S]*?)<\/\1>/gi;
+  let match;
+  while ((match = regex.exec(String(html))) && paragraphs.length < 12) {
+    const text = normalizeWhitespace(stripTags(match[2] || ''));
+    if (!text) continue;
+    if (text.length < 45) continue;
+    if (/^עקבו|^להצטרפות|^לחצו|^subscribe|^newsletter|^advertisement|^related|^עוד בנושא|^תגובות/i.test(text)) continue;
+    paragraphs.push(text);
+  }
+  return paragraphs;
+}
+
+async function fetchArticleDetails(item) {
+  try {
+    const html = await fetchText(item.sourceUrl);
+    const metaDescription = extractMetaDescription(html);
+    const paragraphs = splitParagraphsFromHtml(html);
+    const combined = [metaDescription, ...paragraphs]
+      .filter(Boolean)
+      .filter((text, index, arr) => arr.findIndex(x => x === text) === index)
+      .join('\n');
+    return {
+      articleDescription: metaDescription,
+      articleBody: combined.slice(0, 4000),
+      articleParagraphs: paragraphs.slice(0, 4)
+    };
+  } catch (error) {
+    return {
+      articleDescription: '',
+      articleBody: '',
+      articleParagraphs: [],
+      articleFetchError: String(error)
+    };
+  }
 }
 
 function inferPublishedAt(title, url, htmlSnippet = '', pageHtml = '') {
@@ -415,6 +457,16 @@ function makeWhy() {
   return 'למה זה חשוב';
 }
 
+function buildArticlePreview(item) {
+  const chunks = [];
+  if (item.articleDescription) chunks.push(item.articleDescription);
+  if (Array.isArray(item.articleParagraphs)) {
+    for (const paragraph of item.articleParagraphs.slice(0, 3)) chunks.push(paragraph);
+  }
+  const unique = chunks.filter(Boolean).filter((text, index, arr) => arr.findIndex(x => x === text) === index);
+  return unique.slice(0, 3).join('\n');
+}
+
 function scoreItem(topicKey, item, sourceCount) {
   let score = 0;
   const clean = cleanTitle(item.title || '');
@@ -632,6 +684,20 @@ async function collectTopic(topic) {
     selected = [...selected, ...missing];
   }
 
+  selected = await Promise.all(selected.map(async item => {
+    const articleDetails = await fetchArticleDetails(item);
+    return {
+      ...item,
+      ...articleDetails,
+      articlePreview: buildArticlePreview({ ...item, ...articleDetails })
+    };
+  }));
+
+  const rerunEditorResult = applyEditorSelection(topic.key, selected);
+  if (rerunEditorResult.ok && Array.isArray(rerunEditorResult.selected) && rerunEditorResult.selected.length > 0) {
+    selected = rerunEditorResult.selected.slice(0, 5);
+  }
+
   const topicStatus = {
     topic: topic.key,
     label: topic.hebrew,
@@ -652,108 +718,10 @@ async function collectTopic(topic) {
   return { selected, topicStatus };
 }
 
-function renderDashboard(items, meta) {
-  const totalFailedSources = meta.topics.reduce((sum, topic) => sum + (topic.sourcesFailed?.length || 0), 0);
-  const grouped = Object.fromEntries(TOPICS.map(topic => [topic.key, items.filter(item => item.category === topic.key)]));
-  const sectionHtml = TOPICS.map(topic => {
-    const itemsForTopic = grouped[topic.key] || [];
-    const topicMeta = meta.topics.find(t => t.topic === topic.key);
-    const cards = itemsForTopic.map(item => `
-      <article class="card" onclick="window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span><span class="tag">${escapeHtml(item.publishedLabel || item.publishedAt)}</span></div>
-        <h3>${escapeHtml(item.summary)}</h3>
-        <p class="why-label">${escapeHtml(item.why)}</p>
-        <p class="why-body">${escapeHtml(item.editorNote || '')}</p>
-        <div class="bottom"><span>אימות ${escapeHtml(String(item.verificationCount))}</span></div>
-      </article>
-    `).join('');
-    return `
-      <section>
-        <div class="section-head"><h2>${escapeHtml(topic.hebrew)}</h2><span>${itemsForTopic.length}/5</span></div>
-        <div class="section-meta">worked: ${topicMeta?.sourcesWorked.length || 0} · failed: ${topicMeta?.sourcesFailed.length || 0} · fallback: ${topicMeta?.fallbackActive ? 'yes' : 'no'} · editor: ${topicMeta?.editorApplied ? 'on' : 'fallback'}</div>
-        <div class="grid">${cards}</div>
-      </section>
-    `;
-  }).join('');
+// (keep everything up to the end of scoreItem function)
 
-  return `<!doctype html>
-<html lang="he" dir="rtl">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Clawy News Live</title>
-<style>
-body{margin:0;background:#07111d;color:#eef4ff;font-family:Segoe UI,Arial,sans-serif}
-main{max-width:1280px;margin:0 auto;padding:20px}
-header{margin-bottom:18px;position:sticky;top:0;background:#07111df2;backdrop-filter:blur(8px);padding:8px 0 12px;z-index:5}
-.topmeta{display:flex;gap:10px;flex-wrap:wrap;color:#9eb3cf;font-size:13px}
-section{margin:22px 0}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-.section-meta{font-size:13px;color:#9eb3cf;margin-bottom:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer}
-.card:hover{border-color:#315277;transform:translateY(-1px)}
-.topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
-.tag{background:#16263a;padding:4px 8px;border-radius:999px}
-h3{margin:10px 0;font-size:18px;line-height:1.55;white-space:pre-line}
-p{margin:8px 0;line-height:1.7;color:#dce7fb}
-.why-label{margin-bottom:4px;font-size:12px;color:#9eb3cf}
-.why-body{margin-top:0;white-space:pre-line}
-a{color:#8fd3ff;text-decoration:none}
-@media (max-width:700px){main{padding:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}h3{font-size:16px}}
-@media (max-width:520px){.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<main>
-<header>
-<h1>חדשות הבוקר</h1>
-<div class="topmeta"><span>updated: ${escapeHtml(meta.lastUpdated)}</span><span>sources worked: ${escapeHtml(String(meta.sourcesWorkedCount))}</span><span>sources failed: ${escapeHtml(String(totalFailedSources))}</span><span>fallback: ${meta.fallbackActive ? 'yes' : 'no'}</span><span>status: ${escapeHtml(meta.status)}</span></div>
-</header>
-${sectionHtml}
-</main>
-</body>
-</html>`;
-}
-
-function pruneArchives() {
-  const archiveFiles = fs.readdirSync(ARCHIVE_DIR)
-    .filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x))
-    .sort()
-    .reverse();
-  for (const stale of archiveFiles.slice(7)) {
-    fs.unlinkSync(path.join(ARCHIVE_DIR, stale));
-  }
-}
-
-function renderArchiveIndex(archiveFiles) {
-  const links = archiveFiles.map(file => `<li><a href="./${escapeHtml(file)}">${escapeHtml(file.replace('.html', ''))}</a></li>`).join('');
-  return `<!doctype html>
-<html lang="he" dir="rtl">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Clawy News Archive</title>
-<style>
-body{margin:0;background:#07111d;color:#eef4ff;font-family:Segoe UI,Arial,sans-serif}
-main{max-width:860px;margin:0 auto;padding:24px}
-a{color:#8fd3ff;text-decoration:none}
-li{margin:10px 0}
-</style>
-</head>
-<body>
-<main>
-<h1>ארכיון חדשות</h1>
-<ul>${links}</ul>
-</main>
-</body>
-</html>`;
-}
 
 async function main() {
-  ensureDir(LIVE_DIR);
-  ensureDir(ARCHIVE_DIR);
-
   const results = [];
   for (const topic of TOPICS) results.push(await collectTopic(topic));
 
@@ -767,17 +735,10 @@ async function main() {
   };
 
   fs.writeFileSync(FINAL_PATH, JSON.stringify(items, null, 2), 'utf8');
-  const dashboard = renderDashboard(items, meta);
-  fs.writeFileSync(path.join(LIVE_DIR, 'latest.html'), dashboard, 'utf8');
-  fs.writeFileSync(path.join(ARCHIVE_DIR, `${TODAY}.html`), dashboard, 'utf8');
-  pruneArchives();
-  const archiveFiles = fs.readdirSync(ARCHIVE_DIR).filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x)).sort().reverse();
-  fs.writeFileSync(path.join(ARCHIVE_DIR, 'index.html'), renderArchiveIndex(archiveFiles), 'utf8');
 
   const state = {
     lastPublishedAt: NOW,
     latestUrl: './news-dashboard/live-site/latest.html',
-    archive: archiveFiles,
     topics: Object.fromEntries(results.map(r => [r.topicStatus.topic, r.topicStatus]))
   };
   fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2), 'utf8');
@@ -798,10 +759,7 @@ async function main() {
   fs.writeFileSync(TELEGRAM_SUMMARY_PATH, telegramLines.join('\n'), 'utf8');
   fs.writeFileSync(TELEGRAM_ALERT_PATH, meta.status === 'SUCCESS' ? '' : `סטטוס: ${meta.status}`, 'utf8');
 
-  const rootHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./news-dashboard/live-site/latest.html?v=${Date.now()}" /></head><body><a href="./news-dashboard/live-site/latest.html?v=${Date.now()}">Clawy News Live</a></body></html>`;
-  fs.writeFileSync(ROOT_INDEX_PATH, rootHtml, 'utf8');
-
-  console.log(JSON.stringify({ status: meta.status, items: items.length, latestPath: path.join(LIVE_DIR, 'latest.html') }, null, 2));
+  console.log(JSON.stringify({ status: meta.status, items: items.length }, null, 2));
 }
 
 main().catch((error) => {

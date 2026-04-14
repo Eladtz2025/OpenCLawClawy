@@ -51,33 +51,6 @@ function scoreEditorial(topicKey, item) {
   return score;
 }
 
-function buildEditorNote(topicKey, item) {
-  const title = cleanTitle(item.title || item.summary || '');
-  const source = item.source || '';
-  const certainty = item.certainty || '';
-  const lines = [];
-
-  if (topicKey === 'technology' || topicKey === 'technology2') {
-    lines.push(`מה באמת קרה: ${title}.`);
-    lines.push('הערך כאן הוא לא הסיסמה, אלא האם יש כאן מוצר, מהלך חברה, או כלי שיכול לשנות עבודה בפועל.');
-    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמקור הוא ${source}.`);
-  } else if (topicKey === 'israel') {
-    lines.push(`מה באמת קרה: ${title}.`);
-    lines.push('כדאי לפתוח את הכתבה רק אם אתה רוצה להבין האם זו התפתחות מדינית, ביטחונית או פוליטית עם השלכה מיידית.');
-    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמידע מגיע דרך ${source}.`);
-  } else if (topicKey === 'crypto') {
-    lines.push(`מה באמת קרה: ${title}.`);
-    lines.push('השאלה המרכזית כאן היא האם מדובר באירוע שוק אמיתי, מהלך רגולטורי, או כותרת שלא באמת משנה כיוון.');
-    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמקור הוא ${source}.`);
-  } else {
-    lines.push(`מה באמת קרה: ${title}.`);
-    lines.push('המטרה של התקציר הזה היא לעזור לך להבין מהר אם שווה להיכנס לכתבה המלאה.');
-    if (certainty) lines.push(`רמת הוודאות כרגע היא ${certainty}, והמקור הוא ${source}.`);
-  }
-
-  return lines.filter(Boolean).join('\n');
-}
-
 function chooseTop(topicKey, candidates, wanted = 5) {
   const rescored = candidates.map(item => ({ ...item, editorialScore: scoreEditorial(topicKey, item) }));
   rescored.sort((a, b) => b.editorialScore - a.editorialScore || Number(b.score || 0) - Number(a.score || 0));
@@ -94,7 +67,7 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     out.push({
       ...item,
       summary: cleanTitle(item.summary || item.title || ''),
-      editorNote: buildEditorNote(topicKey, item)
+      editorNote: '' 
     });
     seen.add(key);
     sourceCaps.set(item.source, sourceCount + 1);
@@ -104,7 +77,45 @@ function chooseTop(topicKey, candidates, wanted = 5) {
   return out;
 }
 
-function main() {
+async function generateSmartSummary(item, topicKey) {
+  const title = item.title || '';
+  const body = item.articleBody || item.articlePreview || '';
+  
+  const prompt = `
+You are a professional news editor. Your goal is to create a "Highlights" summary for a news item.
+Do NOT repeat the title. Do NOT use filler phrases like "The article discusses" or "According to the source".
+
+Key Rules:
+1. Focus on the real value/impact (what actually happened).
+2. If the content is already clear, concise, and direct (e.g., a sports result, a clear announcement, or a fact-based update), do NOT over-edit it. Simply refine it to be clean and professional.
+3. Do NOT try to "deepen" or "analyze" a simple fact into a story. Keep the essence.
+4. Write in Hebrew. Keep it to 1-3 short sentences max.
+
+Topic: ${topicKey}
+Title: ${title}
+Content: ${body}
+
+Summary (Hebrew):`;
+
+  try {
+    const response = await fetch('http://localhost:11434/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'gemma4:31b-cloud', // Using the active model
+        prompt: prompt,
+        stream: false
+      })
+    });
+    const data = await response.json();
+    return data.response.trim();
+  } catch (e) {
+    console.error(`LLM Error for ${title}: ${e.message}`);
+    return ''; // Fallback to empty if LLM fails
+  }
+}
+
+async function main() {
   const topicKey = process.argv[2];
   const inputPath = process.argv[3];
   const outputPath = process.argv[4];
@@ -115,8 +126,18 @@ function main() {
 
   const candidates = JSON.parse(fs.readFileSync(path.resolve(inputPath), 'utf8'));
   const selected = chooseTop(topicKey, candidates, 5);
+
+  // Now we apply the Smart Edit to the selected items
+  for (const item of selected) {
+    const summary = await generateSmartSummary(item, topicKey);
+    item.editorNote = summary;
+  }
+
   fs.writeFileSync(path.resolve(outputPath), JSON.stringify(selected, null, 2), 'utf8');
   console.log(JSON.stringify({ topic: topicKey, selected: selected.length, outputPath }, null, 2));
 }
 
-main();
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});

@@ -1,25 +1,37 @@
 {
-  "generatedAt": "2026-04-12T13:49:09.964Z",
+  "generatedAt": "2026-04-14T21:00:12.198Z",
   "status": "PARTIAL",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-12T13:49:09.964Z",
-  "sourcesWorkedCount": 20,
+  "lastPublishedAt": "2026-04-14T21:00:12.198Z",
+  "sourcesWorkedCount": 21,
   "fallbackActive": true,
   "topicStatus": [
     {
       "topic": "technology",
       "label": "טכנולוגיה",
       "wanted": 5,
-      "got": 4,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "TechCrunch AI",
         "The Verge Tech",
-        "The Verge AI",
         "Google Blog Technology",
         "Calcalist Tech"
       ],
-      "sourcesFailed": [],
+      "sourcesFailed": [
+        {
+          "source": "Reuters Tech",
+          "error": "Error: HTTP 401 for https://www.reuters.com/technology/"
+        },
+        {
+          "source": "Ars Technica",
+          "error": "no_items"
+        },
+        {
+          "source": "WIRED",
+          "error": "no_items"
+        }
+      ],
       "editorApplied": true,
       "editorError": null
     },
@@ -27,8 +39,8 @@
       "topic": "technology2",
       "label": "טכנולוגיה #2",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 0,
+      "fallbackActive": true,
       "sourcesWorked": [
         "TechNewsHeb Telegram",
         "AI_tg_il Telegram",
@@ -43,17 +55,30 @@
       "topic": "israel",
       "label": "ישראל",
       "wanted": 5,
-      "got": 4,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "ynet News",
         "Maariv News",
         "Israel Hayom News",
         "Times of Israel"
       ],
-      "sourcesFailed": [],
-      "editorApplied": true,
-      "editorError": null
+      "sourcesFailed": [
+        {
+          "source": "Kan News",
+          "error": "Error: HTTP 404 for https://kan.org.il/news"
+        },
+        {
+          "source": "Haaretz",
+          "error": "no_items"
+        },
+        {
+          "source": "Jerusalem Post",
+          "error": "no_items"
+        }
+      ],
+      "editorApplied": false,
+      "editorError": "editor_exit_null"
     },
     {
       "topic": "crypto",
@@ -72,28 +97,46 @@
         {
           "source": "SEC Press Releases",
           "error": "no_items"
+        },
+        {
+          "source": "The Block",
+          "error": "Error: HTTP 403 for https://www.theblock.co/"
+        },
+        {
+          "source": "DL News",
+          "error": "no_items"
+        },
+        {
+          "source": "Blockworks",
+          "error": "TypeError: fetch failed"
         }
       ],
-      "editorApplied": true,
-      "editorError": null
+      "editorApplied": false,
+      "editorError": "editor_exit_null"
     },
     {
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 2,
+      "fallbackActive": true,
       "sourcesWorked": [
         "Hapoel PT News",
-        "ynet Sport Israel Soccer"
+        "ynet Sport Israel Soccer",
+        "Walla Sport",
+        "PT News"
       ],
       "sourcesFailed": [
         {
-          "source": "Walla Sport",
+          "source": "Soccerway Hapoel PT",
           "error": "no_items"
         },
         {
-          "source": "Soccerway Hapoel PT",
+          "source": "ONE Sport",
+          "error": "no_items"
+        },
+        {
+          "source": "Sport 5",
           "error": "no_items"
         }
       ],
