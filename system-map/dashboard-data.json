@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T18:57:58.957Z",
+  "generated_at": "2026-04-14T20:59:59.631Z",
   "scan_scope": [
     "C:\\Users\\Itzhak",
     "C:\\Users\\Openclaw"
@@ -15,10 +15,15 @@
       "overall_score": 5.7,
       "overall_rating": "weak",
       "weight": "moderate",
+      "weight_details": {
+        "size_mb": 10,
+        "complexity": "Moderate",
+        "optimization_tip": "Clear outdated config snapshots and temp logs."
+      },
       "recommendation": "improve later",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-14T18:57:58.957Z",
+      "last_checked": "2026-04-14T20:59:59.631Z",
       "last_updated_if_known": "2026-04-11T22:07:05.223Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -29,6 +34,14 @@
         "config residue"
       ],
       "short_summary": "Stable runtime, weak safety.",
+      "detailed_logic": "The core engine providing agent execution, tool integration, and session management. It relies on a central gateway to route messages from channels to specific agent sessions.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Stricter execution sandboxing",
+          "Automated config audit system",
+          "More granular group access control"
+        ]
+      },
       "source_details": {
         "related_ports": [
           18789,
@@ -55,10 +68,15 @@
       "overall_score": 6.3,
       "overall_rating": "acceptable",
       "weight": "light",
+      "weight_details": {
+        "size_mb": 0,
+        "complexity": "Low",
+        "optimization_tip": "N/A"
+      },
       "recommendation": "manual review",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-14T18:57:58.957Z",
+      "last_checked": "2026-04-14T20:59:59.631Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -68,6 +86,14 @@
         "needs clearer boundaries"
       ],
       "short_summary": "Looks real, not fully verified yet.",
+      "detailed_logic": "Monitors OpenClaw process health. If a critical process hangs, it uses Windows schtasks to terminate and restart the target, ensuring high availability of the agent runtime.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Integration with a live visual dashboard",
+          "Customizable health thresholds",
+          "Automatic root-cause analysis reports"
+        ]
+      },
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
@@ -84,10 +110,15 @@
       "overall_score": 7.3,
       "overall_rating": "acceptable",
       "weight": "light",
+      "weight_details": {
+        "size_mb": 0,
+        "complexity": "Low",
+        "optimization_tip": "N/A"
+      },
       "recommendation": "improve later",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-14T18:57:58.957Z",
+      "last_checked": "2026-04-14T20:59:59.631Z",
       "last_updated_if_known": "2026-04-12T07:59:59.611Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -97,6 +128,14 @@
         "depends on conservative inference"
       ],
       "short_summary": "Active and useful, still being refined.",
+      "detailed_logic": "Performs workspace scanning to detect OpenClaw-like structures, assigns quality scores based on documentation and cleanliness, and publishes a JSON-driven HTML dashboard via GitHub Pages.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Fully dynamic real-time discovery",
+          "Integration with live process logs",
+          "Automated safety audit triggers"
+        ]
+      },
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
@@ -113,10 +152,15 @@
       "overall_score": 8.5,
       "overall_rating": "strong",
       "weight": "moderate",
+      "weight_details": {
+        "size_mb": 1,
+        "complexity": "High",
+        "optimization_tip": "Archive old .json raw dumps to separate storage."
+      },
       "recommendation": "maintain",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-14T18:57:58.957Z",
+      "last_checked": "2026-04-14T20:59:59.631Z",
       "last_updated_if_known": "2026-04-12T17:00:00Z",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
@@ -125,6 +169,14 @@
         "dependency on live-pipeline stability"
       ],
       "short_summary": "Highly active, well-documented and functional content pipeline.",
+      "detailed_logic": "A multi-stage pipeline: 1. Collects raw data from diverse sources. 2. Normalizes and dedupes content. 3. Filters 'candidates' based on significance. 4. Edits content into a premium editorial style. 5. Renders HTML and sends Telegram briefs.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Automated QA for factual correctness",
+          "Dynamic source weight adjustment",
+          "Integration of an interactive feedback loop"
+        ]
+      },
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
@@ -141,10 +193,15 @@
       "overall_score": 5.4,
       "overall_rating": "weak",
       "weight": "moderate",
+      "weight_details": {
+        "size_mb": 13539,
+        "complexity": "Moderate",
+        "optimization_tip": "Clean up legacy session files and temporary logs."
+      },
       "recommendation": "manual review",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-14T18:57:58.957Z",
+      "last_checked": "2026-04-14T20:59:59.631Z",
       "last_updated_if_known": "2026-04-07T13:34:35.928Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -155,6 +212,14 @@
         "unverified fallback"
       ],
       "short_summary": "Usable runtime, but safety needs work.",
+      "detailed_logic": "Mirror of the main Clawy runtime, serving the Pinch agent. Handles request routing and tool execution within its own isolated workspace.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Strict safety policy enforcement",
+          "Automated residue cleanup",
+          "Better fallback model verification"
+        ]
+      },
       "source_details": {
         "related_ports": [
           18790,
@@ -178,11 +243,16 @@
       "status": "stale",
       "overall_score": 6.5,
       "overall_rating": "acceptable",
-      "weight": "moderate",
+      "weight": "heavy",
+      "weight_details": {
+        "size_mb": 5009,
+        "complexity": "Moderate",
+        "optimization_tip": "Remove unused ML models or old venv iterations."
+      },
       "recommendation": "manual review",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-14T18:57:58.957Z",
+      "last_checked": "2026-04-14T20:59:59.631Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
@@ -192,6 +262,14 @@
         "possible stale outputs"
       ],
       "short_summary": "Present, but needs verification.",
+      "detailed_logic": "A specialized transcription pipeline using faster-whisper. It supports multiple accuracy profiles (quick vs accurate) and produces standardized TXT/SRT/JSON outputs.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Management dashboard for job tracking",
+          "Integrated QA for transcription accuracy",
+          "Full runtime documentation (Runbook)"
+        ]
+      },
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
@@ -219,7 +297,7 @@
   },
   "summary": {
     "total_systems": 6,
-    "heavy_systems": 0,
+    "heavy_systems": 1,
     "needs_cleanup": 2,
     "closest_to_10_count": 1
   }
