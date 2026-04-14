@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T07:59:59.611Z",
+  "generated_at": "2026-04-14T18:57:58.957Z",
   "scan_scope": [
     "C:\\Users\\Itzhak",
     "C:\\Users\\Openclaw"
@@ -18,7 +18,7 @@
       "recommendation": "improve later",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_checked": "2026-04-14T18:57:58.957Z",
       "last_updated_if_known": "2026-04-11T22:07:05.223Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -41,22 +41,7 @@
         ],
         "related_cron_jobs": [
           "C:\\Users\\Itzhak\\.openclaw\\cron\\runs",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.095d4a23b7f67433.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.2111e5fd70c8bb12.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.5263af6d13b85c8b.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.53a178f21c10c9b2.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.6d62dde3eb792186.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.7373cf449c431636.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.80686d885e73e6f9.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.8e12e4a2df14a59e.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.9830cc8f8491f7b4.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.aafb6d73beb2782c.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c0694fe111902699.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.c275b39348001af7.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.15612.e6fee8eaffc6c345.tmp",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json.bak",
-          "C:\\Users\\Itzhak\\.openclaw\\cron\\runs\\037374da-812f-4678-8f22-89da8d11c036.jsonl"
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json"
         ]
       }
     },
@@ -66,14 +51,14 @@
       "display_name": "PC Guardian",
       "owner": "Itzhak",
       "purpose": "PC monitoring and guardian system.",
-      "status": "unknown",
+      "status": "active",
       "overall_score": 6.3,
       "overall_rating": "acceptable",
       "weight": "light",
       "recommendation": "manual review",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_checked": "2026-04-14T18:57:58.957Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -102,7 +87,7 @@
       "recommendation": "improve later",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_checked": "2026-04-14T18:57:58.957Z",
       "last_updated_if_known": "2026-04-12T07:59:59.611Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -124,52 +109,22 @@
       "display_name": "News Editor",
       "owner": "Itzhak",
       "purpose": "News collection, editing and dashboarding system.",
-      "status": "unknown",
-      "overall_score": 5.6,
-      "overall_rating": "weak",
+      "status": "active",
+      "overall_score": 8.5,
+      "overall_rating": "strong",
       "weight": "moderate",
-      "recommendation": "manual review",
-      "needs_cleanup": true,
+      "recommendation": "maintain",
+      "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-12T07:59:59.611Z",
-      "last_updated_if_known": "unknown",
+      "last_checked": "2026-04-14T18:57:58.957Z",
+      "last_updated_if_known": "2026-04-12T17:00:00Z",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
       "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\news-dashboard",
       "key_risks": [
-        "workflow not fully verified",
-        "possible residue from experiments"
+        "dependency on live-pipeline stability"
       ],
-      "short_summary": "Clearly exists, but needs verification.",
-      "source_details": {
-        "related_ports": [],
-        "related_tasks": [],
-        "related_cron_jobs": []
-      }
-    },
-    {
-      "system_id": "system-image-generator",
-      "name": "image-team",
-      "display_name": "Image Generator",
-      "owner": "Itzhak",
-      "purpose": "Image generation workflow system.",
-      "status": "unknown",
-      "overall_score": 4.9,
-      "overall_rating": "weak",
-      "weight": "heavy",
-      "recommendation": "needs cleanup",
-      "needs_cleanup": true,
-      "needs_redesign": false,
-      "last_checked": "2026-04-12T07:59:59.611Z",
-      "last_updated_if_known": "unknown",
-      "dashboard_link_if_exists": "unknown",
-      "action_link": "unknown",
-      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\image-team",
-      "key_risks": [
-        "old run residue",
-        "unclear current activity"
-      ],
-      "short_summary": "Looks useful, but residue is visible.",
+      "short_summary": "Highly active, well-documented and functional content pipeline.",
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
@@ -182,14 +137,14 @@
       "display_name": "Pinch Runtime",
       "owner": "Openclaw",
       "purpose": "Primary OpenClaw runtime for Pinch.",
-      "status": "active",
+      "status": "stale",
       "overall_score": 5.4,
       "overall_rating": "weak",
       "weight": "moderate",
       "recommendation": "manual review",
       "needs_cleanup": true,
       "needs_redesign": false,
-      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_checked": "2026-04-14T18:57:58.957Z",
       "last_updated_if_known": "2026-04-07T13:34:35.928Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -220,14 +175,14 @@
       "display_name": "Transcribe",
       "owner": "Openclaw",
       "purpose": "Transcription workflow system.",
-      "status": "unknown",
-      "overall_score": 5.9,
-      "overall_rating": "weak",
+      "status": "stale",
+      "overall_score": 6.5,
+      "overall_rating": "acceptable",
       "weight": "moderate",
       "recommendation": "manual review",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-12T07:59:59.611Z",
+      "last_checked": "2026-04-14T18:57:58.957Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
@@ -237,35 +192,6 @@
         "possible stale outputs"
       ],
       "short_summary": "Present, but needs verification.",
-      "source_details": {
-        "related_ports": [],
-        "related_tasks": [],
-        "related_cron_jobs": []
-      }
-    },
-    {
-      "system_id": "system-posts-social",
-      "name": "video-editor-team",
-      "display_name": "Posts, Facebook and Instagram",
-      "owner": "Openclaw",
-      "purpose": "Social posts production workflow, likely for Facebook and Instagram.",
-      "status": "unknown",
-      "overall_score": 5.3,
-      "overall_rating": "weak",
-      "weight": "moderate",
-      "recommendation": "manual review",
-      "needs_cleanup": false,
-      "needs_redesign": true,
-      "last_checked": "2026-04-12T07:59:59.611Z",
-      "last_updated_if_known": "unknown",
-      "dashboard_link_if_exists": "unknown",
-      "action_link": "unknown",
-      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace\\video-editor-team",
-      "key_risks": [
-        "exact scope inferred conservatively",
-        "workflow not verified"
-      ],
-      "short_summary": "Likely social content pipeline, still needs confirmation.",
       "source_details": {
         "related_ports": [],
         "related_tasks": [],
@@ -290,5 +216,11 @@
       "C:\\Users\\Itzhak\\.openclaw\\logs\\config-audit.jsonl",
       "C:\\Users\\Openclaw\\.openclaw\\logs\\config-audit.jsonl"
     ]
+  },
+  "summary": {
+    "total_systems": 6,
+    "heavy_systems": 0,
+    "needs_cleanup": 2,
+    "closest_to_10_count": 1
   }
 }
