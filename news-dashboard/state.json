@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-15T13:34:11.707Z",
+  "lastPublishedAt": "2026-04-15T15:58:27.567Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "topics": {
     "technology": {
@@ -44,8 +44,8 @@
         "hackit770 Telegram"
       ],
       "sourcesFailed": [],
-      "editorApplied": false,
-      "editorError": "editor_exit_null"
+      "editorApplied": true,
+      "editorError": null
     },
     "israel": {
       "topic": "israel",
@@ -70,8 +70,8 @@
           "error": "Error: HTTP 404 for https://www.ynet.co.il/news/article"
         }
       ],
-      "editorApplied": false,
-      "editorError": "editor_exit_null"
+      "editorApplied": true,
+      "editorError": null
     },
     "crypto": {
       "topic": "crypto",
@@ -104,8 +104,8 @@
           "error": "TypeError: fetch failed"
         }
       ],
-      "editorApplied": true,
-      "editorError": null
+      "editorApplied": false,
+      "editorError": "editor_exit_null"
     },
     "hapoel": {
       "topic": "hapoel",

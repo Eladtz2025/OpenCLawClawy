@@ -1,5 +1,22 @@
 [
   {
+    "id": "crypto-qwxsymlyzhmgywjhbmrvbnmg",
+    "category": "crypto",
+    "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 4,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
     "id": "crypto-vgvyyvd1bgygc3rvy2sgzgvj",
     "category": "crypto",
     "title": "TeraWulf stock declines on $900 million share sale to fund AI data center expansion The shares had been on a big run higher, rising more than 50% since late March.",
@@ -13,7 +30,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -29,8 +46,8 @@
     "fresh": true,
     "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "verificationCount": 1,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -47,7 +64,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -64,7 +81,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -81,7 +98,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -98,7 +115,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -115,7 +132,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -132,7 +149,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -149,7 +166,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -166,7 +183,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -183,7 +200,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -200,7 +217,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -217,15 +234,15 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
-    "id": "crypto-qsbuzxcgy2xhc3mgb2ygy3j5",
+    "id": "crypto-v2h5ie1vcmdhbibtdgfubgv5",
     "category": "crypto",
-    "title": "A new class of crypto treasury companies is forming around Strategy’s high-yield stock",
+    "title": "Why Morgan Stanley's CFO sees tokenization as the next big step for its multi-trillion wealth business",
     "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/a-new-class-of-crypto-treasury-companies-is-forming-around-strategy-s-high-yield-stock",
+    "sourceUrl": "https://www.coindesk.com/business/2026/04/15/why-morgan-stanley-s-cfo-thinks-tokenization-is-the-next-big-step-for-its-multi-trillion-wealth-business",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
@@ -233,16 +250,16 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "verificationCount": 2,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
-    "id": "crypto-qsbuzxcgy2xhc3mgb2ygy3j5",
+    "id": "crypto-v2h5ie1vcmdhbibtdgfubgv5",
     "category": "crypto",
-    "title": "A new class of crypto treasury companies is forming around Strategy’s high-yield stock",
+    "title": "Why Morgan Stanley's CFO sees tokenization as the next big step for its multi-trillion wealth business",
     "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/a-new-class-of-crypto-treasury-companies-is-forming-around-strategy-s-high-yield-stock",
+    "sourceUrl": "https://www.coindesk.com/business/2026/04/15/why-morgan-stanley-s-cfo-thinks-tokenization-is-the-next-big-step-for-its-multi-trillion-wealth-business",
     "sourceKind": "primary",
     "sourceType": "primary",
     "sourceStrength": "high",
@@ -250,8 +267,42 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "verificationCount": 2,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-qwxsymlyzhmgywjhbmrvbnmg",
+    "category": "crypto",
+    "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400%",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-qmv5b25kiokamgrpz2l0ywwg",
+    "category": "crypto",
+    "title": "Beyond ‘digital gold,’ Iran conflict forces a rethink of the nature of bitcoin",
+    "source": "CoinDesk",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/bitcoin-s-war-rally-is-forcing-a-rethink-beyond-digital-gold",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -268,41 +319,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-qml0y29pbibkzxzlbg9wzxjz",
-    "category": "crypto",
-    "title": "Bitcoin developers are trying to build quantum defenses. Your coins could pay the price.",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/tech/2026/04/15/bitcoin-developers-are-trying-to-build-quantum-defenses-your-coins-could-pay-the-price",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-v2h5ihroaxmgzxgtu29syw5h",
-    "category": "crypto",
-    "title": "Why this ex-Solana exec is using a Wall Street trick to level the playing field in DeFi",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/tech/2026/04/15/why-this-ex-solana-exec-is-using-a-wall-street-trick-to-level-the-playing-field-in-defi",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -319,24 +336,41 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
-    "id": "crypto-qml0y29pbibwdwxscybiywnr",
+    "id": "crypto-qml0y29pbibkzxzlbg9wzxig",
     "category": "crypto",
-    "title": "Bitcoin pulls back as $75,000 remains 'both the milestone and the ceiling'",
-    "source": "CoinDesk",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/bitcoin-pulls-back-as-usd75-000-remains-both-the-milestone-and-the-ceiling",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
+    "title": "Bitcoin developer Jameson Lopp says it's better to freeze 5.6 million BTC than let hackers have them",
+    "source": "CoinDesk Bitcoin",
+    "sourceUrl": "https://www.coindesk.com/business/2026/04/15/bitcoin-developer-jameson-lopp-says-it-s-better-to-freeze-5-6-million-btc-than-let-hackers-have-them",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
     "publishedAt": "2026-04-15T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-qmv5b25kiokamgrpz2l0ywwg",
+    "category": "crypto",
+    "title": "Beyond ‘digital gold,’ Iran conflict forces a rethink of the nature of bitcoin",
+    "source": "CoinDesk Bitcoin",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/bitcoin-s-war-rally-is-forcing-a-rethink-beyond-digital-gold",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -353,7 +387,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -369,8 +403,8 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 3,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "verificationCount": 1,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -386,8 +420,8 @@
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "verificationCount": 1,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -404,7 +438,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -421,7 +455,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -438,7 +472,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -455,7 +489,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -472,41 +506,24 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
-    "id": "crypto-qml0y29pbibwyxnzzxmgagfs",
+    "id": "crypto-qwxsymlyzhmgywjhbmrvbnmg",
     "category": "crypto",
-    "title": "Bitcoin passes halfway point in halving cycle as price gains trail prior cycles",
+    "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
     "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/14/bitcoin-passes-halfway-point-in-halving-cycle-as-price-gains-trail-prior-cycles",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-04-14T00:00:00",
-    "fresh": false,
-    "signalPositive": true,
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
     "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-sgvyzsbhcmuga2v5igjpdgnv",
-    "category": "crypto",
-    "title": "Here are key bitcoin price levels to watch as the rally gathers steam",
-    "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/markets/2026/04/14/here-are-key-bitcoin-price-levels-to-watch-as-the-rally-gathers-steam",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-14T00:00:00",
-    "fresh": false,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "verificationCount": 4,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -523,41 +540,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagcgvyzm9y",
-    "category": "crypto",
-    "title": "CoinDesk 20 performance update: AAVE rises 4.3% as trades flat Aptos (APT), up 3.8% since Tuesday, joined Aave (AAVE) as a top performer.",
-    "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/coindesk-indices/2026/04/15/coindesk-20-performance-update-aave-rises-4-3-as-trades-flat",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-rxhwbg9yyxigw5psdgltyxmg",
-    "category": "crypto",
-    "title": "Explorar Últimas Noticias",
-    "source": "CoinDesk Bitcoin",
-    "sourceUrl": "https://www.coindesk.com/latest-crypto-news",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -574,7 +557,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -591,7 +574,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -608,7 +591,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -625,7 +608,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -642,7 +625,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -659,7 +642,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -676,7 +659,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -693,7 +676,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -710,7 +693,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -727,7 +710,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -744,7 +727,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -761,7 +744,24 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-qwxsymlyzhmgywjhbmrvbnmg",
+    "category": "crypto",
+    "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
+    "source": "CoinDesk Ethereum",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 4,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -778,24 +778,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagcgvyzm9y",
-    "category": "crypto",
-    "title": "CoinDesk 20 performance update: AAVE rises 4.3% as trades flat Aptos (APT), up 3.8% since Tuesday, joined Aave (AAVE) as a top performer.",
-    "source": "CoinDesk Ethereum",
-    "sourceUrl": "https://www.coindesk.com/coindesk-indices/2026/04/15/coindesk-20-performance-update-aave-rises-4-3-as-trades-flat",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -812,7 +795,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -829,7 +812,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -846,7 +829,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -863,7 +846,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -880,7 +863,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -897,7 +880,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -914,7 +897,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -931,7 +914,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -948,7 +931,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -965,7 +948,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -982,7 +965,24 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-qwxsymlyzhmgywjhbmrvbnmg",
+    "category": "crypto",
+    "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
+    "source": "CoinDesk XRP",
+    "sourceUrl": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 4,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -999,24 +999,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-q29pbkrlc2sgmjagcgvyzm9y",
-    "category": "crypto",
-    "title": "CoinDesk 20 performance update: AAVE rises 4.3% as trades flat Aptos (APT), up 3.8% since Tuesday, joined Aave (AAVE) as a top performer.",
-    "source": "CoinDesk XRP",
-    "sourceUrl": "https://www.coindesk.com/coindesk-indices/2026/04/15/coindesk-20-performance-update-aave-rises-4-3-as-trades-flat",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": false,
-    "signalNegative": false,
-    "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1033,15 +1016,49 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
-    "id": "crypto-rwxpemfizxroifdhcnjlbibx",
+    "id": "crypto-t25saw5lienhc2lubybpcgvy",
     "category": "crypto",
-    "title": "Elizabeth Warren Warns Elon Musk's X Money Threatens 'Stability of the Financial System'",
+    "title": "Online Casino Operator's Stock Surges on Crypto.com Prediction Market Deal",
     "source": "Decrypt",
-    "sourceUrl": "https://decrypt.co/364430/elizabeth-warren-warns-elon-musks-x-money-threatens-stability-of-the-financial-system",
+    "sourceUrl": "https://decrypt.co/364459/online-casino-operator-stock-surges-crypto-com-prediction-markets-deal",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": true,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-j05vdghpbmcgrxzlcibiyxbw",
+    "category": "crypto",
+    "title": "'Nothing Ever Happens': This Bot Always Bets 'No' on Polymarket, And It Has a Point",
+    "source": "Decrypt",
+    "sourceUrl": "https://decrypt.co/364381/polymarket-bot-bets-no-has-a-point",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-15T00:00:00",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-04-15T15:58:27.567Z",
+    "fixture": false
+  },
+  {
+    "id": "crypto-tmv3iejpdgnvaw4guhjvcg9z",
+    "category": "crypto",
+    "title": "New Bitcoin Proposal Would Freeze Coins to Counter Quantum Threat",
+    "source": "Decrypt",
+    "sourceUrl": "https://decrypt.co/364450/new-bitcoin-proposal-would-freeze-coins-to-counter-quantum-threat",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
@@ -1050,58 +1067,24 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
-    "id": "crypto-tw9ybmluzybnaw51dgu6ifro",
+    "id": "crypto-q2fuiefjiejlyxqgdghlifnw",
     "category": "crypto",
-    "title": "Morning Minute: The Next Fed Chair Has a Crypto Portfolio",
+    "title": "Can AI Beat the Sports Betting Market? 8 of the Top Models Tried",
     "source": "Decrypt",
-    "sourceUrl": "https://decrypt.co/364429/morning-minute-the-next-fed-chair-has-a-crypto-portfolio",
+    "sourceUrl": "https://decrypt.co/364406/ai-beat-sports-betting-market-top-8-models",
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
     "publishedAt": "2026-04-15T00:00:00",
     "fresh": true,
-    "signalPositive": true,
+    "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-vmlyz2luawegr292zxjub3ig",
-    "category": "crypto",
-    "title": "Virginia Governor Signs Law Protecting Dormant Crypto From Forced Liquidation",
-    "source": "Decrypt",
-    "sourceUrl": "https://decrypt.co/364426/virginia-governor-signs-law-protecting-dormant-crypto-from-forced-liquidation",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
-    "fixture": false
-  },
-  {
-    "id": "crypto-qml0y29pbibfvezzieryyxcg",
-    "category": "crypto",
-    "title": "Bitcoin ETFs Draw $411M After BTC Hits $75K, But Analysts Urge Caution",
-    "source": "Decrypt",
-    "sourceUrl": "https://decrypt.co/364423/bitcoin-etfs-draw-411m-after-btc-hits-75k-but-analysts-urge-caution",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-15T00:00:00",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1118,7 +1101,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1135,7 +1118,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1152,7 +1135,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1169,7 +1152,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1186,7 +1169,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1203,7 +1186,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1220,7 +1203,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1237,7 +1220,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1254,7 +1237,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1271,7 +1254,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1288,7 +1271,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1305,7 +1288,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1322,7 +1305,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1339,7 +1322,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1356,7 +1339,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -1373,7 +1356,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   }
 ]

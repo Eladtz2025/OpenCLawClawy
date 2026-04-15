@@ -13,7 +13,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -30,7 +30,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -47,7 +47,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -64,7 +64,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -81,7 +81,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -98,7 +98,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -115,7 +115,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -132,7 +132,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -149,7 +149,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -166,7 +166,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 4,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -183,7 +183,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -200,7 +200,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -217,7 +217,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": false
   },
   {
@@ -234,7 +234,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": true
   },
   {
@@ -251,7 +251,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-15T13:34:11.707Z",
+    "collectedAt": "2026-04-15T15:58:27.567Z",
     "fixture": true
   }
 ]

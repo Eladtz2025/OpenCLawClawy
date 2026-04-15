@@ -6,6 +6,11 @@
     "success": true,
     "items": [
       {
+        "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
+        "url": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
+        "publishedAt": "2026-04-15T00:00:00"
+      },
+      {
         "title": "TeraWulf stock declines on $900 million share sale to fund AI data center expansion The shares had been on a big run higher, rising more than 50% since late March.",
         "url": "https://www.coindesk.com/markets/2026/04/15/terawulf-stock-declines-on-usd900-million-share-sale-to-fund-ai-data-center-expansion",
         "publishedAt": "2026-04-15T00:00:00"
@@ -71,13 +76,23 @@
         "publishedAt": "2026-04-07T00:00:00"
       },
       {
-        "title": "A new class of crypto treasury companies is forming around Strategy’s high-yield stock",
-        "url": "https://www.coindesk.com/markets/2026/04/15/a-new-class-of-crypto-treasury-companies-is-forming-around-strategy-s-high-yield-stock",
+        "title": "Why Morgan Stanley's CFO sees tokenization as the next big step for its multi-trillion wealth business",
+        "url": "https://www.coindesk.com/business/2026/04/15/why-morgan-stanley-s-cfo-thinks-tokenization-is-the-next-big-step-for-its-multi-trillion-wealth-business",
         "publishedAt": "2026-04-15T00:00:00"
       },
       {
-        "title": "A new class of crypto treasury companies is forming around Strategy’s high-yield stock",
-        "url": "https://www.coindesk.com/markets/2026/04/15/a-new-class-of-crypto-treasury-companies-is-forming-around-strategy-s-high-yield-stock",
+        "title": "Why Morgan Stanley's CFO sees tokenization as the next big step for its multi-trillion wealth business",
+        "url": "https://www.coindesk.com/business/2026/04/15/why-morgan-stanley-s-cfo-thinks-tokenization-is-the-next-big-step-for-its-multi-trillion-wealth-business",
+        "publishedAt": "2026-04-15T00:00:00"
+      },
+      {
+        "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400%",
+        "url": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
+        "publishedAt": "2026-04-15T00:00:00"
+      },
+      {
+        "title": "Beyond ‘digital gold,’ Iran conflict forces a rethink of the nature of bitcoin",
+        "url": "https://www.coindesk.com/markets/2026/04/15/bitcoin-s-war-rally-is-forcing-a-rethink-beyond-digital-gold",
         "publishedAt": "2026-04-15T00:00:00"
       },
       {
@@ -86,24 +101,9 @@
         "publishedAt": "2026-04-15T00:00:00"
       },
       {
-        "title": "Bitcoin developers are trying to build quantum defenses. Your coins could pay the price.",
-        "url": "https://www.coindesk.com/tech/2026/04/15/bitcoin-developers-are-trying-to-build-quantum-defenses-your-coins-could-pay-the-price",
-        "publishedAt": "2026-04-15T00:00:00"
-      },
-      {
-        "title": "Why this ex-Solana exec is using a Wall Street trick to level the playing field in DeFi",
-        "url": "https://www.coindesk.com/tech/2026/04/15/why-this-ex-solana-exec-is-using-a-wall-street-trick-to-level-the-playing-field-in-defi",
-        "publishedAt": "2026-04-15T00:00:00"
-      },
-      {
         "title": "How CoinW’s Upgraded Futures Trading Businesses Are Responding Nimbly to Trends",
         "url": "https://www.coindesk.com/sponsored-content/how-coinw-s-upgraded-futures-trading-businesses-are-responding-nimbly-to-trends",
         "publishedAt": null
-      },
-      {
-        "title": "Bitcoin pulls back as $75,000 remains 'both the milestone and the ceiling'",
-        "url": "https://www.coindesk.com/markets/2026/04/15/bitcoin-pulls-back-as-usd75-000-remains-both-the-milestone-and-the-ceiling",
-        "publishedAt": "2026-04-15T00:00:00"
       }
     ]
   },
@@ -113,6 +113,16 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "Bitcoin developer Jameson Lopp says it's better to freeze 5.6 million BTC than let hackers have them",
+        "url": "https://www.coindesk.com/business/2026/04/15/bitcoin-developer-jameson-lopp-says-it-s-better-to-freeze-5-6-million-btc-than-let-hackers-have-them",
+        "publishedAt": "2026-04-15T00:00:00"
+      },
+      {
+        "title": "Beyond ‘digital gold,’ Iran conflict forces a rethink of the nature of bitcoin",
+        "url": "https://www.coindesk.com/markets/2026/04/15/bitcoin-s-war-rally-is-forcing-a-rethink-beyond-digital-gold",
+        "publishedAt": "2026-04-15T00:00:00"
+      },
       {
         "title": "The 100% debt trap: Why the IMF’s latest warning is a massive long-term signal for bitcoin",
         "url": "https://www.coindesk.com/markets/2026/04/15/the-imf-just-repriced-the-macro-backdrop-for-bitcoin-with-a-global-debt-warning",
@@ -154,29 +164,14 @@
         "publishedAt": "2026-04-14T00:00:00"
       },
       {
-        "title": "Bitcoin passes halfway point in halving cycle as price gains trail prior cycles",
-        "url": "https://www.coindesk.com/markets/2026/04/14/bitcoin-passes-halfway-point-in-halving-cycle-as-price-gains-trail-prior-cycles",
-        "publishedAt": "2026-04-14T00:00:00"
-      },
-      {
-        "title": "Here are key bitcoin price levels to watch as the rally gathers steam",
-        "url": "https://www.coindesk.com/markets/2026/04/14/here-are-key-bitcoin-price-levels-to-watch-as-the-rally-gathers-steam",
-        "publishedAt": "2026-04-14T00:00:00"
+        "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
+        "url": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
+        "publishedAt": "2026-04-15T00:00:00"
       },
       {
         "title": "TeraWulf stock declines on $900 million share sale to fund AI data center expansion The shares had been on a big run higher, rising more than 50% since late March.",
         "url": "https://www.coindesk.com/markets/2026/04/15/terawulf-stock-declines-on-usd900-million-share-sale-to-fund-ai-data-center-expansion",
         "publishedAt": "2026-04-15T00:00:00"
-      },
-      {
-        "title": "CoinDesk 20 performance update: AAVE rises 4.3% as trades flat Aptos (APT), up 3.8% since Tuesday, joined Aave (AAVE) as a top performer.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/15/coindesk-20-performance-update-aave-rises-4-3-as-trades-flat",
-        "publishedAt": "2026-04-15T00:00:00"
-      },
-      {
-        "title": "Explorar Últimas Noticias",
-        "url": "https://www.coindesk.com/latest-crypto-news",
-        "publishedAt": null
       },
       {
         "title": "Documentation and Governance",
@@ -247,13 +242,13 @@
         "publishedAt": "2026-04-03T00:00:00"
       },
       {
-        "title": "TeraWulf stock declines on $900 million share sale to fund AI data center expansion The shares had been on a big run higher, rising more than 50% since late March.",
-        "url": "https://www.coindesk.com/markets/2026/04/15/terawulf-stock-declines-on-usd900-million-share-sale-to-fund-ai-data-center-expansion",
+        "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
+        "url": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
         "publishedAt": "2026-04-15T00:00:00"
       },
       {
-        "title": "CoinDesk 20 performance update: AAVE rises 4.3% as trades flat Aptos (APT), up 3.8% since Tuesday, joined Aave (AAVE) as a top performer.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/15/coindesk-20-performance-update-aave-rises-4-3-as-trades-flat",
+        "title": "TeraWulf stock declines on $900 million share sale to fund AI data center expansion The shares had been on a big run higher, rising more than 50% since late March.",
+        "url": "https://www.coindesk.com/markets/2026/04/15/terawulf-stock-declines-on-usd900-million-share-sale-to-fund-ai-data-center-expansion",
         "publishedAt": "2026-04-15T00:00:00"
       },
       {
@@ -320,13 +315,13 @@
         "publishedAt": "2026-03-13T00:00:00"
       },
       {
-        "title": "TeraWulf stock declines on $900 million share sale to fund AI data center expansion The shares had been on a big run higher, rising more than 50% since late March.",
-        "url": "https://www.coindesk.com/markets/2026/04/15/terawulf-stock-declines-on-usd900-million-share-sale-to-fund-ai-data-center-expansion",
+        "title": "Allbirds abandons sneakers in pivot to AI computing, shares surge 400% The footwear brand plans reinvention as Newbird AI with a $50 million convertible in a sign of the broader market shift into GPU infrastructure.",
+        "url": "https://www.coindesk.com/markets/2026/04/15/allbirds-abandons-sneakers-in-pivot-to-ai-computing-shares-surge-300",
         "publishedAt": "2026-04-15T00:00:00"
       },
       {
-        "title": "CoinDesk 20 performance update: AAVE rises 4.3% as trades flat Aptos (APT), up 3.8% since Tuesday, joined Aave (AAVE) as a top performer.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/15/coindesk-20-performance-update-aave-rises-4-3-as-trades-flat",
+        "title": "TeraWulf stock declines on $900 million share sale to fund AI data center expansion The shares had been on a big run higher, rising more than 50% since late March.",
+        "url": "https://www.coindesk.com/markets/2026/04/15/terawulf-stock-declines-on-usd900-million-share-sale-to-fund-ai-data-center-expansion",
         "publishedAt": "2026-04-15T00:00:00"
       },
       {
@@ -343,23 +338,23 @@
     "success": true,
     "items": [
       {
-        "title": "Elizabeth Warren Warns Elon Musk's X Money Threatens 'Stability of the Financial System'",
-        "url": "https://decrypt.co/364430/elizabeth-warren-warns-elon-musks-x-money-threatens-stability-of-the-financial-system",
+        "title": "Online Casino Operator's Stock Surges on Crypto.com Prediction Market Deal",
+        "url": "https://decrypt.co/364459/online-casino-operator-stock-surges-crypto-com-prediction-markets-deal",
         "publishedAt": null
       },
       {
-        "title": "Morning Minute: The Next Fed Chair Has a Crypto Portfolio",
-        "url": "https://decrypt.co/364429/morning-minute-the-next-fed-chair-has-a-crypto-portfolio",
+        "title": "'Nothing Ever Happens': This Bot Always Bets 'No' on Polymarket, And It Has a Point",
+        "url": "https://decrypt.co/364381/polymarket-bot-bets-no-has-a-point",
         "publishedAt": null
       },
       {
-        "title": "Virginia Governor Signs Law Protecting Dormant Crypto From Forced Liquidation",
-        "url": "https://decrypt.co/364426/virginia-governor-signs-law-protecting-dormant-crypto-from-forced-liquidation",
+        "title": "New Bitcoin Proposal Would Freeze Coins to Counter Quantum Threat",
+        "url": "https://decrypt.co/364450/new-bitcoin-proposal-would-freeze-coins-to-counter-quantum-threat",
         "publishedAt": null
       },
       {
-        "title": "Bitcoin ETFs Draw $411M After BTC Hits $75K, But Analysts Urge Caution",
-        "url": "https://decrypt.co/364423/bitcoin-etfs-draw-411m-after-btc-hits-75k-but-analysts-urge-caution",
+        "title": "Can AI Beat the Sports Betting Market? 8 of the Top Models Tried",
+        "url": "https://decrypt.co/364406/ai-beat-sports-betting-market-top-8-models",
         "publishedAt": null
       },
       {
