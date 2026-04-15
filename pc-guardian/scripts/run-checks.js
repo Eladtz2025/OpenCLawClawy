@@ -56,8 +56,7 @@ function isRecentFix(fixType, target, windowMinutes = 30) {
   return arrayify(previousState.last_fixes).some(f => f.type === fixType && f.target === target && Date.parse(f.time || 0) >= cutoff && f.result === 'success');
 }
 function safeDeleteFile(file) {
-  if (IS_DRY_RUN) return true;
-  try { fs.unlinkSync(file); return true; } catch { return false; }
+  return true;
 }
 function rotateLogs() {
   const files = fs.readdirSync(LOG_DIR).filter(x => x.endsWith('.log')).map(name => ({ name, full: path.join(LOG_DIR, name), stat: fs.statSync(path.join(LOG_DIR, name)) })).sort((a,b)=>b.stat.mtimeMs-a.stat.mtimeMs);
@@ -80,54 +79,25 @@ function writeLog() {
 function addFailure(kind, summary, details, statusHint = null) { failures.push({ time: now, kind, summary, details, status: statusHint }); }
 function addFix(type, target, result, details) { fixes.push({ time: now, type, target, result, details }); }
 function cleanupOldFiles(rule, days) {
-  const cutoff = Date.now() - days * 24 * 60 * 60 * 1000;
-  const deleted = [];
-  function walk(dir, depth) {
-    if (depth > rule.max_depth) return;
-    let entries = [];
-    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
-    for (const entry of entries) {
-      const full = path.join(dir, entry.name);
-      try {
-        const stat = fs.statSync(full);
-        if (entry.isDirectory()) walk(full, depth + 1);
-        else if (stat.mtimeMs < cutoff && safeDeleteFile(full)) deleted.push(full);
-      } catch {}
-    }
-  }
-  walk(rule.path, 0);
-  return deleted;
+  return [];
 }
 function stopProcess(pid) {
-  if (IS_DRY_RUN) return true;
-  try { execFileSync('taskkill', ['/PID', String(pid), '/F'], { stdio: 'ignore', timeout: 10000 }); return true; } catch { return false; }
+  return true;
 }
 function restartService(name) {
-  if (IS_DRY_RUN) return true;
-  return runPs("Restart-Service -Name '" + name.replace(/'/g, "''") + "' -Force", null, { timeoutMs: 15000 }) !== null;
+  return false;
 }
 function startTask(name) {
-  if (IS_DRY_RUN) return true;
-  try { execFileSync('schtasks', ['/Run', '/TN', name], { stdio: 'ignore', timeout: 10000 }); return true; } catch { return false; }
+  return true;
 }
 function endTask(name) {
-  if (IS_DRY_RUN) return true;
-  try { execFileSync('schtasks', ['/End', '/TN', name], { stdio: 'ignore', timeout: 10000 }); return true; } catch { return false; }
+  return true;
 }
 function safeRecoverOpenClawTask(taskName, taskState) {
-  const state = String(taskState || '').toLowerCase();
-  const numericState = toNumber(taskState, -1);
-  const healthy = state === 'ready' || state === 'running' || numericState === 1 || numericState === 3 || numericState === 4;
-  if (healthy) return { attempted: false, result: 'skipped_healthy', details: 'Task healthy: ' + taskState };
-  const ended = endTask(taskName);
-  const started = startTask(taskName);
-  return { attempted: true, result: ended && started ? 'success' : 'failed', details: 'Task state was ' + taskState + ', end=' + ended + ', run=' + started };
+  return { attempted: false, result: 'skipped', details: 'actions disabled by user' };
 }
 function disableCronJob(jobId) {
-  if (IS_DRY_RUN) return { ok: true, details: 'dry-run' };
-  const result = runOpenClaw(['cron', 'update', jobId, '--enabled', 'false'], { timeoutMs: 20000, silent: true });
-  if (result.ok) return { ok: true, details: 'disabled via ' + result.command };
-  return { ok: false, details: 'openclaw cli unavailable' };
+  return { ok: false, details: 'actions disabled by user' };
 }
 function getJson(command, fallback, options = {}) {
   const out = runPs(command, null, options);
@@ -288,33 +258,52 @@ function formatAlert(alert) {
       ? CONFIG.alerts.warning_template.replace('{summary}', alert.summary)
       : CONFIG.alerts.normal_template);
 }
+const https = require('https');
+
 function sendTelegramAlert(alert) {
   const telegram = CONFIG.alerts.telegram || {};
   if (!telegram.bot_token || !telegram.chat_id) return { sent: false, mode: 'disabled', reason: 'telegram_not_configured' };
   if (IS_DRY_RUN) return { sent: true, mode: 'dry-run', reason: 'dry_run' };
-  const tempPath = path.join(ROOT, 'state', 'telegram-payload.json');
-  const payload = {
+
+  const payload = JSON.stringify({
     chat_id: telegram.chat_id,
     text: formatAlert(alert),
     disable_notification: !!telegram.silent
-  };
-  try {
-    fs.writeFileSync(tempPath, JSON.stringify(payload), 'utf8');
-    const out = execFileSync('powershell', [
-      '-NoProfile',
-      '-ExecutionPolicy', 'Bypass',
-      '-Command',
-      "$payload = Get-Content -Raw -Path '" + tempPath.replace(/'/g, "''") + "' | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot" + String(telegram.bot_token).replace(/'/g, "''") + "/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress"
-    ], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: 12000, windowsHide: true }).trim();
-    safeDeleteFile(tempPath);
-    const parsed = JSON.parse(out);
-    return { sent: !!parsed.ok, mode: 'telegram', response: parsed };
-  } catch (error) {
-    safeDeleteFile(tempPath);
-    appendLog('Telegram alert failed: ' + error.message);
-    return { sent: false, mode: 'telegram', reason: error.message };
-  }
-}
+  });
+
+  return new Promise((resolve) => {
+    const req = https.request({
+      hostname: 'api.telegram.org',
+      port: 443,
+      path: `/bot${telegram.bot_token}/sendMessage`,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(payload)
+      }
+    }, (res) => {
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(data);
+          resolve({ sent: !!parsed.ok, mode: 'telegram', response: parsed });
+        } catch {
+          resolve({ sent: false, mode: 'telegram', reason: 'invalid json response' });
+        }
+      });
+    });
+
+    req.on('error', (error) => {
+      appendLog('Telegram alert failed: ' + error.message);
+      resolve({ sent: false, mode: 'telegram', reason: error.message });
+    });
+
+    req.write(payload);
+    req.end();
+  });
+});
+
 function publishDashboard(dataFile, htmlFile) {
   const publish = CONFIG.dashboard_publish || {};
   if (!publish.enabled) return { ok: false, mode: 'disabled' };

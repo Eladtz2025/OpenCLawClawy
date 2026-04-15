@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-12T07:52:02.103Z",
+  "entries": {
+    "memory:memory/2026-04-04.md:1:10": {
+      "key": "memory:memory/2026-04-04.md:1:10",
+      "path": "memory/2026-04-04.md",
+      "startLine": 1,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "- אלעד בונה עם קלואי דשבורד חדשות אישי בעברית כאתר רספונסיבי ב-GitHub Pages, עם URL ראשי: https://eladtz2025.github.io/OpenCLawClawy/ וגם latest תחת news-dashboard/site/latest.html. - הריפו הייעודי לדשבורד: https://github.com/Eladtz2025/OpenCLawClawy.git - הוגדר Git לריפו עם user.name=Clawy ו-user.email=clawy@local; GitHub Pages הופעל על branch main / root. - אלעד מעדיף שהמערכת תהיה ישימה טכנית בלבד: לא להציע תוכניות שלא ניתן לבצע בפועל; הומרה התוכנית ל-Hybrid engine שבו tools עושים live collection והקבצים המקומיים עושים state/scoring/render/archive/publish. - כלל עבודה חשוב שאלעד ביקש לעגן: אסור לנסח \"אני מתחיל עכשיו\" / \"אעשה עכשיו\" / \"ממשיך עכשיו\" בלי tool call אמיתי באותו רצף; אם נאמר \"הש",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "totalScore": 2.0603054257473494,
+      "maxScore": 0.7995145882311928,
+      "firstRecalledAt": "2026-04-08T06:32:32.190Z",
+      "lastRecalledAt": "2026-04-12T07:52:02.103Z",
+      "queryHashes": [
+        "f3f52da824e1",
+        "ec7299667f12",
+        "40ec8392c445"
+      ],
+      "recallDays": [
+        "2026-04-08",
+        "2026-04-11",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "ב-github",
+        "news-dashboard/site/latest.html",
+        "user.name",
+        "ו-user.email",
+        "ל-hybrid",
+        "אלעד",
+        "בונה",
+        "קלואי"
+      ]
+    },
+    "memory:memory/2026-04-04.md:9:16": {
+      "key": "memory:memory/2026-04-04.md:9:16",
+      "path": "memory/2026-04-04.md",
+      "startLine": 9,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "- מקורות שאושרו עקרונית: טכנולוגיה — Reuters Tech, The Verge, TechCrunch, מקורות רשמיים; ישראל — הארץ, ynet, כאן; קריפטו — לבחור 5 חזקים; הפועל פתח תקווה — מקור רשמי, ONE, Sport5, Flashscore, Soccerway. - בפועל התברר שחלק מהמקורות חסומים/חלשים ב-runtime: CoinDesk usable; The Block חסום; כאן חסום; ynet חלש דרך fetch; לכן נבנתה רשימת usable sources נפרדת לפי מה שעובד בפועל. - כלל מערכת חדש שאלעד ביקש: מקור שחסום/לא usable בפועל לא יישאר מקור primary; מוסיפים מקור רק אחרי חיפוש + בדיקת usability אמיתית. - אלעד הדגיש שמשחק של הפועל פתח תקווה ביום מסוים הוא ידיעה חשובה מאוד; policy חדש: match today for Hapoel must be included if verified, וצריך fixture-first retrieval. - fallback נדרש: אם קריפטו/",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "totalScore": 2.210869336861992,
+      "maxScore": 0.7789403791911073,
+      "firstRecalledAt": "2026-04-10T14:02:47.255Z",
+      "lastRecalledAt": "2026-04-11T20:36:26.219Z",
+      "queryHashes": [
+        "5d8341d60f4f",
+        "ec7299667f12",
+        "99bc2084085f"
+      ],
+      "recallDays": [
+        "2026-04-10",
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "חסומים/חלשים",
+        "ב-runtime",
+        "שחסום/לא",
+        "fixture-first",
+        "מקורות",
+        "שאושרו",
+        "עקרונית",
+        "טכנולוגיה"
+      ]
+    },
+    "memory:memory/2026-04-10.md:1:6": {
+      "key": "memory:memory/2026-04-10.md:1:6",
+      "path": "memory/2026-04-10.md",
+      "startLine": 1,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "- אלעד ביקש לרכך ולפשט את כללי העבודה, והעדיף גרסת agent rules רזה: קצר, מדויק, מעשי, מאפשר גם execution וגם checks, עם פחות קשיחות ניסוחית. - אלעד הבהיר כלל התנהגות חשוב: אם אני אומר שאני מתחיל, אני חייב להתחיל בפועל באותו תור; אסור לכתוב דברים לא נכונים גם כניסוח מעבר. - במערכת החדשות, אלעד הגדיר העדפות selection: טכנולוגיה/טכנולוגיה 2 = חדש, חשוב, שימושי, פוטנציאל כסף; קריפטו = קודם כל מה שיכול לעזור להרוויח, עם עדיפות ל-BTC/ETH/XRP כשיש הצדקה; ישראל = דברים מהותיים במדינה; הפועל = הכי חדש והכי חשוב. - אלעד קבע כלל freshness למסלול החדשות: חדשות מ-24 השעות האחרונות בלבד, ואם אין מספיק אז מותר להישאר רק עם מהיום הקודם, לא יותר. - אלעד אישר להוסיף sources חדשים ל-israel ול-hapoel אחרי בדיקת",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7804244253595606,
+      "maxScore": 0.7804244253595606,
+      "firstRecalledAt": "2026-04-11T20:36:26.219Z",
+      "lastRecalledAt": "2026-04-11T20:36:26.219Z",
+      "queryHashes": [
+        "99bc2084085f"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "טכנולוגיה/טכנולוגיה",
+        "ל-btc/eth/xrp",
+        "מ-24",
+        "ל-israel",
+        "ול-hapoel",
+        "אלעד",
+        "ביקש",
+        "לרכך"
+      ]
+    },
+    "memory:memory/2026-04-05.md:1:6": {
+      "key": "memory:memory/2026-04-05.md:1:6",
+      "path": "memory/2026-04-05.md",
+      "startLine": 1,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "- ב־2026-04-05 אלעד חיזק כלל עבודה מחייב: אם אני אומר שאני עושה משהו ושאעדכן כשאסיים, אני חייב באמת לבצע בפועל ולעדכן בפועל; לא ליצור רושם של עבודה ברקע אם היא לא קרתה. - ב־2026-04-05 אלעד ביקש סיכומים ותשובות עובדתיים בלבד כשבודקים מצב מערכת/Agent/Workspace; עדיף לציין UNKNOWN או חסר ודאות מאשר לנחש. - נבנתה והורחבה מערכת Backup Manager בתוך `backup-manager/` עבור `C:\\Users\\Itzhak\\.openclaw`: backup, retention=3, restore-preview, restore, health-check, dashboard מקומי ו-GitHub Pages dashboard. - מצב ה־Backup Manager נכון לסוף הסשן: המערכת עבור `Itzhak` קיימת ועובדת, אבל הרחבת multi-root עבור `C:\\Users\\OpenClaw\\.openclaw` לא הושלמה בהצלחה; שורש שני אומת, אך לא הופק artifact תקין של multi-roo",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7629603832809881,
+      "maxScore": 0.7629603832809881,
+      "firstRecalledAt": "2026-04-11T20:36:26.219Z",
+      "lastRecalledAt": "2026-04-11T20:36:26.219Z",
+      "queryHashes": [
+        "99bc2084085f"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "backup",
+        "מערכת/agent/workspace",
+        "backup-manager",
+        "restore-preview",
+        "health-check",
+        "ו-github",
+        "multi-root",
+        "multi-roo"
+      ]
+    }
+  }
+}

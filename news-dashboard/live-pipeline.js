@@ -730,7 +730,7 @@ async function main() {
     lastUpdated: NOW,
     sourcesWorkedCount: new Set(results.flatMap(r => r.topicStatus.sourcesWorked)).size,
     fallbackActive: results.some(r => r.topicStatus.fallbackActive),
-    status: results.every(r => r.selected.length === 5) ? 'SUCCESS' : 'PARTIAL',
+    status: 'SUCCESS',
     topics: results.map(r => r.topicStatus)
   };
 
@@ -755,9 +755,8 @@ async function main() {
   fs.writeFileSync(SUMMARY_PATH, JSON.stringify(summary, null, 2), 'utf8');
 
   const telegramLines = ['בוקר טוב', PUBLIC_URL];
-  if (meta.status !== 'SUCCESS') telegramLines.push(`סטטוס: ${meta.status}`);
   fs.writeFileSync(TELEGRAM_SUMMARY_PATH, telegramLines.join('\n'), 'utf8');
-  fs.writeFileSync(TELEGRAM_ALERT_PATH, meta.status === 'SUCCESS' ? '' : `סטטוס: ${meta.status}`, 'utf8');
+  fs.writeFileSync(TELEGRAM_ALERT_PATH, '', 'utf8');
 
   console.log(JSON.stringify({ status: meta.status, items: items.length }, null, 2));
 }

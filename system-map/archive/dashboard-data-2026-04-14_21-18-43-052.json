@@ -1,0 +1,304 @@
+{
+  "generated_at": "2026-04-14T21:16:30.210Z",
+  "scan_scope": [
+    "C:\\Users\\Itzhak",
+    "C:\\Users\\Openclaw"
+  ],
+  "systems": [
+    {
+      "system_id": "runtime-clawy-itzhak",
+      "name": "OpenClaw Itzhak Main",
+      "display_name": "Clawy Runtime",
+      "owner": "Itzhak",
+      "purpose": "Primary OpenClaw runtime for Clawy.",
+      "status": "active",
+      "overall_score": 5.7,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "weight_details": {
+        "size_mb": 10,
+        "complexity": "Moderate",
+        "optimization_tip": "Clear outdated config snapshots and temp logs."
+      },
+      "recommendation": "improve later",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-14T21:16:30.210Z",
+      "last_updated_if_known": "2026-04-11T22:07:05.223Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace",
+      "key_risks": [
+        "open group access",
+        "full exec",
+        "config residue"
+      ],
+      "short_summary": "Stable runtime, weak safety.",
+      "detailed_logic": "The core engine providing agent execution, tool integration, and session management. It relies on a central gateway to route messages from channels to specific agent sessions.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Stricter execution sandboxing",
+          "Automated config audit system",
+          "More granular group access control"
+        ]
+      },
+      "source_details": {
+        "related_ports": [
+          18789,
+          18791,
+          58697
+        ],
+        "related_tasks": [
+          "OpenClaw - On Network Reconnect",
+          "OpenClaw Gateway - Itzhak"
+        ],
+        "related_cron_jobs": [
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\runs",
+          "C:\\Users\\Itzhak\\.openclaw\\cron\\jobs.json"
+        ]
+      }
+    },
+    {
+      "system_id": "system-pc-guardian",
+      "name": "pc-guardian",
+      "display_name": "PC Guardian",
+      "owner": "Itzhak",
+      "purpose": "PC monitoring and guardian system.",
+      "status": "active",
+      "overall_score": 6.3,
+      "overall_rating": "acceptable",
+      "weight": "light",
+      "weight_details": {
+        "size_mb": 0,
+        "complexity": "Low",
+        "optimization_tip": "N/A"
+      },
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-14T21:16:30.210Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian",
+      "key_risks": [
+        "scope not fully verified",
+        "needs clearer boundaries"
+      ],
+      "short_summary": "Looks real, not fully verified yet.",
+      "detailed_logic": "Monitors OpenClaw process health. If a critical process hangs, it uses Windows schtasks to terminate and restart the target, ensuring high availability of the agent runtime.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Integration with a live visual dashboard",
+          "Customizable health thresholds",
+          "Automatic root-cause analysis reports"
+        ]
+      },
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "system-system-map",
+      "name": "system-map",
+      "display_name": "System Map",
+      "owner": "Itzhak",
+      "purpose": "OpenClaw system mapping and review dashboard.",
+      "status": "active",
+      "overall_score": 7.3,
+      "overall_rating": "acceptable",
+      "weight": "light",
+      "weight_details": {
+        "size_mb": 0,
+        "complexity": "Low",
+        "optimization_tip": "N/A"
+      },
+      "recommendation": "improve later",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-14T21:16:30.210Z",
+      "last_updated_if_known": "2026-04-12T07:59:59.611Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\system-map",
+      "key_risks": [
+        "mapping still evolving",
+        "depends on conservative inference"
+      ],
+      "short_summary": "Active and useful, still being refined.",
+      "detailed_logic": "Performs workspace scanning to detect OpenClaw-like structures, assigns quality scores based on documentation and cleanliness, and publishes a JSON-driven HTML dashboard via GitHub Pages.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Fully dynamic real-time discovery",
+          "Integration with live process logs",
+          "Automated safety audit triggers"
+        ]
+      },
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "system-news-editor",
+      "name": "news-dashboard",
+      "display_name": "News Editor",
+      "owner": "Itzhak",
+      "purpose": "News collection, editing and dashboarding system.",
+      "status": "active",
+      "overall_score": 8.5,
+      "overall_rating": "strong",
+      "weight": "moderate",
+      "weight_details": {
+        "size_mb": 1,
+        "complexity": "High",
+        "optimization_tip": "Archive old .json raw dumps to separate storage."
+      },
+      "recommendation": "maintain",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-14T21:16:30.210Z",
+      "last_updated_if_known": "2026-04-12T17:00:00Z",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\news-dashboard",
+      "key_risks": [
+        "dependency on live-pipeline stability"
+      ],
+      "short_summary": "Highly active, well-documented and functional content pipeline.",
+      "detailed_logic": "A multi-stage pipeline: 1. Collects raw data from diverse sources. 2. Normalizes and dedupes content. 3. Filters 'candidates' based on significance. 4. Edits content into a premium editorial style. 5. Renders HTML and sends Telegram briefs.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Automated QA for factual correctness",
+          "Dynamic source weight adjustment",
+          "Integration of an interactive feedback loop"
+        ]
+      },
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "runtime-pinch-openclaw",
+      "name": "OpenClaw Openclaw Main",
+      "display_name": "Pinch Runtime",
+      "owner": "Openclaw",
+      "purpose": "Primary OpenClaw runtime for Pinch.",
+      "status": "stale",
+      "overall_score": 5.4,
+      "overall_rating": "weak",
+      "weight": "moderate",
+      "weight_details": {
+        "size_mb": 13539,
+        "complexity": "Moderate",
+        "optimization_tip": "Clean up legacy session files and temporary logs."
+      },
+      "recommendation": "manual review",
+      "needs_cleanup": true,
+      "needs_redesign": false,
+      "last_checked": "2026-04-14T21:16:30.210Z",
+      "last_updated_if_known": "2026-04-07T13:34:35.928Z",
+      "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace",
+      "key_risks": [
+        "open group access",
+        "full exec",
+        "unverified fallback"
+      ],
+      "short_summary": "Usable runtime, but safety needs work.",
+      "detailed_logic": "Mirror of the main Clawy runtime, serving the Pinch agent. Handles request routing and tool execution within its own isolated workspace.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Strict safety policy enforcement",
+          "Automated residue cleanup",
+          "Better fallback model verification"
+        ]
+      },
+      "source_details": {
+        "related_ports": [
+          18790,
+          18792,
+          57849
+        ],
+        "related_tasks": [
+          "OpenClaw - On Network Reconnect",
+          "OpenClaw Gateway - Itzhak",
+          "OpenClaw Gateway - Openclaw"
+        ],
+        "related_cron_jobs": []
+      }
+    },
+    {
+      "system_id": "system-transcribe",
+      "name": "transcription-team",
+      "display_name": "Transcribe",
+      "owner": "Openclaw",
+      "purpose": "Transcription workflow system.",
+      "status": "stale",
+      "overall_score": 6.5,
+      "overall_rating": "acceptable",
+      "weight": "heavy",
+      "weight_details": {
+        "size_mb": 5009,
+        "complexity": "Moderate",
+        "optimization_tip": "Remove unused ML models or old venv iterations."
+      },
+      "recommendation": "manual review",
+      "needs_cleanup": false,
+      "needs_redesign": false,
+      "last_checked": "2026-04-14T21:16:30.210Z",
+      "last_updated_if_known": "unknown",
+      "dashboard_link_if_exists": "unknown",
+      "action_link": "unknown",
+      "workspace_path": "C:\\Users\\Openclaw\\.openclaw\\workspace\\transcription-team",
+      "key_risks": [
+        "workflow not verified",
+        "possible stale outputs"
+      ],
+      "short_summary": "Present, but needs verification.",
+      "detailed_logic": "A specialized transcription pipeline using faster-whisper. It supports multiple accuracy profiles (quick vs accurate) and produces standardized TXT/SRT/JSON outputs.",
+      "gap_analysis": {
+        "missing_for_10": [
+          "Management dashboard for job tracking",
+          "Integrated QA for transcription accuracy",
+          "Full runtime documentation (Runbook)"
+        ]
+      },
+      "source_details": {
+        "related_ports": [],
+        "related_tasks": [],
+        "related_cron_jobs": []
+      }
+    }
+  ],
+  "residue_summary": {
+    "config_backup_indicators": [
+      "Itzhak: many bak/clobbered snapshots",
+      "Openclaw: many bak/clobbered snapshots"
+    ],
+    "stale_or_missing_model_refs": [
+      "Openclaw fallback model ollama/gemma4:e2b not confirmed in process scan"
+    ],
+    "stale_tasks": [
+      "OpenClaw - On Network Reconnect"
+    ],
+    "stale_logs_candidates": [
+      "C:\\Users\\Itzhak\\.openclaw\\logs\\commands.log",
+      "C:\\Users\\Openclaw\\.openclaw\\logs\\commands.log",
+      "C:\\Users\\Itzhak\\.openclaw\\logs\\config-audit.jsonl",
+      "C:\\Users\\Openclaw\\.openclaw\\logs\\config-audit.jsonl"
+    ]
+  },
+  "summary": {
+    "total_systems": 6,
+    "heavy_systems": 1,
+    "needs_cleanup": 2,
+    "closest_to_10_count": 1
+  }
+}

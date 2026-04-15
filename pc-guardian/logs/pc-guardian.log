@@ -1,64 +1,3 @@
-[2026-04-08T06:50:10.414Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand KABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcwBlAEIAYQBzAGkAYwBQAGEAcgBzAGkAbgBnACAALQBVAHIAaQAgACIAaAB0AHQAcABzADoALwAvAHcAdwB3AC4AbQBzAGYAdABjAG8AbgBuAGUAYwB0AHQAZQBzAHQALgBjAG8AbQAvAGMAbwBuAG4AZQBjAHQAdABlAHMAdAAuAHQAeAB0ACIAIAAtAFQAaQBtAGUAbwB1AHQAUwBlAGMAIAA1ACkALgBTAHQAYQB0AHUAcwBDAG8AZABlAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS _x000D__x000A_</S><S S="Error">secure channel._x000D__x000A_</S><S S="Error">At line:1 char:2_x000D__x000A_</S><S S="Error">+ (Invoke-WebRequest -UseBasicParsing -Uri "https://www.msftconnecttest ..._x000D__x000A_</S><S S="Error">+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc _x000D__x000A_</S><S S="Error">   eption_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T06:50:18.155Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand JABzAHQAYQByAHQAPQAoAEcAZQB0AC0ARABhAHQAZQApAC4AQQBkAGQASABvAHUAcgBzACgALQA2ACkAOwAgAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBGAGkAbAB0AGUAcgBIAGEAcwBoAHQAYQBiAGwAZQAgAEAAewBMAG8AZwBOAGEAbQBlAD0AJwBTAHkAcwB0AGUAbQAnADsAIABMAGUAdgBlAGwAPQAyADsAIABTAHQAYQByAHQAVABpAG0AZQA9ACQAcwB0AGEAcgB0AH0AIAAtAE0AYQB4AEUAdgBlAG4AdABzACAAMQA1ACAAfAAgAFMAZQBsAGUAYwB0AC0ATwBiAGoAZQBjAHQAIABUAGkAbQBlAEMAcgBlAGEAdABlAGQALABJAGQALABQAHIAbwB2AGkAZABlAHIATgBhAG0AZQAsAEwAZQB2AGUAbABEAGkAcwBwAGwAYQB5AE4AYQBtAGUALABNAGUAcwBzAGEAZwBlACAAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0AQwBvAG0AcAByAGUAcwBzAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><Obj S="progress" RefId="1"><TNRef RefId="0" /><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Get-WinEvent : No events were found that match the specified selection criteria._x000D__x000A_</S><S S="Error">At line:1 char:33_x000D__x000A_</S><S S="Error">+ ... dHours(-6); Get-WinEvent -FilterHashtable @{LogName='System'; Level=2 ..._x000D__x000A_</S><S S="Error">+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T06:50:36.314Z] Overall status: WARNING
-[2026-04-08T06:50:36.314Z] Computer status: WARNING
-[2026-04-08T06:50:36.314Z] OpenClaw status: WARNING
-[2026-04-08T06:50:36.314Z] Fix restart_task target=OpenClaw - On Network Reconnect result=success
-[2026-04-08T06:50:36.314Z] Fix restart_task target=OpenClaw Gateway - Itzhak result=success
-[2026-04-08T06:50:36.314Z] Fix restart_task target=OpenClaw Gateway - Openclaw result=success
-[2026-04-08T06:50:36.314Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
-[2026-04-08T06:50:36.314Z] Fix cleanup_safe_path target=C:\Users\Itzhak\AppData\Local\Temp result=success
-[2026-04-08T06:51:12.399Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand KABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcwBlAEIAYQBzAGkAYwBQAGEAcgBzAGkAbgBnACAALQBVAHIAaQAgACIAaAB0AHQAcABzADoALwAvAHcAdwB3AC4AbQBzAGYAdABjAG8AbgBuAGUAYwB0AHQAZQBzAHQALgBjAG8AbQAvAGMAbwBuAG4AZQBjAHQAdABlAHMAdAAuAHQAeAB0ACIAIAAtAFQAaQBtAGUAbwB1AHQAUwBlAGMAIAA1ACkALgBTAHQAYQB0AHUAcwBDAG8AZABlAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS _x000D__x000A_</S><S S="Error">secure channel._x000D__x000A_</S><S S="Error">At line:1 char:2_x000D__x000A_</S><S S="Error">+ (Invoke-WebRequest -UseBasicParsing -Uri "https://www.msftconnecttest ..._x000D__x000A_</S><S S="Error">+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc _x000D__x000A_</S><S S="Error">   eption_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T06:51:18.086Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand JABzAHQAYQByAHQAPQAoAEcAZQB0AC0ARABhAHQAZQApAC4AQQBkAGQASABvAHUAcgBzACgALQA2ACkAOwAgAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBGAGkAbAB0AGUAcgBIAGEAcwBoAHQAYQBiAGwAZQAgAEAAewBMAG8AZwBOAGEAbQBlAD0AJwBTAHkAcwB0AGUAbQAnADsAIABMAGUAdgBlAGwAPQAyADsAIABTAHQAYQByAHQAVABpAG0AZQA9ACQAcwB0AGEAcgB0AH0AIAAtAE0AYQB4AEUAdgBlAG4AdABzACAAMQA1ACAAfAAgAFMAZQBsAGUAYwB0AC0ATwBiAGoAZQBjAHQAIABUAGkAbQBlAEMAcgBlAGEAdABlAGQALABJAGQALABQAHIAbwB2AGkAZABlAHIATgBhAG0AZQAsAEwAZQB2AGUAbABEAGkAcwBwAGwAYQB5AE4AYQBtAGUALABNAGUAcwBzAGEAZwBlACAAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0AQwBvAG0AcAByAGUAcwBzAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><Obj S="progress" RefId="1"><TNRef RefId="0" /><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Get-WinEvent : No events were found that match the specified selection criteria._x000D__x000A_</S><S S="Error">At line:1 char:33_x000D__x000A_</S><S S="Error">+ ... dHours(-6); Get-WinEvent -FilterHashtable @{LogName='System'; Level=2 ..._x000D__x000A_</S><S S="Error">+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T06:51:33.042Z] Overall status: WARNING
-[2026-04-08T06:51:33.042Z] Computer status: WARNING
-[2026-04-08T06:51:33.042Z] OpenClaw status: WARNING
-[2026-04-08T06:51:33.042Z] Fix restart_task target=OpenClaw - On Network Reconnect result=success
-[2026-04-08T06:51:33.042Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
-[2026-04-08T06:51:33.042Z] Fix cleanup_safe_path target=C:\Users\Itzhak\AppData\Local\Temp result=success
-[2026-04-08T06:51:50.838Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand KABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcwBlAEIAYQBzAGkAYwBQAGEAcgBzAGkAbgBnACAALQBVAHIAaQAgACIAaAB0AHQAcABzADoALwAvAHcAdwB3AC4AbQBzAGYAdABjAG8AbgBuAGUAYwB0AHQAZQBzAHQALgBjAG8AbQAvAGMAbwBuAG4AZQBjAHQAdABlAHMAdAAuAHQAeAB0ACIAIAAtAFQAaQBtAGUAbwB1AHQAUwBlAGMAIAA1ACkALgBTAHQAYQB0AHUAcwBDAG8AZABlAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS _x000D__x000A_</S><S S="Error">secure channel._x000D__x000A_</S><S S="Error">At line:1 char:2_x000D__x000A_</S><S S="Error">+ (Invoke-WebRequest -UseBasicParsing -Uri "https://www.msftconnecttest ..._x000D__x000A_</S><S S="Error">+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc _x000D__x000A_</S><S S="Error">   eption_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T06:51:55.863Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand JABzAHQAYQByAHQAPQAoAEcAZQB0AC0ARABhAHQAZQApAC4AQQBkAGQASABvAHUAcgBzACgALQA2ACkAOwAgAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBGAGkAbAB0AGUAcgBIAGEAcwBoAHQAYQBiAGwAZQAgAEAAewBMAG8AZwBOAGEAbQBlAD0AJwBTAHkAcwB0AGUAbQAnADsAIABMAGUAdgBlAGwAPQAyADsAIABTAHQAYQByAHQAVABpAG0AZQA9ACQAcwB0AGEAcgB0AH0AIAAtAE0AYQB4AEUAdgBlAG4AdABzACAAMQA1ACAAfAAgAFMAZQBsAGUAYwB0AC0ATwBiAGoAZQBjAHQAIABUAGkAbQBlAEMAcgBlAGEAdABlAGQALABJAGQALABQAHIAbwB2AGkAZABlAHIATgBhAG0AZQAsAEwAZQB2AGUAbABEAGkAcwBwAGwAYQB5AE4AYQBtAGUALABNAGUAcwBzAGEAZwBlACAAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0AQwBvAG0AcAByAGUAcwBzAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><Obj S="progress" RefId="1"><TNRef RefId="0" /><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Get-WinEvent : No events were found that match the specified selection criteria._x000D__x000A_</S><S S="Error">At line:1 char:33_x000D__x000A_</S><S S="Error">+ ... dHours(-6); Get-WinEvent -FilterHashtable @{LogName='System'; Level=2 ..._x000D__x000A_</S><S S="Error">+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T06:52:12.790Z] Overall status: WARNING
-[2026-04-08T06:52:12.790Z] Computer status: WARNING
-[2026-04-08T06:52:12.790Z] OpenClaw status: WARNING
-[2026-04-08T06:52:12.790Z] Fix restart_task target=OpenClaw - On Network Reconnect result=failed
-[2026-04-08T06:52:12.790Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
-[2026-04-08T06:52:12.790Z] Fix cleanup_safe_path target=C:\Users\Itzhak\AppData\Local\Temp result=success
-[2026-04-08T10:10:05.218Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand KABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcwBlAEIAYQBzAGkAYwBQAGEAcgBzAGkAbgBnACAALQBVAHIAaQAgACIAaAB0AHQAcABzADoALwAvAHcAdwB3AC4AbQBzAGYAdABjAG8AbgBuAGUAYwB0AHQAZQBzAHQALgBjAG8AbQAvAGMAbwBuAG4AZQBjAHQAdABlAHMAdAAuAHQAeAB0ACIAIAAtAFQAaQBtAGUAbwB1AHQAUwBlAGMAIAA1ACkALgBTAHQAYQB0AHUAcwBDAG8AZABlAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS _x000D__x000A_</S><S S="Error">secure channel._x000D__x000A_</S><S S="Error">At line:1 char:2_x000D__x000A_</S><S S="Error">+ (Invoke-WebRequest -UseBasicParsing -Uri "https://www.msftconnecttest ..._x000D__x000A_</S><S S="Error">+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc _x000D__x000A_</S><S S="Error">   eption_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T10:10:12.413Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand JABzAHQAYQByAHQAPQAoAEcAZQB0AC0ARABhAHQAZQApAC4AQQBkAGQASABvAHUAcgBzACgALQA2ACkAOwAgAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBGAGkAbAB0AGUAcgBIAGEAcwBoAHQAYQBiAGwAZQAgAEAAewBMAG8AZwBOAGEAbQBlAD0AJwBTAHkAcwB0AGUAbQAnADsAIABMAGUAdgBlAGwAPQAyADsAIABTAHQAYQByAHQAVABpAG0AZQA9ACQAcwB0AGEAcgB0AH0AIAAtAE0AYQB4AEUAdgBlAG4AdABzACAAMQA1ACAAfAAgAFMAZQBsAGUAYwB0AC0ATwBiAGoAZQBjAHQAIABUAGkAbQBlAEMAcgBlAGEAdABlAGQALABJAGQALABQAHIAbwB2AGkAZABlAHIATgBhAG0AZQAsAEwAZQB2AGUAbABEAGkAcwBwAGwAYQB5AE4AYQBtAGUALABNAGUAcwBzAGEAZwBlACAAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0AQwBvAG0AcAByAGUAcwBzAA==
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><Obj S="progress" RefId="1"><TNRef RefId="0" /><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Get-WinEvent : No events were found that match the specified selection criteria._x000D__x000A_</S><S S="Error">At line:1 char:33_x000D__x000A_</S><S S="Error">+ ... dHours(-6); Get-WinEvent -FilterHashtable @{LogName='System'; Level=2 ..._x000D__x000A_</S><S S="Error">+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T10:10:35.383Z] Overall status: WARNING
-[2026-04-08T10:10:35.383Z] Computer status: WARNING
-[2026-04-08T10:10:35.383Z] OpenClaw status: WARNING
-[2026-04-08T10:10:35.383Z] Fix restart_task target=OpenClaw - On Network Reconnect result=failed
-[2026-04-08T10:10:35.383Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
-[2026-04-08T10:11:16.410Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand JABzAHQAYQByAHQAPQAoAEcAZQB0AC0ARABhAHQAZQApAC4AQQBkAGQASABvAHUAcgBzACgALQA2ACkAOwAgAHQAcgB5ACAAewAgAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBGAGkAbAB0AGUAcgBIAGEAcwBoAHQAYQBiAGwAZQAgAEAAewBMAG8AZwBOAGEAbQBlAD0AJwBTAHkAcwB0AGUAbQAnADsAIABMAGUAdgBlAGwAPQAyADsAIABTAHQAYQByAHQAVABpAG0AZQA9ACQAcwB0AGEAcgB0AH0AIAAtAE0AYQB4AEUAdgBlAG4AdABzACAAMQA1ACAAfAAgAFMAZQBsAGUAYwB0AC0ATwBiAGoAZQBjAHQAIABUAGkAbQBlAEMAcgBlAGEAdABlAGQALABJAGQALABQAHIAbwB2AGkAZABlAHIATgBhAG0AZQAsAEwAZQB2AGUAbABEAGkAcwBwAGwAYQB5AE4AYQBtAGUALABNAGUAcwBzAGEAZwBlACAAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0AQwBvAG0AcAByAGUAcwBzACAAfQAgAGMAYQB0AGMAaAAgAHsAIAAnAFsAXQAnACAAfQA=
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><Obj S="progress" RefId="1"><TNRef RefId="0" /><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Get-WinEvent : No events were found that match the specified selection criteria._x000D__x000A_</S><S S="Error">At line:1 char:39_x000D__x000A_</S><S S="Error">+ ... (-6); try { Get-WinEvent -FilterHashtable @{LogName='System'; Level=2 ..._x000D__x000A_</S><S S="Error">+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T10:11:34.675Z] Overall status: WARNING
-[2026-04-08T10:11:34.675Z] Computer status: WARNING
-[2026-04-08T10:11:34.675Z] OpenClaw status: WARNING
-[2026-04-08T10:11:34.675Z] Fix restart_task target=OpenClaw - On Network Reconnect result=failed
-[2026-04-08T10:12:04.545Z] PowerShell failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand JABzAHQAYQByAHQAPQAoAEcAZQB0AC0ARABhAHQAZQApAC4AQQBkAGQASABvAHUAcgBzACgALQA2ACkAOwAgAHQAcgB5ACAAewAgAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBGAGkAbAB0AGUAcgBIAGEAcwBoAHQAYQBiAGwAZQAgAEAAewBMAG8AZwBOAGEAbQBlAD0AJwBTAHkAcwB0AGUAbQAnADsAIABMAGUAdgBlAGwAPQAyADsAIABTAHQAYQByAHQAVABpAG0AZQA9ACQAcwB0AGEAcgB0AH0AIAAtAE0AYQB4AEUAdgBlAG4AdABzACAAMQA1ACAAfAAgAFMAZQBsAGUAYwB0AC0ATwBiAGoAZQBjAHQAIABUAGkAbQBlAEMAcgBlAGEAdABlAGQALABJAGQALABQAHIAbwB2AGkAZABlAHIATgBhAG0AZQAsAEwAZQB2AGUAbABEAGkAcwBwAGwAYQB5AE4AYQBtAGUALABNAGUAcwBzAGEAZwBlACAAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0AQwBvAG0AcAByAGUAcwBzACAAfQAgAGMAYQB0AGMAaAAgAHsAIAAnAFsAXQAnACAAfQA=
-#< CLIXML
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><Obj S="progress" RefId="1"><TNRef RefId="0" /><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><S S="Error">Get-WinEvent : No events were found that match the specified selection criteria._x000D__x000A_</S><S S="Error">At line:1 char:39_x000D__x000A_</S><S S="Error">+ ... (-6); try { Get-WinEvent -FilterHashtable @{LogName='System'; Level=2 ..._x000D__x000A_</S><S S="Error">+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S="Error">    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception_x000D__x000A_</S><S S="Error">    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand_x000D__x000A_</S><S S="Error"> _x000D__x000A_</S></Objs>
-[2026-04-08T10:12:23.545Z] Overall status: WARNING
-[2026-04-08T10:12:23.545Z] Computer status: WARNING
 [2026-04-08T10:12:23.545Z] OpenClaw status: WARNING
 [2026-04-11T13:16:35.072Z] Overall status: WARNING
 [2026-04-11T13:16:35.072Z] Computer status: WARNING
@@ -69,3 +8,393 @@
 [2026-04-11T13:17:02.591Z] Overall status: WARNING
 [2026-04-11T13:17:02.591Z] Computer status: WARNING
 [2026-04-11T13:17:02.591Z] OpenClaw status: WARNING
+[2026-04-11T13:30:28.254Z] Overall status: WARNING
+[2026-04-11T13:30:28.254Z] Computer status: WARNING
+[2026-04-11T13:30:28.254Z] OpenClaw status: WARNING
+[2026-04-11T13:45:23.911Z] Overall status: WARNING
+[2026-04-11T13:45:23.911Z] Computer status: WARNING
+[2026-04-11T13:45:23.911Z] OpenClaw status: WARNING
+[2026-04-11T13:45:23.911Z] Alert prepared: PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found
+[2026-04-11T14:00:29.376Z] Overall status: WARNING
+[2026-04-11T14:00:29.376Z] Computer status: WARNING
+[2026-04-11T14:00:29.376Z] OpenClaw status: WARNING
+[2026-04-11T14:16:52.439Z] Overall status: CRITICAL
+[2026-04-11T14:16:52.439Z] Computer status: CRITICAL
+[2026-04-11T14:16:52.439Z] OpenClaw status: WARNING
+[2026-04-11T14:16:52.439Z] Alert prepared: PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt, https://www.google.com/generate_204 | No cron jobs found
+[2026-04-11T14:30:57.117Z] Overall status: WARNING
+[2026-04-11T14:30:57.117Z] Computer status: WARNING
+[2026-04-11T14:30:57.117Z] OpenClaw status: WARNING
+[2026-04-11T14:30:57.117Z] Alert prepared: PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found
+[2026-04-11T14:46:08.598Z] Overall status: WARNING
+[2026-04-11T14:46:08.598Z] Computer status: WARNING
+[2026-04-11T14:46:08.598Z] OpenClaw status: WARNING
+[2026-04-11T15:00:24.482Z] Overall status: WARNING
+[2026-04-11T15:00:24.482Z] Computer status: WARNING
+[2026-04-11T15:00:24.482Z] OpenClaw status: WARNING
+[2026-04-11T15:00:24.482Z] Alert prepared: PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found
+[2026-04-11T15:15:23.334Z] Overall status: WARNING
+[2026-04-11T15:15:23.334Z] Computer status: WARNING
+[2026-04-11T15:15:23.334Z] OpenClaw status: WARNING
+[2026-04-11T15:30:23.300Z] Overall status: WARNING
+[2026-04-11T15:30:23.300Z] Computer status: WARNING
+[2026-04-11T15:30:23.300Z] OpenClaw status: WARNING
+[2026-04-11T15:30:23.300Z] Alert prepared: PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found
+[2026-04-11T15:45:30.280Z] Overall status: CRITICAL
+[2026-04-11T15:45:30.280Z] Computer status: CRITICAL
+[2026-04-11T15:45:30.280Z] OpenClaw status: WARNING
+[2026-04-11T15:45:30.280Z] Alert prepared: PC Guardian Critical: Disk activity 224.6% | Internet failed: https://www.msftconnecttest.com/connecttest.txt
+[2026-04-11T15:54:12.539Z] Overall status: WARNING
+[2026-04-11T15:54:12.539Z] Computer status: WARNING
+[2026-04-11T15:54:12.539Z] OpenClaw status: WARNING
+[2026-04-11T15:54:12.539Z] Cron source: unavailable
+[2026-04-11T15:54:12.539Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T15:54:30.928Z] Overall status: WARNING
+[2026-04-11T15:54:30.928Z] Computer status: WARNING
+[2026-04-11T15:54:30.928Z] OpenClaw status: WARNING
+[2026-04-11T15:54:30.928Z] Cron source: unavailable
+[2026-04-11T15:54:30.928Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T16:00:27.779Z] Overall status: CRITICAL
+[2026-04-11T16:00:27.779Z] Computer status: WARNING
+[2026-04-11T16:00:27.779Z] OpenClaw status: CRITICAL
+[2026-04-11T16:00:27.779Z] Cron source: unavailable
+[2026-04-11T16:00:27.779Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T16:15:27.535Z] Overall status: CRITICAL
+[2026-04-11T16:15:27.536Z] Computer status: WARNING
+[2026-04-11T16:15:27.536Z] OpenClaw status: CRITICAL
+[2026-04-11T16:15:27.536Z] Cron source: unavailable
+[2026-04-11T16:30:30.014Z] Overall status: CRITICAL
+[2026-04-11T16:30:30.014Z] Computer status: WARNING
+[2026-04-11T16:30:30.014Z] OpenClaw status: CRITICAL
+[2026-04-11T16:30:30.014Z] Cron source: unavailable
+[2026-04-11T16:30:30.014Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T16:45:28.254Z] Overall status: CRITICAL
+[2026-04-11T16:45:28.254Z] Computer status: WARNING
+[2026-04-11T16:45:28.254Z] OpenClaw status: CRITICAL
+[2026-04-11T16:45:28.254Z] Cron source: unavailable
+[2026-04-11T17:00:36.596Z] Overall status: CRITICAL
+[2026-04-11T17:00:36.596Z] Computer status: WARNING
+[2026-04-11T17:00:36.597Z] OpenClaw status: CRITICAL
+[2026-04-11T17:00:36.597Z] Cron source: unavailable
+[2026-04-11T17:00:36.597Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T17:15:28.443Z] Overall status: CRITICAL
+[2026-04-11T17:15:28.443Z] Computer status: WARNING
+[2026-04-11T17:15:28.443Z] OpenClaw status: CRITICAL
+[2026-04-11T17:15:28.443Z] Cron source: unavailable
+[2026-04-11T17:30:29.349Z] Overall status: CRITICAL
+[2026-04-11T17:30:29.349Z] Computer status: WARNING
+[2026-04-11T17:30:29.349Z] OpenClaw status: CRITICAL
+[2026-04-11T17:30:29.349Z] Cron source: unavailable
+[2026-04-11T17:30:29.349Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T17:45:27.551Z] Overall status: CRITICAL
+[2026-04-11T17:45:27.551Z] Computer status: WARNING
+[2026-04-11T17:45:27.551Z] OpenClaw status: CRITICAL
+[2026-04-11T17:45:27.551Z] Cron source: unavailable
+[2026-04-11T18:00:27.983Z] Overall status: CRITICAL
+[2026-04-11T18:00:27.983Z] Computer status: WARNING
+[2026-04-11T18:00:27.983Z] OpenClaw status: CRITICAL
+[2026-04-11T18:00:27.983Z] Cron source: unavailable
+[2026-04-11T18:00:27.983Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T18:15:28.771Z] Overall status: CRITICAL
+[2026-04-11T18:15:28.771Z] Computer status: WARNING
+[2026-04-11T18:15:28.771Z] OpenClaw status: CRITICAL
+[2026-04-11T18:15:28.771Z] Cron source: unavailable
+[2026-04-11T18:30:28.216Z] Overall status: CRITICAL
+[2026-04-11T18:30:28.216Z] Computer status: WARNING
+[2026-04-11T18:30:28.216Z] OpenClaw status: CRITICAL
+[2026-04-11T18:30:28.216Z] Cron source: unavailable
+[2026-04-11T18:30:28.216Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T18:45:27.870Z] Overall status: CRITICAL
+[2026-04-11T18:45:27.870Z] Computer status: WARNING
+[2026-04-11T18:45:27.870Z] OpenClaw status: CRITICAL
+[2026-04-11T18:45:27.870Z] Cron source: unavailable
+[2026-04-11T19:00:28.022Z] Overall status: CRITICAL
+[2026-04-11T19:00:28.022Z] Computer status: WARNING
+[2026-04-11T19:00:28.022Z] OpenClaw status: CRITICAL
+[2026-04-11T19:00:28.022Z] Cron source: unavailable
+[2026-04-11T19:00:28.022Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T19:15:31.216Z] Overall status: CRITICAL
+[2026-04-11T19:15:31.216Z] Computer status: WARNING
+[2026-04-11T19:15:31.216Z] OpenClaw status: CRITICAL
+[2026-04-11T19:15:31.216Z] Cron source: unavailable
+[2026-04-11T19:30:30.861Z] Overall status: CRITICAL
+[2026-04-11T19:30:30.861Z] Computer status: WARNING
+[2026-04-11T19:30:30.861Z] OpenClaw status: CRITICAL
+[2026-04-11T19:30:30.861Z] Cron source: unavailable
+[2026-04-11T19:30:30.861Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T19:45:33.000Z] Overall status: WARNING
+[2026-04-11T19:45:33.000Z] Computer status: WARNING
+[2026-04-11T19:45:33.000Z] OpenClaw status: WARNING
+[2026-04-11T19:45:33.000Z] Cron source: unavailable
+[2026-04-11T19:45:33.000Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T20:00:26.285Z] Overall status: CRITICAL
+[2026-04-11T20:00:26.285Z] Computer status: CRITICAL
+[2026-04-11T20:00:26.285Z] OpenClaw status: WARNING
+[2026-04-11T20:00:26.285Z] Cron source: unavailable
+[2026-04-11T20:00:26.285Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T20:15:26.621Z] Overall status: CRITICAL
+[2026-04-11T20:15:26.621Z] Computer status: CRITICAL
+[2026-04-11T20:15:26.621Z] OpenClaw status: WARNING
+[2026-04-11T20:15:26.621Z] Cron source: unavailable
+[2026-04-11T20:30:28.155Z] Overall status: CRITICAL
+[2026-04-11T20:30:28.155Z] Computer status: CRITICAL
+[2026-04-11T20:30:28.155Z] OpenClaw status: WARNING
+[2026-04-11T20:30:28.155Z] Cron source: unavailable
+[2026-04-11T20:30:28.155Z] Alert delivery: {"sent":false,"mode":"disabled","reason":"telegram_not_configured"}
+[2026-04-11T20:36:57.091Z] Overall status: CRITICAL
+[2026-04-11T20:36:57.091Z] Computer status: CRITICAL
+[2026-04-11T20:36:57.091Z] OpenClaw status: WARNING
+[2026-04-11T20:36:57.091Z] Cron source: unavailable
+[2026-04-11T20:41:37.391Z] Overall status: CRITICAL
+[2026-04-11T20:41:37.391Z] Computer status: CRITICAL
+[2026-04-11T20:41:37.391Z] OpenClaw status: WARNING
+[2026-04-11T20:41:37.391Z] Cron source: unavailable
+[2026-04-11T20:43:05.409Z] Overall status: CRITICAL
+[2026-04-11T20:43:05.409Z] Computer status: CRITICAL
+[2026-04-11T20:43:05.409Z] OpenClaw status: WARNING
+[2026-04-11T20:43:05.409Z] Cron source: unavailable
+[2026-04-11T20:44:23.200Z] Overall status: CRITICAL
+[2026-04-11T20:44:23.200Z] Computer status: CRITICAL
+[2026-04-11T20:44:23.200Z] OpenClaw status: WARNING
+[2026-04-11T20:44:23.200Z] Cron source: unavailable
+[2026-04-11T20:45:35.778Z] Overall status: CRITICAL
+[2026-04-11T20:45:35.778Z] Computer status: CRITICAL
+[2026-04-11T20:45:35.778Z] OpenClaw status: CRITICAL
+[2026-04-11T20:45:35.778Z] Cron source: unavailable
+[2026-04-11T21:00:56.567Z] Telegram alert failed: Command failed: powershell -NoProfile -ExecutionPolicy Bypass -Command $payload = @'{"chat_id":"-1003566973693","text":"PC Guardian Critical: RAM 89.6% | Internet failed: https://www.msftconnecttest.com/connecttest.txt","disable_notification":false}'@ | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot8375418380:AAF-4Ag53oEBeZlCvq6zOS653iyXbBJIQww/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress
+At line:1 char:14
++ $payload = @'{"chat_id":"-1003566973693","text":"PC Guardian Critical ...
++              ~
+No characters are allowed after a here-string header but before the end of the line.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedCharactersAfterHereStringHeader
+ 
+[2026-04-11T21:00:56.570Z] Overall status: CRITICAL
+[2026-04-11T21:00:56.570Z] Computer status: CRITICAL
+[2026-04-11T21:00:56.570Z] OpenClaw status: WARNING
+[2026-04-11T21:00:56.570Z] Cron source: unavailable
+[2026-04-11T21:00:56.570Z] Alert delivery: {"sent":false,"mode":"telegram","reason":"Command failed: powershell -NoProfile -ExecutionPolicy Bypass -Command $payload = @'{\"chat_id\":\"-1003566973693\",\"text\":\"PC Guardian Critical: RAM 89.6% | Internet failed: https://www.msftconnecttest.com/connecttest.txt\",\"disable_notification\":false}'@ | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot8375418380:AAF-4Ag53oEBeZlCvq6zOS653iyXbBJIQww/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress\nAt line:1 char:14\r\n+ $payload = @'{\"chat_id\":\"-1003566973693\",\"text\":\"PC Guardian Critical ...\r\n+              ~\r\nNo characters are allowed after a here-string header but before the end of the line.\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : UnexpectedCharactersAfterHereStringHeader\r\n \r\n"}
+[2026-04-11T21:03:13.018Z] Overall status: CRITICAL
+[2026-04-11T21:03:13.018Z] Computer status: CRITICAL
+[2026-04-11T21:03:13.018Z] OpenClaw status: WARNING
+[2026-04-11T21:03:13.018Z] Cron source: unavailable
+[2026-04-11T21:06:22.089Z] Overall status: CRITICAL
+[2026-04-11T21:06:22.089Z] Computer status: CRITICAL
+[2026-04-11T21:06:22.089Z] OpenClaw status: WARNING
+[2026-04-11T21:06:22.089Z] Cron source: unavailable
+[2026-04-11T21:15:47.734Z] Overall status: CRITICAL
+[2026-04-11T21:15:47.734Z] Computer status: CRITICAL
+[2026-04-11T21:15:47.734Z] OpenClaw status: WARNING
+[2026-04-11T21:15:47.734Z] Cron source: unavailable
+[2026-04-11T21:30:34.426Z] Overall status: CRITICAL
+[2026-04-11T21:30:34.426Z] Computer status: CRITICAL
+[2026-04-11T21:30:34.426Z] OpenClaw status: WARNING
+[2026-04-11T21:30:34.426Z] Cron source: unavailable
+[2026-04-11T21:30:34.426Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1411,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775943034,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-11T21:45:26.041Z] Overall status: CRITICAL
+[2026-04-11T21:45:26.041Z] Computer status: CRITICAL
+[2026-04-11T21:45:26.041Z] OpenClaw status: WARNING
+[2026-04-11T21:45:26.041Z] Cron source: unavailable
+[2026-04-11T22:00:38.656Z] Overall status: CRITICAL
+[2026-04-11T22:00:38.656Z] Computer status: CRITICAL
+[2026-04-11T22:00:38.656Z] OpenClaw status: WARNING
+[2026-04-11T22:00:38.656Z] Cron source: unavailable
+[2026-04-11T22:00:38.656Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1412,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775944838,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-11T22:15:24.569Z] Overall status: CRITICAL
+[2026-04-11T22:15:24.569Z] Computer status: CRITICAL
+[2026-04-11T22:15:24.569Z] OpenClaw status: WARNING
+[2026-04-11T22:15:24.569Z] Cron source: unavailable
+[2026-04-11T22:30:25.194Z] Overall status: CRITICAL
+[2026-04-11T22:30:25.194Z] Computer status: CRITICAL
+[2026-04-11T22:30:25.194Z] OpenClaw status: WARNING
+[2026-04-11T22:30:25.194Z] Cron source: unavailable
+[2026-04-11T22:30:25.194Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1413,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775946625,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-11T22:45:24.184Z] Overall status: CRITICAL
+[2026-04-11T22:45:24.184Z] Computer status: CRITICAL
+[2026-04-11T22:45:24.184Z] OpenClaw status: WARNING
+[2026-04-11T22:45:24.184Z] Cron source: unavailable
+[2026-04-11T23:00:29.103Z] Overall status: CRITICAL
+[2026-04-11T23:00:29.103Z] Computer status: CRITICAL
+[2026-04-11T23:00:29.103Z] OpenClaw status: WARNING
+[2026-04-11T23:00:29.103Z] Cron source: unavailable
+[2026-04-11T23:00:29.103Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1414,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775948429,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-11T23:15:31.267Z] Overall status: CRITICAL
+[2026-04-11T23:15:31.267Z] Computer status: CRITICAL
+[2026-04-11T23:15:31.267Z] OpenClaw status: WARNING
+[2026-04-11T23:15:31.267Z] Cron source: unavailable
+[2026-04-11T23:30:29.771Z] Overall status: CRITICAL
+[2026-04-11T23:30:29.771Z] Computer status: CRITICAL
+[2026-04-11T23:30:29.771Z] OpenClaw status: WARNING
+[2026-04-11T23:30:29.771Z] Cron source: unavailable
+[2026-04-11T23:30:29.771Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1415,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775950229,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-11T23:45:28.620Z] Overall status: CRITICAL
+[2026-04-11T23:45:28.620Z] Computer status: CRITICAL
+[2026-04-11T23:45:28.620Z] OpenClaw status: WARNING
+[2026-04-11T23:45:28.620Z] Cron source: unavailable
+[2026-04-12T00:00:29.527Z] Overall status: CRITICAL
+[2026-04-12T00:00:29.527Z] Computer status: CRITICAL
+[2026-04-12T00:00:29.527Z] OpenClaw status: WARNING
+[2026-04-12T00:00:29.527Z] Cron source: unavailable
+[2026-04-12T00:00:29.527Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1416,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775952029,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T00:15:27.231Z] Overall status: CRITICAL
+[2026-04-12T00:15:27.231Z] Computer status: CRITICAL
+[2026-04-12T00:15:27.231Z] OpenClaw status: WARNING
+[2026-04-12T00:15:27.232Z] Cron source: unavailable
+[2026-04-12T00:30:26.007Z] Overall status: CRITICAL
+[2026-04-12T00:30:26.007Z] Computer status: CRITICAL
+[2026-04-12T00:30:26.007Z] OpenClaw status: WARNING
+[2026-04-12T00:30:26.007Z] Cron source: unavailable
+[2026-04-12T00:30:26.007Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1417,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775953825,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T00:45:27.230Z] Overall status: CRITICAL
+[2026-04-12T00:45:27.230Z] Computer status: CRITICAL
+[2026-04-12T00:45:27.230Z] OpenClaw status: WARNING
+[2026-04-12T00:45:27.230Z] Cron source: unavailable
+[2026-04-12T01:00:29.463Z] Overall status: CRITICAL
+[2026-04-12T01:00:29.463Z] Computer status: CRITICAL
+[2026-04-12T01:00:29.463Z] OpenClaw status: WARNING
+[2026-04-12T01:00:29.463Z] Cron source: unavailable
+[2026-04-12T01:00:29.463Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1418,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775955629,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T01:15:30.796Z] Overall status: CRITICAL
+[2026-04-12T01:15:30.796Z] Computer status: CRITICAL
+[2026-04-12T01:15:30.796Z] OpenClaw status: WARNING
+[2026-04-12T01:15:30.796Z] Cron source: unavailable
+[2026-04-12T01:30:35.896Z] Overall status: CRITICAL
+[2026-04-12T01:30:35.896Z] Computer status: CRITICAL
+[2026-04-12T01:30:35.896Z] OpenClaw status: WARNING
+[2026-04-12T01:30:35.896Z] Cron source: unavailable
+[2026-04-12T01:30:35.896Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1419,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775957435,"text":"PC Guardian Critical: Internet failed: https://www.msftconnecttest.com/connecttest.txt | Critical events: 15","entities":["@{offset=39; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T01:30:35.896Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
+[2026-04-12T01:30:35.896Z] Fix cleanup_safe_path target=C:\Users\Itzhak\AppData\Local\Temp result=success
+[2026-04-12T01:45:30.633Z] Overall status: CRITICAL
+[2026-04-12T01:45:30.633Z] Computer status: CRITICAL
+[2026-04-12T01:45:30.633Z] OpenClaw status: WARNING
+[2026-04-12T01:45:30.633Z] Cron source: unavailable
+[2026-04-12T02:00:30.183Z] Overall status: WARNING
+[2026-04-12T02:00:30.183Z] Computer status: WARNING
+[2026-04-12T02:00:30.183Z] OpenClaw status: WARNING
+[2026-04-12T02:00:30.183Z] Cron source: unavailable
+[2026-04-12T02:00:30.183Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1420,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775959230,"text":"PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found (unavailable)","entities":["@{offset=38; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T02:15:32.760Z] Overall status: WARNING
+[2026-04-12T02:15:32.760Z] Computer status: WARNING
+[2026-04-12T02:15:32.760Z] OpenClaw status: WARNING
+[2026-04-12T02:15:32.760Z] Cron source: unavailable
+[2026-04-12T02:30:30.358Z] Overall status: WARNING
+[2026-04-12T02:30:30.358Z] Computer status: WARNING
+[2026-04-12T02:30:30.358Z] OpenClaw status: WARNING
+[2026-04-12T02:30:30.358Z] Cron source: unavailable
+[2026-04-12T02:30:30.358Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1421,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775961030,"text":"PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found (unavailable)","entities":["@{offset=38; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T02:45:24.550Z] Overall status: WARNING
+[2026-04-12T02:45:24.550Z] Computer status: WARNING
+[2026-04-12T02:45:24.550Z] OpenClaw status: WARNING
+[2026-04-12T02:45:24.550Z] Cron source: unavailable
+[2026-04-12T03:00:23.973Z] Overall status: WARNING
+[2026-04-12T03:00:23.973Z] Computer status: WARNING
+[2026-04-12T03:00:23.973Z] OpenClaw status: WARNING
+[2026-04-12T03:00:23.973Z] Cron source: unavailable
+[2026-04-12T03:00:23.973Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1422,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775962823,"text":"PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found (unavailable)","entities":["@{offset=38; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T03:15:23.857Z] Overall status: WARNING
+[2026-04-12T03:15:23.857Z] Computer status: WARNING
+[2026-04-12T03:15:23.857Z] OpenClaw status: WARNING
+[2026-04-12T03:15:23.857Z] Cron source: unavailable
+[2026-04-12T03:30:24.000Z] Overall status: WARNING
+[2026-04-12T03:30:24.000Z] Computer status: WARNING
+[2026-04-12T03:30:24.000Z] OpenClaw status: WARNING
+[2026-04-12T03:30:24.000Z] Cron source: unavailable
+[2026-04-12T03:30:24.000Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1423,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775964623,"text":"PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found (unavailable)","entities":["@{offset=38; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T03:45:24.532Z] Overall status: WARNING
+[2026-04-12T03:45:24.532Z] Computer status: WARNING
+[2026-04-12T03:45:24.532Z] OpenClaw status: WARNING
+[2026-04-12T03:45:24.532Z] Cron source: unavailable
+[2026-04-12T04:00:24.129Z] Overall status: WARNING
+[2026-04-12T04:00:24.129Z] Computer status: WARNING
+[2026-04-12T04:00:24.129Z] OpenClaw status: WARNING
+[2026-04-12T04:00:24.129Z] Cron source: unavailable
+[2026-04-12T04:00:24.129Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1424,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775966424,"text":"PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found (unavailable)","entities":["@{offset=38; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T04:08:54.580Z] Overall status: WARNING
+[2026-04-12T04:08:54.580Z] Computer status: WARNING
+[2026-04-12T04:08:54.580Z] OpenClaw status: WARNING
+[2026-04-12T04:08:54.580Z] Cron source: unavailable
+[2026-04-12T04:09:26.024Z] Overall status: WARNING
+[2026-04-12T04:09:26.024Z] Computer status: WARNING
+[2026-04-12T04:09:26.024Z] OpenClaw status: WARNING
+[2026-04-12T04:09:26.024Z] Cron source: unavailable
+[2026-04-12T04:15:24.000Z] Overall status: WARNING
+[2026-04-12T04:15:24.000Z] Computer status: WARNING
+[2026-04-12T04:15:24.000Z] OpenClaw status: WARNING
+[2026-04-12T04:15:24.000Z] Cron source: unavailable
+[2026-04-12T04:30:30.699Z] Overall status: WARNING
+[2026-04-12T04:30:30.699Z] Computer status: WARNING
+[2026-04-12T04:30:30.699Z] OpenClaw status: WARNING
+[2026-04-12T04:30:30.699Z] Cron source: unavailable
+[2026-04-12T04:30:30.699Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1435,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1775968230,"text":"PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found (unavailable)","entities":["@{offset=38; length=47; type=url}"],"link_preview_options":{"is_disabled":true}}}}
+[2026-04-12T04:34:25.612Z] Overall status: WARNING
+[2026-04-12T04:34:25.612Z] Computer status: WARNING
+[2026-04-12T04:34:25.612Z] OpenClaw status: WARNING
+[2026-04-12T04:34:25.612Z] Cron source: unavailable
+[2026-04-12T04:34:53.874Z] Overall status: WARNING
+[2026-04-12T04:34:53.874Z] Computer status: WARNING
+[2026-04-12T04:34:53.874Z] OpenClaw status: WARNING
+[2026-04-12T04:34:53.874Z] Cron source: unavailable
+[2026-04-12T04:35:25.549Z] Overall status: WARNING
+[2026-04-12T04:35:25.549Z] Computer status: WARNING
+[2026-04-12T04:35:25.549Z] OpenClaw status: WARNING
+[2026-04-12T04:35:25.549Z] Cron source: unavailable
+[2026-04-12T04:49:06.580Z] Overall status: WARNING
+[2026-04-12T04:49:06.580Z] Computer status: WARNING
+[2026-04-12T04:49:06.580Z] OpenClaw status: WARNING
+[2026-04-12T04:49:06.580Z] Cron source: unavailable
+[2026-04-12T05:40:02.057Z] Overall status: WARNING
+[2026-04-12T05:40:02.057Z] Computer status: WARNING
+[2026-04-12T05:40:02.057Z] OpenClaw status: WARNING
+[2026-04-12T05:40:02.057Z] Cron source: unavailable
+[2026-04-12T06:35:54.799Z] Overall status: WARNING
+[2026-04-12T06:35:54.799Z] Computer status: WARNING
+[2026-04-12T06:35:54.799Z] OpenClaw status: WARNING
+[2026-04-12T06:35:54.799Z] Cron source: unavailable
+[2026-04-12T07:51:43.150Z] Overall status: WARNING
+[2026-04-12T07:51:43.150Z] Computer status: WARNING
+[2026-04-12T07:51:43.150Z] OpenClaw status: WARNING
+[2026-04-12T07:51:43.150Z] Cron source: unavailable
+[2026-04-12T08:25:48.598Z] Overall status: WARNING
+[2026-04-12T08:25:48.598Z] Computer status: WARNING
+[2026-04-12T08:25:48.598Z] OpenClaw status: WARNING
+[2026-04-12T08:25:48.598Z] Cron source: unavailable
+[2026-04-12T08:35:25.710Z] Overall status: WARNING
+[2026-04-12T08:35:25.710Z] Computer status: WARNING
+[2026-04-12T08:35:25.710Z] OpenClaw status: WARNING
+[2026-04-12T08:35:25.710Z] Cron source: unavailable
+[2026-04-12T09:48:26.617Z] Telegram alert failed: Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)
+[2026-04-12T09:48:26.621Z] Overall status: WARNING
+[2026-04-12T09:48:26.621Z] Computer status: WARNING
+[2026-04-12T09:48:26.621Z] OpenClaw status: WARNING
+[2026-04-12T09:48:26.621Z] Cron source: unavailable
+[2026-04-12T09:48:26.621Z] Alert delivery: {"sent":false,"mode":"telegram","reason":"Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)"}
+[2026-04-12T10:35:33.693Z] Telegram alert failed: Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)
+[2026-04-12T10:35:33.697Z] Overall status: WARNING
+[2026-04-12T10:35:33.697Z] Computer status: WARNING
+[2026-04-12T10:35:33.697Z] OpenClaw status: WARNING
+[2026-04-12T10:35:33.697Z] Cron source: unavailable
+[2026-04-12T10:35:33.697Z] Alert delivery: {"sent":false,"mode":"telegram","reason":"Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)"}
+[2026-04-12T12:35:30.929Z] Telegram alert failed: Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)
+[2026-04-12T12:35:30.933Z] Overall status: WARNING
+[2026-04-12T12:35:30.933Z] Computer status: WARNING
+[2026-04-12T12:35:30.933Z] OpenClaw status: WARNING
+[2026-04-12T12:35:30.933Z] Cron source: unavailable
+[2026-04-12T12:35:30.933Z] Alert delivery: {"sent":false,"mode":"telegram","reason":"Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)"}
+[2026-04-12T14:35:56.796Z] Telegram alert failed: Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)
+[2026-04-12T14:35:56.799Z] Overall status: WARNING
+[2026-04-12T14:35:56.799Z] Computer status: WARNING
+[2026-04-12T14:35:56.799Z] OpenClaw status: WARNING
+[2026-04-12T14:35:56.799Z] Cron source: unavailable
+[2026-04-12T14:35:56.799Z] Alert delivery: {"sent":false,"mode":"telegram","reason":"Expected ',' or '}' after property value in JSON at position 268 (line 1 column 269)"}
+[2026-04-12T14:35:56.799Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
+[2026-04-12T14:35:56.799Z] Fix cleanup_safe_path target=C:\Users\Itzhak\AppData\Local\Temp result=success
+[2026-04-12T16:35:30.414Z] Overall status: WARNING
+[2026-04-12T16:35:30.415Z] Computer status: WARNING
+[2026-04-12T16:35:30.415Z] OpenClaw status: WARNING
+[2026-04-12T16:35:30.415Z] Cron source: unavailable
+[2026-04-12T16:35:30.415Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":1859,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1776011730,"text":"PC Guardian, ?????\n???? ?????? ?????? ?? ?????? OpenClaw ?? routing ?????\n\n?? ?? ?????\n- ???? ?????? ?????? ?? ?????? OpenClaw ?? routing ?????\n- ???? ????? ??????? ??? ????? ?????\n\n?? ??? ????\n- ?? ?????? ?: 1.1.1.1, 8.8.8.8\n- ???? health ?-gateway ??????\n\n?????? ???? ???????\n1. ???? recovery ???? ?? ?? ???? ???? ?? ????\n2. ????? ?? ?? ????? ?????? ???? ?????","entities":["@{offset=209; length=7; type=url}","@{offset=218; length=7; type=url}"]}}}
+[2026-04-12T16:42:30.099Z] Overall status: WARNING
+[2026-04-12T16:42:30.099Z] Computer status: WARNING
+[2026-04-12T16:42:30.099Z] OpenClaw status: WARNING
+[2026-04-12T16:42:30.099Z] Cron source: unavailable

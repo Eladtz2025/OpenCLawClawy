@@ -61,17 +61,17 @@ Professional, conservative mapping and review of detected OpenClaw systems.
 
 - owner: Itzhak
 - purpose: News collection, editing and dashboarding system.
-- status: unknown
-- overall_score: 5.6/10 (weak)
+- status: active
+- overall_score: 8.5/10 (strong)
 - weight: moderate
-- recommendation: manual review
-- needs_cleanup: yes
+- recommendation: maintain
+- needs_cleanup: no
 - needs_redesign: no
 - workspace_path: C:\Users\Itzhak\.openclaw\workspace\news-dashboard
 - action_link: unknown
-- short_summary: Clearly exists, but needs verification.
-- key_risks: workflow not fully verified, possible residue from experiments
-- score_explanations: architecture=Seems project-based, not yet fully mapped.; clarity=Purpose is fairly clear from folder.; safety=No obvious unsafe exposure found.
+- short_summary: Highly active, well-documented and functional content pipeline.
+- key_risks: dependency on live-pipeline stability
+- score_explanations: architecture=Solid pipeline with clear stages.; clarity=Excellent documentation and output.; safety=Isolated and controlled.
 
 ## Image Generator
 

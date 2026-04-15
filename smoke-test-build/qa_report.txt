@@ -1,0 +1,5 @@
+Smoke test QA report
+- Folder exists: yes
+- runbook.txt exists: yes
+- qa_report.txt exists: yes
+- Result: pass

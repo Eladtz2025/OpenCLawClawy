@@ -1,33 +1,33 @@
 {
   "system_name": "PC Guardian",
-  "generated_at": "2026-04-11T21:00:02.421Z",
-  "overall_status": "CRITICAL",
-  "computer_status": "CRITICAL",
+  "generated_at": "2026-04-12T16:35:04.161Z",
+  "overall_status": "WARNING",
+  "computer_status": "WARNING",
   "openclaw_status": "WARNING",
   "computer_checks": [
     {
       "name": "CPU",
-      "value": 52.03,
+      "value": 23.4,
       "status": "OK",
-      "summary": "CPU 52.0%"
+      "summary": "CPU 23.4%"
     },
     {
       "name": "RAM",
-      "value": 89.59390862944161,
-      "status": "WARNING",
-      "summary": "RAM 89.6%"
+      "value": 50.76142131979695,
+      "status": "OK",
+      "summary": "RAM 50.8%"
     },
     {
       "name": "Disk C:",
-      "value": 162.86,
+      "value": 156.98,
       "status": "OK",
-      "summary": "C: free 162.86GB"
+      "summary": "C: free 156.98GB"
     },
     {
       "name": "Disk Activity",
-      "value": 3.97,
+      "value": 5.62,
       "status": "OK",
-      "summary": "Disk activity 4.0%"
+      "summary": "Disk activity 5.6%"
     },
     {
       "name": "Network Connectivity",
@@ -64,9 +64,9 @@
       "value": {
         "AntivirusEnabled": true,
         "RealTimeProtectionEnabled": true,
-        "QuickScanAge": 3,
+        "QuickScanAge": 4,
         "FullScanAge": 4294967295,
-        "AntivirusSignatureLastUpdated": "/Date(1775884238000)/"
+        "AntivirusSignatureLastUpdated": "/Date(1775962044000)/"
       },
       "status": "OK",
       "summary": "Defender OK"
@@ -92,9 +92,9 @@
     },
     {
       "name": "Critical Events",
-      "value": 15,
-      "status": "CRITICAL",
-      "summary": "Critical events: 15"
+      "value": 0,
+      "status": "OK",
+      "summary": "No recent critical events"
     },
     {
       "name": "Important Services",
@@ -168,12 +168,12 @@
         "name": "gateway-18789",
         "url": "http://127.0.0.1:18789/health",
         "port": 18789,
-        "statusCode": 200,
+        "statusCode": 0,
         "listening": true,
-        "ok": true
+        "ok": false
       },
-      "status": "OK",
-      "summary": "gateway-18789 port 18789 OK"
+      "status": "WARNING",
+      "summary": "gateway-18789 port 18789 no health"
     },
     {
       "name": "gateway-18790",
@@ -194,22 +194,22 @@
         {
           "LocalAddress": "::1",
           "LocalPort": 18790,
-          "OwningProcess": 10052
+          "OwningProcess": 14580
         },
         {
           "LocalAddress": "::1",
           "LocalPort": 18789,
-          "OwningProcess": 3952
+          "OwningProcess": 17156
         },
         {
           "LocalAddress": "127.0.0.1",
           "LocalPort": 18790,
-          "OwningProcess": 10052
+          "OwningProcess": 14580
         },
         {
           "LocalAddress": "127.0.0.1",
           "LocalPort": 18789,
-          "OwningProcess": 3952
+          "OwningProcess": 17156
         }
       ],
       "status": "OK",
@@ -254,7 +254,7 @@
       "value": [
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
-          "SizeMB": 0.03
+          "SizeMB": 0.06
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\skills\\.openclaw-install-backups",
@@ -266,19 +266,19 @@
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\agents\\main\\sessions",
-          "SizeMB": 21.03
+          "SizeMB": 25.43
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\browser\\openclaw\\user-data\\Default\\Sessions",
-          "SizeMB": 0.05
+          "SizeMB": 0.08
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\logs",
-          "SizeMB": 0.14
+          "SizeMB": 0.15
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
-          "SizeMB": 0.03
+          "SizeMB": 0.06
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\backups",
@@ -299,13 +299,7 @@
   ],
   "recent_failures": [
     {
-      "time": "2026-04-11T21:00:02.421Z",
-      "kind": "RAM",
-      "summary": "RAM 89.6%",
-      "details": 89.59390862944161
-    },
-    {
-      "time": "2026-04-11T21:00:02.421Z",
+      "time": "2026-04-12T16:35:04.161Z",
       "kind": "Internet Reachability",
       "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
       "details": [
@@ -317,79 +311,32 @@
           "target": "https://www.google.com/generate_204",
           "ok": true
         }
-      ]
+      ],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T21:00:02.421Z",
-      "kind": "Critical Events",
-      "summary": "Critical events: 15",
-      "details": 15
-    },
-    {
-      "time": "2026-04-11T21:00:02.421Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": []
-    },
-    {
-      "time": "2026-04-11T20:45:02.144Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ]
-    },
-    {
-      "time": "2026-04-11T20:45:02.144Z",
-      "kind": "Critical Events",
-      "summary": "Critical events: 15",
-      "details": 15
-    },
-    {
-      "time": "2026-04-11T20:45:02.144Z",
+      "time": "2026-04-12T16:35:04.161Z",
       "kind": "gateway-18789",
-      "summary": "gateway-18789 port 18789 down",
+      "summary": "gateway-18789 port 18789 no health",
       "details": {
         "name": "gateway-18789",
         "url": "http://127.0.0.1:18789/health",
         "port": 18789,
         "statusCode": 0,
-        "listening": false,
+        "listening": true,
         "ok": false
-      }
+      },
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:45:02.144Z",
-      "kind": "OpenClaw Ports",
-      "summary": "Ports 18789, 18790",
-      "details": [
-        {
-          "LocalAddress": "::1",
-          "LocalPort": 18790,
-          "OwningProcess": 10052
-        },
-        {
-          "LocalAddress": "127.0.0.1",
-          "LocalPort": 18790,
-          "OwningProcess": 10052
-        }
-      ]
-    },
-    {
-      "time": "2026-04-11T20:45:02.144Z",
+      "time": "2026-04-12T16:35:04.161Z",
       "kind": "Cron Jobs",
       "summary": "No cron jobs found (unavailable)",
-      "details": []
+      "details": [],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:43:21.297Z",
+      "time": "2026-04-12T14:35:04.852Z",
       "kind": "Internet Reachability",
       "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
       "details": [
@@ -401,22 +348,18 @@
           "target": "https://www.google.com/generate_204",
           "ok": true
         }
-      ]
+      ],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:43:21.297Z",
-      "kind": "Critical Events",
-      "summary": "Critical events: 15",
-      "details": 15
-    },
-    {
-      "time": "2026-04-11T20:43:21.297Z",
+      "time": "2026-04-12T14:35:04.852Z",
       "kind": "Cron Jobs",
       "summary": "No cron jobs found (unavailable)",
-      "details": []
+      "details": [],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:42:05.733Z",
+      "time": "2026-04-12T12:35:04.154Z",
       "kind": "Internet Reachability",
       "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
       "details": [
@@ -428,28 +371,18 @@
           "target": "https://www.google.com/generate_204",
           "ok": true
         }
-      ]
+      ],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:42:05.733Z",
-      "kind": "Critical Events",
-      "summary": "Critical events: 15",
-      "details": 15
-    },
-    {
-      "time": "2026-04-11T20:42:05.733Z",
+      "time": "2026-04-12T12:35:04.154Z",
       "kind": "Cron Jobs",
       "summary": "No cron jobs found (unavailable)",
-      "details": []
+      "details": [],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:40:38.300Z",
-      "kind": "Disk Activity",
-      "summary": "Disk activity 453.9%",
-      "details": 453.88
-    },
-    {
-      "time": "2026-04-11T20:40:38.300Z",
+      "time": "2026-04-12T10:35:04.219Z",
       "kind": "Internet Reachability",
       "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
       "details": [
@@ -461,22 +394,25 @@
           "target": "https://www.google.com/generate_204",
           "ok": true
         }
-      ]
+      ],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:40:38.300Z",
-      "kind": "Critical Events",
-      "summary": "Critical events: 15",
-      "details": 15
-    },
-    {
-      "time": "2026-04-11T20:40:38.300Z",
+      "time": "2026-04-12T10:35:04.219Z",
       "kind": "Cron Jobs",
       "summary": "No cron jobs found (unavailable)",
-      "details": []
+      "details": [],
+      "status": "WARNING"
     },
     {
-      "time": "2026-04-11T20:36:30.820Z",
+      "time": "2026-04-12T09:47:23.562Z",
+      "kind": "RAM",
+      "summary": "RAM 88.9%",
+      "details": 88.89593908629442,
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T09:47:23.562Z",
       "kind": "Internet Reachability",
       "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
       "details": [
@@ -488,10 +424,138 @@
           "target": "https://www.google.com/generate_204",
           "ok": true
         }
-      ]
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T09:47:23.562Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T08:35:04.103Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T08:35:04.103Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T08:25:26.821Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T08:25:26.821Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
     }
   ],
   "last_fixes": [
+    {
+      "time": "2026-04-12T14:35:04.852Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 6"
+    },
+    {
+      "time": "2026-04-12T14:35:04.852Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 9"
+    },
+    {
+      "time": "2026-04-12T01:30:02.308Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Windows\\Temp",
+      "result": "success",
+      "details": "Deleted files: 8838"
+    },
+    {
+      "time": "2026-04-12T01:30:02.308Z",
+      "type": "cleanup_safe_path",
+      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
+      "result": "success",
+      "details": "Deleted files: 2315"
+    },
     {
       "time": "2026-04-11T13:15:57.002Z",
       "type": "cleanup_safe_path",
@@ -608,45 +672,45 @@
   "top_offenders": [
     {
       "name": "SearchIndexer",
-      "cpu": 28021.7,
-      "memoryMb": 50,
+      "cpu": 29937,
+      "memoryMb": 30,
       "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
     },
     {
       "name": "System",
-      "cpu": 17835.2,
-      "memoryMb": 7,
+      "cpu": 21981,
+      "memoryMb": 9,
       "path": ""
     },
     {
       "name": "MsMpEng",
-      "cpu": 17208.3,
-      "memoryMb": 221,
+      "cpu": 20474.8,
+      "memoryMb": 195,
       "path": ""
     },
     {
       "name": "logioptionsplus_agent",
-      "cpu": 11733.7,
-      "memoryMb": 851,
+      "cpu": 15522.8,
+      "memoryMb": 184,
       "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
     },
     {
       "name": "WmiPrvSE",
-      "cpu": 3722.9,
-      "memoryMb": 26,
+      "cpu": 4703.4,
+      "memoryMb": 23,
       "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
     },
     {
       "name": "svchost",
-      "cpu": 3514.4,
+      "cpu": 4336.7,
       "memoryMb": 18,
       "path": "C:\\WINDOWS\\system32\\svchost.exe"
     },
     {
-      "name": "dwm",
-      "cpu": 2398.9,
-      "memoryMb": 42,
-      "path": "C:\\WINDOWS\\system32\\dwm.exe"
+      "name": "Memory Compression",
+      "cpu": 2965.1,
+      "memoryMb": 247,
+      "path": ""
     }
   ],
   "gateways": [
@@ -654,9 +718,9 @@
       "name": "gateway-18789",
       "url": "http://127.0.0.1:18789/health",
       "port": 18789,
-      "statusCode": 200,
+      "statusCode": 0,
       "listening": true,
-      "ok": true
+      "ok": false
     },
     {
       "name": "gateway-18790",
@@ -696,88 +760,390 @@
       "StartType": 2
     }
   ],
-  "recent_events": [
-    {
-      "TimeCreated": "/Date(1775937012158)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775937004468)/",
-      "Id": 20,
-      "ProviderName": "Microsoft-Windows-WindowsUpdateClient",
-      "LevelDisplayName": "Error",
-      "Message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9WZDNCRD29V9-MICROSOFT.MICROSOFTOFFICEHUB."
-    },
-    {
-      "TimeCreated": "/Date(1775937004014)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775936999976)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775936998030)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775936997931)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775936996595)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775936996595)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775936996595)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    },
-    {
-      "TimeCreated": "/Date(1775936996595)/",
-      "Id": 5010,
-      "ProviderName": "Netwtw08",
-      "LevelDisplayName": "Error",
-      "Message": "Intel(R) Wireless-AC 9560 160MHz : The network adapter has returned an invalid value to the driver."
-    }
-  ],
+  "recent_events": [],
   "cron_jobs": [],
   "cron_source": "unavailable",
+  "insights": [
+    {
+      "time": "2026-04-12T16:35:04.161Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T16:35:04.161Z",
+      "kind": "gateway-18789",
+      "summary": "gateway-18789 port 18789 no health",
+      "details": {
+        "name": "gateway-18789",
+        "url": "http://127.0.0.1:18789/health",
+        "port": 18789,
+        "statusCode": 0,
+        "listening": true,
+        "ok": false
+      },
+      "status": "WARNING",
+      "insight": {
+        "severity": "WARNING",
+        "confidence": "high",
+        "impact": "עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי",
+        "next": "לבצע recovery בטוח רק אם המצב נשאר לא תקין"
+      }
+    },
+    {
+      "time": "2026-04-12T16:35:04.161Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T14:35:04.852Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T14:35:04.852Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T12:35:04.154Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T12:35:04.154Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T10:35:04.219Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T10:35:04.219Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T09:47:23.562Z",
+      "kind": "RAM",
+      "summary": "RAM 88.9%",
+      "details": 88.89593908629442,
+      "status": "WARNING",
+      "insight": {
+        "severity": "WARNING",
+        "confidence": "medium",
+        "impact": "דורש בדיקה תפעולית לפי הרכיב שדווח",
+        "next": "לבדוק אם יש השפעה אמיתית לפני פעולה"
+      }
+    },
+    {
+      "time": "2026-04-12T09:47:23.562Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T09:47:23.562Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T08:35:04.103Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T08:35:04.103Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T08:25:26.821Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T08:25:26.821Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T07:51:17.074Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-12T06:35:05.852Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
+        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
+      }
+    }
+  ],
   "alerts": {
     "configured": true,
-    "last_message": "PC Guardian Critical: RAM 89.6% | Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-    "last_status": "CRITICAL",
+    "last_message": "PC Guardian, אזהרה\nעשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n\nמה זה משפיע\n- עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n- דורש בדיקה תפעולית לפי הרכיב שדווח\n\nמה כבר נבדק\n- יש תקשורת ל: 1.1.1.1, 8.8.8.8\n- נבדק health ל-gateway המקומי\n\nהפעולה הבאה המומלצת\n1. לבצע recovery בטוח רק אם המצב נשאר לא תקין\n2. לבדוק אם יש השפעה אמיתית לפני פעולה",
+    "last_status": "WARNING",
     "last_delivery": {
-      "sent": false,
+      "sent": true,
       "mode": "telegram",
-      "reason": "Command failed: powershell -NoProfile -ExecutionPolicy Bypass -Command $payload = @'{\"chat_id\":\"-1003566973693\",\"text\":\"PC Guardian Critical: RAM 89.6% | Internet failed: https://www.msftconnecttest.com/connecttest.txt\",\"disable_notification\":false}'@ | ConvertFrom-Json; Invoke-RestMethod -Method Post -Uri 'https://api.telegram.org/bot8375418380:AAF-4Ag53oEBeZlCvq6zOS653iyXbBJIQww/sendMessage' -Body @{ chat_id = $payload.chat_id; text = $payload.text; disable_notification = [bool]$payload.disable_notification } | ConvertTo-Json -Compress\nAt line:1 char:14\r\n+ $payload = @'{\"chat_id\":\"-1003566973693\",\"text\":\"PC Guardian Critical ...\r\n+              ~\r\nNo characters are allowed after a here-string header but before the end of the line.\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : UnexpectedCharactersAfterHereStringHeader\r\n \r\n"
+      "response": {
+        "ok": true,
+        "result": {
+          "message_id": 1859,
+          "from": {
+            "id": 8375418380,
+            "is_bot": true,
+            "first_name": "Clawy",
+            "username": "Clawy_OpenClawBot"
+          },
+          "chat": {
+            "id": -1003566973693,
+            "title": "Elad & Clawy",
+            "is_forum": true,
+            "type": "supergroup"
+          },
+          "date": 1776011730,
+          "text": "PC Guardian, ?????\n???? ?????? ?????? ?? ?????? OpenClaw ?? routing ?????\n\n?? ?? ?????\n- ???? ?????? ?????? ?? ?????? OpenClaw ?? routing ?????\n- ???? ????? ??????? ??? ????? ?????\n\n?? ??? ????\n- ?? ?????? ?: 1.1.1.1, 8.8.8.8\n- ???? health ?-gateway ??????\n\n?????? ???? ???????\n1. ???? recovery ???? ?? ?? ???? ???? ?? ????\n2. ????? ?? ?? ????? ?????? ???? ?????",
+          "entities": [
+            "@{offset=209; length=7; type=url}",
+            "@{offset=218; length=7; type=url}"
+          ]
+        }
+      }
     }
   }
 }

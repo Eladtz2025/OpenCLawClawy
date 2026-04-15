@@ -1,0 +1,1242 @@
+﻿[
+    {
+        "ProcessId":  0,
+        "Name":  "System Idle Process",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  4,
+        "Name":  "System",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  140,
+        "Name":  "Secure System",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  180,
+        "Name":  "Registry",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  660,
+        "Name":  "smss.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  644,
+        "Name":  "csrss.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  1084,
+        "Name":  "wininit.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  1092,
+        "Name":  "csrss.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  1152,
+        "Name":  "winlogon.exe",
+        "CommandLine":  "winlogon.exe"
+    },
+    {
+        "ProcessId":  1236,
+        "Name":  "services.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  1260,
+        "Name":  "LsaIso.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  1268,
+        "Name":  "lsass.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  1424,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p"
+    },
+    {
+        "ProcessId":  1456,
+        "Name":  "WUDFHost.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WUDFHost.exe\" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-bd794d35-a88d-4092-a6bc-a74c80051284 -SystemEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-de7d5ce5-43ff-4d9f-9f18-6f904531c1f5 -IoCancelEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-68b56b53-7d14-41fa-9424-bce0e9d1777d -NonStateChangingEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-91d826a3-0844-4f89-a648-78d130a1960d -LifetimeId:61d64a2a-b8b8-4564-9df3-6056969b4d9b -DeviceGroupId:DlDevices -HostArg:0"
+    },
+    {
+        "ProcessId":  1476,
+        "Name":  "fontdrvhost.exe",
+        "CommandLine":  "\"fontdrvhost.exe\""
+    },
+    {
+        "ProcessId":  1472,
+        "Name":  "fontdrvhost.exe",
+        "CommandLine":  "\"fontdrvhost.exe\""
+    },
+    {
+        "ProcessId":  1600,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k RPCSS -p"
+    },
+    {
+        "ProcessId":  1644,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p -s LSM"
+    },
+    {
+        "ProcessId":  1728,
+        "Name":  "dwm.exe",
+        "CommandLine":  "\"dwm.exe\""
+    },
+    {
+        "ProcessId":  1820,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p -s BDESVC"
+    },
+    {
+        "ProcessId":  1828,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s HvHost"
+    },
+    {
+        "ProcessId":  1980,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p -s NcbService"
+    },
+    {
+        "ProcessId":  1988,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p -s TimeBrokerSvc"
+    },
+    {
+        "ProcessId":  2024,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s nsi"
+    },
+    {
+        "ProcessId":  1076,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s Schedule"
+    },
+    {
+        "ProcessId":  628,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNoNetwork -p"
+    },
+    {
+        "ProcessId":  1616,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k NetworkService -p"
+    },
+    {
+        "ProcessId":  1940,
+        "Name":  "IntelCpHDCPSvc.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\iigd_dch.inf_amd64_d2ec57bb7e27bb06\\IntelCpHDCPSvc.exe"
+    },
+    {
+        "ProcessId":  1332,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UserProfileService -p -s ProfSvc"
+    },
+    {
+        "ProcessId":  1312,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s DisplayEnhancementService"
+    },
+    {
+        "ProcessId":  2112,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s hidserv"
+    },
+    {
+        "ProcessId":  2136,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceRedirectionGuard -p -s EventSystem"
+    },
+    {
+        "ProcessId":  2232,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k netprofm -p -s netprofm"
+    },
+    {
+        "ProcessId":  2340,
+        "Name":  "IntelCpHeciSvc.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\iigd_dch.inf_amd64_d2ec57bb7e27bb06\\IntelCpHeciSvc.exe"
+    },
+    {
+        "ProcessId":  2376,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s UserManager"
+    },
+    {
+        "ProcessId":  2460,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcsRedirectionGuard -p -s SENS"
+    },
+    {
+        "ProcessId":  2640,
+        "Name":  "igfxCUIService.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\cui_dch.inf_amd64_0d8dab4470c5524b\\igfxCUIService.exe"
+    },
+    {
+        "ProcessId":  2876,
+        "Name":  "cmd.exe",
+        "CommandLine":  "C:\\WINDOWS\\SYSTEM32\\cmd.exe /c \"\"C:\\ProgramData\\OpenClaw\\openclaw-Openclaw.cmd\"\""
+    },
+    {
+        "ProcessId":  2968,
+        "Name":  "WUDFHost.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WUDFHost.exe\" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-502e7116-686f-4ba0-b523-83984be0b9b7 -SystemEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-8e268c35-0d8e-4817-9989-e85608748f47 -IoCancelEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-e4544bd4-54f5-4225-9d5e-23bf9dc757a2 -NonStateChangingEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-2bed30cb-824d-4404-96c1-771eca3db140 -LifetimeId:cfe8efe8-0579-4dca-b4a7-75d1c769bf76 -DeviceGroupId:WpdFsGroup -HostArg:0"
+    },
+    {
+        "ProcessId":  3004,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k NetSvcs -p -s hns"
+    },
+    {
+        "ProcessId":  3016,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p -s EventLog"
+    },
+    {
+        "ProcessId":  2196,
+        "Name":  "ETDService.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\ETDService.exe"
+    },
+    {
+        "ProcessId":  2596,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p -s Themes"
+    },
+    {
+        "ProcessId":  2600,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s SysMain"
+    },
+    {
+        "ProcessId":  2808,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s DispBrokerDesktopSvc"
+    },
+    {
+        "ProcessId":  3152,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p -s AudioEndpointBuilder"
+    },
+    {
+        "ProcessId":  3160,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s FontCache"
+    },
+    {
+        "ProcessId":  3216,
+        "Name":  "Memory Compression",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  3312,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s DevQueryBroker"
+    },
+    {
+        "ProcessId":  3404,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p"
+    },
+    {
+        "ProcessId":  3440,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p -s TextInputManagementService"
+    },
+    {
+        "ProcessId":  3660,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k appmodel -p -s StateRepository"
+    },
+    {
+        "ProcessId":  3672,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p -s Dhcp"
+    },
+    {
+        "ProcessId":  3684,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p -s DusmSvc"
+    },
+    {
+        "ProcessId":  3716,
+        "Name":  "WUDFHost.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WUDFHost.exe\" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-e3599066-6561-4c6f-8195-fe8ccadb36d7 -SystemEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-f656b8af-b7e8-4a49-915c-38feccbcd898 -IoCancelEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-f44affb7-5a8b-4861-93af-6e818a24e235 -NonStateChangingEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-b00621db-42fc-4b42-bc42-59475fd28a43 -LifetimeId:1e5878a6-6d85-4511-9af5-0cc19a0cbf51 -DeviceGroupId: -HostArg:0"
+    },
+    {
+        "ProcessId":  3840,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceHttp -p"
+    },
+    {
+        "ProcessId":  3884,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k NetSvcs -s nvagent"
+    },
+    {
+        "ProcessId":  3928,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  3984,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p -s Wcmsvc"
+    },
+    {
+        "ProcessId":  4036,
+        "Name":  "WUDFHost.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WUDFHost.exe\" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-574761de-fb3e-4eb4-a50f-21ecd3b213b3 -SystemEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-cfedcd82-44c8-49ce-b469-f536be6e8f00 -IoCancelEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-026d56c8-d696-43db-9f63-feb91b3b0e4c -NonStateChangingEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-cebe252d-70c7-4ce1-905c-1fc10367a704 -LifetimeId:a22b6ba6-72b8-4a28-9e38-b2b350746b00 -DeviceGroupId: -HostArg:0"
+    },
+    {
+        "ProcessId":  3372,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNoNetworkFirewall -p"
+    },
+    {
+        "ProcessId":  4192,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p"
+    },
+    {
+        "ProcessId":  4212,
+        "Name":  "WUDFHost.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WUDFHost.exe\" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-b64c5999-f6fb-40ab-a5a6-24c1593f0d70 -SystemEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-7e61fd70-3f45-40c9-875d-11dd4d54a709 -IoCancelEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-9139f55a-233c-477c-9225-5a5ea362010d -NonStateChangingEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-4042bb2e-c97f-4682-87e0-bfa5d2f58752 -LifetimeId:a6c924f8-ab8c-4d9f-8360-f90feadf5685 -DeviceGroupId:WudfDefaultDevicePool -HostArg:0"
+    },
+    {
+        "ProcessId":  4272,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p -s ShellHWDetection"
+    },
+    {
+        "ProcessId":  4504,
+        "Name":  "spoolsv.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\spoolsv.exe"
+    },
+    {
+        "ProcessId":  4580,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p -s SharedAccess"
+    },
+    {
+        "ProcessId":  4680,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s NgcSvc"
+    },
+    {
+        "ProcessId":  4728,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService -p -s LanmanWorkstation"
+    },
+    {
+        "ProcessId":  4760,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k NetworkService -p"
+    },
+    {
+        "ProcessId":  4792,
+        "Name":  "WUDFHost.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WUDFHost.exe\" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-4399552d-d9ce-4088-a756-15a06ff5a39b -SystemEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-4f5ac28e-770b-498c-93a7-76cb3174d280 -IoCancelEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-19ddb007-03d2-4649-9a58-d95ecadb7eb0 -NonStateChangingEventPortName:\\UMDFCommunicationPorts\\WUDF\\HostProcess-ac9a0370-c926-4ae6-842e-e107e45e1def -LifetimeId:f2fc3b87-7062-432a-bec4-956c2df0b72d -DeviceGroupId: -HostArg:0"
+    },
+    {
+        "ProcessId":  4820,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -s RmSvc"
+    },
+    {
+        "ProcessId":  4828,
+        "Name":  "mDNSResponder.exe",
+        "CommandLine":  "\"C:\\Program Files\\Bonjour\\mDNSResponder.exe\""
+    },
+    {
+        "ProcessId":  4924,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k utcsvc -p"
+    },
+    {
+        "ProcessId":  4976,
+        "Name":  "DAX3API.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\dolbyaposvc\\DAX3API.exe"
+    },
+    {
+        "ProcessId":  4984,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNoNetwork -p -s DPS"
+    },
+    {
+        "ProcessId":  5000,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s DeviceAssociationService"
+    },
+    {
+        "ProcessId":  5036,
+        "Name":  "FMService64.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\FMService64.exe"
+    },
+    {
+        "ProcessId":  5056,
+        "Name":  "nssm.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\ExpressVPN\\bootstrap\\amd64\\nssm.exe\""
+    },
+    {
+        "ProcessId":  5084,
+        "Name":  "HydraUsbSvc.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\HydraUsbSvc.exe"
+    },
+    {
+        "ProcessId":  3864,
+        "Name":  "OneApp.IGCC.WinService.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\igcc_dch.inf_amd64_a9a2dde7124f013f\\OneApp.IGCC.WinService.exe"
+    },
+    {
+        "ProcessId":  4384,
+        "Name":  "EvtEng.exe",
+        "CommandLine":  "\"C:\\Program Files\\Intel\\WiFi\\bin\\EvtEng.exe\""
+    },
+    {
+        "ProcessId":  4528,
+        "Name":  "ibmpmsvc.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\ibmpmdrv.inf_amd64_ce00423f6224d769\\x64\\ibmpmsvc.exe"
+    },
+    {
+        "ProcessId":  5160,
+        "Name":  "OfficeClickToRun.exe",
+        "CommandLine":  "\"C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\OfficeClickToRun.exe\" /service"
+    },
+    {
+        "ProcessId":  5212,
+        "Name":  "esif_uf.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\dptf_cpu.inf_amd64_7ecc5be6ca7b3b0d\\esif_uf.exe\""
+    },
+    {
+        "ProcessId":  5276,
+        "Name":  "IntelAudioService.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\system32\\cAVS\\Intel(R) Audio Service\\IntelAudioService.exe\""
+    },
+    {
+        "ProcessId":  5348,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p -s NgcCtnrSvc"
+    },
+    {
+        "ProcessId":  5356,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k NetSvcs -p -s iphlpsvc"
+    },
+    {
+        "ProcessId":  5444,
+        "Name":  "EasyResume.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SysWOW64\\EasyResume.exe\""
+    },
+    {
+        "ProcessId":  5460,
+        "Name":  "LITSSvc.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\litsdrv.inf_amd64_0fefde8b58482d0b\\x64\\LITSSvc.exe"
+    },
+    {
+        "ProcessId":  5524,
+        "Name":  "MpDefenderCoreService.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  5548,
+        "Name":  "WsNativePushService.exe",
+        "CommandLine":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Wondershare\\Wondershare NativePush\\WsNativePushService.exe\""
+    },
+    {
+        "ProcessId":  5556,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s LanmanServer"
+    },
+    {
+        "ProcessId":  5620,
+        "Name":  "LMS.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\lms.inf_amd64_dd349ca1e8d98184\\LMS.exe"
+    },
+    {
+        "ProcessId":  5636,
+        "Name":  "logioptionsplus_updater.exe",
+        "CommandLine":  "\"C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_updater.exe\" --run-as-service"
+    },
+    {
+        "ProcessId":  5672,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s SstpSvc"
+    },
+    {
+        "ProcessId":  5688,
+        "Name":  "RtkAudUService64.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\System32\\RtkAudUService64.exe\""
+    },
+    {
+        "ProcessId":  5696,
+        "Name":  "RegSrvc.exe",
+        "CommandLine":  "\"C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\RegSrvc.exe\""
+    },
+    {
+        "ProcessId":  5736,
+        "Name":  "ss_conn_service.exe",
+        "CommandLine":  "\"C:\\Program Files\\Samsung\\USB Drivers\\27_ssconn\\conn\\ss_conn_service.exe\""
+    },
+    {
+        "ProcessId":  5752,
+        "Name":  "ss_conn_service2.exe",
+        "CommandLine":  "\"C:\\Program Files\\Samsung\\USB Drivers\\28_ssconn2\\conn\\ss_conn_service2.exe\""
+    },
+    {
+        "ProcessId":  5788,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k imgsvc"
+    },
+    {
+        "ProcessId":  5800,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p -s TrkWks"
+    },
+    {
+        "ProcessId":  5816,
+        "Name":  "pg_ctl.exe",
+        "CommandLine":  "\"C:\\Program Files\\PostgreSQL\\17\\bin\\pg_ctl.exe\" runservice -N \"postgresql-x64-17\" -D \"C:\\Program Files\\PostgreSQL\\17\\data\" -w"
+    },
+    {
+        "ProcessId":  5852,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s Winmgmt"
+    },
+    {
+        "ProcessId":  5888,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s WpnService"
+    },
+    {
+        "ProcessId":  5972,
+        "Name":  "MsMpEng.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  6000,
+        "Name":  "ZeroConfigService.exe",
+        "CommandLine":  "\"C:\\Program Files\\Intel\\WiFi\\bin\\ZeroConfigService.exe\""
+    },
+    {
+        "ProcessId":  6072,
+        "Name":  "expressvpnd.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\ExpressVPN\\expressvpnd\\expressvpnd.exe\" --workdir C:\\ProgramData\\ExpressVPN\\v4\\ --client-version 7.9.0 --client-build 7.9.0.1210 --verbose start"
+    },
+    {
+        "ProcessId":  6088,
+        "Name":  "wslservice.exe",
+        "CommandLine":  "\"C:\\Program Files\\WSL\\wslservice.exe\""
+    },
+    {
+        "ProcessId":  6276,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  6500,
+        "Name":  "NgcIso.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  6568,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService -p -s TapiSrv"
+    },
+    {
+        "ProcessId":  6628,
+        "Name":  "jhi_service.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\dal.inf_amd64_7aa6ca9dbb25bff8\\jhi_service.exe"
+    },
+    {
+        "ProcessId":  7012,
+        "Name":  "dasHost.exe",
+        "CommandLine":  "dashost.exe {1ce7f7cb-a40e-4880-804f485d1871f2f2}"
+    },
+    {
+        "ProcessId":  7616,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs"
+    },
+    {
+        "ProcessId":  7740,
+        "Name":  "postgres.exe",
+        "CommandLine":  "\"C:\\Program Files\\PostgreSQL\\17\\bin\\postgres.exe\" -D \"C:\\Program Files\\PostgreSQL\\17\\data\" "
+    },
+    {
+        "ProcessId":  7808,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  8148,
+        "Name":  "dasHost.exe",
+        "CommandLine":  "dashost.exe {f966b305-d19f-4758-94a203ef614edcf8}"
+    },
+    {
+        "ProcessId":  6208,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p -s SSDPSRV"
+    },
+    {
+        "ProcessId":  8316,
+        "Name":  "WmiPrvSE.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
+    },
+    {
+        "ProcessId":  8324,
+        "Name":  "WmiPrvSE.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
+    },
+    {
+        "ProcessId":  8444,
+        "Name":  "postgres.exe",
+        "CommandLine":  "\"C:/Program Files/PostgreSQL/17/bin/postgres.exe\" --forkchild=\"syslogger\" 5512"
+    },
+    {
+        "ProcessId":  8548,
+        "Name":  "postgres.exe",
+        "CommandLine":  "\"C:/Program Files/PostgreSQL/17/bin/postgres.exe\" --forkchild=\"checkpointer\" 5456"
+    },
+    {
+        "ProcessId":  8556,
+        "Name":  "postgres.exe",
+        "CommandLine":  "\"C:/Program Files/PostgreSQL/17/bin/postgres.exe\" --forkchild=\"bgwriter\" 5452"
+    },
+    {
+        "ProcessId":  8716,
+        "Name":  "DAX3API.exe",
+        "CommandLine":  "DAX3API.exe -capturestream"
+    },
+    {
+        "ProcessId":  8800,
+        "Name":  "postgres.exe",
+        "CommandLine":  "\"C:/Program Files/PostgreSQL/17/bin/postgres.exe\" --forkchild=\"wal_writer\" 5432"
+    },
+    {
+        "ProcessId":  8816,
+        "Name":  "postgres.exe",
+        "CommandLine":  "\"C:/Program Files/PostgreSQL/17/bin/postgres.exe\" --forkchild=\"autovacuum launcher\" 5440"
+    },
+    {
+        "ProcessId":  8828,
+        "Name":  "postgres.exe",
+        "CommandLine":  "\"C:/Program Files/PostgreSQL/17/bin/postgres.exe\" --forkchild=\"bgworker\" 5388"
+    },
+    {
+        "ProcessId":  9148,
+        "Name":  "node.exe",
+        "CommandLine":  "\"C:\\Program Files\\nodejs\\node.exe\"  \"C:\\Users\\Openclaw\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js\" gateway --port 18790 "
+    },
+    {
+        "ProcessId":  8996,
+        "Name":  "unsecapp.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\wbem\\unsecapp.exe -Embedding"
+    },
+    {
+        "ProcessId":  6624,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k osprivacy -p -s camsvc"
+    },
+    {
+        "ProcessId":  9264,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k WSAIFabricSvcGroup -p -s WSAIFabricSvc"
+    },
+    {
+        "ProcessId":  9604,
+        "Name":  "wlanext.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\WLANExt.exe 2208923643536"
+    },
+    {
+        "ProcessId":  9720,
+        "Name":  "AggregatorHost.exe",
+        "CommandLine":  "AggregatorHost.exe"
+    },
+    {
+        "ProcessId":  10236,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p -s WdiSystemHost"
+    },
+    {
+        "ProcessId":  1400,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s PcaSvc"
+    },
+    {
+        "ProcessId":  9764,
+        "Name":  "RtkAudUService64.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\System32\\RtkAudUService64.exe\" -admin"
+    },
+    {
+        "ProcessId":  9768,
+        "Name":  "ETDCtrl.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\ETDCtrl.exe"
+    },
+    {
+        "ProcessId":  1796,
+        "Name":  "sihost.exe",
+        "CommandLine":  "sihost.exe"
+    },
+    {
+        "ProcessId":  3080,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup -s CDPUserSvc"
+    },
+    {
+        "ProcessId":  5764,
+        "Name":  "igfxEM.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\cui_dch.inf_amd64_0d8dab4470c5524b\\igfxEM.exe\""
+    },
+    {
+        "ProcessId":  5632,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc"
+    },
+    {
+        "ProcessId":  9020,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup -s WpnUserService"
+    },
+    {
+        "ProcessId":  10244,
+        "Name":  "taskhostw.exe",
+        "CommandLine":  "taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}"
+    },
+    {
+        "ProcessId":  10300,
+        "Name":  "PowerMgr.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SysWOW64\\Lenovo\\PowerMgr\\PowerMgr.exe\""
+    },
+    {
+        "ProcessId":  10392,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s TokenBroker"
+    },
+    {
+        "ProcessId":  10640,
+        "Name":  "logioptionsplus_agent.exe",
+        "CommandLine":  "\"C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe\""
+    },
+    {
+        "ProcessId":  10704,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s CDPSvc"
+    },
+    {
+        "ProcessId":  10808,
+        "Name":  "explorer.exe",
+        "CommandLine":  "C:\\WINDOWS\\Explorer.EXE"
+    },
+    {
+        "ProcessId":  10904,
+        "Name":  "ShellHost.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\ShellHost.exe\""
+    },
+    {
+        "ProcessId":  11196,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s Appinfo"
+    },
+    {
+        "ProcessId":  10932,
+        "Name":  "CrossDeviceResume.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe\" /tileid MicrosoftWindows.Client.CBS_cw5n1h2txyewy!CrossDeviceResumeApp"
+    },
+    {
+        "ProcessId":  10816,
+        "Name":  "svchost.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  11344,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService"
+    },
+    {
+        "ProcessId":  11352,
+        "Name":  "WpcMon.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\WpcMon.exe \"692\""
+    },
+    {
+        "ProcessId":  11688,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p -s lmhosts"
+    },
+    {
+        "ProcessId":  11896,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p"
+    },
+    {
+        "ProcessId":  12064,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc"
+    },
+    {
+        "ProcessId":  8228,
+        "Name":  "unsecapp.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\wbem\\unsecapp.exe -Embedding"
+    },
+    {
+        "ProcessId":  12428,
+        "Name":  "SearchHost.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe\" -ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca"
+    },
+    {
+        "ProcessId":  12436,
+        "Name":  "StartMenuExperienceHost.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe\" -ServerName:FullTrustApp.AppXykjsye98af63ez2annt9djke8trg8stn.mca"
+    },
+    {
+        "ProcessId":  12680,
+        "Name":  "SearchIndexer.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\SearchIndexer.exe /Embedding"
+    },
+    {
+        "ProcessId":  12744,
+        "Name":  "RuntimeBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  12768,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UdkSvcGroup -s UdkUserSvc"
+    },
+    {
+        "ProcessId":  13028,
+        "Name":  "Widgets.exe",
+        "CommandLine":  "\"C:\\Program Files\\WindowsApps\\MicrosoftWindows.Client.WebExperience_526.1202.40.0_x64__cw5n1h2txyewy\\Dashboard\\Widgets.exe\" -ServerName:Microsoft.Windows.DashboardServer"
+    },
+    {
+        "ProcessId":  12740,
+        "Name":  "backgroundTaskHost.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\system32\\backgroundTaskHost.exe\" -ServerName:App.AppXe9cvj1thv1hmcw0cs98xm3r97tyzy2xs.mca"
+    },
+    {
+        "ProcessId":  11832,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalService -p -s LicenseManager"
+    },
+    {
+        "ProcessId":  13720,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 146.0.3856.97)\" --lang=en-US --mojo-named-platform-channel-pipe=12428.13560.16176422143112969757 /pfhostedapp:d17bcf76eacb13aa4834cf3102c4e1d6bd86ce77"
+    },
+    {
+        "ProcessId":  13784,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\Itzhak\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView /prefetch:4 /pfhostedapp:d17bcf76eacb13aa4834cf3102c4e1d6bd86ce77 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\Itzhak\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=146.0.7680.178 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --annotation=plat=Win64 \"--annotation=prod=Edge WebView2\" --annotation=ver=146.0.3856.97 --initial-client-data=0x16c,0x170,0x174,0x148,0x17c,0x7ffadd9d34d8,0x7ffadd9d34e4,0x7ffadd9d34f0"
+    },
+    {
+        "ProcessId":  14292,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 146.0.3856.97)\" --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2136,i,7487049710546297624,5386412374257605560,524288 --field-trial-handle=1956,i,12236149597262260575,8682936686760924696,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1968,i,10758344150918844104,4256223360453324517,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2044 /prefetch:11 /pfhostedapp:d17bcf76eacb13aa4834cf3102c4e1d6bd86ce77"
+    },
+    {
+        "ProcessId":  14320,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=gpu-process --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 146.0.3856.97)\" --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --always-read-main-dll --metrics-shmem-handle=1668,i,15317185833621399477,377189773694583670,262144 --field-trial-handle=1956,i,12236149597262260575,8682936686760924696,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1968,i,10758344150918844104,4256223360453324517,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1952 /prefetch:2 /pfhostedapp:d17bcf76eacb13aa4834cf3102c4e1d6bd86ce77"
+    },
+    {
+        "ProcessId":  11020,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 146.0.3856.97)\" --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2292,i,8482590911777289615,9322253052822622934,524288 --field-trial-handle=1956,i,12236149597262260575,8682936686760924696,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1968,i,10758344150918844104,4256223360453324517,4 --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2684 /prefetch:13 /pfhostedapp:d17bcf76eacb13aa4834cf3102c4e1d6bd86ce77"
+    },
+    {
+        "ProcessId":  13520,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=renderer --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 146.0.3856.97)\" --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --js-flags=\"--expose-gc --ms-user-locale=en_IL\" --time-ticks-at-unix-epoch=-1775593888702307 --launch-time-ticks=44094300 --always-read-main-dll --metrics-shmem-handle=3724,i,14955574633230698532,8588558138851537008,2097152 --field-trial-handle=1956,i,12236149597262260575,8682936686760924696,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1968,i,10758344150918844104,4256223360453324517,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3720 /pfhostedapp:d17bcf76eacb13aa4834cf3102c4e1d6bd86ce77 /prefetch:1"
+    },
+    {
+        "ProcessId":  10356,
+        "Name":  "ctfmon.exe",
+        "CommandLine":  "/QuitInfo:000000000000031C;0000000000000334; "
+    },
+    {
+        "ProcessId":  13628,
+        "Name":  "logioptionsplus_appbroker.exe",
+        "CommandLine":  "\"C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_appbroker.exe\" "
+    },
+    {
+        "ProcessId":  14016,
+        "Name":  "TextInputHost.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe\" -ServerName:InputApp.AppXk0k6mrh4r2q0ct33a9wgbez0x7v9cz5y.mca"
+    },
+    {
+        "ProcessId":  6748,
+        "Name":  "CrossDeviceService.exe",
+        "CommandLine":  "\"C:\\Program Files\\WindowsApps\\MicrosoftWindows.CrossDevice_1.26012.79.0_x64__cw5n1h2txyewy\\CrossDeviceService.exe\" -RegisterProcessAsComServer -Embedding"
+    },
+    {
+        "ProcessId":  8096,
+        "Name":  "RuntimeBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  10264,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcsRedirectionGuard -p -s lfsvc"
+    },
+    {
+        "ProcessId":  8852,
+        "Name":  "PhoneExperienceHost.exe",
+        "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26012.101.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe\" -ComServer:Background -Embedding"
+    },
+    {
+        "ProcessId":  6184,
+        "Name":  "NisSrv.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  13172,
+        "Name":  "RtkAudUService64.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\RtkAudUService64.exe\" -background"
+    },
+    {
+        "ProcessId":  8632,
+        "Name":  "RuntimeBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  15812,
+        "Name":  "ApplicationFrameHost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\ApplicationFrameHost.exe -Embedding"
+    },
+    {
+        "ProcessId":  16164,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s NPSMSvc"
+    },
+    {
+        "ProcessId":  16284,
+        "Name":  "WsToastNotification.exe",
+        "CommandLine":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Wondershare\\Wondershare NativePush\\WsToastNotification.exe\""
+    },
+    {
+        "ProcessId":  16292,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  15780,
+        "Name":  "ollama app.exe",
+        "CommandLine":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\" "
+    },
+    {
+        "ProcessId":  12020,
+        "Name":  "ollama.exe",
+        "CommandLine":  "C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+    },
+    {
+        "ProcessId":  4524,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  16012,
+        "Name":  "MicrosoftSecurityApp.exe",
+        "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.6365217CE6EB4_102.2602.23002.0_x64__8wekyb3d8bbwe\\MicrosoftSecurityApp\\MicrosoftSecurityApp.exe\" "
+    },
+    {
+        "ProcessId":  10948,
+        "Name":  "Plex Media Server.exe",
+        "CommandLine":  "\"C:\\Program Files\\Plex\\Plex Media Server\\Plex Media Server.exe\" "
+    },
+    {
+        "ProcessId":  1768,
+        "Name":  "PlexScriptHost.exe",
+        "CommandLine":  "\"C:\\Program Files\\Plex\\Plex Media Server\\PlexScriptHost.exe\" \"C:\\Program Files\\Plex\\Plex Media Server\\Resources\\Plug-ins-121068a07\\Framework.bundle\\Contents\\Resources\\Versions\\2\\Python\\bootstrap.py\" \"C:\\Program Files\\Plex\\Plex Media Server\\Resources\\Plug-ins-121068a07\\System.bundle\""
+    },
+    {
+        "ProcessId":  9536,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  4952,
+        "Name":  "RuntimeBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  4112,
+        "Name":  "aesm_service.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\sgx_psw.inf_amd64_ece153ca769ec179\\aesm_service.exe"
+    },
+    {
+        "ProcessId":  8176,
+        "Name":  "svchost.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  11220,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k InvSvcGroup -p -s InventorySvc"
+    },
+    {
+        "ProcessId":  2576,
+        "Name":  "Plex Update Service.exe",
+        "CommandLine":  "\"C:\\Program Files\\Plex\\Plex Media Server\\Plex Update Service.exe\""
+    },
+    {
+        "ProcessId":  3804,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup"
+    },
+    {
+        "ProcessId":  11604,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p"
+    },
+    {
+        "ProcessId":  15616,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s UsoSvc"
+    },
+    {
+        "ProcessId":  4172,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -s W32Time"
+    },
+    {
+        "ProcessId":  10852,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k whesvc -p -s whesvc"
+    },
+    {
+        "ProcessId":  16528,
+        "Name":  "svchost.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  16648,
+        "Name":  "Plex Tuner Service.exe",
+        "CommandLine":  "\"C:\\Program Files\\Plex\\Plex Media Server\\Plex Tuner Service.exe\" \"C:\\Program Files\\Plex\\Plex Media Server\\Resources\\Tuner\\Private\" \"C:\\Program Files\\Plex\\Plex Media Server\\Resources\\Tuner\\Shared\" 1.43.0.10492-121068a07 32600"
+    },
+    {
+        "ProcessId":  16656,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  4880,
+        "Name":  "WSHelper.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Common Files\\Wondershare\\Wondershare Helper Compact\\WSHelper.exe\" "
+    },
+    {
+        "ProcessId":  1808,
+        "Name":  "WWAHost.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\system32\\wwahost.exe\" -ServerName:App.wwa"
+    },
+    {
+        "ProcessId":  17268,
+        "Name":  "RuntimeBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  7048,
+        "Name":  "dllhost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\DllHost.exe /Processid:{973D20D7-562D-44B9-B70B-5A0F49CCDF3F}"
+    },
+    {
+        "ProcessId":  15708,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k WbioSvcGroup -s WbioSrvc"
+    },
+    {
+        "ProcessId":  15200,
+        "Name":  "LogonUI.exe",
+        "CommandLine":  "\"LogonUI.exe\" /flags:0x0 /state0:0xa3d14055 /state1:0x41c64e6d"
+    },
+    {
+        "ProcessId":  2092,
+        "Name":  "LockApp.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\Microsoft.LockApp_cw5n1h2txyewy\\LockApp.exe\" -ServerName:WindowsDefaultLockScreen.AppX7y4nbzq37zn4ks9k7amqjywdat7d3j2z.mca"
+    },
+    {
+        "ProcessId":  3796,
+        "Name":  "RuntimeBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  2900,
+        "Name":  "AppActions.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\AppActions.exe\" -Embedding"
+    },
+    {
+        "ProcessId":  13920,
+        "Name":  "SecurityHealthService.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  9744,
+        "Name":  "SystemSettings.exe",
+        "CommandLine":  "\"C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe\" -ServerName:microsoft.windows.immersivecontrolpanel"
+    },
+    {
+        "ProcessId":  17344,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow -s DevicesFlowUserSvc"
+    },
+    {
+        "ProcessId":  2944,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s bthserv"
+    },
+    {
+        "ProcessId":  2172,
+        "Name":  "UserOOBEBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\oobe\\UserOOBEBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  4696,
+        "Name":  "SDXHelper.exe",
+        "CommandLine":  "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\SDXHelper.exe\" -Embedding"
+    },
+    {
+        "ProcessId":  6200,
+        "Name":  "M365Copilot.exe",
+        "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftOfficeHub_19.2604.33131.0_x64__8wekyb3d8bbwe\\M365Copilot.exe\" ms-getoffice: autostart reason=AutoStarter AutoStartInactivityDelay=14336"
+    },
+    {
+        "ProcessId":  3996,
+        "Name":  "RuntimeBroker.exe",
+        "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding"
+    },
+    {
+        "ProcessId":  15540,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2604.33131.0 --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --noerrdialogs --embedded-browser-webview-dpi-awareness=2 --disable-features=msEnhancedTrackingPreventionEnabled --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --mojo-named-platform-channel-pipe=6200.10056.2520770461655979259 /pfhostedapp:8ee4ec26a00c48f357103e3149d0eeab8f658b57"
+    },
+    {
+        "ProcessId":  13100,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\Itzhak\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView /prefetch:4 /pfhostedapp:8ee4ec26a00c48f357103e3149d0eeab8f658b57 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\Itzhak\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=146.0.7680.178 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --annotation=plat=Win64 \"--annotation=prod=Edge WebView2\" --annotation=ver=146.0.3856.97 --initial-client-data=0x170,0x174,0x178,0x150,0x180,0x7ffadd9d34d8,0x7ffadd9d34e4,0x7ffadd9d34f0"
+    },
+    {
+        "ProcessId":  16984,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=gpu-process --noerrdialogs --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2604.33131.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --startup-read-main-dll --metrics-shmem-handle=1852,i,13791480395099827766,15765014367353055305,262144 --field-trial-handle=1996,i,17708814913082566570,13966681711612891507,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --pseudonymization-salt-handle=1968,i,16288430447019308509,14800672062949258871,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1992 /prefetch:2 /pfhostedapp:8ee4ec26a00c48f357103e3149d0eeab8f658b57"
+    },
+    {
+        "ProcessId":  14604,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --noerrdialogs --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2604.33131.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --startup-read-main-dll --metrics-shmem-handle=2384,i,12285775486203565772,5544550721913883486,524288 --field-trial-handle=1996,i,17708814913082566570,13966681711612891507,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --pseudonymization-salt-handle=1968,i,16288430447019308509,14800672062949258871,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2340 /prefetch:11 /pfhostedapp:8ee4ec26a00c48f357103e3149d0eeab8f658b57"
+    },
+    {
+        "ProcessId":  6932,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --noerrdialogs --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2604.33131.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --startup-read-main-dll --metrics-shmem-handle=2480,i,15874974749725963192,4986571920120769225,524288 --field-trial-handle=1996,i,17708814913082566570,13966681711612891507,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --pseudonymization-salt-handle=1968,i,16288430447019308509,14800672062949258871,4 --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2516 /prefetch:13 /pfhostedapp:8ee4ec26a00c48f357103e3149d0eeab8f658b57"
+    },
+    {
+        "ProcessId":  12068,
+        "Name":  "msedgewebview2.exe",
+        "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\146.0.3856.97\\msedgewebview2.exe\" --type=renderer --noerrdialogs --user-data-dir=\"C:\\Users\\Itzhak\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2604.33131.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --js-flags=\"--expose-gc --ms-user-locale=en_IL\" --time-ticks-at-unix-epoch=-1775593888702307 --launch-time-ticks=14502081917 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=3944,i,9647500527034017732,8801389527956300689,2097152 --field-trial-handle=1996,i,17708814913082566570,13966681711612891507,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --pseudonymization-salt-handle=1968,i,16288430447019308509,14800672062949258871,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3956 /pfhostedapp:8ee4ec26a00c48f357103e3149d0eeab8f658b57 /prefetch:1"
+    },
+    {
+        "ProcessId":  12996,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k WuqiSvcGroup -p -s wuqisvc"
+    },
+    {
+        "ProcessId":  5440,
+        "Name":  "svchost.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k GPSvcGroup"
+    },
+    {
+        "ProcessId":  14676,
+        "Name":  "cmd.exe",
+        "CommandLine":  "C:\\WINDOWS\\SYSTEM32\\cmd.exe /c \"\"C:\\ProgramData\\OpenClaw\\openclaw-Itzhak.cmd\"\""
+    },
+    {
+        "ProcessId":  17100,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  16640,
+        "Name":  "node.exe",
+        "CommandLine":  "\"C:\\Program Files\\nodejs\\node.exe\"  \"C:\\Users\\Itzhak\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js\" gateway --port 18789 "
+    },
+    {
+        "ProcessId":  556,
+        "Name":  "SearchProtocolHost.exe",
+        "CommandLine":  "\"C:\\WINDOWS\\System32\\SearchProtocolHost.exe\" Global\\UsGthrFltPipeMssGthrPipe8_ Global\\UsGthrCtrlFltPipeMssGthrPipe8 1 -2147483646 \"Software\\Microsoft\\Windows Search\" \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)\" \"C:\\ProgramData\\Microsoft\\Search\\Data\\Temp\\usgthrsvc\" \"DownLevelDaemon\" "
+    },
+    {
+        "ProcessId":  16200,
+        "Name":  "svchost.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  13096,
+        "Name":  "svchost.exe",
+        "CommandLine":  null
+    },
+    {
+        "ProcessId":  10952,
+        "Name":  "powershell.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoProfile -NonInteractive -Command \"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoProfile -Command \\\"Get-ChildItem -Path \u0027C:\\Users\\Itzhak\u0027,\u0027C:\\Users\\Openclaw\u0027 -Recurse -Force -ErrorAction SilentlyContinue | Where-Object { $_.FullName -match \u0027OpenClaw|\\.openclaw|clawy|claw\u0027 } | Select-Object FullName,PSIsContainer,Length,LastWriteTime | ConvertTo-Json -Depth 4\\\"\""
+    },
+    {
+        "ProcessId":  9044,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  9836,
+        "Name":  "powershell.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -Command \"Get-ChildItem -Path \u0027C:\\Users\\Itzhak\u0027,\u0027C:\\Users\\Openclaw\u0027 -Recurse -Force -ErrorAction SilentlyContinue | Where-Object { .FullName -match \u0027OpenClaw|\\.openclaw|clawy|claw\u0027 } | Select-Object FullName,PSIsContainer,Length,LastWriteTime | ConvertTo-Json -Depth 4\""
+    },
+    {
+        "ProcessId":  14588,
+        "Name":  "WmiPrvSE.exe",
+        "CommandLine":  "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
+    },
+    {
+        "ProcessId":  16708,
+        "Name":  "powershell.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoProfile -NonInteractive -Command \"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\Itzhak\\.openclaw\\workspace\\system_map_scan.ps1\""
+    },
+    {
+        "ProcessId":  15424,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  16860,
+        "Name":  "powershell.exe",
+        "CommandLine":  "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\Itzhak\\.openclaw\\workspace\\system_map_scan.ps1"
+    },
+    {
+        "ProcessId":  3916,
+        "Name":  "powershell.exe",
+        "CommandLine":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoProfile -NonInteractive -Command \"node scripts/run-checks.js\""
+    },
+    {
+        "ProcessId":  16276,
+        "Name":  "conhost.exe",
+        "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+        "ProcessId":  16800,
+        "Name":  "node.exe",
+        "CommandLine":  "\"C:\\Program Files\\nodejs\\node.exe\" scripts/run-checks.js"
+    },
+    {
+        "ProcessId":  8868,
+        "Name":  "powershell.exe",
+        "CommandLine":  "powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand aQBmACAAKABUAGUAcwB0AC0AUABhAHQAaAAgACcAQwA6AFwAXABVAHMAZQByAHMAXABcAEkAdAB6AGgAYQBrAFwAXAAuAG8AcABlAG4AYwBsAGEAdwAnACkAIAB7ACAARwBlAHQALQBDAGgAaQBsAGQASQB0AGUAbQAgAC0AUABhAHQAaAAgACcAQwA6AFwAXABVAHMAZQByAHMAXABcAEkAdAB6AGgAYQBrAFwAXAAuAG8AcABlAG4AYwBsAGEAdwAnACAALQBEAGkAcgBlAGMAdABvAHIAeQAgAC0AUgBlAGMAdQByAHMAZQAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQAgAHwAIABXAGgAZQByAGUALQBPAGIAagBlAGMAdAAgAHsAIAAkAF8ALgBGAHUAbABsAE4AYQBtAGUAIAAtAGwAaQBrAGUAIAAnACoAcwBlAHMAcwBpAG8AbgBzACoAJwAgAH0AIAB8ACAAUwBlAGwAZQBjAHQALQBPAGIAagBlAGMAdAAgAC0ARgBpAHIAcwB0ACAAMQAwACAARgB1AGwAbABOAGEAbQBlACwAQAB7AG4APQAnAFMAaQB6AGUATQBCACcAOwBlAD0AewBbAG0AYQB0AGgAXQA6ADoAUgBvAHUAbgBkACgAKABHAGUAdAAtAEMAaABpAGwAZABJAHQAZQBtACAAJABfAC4ARgB1AGwAbABOAGEAbQBlACAALQBSAGUAYwB1AHIAcwBlACAALQBGAGkAbABlACAALQBFAHIAcgBvAHIAQQBjAHQAaQBvAG4AIABTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACAAfAAgAE0AZQBhAHMAdQByAGUALQBPAGIAagBlAGMAdAAgAEwAZQBuAGcAdABoACAALQBTAHUAbQApAC4AUwB1AG0AIAAvACAAMQBNAEIALAAyACkAfQB9ACAAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0AQwBvAG0AcAByAGUAcwBzACAAfQA="
+    }
+]

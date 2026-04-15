@@ -1,6 +1,0 @@
-identity preservation level: HIGH | MEDIUM | LOW
-realism quality:
-visible artifacts:
-request fulfillment quality:
-another iteration recommended: YES | NO
-notes:

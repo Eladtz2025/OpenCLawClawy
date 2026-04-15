@@ -1,13 +1,13 @@
 {
-  "lastPublishedAt": "2026-04-14T21:00:12.198Z",
+  "lastPublishedAt": "2026-04-15T13:34:11.707Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "topics": {
     "technology": {
       "topic": "technology",
       "label": "טכנולוגיה",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 4,
+      "fallbackActive": true,
       "sourcesWorked": [
         "TechCrunch AI",
         "The Verge Tech",
@@ -35,8 +35,8 @@
       "topic": "technology2",
       "label": "טכנולוגיה #2",
       "wanted": 5,
-      "got": 0,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "TechNewsHeb Telegram",
         "AI_tg_il Telegram",
@@ -44,33 +44,30 @@
         "hackit770 Telegram"
       ],
       "sourcesFailed": [],
-      "editorApplied": true,
-      "editorError": null
+      "editorApplied": false,
+      "editorError": "editor_exit_null"
     },
     "israel": {
       "topic": "israel",
       "label": "ישראל",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 4,
+      "fallbackActive": true,
       "sourcesWorked": [
         "ynet News",
         "Maariv News",
         "Israel Hayom News",
-        "Times of Israel"
+        "Times of Israel",
+        "Maariv Israel"
       ],
       "sourcesFailed": [
         {
           "source": "Kan News",
-          "error": "Error: HTTP 404 for https://kan.org.il/news"
+          "error": "Error: HTTP 403 for https://kan.org.il/news"
         },
         {
-          "source": "Haaretz",
-          "error": "no_items"
-        },
-        {
-          "source": "Jerusalem Post",
-          "error": "no_items"
+          "source": "Israel News Archive",
+          "error": "Error: HTTP 404 for https://www.ynet.co.il/news/article"
         }
       ],
       "editorApplied": false,
@@ -107,15 +104,15 @@
           "error": "TypeError: fetch failed"
         }
       ],
-      "editorApplied": false,
-      "editorError": "editor_exit_null"
+      "editorApplied": true,
+      "editorError": null
     },
     "hapoel": {
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 2,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",

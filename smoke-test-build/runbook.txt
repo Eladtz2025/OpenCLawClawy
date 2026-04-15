@@ -1,0 +1,4 @@
+Smoke test runbook
+1. Folder created in workspace.
+2. Required files created.
+3. No runtime command was needed for this smoke test.

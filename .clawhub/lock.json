@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "workspace-files": {
+      "version": "1.0.1",
+      "installedAt": 1775060114678
+    },
+    "agent-browser-clawdbot": {
+      "version": "0.1.0",
+      "installedAt": 1775060115642
+    },
+    "windows-ui-automation": {
+      "version": "1.0.0",
+      "installedAt": 1775060116751
+    },
+    "windows-screenshot": {
+      "version": "1.0.3",
+      "installedAt": 1775060117812
+    },
+    "spotify-player": {
+      "version": "1.0.0",
+      "installedAt": 1775060118815
+    }
+  }
+}

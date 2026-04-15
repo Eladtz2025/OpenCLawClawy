@@ -20,8 +20,8 @@
     { "name": "Israel Hayom News", "url": "https://www.israelhayom.co.il/news", "kind": "secondary", "parser": "israelhayom", "type": "web", "priority": 2 },
     { "name": "Times of Israel", "url": "https://www.timesofisrael.com/", "kind": "secondary", "parser": "toi", "type": "web", "priority": 2 },
     { "name": "Kan News", "url": "https://kan.org.il/news", "kind": "primary", "parser": "ynet", "type": "web", "priority": 1 },
-    { "name": "Haaretz", "url": "https://www.haaretz.co.il/", "kind": "secondary", "parser": "ynet", "type": "web", "priority": 2 },
-    { "name": "Jerusalem Post", "url": "https://www.jpost.com/", "kind": "secondary", "parser": "toi", "type": "web", "priority": 2 }
+    { "name": "Israel News Archive", "url": "https://www.ynet.co.il/news/article", "kind": "secondary", "parser": "ynet", "type": "web", "priority": 2 },
+    { "name": "Maariv Israel", "url": "https://www.maariv.co.il/news/israel", "kind": "secondary", "parser": "maariv", "type": "web", "priority": 2 }
   ],
   "crypto": [
     { "name": "CoinDesk", "url": "https://www.coindesk.com/", "kind": "primary", "parser": "coindesk", "type": "web", "priority": 1 },

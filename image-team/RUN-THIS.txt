@@ -1,7 +1,0 @@
-Bootstrap command:
-
-powershell -ExecutionPolicy Bypass -File .\image-team\scripts\run-image-team.ps1 -Request "describe the target job here" -JobName "test-job" -Type "generate"
-
-Current status:
-- Planning/orchestration: ready
-- Real engine execution: pending wiring to a verified local engine path
