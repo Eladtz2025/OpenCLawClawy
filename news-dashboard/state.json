@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-23T06:37:49.568Z",
+  "lastPublishedAt": "2026-04-23T11:16:48.276Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "topics": {
     "technology": {
@@ -45,8 +45,8 @@
       "topic": "israel",
       "label": "ישראל",
       "wanted": 5,
-      "got": 3,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "ynet News",
         "Maariv News",
@@ -64,8 +64,8 @@
       "topic": "crypto",
       "label": "קריפטו",
       "wanted": 5,
-      "got": 2,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "CoinDesk",
         "CoinDesk Bitcoin",

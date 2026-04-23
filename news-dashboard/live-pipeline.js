@@ -174,11 +174,34 @@ function cleanArticleText(text = '') {
     .replace(/פוסטים קשורים[\s\S]*/i, ' ')
     .replace(/קישורים[\s\S]*/i, ' ')
     .replace(/&copy;[\s\S]*/i, ' ')
+    .replace(/menu security politics the big story business science culture reviews/gi, ' ')
+    .replace(/wired insider|wired consulting|newsletters|podcasts|video|livestreams|merch|search search/gi, ' ')
+    .replace(/top of page|לחברי העמותה החנות הרשמית ראשי/gi, ' ')
+    .replace(/all news defi explore all news|web3 snapshot|people & culture|llama u opinion|etf tracker|spotlight reports interviews|introducing insights collections/gi, ' ')
+    .replace(/trusted by|get in touch|work with dlr|editorial standards|who we are|follow us/gi, ' ')
     .replace(/\b(?:newsletter|advertisement|related|comments?)\b/gi, ' ')
     .replace(/\s+/g, ' '));
 }
 
 function splitParagraphsFromHtml(html = '', item = {}) {
+  const sourceUrl = item.sourceUrl || '';
+  if (/wired\.com/i.test(sourceUrl)) {
+    const articleMatch = String(html).match(/<article[\s\S]*?<\/article>/i) || String(html).match(/<main[\s\S]*?<\/main>/i);
+    const scope = articleMatch ? articleMatch[0] : String(html);
+    const paragraphs = [];
+    const regex = /<(p|h2|h3)[^>]*>([\s\S]*?)<\/\1>/gi;
+    let match;
+    while ((match = regex.exec(scope)) && paragraphs.length < 8) {
+      const text = cleanArticleText(stripTags(match[2] || ''));
+      if (!text) continue;
+      if (text.length < 60) continue;
+      if (/menu account|security politics|the big story|wired insider|newsletter|podcasts|livestream|triangle in your inbox|read more|more from wired|all rights reserved/i.test(text)) continue;
+      if (/meta’s facial recognition glasses|big story:|the deepfake nudes crisis|listen: silicon valley/i.test(text)) continue;
+      paragraphs.push(text);
+    }
+    return paragraphs;
+  }
+
   const paragraphs = [];
   const regex = /<(p|h2|h3|li)[^>]*>([\s\S]*?)<\/\1>/gi;
   let match;
@@ -192,7 +215,7 @@ function splitParagraphsFromHtml(html = '', item = {}) {
     paragraphs.push(text);
   }
 
-  if (/wired\.com|decrypt\.co|kan\.org\.il|hapoelpt\.com/i.test(item.sourceUrl || '')) {
+  if (/decrypt\.co|kan\.org\.il|hapoelpt\.com|dlnews\.com/i.test(sourceUrl)) {
     return paragraphs.map(p => cleanArticleText(p)).filter(Boolean);
   }
   return paragraphs;
@@ -304,7 +327,7 @@ function isWeakCandidate(topicKey, item) {
   if (/^\$?\s*\d+[\d,.:\s%]+$/.test(title)) return true;
   if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return true;
   if (/continue reading|share this story|read more|search \/|loading video|livestream|live stream|join our livestream/.test(hay)) return true;
-  if (topicKey === 'crypto' && /price\/(bitcoin|ethereum|xrp)|\bbitcoin \$|\bethereum \$|\bxrp \$|search-filings|public dissemination service|variable insurance|policy & regulation|news-explorer|\/resources\/|largest publicly traded|publicly traded ethereum treasury firms|biggest crypto cases dumped|unicoin foundation|startale expands/i.test(hay)) return true;
+  if (topicKey === 'crypto' && /price\/(bitcoin|ethereum|xrp)|\bbitcoin \$|\bethereum \$|\bxrp \$|search-filings|public dissemination service|variable insurance|policy & regulation|news-explorer|\/resources\/|largest publicly traded|publicly traded ethereum treasury firms|biggest crypto cases dumped|unicoin foundation|startale expands|press-release|sponsored-content|documentation and governance|safe passage through hormuz/i.test(hay)) return true;
   if (topicKey === 'technology' && /google ads & commerce blog|google deepmind|podcast scale up nation|scale up nation|podcast|livestream|join our livestream/i.test(hay)) return true;
   if (topicKey === 'technology' && /molotov cocktail at his house|usaid whistleblower/i.test(hay)) return true;
   if (topicKey === 'hapoel' && /מכירת מנוי|מנויים|כרטיסים|מתווה הכרטיסים/i.test(hay)) return true;
@@ -327,8 +350,11 @@ const parsers = {
       const title = stripTags(m[2]);
       if (!/theverge\.com\//i.test(url)) return null;
       if (/\/video\/|\/videos\//i.test(url)) return null;
+      if (!/theverge\.com\/(tech|ai-artificial-intelligence|news|policy|gadgets|transportation|report)\//i.test(url)) return null;
+      if (url === 'https://www.theverge.com/') return null;
       if (title.length < 25 || title.length > 180) return null;
-      if (/^(read more|continue reading|share this story)$/i.test(title)) return null;
+      if (/^(read more|continue reading|share this story|the homepage the verge the verge logo\.?|the verge the verge logo\.?)$/i.test(title)) return null;
+      if (/^(alongside other announcements last week|said the “idea” isn’t dead|rolling out its ai auto browse|70 to 90 percent of its code)$/i.test(title)) return null;
       if (/^[a-z].*house$/i.test(title) && title.length < 45) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 40);
@@ -601,11 +627,14 @@ function scoreItem(topicKey, item, sourceCount) {
   let score = 0;
   const clean = cleanTitle(item.title || '');
   const t = `${clean} ${item.sourceUrl}`.toLowerCase();
+  const published = normalizePublishedAt(item.publishedAt || '');
+  const ageDays = Math.max(0, Math.floor((Date.now() - new Date(published).getTime()) / (24 * 60 * 60 * 1000)));
 
   if (item.fixture) score += 14;
   if (item.fallbackMode === 'weekly') score -= 4;
   score += item.sourceKind === 'primary' ? 8 : 5;
   score += item.fresh ? 10 : -10;
+  score -= Math.min(ageDays * 3, 18);
   score += item.verificationCount >= 2 ? 5 : 0;
   score += item.signalPositive ? 4 : 0;
   score -= item.signalNegative ? 12 : 0;
@@ -614,8 +643,9 @@ function scoreItem(topicKey, item, sourceCount) {
   if (/\.$/.test(clean)) score -= 2;
 
   if (topicKey === 'technology' || topicKey === 'technology2') {
-    if (/openai|anthropic|google|gemini|claude|agent|api|tool|startup|funding|launch|release|codex|automation|chip|semiconductor|deepmind/i.test(t)) score += 8;
+    if (/openai|anthropic|google|gemini|claude|agent|api|tool|startup|funding|launch|release|codex|automation|chip|semiconductor|deepmind|cybersecurity|robot|workspace|chrome/i.test(t)) score += 8;
     if (/pricing|ads|marketplace|funding|revenue/.test(t)) score += 2;
+    if (/openai|anthropic|google|meta|microsoft|amazon|apple/i.test(t)) score += 2;
   }
   if (topicKey === 'crypto') {
     if (/bitcoin|btc|ethereum|eth|xrp|etf|sec|token|market|exchange|regulation/i.test(t)) score += 9;
@@ -735,6 +765,14 @@ async function collectTopic(topic) {
   const broadFresh = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh);
   let candidatePool = freshToday.length >= 5 ? freshToday : strongFresh;
   if (topic.key === 'crypto' && candidatePool.length < 5) {
+    const recentWindow = pooled.filter(item => {
+      const published = normalizePublishedAt(item.publishedAt || '');
+      const ageDays = Math.max(0, Math.floor((Date.now() - new Date(published).getTime()) / (24 * 60 * 60 * 1000)));
+      return ageDays <= 3;
+    });
+    candidatePool = [...candidatePool, ...recentWindow.filter(item => !isWeakCandidate(topic.key, item))];
+  }
+  if (topic.key === 'crypto' && candidatePool.length < 5) {
     candidatePool = [...candidatePool, ...buildWeeklyFallbackCandidates(topic.key, pooled).filter(item => !isWeakCandidate(topic.key, item))];
   }
   if (topic.key === 'crypto' && candidatePool.length < 5) {
@@ -794,6 +832,14 @@ async function collectTopic(topic) {
       articlePreview: buildArticlePreview({ ...item, ...articleDetails })
     };
   }));
+
+  selected = selected.filter(item => {
+    const hay = `${item.title || ''} ${item.articleDescription || ''} ${item.articleBody || ''} ${item.sourceUrl || ''}`.toLowerCase();
+    if (topic.key === 'technology' && /podcast scale up nation|scale up nation בהנחיית|scale up nation|פודקאסט scale up nation/.test(hay)) return false;
+    if (topic.key === 'technology' && /the homepage the verge|the verge logo|alongside other announcements last week|said the “idea” isn’t dead|rolling out its ai auto browse|70 to 90 percent of its code/.test(hay)) return false;
+    if (topic.key === 'technology' && item.source === 'WIRED' && /menu security politics|wired insider|livestreams merch search search/.test(hay)) return false;
+    return true;
+  });
 
   const rerunEditorResult = applyEditorSelection(topic.key, selected);
   if (rerunEditorResult.ok && Array.isArray(rerunEditorResult.selected) && rerunEditorResult.selected.length > 0) {

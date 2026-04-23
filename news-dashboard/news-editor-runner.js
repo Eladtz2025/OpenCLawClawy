@@ -15,6 +15,15 @@ function applyEditorSelection(topicKey, scoredItems) {
   const outputPath = path.join(TMP_DIR, `${topicKey}-selected.json`);
   fs.writeFileSync(inputPath, JSON.stringify(scoredItems, null, 2), 'utf8');
 
+  const prefiltered = scoredItems.filter(item => {
+    const hay = `${item.title || ''} ${item.sourceUrl || ''} ${item.source || ''}`.toLowerCase();
+    if (topicKey === 'technology' && /podcast|scale up nation|livestream|join our livestream/.test(hay)) return false;
+    if (topicKey === 'crypto' && /press-release|sponsored-content|largest publicly traded|publicly traded ethereum treasury firms|documentation and governance|unicoin foundation|startale expands/.test(hay)) return false;
+    if (topicKey === 'hapoel' && /מכירת מנוי|מנויים|כרטיסים|מתווה הכרטיסים/.test(hay)) return false;
+    return true;
+  });
+  fs.writeFileSync(inputPath, JSON.stringify(prefiltered, null, 2), 'utf8');
+
   const run = spawnSync(process.execPath, [path.join(OUT_DIR, 'news-editor-agent.js'), topicKey, inputPath, outputPath], {
     cwd: OUT_DIR,
     encoding: 'utf8',

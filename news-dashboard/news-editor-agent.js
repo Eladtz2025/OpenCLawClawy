@@ -85,7 +85,8 @@ function sanitizeSummary(text = '', item, topicKey) {
 
 function scoreEditorial(topicKey, item) {
   const title = cleanTitle(item.title || item.summary || '');
-  const hay = `${title} ${item.source || ''} ${item.sourceUrl || ''}`.toLowerCase();
+  const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
+  const hay = `${title} ${item.source || ''} ${item.sourceUrl || ''} ${body}`.toLowerCase();
   let score = Number(item.score || 0);
 
   if (title.length < 28) score -= 20;
@@ -93,10 +94,29 @@ function scoreEditorial(topicKey, item) {
   if (/continue reading|share this story|read more/.test(hay)) score -= 40;
 
   if (topicKey === 'technology') {
-    if (/microsoft|openai|anthropic|google|meta|claude|gemini|chip|model|agent|ai/i.test(hay)) score += 12;
+    if (/microsoft|openai|anthropic|google|meta|claude|gemini|chip|model|agent|ai|cybersecurity|robot|workspace|chrome/i.test(hay)) score += 12;
+    if (/startup|funding|launch|product|tool|enterprise|browser|cloud|tpu|workspace|gmail|meet/i.test(hay)) score += 4;
+    if (/techcrunch ai|ars technica|the verge tech/i.test(hay)) score += 3;
     if (/house|molotov|virality|heart/.test(hay)) score -= 10;
     if (/podcast|scale up nation/.test(hay)) score -= 24;
+    if (/human sperm|embryos|cocaine to salmon|rfk jr|vision pro rollout|antichrist/i.test(hay)) score -= 12;
+    if (/best fitbit|best smartwatch|best fitness tracker|review|reviews|buyers guide|buying guide|hands on/i.test(hay)) score -= 18;
+    if (/wired/i.test(hay) && !/openai|anthropic|google|meta|microsoft|ai|cybersecurity|agent|model/.test(hay)) score -= 6;
   }
+
+  if (topicKey === 'crypto') {
+    if (/bitcoin|btc|ethereum|eth|xrp|token|market|sec|etf|exchange|defi|stablecoin|wallet/i.test(hay)) score += 12;
+    if (/game|clone|skilled, lucky or rich|search-filings|public dissemination|long reads|deep dives|biggest bitcoin portfolios/.test(hay)) score -= 20;
+    if (/markets|policy|regulation|hack|exploit|treasury|bond|options|node/.test(hay)) score += 4;
+  }
+
+  if (topicKey === 'hapoel') {
+    if (/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה|פלייאוף|עומר פרץ|מחזור|משחק|מאמן/.test(title)) score += 10;
+    if (/מכירת מנוי|מנויים|כרטיסים/.test(title)) score -= 18;
+    if (/מכבי|בית"ר|הפועל חיפה|הפועל ירושלים/.test(title) && !/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה/.test(title)) score -= 12;
+  }
+
+  if (/menu account|security politics|the big story|all news defi explore all news|web3 snapshot|people & culture|follow us \/ a part of|top of page/.test(hay)) score -= 18;
 
   if (topicKey === 'technology2') {
     if (/openai|gemini|claude|model|מודל|השיק|השיקה|כלי|tool|agent/i.test(hay)) score += 10;
@@ -107,28 +127,20 @@ function scoreEditorial(topicKey, item) {
     if (/איראן|עזה|לבנון|חיזבאללה|כנסת|ממשלה|ביטחון|צה"ל|מלחמה|חטופים|קבינט/.test(title)) score += 12;
   }
 
-  if (topicKey === 'crypto') {
-    if (/bitcoin|btc|ethereum|eth|xrp|token|market|sec|etf|exchange|defi/i.test(hay)) score += 12;
-    if (/game|clone|skilled, lucky or rich|search-filings|public dissemination|long reads|deep dives|biggest bitcoin portfolios/.test(hay)) score -= 20;
-  }
-
-  if (topicKey === 'hapoel') {
-    if (/הפועל פ"ת|הפועל פתח תקווה|פלייאוף|עומר פרץ|מחזור|משחק|מאמן/.test(title)) score += 10;
-    if (/מכירת מנוי|מנויים|כרטיסים/.test(title)) score -= 18;
-    if (/מכבי|בית"ר|הפועל חיפה|הפועל ירושלים/.test(title) && !/הפועל פ"ת|הפועל פתח תקווה/.test(title)) score -= 12;
-  }
-
   return score;
 }
 
 function chooseTop(topicKey, candidates, wanted = 5) {
   const filtered = candidates.filter(item => {
     const title = cleanTitle(item.title || item.summary || '');
-    const hay = `${title} ${item.sourceUrl || ''} ${item.source || ''}`.toLowerCase();
+    const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
+    const hay = `${title} ${item.sourceUrl || ''} ${item.source || ''} ${body}`.toLowerCase();
     if (title.length < 24) return false;
     if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return false;
     if (/policy & regulation|theme week|news explorer|tag\/|category\/|\/video\/|podcast|scale up nation|long reads|deep dives|livestream|live stream|join our livestream|largest publicly traded|publicly traded ethereum treasury firms|biggest crypto cases dumped|unicoin foundation|startale expands/i.test(hay)) return false;
-    if (/loading video|search \//i.test((item.articlePreview || item.articleBody || '').toLowerCase())) return false;
+    if (topicKey === 'technology' && /best fitbit|best smartwatch|best fitness tracker|buyers guide|buying guide|\breview\b|\breviews\b|hands on/i.test(hay)) return false;
+    if (/loading video|search \//i.test(hay)) return false;
+    if (/menu account|security politics|the big story|all news defi explore all news|web3 snapshot|follow us \/ a part of|top of page/.test(hay)) return false;
     return true;
   });
 
@@ -143,7 +155,8 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     const key = cleanTitle(item.title || item.summary || '').toLowerCase();
     if (!key || seen.has(key)) continue;
     const sourceCount = sourceCaps.get(item.source) || 0;
-    if (sourceCount >= 2) continue;
+    const sourceCap = topicKey === 'technology' || topicKey === 'crypto' ? 3 : 2;
+    if (sourceCount >= sourceCap) continue;
     out.push({
       ...item,
       summary: cleanTitle(item.summary || item.title || ''),
@@ -152,6 +165,20 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     seen.add(key);
     sourceCaps.set(item.source, sourceCount + 1);
     if (out.length >= wanted) break;
+  }
+
+  if (out.length < wanted) {
+    for (const item of rescored) {
+      const key = cleanTitle(item.title || item.summary || '').toLowerCase();
+      if (!key || seen.has(key)) continue;
+      out.push({
+        ...item,
+        summary: cleanTitle(item.summary || item.title || ''),
+        editorNote: ''
+      });
+      seen.add(key);
+      if (out.length >= wanted) break;
+    }
   }
 
   return out;
