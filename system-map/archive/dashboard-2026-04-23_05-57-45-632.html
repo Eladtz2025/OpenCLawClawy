@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>System Map | OpenClaw</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent: #3b82f6;
+      --accent-soft: #eff6ff;
+      --border: #e2e8f0;
+      --ok: #10b981; --ok-bg: #ecfdf5;
+      --warn: #f59e0b; --warn-bg: #fffbeb;
+      --bad: #ef4444; --bad-bg: #fef2f2;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+    * { box-sizing: border-box; }
+    body { 
+      margin: 0; 
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      background: var(--bg); 
+      color: var(--text-main); 
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    
+    /* Header & Stats */
+    .hero { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-bottom: 32px;
+      padding: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-title h1 { margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.5px; }
+    .hero-title .sub { color: var(--text-muted); font-size: 16px; }
+    
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat-item { 
+      text-align: center; 
+      padding: 12px 20px; 
+      background: var(--bg); 
+      border-radius: 16px; 
+      border: 1px solid var(--border);
+    }
+    .stat-val { display: block; font-size: 24px; font-weight: 700; color: var(--accent); }
+    .stat-lbl { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+    /* Grid */
+    .systems-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
+      gap: 20px; 
+    }
+    .sys-card { 
+      background: var(--card-bg); 
+      border: 1px solid var(--border); 
+      border-radius: 20px; 
+      padding: 20px; 
+      cursor: pointer; 
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .sys-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -5px rgb(0 0 0 / 0.1); border-color: var(--accent); }
+    
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .card-title { font-size: 20px; font-weight: 700; margin: 0; color: var(--text-main); }
+    
+    .badge-group { display: flex; gap: 6px; margin-bottom: 12px; }
+    .badge { 
+      font-size: 11px; 
+      font-weight: 700; 
+      padding: 4px 8px; 
+      border-radius: 6px; 
+      text-transform: uppercase;
+    }
+    .badge-active { background: var(--ok-bg); color: var(--ok); }
+    .badge-stale { background: var(--warn-bg); color: var(--warn); }
+    .badge-missing { background: var(--bad-bg); color: var(--bad); }
+    .badge-score { background: var(--accent-soft); color: var(--accent); }
+
+    .card-summary { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; height: 42px; overflow: hidden; }
+    
+    .card-footer { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 12px; 
+      border-top: 1px solid var(--border); 
+      padding-top: 12px;
+    }
+    .footer-item { font-size: 12px; color: var(--text-muted); }
+    .footer-item strong { color: var(--text-main); display: block; margin-bottom: 2px; }
+
+    /* Modal/Detail View */
+    .modal-overlay { 
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+      background: rgba(15, 23, 42, 0.6); 
+      backdrop-filter: blur(4px); 
+      display: none; justify-content: center; align-items: center; 
+      z-index: 1000; 
+    }
+    .modal { 
+      background: var(--card-bg); 
+      width: 90%; max-width: 700px; 
+      max-height: 85vh; 
+      border-radius: 28px; 
+      padding: 32px; 
+      position: relative; 
+      overflow-y: auto; 
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); 
+    }
+    .close-btn { 
+      position: absolute; top: 20px; left: 20px; 
+      background: var(--bg); border: 1px solid var(--border); 
+      width: 32px; height: 32px; border-radius: 50%; 
+      cursor: pointer; font-weight: bold; 
+    }
+    .detail-header { margin-bottom: 24px; border-bottom: 2px solid var(--accent-soft); padding-bottom: 16px; }
+    .detail-section { margin-bottom: 24px; }
+    .detail-section h3 { 
+      font-size: 16px; color: var(--accent); 
+      margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .detail-box { 
+      background: var(--bg); 
+      padding: 16px; 
+      border-radius: 16px; 
+      border: 1px solid var(--border);
+      font-size: 14px; 
+    }
+    .gap-list { list-style: none; padding: 0; margin: 0; }
+    .gap-item { 
+      padding: 8px 0; 
+      border-bottom: 1px solid var(--border); 
+      display: flex; align-items: center; gap: 8px;
+    }
+    .gap-item:last-child { border-bottom: none; }
+    .gap-item::before { content: '→'; color: var(--accent); font-weight: bold; }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { flex-direction: column; text-align: center; gap: 20px; }
+      .systems-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-title">
+        <h1>System Map</h1>
+        <div class="sub">ניטור ובקרת בריאות מערכות OpenClaw</div>
+      </div>
+      <div class="stats-grid" id="stats">
+        <div class="stat-item"><span class="stat-val" id="stat-total">-</span><span class="stat-lbl">מערכות</span></div>
+        <div class="stat-item"><span class="stat-val" id="stat-heavy">-</span><span class="stat-lbl">כבדות</span></div>
+        <div class="stat-item"><span class="stat-val" id="stat-cleanup">-</span><span class="stat-lbl">דורשות ניקוי</span></div>
+        <div class="stat-item"><span class="stat-val" id="stat-top">-</span><span class="stat-lbl">קרובות ל-10/10</span></div>
+      </div>
+    </header>
+
+    <main class="systems-grid" id="systems-grid"></main>
+  </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal()">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    async function init() {
+      try {
+        // Added cache-busting query parameter to force fresh data fetch
+        const response = await fetch('dashboard-data.json?t=' + Date.now());
+        const data = await response.json();
+        renderStats(data);
+        renderSystems(data.systems);
+      } catch (e) {
+        console.error('Failed to load data:', e);
+        document.getElementById('systems-grid').innerHTML = '<div class="empty">שגיאה בטעינת הנתונים.</div>';
+      }
+    }
+
+    function renderStats(data) {
+      document.getElementById('stat-total').textContent = data.summary.total_systems;
+      document.getElementById('stat-heavy').textContent = data.summary.heavy_systems;
+      document.getElementById('stat-cleanup').textContent = data.summary.needs_cleanup;
+      document.getElementById('stat-top').textContent = data.summary.closest_to_10_count;
+    }
+
+    function renderSystems(systems) {
+      const grid = document.getElementById('systems-grid');
+      grid.innerHTML = systems.map((sys, idx) => `
+        <div class="sys-card" onclick="openModal(${idx})">
+          <div class="card-header">
+            <div class="card-title">${sys.display_name}</div>
+            <span class="badge badge-${sys.status}">${sys.status}</span>
+          </div>
+          <div class="badge-group">
+            <span class="badge badge-score">${sys.overall_score}/10</span>
+            <span class="badge badge-score">${sys.weight}</span>
+          </div>
+          <div class="card-summary">${sys.short_summary}</div>
+          <div class="card-footer">
+            <div class="footer-item"><strong>בעלים</strong>${sys.owner}</div>
+            <div class="footer-item"><strong>משקל</strong>${sys.weight_details?.size_mb || 'N/A'} MB</div>
+          </div>
+        </div>
+      `).join('');
+      
+      // Store data globally for modal
+      window.allSystems = systems;
+    }
+
+    function openModal(idx) {
+      const sys = window.allSystems[idx];
+      const content = document.getElementById('modal-content');
+      
+      content.innerHTML = `
+        <div class="detail-header">
+          <h1 style="margin:0">${sys.display_name}</h1>
+          <div class="sub" style="color:var(--text-muted)">${sys.purpose}</div>
+        </div>
+        
+        <div class="detail-section">
+          <h3>📦 משקל ותשתיות</h3>
+          <div class="detail-box">
+            <strong>גודל:</strong> ${sys.weight_details?.size_mb || 'N/A'} MB<br>
+            <strong>מורכבות:</strong> ${sys.weight_details?.complexity || 'Unknown'}<br>
+            <strong>טיפ לאופטימיזציה:</strong> ${sys.weight_details?.optimization_tip || 'N/A'}
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>⚙️ לוגיקה ותהליכים</h3>
+          <div class="detail-box" style="white-space: pre-wrap;">${sys.detailed_logic || 'לא הוגדר'}</div>
+        </div>
+
+        <div class="detail-section">
+          <h3>🎯 הדרך ל-10/10 (Gap Analysis)</h3>
+          <div class="detail-box">
+            <ul class="gap-list">
+              ${(sys.gap_analysis?.missing_for_10 || []).map(item => `<li class="gap-item">${item}</li>`).join('')}
+              ${(sys.gap_analysis?.missing_for_10 || []).length === 0 ? '<li>אין פערים משמעותיים</li>' : ''}
+            </ul>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>⚠️ סיכונים ונקודות תורפה</h3>
+          <div class="detail-box" style="color:var(--bad-t); border-color:var(--bad)">
+            ${(sys.key_risks || []).join(' | ') || 'לא זוהו סיכונים קריטיים'}
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>🕒 עדכונים</h3>
+          <div class="detail-box">
+            <strong>נבדק לאחרונה:</strong> ${new Date(sys.last_checked).toLocaleString('he-IL')}<br>
+            <strong>עדכון תוכן אחרון:</strong> ${sys.last_updated_if_known || 'לא ידוע'}
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('modal')) {
+        closeModal();
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
