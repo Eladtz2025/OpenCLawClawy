@@ -242,7 +242,7 @@ function formatHebrewDateTime(isoValue) {
 
 function looksGenericHeadline(title = '', url = '') {
   const hay = `${title} ${url}`.toLowerCase();
-  return /view more|blog\.?$|homepage|category|tag\/|price\/|theme week|newsletter|podcast|daily edition|market wrap|explainer|search-filings|public dissemination service|variable insurance products search/.test(hay);
+  return /view more|blog\.?$|homepage|category|tag\/|price\/|theme week|newsletter|podcast|daily edition|market wrap|explainer|search-filings|public dissemination service|variable insurance products search|news-explorer|policy & regulation|\/video\/|\/videos\/|\/search\b|live-coverage|topic\//.test(hay);
 }
 
 function cleanTitle(title = '') {
@@ -262,8 +262,10 @@ function isWeakCandidate(topicKey, item) {
   if (looksGenericHeadline(title, item.sourceUrl)) return true;
   if (title.length < 22) return true;
   if (/^\$?\s*\d+[\d,.:\s%]+$/.test(title)) return true;
-  if (topicKey === 'crypto' && /price\/(bitcoin|ethereum|xrp)|\bbitcoin \$|\bethereum \$|\bxrp \$|search-filings|public dissemination service|variable insurance/i.test(hay)) return true;
-  if (topicKey === 'technology' && /google ads & commerce blog|google deepmind/.test(hay)) return true;
+  if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return true;
+  if (/continue reading|share this story|read more|search \/|loading video/.test(hay)) return true;
+  if (topicKey === 'crypto' && /price\/(bitcoin|ethereum|xrp)|\bbitcoin \$|\bethereum \$|\bxrp \$|search-filings|public dissemination service|variable insurance|policy & regulation|news-explorer|\/resources\//i.test(hay)) return true;
+  if (topicKey === 'technology' && /google ads & commerce blog|google deepmind|podcast scale up nation/.test(hay)) return true;
   if (topicKey === 'technology' && /molotov cocktail at his house/i.test(hay)) return true;
   return false;
 }
@@ -283,11 +285,40 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/theverge\.com\//i.test(url)) return null;
+      if (/\/video\/|\/videos\//i.test(url)) return null;
       if (title.length < 25 || title.length > 180) return null;
       if (/^(read more|continue reading|share this story)$/i.test(title)) return null;
       if (/^[a-z].*house$/i.test(title) && title.length < 45) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 40);
+  },
+  reuters(html, source) {
+    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/reuters\.com\/(world|technology|business|markets|legal)\//i.test(url)) return null;
+      if (/\/video\//i.test(url)) return null;
+      if (title.length < 25 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
+    }, 80);
+  },
+  ars(html, source) {
+    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/arstechnica\.com\/(gadgets|ai|tech-policy|science|information-technology)\//i.test(url)) return null;
+      if (title.length < 25 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
+    }, 80);
+  },
+  wired(html, source) {
+    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/wired\.com\/story\//i.test(url)) return null;
+      if (title.length < 25 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
+    }, 80);
   },
   googleblog(html, source) {
     return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
@@ -352,10 +383,19 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/timesofisrael\.com\//i.test(url)) return null;
-      if (/podcast|newsletter|daily edition/i.test(`${url} ${title}`)) return null;
+      if (/podcast|newsletter|daily edition|\/blogs\//i.test(`${url} ${title}`)) return null;
       if (title.length < 25 || title.length > 220) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url) };
     }, 80);
+  },
+  kan(html, source) {
+    return extract(/<a[^>]+href=['"]([^'"]+)['"][^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/kan\.org\.il\/content\/kan-news\//i.test(url)) return null;
+      if (title.length < 25 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) || `${TODAY}T00:00:00` };
+    }, 120);
   },
   coindesk(html, source) {
     return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
@@ -372,8 +412,36 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/decrypt\.co\//i.test(url)) return null;
+      if (/news-explorer|price|\/videos?\//i.test(url)) return null;
       if (title.length < 25 || title.length > 220) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url) };
+    }, 80);
+  },
+  theblock(html, source) {
+    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/theblock\.co\/post\//i.test(url)) return null;
+      if (title.length < 25 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
+    }, 80);
+  },
+  dlnews(html, source) {
+    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/dlnews\.com\/articles\//i.test(url)) return null;
+      if (title.length < 25 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
+    }, 80);
+  },
+  blockworks(html, source) {
+    return extract(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/blockworks\.co\/news\//i.test(url)) return null;
+      if (title.length < 25 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) };
     }, 80);
   },
   sec(html) {
@@ -414,6 +482,26 @@ const parsers = {
       if (/הפועל חיפה|הפועל ירושלים|מכבי|בית"ר/i.test(title) && !/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה/i.test(title)) return null;
       if (title.length < 20 || title.length > 220) return null;
       return { title, url, publishedAt: TODAY };
+    }, 80);
+  },
+  onesport(html, source) {
+    return extract(/<a[^>]+href=['"]([^'"]+)['"][^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/one\.co\.il\/Article\//i.test(url)) return null;
+      if (!/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה/i.test(title)) return null;
+      if (title.length < 20 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) || TODAY };
+    }, 80);
+  },
+  sport5(html, source) {
+    return extract(/<a[^>]+href=['"]([^'"]+)['"][^>]*>([\s\S]*?)<\/a>/gi, html, (m) => {
+      const url = absolutize(source.url, m[1]);
+      const title = stripTags(m[2]);
+      if (!/sport5\.co\.il\/articles\.aspx/i.test(url)) return null;
+      if (!/הפועל פ"ת|הפועל פתח תקווה|הפועל פתח תקוה/i.test(title)) return null;
+      if (title.length < 20 || title.length > 220) return null;
+      return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) || TODAY };
     }, 80);
   },
   soccerwayhapoel(html, source) {
@@ -546,42 +634,7 @@ async function collectSource(source) {
 }
 
 function buildHapoelFixtureCandidates() {
-  return [
-    {
-      id: `hapoel-fixture-${TODAY}-match`,
-      category: 'hapoel',
-      title: 'הפועל פתח תקווה מגיעה למחזור עם יעד ברור, להבטיח מקום בפלייאוף העליון',
-      source: 'Hapoel Fixture Rule',
-      sourceUrl: 'https://www.hapoelpt.com/post/_9943',
-      sourceKind: 'primary',
-      sourceType: 'fixture',
-      sourceStrength: 'high',
-      publishedAt: TODAY,
-      fresh: true,
-      signalPositive: true,
-      signalNegative: false,
-      verificationCount: 2,
-      collectedAt: NOW,
-      fixture: true
-    },
-    {
-      id: `hapoel-fixture-${TODAY}-playoff`,
-      category: 'hapoel',
-      title: 'הפועל פתח תקווה מול הפועל באר שבע, משחק מפתח במאבק על הפלייאוף העליון',
-      source: 'Hapoel Fixture Rule',
-      sourceUrl: 'https://www.hapoelpt.com/post/_9943',
-      sourceKind: 'primary',
-      sourceType: 'fixture',
-      sourceStrength: 'high',
-      publishedAt: TODAY,
-      fresh: true,
-      signalPositive: true,
-      signalNegative: false,
-      verificationCount: 2,
-      collectedAt: NOW,
-      fixture: true
-    }
-  ];
+  return [];
 }
 
 function buildWeeklyFallbackCandidates(topicKey, pooled) {
@@ -613,7 +666,7 @@ async function collectTopic(topic) {
         source: run.source,
         sourceUrl: raw.url,
         sourceKind: run.kind,
-        sourceType: run.kind,
+        sourceType: raw.fixture ? 'fixture' : run.kind,
         sourceStrength: run.kind === 'primary' ? 'high' : 'medium',
         publishedAt: normalizePublishedAt(raw.publishedAt),
         fresh: isFresh(raw),
@@ -621,7 +674,8 @@ async function collectTopic(topic) {
         signalNegative: signals.negative,
         verificationCount: 1,
         collectedAt: NOW,
-        fixture: Boolean(raw.fixture)
+        fixture: Boolean(raw.fixture),
+        synthetic: Boolean(raw.synthetic)
       });
     }
   }
@@ -637,7 +691,7 @@ async function collectTopic(topic) {
   const strongFresh = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh && !isWeakCandidate(topic.key, item));
   const freshToday = strongFresh.filter(item => normalizePublishedAt(item.publishedAt).slice(0, 10) === TODAY);
   let candidatePool = freshToday.length >= 5 ? freshToday : strongFresh;
-  if ((topic.key === 'crypto' || topic.key === 'hapoel') && candidatePool.length < 5) {
+  if (topic.key === 'crypto' && candidatePool.length < 5) {
     candidatePool = [...candidatePool, ...buildWeeklyFallbackCandidates(topic.key, pooled).filter(item => !isWeakCandidate(topic.key, item))];
   }
   if (candidatePool.length < 5) {
@@ -730,7 +784,7 @@ async function main() {
     lastUpdated: NOW,
     sourcesWorkedCount: new Set(results.flatMap(r => r.topicStatus.sourcesWorked)).size,
     fallbackActive: results.some(r => r.topicStatus.fallbackActive),
-    status: 'SUCCESS',
+    status: results.every(r => r.topicStatus.got >= r.topicStatus.wanted) ? 'SUCCESS' : 'PARTIAL',
     topics: results.map(r => r.topicStatus)
   };
 
@@ -760,6 +814,8 @@ async function main() {
 
   console.log(JSON.stringify({ status: meta.status, items: items.length }, null, 2));
 }
+
+module.exports = { main };
 
 main().catch((error) => {
   console.error(error.stack || String(error));

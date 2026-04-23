@@ -4,9 +4,9 @@
     { "name": "The Verge Tech", "url": "https://www.theverge.com/tech", "kind": "primary", "parser": "verge", "type": "web", "priority": 1 },
     { "name": "Google Blog Technology", "url": "https://blog.google/technology/", "kind": "secondary", "parser": "googleblog", "type": "official", "priority": 2 },
     { "name": "Calcalist Tech", "url": "https://www.calcalist.co.il/calcalistech", "kind": "secondary", "parser": "calcalist", "type": "web", "priority": 2 },
-    { "name": "Reuters Tech", "url": "https://www.reuters.com/technology/", "kind": "secondary", "parser": "techcrunch", "type": "web", "priority": 2 },
-    { "name": "Ars Technica", "url": "https://arstechnica.com/", "kind": "secondary", "parser": "techcrunch", "type": "web", "priority": 2 },
-    { "name": "WIRED", "url": "https://www.wired.com/", "kind": "secondary", "parser": "techcrunch", "type": "web", "priority": 2 }
+    { "name": "Reuters Tech", "url": "https://www.reuters.com/technology/", "kind": "secondary", "parser": "reuters", "type": "web", "priority": 2 },
+    { "name": "Ars Technica", "url": "https://arstechnica.com/", "kind": "secondary", "parser": "ars", "type": "web", "priority": 2 },
+    { "name": "WIRED", "url": "https://www.wired.com/", "kind": "secondary", "parser": "wired", "type": "web", "priority": 2 }
   ],
   "technology2": [
     { "name": "TechNewsHeb Telegram", "url": "https://t.me/s/TechNewsHeb", "kind": "primary", "parser": "telegram", "type": "telegram", "priority": 1 },
@@ -19,8 +19,8 @@
     { "name": "Maariv News", "url": "https://www.maariv.co.il/news", "kind": "secondary", "parser": "maariv", "type": "web", "priority": 2 },
     { "name": "Israel Hayom News", "url": "https://www.israelhayom.co.il/news", "kind": "secondary", "parser": "israelhayom", "type": "web", "priority": 2 },
     { "name": "Times of Israel", "url": "https://www.timesofisrael.com/", "kind": "secondary", "parser": "toi", "type": "web", "priority": 2 },
-    { "name": "Kan News", "url": "https://kan.org.il/news", "kind": "primary", "parser": "ynet", "type": "web", "priority": 1 },
-    { "name": "Israel News Archive", "url": "https://www.ynet.co.il/news/article", "kind": "secondary", "parser": "ynet", "type": "web", "priority": 2 },
+    { "name": "Kan News", "url": "https://www.kan.org.il/lobby/news/", "kind": "primary", "parser": "kan", "type": "web", "priority": 1 },
+    { "name": "Israel News Archive", "url": "https://www.ynet.co.il/news", "kind": "secondary", "parser": "ynet", "type": "web", "priority": 2 },
     { "name": "Maariv Israel", "url": "https://www.maariv.co.il/news/israel", "kind": "secondary", "parser": "maariv", "type": "web", "priority": 2 }
   ],
   "crypto": [
@@ -30,17 +30,17 @@
     { "name": "CoinDesk XRP", "url": "https://www.coindesk.com/tag/xrp/", "kind": "secondary", "parser": "coindesk", "type": "web", "priority": 2 },
     { "name": "Decrypt", "url": "https://decrypt.co/", "kind": "secondary", "parser": "decrypt", "type": "web", "priority": 2 },
     { "name": "SEC Press Releases", "url": "https://www.sec.gov/news/pressreleases", "kind": "secondary", "parser": "sec", "type": "regulator", "priority": 2 },
-    { "name": "The Block", "url": "https://www.theblock.co/", "kind": "secondary", "parser": "coindesk", "type": "web", "priority": 2 },
-    { "name": "DL News", "url": "https://dlnews.com/", "kind": "secondary", "parser": "coindesk", "type": "web", "priority": 2 },
-    { "name": "Blockworks", "url": "https://www.blockworks.org/", "kind": "secondary", "parser": "coindesk", "type": "web", "priority": 2 }
+    { "name": "The Block", "url": "https://www.theblock.co/", "kind": "secondary", "parser": "theblock", "type": "web", "priority": 2 },
+    { "name": "DL News", "url": "https://dlnews.com/", "kind": "secondary", "parser": "dlnews", "type": "web", "priority": 2 },
+    { "name": "Blockworks", "url": "https://blockworks.co/", "kind": "secondary", "parser": "blockworks", "type": "web", "priority": 2 }
   ],
   "hapoel": [
     { "name": "Hapoel PT News", "url": "https://www.hapoelpt.com/news", "kind": "primary", "parser": "hapoelnews", "type": "official", "priority": 1 },
     { "name": "ynet Sport Israel Soccer", "url": "https://www.ynet.co.il/sport/israelisoccer", "kind": "secondary", "parser": "ynetsport", "type": "web", "priority": 2 },
     { "name": "Walla Sport", "url": "https://sports.walla.co.il/category/157", "kind": "secondary", "parser": "wallasport", "type": "web", "priority": 2 },
     { "name": "Soccerway Hapoel PT", "url": "https://www.soccerway.com/teams/israel/hapoel-petah-tiqwa-fc/1448/", "kind": "secondary", "parser": "soccerwayhapoel", "type": "fixture", "priority": 2 },
-    { "name": "ONE Sport", "url": "https://www.one.co.il/", "kind": "secondary", "parser": "ynetsport", "type": "web", "priority": 2 },
-    { "name": "Sport 5", "url": "https://www.sport5.co.il/", "kind": "secondary", "parser": "ynetsport", "type": "web", "priority": 2 },
+    { "name": "ONE Sport", "url": "https://www.one.co.il/", "kind": "secondary", "parser": "onesport", "type": "web", "priority": 2 },
+    { "name": "Sport 5", "url": "https://www.sport5.co.il/", "kind": "secondary", "parser": "sport5", "type": "web", "priority": 2 },
     { "name": "PT News", "url": "https://www.hapoelpt.com/", "kind": "secondary", "parser": "hapoelnews", "type": "official", "priority": 2 }
   ]
 }

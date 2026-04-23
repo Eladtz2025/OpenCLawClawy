@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-15T15:58:27.567Z",
+  "lastPublishedAt": "2026-04-23T06:26:51.101Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "topics": {
     "technology": {
@@ -12,20 +12,14 @@
         "TechCrunch AI",
         "The Verge Tech",
         "Google Blog Technology",
-        "Calcalist Tech"
+        "Calcalist Tech",
+        "Ars Technica",
+        "WIRED"
       ],
       "sourcesFailed": [
         {
           "source": "Reuters Tech",
           "error": "Error: HTTP 401 for https://www.reuters.com/technology/"
-        },
-        {
-          "source": "Ars Technica",
-          "error": "no_items"
-        },
-        {
-          "source": "WIRED",
-          "error": "no_items"
         }
       ],
       "editorApplied": true,
@@ -58,18 +52,11 @@
         "Maariv News",
         "Israel Hayom News",
         "Times of Israel",
+        "Kan News",
+        "Israel News Archive",
         "Maariv Israel"
       ],
-      "sourcesFailed": [
-        {
-          "source": "Kan News",
-          "error": "Error: HTTP 403 for https://kan.org.il/news"
-        },
-        {
-          "source": "Israel News Archive",
-          "error": "Error: HTTP 404 for https://www.ynet.co.il/news/article"
-        }
-      ],
+      "sourcesFailed": [],
       "editorApplied": true,
       "editorError": null
     },
@@ -77,14 +64,16 @@
       "topic": "crypto",
       "label": "קריפטו",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 2,
+      "fallbackActive": true,
       "sourcesWorked": [
         "CoinDesk",
         "CoinDesk Bitcoin",
         "CoinDesk Ethereum",
         "CoinDesk XRP",
-        "Decrypt"
+        "Decrypt",
+        "The Block",
+        "DL News"
       ],
       "sourcesFailed": [
         {
@@ -92,34 +81,29 @@
           "error": "no_items"
         },
         {
-          "source": "The Block",
-          "error": "Error: HTTP 403 for https://www.theblock.co/"
-        },
-        {
-          "source": "DL News",
-          "error": "no_items"
-        },
-        {
           "source": "Blockworks",
-          "error": "TypeError: fetch failed"
+          "error": "no_items"
         }
       ],
-      "editorApplied": false,
-      "editorError": "editor_exit_null"
+      "editorApplied": true,
+      "editorError": null
     },
     "hapoel": {
       "topic": "hapoel",
       "label": "הפועל פתח תקווה",
       "wanted": 5,
-      "got": 5,
-      "fallbackActive": false,
+      "got": 3,
+      "fallbackActive": true,
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
-        "Walla Sport",
         "PT News"
       ],
       "sourcesFailed": [
+        {
+          "source": "Walla Sport",
+          "error": "no_items"
+        },
         {
           "source": "Soccerway Hapoel PT",
           "error": "no_items"

@@ -32,15 +32,19 @@ function renderDashboard(items, meta) {
   const sectionHtml = Object.entries(TOPIC_LABELS).map(([key, label]) => {
     const itemsForTopic = grouped[key] || [];
     const topicMeta = meta.topics.find(t => t.topic === key);
-    const cards = itemsForTopic.map(item => `
+    const cards = itemsForTopic.map(item => {
+      const editorNote = String(item.editorNote || '').trim();
+      const syntheticTag = item.synthetic ? `<span class="tag tag-warn">synthetic</span>` : '';
+      const syntheticMeta = item.synthetic ? `<span>synthetic source</span>` : '';
+      return `
       <article class="card" onclick="window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span><span class="tag">${escapeHtml(item.publishedLabel || item.publishedAt)}</span></div>
+        <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span>${syntheticTag}<span class="tag">${escapeHtml(item.publishedLabel || item.publishedAt)}</span></div>
         <h3>${escapeHtml(item.summary)}</h3>
-        <p class="why-label">סיכום</p>
-        <p class="why-body">${escapeHtml(item.editorNote || '')}</p>
-        <div class="bottom"><span>אימות ${escapeHtml(String(item.verificationCount))}</span></div>
+        ${editorNote ? `<p class="why-label">סיכום</p><p class="why-body">${escapeHtml(editorNote)}</p>` : ''}
+        <div class="bottom"><span>אימות ${escapeHtml(String(item.verificationCount))}</span>${syntheticMeta}</div>
       </article>
-    `).join('');
+    `;
+    }).join('');
     return `
       <section>
         <div class="section-head"><h2>${escapeHtml(label)}</h2><span>${itemsForTopic.length}/5</span></div>
@@ -69,6 +73,7 @@ section{margin:22px 0}
 .card:hover{border-color:#315277;transform:translateY(-1px)}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
+.tag-warn{background:#51311a;color:#ffd7a8}
 h3{margin:10px 0;font-size:18px;line-height:1.55;white-space:pre-line}
 p{margin:8px 0;line-height:1.7;color:#dce7fb}
 .why-label{margin-bottom:4px;font-size:12px;color:#9eb3cf}

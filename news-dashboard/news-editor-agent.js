@@ -15,6 +15,74 @@ function cleanTitle(title = '') {
     .replace(/^משחק\/לו"ז:\s*/i, ''));
 }
 
+function cleanBody(text = '') {
+  const cleaned = normalize(String(text)
+    .replace(/https?:\/\/\S+/gi, ' ')
+    .replace(/\b(?:facebook|whatsapp|telegram|instagram|youtube|rss)\b/gi, ' ')
+    .replace(/\b(?:subscribe|newsletter|advertisement|related|comments?)\b/gi, ' ')
+    .replace(/\b(?:loading video|search \/|close search|skip to main content)\b/gi, ' ')
+    .replace(/[|•·]+/g, ' ')
+    .replace(/\s+/g, ' '));
+
+  const stopMarkers = [
+    'skip to main content',
+    'comment loader',
+    'save story',
+    'coin prices',
+    'price data by',
+    'create an account to save your articles',
+    'comments back to top',
+    'you might also like',
+    'photo-illustration:',
+    'disclosure & polices',
+    'newsletters'
+  ];
+
+  const lower = cleaned.toLowerCase();
+  let cutIndex = cleaned.length;
+  for (const marker of stopMarkers) {
+    const idx = lower.indexOf(marker);
+    if (idx >= 0 && idx < cutIndex) cutIndex = idx;
+  }
+  return normalize(cleaned.slice(0, cutIndex));
+}
+
+function makeFallbackSummary(item, topicKey) {
+  const title = cleanTitle(item.title || item.summary || '');
+  const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
+  const compactBody = body
+    .replace(title, '')
+    .replace(/^[-–—,:;\s]+/, '')
+    .trim();
+
+  if (topicKey === 'hapoel') {
+    if (compactBody) return compactBody.slice(0, 220);
+    return `עדכון קצר סביב ${title}.`;
+  }
+
+  if (topicKey === 'technology2' && compactBody) {
+    return compactBody.slice(0, 180);
+  }
+
+  if (compactBody) return compactBody.slice(0, 220);
+  return title;
+}
+
+function sanitizeSummary(text = '', item, topicKey) {
+  const cleaned = normalize(String(text)
+    .replace(/^summary\s*[:：-]?/i, '')
+    .replace(/^סיכום\s*[:：-]?/i, '')
+    .replace(/^highlight[s]?\s*[:：-]?/i, '')
+    .replace(/^["'`]+|["'`]+$/g, '')
+    .replace(/\s+/g, ' '));
+
+  if (!cleaned) return makeFallbackSummary(item, topicKey);
+  if (cleaned.length < 20) return makeFallbackSummary(item, topicKey);
+  if (/^(none|n\/a|null|undefined)$/i.test(cleaned)) return makeFallbackSummary(item, topicKey);
+  if (/skip to main content|coin prices|comment loader|save story/i.test(cleaned)) return makeFallbackSummary(item, topicKey);
+  return cleaned.slice(0, 260);
+}
+
 function scoreEditorial(topicKey, item) {
   const title = cleanTitle(item.title || item.summary || '');
   const hay = `${title} ${item.source || ''} ${item.sourceUrl || ''}`.toLowerCase();
@@ -52,7 +120,17 @@ function scoreEditorial(topicKey, item) {
 }
 
 function chooseTop(topicKey, candidates, wanted = 5) {
-  const rescored = candidates.map(item => ({ ...item, editorialScore: scoreEditorial(topicKey, item) }));
+  const filtered = candidates.filter(item => {
+    const title = cleanTitle(item.title || item.summary || '');
+    const hay = `${title} ${item.sourceUrl || ''} ${item.source || ''}`.toLowerCase();
+    if (title.length < 24) return false;
+    if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return false;
+    if (/policy & regulation|theme week|news explorer|tag\/|category\/|\/video\//i.test(hay)) return false;
+    if (/loading video|search \//i.test((item.articlePreview || item.articleBody || '').toLowerCase())) return false;
+    return true;
+  });
+
+  const rescored = filtered.map(item => ({ ...item, editorialScore: scoreEditorial(topicKey, item) }));
   rescored.sort((a, b) => b.editorialScore - a.editorialScore || Number(b.score || 0) - Number(a.score || 0));
 
   const out = [];
@@ -102,16 +180,16 @@ Summary (Hebrew):`;
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gemma4:31b-cloud', // Using the active model
+        model: 'gemma4:31b-cloud',
         prompt: prompt,
         stream: false
       })
     });
     const data = await response.json();
-    return data.response.trim();
+    return sanitizeSummary(data.response || '', item, topicKey);
   } catch (e) {
     console.error(`LLM Error for ${title}: ${e.message}`);
-    return ''; // Fallback to empty if LLM fails
+    return makeFallbackSummary(item, topicKey);
   }
 }
 
@@ -130,7 +208,7 @@ async function main() {
   // Now we apply the Smart Edit to the selected items
   for (const item of selected) {
     const summary = await generateSmartSummary(item, topicKey);
-    item.editorNote = summary;
+    item.editorNote = sanitizeSummary(summary, item, topicKey);
   }
 
   fs.writeFileSync(path.resolve(outputPath), JSON.stringify(selected, null, 2), 'utf8');
