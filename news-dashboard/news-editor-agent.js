@@ -95,6 +95,7 @@ function scoreEditorial(topicKey, item) {
   if (topicKey === 'technology') {
     if (/microsoft|openai|anthropic|google|meta|claude|gemini|chip|model|agent|ai/i.test(hay)) score += 12;
     if (/house|molotov|virality|heart/.test(hay)) score -= 10;
+    if (/podcast|scale up nation/.test(hay)) score -= 24;
   }
 
   if (topicKey === 'technology2') {
@@ -108,11 +109,12 @@ function scoreEditorial(topicKey, item) {
 
   if (topicKey === 'crypto') {
     if (/bitcoin|btc|ethereum|eth|xrp|token|market|sec|etf|exchange|defi/i.test(hay)) score += 12;
-    if (/game|clone|skilled, lucky or rich|search-filings|public dissemination/.test(hay)) score -= 20;
+    if (/game|clone|skilled, lucky or rich|search-filings|public dissemination|long reads|deep dives|biggest bitcoin portfolios/.test(hay)) score -= 20;
   }
 
   if (topicKey === 'hapoel') {
     if (/הפועל פ"ת|הפועל פתח תקווה|פלייאוף|עומר פרץ|מחזור|משחק|מאמן/.test(title)) score += 10;
+    if (/מכירת מנוי|מנויים|כרטיסים/.test(title)) score -= 18;
     if (/מכבי|בית"ר|הפועל חיפה|הפועל ירושלים/.test(title) && !/הפועל פ"ת|הפועל פתח תקווה/.test(title)) score -= 12;
   }
 
@@ -125,7 +127,7 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     const hay = `${title} ${item.sourceUrl || ''} ${item.source || ''}`.toLowerCase();
     if (title.length < 24) return false;
     if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return false;
-    if (/policy & regulation|theme week|news explorer|tag\/|category\/|\/video\//i.test(hay)) return false;
+    if (/policy & regulation|theme week|news explorer|tag\/|category\/|\/video\/|podcast|scale up nation|long reads|deep dives|livestream|live stream|join our livestream|largest publicly traded|publicly traded ethereum treasury firms|biggest crypto cases dumped|unicoin foundation|startale expands/i.test(hay)) return false;
     if (/loading video|search \//i.test((item.articlePreview || item.articleBody || '').toLowerCase())) return false;
     return true;
   });

@@ -156,25 +156,63 @@ function extractMetaDescription(html = '') {
   return match ? normalizeWhitespace(decodeEntities(match[1])) : '';
 }
 
-function splitParagraphsFromHtml(html = '') {
+function cleanArticleText(text = '') {
+  return normalizeWhitespace(String(text)
+    .replace(/skip to main content/gi, ' ')
+    .replace(/comment loader/gi, ' ')
+    .replace(/save story/gi, ' ')
+    .replace(/comments back to top/gi, ' ')
+    .replace(/you might also like/gi, ' ')
+    .replace(/photo-illustration:[^\n]+/gi, ' ')
+    .replace(/coin prices[\s\S]*?(?=price data by|news |law and order|markets |business |in brief|$)/i, ' ')
+    .replace(/price data by decrypt/gi, ' ')
+    .replace(/create an account to save your articles\.?/gi, ' ')
+    .replace(/add on google/gi, ' ')
+    .replace(/add decrypt as your preferred source[^\n]*/gi, ' ')
+    .replace(/share link נפתח בכרטיסייה חדשה/gi, ' ')
+    .replace(/תפריט האתר/gi, ' ')
+    .replace(/פוסטים קשורים[\s\S]*/i, ' ')
+    .replace(/קישורים[\s\S]*/i, ' ')
+    .replace(/&copy;[\s\S]*/i, ' ')
+    .replace(/\b(?:newsletter|advertisement|related|comments?)\b/gi, ' ')
+    .replace(/\s+/g, ' '));
+}
+
+function splitParagraphsFromHtml(html = '', item = {}) {
   const paragraphs = [];
   const regex = /<(p|h2|h3|li)[^>]*>([\s\S]*?)<\/\1>/gi;
   let match;
   while ((match = regex.exec(String(html))) && paragraphs.length < 12) {
-    const text = normalizeWhitespace(stripTags(match[2] || ''));
+    const text = cleanArticleText(stripTags(match[2] || ''));
     if (!text) continue;
     if (text.length < 45) continue;
     if (/^עקבו|^להצטרפות|^לחצו|^subscribe|^newsletter|^advertisement|^related|^עוד בנושא|^תגובות/i.test(text)) continue;
+    if (/^share link|^comment loader|^save story|^you might also like/i.test(text)) continue;
+    if (/^פוסטים קשורים|^קישורים|^תפריט האתר/i.test(text)) continue;
     paragraphs.push(text);
   }
+
+  if (/wired\.com|decrypt\.co|kan\.org\.il|hapoelpt\.com/i.test(item.sourceUrl || '')) {
+    return paragraphs.map(p => cleanArticleText(p)).filter(Boolean);
+  }
   return paragraphs;
+}
+
+function normalizeArticleTitle(item, text = '') {
+  let out = cleanTitle(text);
+  if (item.source === 'Kan News') {
+    out = out.replace(/\s+[א-ת'"\- ]+\|\s*עודכן ב[-–—:]?$/u, '');
+    out = out.replace(/\s*\|\s*עודכן ב[-–—:]?$/u, '');
+    out = out.replace(/\s+עודכן ב[-–—:]?$/u, '');
+  }
+  return cleanTitle(out);
 }
 
 async function fetchArticleDetails(item) {
   try {
     const html = await fetchText(item.sourceUrl);
-    const metaDescription = extractMetaDescription(html);
-    const paragraphs = splitParagraphsFromHtml(html);
+    const metaDescription = cleanArticleText(extractMetaDescription(html));
+    const paragraphs = splitParagraphsFromHtml(html, item);
     const combined = [metaDescription, ...paragraphs]
       .filter(Boolean)
       .filter((text, index, arr) => arr.findIndex(x => x === text) === index)
@@ -182,14 +220,16 @@ async function fetchArticleDetails(item) {
     return {
       articleDescription: metaDescription,
       articleBody: combined.slice(0, 4000),
-      articleParagraphs: paragraphs.slice(0, 4)
+      articleParagraphs: paragraphs.slice(0, 4),
+      normalizedTitle: normalizeArticleTitle(item, item.title || '')
     };
   } catch (error) {
     return {
       articleDescription: '',
       articleBody: '',
       articleParagraphs: [],
-      articleFetchError: String(error)
+      articleFetchError: String(error),
+      normalizedTitle: normalizeArticleTitle(item, item.title || '')
     };
   }
 }
@@ -263,10 +303,11 @@ function isWeakCandidate(topicKey, item) {
   if (title.length < 22) return true;
   if (/^\$?\s*\d+[\d,.:\s%]+$/.test(title)) return true;
   if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return true;
-  if (/continue reading|share this story|read more|search \/|loading video/.test(hay)) return true;
-  if (topicKey === 'crypto' && /price\/(bitcoin|ethereum|xrp)|\bbitcoin \$|\bethereum \$|\bxrp \$|search-filings|public dissemination service|variable insurance|policy & regulation|news-explorer|\/resources\//i.test(hay)) return true;
-  if (topicKey === 'technology' && /google ads & commerce blog|google deepmind|podcast scale up nation/.test(hay)) return true;
-  if (topicKey === 'technology' && /molotov cocktail at his house/i.test(hay)) return true;
+  if (/continue reading|share this story|read more|search \/|loading video|livestream|live stream|join our livestream/.test(hay)) return true;
+  if (topicKey === 'crypto' && /price\/(bitcoin|ethereum|xrp)|\bbitcoin \$|\bethereum \$|\bxrp \$|search-filings|public dissemination service|variable insurance|policy & regulation|news-explorer|\/resources\/|largest publicly traded|publicly traded ethereum treasury firms|biggest crypto cases dumped|unicoin foundation|startale expands/i.test(hay)) return true;
+  if (topicKey === 'technology' && /google ads & commerce blog|google deepmind|podcast scale up nation|scale up nation|podcast|livestream|join our livestream/i.test(hay)) return true;
+  if (topicKey === 'technology' && /molotov cocktail at his house|usaid whistleblower/i.test(hay)) return true;
+  if (topicKey === 'hapoel' && /מכירת מנוי|מנויים|כרטיסים|מתווה הכרטיסים/i.test(hay)) return true;
   return false;
 }
 
@@ -335,7 +376,7 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/calcalist\.co\.il\//i.test(url)) return null;
-      if (/smbc|conference|marketmoney|podcast/i.test(url + ' ' + title)) return null;
+      if (/smbc|conference|marketmoney|podcast|scale up nation|\bמוסף כלכליסט\b/i.test(url + ' ' + title)) return null;
       if (title.length < 25 || title.length > 220) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url, m[0], html) || `${TODAY}T00:00:00` };
     }, 80);
@@ -412,7 +453,8 @@ const parsers = {
       const url = absolutize(source.url, m[1]);
       const title = stripTags(m[2]);
       if (!/decrypt\.co\//i.test(url)) return null;
-      if (/news-explorer|price|\/videos?\//i.test(url)) return null;
+      if (/news-explorer|price|\/videos?\/|\/learn\/|\/research\//i.test(url)) return null;
+      if (/biggest bitcoin portfolios|long reads|deep dives/i.test(url + ' ' + title)) return null;
       if (title.length < 25 || title.length > 220) return null;
       return { title, url, publishedAt: inferPublishedAt(title, url) };
     }, 80);
@@ -662,7 +704,7 @@ async function collectTopic(topic) {
       pooled.push({
         id: `${topic.key}-${Buffer.from(raw.title).toString('base64').replace(/[^a-z0-9]/gi, '').slice(0, 24).toLowerCase()}`,
         category: topic.key,
-        title: raw.title,
+        title: normalizeArticleTitle({ source: run.source }, raw.title),
         source: run.source,
         sourceUrl: raw.url,
         sourceKind: run.kind,
@@ -690,9 +732,13 @@ async function collectTopic(topic) {
 
   const strongFresh = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh && !isWeakCandidate(topic.key, item));
   const freshToday = strongFresh.filter(item => normalizePublishedAt(item.publishedAt).slice(0, 10) === TODAY);
+  const broadFresh = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh);
   let candidatePool = freshToday.length >= 5 ? freshToday : strongFresh;
   if (topic.key === 'crypto' && candidatePool.length < 5) {
     candidatePool = [...candidatePool, ...buildWeeklyFallbackCandidates(topic.key, pooled).filter(item => !isWeakCandidate(topic.key, item))];
+  }
+  if (topic.key === 'crypto' && candidatePool.length < 5) {
+    candidatePool = [...candidatePool, ...broadFresh.filter(item => /coindesk|the block|dl news/i.test(item.source.toLowerCase()) && !isWeakCandidate(topic.key, item))];
   }
   if (candidatePool.length < 5) {
     candidatePool = [...candidatePool, ...pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh && !isWeakCandidate(topic.key, item))];
@@ -743,6 +789,8 @@ async function collectTopic(topic) {
     return {
       ...item,
       ...articleDetails,
+      title: articleDetails.normalizedTitle || item.title,
+      summary: makeSummary(topic.key, { ...item, title: articleDetails.normalizedTitle || item.title }),
       articlePreview: buildArticlePreview({ ...item, ...articleDetails })
     };
   }));
