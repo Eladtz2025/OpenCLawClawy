@@ -157,7 +157,7 @@ function extractMetaDescription(html = '') {
 }
 
 function cleanArticleText(text = '') {
-  return normalizeWhitespace(String(text)
+  let cleaned = normalizeWhitespace(String(text)
     .replace(/skip to main content/gi, ' ')
     .replace(/comment loader/gi, ' ')
     .replace(/save story/gi, ' ')
@@ -171,6 +171,27 @@ function cleanArticleText(text = '') {
     .replace(/add decrypt as your preferred source[^\n]*/gi, ' ')
     .replace(/share link נפתח בכרטיסייה חדשה/gi, ' ')
     .replace(/תפריט האתר/gi, ' ')
+    .replace(/מבזקים דווחו לנו חיפוש ראשי ידיעות\+[^\n]*/gi, ' ')
+    .replace(/חדשות פודקאסטים כלכלה ספורט תרבות רכילות בריאות רכב דיגיטל לאשה אוכל נדל"ן אנרגיה עוד מנויים ידיעות\+/gi, ' ')
+    .replace(/getting your trinity audio player ready\.{0,3}/gi, ' ')
+    .replace(/the first strictlyvc of 2026 hits sf on april 30[\s\S]*?latest/gi, ' ')
+    .replace(/strictlyvc kicks off the year in sf[\s\S]*?(?=every weekday and sunday|$)/gi, ' ')
+    .replace(/every weekday and sunday, you can get the best of techcrunch'?s coverage\.?/gi, ' ')
+    .replace(/techcrunch mobility is your destination for transportation news and insight\.?/gi, ' ')
+    .replace(/startups are the core of techcrunch, so get our best coverage delivered weekly\.?/gi, ' ')
+    .replace(/provides movers and shakers with the info they need to start their day\.?/gi, ' ')
+    .replace(/by submitting your email, you agree to our terms and privacy notice\.?/gi, ' ')
+    .replace(/most popular[\s\S]*/gi, ' ')
+    .replace(/see more subscribe for the industry’s biggest tech news[\s\S]*/gi, ' ')
+    .replace(/meet your next investor or portfolio startup at disrupt[\s\S]*/gi, ' ')
+    .replace(/(?:[a-z]+\s+){2,8}dl news defi regulation markets deals ethereum bitcoin about us contact us work with us[\s\S]*?share copy link/gi, ' ')
+    .replace(/(?:defi|regulation|markets|deals|ethereum|bitcoin)\s+(?:defi|regulation|markets|deals|ethereum|bitcoin)(?:\s+[a-z]+){0,20}share copy link/gi, ' ')
+    .replace(/(?:deals|defi|regulation|markets|ethereum|bitcoin)\s+about us contact us work with us dlnews verify\s*\/\s*a part of latest[\s\S]*?share copy link/gi, ' ')
+    .replace(/(?:-?\d+(?:\.\d+)?\s*%\s*[a-z0-9_]+\s*\$\s*\d+(?:\.\d+)?\s*)+/gi, ' ')
+    .replace(/illustration:\s*[^\n]+/gi, ' ')
+    .replace(/source:\s*shutterstock[^\n]*/gi, ' ')
+    .replace(/-?\d+(?:\.\d+)?\s*%\s*[a-z]{2,10}\s*\$\s*\d+(?:\.\d+)?/gi, ' ')
+    .replace(/\bDEXs Vol\b[\s\S]*?(?=Regulation|Markets|DeFi|Home)/gi, ' ')
     .replace(/פוסטים קשורים[\s\S]*/i, ' ')
     .replace(/קישורים[\s\S]*/i, ' ')
     .replace(/&copy;[\s\S]*/i, ' ')
@@ -180,7 +201,30 @@ function cleanArticleText(text = '') {
     .replace(/all news defi explore all news|web3 snapshot|people & culture|llama u opinion|etf tracker|spotlight reports interviews|introducing insights collections/gi, ' ')
     .replace(/trusted by|get in touch|work with dlr|editorial standards|who we are|follow us/gi, ' ')
     .replace(/\b(?:newsletter|advertisement|related|comments?)\b/gi, ' ')
+    .replace(/תגיות:\s*[^\n]+/gi, ' ')
+    .replace(/עודכן:\s*\d{1,2}\s+באפר׳/gi, ' ')
+    .replace(/זמן קריאה\s*\d+\s*דקות?/gi, ' ')
     .replace(/\s+/g, ' '));
+
+  cleaned = cleaned
+    .replace(/^.*?\b(?:DL News|DeFi|Regulation|Markets|Deals|Ethereum|Bitcoin|About us|Contact us|Work with us|DLNews verify|A part of LATEST)\b[\s\S]*?(?=Stablecoin giant|Strategy’s new|Polymarket chances|A new paper|A lawsuit filed|Crypto mogul|An organisation committed|Investors can’t get enough|Crypto giant Tether|Pro-Clarity Act|$)/i, '')
+    .replace(/^.*?\bTether helps US feds by freezing \$344m in USDT tied to crime\b[^\n]*/i, '')
+    .replace(/^.*?\bEveryone is frothing about Bitcoin treasury company Strategy’s STRC bond\. Should they be\?\b[^\n]*/i, '')
+    .replace(/^.*?\bSlow, expensive.? fate awaits if Clarity Act fails, warn experts as clock ticks on bill\b[^\n]*/i, '')
+    .replace(/^.*?\bEthereum's Wall Street cheerleaders see rise to \$250,000, call Bitcoin and gold 'dead capital'\b[^\n]*/i, '')
+    .replace(/^.*?\bHere are the four craziest details in Justin Sun’s World Liberty lawsuit\b[^\n]*/i, '')
+    .replace(/Every weekday and Sunday, you can get the best of TechCrunch[\s\S]*$/i, '')
+    .replace(/When you purchase through links in our articles, we may earn a small commission[\s\S]*$/i, '')
+    .replace(/Unauthorized group has gained access to Anthropic's exclusive cyber tool Mythos[\s\S]*$/i, '')
+    .replace(/StrictlyVC San Francisco 2026[\s\S]*$/i, '')
+    .replace(/Startups Don't stop hiring humans[\s\S]*$/i, '')
+    .replace(/In Brief Bret Taylor's Sierra buys YC-backed AI startup Fragment[\s\S]*$/i, '')
+    .replace(/0\.03 % [\s\S]*?Share Copy link\s*/i, '')
+    .replace(/^עדכון\s*\d{1,2}\/\d{1,2}:?/u, '')
+    .replace(/^שעות המשחקים עודכנו עד המחזור ה\d+\.?/u, '')
+    .trim();
+
+  return normalizeWhitespace(cleaned);
 }
 
 function splitParagraphsFromHtml(html = '', item = {}) {
@@ -310,12 +354,15 @@ function looksGenericHeadline(title = '', url = '') {
 
 function cleanTitle(title = '') {
   return stripTrailingJunk(decodeEntities(title)
+    .replace(/^\d{1,2}:\d{2}\s+/u, '')
     .replace(/^מה חדש:\s*/i, '')
     .replace(/^כדאי לדעת:\s*/i, '')
     .replace(/^התפתחות מרכזית:\s*/i, '')
     .replace(/^תמונת מצב:\s*/i, '')
     .replace(/^עדכון מועדון:\s*/i, '')
     .replace(/^משחק\/לו"ז:\s*/i, '')
+    .replace(/\|\s*נחשף ב-ynet\s*$/iu, '')
+    .replace(/^הוא נשאר[:\s-]*/u, '')
     .replace(/\s+/g, ' '));
 }
 
@@ -596,9 +643,15 @@ function topicSignals(topicKey, text, url) {
 }
 
 function isFresh(item) {
-  const publishedValue = normalizePublishedAt(item.publishedAt);
+  const rawValue = String(item.publishedAt || '').trim();
+  const publishedValue = normalizePublishedAt(rawValue);
   const published = new Date(publishedValue);
   const windowStart = new Date(WINDOW_START_ISO);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(rawValue)) {
+    const publishedDay = rawValue;
+    const windowDay = WINDOW_START_ISO.slice(0, 10);
+    return publishedDay === TODAY || publishedDay === windowDay;
+  }
   if (!Number.isNaN(published.getTime()) && !Number.isNaN(windowStart.getTime())) {
     return published.getTime() >= windowStart.getTime();
   }
@@ -619,7 +672,10 @@ function buildArticlePreview(item) {
   if (Array.isArray(item.articleParagraphs)) {
     for (const paragraph of item.articleParagraphs.slice(0, 3)) chunks.push(paragraph);
   }
-  const unique = chunks.filter(Boolean).filter((text, index, arr) => arr.findIndex(x => x === text) === index);
+  const unique = chunks
+    .map(text => cleanArticleText(text))
+    .filter(Boolean)
+    .filter((text, index, arr) => arr.findIndex(x => x === text) === index);
   return unique.slice(0, 3).join('\n');
 }
 
@@ -664,11 +720,30 @@ function scoreItem(topicKey, item, sourceCount) {
 
 function dedup(items) {
   const seen = new Set();
+  const softSeen = new Set();
   const out = [];
   for (const item of items) {
-    const key = cleanTitle(item.title).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    const topic = String(item.category || '');
+    const title = cleanTitle(item.title);
+    const key = title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    let softTitle = title.toLowerCase();
+    softTitle = softTitle
+      .replace(/\|\s*נחשף ב-ynet/iu, '')
+      .replace(/^הוא נשאר[:\s-]*/u, '')
+      .replace(/^עכשיו זה רשמי[:\s-]*/u, '')
+      .replace(/חוזהו/g, 'חוזה')
+      .replace(/האריך את/g, 'האריך')
+      .replace(/בהפועל\s*פ(?:"|׳|')?ת/gu, 'הפועל פתח תקווה')
+      .replace(/[^\p{L}\p{N}]+/gu, ' ')
+      .trim();
+    let softKey = softTitle.split(' ').filter(Boolean).slice(0, 7).join(' ');
+    if (topic === 'hapoel' && /עומר פרץ/.test(title) && /האריך/.test(title) && /2028|חוזה/.test(title)) {
+      softKey = 'hapoel omer peretz extension';
+    }
     if (!key || seen.has(key)) continue;
+    if (softKey && softSeen.has(`${topic}:${softKey}`)) continue;
     seen.add(key);
+    if (softKey) softSeen.add(`${topic}:${softKey}`);
     out.push(item);
   }
   return out;

@@ -22,6 +22,13 @@ function cleanBody(text = '') {
     .replace(/\b(?:subscribe|newsletter|advertisement|related|comments?)\b/gi, ' ')
     .replace(/\b(?:loading video|search \/|close search|skip to main content)\b/gi, ' ')
     .replace(/[|•·]+/g, ' ')
+    .replace(/every weekday and sunday, you can get the best of techcrunch[\s\S]*$/i, ' ')
+    .replace(/when you purchase through links in our articles, we may earn a small commission[\s\S]*$/i, ' ')
+    .replace(/all news defi explore all news[\s\S]*/i, ' ')
+    .replace(/dl news defi regulation markets deals ethereum bitcoin about us contact us work with us[\s\S]*?share copy link/i, ' ')
+    .replace(/0\.03 % [\s\S]*?share copy link/i, ' ')
+    .replace(/^עדכון\s*\d{1,2}\/\d{1,2}:?/u, ' ')
+    .replace(/^שעות המשחקים עודכנו עד המחזור ה\d+\.?/u, ' ')
     .replace(/\s+/g, ' '));
 
   const stopMarkers = [
@@ -56,7 +63,11 @@ function makeFallbackSummary(item, topicKey) {
     .trim();
 
   if (topicKey === 'hapoel') {
-    if (compactBody) return compactBody.slice(0, 220);
+    const shortBody = compactBody
+      .replace(/^נקבע סדר ושעות המשחקים לפלייאוף העליון\s*\d+\s*באפר׳?/u, '')
+      .replace(/^בהחלטת המנהלת מחזורי 34 ו35 הוחלפו\. המשחקים בעמוד זה מעודכנים בהתאם\.?/u, '')
+      .trim();
+    if (shortBody) return shortBody.slice(0, 220);
     return `עדכון קצר סביב ${title}.`;
   }
 

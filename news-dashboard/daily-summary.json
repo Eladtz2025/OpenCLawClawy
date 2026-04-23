@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-23T11:16:48.276Z",
+  "generatedAt": "2026-04-23T22:25:37.520Z",
   "status": "PARTIAL",
   "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-23T11:16:48.276Z",
-  "sourcesWorkedCount": 27,
+  "lastPublishedAt": "2026-04-23T22:25:37.520Z",
+  "sourcesWorkedCount": 28,
   "fallbackActive": true,
   "topicStatus": [
     {
@@ -101,6 +101,7 @@
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
+        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -114,10 +115,6 @@
         },
         {
           "source": "ONE Sport",
-          "error": "no_items"
-        },
-        {
-          "source": "Sport 5",
           "error": "no_items"
         }
       ],

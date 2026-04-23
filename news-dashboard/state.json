@@ -1,5 +1,5 @@
 {
-  "lastPublishedAt": "2026-04-23T11:16:48.276Z",
+  "lastPublishedAt": "2026-04-23T22:25:37.520Z",
   "latestUrl": "./news-dashboard/live-site/latest.html",
   "topics": {
     "technology": {
@@ -97,6 +97,7 @@
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
+        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -110,10 +111,6 @@
         },
         {
           "source": "ONE Sport",
-          "error": "no_items"
-        },
-        {
-          "source": "Sport 5",
           "error": "no_items"
         }
       ],
