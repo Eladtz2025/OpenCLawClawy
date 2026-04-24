@@ -25,9 +25,25 @@ function escapeHtml(value = '') {
     .replace(/\"/g, '&quot;');
 }
 
+function formatJerusalemTimestamp(isoValue) {
+  const date = new Date(isoValue || Date.now());
+  if (Number.isNaN(date.getTime())) return String(isoValue || '');
+  return new Intl.DateTimeFormat('he-IL', {
+    timeZone: 'Asia/Jerusalem',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  }).format(date);
+}
+
 function renderDashboard(items, meta) {
   const totalFailedSources = meta.topics.reduce((sum, topic) => sum + (topic.sourcesFailed?.length || 0), 0);
   const grouped = Object.fromEntries(Object.entries(TOPIC_LABELS).map(([key, label]) => [key, items.filter(item => item.category === key)]));
+  const buildLabel = formatJerusalemTimestamp(meta.lastUpdated);
   
   const sectionHtml = Object.entries(TOPIC_LABELS).map(([key, label]) => {
     const itemsForTopic = grouped[key] || [];
@@ -67,6 +83,7 @@ function renderDashboard(items, meta) {
 body{margin:0;background:#07111d;color:#eef4ff;font-family:Segoe UI,Arial,sans-serif}
 main{max-width:1280px;margin:0 auto;padding:20px}
 header{margin-bottom:18px;position:sticky;top:0;background:#07111df2;backdrop-filter:blur(8px);padding:8px 0 12px;z-index:5}
+.build-banner{display:inline-flex;align-items:center;gap:8px;background:#12304f;border:1px solid #315277;color:#d9ecff;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600;margin:8px 0 10px}
 .topmeta{display:flex;gap:10px;flex-wrap:wrap;color:#9eb3cf;font-size:13px}
 section{margin:22px 0}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
@@ -93,7 +110,8 @@ a{color:#8fd3ff;text-decoration:none}
 <main>
 <header>
 <h1>חדשות הבוקר - ${TODAY}</h1>
-<div class="topmeta"><span>updated: ${escapeHtml(meta.lastUpdated)}</span><span>sources worked: ${escapeHtml(String(meta.sourcesWorkedCount))}</span><span>sources failed: ${escapeHtml(String(totalFailedSources))}</span><span>fallback: ${meta.fallbackActive ? 'yes' : 'no'}</span><span>status: ${escapeHtml(meta.status)}</span></div>
+<div class="build-banner">build updated: ${escapeHtml(buildLabel)}<span>•</span><span>${escapeHtml(meta.buildId)}</span></div>
+<div class="topmeta"><span>updated (ISO): ${escapeHtml(meta.lastUpdated)}</span><span>sources worked: ${escapeHtml(String(meta.sourcesWorkedCount))}</span><span>sources failed: ${escapeHtml(String(totalFailedSources))}</span><span>fallback: ${meta.fallbackActive ? 'yes' : 'no'}</span><span>status: ${escapeHtml(meta.status)}</span></div>
 </header>
 ${sectionHtml}
 </main>
@@ -161,6 +179,7 @@ async function main() {
 
   const meta = {
     lastUpdated: state.lastPublishedAt || new Date().toISOString(),
+    buildId: state.buildId || `build-${Date.now()}`,
     sourcesWorkedCount: new Set(state.topics ? Object.values(state.topics).flatMap(t => t.sourcesWorked || []) : []).size,
     fallbackActive: state.topics ? Object.values(state.topics).some(t => t.fallbackActive) : false,
     status: items.length >= (Object.keys(TOPIC_LABELS).length * 5) ? 'SUCCESS' : 'PARTIAL',

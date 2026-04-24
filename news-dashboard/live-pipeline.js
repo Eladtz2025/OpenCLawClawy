@@ -16,6 +16,7 @@ const PUBLIC_URL_BASE = 'https://eladtz2025.github.io/OpenCLawClawy/news-dashboa
 const TODAY = new Date().toISOString().slice(0, 10);
 const PUBLIC_URL = `${PUBLIC_URL_BASE}/${TODAY}.html`;
 const NOW = new Date().toISOString();
+const BUILD_ID = `build-${Date.now()}`;
 
 const TOPIC_LABELS = {
   technology: 'טכנולוגיה',
@@ -1043,13 +1044,16 @@ async function main() {
 
   const state = {
     lastPublishedAt: NOW,
-    latestUrl: './news-dashboard/live-site/latest.html',
+    buildId: BUILD_ID,
+    latestUrl: `./news-dashboard/live-site/latest.html?v=${BUILD_ID}`,
+    publicUrl: `${PUBLIC_URL}?v=${BUILD_ID}`,
     topics: Object.fromEntries(results.map(r => [r.topicStatus.topic, r.topicStatus]))
   };
   fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2), 'utf8');
 
   const summary = {
     generatedAt: NOW,
+    buildId: BUILD_ID,
     status: meta.status,
     latestUrl: state.latestUrl,
     lastPublishedAt: NOW,

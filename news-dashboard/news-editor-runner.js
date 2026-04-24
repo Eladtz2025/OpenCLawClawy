@@ -27,7 +27,13 @@ function applyEditorSelection(topicKey, scoredItems) {
   const run = spawnSync(process.execPath, [path.join(OUT_DIR, 'news-editor-agent.js'), topicKey, inputPath, outputPath], {
     cwd: OUT_DIR,
     encoding: 'utf8',
-    timeout: 30000
+    timeout: 30000,
+    env: {
+      ...process.env,
+      PYTHONIOENCODING: 'utf-8',
+      LANG: 'en_US.UTF-8',
+      LC_ALL: 'en_US.UTF-8'
+    }
   });
 
   if (run.status !== 0) {

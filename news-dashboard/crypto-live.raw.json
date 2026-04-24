@@ -6,44 +6,64 @@
     "success": true,
     "items": [
       {
+        "title": "Jane Street asks court to reject Terraform claims tied to UST-LUNA crash A filing Thursday said the lawsuit rehashes events already settled in court and seeks damages for losses caused by internal misconduct.",
+        "url": "https://www.coindesk.com/policy/2026/04/24/jane-street-asks-court-to-reject-terraform-claims-tied-to-ust-luna-crash",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Bitmine to buy 10,000 ether for $23.9 million from the Ethereum Foundation The transaction brings the firm’s holdings closer to its 5% of ETH target.",
+        "url": "https://www.coindesk.com/business/2026/04/24/bitmine-to-buy-10-000-ether-for-usd23-8-million-from-the-ethereum-foundation",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "CoinDesk 20 performance update: Aptos (APT) gains 3.5%, leading index higher Aave (AAVE), up 3.2% from Thursday, was also a top performer.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/04/24/coindesk-20-performance-update-aptos-apt-gains-3-5-leading-index-higher",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Bitcoin, dollar move in near-perfect opposition. It hasn't been this extreme in almost 4 years. What you need to know for April 24, 2026",
+        "url": "https://www.coindesk.com/daybook-us/2026/04/24/bitcoin-dollar-move-in-near-perfect-opposition-it-hasn-t-been-this-extreme-in-almost-4-years",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "India pushes e-rupee through welfare pilots as BRICS digital currency plan takes shape Farmers and food programs anchor 10 pilots aimed at boosting usage, while New Delhi eyes BRICS CBDC link ahead of 2026 summit",
+        "url": "https://www.coindesk.com/policy/2026/04/24/india-pushes-digital-rupee-through-welfare-pilots-as-brics-cbdc-plan-takes-shape",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "U.S. government sits on $26.5 billion gain from Intel stake, as shares surge 22% The surge in Intel shares, up more than 22% after earnings, has significantly boosted the value of the U.S. government’s position.",
+        "url": "https://www.coindesk.com/markets/2026/04/24/u-s-government-sits-on-usd26-5-billion-gain-from-intel-stake-as-shares-surge-22",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Bitcoin-holder Metaplanet raises $50 million to buy more BTC Metaplanet has issued 8 billion yen, or about $50 million, in zero-interest bonds to fund additional bitcoin purchases.",
+        "url": "https://www.coindesk.com/markets/2026/04/24/bitcoin-holder-metaplanet-raises-usd50-million-in-zero-interest-bonds-to-buy-more-btc",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Morgan Stanley is positioning itself as the reserve manager for the stablecoin industry The Wall Street giant has announced a fund build specifically for stablecoin issuers. Here is what it does and means for the market.",
+        "url": "https://www.coindesk.com/markets/2026/04/24/morgan-stanley-is-positioning-itself-as-the-reserve-manager-for-the-stablecoin-industry",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Bitcoin rally is stalling as Japanese inflation adds to Iran war–driven market jitters Crypto markets weaken amid rising Japan inflation, Iran war oil disruptions, and expectations of a hawkish Bank of Japan.",
+        "url": "https://www.coindesk.com/markets/2026/04/24/bitcoin-rally-is-stalling-as-japan-macro-adds-to-iran-war-driven-market-jitters",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Wisconsin joins prediction market fight, suing Kalshi, Coinbase, Polymarket, Robinhood and Crypto.com The state's complaint highlights language used by prediction market platforms as language for gambling, not investing.",
+        "url": "https://www.coindesk.com/policy/2026/04/24/wisconsin-joins-prediction-market-fight-suing-kalshi-coinbase-polymarket-robinhood-and-crypto-com",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
         "title": "Crypto for Advisors: AI Agents Using Crypto AI agents are executing transactions, forming “agentic finance.” Crypto is the financial backend for these autonomous systems. Learn use cases, risks, and what experts say.",
         "url": "https://www.coindesk.com/coindesk-indices/2026/04/22/crypto-for-advisors-ai-agents-using-crypto",
         "publishedAt": "2026-04-22T00:00:00"
       },
       {
-        "title": "The $145 billion math: Why bitcoin’s quantum threat is manageable, not existential Quantum fears focus on vulnerable early wallets, but market data suggests even a worst case sell-off would be large, not catastrophic.",
-        "url": "https://www.coindesk.com/markets/2026/04/23/the-usd145-billion-math-why-bitcoin-s-quantum-threat-is-manageable-not-existential",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "Ripple-linked XRP slips amid bitcoin profit-taking, ETF delay Token falls 2.5% after rejection near $1.44 as leveraged ETF launch pushback adds to mixed sentiment.",
-        "url": "https://www.coindesk.com/markets/2026/04/23/ripple-linked-xrp-slips-amid-bitcoin-profit-taking-etf-delay",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "CoinDesk 20 performance update: Uniswap (UNI) drops 3.9%, leading index lower Ethereum (ETH), down 2.9% since Wednesday, was also an underperformer.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/23/coindesk-20-performance-update-uniswap-uni-drops-3-9-leading-index-lower",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "Sam Bankman-Fried withdraws retrial motion. He believes he would not get a fair trial. The founder of the collapsed crypto exchange FTX said he might file for a retrial after a decision on his appeal is ruled upon.",
-        "url": "https://www.coindesk.com/policy/2026/04/23/sam-bankman-fried-withdraws-retrial-motion-he-believes-he-would-not-get-a-fair-trial",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "Bitcoin's bullish momentum runs into Pentagon-backed inflation warning What you need to know for April 23, 2026",
-        "url": "https://www.coindesk.com/daybook-us/2026/04/23/bitcoin-s-bullish-momentum-runs-into-pentagon-backed-inflation-warning",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "The DAT collapse: Pantera wants Satsuma to dump its bitcoin as shares crash 99% Pantera Capital is urging London-listed Satsuma Technology to liquidate its remaining bitcoin holdings and return cash to shareholders.",
-        "url": "https://www.coindesk.com/markets/2026/04/23/pantera-wants-satsuma-to-dump-its-bitcoin-as-shares-crash-99",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "OpenAI appears to be poaching Coinbase’s marketing team Six Coinbase senior marketing executives, including the exchange's former chief marketing officer, have jumped to OpenAI in the past year and a half.",
-        "url": "https://www.coindesk.com/business/2026/04/23/openai-appears-to-be-poaching-coinbase-s-marketing-team",
-        "publishedAt": "2026-04-23T00:00:00"
+        "title": "CoinW Expands Global Presence at Blockchain Forum 2026, Strengthening User Engagement",
+        "url": "https://www.coindesk.com/press-release/2026/04/24/coinw-expands-global-presence-at-blockchain-forum-2026-strengthening-user-engagement",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
         "title": "Reppo Foundation Secures $20M Capital Commitment to Solve Training Data Bottleneck Using Prediction Markets",
@@ -56,54 +76,34 @@
         "publishedAt": "2026-04-16T00:00:00"
       },
       {
-        "title": "CoinW Partners with Luka Modrić as Global Brand Ambassador",
-        "url": "https://www.coindesk.com/press-release/2026/04/09/coinw-partners-with-luka-modric-as-global-brand-ambassador",
-        "publishedAt": "2026-04-09T00:00:00"
+        "title": "Researcher wins 1 bitcoin bounty for 'largest quantum attack' on underlying tech",
+        "url": "https://www.coindesk.com/tech/2026/04/24/researcher-wins-1-bitcoin-bounty-for-largest-quantum-attack-on-underlying-tech",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
-        "title": "The $145 billion math: Why bitcoin’s quantum threat is manageable, not existential",
-        "url": "https://www.coindesk.com/markets/2026/04/23/the-usd145-billion-math-why-bitcoin-s-quantum-threat-is-manageable-not-existential",
-        "publishedAt": "2026-04-23T00:00:00"
+        "title": "Researcher wins 1 bitcoin bounty for 'largest quantum attack' on underlying tech",
+        "url": "https://www.coindesk.com/tech/2026/04/24/researcher-wins-1-bitcoin-bounty-for-largest-quantum-attack-on-underlying-tech",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
-        "title": "The $145 billion math: Why bitcoin’s quantum threat is manageable, not existential",
-        "url": "https://www.coindesk.com/markets/2026/04/23/the-usd145-billion-math-why-bitcoin-s-quantum-threat-is-manageable-not-existential",
-        "publishedAt": "2026-04-23T00:00:00"
+        "title": "Bitcoin, dollar move in near-perfect opposition. It hasn't been this extreme in almost 4 years.",
+        "url": "https://www.coindesk.com/daybook-us/2026/04/24/bitcoin-dollar-move-in-near-perfect-opposition-it-hasn-t-been-this-extreme-in-almost-4-years",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
-        "title": "Inside the $71 million freeze on Arbitrum that has the crypto world questioning what decentralization really means",
-        "url": "https://www.coindesk.com/tech/2026/04/22/inside-the-usd71-million-freeze-on-arbitrum-that-has-the-crypto-world-questioning-what-decentralization-really-means",
-        "publishedAt": "2026-04-22T00:00:00"
+        "title": "Bitcoin ETFs just pulled in $2 billion in 8 days while short-term holders quietly started selling",
+        "url": "https://www.coindesk.com/markets/2026/04/24/bitcoin-etfs-just-pulled-usd2-billion-in-8-days-while-short-term-holders-quietly-started-selling",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
-        "title": "More than 100 crypto firms urge Senate to move on U.S. market structure bill",
-        "url": "https://www.coindesk.com/policy/2026/04/23/more-than-100-crypto-firms-urge-senate-to-move-on-u-s-market-structure-bill",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "Tether freezes $344 million in USDT on Tron tied to 'illicit activity'",
-        "url": "https://www.coindesk.com/business/2026/04/23/tether-freezes-usd344-million-in-usdt-on-tron-tied-to-illicit-activity",
-        "publishedAt": "2026-04-23T00:00:00"
+        "title": "Morgan Stanley is positioning itself as the reserve manager for the stablecoin industry",
+        "url": "https://www.coindesk.com/markets/2026/04/24/morgan-stanley-is-positioning-itself-as-the-reserve-manager-for-the-stablecoin-industry",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
         "title": "How CoinW’s Upgraded Futures Trading Businesses Are Responding Nimbly to Trends",
         "url": "https://www.coindesk.com/sponsored-content/how-coinw-s-upgraded-futures-trading-businesses-are-responding-nimbly-to-trends",
         "publishedAt": null
-      },
-      {
-        "title": "The DAT collapse: Pantera wants Satsuma to dump its bitcoin as shares crash 99%",
-        "url": "https://www.coindesk.com/markets/2026/04/23/pantera-wants-satsuma-to-dump-its-bitcoin-as-shares-crash-99",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "U.S. military runs Bitcoin node, sees crypto as power projection versus China",
-        "url": "https://www.coindesk.com/markets/2026/04/23/us-military-runs-bitcoin-node-sees-crypto-as-power-projection-vs-china",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "Bitcoin slips from near $80,000 as oil price increase weighs on risk assets",
-        "url": "https://www.coindesk.com/markets/2026/04/23/bitcoin-slips-from-near-usd80-000-as-oil-price-increase-weighs-on-risk-assets",
-        "publishedAt": "2026-04-23T00:00:00"
       }
     ]
   },
@@ -113,6 +113,26 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "Michael Saylor says the bitcoin winter is over. Some experts agree, with caveats.",
+        "url": "https://www.coindesk.com/markets/2026/04/23/michael-saylor-says-the-bitcoin-winter-is-over-some-experts-agree-with-caveats",
+        "publishedAt": "2026-04-23T00:00:00"
+      },
+      {
+        "title": "Bitcoin-holder Metaplanet raises $50 million to buy more BTC",
+        "url": "https://www.coindesk.com/markets/2026/04/24/bitcoin-holder-metaplanet-raises-usd50-million-in-zero-interest-bonds-to-buy-more-btc",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Bitcoin ETFs just pulled in $2 billion in 8 days while short-term holders quietly started selling",
+        "url": "https://www.coindesk.com/markets/2026/04/24/bitcoin-etfs-just-pulled-usd2-billion-in-8-days-while-short-term-holders-quietly-started-selling",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Bitcoin rally is stalling as Japanese inflation adds to Iran war–driven market jitters",
+        "url": "https://www.coindesk.com/markets/2026/04/24/bitcoin-rally-is-stalling-as-japan-macro-adds-to-iran-war-driven-market-jitters",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
       {
         "title": "The $145 billion math: Why bitcoin’s quantum threat is manageable, not existential",
         "url": "https://www.coindesk.com/markets/2026/04/23/the-usd145-billion-math-why-bitcoin-s-quantum-threat-is-manageable-not-existential",
@@ -134,29 +154,19 @@
         "publishedAt": "2026-04-22T00:00:00"
       },
       {
-        "title": "Bitcoin breaks Strategy's STRC ex-dividend date slump for the first time in six months",
-        "url": "https://www.coindesk.com/markets/2026/04/22/bitcoin-rises-a-week-after-strc-s-dividend-payout-a-first-in-six-months",
-        "publishedAt": "2026-04-22T00:00:00"
+        "title": "Jane Street asks court to reject Terraform claims tied to UST-LUNA crash A filing Thursday said the lawsuit rehashes events already settled in court and seeks damages for losses caused by internal misconduct.",
+        "url": "https://www.coindesk.com/policy/2026/04/24/jane-street-asks-court-to-reject-terraform-claims-tied-to-ust-luna-crash",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
-        "title": "Bitcoin tops $79,000 as crypto rally gathers steam; Circle, Coinbase, Strategy lead",
-        "url": "https://www.coindesk.com/markets/2026/04/22/bitcoin-tops-usd79-000-as-crypto-rally-gathers-steam-circle-coinbase-strategy-lead",
-        "publishedAt": "2026-04-22T00:00:00"
+        "title": "Bitmine to buy 10,000 ether for $23.9 million from the Ethereum Foundation The transaction brings the firm’s holdings closer to its 5% of ETH target.",
+        "url": "https://www.coindesk.com/business/2026/04/24/bitmine-to-buy-10-000-ether-for-usd23-8-million-from-the-ethereum-foundation",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
-        "title": "A make or break moment: why $79,200 could act as a launchpad or a ceiling for bitcoin",
-        "url": "https://www.coindesk.com/markets/2026/04/22/bitcoin-faces-make-or-break-moment-at-two-major-on-chain-resistance-levels",
-        "publishedAt": "2026-04-22T00:00:00"
-      },
-      {
-        "title": "Bitcoin's 'Coinbase premium' just posted its longest bullish streak since October's record high of $126,000",
-        "url": "https://www.coindesk.com/markets/2026/04/22/bitcoin-s-coinbase-premium-just-posted-its-longest-bullish-streak-since-october-s-record-high-of-usd126-000",
-        "publishedAt": "2026-04-22T00:00:00"
-      },
-      {
-        "title": "Crypto for Advisors: AI Agents Using Crypto AI agents are executing transactions, forming “agentic finance.” Crypto is the financial backend for these autonomous systems. Learn use cases, risks, and what experts say.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/22/crypto-for-advisors-ai-agents-using-crypto",
-        "publishedAt": "2026-04-22T00:00:00"
+        "title": "CoinDesk 20 performance update: Aptos (APT) gains 3.5%, leading index higher Aave (AAVE), up 3.2% from Thursday, was also a top performer.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/04/24/coindesk-20-performance-update-aptos-apt-gains-3-5-leading-index-higher",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -175,6 +185,11 @@
         "title": "decentralized applications (dApps)",
         "url": "https://www.coindesk.com/learn/what-is-a-dapp-decentralized-apps-explained",
         "publishedAt": null
+      },
+      {
+        "title": "Bitmine to buy 10,000 ether for $23.9 million from the Ethereum Foundation",
+        "url": "https://www.coindesk.com/business/2026/04/24/bitmine-to-buy-10-000-ether-for-usd23-8-million-from-the-ethereum-foundation",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
         "title": "Aave rallies DeFi partners to contain fallout from $292 million KelpDAO hack",
@@ -222,14 +237,19 @@
         "publishedAt": "2026-04-17T00:00:00"
       },
       {
-        "title": "The Protocol: Bitcoin proposal that could freeze quantum-related coins",
-        "url": "https://www.coindesk.com/tech/2026/04/15/the-protocol-bitcoin-proposal-that-could-freeze-quantum-related-coins",
-        "publishedAt": "2026-04-15T00:00:00"
+        "title": "Jane Street asks court to reject Terraform claims tied to UST-LUNA crash A filing Thursday said the lawsuit rehashes events already settled in court and seeks damages for losses caused by internal misconduct.",
+        "url": "https://www.coindesk.com/policy/2026/04/24/jane-street-asks-court-to-reject-terraform-claims-tied-to-ust-luna-crash",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
-        "title": "Crypto for Advisors: AI Agents Using Crypto AI agents are executing transactions, forming “agentic finance.” Crypto is the financial backend for these autonomous systems. Learn use cases, risks, and what experts say.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/22/crypto-for-advisors-ai-agents-using-crypto",
-        "publishedAt": "2026-04-22T00:00:00"
+        "title": "Bitmine to buy 10,000 ether for $23.9 million from the Ethereum Foundation The transaction brings the firm’s holdings closer to its 5% of ETH target.",
+        "url": "https://www.coindesk.com/business/2026/04/24/bitmine-to-buy-10-000-ether-for-usd23-8-million-from-the-ethereum-foundation",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "CoinDesk 20 performance update: Aptos (APT) gains 3.5%, leading index higher Aave (AAVE), up 3.2% from Thursday, was also a top performer.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/04/24/coindesk-20-performance-update-aptos-apt-gains-3-5-leading-index-higher",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -295,9 +315,19 @@
         "publishedAt": "2026-03-17T00:00:00"
       },
       {
-        "title": "Crypto for Advisors: AI Agents Using Crypto AI agents are executing transactions, forming “agentic finance.” Crypto is the financial backend for these autonomous systems. Learn use cases, risks, and what experts say.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/04/22/crypto-for-advisors-ai-agents-using-crypto",
-        "publishedAt": "2026-04-22T00:00:00"
+        "title": "Jane Street asks court to reject Terraform claims tied to UST-LUNA crash A filing Thursday said the lawsuit rehashes events already settled in court and seeks damages for losses caused by internal misconduct.",
+        "url": "https://www.coindesk.com/policy/2026/04/24/jane-street-asks-court-to-reject-terraform-claims-tied-to-ust-luna-crash",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "Bitmine to buy 10,000 ether for $23.9 million from the Ethereum Foundation The transaction brings the firm’s holdings closer to its 5% of ETH target.",
+        "url": "https://www.coindesk.com/business/2026/04/24/bitmine-to-buy-10-000-ether-for-usd23-8-million-from-the-ethereum-foundation",
+        "publishedAt": "2026-04-24T00:00:00"
+      },
+      {
+        "title": "CoinDesk 20 performance update: Aptos (APT) gains 3.5%, leading index higher Aave (AAVE), up 3.2% from Thursday, was also a top performer.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/04/24/coindesk-20-performance-update-aptos-apt-gains-3-5-leading-index-higher",
+        "publishedAt": "2026-04-24T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -313,23 +343,23 @@
     "success": true,
     "items": [
       {
-        "title": "Anthropic Beats OpenAI on Secondary Markets With $1 Trillion Implied Valuation",
-        "url": "https://decrypt.co/365384/anthropic-1-trillion-valuation-secondary-markets-openai",
+        "title": "Tom Lee's BitMine Buys Another $23 Million in ETH From Ethereum Foundation",
+        "url": "https://decrypt.co/365449/tom-lees-bitmine-buys-3-million-eth-ethereum-foundation",
         "publishedAt": null
       },
       {
-        "title": "Google Maps Lets Filmmakers Scout Movie Scenes Using AI and Street View Data",
-        "url": "https://decrypt.co/365326/google-maps-filmmakers-scout-movie-scenes-ai-street-view-data",
+        "title": "Wisconsin Sues Prediction Markets Over Sports Betting Contracts",
+        "url": "https://decrypt.co/365446/wisconsin-sues-prediction-markets-over-sports-betting-contracts",
         "publishedAt": null
       },
       {
-        "title": "Meta Will Lay Off 8,000 Employees as AI Focus Intensifies",
-        "url": "https://decrypt.co/365366/meta-lay-off-8000-employees-ai-focus-intensifies",
+        "title": "Bitcoin 'Q-Day' Draws Nearer as Quantum Researcher Breaks Simplified Key",
+        "url": "https://decrypt.co/365444/bitcoin-q-day-draws-nearer-quantum-researcher-breaks-simplified-key",
         "publishedAt": null
       },
       {
-        "title": "Microsoft-Backed Space and Time Launches AI App Builder on Base",
-        "url": "https://decrypt.co/365363/microsoft-space-and-time-ai-app-builder-dreamspace-base",
+        "title": "Meta Agrees to Deploy Millions of Amazon AI Chips in Deal Worth Billions",
+        "url": "https://decrypt.co/365441/meta-agrees-deploy-millions-amazon-ai-chips-deal-worth-billions",
         "publishedAt": null
       },
       {
@@ -338,18 +368,18 @@
         "publishedAt": null
       },
       {
+        "title": "KuCoin Launches KuCard on Mastercard’s Global Network in Australia, Advancing Real-World Crypto Payments",
+        "url": "https://decrypt.co/365427/kucoin-launches-kucard-on-mastercards-global-network-in-australia-advancing-real-world-crypto-payments",
+        "publishedAt": null
+      },
+      {
+        "title": "LBank Emerges as a Youthful CEX Through Culture-Led Strategy",
+        "url": "https://decrypt.co/365421/lbank-emerges-as-a-youthful-cex-through-culture-led-strategy",
+        "publishedAt": null
+      },
+      {
         "title": "SafeBets Introduces New Prediction Platform at Industry Conference",
         "url": "https://decrypt.co/365361/safebets-introduces-new-prediction-platform-at-industry-conference",
-        "publishedAt": null
-      },
-      {
-        "title": "$STAY Goes Live on KuCoin as Staynex Brings a Revenue-Backed AI Travel Ecosystem On-Chain",
-        "url": "https://decrypt.co/365250/stay-goes-live-on-kucoin-as-staynex-brings-a-revenue-backed-ai-travel-ecosystem-on-chain",
-        "publishedAt": null
-      },
-      {
-        "title": "Vantage Introduces an Enhanced App with a Seamless All-in-One Trading Experience",
-        "url": "https://decrypt.co/365000/vantage-introduces-an-enhanced-app-with-a-seamless-all-in-one-trading-experience",
         "publishedAt": null
       },
       {
@@ -428,104 +458,104 @@
     "success": true,
     "items": [
       {
-        "title": "Paradigm-backed Succinct launches iPhone camera app that combats AI fakes using cryptography",
-        "url": "https://www.theblock.co/post/398712/paradigm-backed-succinct-iphone-camera-app-combats-ai-fakes",
-        "publishedAt": "4:59PM EDT"
+        "title": "DOJ drops probe into Jerome Powell, paving the way for crypto-friendly Kevin Warsh to lead Fed",
+        "url": "https://www.theblock.co/post/398836/doj-drops-probe-into-jerome-powell-paving-the-way-for-crypto-friendly-kevin-warsh-to-lead-fed",
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "Jane Street asks court to dismiss Terraform Labs' insider trading lawsuit",
-        "url": "https://www.theblock.co/post/398713/jane-street-asks-court-dismiss-terraform-labs-insider-trading-lawsuit",
-        "publishedAt": "4:59PM EDT"
+        "title": "AWS Marketplace adds Chainlink data standards, enabling devs to link traditional computing services and blockchains",
+        "url": "https://www.theblock.co/post/398820/aws-marketplace-integrates-chainlink",
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "Bitcoin ETF 'flows turned positive for the year': BNY's global head of ETFs",
-        "url": "https://www.theblock.co/post/398699/bitcoin-etf-flows-turned-positive-year-bny-global-head-etfs",
-        "publishedAt": "4:59PM EDT"
+        "title": "Ethereum Foundation sells nearly $24 million of ETH to Tom Lee's Bitmine",
+        "url": "https://www.theblock.co/post/398819/ethereum-foundation-sells-nearly-24-million-of-eth-to-tom-lees-bitmine",
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "Lido proposes allocating up to $5.8 million in staked ETH to back Kelp exploit shortfall",
-        "url": "https://www.theblock.co/post/398691/lido-proposes-5-8-million-staked-eth-back-kelp-exploit-shortfall",
-        "publishedAt": "4:59PM EDT"
+        "title": "DeFi Education Fund and other crypto leaders press SEC to lock in DeFi broker guidance",
+        "url": "https://www.theblock.co/post/398821/defi-education-fund-crypto-leaders-press-sec-lock-in-defi-broker-guidance",
+        "publishedAt": "11:50AM EDT"
       },
       {
         "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
         "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
-        "publishedAt": "4:59PM EDT"
+        "publishedAt": "11:50AM EDT"
       },
       {
         "title": "Strategic Selection: A Practical Guide to Choosing the Right Market Maker",
         "url": "https://www.theblock.co/post/395685/strategic-selection-a-practical-guide-to-choosing-the-right-market-maker",
-        "publishedAt": "4:59PM EDT"
+        "publishedAt": "11:50AM EDT"
       },
       {
         "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
         "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
-        "publishedAt": "4:59PM EDT"
+        "publishedAt": "11:50AM EDT"
       },
       {
         "title": "Strategic Selection: A Practical Guide to Choosing the Right Market Maker",
         "url": "https://www.theblock.co/post/395685/strategic-selection-a-practical-guide-to-choosing-the-right-market-maker",
-        "publishedAt": "4:59PM EDT"
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "Jane Street asks court to dismiss Terraform Labs' insider trading lawsuit",
-        "url": "https://www.theblock.co/post/398713/jane-street-asks-court-dismiss-terraform-labs-insider-trading-lawsuit",
-        "publishedAt": "4:59PM EDT"
+        "title": "Ethereum Foundation sells nearly $24 million of ETH to Tom Lee's Bitmine",
+        "url": "https://www.theblock.co/post/398819/ethereum-foundation-sells-nearly-24-million-of-eth-to-tom-lees-bitmine",
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "Paradigm-backed Succinct launches iPhone camera app that combats AI fakes using cryptography",
-        "url": "https://www.theblock.co/post/398712/paradigm-backed-succinct-iphone-camera-app-combats-ai-fakes",
-        "publishedAt": "4:59PM EDT"
+        "title": "DOJ drops probe into Jerome Powell, paving the way for crypto-friendly Kevin Warsh to lead Fed",
+        "url": "https://www.theblock.co/post/398836/doj-drops-probe-into-jerome-powell-paving-the-way-for-crypto-friendly-kevin-warsh-to-lead-fed",
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "Bitcoin ETF 'flows turned positive for the year': BNY's global head of ETFs",
-        "url": "https://www.theblock.co/post/398699/bitcoin-etf-flows-turned-positive-year-bny-global-head-etfs",
-        "publishedAt": "4:59PM EDT"
+        "title": "AWS Marketplace adds Chainlink data standards, enabling devs to link traditional computing services and blockchains",
+        "url": "https://www.theblock.co/post/398820/aws-marketplace-integrates-chainlink",
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "3F, built on Morpho, raises $4 million to offer leveraged exposure to tokenized assets",
-        "url": "https://www.theblock.co/post/398686/3f-morpho-funding-everaged-exposure-tokenized-assets",
-        "publishedAt": "4:59PM EDT"
+        "title": "DeFi Education Fund and other crypto leaders press SEC to lock in DeFi broker guidance",
+        "url": "https://www.theblock.co/post/398821/defi-education-fund-crypto-leaders-press-sec-lock-in-defi-broker-guidance",
+        "publishedAt": "11:50AM EDT"
       },
       {
-        "title": "Lido proposes allocating up to $5.8 million in staked ETH to back Kelp exploit shortfall",
-        "url": "https://www.theblock.co/post/398691/lido-proposes-5-8-million-staked-eth-back-kelp-exploit-shortfall",
-        "publishedAt": "4:59PM EDT"
-      },
-      {
-        "title": "Cluster Protocol Raises $5 Million to Accelerate CodeXero, a Browser-Native Vibe Coding AI IDE for EVM, Bringing Total Funding to $7.75 Million",
-        "url": "https://www.theblock.co/post/398581/cluster-protocol-raises-5-million-to-accelerate-codexero-a-browser-native-vibe-coding-ai-ide-for-evm-bringing-total-funding-to-7-75-million",
-        "publishedAt": "4:59PM EDT"
-      },
-      {
-        "title": "Paradigm-backed Succinct launches iPhone camera app that combats AI fakes using cryptography",
-        "url": "https://www.theblock.co/post/398712/paradigm-backed-succinct-iphone-camera-app-combats-ai-fakes",
-        "publishedAt": "4:59PM EDT"
-      },
-      {
-        "title": "Jane Street asks court to dismiss Terraform Labs' insider trading lawsuit",
-        "url": "https://www.theblock.co/post/398713/jane-street-asks-court-dismiss-terraform-labs-insider-trading-lawsuit",
-        "publishedAt": "4:59PM EDT"
-      },
-      {
-        "title": "Bitcoin ETF 'flows turned positive for the year': BNY's global head of ETFs",
-        "url": "https://www.theblock.co/post/398699/bitcoin-etf-flows-turned-positive-year-bny-global-head-etfs",
-        "publishedAt": "4:59PM EDT"
-      },
-      {
-        "title": "Lido proposes allocating up to $5.8 million in staked ETH to back Kelp exploit shortfall",
-        "url": "https://www.theblock.co/post/398691/lido-proposes-5-8-million-staked-eth-back-kelp-exploit-shortfall",
-        "publishedAt": "4:59PM EDT"
+        "title": "Researcher breaks 15-bit elliptic curve key in 'largest quantum attack,' wins 1 bitcoin bounty from Project Eleven",
+        "url": "https://www.theblock.co/post/398792/researcher-breaks-15-bit-elliptic-curve-key-wins-1-bitcoin-bounty-project-eleven",
+        "publishedAt": "11:50AM EDT"
       },
       {
         "title": "Cluster Protocol Raises $5 Million to Accelerate CodeXero, a Browser-Native Vibe Coding AI IDE for EVM, Bringing Total Funding to $7.75 Million",
         "url": "https://www.theblock.co/post/398581/cluster-protocol-raises-5-million-to-accelerate-codexero-a-browser-native-vibe-coding-ai-ide-for-evm-bringing-total-funding-to-7-75-million",
-        "publishedAt": "4:59PM EDT"
+        "publishedAt": "11:50AM EDT"
+      },
+      {
+        "title": "DOJ drops probe into Jerome Powell, paving the way for crypto-friendly Kevin Warsh to lead Fed",
+        "url": "https://www.theblock.co/post/398836/doj-drops-probe-into-jerome-powell-paving-the-way-for-crypto-friendly-kevin-warsh-to-lead-fed",
+        "publishedAt": "11:50AM EDT"
+      },
+      {
+        "title": "AWS Marketplace adds Chainlink data standards, enabling devs to link traditional computing services and blockchains",
+        "url": "https://www.theblock.co/post/398820/aws-marketplace-integrates-chainlink",
+        "publishedAt": "11:50AM EDT"
+      },
+      {
+        "title": "Ethereum Foundation sells nearly $24 million of ETH to Tom Lee's Bitmine",
+        "url": "https://www.theblock.co/post/398819/ethereum-foundation-sells-nearly-24-million-of-eth-to-tom-lees-bitmine",
+        "publishedAt": "11:50AM EDT"
+      },
+      {
+        "title": "DeFi Education Fund and other crypto leaders press SEC to lock in DeFi broker guidance",
+        "url": "https://www.theblock.co/post/398821/defi-education-fund-crypto-leaders-press-sec-lock-in-defi-broker-guidance",
+        "publishedAt": "11:50AM EDT"
+      },
+      {
+        "title": "Cluster Protocol Raises $5 Million to Accelerate CodeXero, a Browser-Native Vibe Coding AI IDE for EVM, Bringing Total Funding to $7.75 Million",
+        "url": "https://www.theblock.co/post/398581/cluster-protocol-raises-5-million-to-accelerate-codexero-a-browser-native-vibe-coding-ai-ide-for-evm-bringing-total-funding-to-7-75-million",
+        "publishedAt": "11:50AM EDT"
       },
       {
         "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
         "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
-        "publishedAt": "4:59PM EDT"
+        "publishedAt": "11:50AM EDT"
       }
     ]
   },
@@ -536,104 +566,104 @@
     "success": true,
     "items": [
       {
+        "title": "Jane Street dismisses insider trading allegations over role in $40bn Terra collapse as 'self-defeating'",
+        "url": "https://www.dlnews.com/articles/regulation/jane-street-files-to-dismiss-insider-trading-allegations/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "DOJ charges US soldier with using classified information to win $400,000 in Polymarket Maduro capture bet",
+        "url": "https://www.dlnews.com/articles/regulation/doj-charges-soldier-with-polymarket-betting-on-classified-information-of-maduro-capture/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "North Korea stole $293m in crypto. Then it used a victim's products to launder the proceeds",
+        "url": "https://www.dlnews.com/articles/defi/north-korea-used-layerzero-to-laundered-funds/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "Jane Street dismisses insider trading allegations over role in $40bn Terra collapse as 'self-defeating'",
+        "url": "https://www.dlnews.com/articles/regulation/jane-street-files-to-dismiss-insider-trading-allegations/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "DOJ charges US soldier with using classified information to win $400,000 in Polymarket Maduro capture bet",
+        "url": "https://www.dlnews.com/articles/regulation/doj-charges-soldier-with-polymarket-betting-on-classified-information-of-maduro-capture/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "North Korea stole $293m in crypto. Then it used a victim's products to launder the proceeds",
+        "url": "https://www.dlnews.com/articles/defi/north-korea-used-layerzero-to-laundered-funds/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "Bitcoin primed for $80,000? Three reasons traders expect a rally 'within days'",
+        "url": "https://www.dlnews.com/articles/markets/is-bitcoin-primed-for-80k-within-days-cf-benchmark-says-yes/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
         "title": "Here are the four craziest details in Justin Sun’s World Liberty lawsuit",
         "url": "https://www.dlnews.com/articles/regulation/four-crazy-details-in-justin-sun-world-liberty-lawsuit/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Did we finally find out who Satoshi Nakamoto is? This documentary says yes — and it is more compelling than you think",
-        "url": "https://www.dlnews.com/articles/markets/compelling-documentary-satoshi-nakamoto-reveal/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Tether helps US feds by freezing $344m in USDT tied to crime",
-        "url": "https://www.dlnews.com/articles/regulation/tether-helps-us-feds-by-freezing-dollar344m-in-usdt-tied-to-crime/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Here are the four craziest details in Justin Sun’s World Liberty lawsuit",
-        "url": "https://www.dlnews.com/articles/regulation/four-crazy-details-in-justin-sun-world-liberty-lawsuit/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Did we finally find out who Satoshi Nakamoto is? This documentary says yes — and it is more compelling than you think",
-        "url": "https://www.dlnews.com/articles/markets/compelling-documentary-satoshi-nakamoto-reveal/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Tether helps US feds by freezing $344m in USDT tied to crime",
-        "url": "https://www.dlnews.com/articles/regulation/tether-helps-us-feds-by-freezing-dollar344m-in-usdt-tied-to-crime/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "‘Slow, expensive’ fate awaits if Clarity Act fails, warn experts as clock ticks on bill",
-        "url": "https://www.dlnews.com/articles/regulation/slow-expensive-fate-awaits-if-clarity-act-fails-say-legal-experts/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Polymarket bettors bag big win betting on the weather. Now the French meteorological agency is investigating 'tampering'",
-        "url": "https://www.dlnews.com/articles/defi/french-meteorological-agency-is-investigating-tampering-amid-big-polymarket-bets/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
         "title": "Bitcoin to $100,000? What the Clarity Act and new Fed leadership mean for price",
         "url": "https://www.dlnews.com/articles/markets/bitcoin-to-100k-what-the-clarity-act-new-fed-leadership-mean-for-price/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
         "title": "Ethereum's Wall Street cheerleaders see rise to $250,000, call Bitcoin and gold 'dead capital'",
         "url": "https://www.dlnews.com/articles/defi/ethereum-will-reach-usd-250000-price-etherealize-says/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
         "title": "Everyone is frothing about Bitcoin treasury company Strategy’s STRC bond. Should they be?",
         "url": "https://www.dlnews.com/articles/markets/bitcoin-treasury-strategy-strc-popular-analysts-issue-warning/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
         "title": "Crypto’s last shot? This risks sinking the Clarity Act before midterms, warns Galaxy analyst",
         "url": "https://www.dlnews.com/articles/regulation/what-could-sink-the-clarity-act-before-midterms-warns-galaxy-analyst/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
-        "title": "Bitcoin to $100,000? What the Clarity Act and new Fed leadership mean for price",
-        "url": "https://www.dlnews.com/articles/markets/bitcoin-to-100k-what-the-clarity-act-new-fed-leadership-mean-for-price/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "title": "Bitcoin primed for $80,000? Three reasons traders expect a rally 'within days'",
+        "url": "https://www.dlnews.com/articles/markets/is-bitcoin-primed-for-80k-within-days-cf-benchmark-says-yes/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
         "title": "Polymarket bettors bag big win betting on the weather. Now the French meteorological agency is investigating 'tampering'",
         "url": "https://www.dlnews.com/articles/defi/french-meteorological-agency-is-investigating-tampering-amid-big-polymarket-bets/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "Did we finally find out who Satoshi Nakamoto is? This documentary says yes — and it is more compelling than you think",
+        "url": "https://www.dlnews.com/articles/markets/compelling-documentary-satoshi-nakamoto-reveal/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "Tether helps US feds by freezing $344m in USDT tied to crime",
+        "url": "https://www.dlnews.com/articles/regulation/tether-helps-us-feds-by-freezing-dollar344m-in-usdt-tied-to-crime/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "‘Slow, expensive’ fate awaits if Clarity Act fails, warn experts as clock ticks on bill",
+        "url": "https://www.dlnews.com/articles/regulation/slow-expensive-fate-awaits-if-clarity-act-fails-say-legal-experts/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
+      },
+      {
+        "title": "Polymarket bettors bag big win betting on the weather. Now the French meteorological agency is investigating 'tampering'",
+        "url": "https://www.dlnews.com/articles/defi/french-meteorological-agency-is-investigating-tampering-amid-big-polymarket-bets/",
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
         "title": "World Liberty founders slam Justin Sun lawsuit alleging extortion, insolvency and of using ‘the Trump brand to profit through fraud’",
         "url": "https://www.dlnews.com/articles/regulation/world-liberty-financial-slams-justin-sun-lawsuit/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       },
       {
         "title": "Man who took $541 in crypto to spray faeces on house jailed for two years",
         "url": "https://www.dlnews.com/articles/regulation/man-paid-usd-541-crypto-to-spray-faeces-on-house-jailed-for-2-years/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Bitcoin bulls aim for $80,000 but trading data reveals they’re not ready to go all-in",
-        "url": "https://www.dlnews.com/articles/markets/bitcoin-price-to-rally-but-options-hedging-persists/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Memecoins post 20% rally. But no comeback yet, analysts say",
-        "url": "https://www.dlnews.com/articles/markets/memecoins-post-20-percent-rally-but-no-comeback-yet-analysts-say/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "Bitcoin to $100,000? What the Clarity Act and new Fed leadership mean for price",
-        "url": "https://www.dlnews.com/articles/markets/bitcoin-to-100k-what-the-clarity-act-new-fed-leadership-mean-for-price/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
-      },
-      {
-        "title": "UK government bets on stablecoins and tokenisation to drive fintech growth",
-        "url": "https://www.dlnews.com/articles/regulation/uk-bets-on-stablecoins-to-drive-fintech-growth/",
-        "publishedAt": "2026-04-23T21:34:22.643Z"
+        "publishedAt": "2026-04-24T14:32:12.681Z"
       }
     ]
   },

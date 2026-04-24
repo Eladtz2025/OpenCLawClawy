@@ -15,6 +15,13 @@ function cleanTitle(title = '') {
     .replace(/^משחק\/לו"ז:\s*/i, ''));
 }
 
+function looksCorruptedHebrew(text = '') {
+  const value = String(text || '');
+  if (!value) return false;
+  const badMarkers = ['x?x', 'xTx', 'x~x', 'x�', '�?', 'A�'];
+  return badMarkers.some(marker => value.includes(marker));
+}
+
 function cleanBody(text = '') {
   const cleaned = normalize(String(text)
     .replace(/https?:\/\/\S+/gi, ' ')
@@ -69,8 +76,10 @@ function sentenceTrim(text = '', max = 220) {
 function makeFallbackSummary(item, topicKey) {
   const title = cleanTitle(item.title || item.summary || '');
   const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
-  const compactBody = body
-    .replace(title, '')
+  const safeTitle = looksCorruptedHebrew(title) ? cleanTitle(item.normalizedTitle || item.summary || '') : title;
+  const safeBody = looksCorruptedHebrew(body) ? '' : body;
+  const compactBody = safeBody
+    .replace(safeTitle, '')
     .replace(/^[-–—,:;\s]+/, '')
     .trim();
 
@@ -83,7 +92,7 @@ function makeFallbackSummary(item, topicKey) {
       .replace(/\s+/g, ' ')
       .trim();
     if (shortBody) return sentenceTrim(shortBody, 170);
-    return `עדכון קצר סביב ${title}.`;
+    return `עדכון קצר סביב ${safeTitle || title}.`;
   }
 
   if (topicKey === 'crypto') {
@@ -95,7 +104,7 @@ function makeFallbackSummary(item, topicKey) {
   }
 
   if (compactBody) return sentenceTrim(compactBody, 220);
-  return title;
+  return safeTitle || title;
 }
 
 function sanitizeSummary(text = '', item, topicKey) {
@@ -106,6 +115,7 @@ function sanitizeSummary(text = '', item, topicKey) {
     .replace(/^["'`]+|["'`]+$/g, '')
     .replace(/\s+/g, ' '));
 
+  if (looksCorruptedHebrew(cleaned)) return makeFallbackSummary(item, topicKey);
   if (!cleaned) return makeFallbackSummary(item, topicKey);
   if (cleaned.length < 20) return makeFallbackSummary(item, topicKey);
   if (/^(none|n\/a|null|undefined)$/i.test(cleaned)) return makeFallbackSummary(item, topicKey);

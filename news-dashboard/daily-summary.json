@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-04-23T22:25:37.520Z",
+  "generatedAt": "2026-04-24T16:06:53.411Z",
+  "buildId": "build-1777046813411",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html",
-  "lastPublishedAt": "2026-04-23T22:25:37.520Z",
-  "sourcesWorkedCount": 28,
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777046813411",
+  "lastPublishedAt": "2026-04-24T16:06:53.411Z",
+  "sourcesWorkedCount": 27,
   "fallbackActive": true,
   "topicStatus": [
     {
       "topic": "technology",
       "label": "טכנולוגיה",
       "wanted": 5,
-      "got": 4,
-      "fallbackActive": true,
+      "got": 5,
+      "fallbackActive": false,
       "sourcesWorked": [
         "TechCrunch AI",
         "The Verge Tech",
@@ -101,7 +102,6 @@
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
-        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -115,6 +115,10 @@
         },
         {
           "source": "ONE Sport",
+          "error": "no_items"
+        },
+        {
+          "source": "Sport 5",
           "error": "no_items"
         }
       ],
