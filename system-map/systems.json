@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T12:00:56.614Z",
+  "generated_at": "2026-04-24T17:50:47.698Z",
   "scan_scope": [
     "C:\\Users\\Itzhak",
     "C:\\Users\\Openclaw"
@@ -16,14 +16,14 @@
       "overall_rating": "weak",
       "weight": "moderate",
       "weight_details": {
-        "size_mb": 15,
+        "size_mb": 17,
         "complexity": "Moderate",
         "optimization_tip": "Clear outdated config snapshots and temp logs."
       },
       "recommendation": "improve later",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-24T12:00:56.614Z",
+      "last_checked": "2026-04-24T17:50:47.698Z",
       "last_updated_if_known": "2026-04-11T22:07:05.223Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -76,7 +76,7 @@
       "recommendation": "manual review",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-24T12:00:56.614Z",
+      "last_checked": "2026-04-24T17:50:47.698Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -118,7 +118,7 @@
       "recommendation": "improve later",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-24T12:00:56.614Z",
+      "last_checked": "2026-04-24T17:50:47.698Z",
       "last_updated_if_known": "2026-04-12T07:59:59.611Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -153,14 +153,14 @@
       "overall_rating": "strong",
       "weight": "moderate",
       "weight_details": {
-        "size_mb": 2,
+        "size_mb": 3,
         "complexity": "High",
         "optimization_tip": "Archive old .json raw dumps to separate storage."
       },
       "recommendation": "maintain",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-24T12:00:56.614Z",
+      "last_checked": "2026-04-24T17:50:47.698Z",
       "last_updated_if_known": "2026-04-12T17:00:00Z",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
@@ -201,7 +201,7 @@
       "recommendation": "manual review",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-24T12:00:56.614Z",
+      "last_checked": "2026-04-24T17:50:47.698Z",
       "last_updated_if_known": "2026-04-07T13:34:35.928Z",
       "dashboard_link_if_exists": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
       "action_link": "https://eladtz2025.github.io/OpenCLawClawy/system-map/dashboard.html",
@@ -211,7 +211,7 @@
         "full exec",
         "unverified fallback"
       ],
-      "short_summary": "Usable runtime, but safety needs work. Scan truncated after 25000 files for monitor safety.",
+      "short_summary": "Usable runtime, but safety needs work. Scan truncated after 25000 files for monitor safety. Scan truncated after 25000 files for monitor safety.",
       "detailed_logic": "Mirror of the main Clawy runtime, serving the Pinch agent. Handles request routing and tool execution within its own isolated workspace.",
       "gap_analysis": {
         "missing_for_10": [
@@ -252,7 +252,7 @@
       "recommendation": "manual review",
       "needs_cleanup": false,
       "needs_redesign": false,
-      "last_checked": "2026-04-24T12:00:56.614Z",
+      "last_checked": "2026-04-24T17:50:47.698Z",
       "last_updated_if_known": "unknown",
       "dashboard_link_if_exists": "unknown",
       "action_link": "unknown",
@@ -261,7 +261,7 @@
         "workflow not verified",
         "possible stale outputs"
       ],
-      "short_summary": "Present, but needs verification. Scan truncated after 25000 files for monitor safety.",
+      "short_summary": "Present, but needs verification. Scan truncated after 25000 files for monitor safety. Scan truncated after 25000 files for monitor safety.",
       "detailed_logic": "A specialized transcription pipeline using faster-whisper. It supports multiple accuracy profiles (quick vs accurate) and produces standardized TXT/SRT/JSON outputs.",
       "gap_analysis": {
         "missing_for_10": [
