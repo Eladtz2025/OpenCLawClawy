@@ -54,6 +54,18 @@ function cleanBody(text = '') {
   return normalize(cleaned.slice(0, cutIndex));
 }
 
+function sentenceTrim(text = '', max = 220) {
+  const clean = normalize(text);
+  if (!clean) return '';
+  if (clean.length <= max) return clean;
+  const sliced = clean.slice(0, max + 1);
+  const punctuationCut = Math.max(sliced.lastIndexOf('. '), sliced.lastIndexOf('! '), sliced.lastIndexOf('? '), sliced.lastIndexOf('। '));
+  if (punctuationCut > Math.floor(max * 0.45)) return sliced.slice(0, punctuationCut + 1).trim();
+  const spaceCut = sliced.lastIndexOf(' ');
+  if (spaceCut > Math.floor(max * 0.6)) return sliced.slice(0, spaceCut).trim();
+  return sliced.slice(0, max).trim();
+}
+
 function makeFallbackSummary(item, topicKey) {
   const title = cleanTitle(item.title || item.summary || '');
   const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
@@ -66,16 +78,23 @@ function makeFallbackSummary(item, topicKey) {
     const shortBody = compactBody
       .replace(/^נקבע סדר ושעות המשחקים לפלייאוף העליון\s*\d+\s*באפר׳?/u, '')
       .replace(/^בהחלטת המנהלת מחזורי 34 ו35 הוחלפו\. המשחקים בעמוד זה מעודכנים בהתאם\.?/u, '')
+      .replace(/^עם סיום העונה הסדירה בליגת ווינר,\s*\.?/u, '')
+      .replace(/מחזור\s*27:[\s\S]*$/u, 'נקבע לוח המשחקים לפלייאוף העליון, כולל מועדי המשחקים שכבר פורסמו.')
+      .replace(/\s+/g, ' ')
       .trim();
-    if (shortBody) return shortBody.slice(0, 220);
+    if (shortBody) return sentenceTrim(shortBody, 170);
     return `עדכון קצר סביב ${title}.`;
   }
 
-  if (topicKey === 'technology2' && compactBody) {
-    return compactBody.slice(0, 180);
+  if (topicKey === 'crypto') {
+    if (compactBody) return sentenceTrim(compactBody, 180);
   }
 
-  if (compactBody) return compactBody.slice(0, 220);
+  if (topicKey === 'technology2' && compactBody) {
+    return sentenceTrim(compactBody, 180);
+  }
+
+  if (compactBody) return sentenceTrim(compactBody, 220);
   return title;
 }
 
@@ -91,7 +110,44 @@ function sanitizeSummary(text = '', item, topicKey) {
   if (cleaned.length < 20) return makeFallbackSummary(item, topicKey);
   if (/^(none|n\/a|null|undefined)$/i.test(cleaned)) return makeFallbackSummary(item, topicKey);
   if (/skip to main content|coin prices|comment loader|save story/i.test(cleaned)) return makeFallbackSummary(item, topicKey);
-  return cleaned.slice(0, 260);
+  return sentenceTrim(cleaned, topicKey === 'hapoel' ? 170 : 220);
+}
+
+function detectHypeFlags(topicKey, item) {
+  const title = cleanTitle(item.title || item.summary || '');
+  const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
+  const hay = `${title} ${item.source || ''} ${item.sourceUrl || ''} ${body}`.toLowerCase();
+  const flags = [];
+
+  if (/חינם|חינמי|בחינם|ללא תשלום|בלי לשלם|free|free forever|zero cost|0 ש"ח|0₪|unlimited/i.test(hay)) flags.push('free_claim');
+  if (/מהפכה|מטורף|טירוף|משוגע|game changer|crazy|insane|unbelievable|לא נורמלי|וואו|שובר את האינטרנט/i.test(hay)) flags.push('hype_language');
+  if (/כלי רשמי|רשמית|official|native|מוצר רשמי/i.test(hay) && /fork|wrapper|openrouter|lm studio|deepseek|llama|nvidia nim/i.test(hay)) flags.push('officiality_conflict');
+  if (/claude code/i.test(hay) && /free_claim/.test(flags.join(' ')) && /openrouter|lm studio|deepseek|llama|nvidia nim/i.test(hay)) flags.push('claude_wrapper_claim');
+  if (/ללא הגבלות|בלי הגבלות|unlimited|ללא מגבלות/i.test(hay)) flags.push('unbounded_claim');
+  if (/guaranteed|מובטח|בטוח לגמרי|ודאי/i.test(hay)) flags.push('certainty_overclaim');
+
+  if (topicKey === 'technology2' && /telegram|t\.me\//i.test(hay) && flags.length > 0) flags.push('telegram_hype_sensitive');
+
+  return [...new Set(flags)];
+}
+
+function buildCautiousSummary(item, topicKey, flags = []) {
+  const title = cleanTitle(item.title || item.summary || '');
+  const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
+
+  if (flags.includes('claude_wrapper_claim')) {
+    return 'לטענת הפוסט, מדובר במעטפת לא רשמית ל-Claude Code שמתחברת למודלים אחרים, לא בגישה חינמית רשמית ל-Claude של Anthropic.';
+  }
+  if (flags.includes('officiality_conflict')) {
+    return 'יש כאן ערבוב בין מיתוג רשמי לבין תיאור של wrapper או חיבור לספקים אחרים, ולכן צריך להתייחס לטענה בזהירות.';
+  }
+  if (flags.includes('free_claim')) {
+    return 'הפוסט מציג טענת "חינם", אבל בלי אימות ברור מול המוצר הרשמי, ולכן צריך לראות בזה טענה שדורשת בדיקה.';
+  }
+  if (flags.includes('hype_language')) {
+    return sentenceTrim(`הפוסט מנוסח בצורה שיווקית ומנופחת. העובדות שכדאי לקחת ממנו הן: ${body || title}`, 220);
+  }
+  return makeFallbackSummary(item, topicKey);
 }
 
 function scoreEditorial(topicKey, item) {
@@ -99,6 +155,7 @@ function scoreEditorial(topicKey, item) {
   const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
   const hay = `${title} ${item.source || ''} ${item.sourceUrl || ''} ${body}`.toLowerCase();
   let score = Number(item.score || 0);
+  const hypeFlags = detectHypeFlags(topicKey, item);
 
   if (title.length < 28) score -= 20;
   if (/view more|blog\.?$|search|category|tag\/|price\/|theme week|newsletter|podcast|explainer/.test(hay)) score -= 30;
@@ -132,7 +189,16 @@ function scoreEditorial(topicKey, item) {
   if (topicKey === 'technology2') {
     if (/openai|gemini|claude|model|מודל|השיק|השיקה|כלי|tool|agent/i.test(hay)) score += 10;
     if (/קהילה|תגובה|דעה|קורס/.test(hay)) score -= 8;
+    if (hypeFlags.length) score -= 10;
   }
+
+  if (hypeFlags.includes('free_claim')) score -= 14;
+  if (hypeFlags.includes('hype_language')) score -= 10;
+  if (hypeFlags.includes('officiality_conflict')) score -= 18;
+  if (hypeFlags.includes('claude_wrapper_claim')) score -= 28;
+  if (hypeFlags.includes('unbounded_claim')) score -= 12;
+  if (hypeFlags.includes('certainty_overclaim')) score -= 8;
+  if (hypeFlags.includes('telegram_hype_sensitive')) score -= 8;
 
   if (topicKey === 'israel') {
     if (/איראן|עזה|לבנון|חיזבאללה|כנסת|ממשלה|ביטחון|צה"ל|מלחמה|חטופים|קבינט/.test(title)) score += 12;
@@ -146,12 +212,15 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     const title = cleanTitle(item.title || item.summary || '');
     const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
     const hay = `${title} ${item.sourceUrl || ''} ${item.source || ''} ${body}`.toLowerCase();
+    const hypeFlags = detectHypeFlags(topicKey, item);
     if (title.length < 24) return false;
     if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return false;
     if (/policy & regulation|theme week|news explorer|tag\/|category\/|\/video\/|podcast|scale up nation|long reads|deep dives|livestream|live stream|join our livestream|largest publicly traded|publicly traded ethereum treasury firms|biggest crypto cases dumped|unicoin foundation|startale expands/i.test(hay)) return false;
     if (topicKey === 'technology' && /best fitbit|best smartwatch|best fitness tracker|buyers guide|buying guide|\breview\b|\breviews\b|hands on/i.test(hay)) return false;
     if (/loading video|search \//i.test(hay)) return false;
     if (/menu account|security politics|the big story|all news defi explore all news|web3 snapshot|follow us \/ a part of|top of page/.test(hay)) return false;
+    if (hypeFlags.includes('claude_wrapper_claim')) return false;
+    if (topicKey === 'technology2' && hypeFlags.includes('officiality_conflict')) return false;
     return true;
   });
 
@@ -168,10 +237,12 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     const sourceCount = sourceCaps.get(item.source) || 0;
     const sourceCap = topicKey === 'technology' || topicKey === 'crypto' ? 3 : 2;
     if (sourceCount >= sourceCap) continue;
+    const hypeFlags = detectHypeFlags(topicKey, item);
     out.push({
       ...item,
+      hypeFlags,
       summary: cleanTitle(item.summary || item.title || ''),
-      editorNote: '' 
+      editorNote: hypeFlags.length ? buildCautiousSummary(item, topicKey, hypeFlags) : '' 
     });
     seen.add(key);
     sourceCaps.set(item.source, sourceCount + 1);
@@ -182,10 +253,12 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     for (const item of rescored) {
       const key = cleanTitle(item.title || item.summary || '').toLowerCase();
       if (!key || seen.has(key)) continue;
+      const hypeFlags = detectHypeFlags(topicKey, item);
       out.push({
         ...item,
+        hypeFlags,
         summary: cleanTitle(item.summary || item.title || ''),
-        editorNote: ''
+        editorNote: hypeFlags.length ? buildCautiousSummary(item, topicKey, hypeFlags) : ''
       });
       seen.add(key);
       if (out.length >= wanted) break;
@@ -247,6 +320,10 @@ async function main() {
 
   // Now we apply the Smart Edit to the selected items
   for (const item of selected) {
+    if (Array.isArray(item.hypeFlags) && item.hypeFlags.length > 0) {
+      item.editorNote = sanitizeSummary(buildCautiousSummary(item, topicKey, item.hypeFlags), item, topicKey);
+      continue;
+    }
     const summary = await generateSmartSummary(item, topicKey);
     item.editorNote = sanitizeSummary(summary, item, topicKey);
   }
