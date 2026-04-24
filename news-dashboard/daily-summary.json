@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-24T16:06:53.411Z",
-  "buildId": "build-1777046813411",
+  "generatedAt": "2026-04-24T16:11:52.601Z",
+  "buildId": "build-1777047112601",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777046813411",
-  "lastPublishedAt": "2026-04-24T16:06:53.411Z",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777047112601",
+  "lastPublishedAt": "2026-04-24T16:11:52.601Z",
   "sourcesWorkedCount": 27,
   "fallbackActive": true,
   "topicStatus": [

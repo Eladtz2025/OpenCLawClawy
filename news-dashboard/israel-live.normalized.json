@@ -13,7 +13,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -31,7 +31,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -49,14 +49,14 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
   {
-    "id": "israel-15zxpnex15xxqiaxnsdxpnei",
+    "id": "israel-mtyg16txotev15zxldeqiner",
     "category": "israel",
-    "title": "לפחות 15 פעולות ב-4 ימים: רשימת הפרות הפסקת האש של חיזבאללה",
+    "title": "16 פעולות ב-4 ימים: חיזבאללה מצפצף על הפסקת האש - והתייחסות רה\"מ",
     "source": "ynet News",
     "sourceUrl": "https://www.ynet.co.il/news/article/sy5lz1tpzx#autoplay",
     "sourceKind": "primary",
@@ -67,7 +67,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -85,7 +85,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -103,7 +103,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -121,7 +121,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -139,7 +139,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -157,7 +157,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -175,7 +175,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -193,7 +193,25 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
+    "fixture": false,
+    "synthetic": false
+  },
+  {
+    "id": "israel-15txodeq15nxqcdxl9ev15px",
+    "category": "israel",
+    "title": "הסתיר חודשיים וחצי: נתניהו חשף שעבר ניתוח להסרת גידול סרטני - והקרנות",
+    "source": "ynet News",
+    "sourceUrl": "https://www.ynet.co.il/news/article/bkzyoao6wx#autoplay",
+    "sourceKind": "primary",
+    "sourceType": "primary",
+    "sourceStrength": "high",
+    "publishedAt": "2026-04-24T14:11:58.396Z",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -211,7 +229,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -229,7 +247,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -247,7 +265,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -265,7 +283,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -283,25 +301,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
-    "fixture": false,
-    "synthetic": false
-  },
-  {
-    "id": "israel-iteq15nxltevinee16nxm9ev",
-    "category": "israel",
-    "title": "\"איזו משכורת תספק אותך?\": כך פעלו חיילי צה\"ל למען איראן במשך כשנה",
-    "source": "ynet News",
-    "sourceUrl": "https://www.ynet.co.il/news/article/b1q6z0dtzx",
-    "sourceKind": "primary",
-    "sourceType": "primary",
-    "sourceStrength": "high",
-    "publishedAt": "2026-04-24T14:11:58.396Z",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -319,7 +319,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -337,7 +337,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -355,7 +355,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -373,7 +373,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -391,7 +391,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -409,7 +409,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -427,7 +427,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -445,7 +445,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -463,7 +463,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -481,7 +481,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -499,7 +499,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -517,7 +517,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -535,7 +535,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -553,7 +553,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -571,7 +571,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -589,7 +589,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -607,7 +607,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -625,7 +625,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -643,7 +643,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -661,7 +661,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -679,7 +679,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -697,7 +697,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -715,7 +715,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -733,7 +733,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -751,7 +751,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -769,7 +769,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -787,7 +787,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -805,7 +805,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -823,7 +823,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -841,7 +841,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -859,7 +859,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -877,7 +877,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -895,7 +895,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -913,7 +913,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -931,7 +931,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -949,7 +949,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -967,7 +967,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -985,7 +985,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1003,7 +1003,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1021,7 +1021,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1039,7 +1039,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1057,7 +1057,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1075,7 +1075,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1093,7 +1093,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1111,7 +1111,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1129,7 +1129,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1147,7 +1147,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1165,7 +1165,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1183,7 +1183,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1201,7 +1201,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1219,7 +1219,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1237,7 +1237,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1255,7 +1255,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1273,7 +1273,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1291,7 +1291,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1309,7 +1309,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1327,7 +1327,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1345,7 +1345,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1363,7 +1363,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1381,7 +1381,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1399,7 +1399,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1417,7 +1417,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1435,7 +1435,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1453,7 +1453,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1471,7 +1471,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1489,7 +1489,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1507,7 +1507,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1525,7 +1525,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1543,7 +1543,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1561,7 +1561,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1579,7 +1579,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1597,7 +1597,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1615,7 +1615,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1633,7 +1633,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1651,12 +1651,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
   {
-    "id": "israel-16bxlclxncdxqtev16fxoydx",
+    "id": "israel-16bxlclxncdxqten16mg15hx",
     "category": "israel",
     "title": "צה\"ל",
     "source": "Kan News",
@@ -1669,12 +1669,12 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
   {
-    "id": "israel-16bxlclxncdxqtev16fxoydx",
+    "id": "israel-16bxlclxncdxqten16mg15hx",
     "category": "israel",
     "title": "צה\"ל",
     "source": "Kan News",
@@ -1687,7 +1687,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1705,7 +1705,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1723,7 +1723,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1741,7 +1741,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1759,7 +1759,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1777,7 +1777,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1795,7 +1795,7 @@
     "signalPositive": false,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1813,7 +1813,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1831,7 +1831,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1849,14 +1849,14 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
   {
-    "id": "israel-15zxpnex15xxqiaxnsdxpnei",
+    "id": "israel-mtyg16txotev15zxldeqiner",
     "category": "israel",
-    "title": "לפחות 15 פעולות ב-4 ימים: רשימת הפרות הפסקת האש של חיזבאללה",
+    "title": "16 פעולות ב-4 ימים: חיזבאללה מצפצף על הפסקת האש - והתייחסות רה\"מ",
     "source": "Israel News Archive",
     "sourceUrl": "https://www.ynet.co.il/news/article/sy5lz1tpzx#autoplay",
     "sourceKind": "secondary",
@@ -1867,7 +1867,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1885,7 +1885,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1903,7 +1903,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1921,7 +1921,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1939,7 +1939,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1957,7 +1957,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1975,7 +1975,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -1993,7 +1993,25 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
+    "fixture": false,
+    "synthetic": false
+  },
+  {
+    "id": "israel-15txodeq15nxqcdxl9ev15px",
+    "category": "israel",
+    "title": "הסתיר חודשיים וחצי: נתניהו חשף שעבר ניתוח להסרת גידול סרטני - והקרנות",
+    "source": "Israel News Archive",
+    "sourceUrl": "https://www.ynet.co.il/news/article/bkzyoao6wx#autoplay",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-04-24T14:11:58.396Z",
+    "fresh": true,
+    "signalPositive": false,
+    "signalNegative": false,
+    "verificationCount": 2,
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2011,7 +2029,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2029,7 +2047,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2047,7 +2065,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2065,7 +2083,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2083,25 +2101,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
-    "fixture": false,
-    "synthetic": false
-  },
-  {
-    "id": "israel-iteq15nxltevinee16nxm9ev",
-    "category": "israel",
-    "title": "\"איזו משכורת תספק אותך?\": כך פעלו חיילי צה\"ל למען איראן במשך כשנה",
-    "source": "Israel News Archive",
-    "sourceUrl": "https://www.ynet.co.il/news/article/b1q6z0dtzx",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-04-24T14:11:58.396Z",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2119,7 +2119,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2137,7 +2137,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2155,7 +2155,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2173,7 +2173,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 3,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2191,7 +2191,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2209,7 +2209,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2227,7 +2227,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2245,7 +2245,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2263,7 +2263,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2281,7 +2281,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2299,7 +2299,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2317,7 +2317,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2335,7 +2335,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2353,7 +2353,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2371,7 +2371,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2389,7 +2389,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2407,7 +2407,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2425,7 +2425,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2443,7 +2443,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2461,7 +2461,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2479,7 +2479,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2497,7 +2497,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   },
@@ -2515,7 +2515,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-04-24T16:06:53.411Z",
+    "collectedAt": "2026-04-24T16:11:52.601Z",
     "fixture": false,
     "synthetic": false
   }

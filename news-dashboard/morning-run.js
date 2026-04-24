@@ -1,12 +1,21 @@
-require('./live-pipeline');
 const { spawnSync } = require('child_process');
 const path = require('path');
 
-// After pipeline completes, run the renderer to update the HTML dashboard
-const renderResult = spawnSync(process.execPath, [path.join(__dirname, 'render-dashboard.js')], {
-  cwd: __dirname,
-  encoding: 'utf8'
-});
+function runStep(scriptName) {
+  const result = spawnSync(process.execPath, [path.join(__dirname, scriptName)], {
+    cwd: __dirname,
+    encoding: 'utf8'
+  });
 
-console.log('Dashboard render status:', renderResult.status === 0 ? 'SUCCESS' : 'FAILED');
-if (renderResult.stderr) console.error('Render Error:', renderResult.stderr);
+  if (result.stdout) process.stdout.write(result.stdout);
+  if (result.stderr) process.stderr.write(result.stderr);
+  if (result.status !== 0) {
+    console.error(`${scriptName} failed with exit code ${result.status}`);
+    process.exit(result.status || 1);
+  }
+}
+
+runStep('live-pipeline.js');
+runStep('render-dashboard.js');
+runStep('build-sanity-check.js');
+console.log('Dashboard pipeline status: SUCCESS');

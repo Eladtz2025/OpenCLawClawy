@@ -110,7 +110,7 @@ a{color:#8fd3ff;text-decoration:none}
 <main>
 <header>
 <h1>חדשות הבוקר - ${TODAY}</h1>
-<div class="build-banner">build updated: ${escapeHtml(buildLabel)}<span>•</span><span>${escapeHtml(meta.buildId)}</span></div>
+<div class="build-banner"><span>build updated: ${escapeHtml(buildLabel)}</span><span aria-hidden="true">&bull;</span><span>${escapeHtml(meta.buildId)}</span></div>
 <div class="topmeta"><span>updated (ISO): ${escapeHtml(meta.lastUpdated)}</span><span>sources worked: ${escapeHtml(String(meta.sourcesWorkedCount))}</span><span>sources failed: ${escapeHtml(String(totalFailedSources))}</span><span>fallback: ${meta.fallbackActive ? 'yes' : 'no'}</span><span>status: ${escapeHtml(meta.status)}</span></div>
 </header>
 ${sectionHtml}
@@ -196,7 +196,7 @@ async function main() {
   fs.writeFileSync(path.join(LIVE_DIR, dailyFileName), dashboard, 'utf8');
 
   // 2. Update latest.html to be a simple redirect to the daily file
-  const cacheBust = Date.now();
+  const cacheBust = meta.buildId || `build-${Date.now()}`;
   const latestHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./${dailyFileName}?v=${cacheBust}" /></head><body>Redirecting to ${dailyFileName}...</body></html>`;
   fs.writeFileSync(path.join(LIVE_DIR, 'latest.html'), latestHtml, 'utf8');
 
