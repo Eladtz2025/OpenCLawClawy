@@ -222,12 +222,30 @@ function buildCautiousSummary(item, topicKey, flags = []) {
   return makeFallbackSummary(item, topicKey);
 }
 
+function detectSourceQualityIssues(topicKey, item) {
+  const title = cleanTitle(item.title || item.summary || '');
+  const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
+  const hay = `${title} ${item.source || ''} ${item.sourceUrl || ''} ${body}`.toLowerCase();
+  const issues = [];
+
+  if (title.length < 28) issues.push('short_title');
+  if (body.length < 80) issues.push('thin_body');
+  if (/לחצו|להצטרפות|הצטרפו|join|telegram|whatsapp|facebook|youtube|לקריאה נוחה|לינק|קישור לשידור/i.test(hay) && body.length < 180) issues.push('cta_heavy');
+  if (/שיחקו אותה|מטורף|וואו|יססס|לא נורמלי|משוגע|crazy|insane/i.test(hay) && body.length < 160) issues.push('hype_only');
+  if (!/[0-9]/.test(body) && !/חברה|מודל|השיקה|פרסמה|הודיעה|released|launched|announced|reported|according|מבחן|גרסה|api/i.test(hay) && topicKey !== 'hapoel') issues.push('low_fact_density');
+  if (topicKey === 'technology2' && /telegram|t\.me\//i.test(hay) && body.length < 140) issues.push('weak_telegram_post');
+  if (topicKey === 'technology2' && /לקריאה נוחה|במחשב|בנייד|הצטרפו|קבוצה|קהילה/i.test(hay)) issues.push('promo_post');
+
+  return [...new Set(issues)];
+}
+
 function scoreEditorial(topicKey, item) {
   const title = cleanTitle(item.title || item.summary || '');
   const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
   const hay = `${title} ${item.source || ''} ${item.sourceUrl || ''} ${body}`.toLowerCase();
   let score = Number(item.score || 0);
   const hypeFlags = detectHypeFlags(topicKey, item);
+  const qualityIssues = detectSourceQualityIssues(topicKey, item);
 
   if (title.length < 28) score -= 20;
   if (/view more|blog\.?$|search|category|tag\/|price\/|theme week|newsletter|podcast|explainer/.test(hay)) score -= 30;
@@ -264,6 +282,13 @@ function scoreEditorial(topicKey, item) {
     if (hypeFlags.length) score -= 10;
   }
 
+  if (qualityIssues.includes('thin_body')) score -= 10;
+  if (qualityIssues.includes('cta_heavy')) score -= 12;
+  if (qualityIssues.includes('hype_only')) score -= 14;
+  if (qualityIssues.includes('low_fact_density')) score -= 10;
+  if (qualityIssues.includes('weak_telegram_post')) score -= 16;
+  if (qualityIssues.includes('promo_post')) score -= 18;
+
   if (hypeFlags.includes('free_claim')) score -= 14;
   if (hypeFlags.includes('hype_language')) score -= 10;
   if (hypeFlags.includes('officiality_conflict')) score -= 18;
@@ -285,6 +310,7 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
     const hay = `${title} ${item.sourceUrl || ''} ${item.source || ''} ${body}`.toLowerCase();
     const hypeFlags = detectHypeFlags(topicKey, item);
+    const qualityIssues = detectSourceQualityIssues(topicKey, item);
     if (title.length < 24) return false;
     if (/^\d+(?:\s+to\s+\d+)?\s+percent\b/i.test(title)) return false;
     if (/policy & regulation|theme week|news explorer|tag\/|category\/|\/video\/|podcast|scale up nation|long reads|deep dives|livestream|live stream|join our livestream|largest publicly traded|publicly traded ethereum treasury firms|biggest crypto cases dumped|unicoin foundation|startale expands/i.test(hay)) return false;
@@ -293,10 +319,22 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     if (/menu account|security politics|the big story|all news defi explore all news|web3 snapshot|follow us \/ a part of|top of page/.test(hay)) return false;
     if (hypeFlags.includes('claude_wrapper_claim')) return false;
     if (topicKey === 'technology2' && hypeFlags.includes('officiality_conflict')) return false;
+    if (qualityIssues.includes('promo_post')) return false;
+    if (qualityIssues.includes('hype_only') && topicKey === 'technology2') return false;
+    if (topicKey === 'technology2' && qualityIssues.includes('weak_telegram_post') && candidates.length > 5) return false;
     return true;
   });
 
-  const rescored = filtered.map(item => ({ ...item, editorialScore: scoreEditorial(topicKey, item) }));
+  let workingSet = filtered;
+  if (workingSet.length < wanted) {
+    workingSet = candidates.filter(item => {
+      const qualityIssues = detectSourceQualityIssues(topicKey, item);
+      if (qualityIssues.includes('promo_post')) return false;
+      return true;
+    });
+  }
+
+  const rescored = workingSet.map(item => ({ ...item, editorialScore: scoreEditorial(topicKey, item) }));
   rescored.sort((a, b) => b.editorialScore - a.editorialScore || Number(b.score || 0) - Number(a.score || 0));
 
   const out = [];
@@ -310,9 +348,11 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     const sourceCap = topicKey === 'technology' || topicKey === 'crypto' ? 3 : 2;
     if (sourceCount >= sourceCap) continue;
     const hypeFlags = detectHypeFlags(topicKey, item);
+    const qualityIssues = detectSourceQualityIssues(topicKey, item);
     out.push({
       ...item,
       hypeFlags,
+      qualityIssues,
       summary: cleanTitle(item.summary || item.title || ''),
       editorNote: hypeFlags.length ? buildCautiousSummary(item, topicKey, hypeFlags) : '' 
     });
@@ -326,9 +366,11 @@ function chooseTop(topicKey, candidates, wanted = 5) {
       const key = cleanTitle(item.title || item.summary || '').toLowerCase();
       if (!key || seen.has(key)) continue;
       const hypeFlags = detectHypeFlags(topicKey, item);
+      const qualityIssues = detectSourceQualityIssues(topicKey, item);
       out.push({
         ...item,
         hypeFlags,
+        qualityIssues,
         summary: cleanTitle(item.summary || item.title || ''),
         editorNote: hypeFlags.length ? buildCautiousSummary(item, topicKey, hypeFlags) : ''
       });
