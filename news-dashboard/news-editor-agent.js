@@ -142,6 +142,49 @@ function rewriteOverclaimSummary(summary = '', item = {}, topicKey, flags = []) 
   return sanitizeSummary(summary, item, topicKey);
 }
 
+function buildGroundingCorpus(item = {}) {
+  const parts = [
+    item.title || '',
+    item.articleDescription || '',
+    item.articlePreview || '',
+    item.articleBody || ''
+  ]
+    .map(cleanBody)
+    .filter(Boolean);
+  return normalize(parts.join(' '));
+}
+
+function hasGroundingOverlap(summarySentence = '', corpus = '') {
+  const summaryTokens = normalize(summarySentence)
+    .toLowerCase()
+    .split(/\s+/)
+    .map(token => token.replace(/[.,;:!?()"'`“”׳״-]/g, ''))
+    .filter(token => token.length >= 4);
+
+  if (summaryTokens.length === 0) return true;
+  const uniqueTokens = [...new Set(summaryTokens)];
+  const matches = uniqueTokens.filter(token => corpus.includes(token));
+  return matches.length >= Math.max(2, Math.ceil(uniqueTokens.length * 0.35));
+}
+
+function groundSummary(summary = '', item = {}, topicKey) {
+  const cleaned = sanitizeSummary(summary, item, topicKey);
+  const corpus = buildGroundingCorpus(item).toLowerCase();
+  if (!corpus) return makeFallbackSummary(item, topicKey);
+
+  const sentences = cleaned
+    .split(/(?<=[.!?])\s+|\n+/)
+    .map(s => normalize(s))
+    .filter(Boolean);
+
+  const grounded = sentences.filter(sentence => hasGroundingOverlap(sentence, corpus));
+  if (grounded.length === 0) return makeFallbackSummary(item, topicKey);
+
+  const rebuilt = sanitizeSummary(grounded.join(' '), item, topicKey);
+  if (rebuilt.length < 24) return makeFallbackSummary(item, topicKey);
+  return rebuilt;
+}
+
 function detectHypeFlags(topicKey, item) {
   const title = cleanTitle(item.title || item.summary || '');
   const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
@@ -330,11 +373,12 @@ Summary (Hebrew):`;
     });
     const data = await response.json();
     const sanitized = sanitizeSummary(data.response || '', item, topicKey);
-    const overclaimFlags = detectSummaryOverclaim(sanitized, item);
+    const grounded = groundSummary(sanitized, item, topicKey);
+    const overclaimFlags = detectSummaryOverclaim(grounded, item);
     if (overclaimFlags.length > 0) {
-      return rewriteOverclaimSummary(sanitized, item, topicKey, overclaimFlags);
+      return groundSummary(rewriteOverclaimSummary(grounded, item, topicKey, overclaimFlags), item, topicKey);
     }
-    return sanitized;
+    return grounded;
   } catch (e) {
     console.error(`LLM Error for ${title}: ${e.message}`);
     return makeFallbackSummary(item, topicKey);
