@@ -53,13 +53,13 @@ function renderDashboard(items, meta) {
       const syntheticTag = item.synthetic ? `<span class="tag tag-warn">synthetic</span>` : '';
       const syntheticMeta = item.synthetic ? `<span>synthetic source</span>` : '';
       const mediaBadge = item.mediaType === 'video' ? `<span class="media-badge">וידאו</span>` : '';
-      const mediaHtml = item.localMediaPath ? `<div class="media-wrap">${mediaBadge}<img class="card-media" src="${escapeHtml(item.localMediaPath)}" alt="${escapeHtml(item.summary || item.title || '')}" loading="lazy" /></div>` : '';
+      const primaryText = editorNote || item.summary || item.title || '';
+      const mediaHtml = item.localMediaPath ? `<div class="media-wrap">${mediaBadge}<img class="card-media" src="${escapeHtml(item.localMediaPath)}" alt="${escapeHtml(primaryText)}" loading="lazy" /></div>` : '';
       return `
       <article class="card" onclick="window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')}">
         ${mediaHtml}
         <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span>${syntheticTag}<span class="tag">${escapeHtml(item.publishedLabel || item.publishedAt)}</span></div>
-        <h3>${escapeHtml(item.summary)}</h3>
-        ${editorNote ? `<p class="why-label">סיכום</p><p class="why-body">${escapeHtml(editorNote)}</p>` : ''}
+        <p class="card-text">${escapeHtml(primaryText)}</p>
         <div class="bottom"><span>אימות ${escapeHtml(String(item.verificationCount))}</span>${syntheticMeta}</div>
       </article>
     `;
@@ -85,6 +85,10 @@ function renderDashboard(items, meta) {
 body{margin:0;background:#07111d;color:#eef4ff;font-family:Segoe UI,Arial,sans-serif}
 main{max-width:1280px;margin:0 auto;padding:20px}
 header{margin-bottom:18px;position:sticky;top:0;background:#07111df2;backdrop-filter:blur(8px);padding:8px 0 12px;z-index:5}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.header-title{margin:0;font-size:clamp(28px,4vw,56px);line-height:1.05}
+.header-toggle{display:none;border:1px solid #315277;background:#12304f;color:#d9ecff;border-radius:12px;padding:8px 10px;font-size:18px;cursor:pointer}
+.header-meta{display:block}
 .build-banner{display:inline-flex;align-items:center;gap:8px;background:#12304f;border:1px solid #315277;color:#d9ecff;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600;margin:8px 0 10px}
 .topmeta{display:flex;gap:10px;flex-wrap:wrap;color:#9eb3cf;font-size:13px}
 section{margin:22px 0}
@@ -99,21 +103,25 @@ section{margin:22px 0}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
 .tag-warn{background:#51311a;color:#ffd7a8}
-h3{margin:10px 0;font-size:18px;line-height:1.55;white-space:pre-line}
+.card-text{margin:10px 0;font-size:18px;line-height:1.65;white-space:pre-line;color:#eef4ff}
 p{margin:8px 0;line-height:1.7;color:#dce7fb}
-.why-label{margin-bottom:4px;font-size:12px;color:#9eb3cf}
-.why-body{margin-top:0;white-space:pre-line}
 a{color:#8fd3ff;text-decoration:none}
-@media (max-width:700px){main{padding:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}h3{font-size:16px}}
+@media (max-width:700px){main{padding:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}.card-text{font-size:16px}}
+@media (max-width:640px){.header-title{font-size:32px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.header-toggle{display:inline-flex;align-items:center;justify-content:center}.header-meta{display:none}.header-meta.open{display:block}.build-banner{display:flex;width:100%;justify-content:space-between;box-sizing:border-box}.topmeta{flex-direction:column;gap:6px}}
 @media (max-width:520px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main>
 <header>
-<h1>חדשות הבוקר - ${TODAY}</h1>
+<div class="header-row">
+<h1 class="header-title">חדשות הבוקר - ${TODAY}</h1>
+<button class="header-toggle" type="button" aria-expanded="false" aria-controls="header-meta" onclick="const meta=document.getElementById('header-meta'); const open=meta.classList.toggle('open'); this.setAttribute('aria-expanded', open ? 'true' : 'false'); this.textContent = open ? '▴' : '▾';">▾</button>
+</div>
+<div id="header-meta" class="header-meta">
 <div class="build-banner"><span>build updated: ${escapeHtml(buildLabel)}</span><span aria-hidden="true">&bull;</span><span>${escapeHtml(meta.buildId)}</span></div>
 <div class="topmeta"><span>updated (ISO): ${escapeHtml(meta.lastUpdated)}</span><span>sources worked: ${escapeHtml(String(meta.sourcesWorkedCount))}</span><span>sources failed: ${escapeHtml(String(totalFailedSources))}</span><span>fallback: ${meta.fallbackActive ? 'yes' : 'no'}</span><span>status: ${escapeHtml(meta.status)}</span></div>
+</div>
 </header>
 ${sectionHtml}
 </main>
