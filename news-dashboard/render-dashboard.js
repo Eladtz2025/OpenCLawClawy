@@ -64,10 +64,12 @@ function renderDashboard(items, meta) {
       </article>
     `;
     }).join('');
+    const countLabel = topicMeta?.maxCount ? `${itemsForTopic.length}/${topicMeta.maxCount}` : `${itemsForTopic.length}`;
+    const lowVolumeNote = topicMeta?.lowVolumeByDesign ? ' · volume: low by design' : '';
     return `
       <section>
-        <div class="section-head"><h2>${escapeHtml(label)}</h2><span>${itemsForTopic.length}/5</span></div>
-        <div class="section-meta">worked: ${topicMeta?.sourcesWorked.length || 0} · failed: ${topicMeta?.sourcesFailed.length || 0} · fallback: ${topicMeta?.fallbackActive ? 'yes' : 'no'} · editor: ${topicMeta?.editorApplied ? 'on' : 'fallback'}</div>
+        <div class="section-head"><h2>${escapeHtml(label)}</h2><span>${countLabel}</span></div>
+        <div class="section-meta">worked: ${topicMeta?.sourcesWorked.length || 0} · failed: ${topicMeta?.sourcesFailed.length || 0} · fallback: ${topicMeta?.fallbackActive ? 'yes' : 'no'} · editor: ${topicMeta?.editorApplied ? 'on' : 'fallback'}${lowVolumeNote}</div>
         <div class="grid">${cards}</div>
       </section>
     `;
@@ -182,7 +184,7 @@ async function main() {
     buildId: state.buildId || `build-${Date.now()}`,
     sourcesWorkedCount: new Set(state.topics ? Object.values(state.topics).flatMap(t => t.sourcesWorked || []) : []).size,
     fallbackActive: state.topics ? Object.values(state.topics).some(t => t.fallbackActive) : false,
-    status: items.length >= (Object.keys(TOPIC_LABELS).length * 5) ? 'SUCCESS' : 'PARTIAL',
+    status: state.status || 'PARTIAL',
     topics: Object.entries(state.topics || {}).map(([topic, data]) => ({ topic, ...data }))
   };
 

@@ -315,6 +315,7 @@ function scoreEditorial(topicKey, item) {
 }
 
 function chooseTop(topicKey, candidates, wanted = 5) {
+  const targetCount = topicKey === 'technology2' ? Math.max(wanted, candidates.length) : wanted;
   const filtered = candidates.filter(item => {
     const title = cleanTitle(item.title || item.summary || '');
     const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
@@ -336,7 +337,7 @@ function chooseTop(topicKey, candidates, wanted = 5) {
   });
 
   let workingSet = filtered;
-  if (workingSet.length < wanted) {
+  if (workingSet.length < targetCount) {
     workingSet = candidates.filter(item => {
       const qualityIssues = detectSourceQualityIssues(topicKey, item);
       if (qualityIssues.includes('promo_post')) return false;
@@ -368,10 +369,10 @@ function chooseTop(topicKey, candidates, wanted = 5) {
     });
     seen.add(key);
     sourceCaps.set(item.source, sourceCount + 1);
-    if (out.length >= wanted) break;
+    if (out.length >= targetCount) break;
   }
 
-  if (out.length < wanted) {
+  if (out.length < targetCount) {
     for (const item of rescored) {
       const key = cleanTitle(item.title || item.summary || '').toLowerCase();
       if (!key || seen.has(key)) continue;
@@ -385,7 +386,7 @@ function chooseTop(topicKey, candidates, wanted = 5) {
         editorNote: hypeFlags.length ? buildCautiousSummary(item, topicKey, hypeFlags) : ''
       });
       seen.add(key);
-      if (out.length >= wanted) break;
+      if (out.length >= targetCount) break;
     }
   }
 

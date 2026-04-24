@@ -828,7 +828,19 @@ function dedup(items) {
   return out;
 }
 
-function diversify(items) {
+const TOPIC_RULES = {
+  technology: { targetCount: 5, minGoodCount: 5, maxCount: 5, lowVolumeByDesign: false },
+  technology2: { targetCount: 5, minGoodCount: 5, maxCount: null, lowVolumeByDesign: false },
+  israel: { targetCount: 5, minGoodCount: 5, maxCount: 5, lowVolumeByDesign: false },
+  crypto: { targetCount: 5, minGoodCount: 5, maxCount: 5, lowVolumeByDesign: false },
+  hapoel: { targetCount: 5, minGoodCount: 1, maxCount: 5, lowVolumeByDesign: true }
+};
+
+function getTopicRule(topicKey) {
+  return TOPIC_RULES[topicKey] || { targetCount: 5, minGoodCount: 5, maxCount: 5, lowVolumeByDesign: false };
+}
+
+function diversify(items, maxCount = 5) {
   const chosen = [];
   const sourceCaps = new Map();
   const titleCaps = new Set();
@@ -840,7 +852,7 @@ function diversify(items) {
     chosen.push(item);
     sourceCaps.set(item.source, current + 1);
     titleCaps.add(softKey);
-    if (chosen.length === 5) break;
+    if (maxCount && chosen.length === maxCount) break;
   }
   return chosen;
 }
@@ -872,6 +884,7 @@ function buildWeeklyFallbackCandidates(topicKey, pooled) {
 }
 
 async function collectTopic(topic) {
+  const topicRule = getTopicRule(topic.key);
   const runs = [];
   for (const source of topic.sources) {
     try {
@@ -917,8 +930,8 @@ async function collectTopic(topic) {
   const strongFresh = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh && !isWeakCandidate(topic.key, item));
   const freshToday = strongFresh.filter(item => normalizePublishedAt(item.publishedAt).slice(0, 10) === TODAY);
   const broadFresh = pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh);
-  let candidatePool = freshToday.length >= 5 ? freshToday : strongFresh;
-  if (topic.key === 'crypto' && candidatePool.length < 5) {
+  let candidatePool = freshToday.length >= topicRule.targetCount ? freshToday : strongFresh;
+  if (topic.key === 'crypto' && candidatePool.length < topicRule.targetCount) {
     const recentWindow = pooled.filter(item => {
       const published = normalizePublishedAt(item.publishedAt || '');
       const ageDays = Math.max(0, Math.floor((Date.now() - new Date(published).getTime()) / (24 * 60 * 60 * 1000)));
@@ -926,13 +939,13 @@ async function collectTopic(topic) {
     });
     candidatePool = [...candidatePool, ...recentWindow.filter(item => !isWeakCandidate(topic.key, item))];
   }
-  if (topic.key === 'crypto' && candidatePool.length < 5) {
+  if (topic.key === 'crypto' && candidatePool.length < topicRule.targetCount) {
     candidatePool = [...candidatePool, ...buildWeeklyFallbackCandidates(topic.key, pooled).filter(item => !isWeakCandidate(topic.key, item))];
   }
-  if (topic.key === 'crypto' && candidatePool.length < 5) {
+  if (topic.key === 'crypto' && candidatePool.length < topicRule.targetCount) {
     candidatePool = [...candidatePool, ...broadFresh.filter(item => /coindesk|the block|dl news/i.test(item.source.toLowerCase()) && !isWeakCandidate(topic.key, item))];
   }
-  if (candidatePool.length < 5) {
+  if (candidatePool.length < topicRule.targetCount) {
     candidatePool = [...candidatePool, ...pooled.filter(item => item.signalPositive && !item.signalNegative && item.fresh && !isWeakCandidate(topic.key, item))];
   }
 
@@ -967,13 +980,18 @@ async function collectTopic(topic) {
     return 0;
   });
 
-  let selected = diversify(scored);
+  let selected;
   const editorResult = applyEditorSelection(topic.key, scored);
-  if (editorResult.ok && Array.isArray(editorResult.selected) && editorResult.selected.length > 0) {
-    selected = editorResult.selected.slice(0, 5);
-  } else if (selected.length < 5) {
-    const missing = scored.filter(item => !selected.some(chosen => chosen.id === item.id)).slice(0, 5 - selected.length);
-    selected = [...selected, ...missing];
+  if (topic.key === 'technology2') {
+    selected = dedup(editorResult.ok && Array.isArray(editorResult.selected) && editorResult.selected.length > 0 ? editorResult.selected : scored);
+  } else {
+    selected = diversify(scored, topicRule.maxCount || topicRule.targetCount);
+    if (editorResult.ok && Array.isArray(editorResult.selected) && editorResult.selected.length > 0) {
+      selected = editorResult.selected.slice(0, topicRule.maxCount || topicRule.targetCount);
+    } else if (selected.length < topicRule.targetCount) {
+      const missing = scored.filter(item => !selected.some(chosen => chosen.id === item.id)).slice(0, topicRule.targetCount - selected.length);
+      selected = [...selected, ...missing];
+    }
   }
 
   selected = await Promise.all(selected.map(async item => {
@@ -1000,16 +1018,26 @@ async function collectTopic(topic) {
   }
 
   const rerunEditorResult = applyEditorSelection(topic.key, selected);
-  if (rerunEditorResult.ok && Array.isArray(rerunEditorResult.selected) && rerunEditorResult.selected.length > 0) {
-    selected = rerunEditorResult.selected.slice(0, 5);
+  if (topic.key === 'technology2') {
+    if (rerunEditorResult.ok && Array.isArray(rerunEditorResult.selected) && rerunEditorResult.selected.length > 0) {
+      const selectedIds = new Set(rerunEditorResult.selected.map(item => item.id));
+      const extra = selected.filter(item => !selectedIds.has(item.id));
+      selected = dedup([...rerunEditorResult.selected, ...extra]);
+    }
+  } else if (rerunEditorResult.ok && Array.isArray(rerunEditorResult.selected) && rerunEditorResult.selected.length > 0) {
+    selected = rerunEditorResult.selected.slice(0, topicRule.maxCount || topicRule.targetCount);
   }
 
+  const effectiveMinimum = topicRule.lowVolumeByDesign ? topicRule.minGoodCount : topicRule.targetCount;
   const topicStatus = {
     topic: topic.key,
     label: topic.hebrew,
-    wanted: 5,
+    wanted: topicRule.targetCount,
+    minGoodCount: effectiveMinimum,
     got: selected.length,
-    fallbackActive: selected.length < 5,
+    maxCount: topicRule.maxCount,
+    lowVolumeByDesign: topicRule.lowVolumeByDesign,
+    fallbackActive: selected.length < effectiveMinimum,
     sourcesWorked: runs.filter(r => r.success).map(r => r.source),
     sourcesFailed: runs.filter(r => !r.success).map(r => ({ source: r.source, error: r.error || 'no_items' })),
     editorApplied: Boolean(editorResult.ok),
@@ -1036,7 +1064,7 @@ async function main() {
     lastUpdated: NOW,
     sourcesWorkedCount: new Set(results.flatMap(r => r.topicStatus.sourcesWorked)).size,
     fallbackActive: results.some(r => r.topicStatus.fallbackActive),
-    status: results.every(r => r.topicStatus.got >= r.topicStatus.wanted) ? 'SUCCESS' : 'PARTIAL',
+    status: results.every(r => r.topicStatus.got >= (r.topicStatus.minGoodCount || r.topicStatus.wanted)) ? 'SUCCESS' : 'PARTIAL',
     topics: results.map(r => r.topicStatus)
   };
 
@@ -1045,6 +1073,7 @@ async function main() {
   const state = {
     lastPublishedAt: NOW,
     buildId: BUILD_ID,
+    status: meta.status,
     latestUrl: `./news-dashboard/live-site/latest.html?v=${BUILD_ID}`,
     publicUrl: `${PUBLIC_URL}?v=${BUILD_ID}`,
     topics: Object.fromEntries(results.map(r => [r.topicStatus.topic, r.topicStatus]))
