@@ -95,19 +95,31 @@ ${sectionHtml}
 </html>`;
 }
 
+const ARCHIVE_RETENTION_DAYS = 7;
+const GUARANTEED_RECENT_DAYS = 3;
+
 function pruneArchives() {
   if (!fs.existsSync(ARCHIVE_DIR)) return;
   const archiveFiles = fs.readdirSync(ARCHIVE_DIR)
     .filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x))
     .sort()
     .reverse();
-  for (const stale of archiveFiles.slice(7)) {
+
+  const keep = new Set(archiveFiles.slice(0, Math.max(ARCHIVE_RETENTION_DAYS, GUARANTEED_RECENT_DAYS)));
+  for (const stale of archiveFiles) {
+    if (keep.has(stale)) continue;
     fs.unlinkSync(path.join(ARCHIVE_DIR, stale));
   }
 }
 
 function renderArchiveIndex(archiveFiles) {
-  const links = archiveFiles.map(file => `<li><a href="./${escapeHtml(file)}">${escapeHtml(file.replace('.html', ''))}</a></li>`).join('');
+  const recent = archiveFiles.slice(0, GUARANTEED_RECENT_DAYS);
+  const recentSet = new Set(recent);
+  const links = archiveFiles.map(file => {
+    const label = escapeHtml(file.replace('.html', ''));
+    const badge = recentSet.has(file) ? ' <strong>(recent)</strong>' : '';
+    return `<li><a href="./${escapeHtml(file)}">${label}</a>${badge}</li>`;
+  }).join('');
   return `<!doctype html>
 <html lang="he" dir="rtl">
 <head>
@@ -119,11 +131,13 @@ body{margin:0;background:#07111d;color:#eef4ff;font-family:Segoe UI,Arial,sans-s
 main{max-width:860px;margin:0 auto;padding:24px}
 a{color:#8fd3ff;text-decoration:none}
 li{margin:10px 0}
+.meta{color:#9eb3cf;font-size:14px;margin-bottom:16px}
 </style>
 </head>
 <body>
 <main>
 <h1>ארכיון חדשות</h1>
+<p class="meta">נשמרים תמיד לפחות שלושת הימים האחרונים, ובפועל עד ${ARCHIVE_RETENTION_DAYS} קבצים אחרונים.</p>
 <ul>${links}</ul>
 </main>
 </body>
@@ -157,7 +171,8 @@ async function main() {
   fs.writeFileSync(path.join(LIVE_DIR, dailyFileName), dashboard, 'utf8');
 
   // 2. Update latest.html to be a simple redirect to the daily file
-  const latestHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./${dailyFileName}" /></head><body>Redirecting to ${dailyFileName}...</body></html>`;
+  const cacheBust = Date.now();
+  const latestHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./${dailyFileName}?v=${cacheBust}" /></head><body>Redirecting to ${dailyFileName}...</body></html>`;
   fs.writeFileSync(path.join(LIVE_DIR, 'latest.html'), latestHtml, 'utf8');
 
   // 3. Write to archive
@@ -166,8 +181,8 @@ async function main() {
   const archiveFiles = fs.readdirSync(ARCHIVE_DIR).filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x)).sort().reverse();
   fs.writeFileSync(path.join(ARCHIVE_DIR, 'index.html'), renderArchiveIndex(archiveFiles), 'utf8');
 
-  // 4. Update root index to point directly to the daily file
-  const rootHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./news-dashboard/live-site/${dailyFileName}?v=${Date.now()}" /></head><body><a href="./news-dashboard/live-site/${dailyFileName}?v=${Date.now()}">Clawy News Live</a></body></html>`;
+  // 4. Update root index to point to latest.html with cache busting, not directly to a dated file
+  const rootHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./news-dashboard/live-site/latest.html?v=${cacheBust}" /></head><body><a href="./news-dashboard/live-site/latest.html?v=${cacheBust}">Clawy News Live</a></body></html>`;
   fs.writeFileSync(ROOT_INDEX_PATH, rootHtml, 'utf8');
 
   console.log(JSON.stringify({ status: meta.status, items: items.length, dailyFile: dailyFileName }, null, 2));
