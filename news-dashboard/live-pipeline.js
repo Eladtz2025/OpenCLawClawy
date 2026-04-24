@@ -10,6 +10,8 @@ const SUMMARY_PATH = path.join(OUT_DIR, 'daily-summary.json');
 const TELEGRAM_SUMMARY_PATH = path.join(OUT_DIR, 'telegram-summary.txt');
 const TELEGRAM_ALERT_PATH = path.join(OUT_DIR, 'telegram-alert.txt');
 const SOURCES_CONFIG_PATH = path.join(OUT_DIR, 'sources.config.json');
+const LIVE_SITE_DIR = path.join(OUT_DIR, 'live-site');
+const MEDIA_DIR = path.join(LIVE_SITE_DIR, 'assets', 'media');
 const PUBLIC_URL_BASE = 'https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site';
 const TODAY = new Date().toISOString().slice(0, 10);
 const PUBLIC_URL = `${PUBLIC_URL_BASE}/${TODAY}.html`;
@@ -148,6 +150,82 @@ async function fetchText(url) {
   const text = await res.text();
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return text;
+}
+
+async function fetchBuffer(url) {
+  const res = await fetch(url, {
+    headers: {
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36',
+      'accept-language': 'he,en-US;q=0.9,en;q=0.8'
+    }
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  const arrayBuffer = await res.arrayBuffer();
+  return {
+    buffer: Buffer.from(arrayBuffer),
+    contentType: res.headers.get('content-type') || ''
+  };
+}
+
+function extensionFromContentType(contentType = '', url = '') {
+  const lower = String(contentType).toLowerCase();
+  if (lower.includes('image/jpeg')) return '.jpg';
+  if (lower.includes('image/png')) return '.png';
+  if (lower.includes('image/webp')) return '.webp';
+  if (lower.includes('image/gif')) return '.gif';
+  if (lower.includes('video/mp4')) return '.mp4';
+  const pathname = (() => {
+    try { return new URL(url).pathname; } catch { return ''; }
+  })();
+  const ext = path.extname(pathname).toLowerCase();
+  return ext || '.bin';
+}
+
+function sanitizeFileToken(value = '') {
+  return String(value).replace(/[^a-z0-9_-]+/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+}
+
+function extractTelegramMediaMeta(html = '', sourceUrl = '') {
+  const ogImage = String(html).match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i)
+    || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+property="og:image"/i);
+  const twitterImage = String(html).match(/<meta[^>]+property="twitter:image"[^>]+content="([^"]+)"/i)
+    || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+property="twitter:image"/i);
+  const video = String(html).match(/<meta[^>]+property="og:video"[^>]+content="([^"]+)"/i)
+    || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+property="og:video"/i);
+  return {
+    mediaType: video ? 'video' : (ogImage || twitterImage ? 'image' : null),
+    imageUrl: ogImage?.[1] || twitterImage?.[1] || null,
+    videoUrl: video?.[1] || null
+  };
+}
+
+async function enrichSelectedMedia(items) {
+  ensureDir(MEDIA_DIR);
+  return Promise.all(items.map(async (item, index) => {
+    if (item.category !== 'technology2' || !/t\.me\//i.test(item.sourceUrl || '')) return item;
+    try {
+      const pageHtml = await fetchText(item.sourceUrl);
+      const media = extractTelegramMediaMeta(pageHtml, item.sourceUrl);
+      if (!media?.imageUrl) return item;
+      const { buffer, contentType } = await fetchBuffer(media.imageUrl);
+      const ext = extensionFromContentType(contentType, media.imageUrl);
+      const fileName = `${TODAY}-${sanitizeFileToken(item.category)}-${sanitizeFileToken(item.source)}-${index + 1}${ext}`;
+      const absolutePath = path.join(MEDIA_DIR, fileName);
+      fs.writeFileSync(absolutePath, buffer);
+      return {
+        ...item,
+        mediaType: media.mediaType || 'image',
+        imageUrl: media.imageUrl,
+        videoUrl: media.videoUrl || null,
+        localMediaPath: `./assets/media/${fileName}`
+      };
+    } catch (error) {
+      return {
+        ...item,
+        mediaError: String(error)
+      };
+    }
+  }));
 }
 
 function extractMetaDescription(html = '') {
@@ -915,6 +993,10 @@ async function collectTopic(topic) {
     if (topic.key === 'technology' && item.source === 'WIRED' && /menu security politics|wired insider|livestreams merch search search/.test(hay)) return false;
     return true;
   });
+
+  if (topic.key === 'technology2') {
+    selected = await enrichSelectedMedia(selected);
+  }
 
   const rerunEditorResult = applyEditorSelection(topic.key, selected);
   if (rerunEditorResult.ok && Array.isArray(rerunEditorResult.selected) && rerunEditorResult.selected.length > 0) {

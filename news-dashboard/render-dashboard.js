@@ -36,8 +36,11 @@ function renderDashboard(items, meta) {
       const editorNote = String(item.editorNote || '').trim();
       const syntheticTag = item.synthetic ? `<span class="tag tag-warn">synthetic</span>` : '';
       const syntheticMeta = item.synthetic ? `<span>synthetic source</span>` : '';
+      const mediaBadge = item.mediaType === 'video' ? `<span class="media-badge">וידאו</span>` : '';
+      const mediaHtml = item.localMediaPath ? `<div class="media-wrap">${mediaBadge}<img class="card-media" src="${escapeHtml(item.localMediaPath)}" alt="${escapeHtml(item.summary || item.title || '')}" loading="lazy" /></div>` : '';
       return `
       <article class="card" onclick="window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('${escapeHtml(item.sourceUrl)}','_blank','noopener,noreferrer')}">
+        ${mediaHtml}
         <div class="topline"><span class="tag">${escapeHtml(item.source)}</span><span class="tag">${escapeHtml(item.certainty)}</span>${syntheticTag}<span class="tag">${escapeHtml(item.publishedLabel || item.publishedAt)}</span></div>
         <h3>${escapeHtml(item.summary)}</h3>
         ${editorNote ? `<p class="why-label">סיכום</p><p class="why-body">${escapeHtml(editorNote)}</p>` : ''}
@@ -69,8 +72,11 @@ section{margin:22px 0}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .section-meta{font-size:13px;color:#9eb3cf;margin-bottom:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer}
+.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer;overflow:hidden}
 .card:hover{border-color:#315277;transform:translateY(-1px)}
+.media-wrap{position:relative;margin:-16px -16px 12px -16px;background:#091320}
+.card-media{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b1522}
+.media-badge{position:absolute;top:10px;left:10px;background:rgba(7,17,29,.82);color:#fff;padding:5px 8px;border-radius:999px;font-size:12px;border:1px solid rgba(255,255,255,.15)}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
 .tag-warn{background:#51311a;color:#ffd7a8}

@@ -13,8 +13,11 @@ section{margin:22px 0}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .section-meta{font-size:13px;color:#9eb3cf;margin-bottom:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer}
+.card{background:#0f1a2a;border:1px solid #1c3048;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer;overflow:hidden}
 .card:hover{border-color:#315277;transform:translateY(-1px)}
+.media-wrap{position:relative;margin:-16px -16px 12px -16px;background:#091320}
+.card-media{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b1522}
+.media-badge{position:absolute;top:10px;left:10px;background:rgba(7,17,29,.82);color:#fff;padding:5px 8px;border-radius:999px;font-size:12px;border:1px solid rgba(255,255,255,.15)}
 .topline,.bottom{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#b7cae4}
 .tag{background:#16263a;padding:4px 8px;border-radius:999px}
 .tag-warn{background:#51311a;color:#ffd7a8}
@@ -31,7 +34,7 @@ a{color:#8fd3ff;text-decoration:none}
 <main>
 <header>
 <h1>חדשות הבוקר - 2026-04-24</h1>
-<div class="topmeta"><span>updated: 2026-04-24T04:31:05.250Z</span><span>sources worked: 27</span><span>sources failed: 7</span><span>fallback: yes</span><span>status: PARTIAL</span></div>
+<div class="topmeta"><span>updated: 2026-04-24T05:37:39.290Z</span><span>sources worked: 28</span><span>sources failed: 6</span><span>fallback: yes</span><span>status: PARTIAL</span></div>
 </header>
 
       <section>
@@ -39,13 +42,15 @@ a{color:#8fd3ff;text-decoration:none}
         <div class="section-meta">worked: 6 · failed: 1 · fallback: yes · editor: on</div>
         <div class="grid">
       <article class="card" onclick="window.open('https://www.calcalist.co.il/calcalistech/article/rj4nwyut11l','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.calcalist.co.il/calcalistech/article/rj4nwyut11l','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 07:21</span></div>
+        
+        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 08:23</span></div>
         <h3>לא מתרגש מבלאגן בפרומפט: OpenAI משחררת מודל משודרג - GPT‑5.5</h3>
         <p class="why-label">סיכום</p><p class="why-body">שישה שבועות אחרי המודל הקודם, OpenAI משחררת את GPT-5.5 למנויים משלמים. כל הפרטים על היכולות החדשות, התחרות מול אנתרופיק והבשורה למתכנתים.</p>
         <div class="bottom"><span>אימות 1</span></div>
       </article>
     
       <article class="card" onclick="window.open('https://www.wired.com/story/ai-model-phishing-attack-cybersecurity/','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.wired.com/story/ai-model-phishing-attack-cybersecurity/','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">WIRED</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>5 AI Models Tried to Scam Me. Some of Them Were Scary Good</h3>
         <p class="why-label">סיכום</p><p class="why-body">The cyber capabilities of AI models have experts rattled. AI’s social skills may be just as dangerous.</p>
@@ -53,13 +58,15 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://www.calcalist.co.il/calcalistech/article/skm6l8dpbe','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.calcalist.co.il/calcalistech/article/skm6l8dpbe','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 07:21</span></div>
+        
+        <div class="topline"><span class="tag">Calcalist Tech</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 08:23</span></div>
         <h3>גיוס ראשון לחברת קופרהלם שמפתחת סוכני AI לאבטחת ענן</h3>
         <p class="why-label">סיכום</p><p class="why-body">חברת Copperhelm מגייסת 7 מיליון דולר בהובלת TLV Partners. הפלטפורמה מציעה סוכני AI אוטונומיים לניטור ותיקון איומי סייבר בענן בזמן אמת</p>
         <div class="bottom"><span>אימות 1</span></div>
       </article>
     
       <article class="card" onclick="window.open('https://www.wired.com/story/us-special-forces-soldier-allegedly-profited-off-of-maduro-capture-on-polymarket/','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.wired.com/story/us-special-forces-soldier-allegedly-profited-off-of-maduro-capture-on-polymarket/','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">WIRED</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>US Special Forces Soldier Arrested for Polymarket Bets on Maduro Raid</h3>
         <p class="why-label">סיכום</p><p class="why-body">The master sergeant allegedly used classified intel to profit on the capture of Venezuelan president Nicolás Maduro, marking the first US arrest for insider trading on a prediction market.</p>
@@ -73,6 +80,7 @@ a{color:#8fd3ff;text-decoration:none}
         <div class="section-meta">worked: 4 · failed: 0 · fallback: no · editor: on</div>
         <div class="grid">
       <article class="card" onclick="window.open('https://t.me/AI_tg_il/2285','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/AI_tg_il/2285','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">AI_tg_il Telegram</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>יססס! שידור חי מ-OpenAI היום ב22:00 שעון ישראל. קישור לשידור החי: https://www.youtube.com/watch?v=sWkGomJ3TLI בינה מלאכותית בטלגרם - https://t.me/AI_tg_il</h3>
         <p class="why-label">סיכום</p><p class="why-body">אם אני צריך לנחש כנראה נקבל כבר את GPT 5.5. ההשקה השקטה של מודל התמונות היתה לכאורה כדי ליצור הייפ לקראת השידור החי הערב. בינה מלאכותית בטלגרם -</p>
@@ -80,6 +88,7 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://t.me/TechNewsHeb/8789','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/TechNewsHeb/8789','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">TechNewsHeb Telegram</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>חברת Google משדרגת את AI Studio — והופכת אותו לכלי חזק ונגיש יותר למפתחים 🚀 הפלטפורמה מאפשרת כעת למנויי Google AI Pro ו-Ultra ליהנות ממכסות רחבות יותר וגישה ישירה למודלי</h3>
         <p class="why-label">סיכום</p><p class="why-body">. בין המודלים הזמינים: Nano, Banana Pro ו-Gemini Pro, שמספקים ביצועים גבוהים ביצירת טקסט, קוד ותוכן נוסף. המנוי גם משמש כגשר נוח למעבר לפרויקטים ב-Production.</p>
@@ -87,6 +96,7 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://t.me/TechNewsHeb/8794','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/TechNewsHeb/8794','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">TechNewsHeb Telegram</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>הנה חדשות מעולות לגבי Claude Code שהפך לחינמי — בגרסה החדשה הסירו את כל מנגנוני הבדיקה של ה-API בתשלום של Anthropic, וכל זאת מבלי לשנות את הפונקציונליות של הכלי. כעת ה-AI</h3>
         <p class="why-label">סיכום</p><p class="why-body">במודלים מקומיים דרך LM Studio. כל היכולות של Claude Code נשמרו — עבודה עם קבצים, מצב סוכן (Agent mode) וכן הלאה.</p>
@@ -94,6 +104,7 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://t.me/hackit770/1629','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/hackit770/1629','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">hackit770 Telegram</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>5.5 מיליארד דולר נמחקו ב-48 השעות האחרונות! Figma -13%!! Wix -4.7% GoDaddy -3% Adobe -2.7% הסיבה: Anthropic השיקה את Claude Design. כלי שבונה עיצובים מטקסט חופשי. בחינם</h3>
         <p class="why-label">סיכום</p><p class="why-body">הסרטון הסופי של קלוד 4.7 עם Hyperframes</p>
@@ -101,6 +112,7 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://t.me/hackit770/1633','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://t.me/hackit770/1633','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">hackit770 Telegram</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>כדי להצדיק שימוש בכלי AI בארגון - צריך להביא דוגמאות שמייצרות ערך אמיתי לארגון, שמחזיר את ההשקעה. אחת הדוגמאות המרתקות בעיני היא לחבר את Claude Cowork לנתונים של</h3>
         <p class="why-label">סיכום</p><p class="why-body">זה כבר לא נורמלי. יצרתי סקיל חדש לעיצוב בסגנון שאני אוהב והנחיתי את קלוד להשתמש ב-Hyperframes, שזה כלי חדש שמאפשר ליצור סרטונים ע&quot;י קוד, מה שאומר שקלוד יכול ליצור סרטונים (כמו</p>
@@ -110,34 +122,46 @@ a{color:#8fd3ff;text-decoration:none}
       </section>
     
       <section>
-        <div class="section-head"><h2>ישראל</h2><span>4/5</span></div>
-        <div class="section-meta">worked: 6 · failed: 1 · fallback: yes · editor: on</div>
+        <div class="section-head"><h2>ישראל</h2><span>5/5</span></div>
+        <div class="section-meta">worked: 7 · failed: 0 · fallback: no · editor: on</div>
         <div class="grid">
-      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/world-news/middle-east/article/20391417','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/world-news/middle-east/article/20391417','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
-        <h3>ברקע השיגורים לצפון: טראמפ האריך את הפסקת האש ב-3 שבועות</h3>
-        <p class="why-label">סיכום</p><p class="why-body">בתקשורת הלבנונית דווח כי טראמפ מעורב אישית בתיק הלבנוני יחד עם מזכיר המדינה מרקו רוביו ההצעה הנוכחית כולל הסדרי ביטחון לסיום מצב המלחמה, ומאמצים פנימיים וחיצוניים לאחר מכן לטפל בתיק הנשק בלבנון מדגישי: לא סוטים מ&quot;המסלול</p>
-        <div class="bottom"><span>אימות 2</span></div>
-      </article>
-    
-      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20391156','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20391156','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
-        <h3>מאחורי המערכה: הקרב הפוליטי שמחכה לטראמפ בבית</h3>
-        <p class="why-label">סיכום</p><p class="why-body">המתיחות הפוליטית בוושינגטון סביב סמכויותיו של נשיא ארה&quot;ב דונלד טראמפ להמשיך בלחימה גוברת במוקד הוויכוח ניצב חוק סמכויות המלחמה מ-1973, שלפיו הנשיא מחויב להפסיק פעילות צבאית לאחר 60 יום - אלא אם הקונגרס מאשר את המשכה</p>
-        <div class="bottom"><span>אימות 2</span></div>
-      </article>
-    
-      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20392049','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20392049','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
-        <h3>לוחם קומנדו הימר על לכידת מדורו - והרוויח 400 אלף דולר | כך הגיב טראמפ</h3>
-        <p class="why-label">סיכום</p><p class="why-body">גאנון קן ואן דייק, חייל במערך הכוחות המיוחדים של ארה״ב לקח חלק במבצע ללכידת נשיא ונצואלה, נעצר אתמול בחשד שהימר בפולימרקט על הדחתו של מדורו - וגרף רווח של יותר מ-409 אלף דולר טראמפ התייחס לפרשה והשווה את החייל לשחקן</p>
+      <article class="card" onclick="window.open('https://kan.org.il/content/kan-news/global/1032644/','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://kan.org.il/content/kan-news/global/1032644/','_blank','noopener,noreferrer')}">
+        
+        <div class="topline"><span class="tag">Kan News</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
+        <h3>סבב השיחות השני טראמפ: הפסקת האש בין ישראל ללבנון תוארך ב-3 שבועות ישי בר-יוסף, עומר שחר ונתן גוטמן |</h3>
+        <p class="why-label">סיכום</p><p class="why-body">טראמפ אמר לעיתונאים כי לדעתו יש &quot;סיכוי נהדר&quot; לכינון שלום בין ישראל ללבנון כבר השנה. הלילה חיזבאללה ירה 4 רקטות לעבר שטח ישראל - שיורטו, וצה&quot;ל תקף בלבנון בתגובה</p>
         <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20391156','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/world-news/usa/article/20391156','_blank','noopener,noreferrer')}">
+      <article class="card" onclick="window.open('https://kan.org.il/content/kan-news/global/1032644/','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://kan.org.il/content/kan-news/global/1032644/','_blank','noopener,noreferrer')}">
+        
+        <div class="topline"><span class="tag">Kan News</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
+        <h3>טראמפ: הפסקת האש בין ישראל ללבנון תוארך ב-3 שבועות</h3>
+        <p class="why-label">סיכום</p><p class="why-body">טראמפ אמר לעיתונאים כי לדעתו יש &quot;סיכוי נהדר&quot; לכינון שלום בין ישראל ללבנון כבר השנה. הלילה חיזבאללה ירה 4 רקטות לעבר שטח ישראל - שיורטו, וצה&quot;ל תקף בלבנון בתגובה</p>
+        <div class="bottom"><span>אימות 1</span></div>
+      </article>
+    
+      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/geopolitics/article/20392220','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/geopolitics/article/20392220','_blank','noopener,noreferrer')}">
+        
+        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:00</span></div>
+        <h3>בין הפטיש לסדן: מי אתה נשיא לבנון? | האזינו</h3>
+        <p class="why-label">סיכום</p><p class="why-body">איתי אילנאי כתב התחקירים של &quot;היום&quot; מארח את שחר קליימן, כתב &quot;היום&quot; לענייני ערבים, לשיחה על ג'וזף עאון כיצד ינווט עאון בסבך האינטרסים של המזרח התיכון, ואיך בכלל איש הצבא לשעבר הפך לאהוד כל כך עד שהגיע לראש המדינה החבולה על</p>
+        <div class="bottom"><span>אימות 2</span></div>
+      </article>
+    
+      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/defense/article/20391760','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/defense/article/20391760','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
-        <h3>המתיחות הפוליטית בוושינגטון סביב סמכויותיו של נשיא ארה&quot;ב דונלד טראמפ ל</h3>
-        <p class="why-label">סיכום</p><p class="why-body">המשיך בלחימה גוברת במוקד הוויכוח ניצב חוק סמכויות המלחמה מ-1973, שלפיו הנשיא מחויב להפסיק פעילות צבאית לאחר 60 יום - אלא אם הקונגרס מאשר את המשכה לקראת הדדליין ניצבות בפני טראמפ כמה אפשרויות</p>
+        <h3>בתגובה לירי לצפון: צה&quot;ל תקף והשמיד משגרי חיזבאללה בלבנון</h3>
+        <p class="why-label">סיכום</p><p class="why-body">הפרה בוטה נוספת של חיזבאללה: ארגון הטרור השיעי שיגר 4 רקטות הלילה לעבר ישראל בתגובה, חיל האוויר תקף את המשגרים מהם נורו הרקטות לעבר קו העימות</p>
+        <div class="bottom"><span>אימות 1</span></div>
+      </article>
+    
+      <article class="card" onclick="window.open('https://www.israelhayom.co.il/news/defense/article/20391760','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.israelhayom.co.il/news/defense/article/20391760','_blank','noopener,noreferrer')}">
+        
+        <div class="topline"><span class="tag">Israel Hayom News</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
+        <h3>הפרה בוטה נוספת של חיזבאללה: ארגון הטרור השיעי שיגר 4 רקטות הלילה לעבר</h3>
+        <p class="why-label">סיכום</p><p class="why-body">ישראל בתגובה, חיל האוויר תקף את המשגרים מהם נורו הרקטות לעבר קו העימות</p>
         <div class="bottom"><span>אימות 1</span></div>
       </article>
     </div>
@@ -147,28 +171,24 @@ a{color:#8fd3ff;text-decoration:none}
         <div class="section-head"><h2>קריפטו</h2><span>5/5</span></div>
         <div class="section-meta">worked: 7 · failed: 2 · fallback: no · editor: on</div>
         <div class="grid">
-      <article class="card" onclick="window.open('https://www.dlnews.com/articles/regulation/tether-helps-us-feds-by-freezing-dollar344m-in-usdt-tied-to-crime/','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.dlnews.com/articles/regulation/tether-helps-us-feds-by-freezing-dollar344m-in-usdt-tied-to-crime/','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">DL News</span><span class="tag">מאומת חלקית</span><span class="tag">24.04.2026, 00:34</span></div>
-        <h3>Tether helps US feds by freezing $344m in USDT tied to crime</h3>
-        <p class="why-label">סיכום</p><p class="why-body">Stablecoin giant Tether has frozen $344 million in crypto. The crypto firm regularly helps law enforcement freeze USDT.</p>
-        <div class="bottom"><span>אימות 2</span></div>
+      <article class="card" onclick="window.open('https://www.coindesk.com/markets/2026/04/24/bitcoin-rally-is-stalling-as-japan-macro-adds-to-iran-war-driven-market-jitters','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.coindesk.com/markets/2026/04/24/bitcoin-rally-is-stalling-as-japan-macro-adds-to-iran-war-driven-market-jitters','_blank','noopener,noreferrer')}">
+        
+        <div class="topline"><span class="tag">CoinDesk</span><span class="tag">מאומת היטב</span><span class="tag">24.04.2026, 00:00</span></div>
+        <h3>Bitcoin rally is stalling as Japanese inflation adds to Iran war–driven market jitters Crypto markets weaken amid rising Japan inflation, Iran war oil</h3>
+        <p class="why-label">סיכום</p><p class="why-body">Additional government data showed core inflation rising to 1.8% in March from 1.6% in February, marking the first acceleration in five months.</p>
+        <div class="bottom"><span>אימות 4</span></div>
       </article>
     
       <article class="card" onclick="window.open('https://decrypt.co/365384/anthropic-1-trillion-valuation-secondary-markets-openai','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://decrypt.co/365384/anthropic-1-trillion-valuation-secondary-markets-openai','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">Decrypt</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>Anthropic Beats OpenAI on Secondary Markets With $1 Trillion Implied Valuation</h3>
         <p class="why-label">סיכום</p><p class="why-body">On Forge Global, Anthropic shares are hovering around $1 trillion while OpenAI trades at $880 billion — a reversal nobody saw coming three months ago.</p>
         <div class="bottom"><span>אימות 1</span></div>
       </article>
     
-      <article class="card" onclick="window.open('https://www.dlnews.com/articles/markets/bitcoin-treasury-strategy-strc-popular-analysts-issue-warning/','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.dlnews.com/articles/markets/bitcoin-treasury-strategy-strc-popular-analysts-issue-warning/','_blank','noopener,noreferrer')}">
-        <div class="topline"><span class="tag">DL News</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:34</span></div>
-        <h3>Everyone is frothing about Bitcoin treasury company Strategy’s STRC bond. Should they be?</h3>
-        <p class="why-label">סיכום</p><p class="why-body">Strategy’s new STRC preferred equity has become wildly popular in investor circles. Analysts reckon its popularity won’t last long.</p>
-        <div class="bottom"><span>אימות 1</span></div>
-      </article>
-    
       <article class="card" onclick="window.open('https://decrypt.co/365397/us-soldier-charged-400k-polymarket-insider-trading-maduro-removal','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://decrypt.co/365397/us-soldier-charged-400k-polymarket-insider-trading-maduro-removal','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">Decrypt</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>US Soldier Charged for Alleged $400K Polymarket Insider Trading on Maduro Removal</h3>
         <p class="why-label">סיכום</p><p class="why-body">Federal prosecutors say an Army soldier made over $400K betting on Venezuela- outcomes on Polymarket using classified intelligence.</p>
@@ -176,9 +196,18 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://decrypt.co/363030/the-quantum-threat-to-bitcoin-dividing-crypto','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://decrypt.co/363030/the-quantum-threat-to-bitcoin-dividing-crypto','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">Decrypt</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>The Quantum Threat to Bitcoin Dividing Crypto</h3>
         <p class="why-label">סיכום</p><p class="why-body">Two papers published this week have reignited debates about the risk posed by “Q-day” to the cryptography that underpins digital assets.</p>
+        <div class="bottom"><span>אימות 1</span></div>
+      </article>
+    
+      <article class="card" onclick="window.open('https://decrypt.co/357315/vibes-davos-degens-bitcoin-ethereum-plummeted','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://decrypt.co/357315/vibes-davos-degens-bitcoin-ethereum-plummeted','_blank','noopener,noreferrer')}">
+        
+        <div class="topline"><span class="tag">Decrypt</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
+        <h3>The Vibes From the 'Davos for Degens' as Bitcoin and Ethereum Plummeted</h3>
+        <p class="why-label">סיכום</p><p class="why-body">At a conference dedicated to the riskiest traders in finance, Miami's crypto scene appeared far different than during its pandemic-era boom.</p>
         <div class="bottom"><span>אימות 1</span></div>
       </article>
     </div>
@@ -189,6 +218,7 @@ a{color:#8fd3ff;text-decoration:none}
         <div class="section-meta">worked: 4 · failed: 3 · fallback: yes · editor: on</div>
         <div class="grid">
       <article class="card" onclick="window.open('https://www.ynet.co.il/sport/israelisoccer/article/rjzbkz00pwx','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.ynet.co.il/sport/israelisoccer/article/rjzbkz00pwx','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">ynet Sport Israel Soccer</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>עומר פרץ נשאר, הפועל פ&quot;ת מאושרת: &quot;אמירה משמעותית&quot;</h3>
         <p class="why-label">סיכום</p><p class="why-body">המאמן שהוביל את העולה החדשה לליגת העל ולפלייאוף העליון היה מבוקש בקבוצות גדולות - ובחר להישאר בכחול. המחיר: ויתור על סעיף היציאה.</p>
@@ -196,6 +226,7 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://www.ynet.co.il/sport/israelisoccer/article/syvigyopbe','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.ynet.co.il/sport/israelisoccer/article/syvigyopbe','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">ynet Sport Israel Soccer</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>עומר פרץ האריך את חוזהו בהפועל פ&quot;ת עד 2028</h3>
         <p class="why-label">סיכום</p><p class="why-body">המאמן, שהוביל את הקבוצה לפלייאוף העליון ונקשר במעבר למועדונים הגדולים, האריך את חוזהו לשנתיים נוספות. שכרו שודרג בכ-33 אחוז.</p>
@@ -203,6 +234,7 @@ a{color:#8fd3ff;text-decoration:none}
       </article>
     
       <article class="card" onclick="window.open('https://www.hapoelpt.com/post/נקבע-סדר-המשחקים-לפלייאוף-העליון','_blank','noopener,noreferrer')" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://www.hapoelpt.com/post/נקבע-סדר-המשחקים-לפלייאוף-העליון','_blank','noopener,noreferrer')}">
+        
         <div class="topline"><span class="tag">PT News</span><span class="tag">נמוכה</span><span class="tag">24.04.2026, 00:00</span></div>
         <h3>נקבע סדר המשחקים לפלייאוף העליון</h3>
         <p class="why-label">סיכום</p><p class="why-body">מלבד המשחק הראשון, מול הפועל באר-שבע, טרם נקבעו תאריכים ושעות המשחקים.נקבע לוח המשחקים לפלייאוף העליון, כולל מועדי המשחקים שכבר פורסמו.</p>
