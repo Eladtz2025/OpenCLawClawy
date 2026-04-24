@@ -1,10 +1,3 @@
-[2026-04-08T10:12:23.545Z] OpenClaw status: WARNING
-[2026-04-11T13:16:35.072Z] Overall status: WARNING
-[2026-04-11T13:16:35.072Z] Computer status: WARNING
-[2026-04-11T13:16:35.072Z] OpenClaw status: WARNING
-[2026-04-11T13:16:35.073Z] Alert prepared: PC Guardian Warning: Internet failed: https://www.msftconnecttest.com/connecttest.txt | No cron jobs found
-[2026-04-11T13:16:35.073Z] Fix cleanup_safe_path target=C:\Windows\Temp result=success
-[2026-04-11T13:16:35.073Z] Fix cleanup_safe_path target=C:\Users\Itzhak\AppData\Local\Temp result=success
 [2026-04-11T13:17:02.591Z] Overall status: WARNING
 [2026-04-11T13:17:02.591Z] Computer status: WARNING
 [2026-04-11T13:17:02.591Z] OpenClaw status: WARNING
@@ -398,3 +391,10 @@ No characters are allowed after a here-string header but before the end of the l
 [2026-04-12T16:42:30.099Z] Computer status: WARNING
 [2026-04-12T16:42:30.099Z] OpenClaw status: WARNING
 [2026-04-12T16:42:30.099Z] Cron source: unavailable
+[2026-04-24T20:42:57.430Z] Mode: read-only monitoring
+[2026-04-24T20:43:25.033Z] Overall status: CRITICAL
+[2026-04-24T20:43:25.033Z] Computer status: WARNING
+[2026-04-24T20:43:25.033Z] OpenClaw status: CRITICAL
+[2026-04-24T20:43:25.033Z] Mode: reporting-only, no automatic fixes
+[2026-04-24T20:43:25.033Z] Cron source: unavailable
+[2026-04-24T20:43:25.033Z] Alert delivery: {"sent":true,"mode":"telegram","response":{"ok":true,"result":{"message_id":2567,"from":{"id":8375418380,"is_bot":true,"first_name":"Clawy","username":"Clawy_OpenClawBot"},"chat":{"id":-1003566973693,"title":"Elad & Clawy","is_forum":true,"type":"supergroup"},"date":1777063404,"text":"PC Guardian, התראה קריטית\nעשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n\nמה זה משפיע\n- עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n- דורש בדיקה תפעולית לפי הרכיב שדווח\n\nמה כבר נבדק\n- יש תקשורת ל: 1.1.1.1, 8.8.8.8\n- נבדק health ל-gateway המקומי\n\nהפעולה הבאה המומלצת\n1. לבדוק ידנית את הרכיב אם המצב נשאר לא תקין\n2. לבדוק אם יש השפעה אמיתית לפני פעולה","entities":[{"offset":216,"length":7,"type":"url"},{"offset":225,"length":7,"type":"url"}]}}}

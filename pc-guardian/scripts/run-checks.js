@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
+const https = require('https');
 const { execFileSync, spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -11,99 +12,54 @@ const DASHBOARD_DATA_PATH = path.join(ROOT, CONFIG.paths.dashboard_data_file);
 const DASHBOARD_FILE_PATH = path.join(ROOT, CONFIG.paths.dashboard_file);
 const LOG_DIR = path.join(ROOT, CONFIG.paths.log_dir);
 const IS_DRY_RUN = process.argv.includes('--dry-run');
+const previousState = fs.existsSync(STATE_PATH) ? readJson(STATE_PATH) : { recent_failures: [], last_fixes: [], alerts: {} };
+const now = new Date().toISOString();
+const logLines = [];
+const failures = [];
+const offenders = [];
 
 ensureDir(path.dirname(STATE_PATH));
 ensureDir(path.dirname(DASHBOARD_DATA_PATH));
 ensureDir(LOG_DIR);
 
-const previousState = fs.existsSync(STATE_PATH) ? readJson(STATE_PATH) : { recent_failures: [], last_fixes: [], alerts: {} };
-const now = new Date().toISOString();
-const logLines = [];
-const fixes = [];
-const failures = [];
-const offenders = [];
-
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function readJson(file) { return JSON.parse(fs.readFileSync(file, 'utf8')); }
 function writeJson(file, obj) { fs.writeFileSync(file, JSON.stringify(obj, null, 2) + '\n', 'utf8'); }
 function appendLog(line) { logLines.push('[' + new Date().toISOString() + '] ' + line); }
-function runPs(command, fallback = null, options = {}) {
-  try {
-    const encoded = Buffer.from(command, 'utf16le').toString('base64');
-    const out = execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', encoded], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: options.timeoutMs || 15000 });
-    return out.trim();
-  } catch (error) {
-    if (!options.silent) appendLog('PowerShell failed: ' + error.message);
-    return fallback;
-  }
-}
-function runOpenClaw(args, options = {}) {
-  return { ok: false, stdout: '', command: null, skipped: true, reason: 'disabled_in_process' };
-}
+function toNumber(v, fallback = 0) { const n = Number(v); return Number.isFinite(n) ? n : fallback; }
+function arrayify(value) { return value == null ? [] : Array.isArray(value) ? value : [value]; }
+function truncateArray(arr, max) { return arr.slice(0, max); }
 function severityRank(status) { return status === 'CRITICAL' ? 3 : status === 'WARNING' ? 2 : status === 'OK' ? 1 : 0; }
-function confidenceRank(level) { return level === 'high' ? 3 : level === 'medium' ? 2 : 1; }
 function pickStatus(items) {
   let status = 'OK';
   for (const item of items) if (severityRank(item.status) > severityRank(status)) status = item.status;
   return status;
 }
 function summarizeIssues(items) { return items.filter(x => x.status !== 'OK').map(x => x.summary); }
-function toNumber(v, fallback = 0) { const n = Number(v); return Number.isFinite(n) ? n : fallback; }
-function arrayify(value) { return value == null ? [] : Array.isArray(value) ? value : [value]; }
-function truncateArray(arr, max) { return arr.slice(0, max); }
-function isRecentFix(fixType, target, windowMinutes = 30) {
-  const cutoff = Date.now() - windowMinutes * 60 * 1000;
-  return arrayify(previousState.last_fixes).some(f => f.type === fixType && f.target === target && Date.parse(f.time || 0) >= cutoff && f.result === 'success');
-}
-function safeDeleteFile(file) {
-  return true;
-}
-function rotateLogs() {
-  const files = fs.readdirSync(LOG_DIR).filter(x => x.endsWith('.log')).map(name => ({ name, full: path.join(LOG_DIR, name), stat: fs.statSync(path.join(LOG_DIR, name)) })).sort((a,b)=>b.stat.mtimeMs-a.stat.mtimeMs);
-  for (const file of files) {
-    if (file.stat.size > CONFIG.thresholds.max_log_size_mb * 1024 * 1024) {
-      const archive = file.full.replace(/\.log$/, '.' + Date.now() + '.log');
-      if (!IS_DRY_RUN) fs.renameSync(file.full, archive);
-    }
-  }
-  const all = fs.readdirSync(LOG_DIR).filter(x => x.endsWith('.log')).map(name => ({ name, full: path.join(LOG_DIR, name), stat: fs.statSync(path.join(LOG_DIR, name)) })).sort((a,b)=>b.stat.mtimeMs-a.stat.mtimeMs);
-  for (const file of all.slice(CONFIG.thresholds.max_log_files)) safeDeleteFile(file.full);
-}
-function writeLog() {
-  const file = path.join(LOG_DIR, 'pc-guardian.log');
-  const prior = fs.existsSync(file) ? fs.readFileSync(file, 'utf8').split(/\r?\n/).filter(Boolean) : [];
-  const merged = prior.concat(logLines).slice(-CONFIG.monitoring.max_log_lines);
-  fs.writeFileSync(file, merged.join(os.EOL) + os.EOL, 'utf8');
-  rotateLogs();
-}
 function addFailure(kind, summary, details, statusHint = null) { failures.push({ time: now, kind, summary, details, status: statusHint }); }
-function addFix(type, target, result, details) { fixes.push({ time: now, type, target, result, details }); }
-function cleanupOldFiles(rule, days) {
-  return [];
+
+function runPs(command, fallback = null, options = {}) {
+  try {
+    const encoded = Buffer.from(command, 'utf16le').toString('base64');
+    const out = execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', encoded], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+      timeout: options.timeoutMs || 15000,
+      windowsHide: true
+    });
+    return out.trim();
+  } catch (error) {
+    if (!options.silent) appendLog('PowerShell failed: ' + error.message);
+    return fallback;
+  }
 }
-function stopProcess(pid) {
-  return true;
-}
-function restartService(name) {
-  return false;
-}
-function startTask(name) {
-  return true;
-}
-function endTask(name) {
-  return true;
-}
-function safeRecoverOpenClawTask(taskName, taskState) {
-  return { attempted: false, result: 'skipped', details: 'actions disabled by user' };
-}
-function disableCronJob(jobId) {
-  return { ok: false, details: 'actions disabled by user' };
-}
+
 function getJson(command, fallback, options = {}) {
   const out = runPs(command, null, options);
   if (!out) return fallback;
   try { return JSON.parse(out); } catch { return fallback; }
 }
+
 function readOpenClawCronJobs() {
   const statePath = path.join(process.env.USERPROFILE || '', '.openclaw', 'state', 'gateway-cron-jobs.json');
   if (fs.existsSync(statePath)) {
@@ -115,6 +71,7 @@ function readOpenClawCronJobs() {
   }
   return { jobs: [], source: 'unavailable' };
 }
+
 function issueInsight(issue, context = {}) {
   const kind = String(issue?.kind || '');
   const summary = String(issue?.summary || '');
@@ -159,7 +116,7 @@ function issueInsight(issue, context = {}) {
       severity: issue.status === 'CRITICAL' ? 'CRITICAL' : 'WARNING',
       confidence,
       impact: 'עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי',
-      next: 'לבצע recovery בטוח רק אם המצב נשאר לא תקין'
+      next: 'לבדוק ידנית את הרכיב אם המצב נשאר לא תקין'
     };
   }
   if (kind === 'Important Tasks') {
@@ -177,18 +134,7 @@ function issueInsight(issue, context = {}) {
     next: 'לבדוק אם יש השפעה אמיתית לפני פעולה'
   };
 }
-function computeAlert(summaryStatus, recentIssues, context = {}) {
-  const lastSentAt = previousState.alerts?.last_sent_at ? Date.parse(previousState.alerts.last_sent_at) : 0;
-  const lastStatus = previousState.alerts?.last_status || null;
-  const cooldownMs = (CONFIG.alerts.cooldown_minutes || 20) * 60 * 1000;
-  const enriched = recentIssues.map(issue => ({ ...issue, insight: issueInsight(issue, context) }));
-  const alertableIssues = enriched.filter(issue => issue.insight.severity !== 'INFO' && issue.insight.confidence !== 'low');
-  const effectiveStatus = pickStatus(alertableIssues.map(issue => ({ status: issue.insight.severity === 'CRITICAL' ? 'CRITICAL' : 'WARNING' })));
-  const summary = alertableIssues.slice(0, 2).map(x => x.summary).join(' | ') || 'תקין';
-  const shouldSend = effectiveStatus !== 'OK' && (effectiveStatus !== lastStatus || (Date.now() - lastSentAt) > cooldownMs);
-  const message = effectiveStatus === 'OK' ? null : buildHumanAlert(effectiveStatus, context, alertableIssues);
-  return { shouldSend, summary, status: effectiveStatus, rawStatus: summaryStatus, message, alertableIssues, enrichedIssues: enriched };
-}
+
 function buildHumanAlert(status, context = {}, issues = []) {
   const lines = [];
   const pingOk = (context.pingResults || []).filter(x => x.ok).map(x => x.target);
@@ -233,6 +179,28 @@ function buildHumanAlert(status, context = {}, issues = []) {
 
   return lines.join('\n');
 }
+
+function computeAlert(summaryStatus, recentIssues, context = {}) {
+  const lastSentAt = previousState.alerts?.last_sent_at ? Date.parse(previousState.alerts.last_sent_at) : 0;
+  const lastStatus = previousState.alerts?.last_status || null;
+  const cooldownMs = (CONFIG.alerts.cooldown_minutes || 20) * 60 * 1000;
+  const enriched = recentIssues.map(issue => ({ ...issue, insight: issueInsight(issue, context) }));
+  const alertableIssues = enriched.filter(issue => issue.insight.severity !== 'INFO' && issue.insight.confidence !== 'low');
+  const effectiveStatus = pickStatus(alertableIssues.map(issue => ({ status: issue.insight.severity === 'CRITICAL' ? 'CRITICAL' : 'WARNING' })));
+  const summary = alertableIssues.slice(0, 2).map(x => x.summary).join(' | ') || 'תקין';
+  const shouldSend = effectiveStatus !== 'OK' && (effectiveStatus !== lastStatus || (Date.now() - lastSentAt) > cooldownMs);
+  const message = effectiveStatus === 'OK' ? null : buildHumanAlert(effectiveStatus, context, alertableIssues);
+  return { shouldSend, summary, status: effectiveStatus, rawStatus: summaryStatus, message, alertableIssues, enrichedIssues: enriched };
+}
+
+function formatAlert(alert) {
+  return alert.message || (alert.status === 'CRITICAL'
+    ? CONFIG.alerts.critical_template.replace('{summary}', alert.summary)
+    : alert.status === 'WARNING'
+      ? CONFIG.alerts.warning_template.replace('{summary}', alert.summary)
+      : CONFIG.alerts.normal_template);
+}
+
 function persistAlert(alert, delivery = {}) {
   previousState.alerts = {
     last_sent_at: now,
@@ -241,6 +209,7 @@ function persistAlert(alert, delivery = {}) {
     last_delivery: delivery
   };
 }
+
 function writeAlertFile(alert, delivery = {}) {
   const alertFile = path.join(ROOT, 'state', 'last-alert.json');
   writeJson(alertFile, {
@@ -251,19 +220,11 @@ function writeAlertFile(alert, delivery = {}) {
     delivery
   });
 }
-function formatAlert(alert) {
-  return alert.message || (alert.status === 'CRITICAL'
-    ? CONFIG.alerts.critical_template.replace('{summary}', alert.summary)
-    : alert.status === 'WARNING'
-      ? CONFIG.alerts.warning_template.replace('{summary}', alert.summary)
-      : CONFIG.alerts.normal_template);
-}
-const https = require('https');
 
 function sendTelegramAlert(alert) {
   const telegram = CONFIG.alerts.telegram || {};
-  if (!telegram.bot_token || !telegram.chat_id) return { sent: false, mode: 'disabled', reason: 'telegram_not_configured' };
-  if (IS_DRY_RUN) return { sent: true, mode: 'dry-run', reason: 'dry_run' };
+  if (!telegram.bot_token || !telegram.chat_id) return Promise.resolve({ sent: false, mode: 'disabled', reason: 'telegram_not_configured' });
+  if (IS_DRY_RUN) return Promise.resolve({ sent: true, mode: 'dry-run', reason: 'dry_run' });
 
   const payload = JSON.stringify({
     chat_id: telegram.chat_id,
@@ -278,12 +239,12 @@ function sendTelegramAlert(alert) {
       path: `/bot${telegram.bot_token}/sendMessage`,
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
         'Content-Length': Buffer.byteLength(payload)
       }
     }, (res) => {
       let data = '';
-      res.on('data', (chunk) => data += chunk);
+      res.on('data', (chunk) => { data += chunk; });
       res.on('end', () => {
         try {
           const parsed = JSON.parse(data);
@@ -299,10 +260,17 @@ function sendTelegramAlert(alert) {
       resolve({ sent: false, mode: 'telegram', reason: error.message });
     });
 
-    req.write(payload);
+    req.write(payload, 'utf8');
     req.end();
   });
-});
+}
+
+function writeLog() {
+  const file = path.join(LOG_DIR, 'pc-guardian.log');
+  const prior = fs.existsSync(file) ? fs.readFileSync(file, 'utf8').split(/\r?\n/).filter(Boolean) : [];
+  const merged = prior.concat(logLines).slice(-CONFIG.monitoring.max_log_lines);
+  fs.writeFileSync(file, merged.join(os.EOL) + os.EOL, 'utf8');
+}
 
 function publishDashboard(dataFile, htmlFile) {
   const publish = CONFIG.dashboard_publish || {};
@@ -338,171 +306,157 @@ function publishDashboard(dataFile, htmlFile) {
   return { ok: false, mode: 'misconfigured' };
 }
 
-const cpuLoad = toNumber(runPs('(Get-Counter "\\Processor(_Total)\\% Processor Time").CounterSamples[0].CookedValue.ToString("F2")', '0', { silent: true }));
-const mem = getJson('$os = Get-CimInstance Win32_OperatingSystem; [pscustomobject]@{ TotalGB = [math]::Round($os.TotalVisibleMemorySize / 1MB, 2); FreeGB = [math]::Round($os.FreePhysicalMemory / 1MB, 2) } | ConvertTo-Json -Compress', { TotalGB: 0, FreeGB: 0 }, { silent: true });
-const ramUsedPct = mem.TotalGB > 0 ? ((mem.TotalGB - mem.FreeGB) / mem.TotalGB) * 100 : 0;
-const disks = arrayify(getJson('Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | Select-Object DeviceID,@{n="FreeGB";e={[math]::Round($_.FreeSpace/1GB,2)}},@{n="SizeGB";e={[math]::Round($_.Size/1GB,2)}} | ConvertTo-Json -Compress', [], { silent: true }));
-const diskActivity = toNumber(runPs('(Get-Counter "\\PhysicalDisk(_Total)\\% Disk Time").CounterSamples[0].CookedValue.ToString("F2")', '0', { silent: true }));
-const pingResults = CONFIG.monitoring.connectivity_targets.map(target => ({ target, ok: /True/i.test(runPs('Test-Connection -ComputerName "' + target + '" -Count 1 -Quiet', 'False', { silent: true }) || 'False') }));
-const webResults = CONFIG.monitoring.internet_targets.map(target => ({ target, ok: /^(200|204)$/i.test(String(runPs('try { (Invoke-WebRequest -UseBasicParsing -Uri "' + target + '" -TimeoutSec 5).StatusCode } catch { 0 }', '0', { silent: true }))) }));
-const topProcesses = arrayify(getJson('Get-Process | Sort-Object CPU -Descending | Select-Object -First 7 ProcessName,Id,CPU,WS,Path | ConvertTo-Json -Compress', [], { silent: true }));
-const defender = getJson('if (Get-Command Get-MpComputerStatus -ErrorAction SilentlyContinue) { Get-MpComputerStatus | Select-Object AntivirusEnabled,RealTimeProtectionEnabled,QuickScanAge,FullScanAge,AntivirusSignatureLastUpdated | ConvertTo-Json -Compress }', { AntivirusEnabled: null, RealTimeProtectionEnabled: null }, { silent: true });
-const firewall = arrayify(getJson('Get-NetFirewallProfile | Select-Object Name,Enabled | ConvertTo-Json -Compress', [], { silent: true }));
-const importantServices = arrayify(getJson(`$names = @(${RULES.important_services.map(x => `'${x}'`).join(',')}); Get-Service | Where-Object { $names -contains $_.Name } | Select-Object Name,Status,StartType | ConvertTo-Json -Compress`, [], { silent: true }));
-const scheduledTasks = arrayify(getJson(`$patterns = @(${RULES.important_tasks.map(x => `'${x}'`).join(',')}); Get-ScheduledTask | Where-Object { $name = $_.TaskName; foreach ($p in $patterns) { if ($name -like ('*' + $p + '*')) { return $true } }; return $false } | Select-Object TaskName,State,TaskPath | ConvertTo-Json -Compress`, [], { silent: true }));
-const recentEvents = arrayify(getJson(`$start=(Get-Date).AddHours(-${CONFIG.monitoring.recent_event_hours}); try { Get-WinEvent -FilterHashtable @{LogName='System'; Level=2; StartTime=$start} -MaxEvents 15 | Select-Object TimeCreated,Id,ProviderName,LevelDisplayName,Message | ConvertTo-Json -Compress } catch { '[]' }`, [], { silent: true }));
-const netPorts = arrayify(getJson(`Get-NetTCPConnection -State Listen | Where-Object { ${RULES.important_ports.map(p => '$_.LocalPort -eq ' + p).join(' -or ')} } | Select-Object LocalAddress,LocalPort,OwningProcess | ConvertTo-Json -Compress`, [], { silent: true }));
-const gateways = CONFIG.openclaw.gateways.map(g => {
-  const code = toNumber(runPs(`try { (Invoke-WebRequest -UseBasicParsing -Uri '${g.url}' -TimeoutSec 5).StatusCode } catch { if ($_.Exception.Response) { $_.Exception.Response.StatusCode.value__ } else { 0 } }`, '0', { silent: true }));
-  const port = Number(g.url.match(/:(\d+)\//)[1]);
-  const listening = netPorts.some(p => Number(p.LocalPort) === port);
-  return { name: g.name, url: g.url, port, statusCode: code, listening, ok: listening && code >= 200 && code < 500 };
-});
-const openclawTasks = arrayify(getJson(`$patterns = @(${CONFIG.openclaw.scheduled_task_patterns.map(x => `'${x}'`).join(',')}); Get-ScheduledTask | Where-Object { $name = $_.TaskName; foreach ($p in $patterns) { if ($name -like ('*' + $p + '*')) { return $true } }; return $false } | Select-Object TaskName,State,TaskPath | ConvertTo-Json -Compress`, [], { silent: true }));
-const cronState = readOpenClawCronJobs();
-const cronJobs = cronState.jobs;
-const nodeFallbackHints = arrayify(getJson(`$base='${path.join(process.env.USERPROFILE || '', '.openclaw').replace(/\\/g, '\\\\')}'; if (Test-Path $base) { $files = Get-ChildItem -Path $base -Recurse -Include *.log,*.json -ErrorAction SilentlyContinue | Select-Object -First 60 FullName; $hits = foreach ($f in $files) { try { $m = Select-String -Path $f.FullName -Pattern 'fallback','model failed','provider failed' -SimpleMatch -ErrorAction SilentlyContinue; if ($m) { [pscustomobject]@{ File=$f.FullName; Count=$m.Count } } } catch {} }; $hits | ConvertTo-Json -Compress }`, [], { silent: true }));
-const growthItems = [];
-for (const scanRoot of CONFIG.monitoring.growth_scan_roots) {
-  for (const pattern of CONFIG.monitoring.growth_scan_patterns) {
-    const items = arrayify(getJson(`if (Test-Path '${scanRoot.replace(/\\/g, '\\\\')}') { Get-ChildItem -Path '${scanRoot.replace(/\\/g, '\\\\')}' -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.FullName -like '*${pattern}*' } | Select-Object -First 10 FullName,@{n='SizeMB';e={[math]::Round((Get-ChildItem $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum / 1MB,2)}} | ConvertTo-Json -Compress }`, [], { silent: true }));
-    growthItems.push(...items.filter(Boolean));
-  }
-}
+async function main() {
+  appendLog('Mode: read-only monitoring');
 
-const checks = [];
-checks.push({ name: 'CPU', value: cpuLoad, status: cpuLoad >= CONFIG.thresholds.cpu_critical ? 'CRITICAL' : cpuLoad >= CONFIG.thresholds.cpu_warning ? 'WARNING' : 'OK', summary: 'CPU ' + cpuLoad.toFixed(1) + '%' });
-checks.push({ name: 'RAM', value: ramUsedPct, status: ramUsedPct >= CONFIG.thresholds.ram_critical ? 'CRITICAL' : ramUsedPct >= CONFIG.thresholds.ram_warning ? 'WARNING' : 'OK', summary: 'RAM ' + ramUsedPct.toFixed(1) + '%' });
-for (const disk of disks) checks.push({ name: 'Disk ' + disk.DeviceID, value: disk.FreeGB, status: disk.FreeGB <= CONFIG.thresholds.disk_critical_free_gb ? 'CRITICAL' : disk.FreeGB <= CONFIG.thresholds.disk_warning_free_gb ? 'WARNING' : 'OK', summary: disk.DeviceID + ' free ' + disk.FreeGB + 'GB' });
-checks.push({ name: 'Disk Activity', value: diskActivity, status: diskActivity >= CONFIG.thresholds.disk_activity_critical_pct ? 'CRITICAL' : diskActivity >= CONFIG.thresholds.disk_activity_warning_pct ? 'WARNING' : 'OK', summary: 'Disk activity ' + diskActivity.toFixed(1) + '%' });
-checks.push({ name: 'Network Connectivity', value: pingResults, status: pingResults.every(x => x.ok) ? 'OK' : pingResults.some(x => x.ok) ? 'WARNING' : 'CRITICAL', summary: pingResults.filter(x => !x.ok).length ? 'Ping failed: ' + pingResults.filter(x => !x.ok).map(x => x.target).join(', ') : 'Ping OK' });
-checks.push({ name: 'Internet Reachability', value: webResults, status: webResults.every(x => x.ok) ? 'OK' : webResults.some(x => x.ok) ? 'WARNING' : 'CRITICAL', summary: webResults.filter(x => !x.ok).length ? 'Internet failed: ' + webResults.filter(x => !x.ok).map(x => x.target).join(', ') : 'Internet OK' });
-checks.push({ name: 'Windows Defender', value: defender, status: defender && defender.AntivirusEnabled && defender.RealTimeProtectionEnabled ? 'OK' : 'CRITICAL', summary: defender && defender.AntivirusEnabled && defender.RealTimeProtectionEnabled ? 'Defender OK' : 'Defender disabled' });
-checks.push({ name: 'Firewall', value: firewall, status: firewall.length && firewall.every(x => x.Enabled) ? 'OK' : 'CRITICAL', summary: firewall.length && firewall.every(x => x.Enabled) ? 'Firewall OK' : 'Firewall profile disabled' });
-checks.push({ name: 'Critical Events', value: recentEvents.length, status: recentEvents.length >= CONFIG.thresholds.event_error_critical ? 'CRITICAL' : recentEvents.length >= CONFIG.thresholds.event_error_warning ? 'WARNING' : 'OK', summary: recentEvents.length ? 'Critical events: ' + recentEvents.length : 'No recent critical events' });
-checks.push({ name: 'Important Services', value: importantServices, status: importantServices.every(x => toNumber(x.Status, x.Status) === 4 || String(x.Status).toLowerCase() === 'running') ? 'OK' : 'WARNING', summary: importantServices.every(x => toNumber(x.Status, x.Status) === 4 || String(x.Status).toLowerCase() === 'running') ? 'Services OK' : 'Important service stopped' });
-checks.push({ name: 'Important Tasks', value: scheduledTasks, status: scheduledTasks.length && scheduledTasks.every(x => String(x.State).toLowerCase() !== 'disabled') ? 'OK' : 'WARNING', summary: scheduledTasks.length ? 'Tasks found' : 'Tasks missing' });
+  const cpuLoad = toNumber(runPs('(Get-Counter "\\Processor(_Total)\\% Processor Time").CounterSamples[0].CookedValue.ToString("F2")', '0', { silent: true }));
+  const mem = getJson('$os = Get-CimInstance Win32_OperatingSystem; [pscustomobject]@{ TotalGB = [math]::Round($os.TotalVisibleMemorySize / 1MB, 2); FreeGB = [math]::Round($os.FreePhysicalMemory / 1MB, 2) } | ConvertTo-Json -Compress', { TotalGB: 0, FreeGB: 0 }, { silent: true });
+  const ramUsedPct = mem.TotalGB > 0 ? ((mem.TotalGB - mem.FreeGB) / mem.TotalGB) * 100 : 0;
+  const disks = arrayify(getJson('Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | Select-Object DeviceID,@{n="FreeGB";e={[math]::Round($_.FreeSpace/1GB,2)}},@{n="SizeGB";e={[math]::Round($_.Size/1GB,2)}} | ConvertTo-Json -Compress', [], { silent: true }));
+  const diskActivity = toNumber(runPs('(Get-Counter "\\PhysicalDisk(_Total)\\% Disk Time").CounterSamples[0].CookedValue.ToString("F2")', '0', { silent: true }));
+  const pingResults = CONFIG.monitoring.connectivity_targets.map(target => ({ target, ok: /True/i.test(runPs('Test-Connection -ComputerName "' + target + '" -Count 1 -Quiet', 'False', { silent: true }) || 'False') }));
+  const webResults = CONFIG.monitoring.internet_targets.map(target => ({ target, ok: /^(200|204)$/i.test(String(runPs('try { (Invoke-WebRequest -UseBasicParsing -Uri "' + target + '" -TimeoutSec 5).StatusCode } catch { 0 }', '0', { silent: true }))) }));
+  const topProcesses = arrayify(getJson('Get-Process | Sort-Object CPU -Descending | Select-Object -First 7 ProcessName,Id,CPU,WS,Path | ConvertTo-Json -Compress', [], { silent: true }));
+  const defender = getJson('if (Get-Command Get-MpComputerStatus -ErrorAction SilentlyContinue) { Get-MpComputerStatus | Select-Object AntivirusEnabled,RealTimeProtectionEnabled,QuickScanAge,FullScanAge,AntivirusSignatureLastUpdated | ConvertTo-Json -Compress }', { AntivirusEnabled: null, RealTimeProtectionEnabled: null }, { silent: true });
+  const firewall = arrayify(getJson('Get-NetFirewallProfile | Select-Object Name,Enabled | ConvertTo-Json -Compress', [], { silent: true }));
+  const importantServices = arrayify(getJson(`$names = @(${RULES.important_services.map(x => `'${x}'`).join(',')}); Get-Service | Where-Object { $names -contains $_.Name } | Select-Object Name,Status,StartType | ConvertTo-Json -Compress`, [], { silent: true }));
+  const scheduledTasks = arrayify(getJson(`$patterns = @(${RULES.important_tasks.map(x => `'${x}'`).join(',')}); Get-ScheduledTask | Where-Object { $name = $_.TaskName; foreach ($p in $patterns) { if ($name -like ('*' + $p + '*')) { return $true } }; return $false } | Select-Object TaskName,State,TaskPath | ConvertTo-Json -Compress`, [], { silent: true }));
+  const recentEvents = arrayify(getJson(`$start=(Get-Date).AddHours(-${CONFIG.monitoring.recent_event_hours}); try { Get-WinEvent -FilterHashtable @{LogName='System'; Level=2; StartTime=$start} -MaxEvents 15 | Select-Object TimeCreated,Id,ProviderName,LevelDisplayName,Message | ConvertTo-Json -Compress } catch { '[]' }`, [], { silent: true }));
+  const netPorts = arrayify(getJson(`Get-NetTCPConnection -State Listen | Where-Object { ${RULES.important_ports.map(p => '$_.LocalPort -eq ' + p).join(' -or ')} } | Select-Object LocalAddress,LocalPort,OwningProcess | ConvertTo-Json -Compress`, [], { silent: true }));
+  const gateways = CONFIG.openclaw.gateways.map(g => {
+    const code = toNumber(runPs(`try { (Invoke-WebRequest -UseBasicParsing -Uri '${g.url}' -TimeoutSec 5).StatusCode } catch { if ($_.Exception.Response) { $_.Exception.Response.StatusCode.value__ } else { 0 } }`, '0', { silent: true }));
+    const match = g.url.match(/:(\d+)\//);
+    const port = match ? Number(match[1]) : 0;
+    const listening = netPorts.some(p => Number(p.LocalPort) === port);
+    return { name: g.name, url: g.url, port, statusCode: code, listening, ok: listening && code >= 200 && code < 500 };
+  });
+  const openclawTasks = arrayify(getJson(`$patterns = @(${CONFIG.openclaw.scheduled_task_patterns.map(x => `'${x}'`).join(',')}); Get-ScheduledTask | Where-Object { $name = $_.TaskName; foreach ($p in $patterns) { if ($name -like ('*' + $p + '*')) { return $true } }; return $false } | Select-Object TaskName,State,TaskPath | ConvertTo-Json -Compress`, [], { silent: true }));
+  const cronState = readOpenClawCronJobs();
+  const cronJobs = cronState.jobs;
+  const nodeFallbackHints = arrayify(getJson(`$base='${path.join(process.env.USERPROFILE || '', '.openclaw').replace(/\\/g, '\\\\')}'; if (Test-Path $base) { $files = Get-ChildItem -Path $base -Recurse -Include *.log,*.json -ErrorAction SilentlyContinue | Select-Object -First 60 FullName; $hits = foreach ($f in $files) { try { $m = Select-String -Path $f.FullName -Pattern 'fallback','model failed','provider failed' -SimpleMatch -ErrorAction SilentlyContinue; if ($m) { [pscustomobject]@{ File=$f.FullName; Count=$m.Count } } } catch {} }; $hits | ConvertTo-Json -Compress }`, [], { silent: true }));
 
-for (const proc of topProcesses.slice(0, 7)) offenders.push({ name: proc.ProcessName, cpu: Math.round(toNumber(proc.CPU, 0) * 10) / 10, memoryMb: Math.round(toNumber(proc.WS, 0) / 1024 / 1024), path: proc.Path || '' });
-
-const openclawChecks = [];
-for (const gateway of gateways) openclawChecks.push({ name: gateway.name, value: gateway, status: gateway.ok ? 'OK' : gateway.listening ? 'WARNING' : 'CRITICAL', summary: gateway.name + ' port ' + gateway.port + ' ' + (gateway.ok ? 'OK' : gateway.listening ? 'no health' : 'down') });
-openclawChecks.push({ name: 'OpenClaw Ports', value: netPorts, status: RULES.important_ports.every(p => netPorts.some(x => Number(x.LocalPort) === p)) ? 'OK' : 'CRITICAL', summary: 'Ports ' + RULES.important_ports.join(', ') });
-openclawChecks.push({ name: 'OpenClaw Tasks', value: openclawTasks, status: openclawTasks.length && openclawTasks.every(x => {
-  const state = String(x.State || '').toLowerCase();
-  const numeric = toNumber(x.State, -1);
-  return state !== 'disabled' && (state === 'ready' || state === 'running' || numeric === 1 || numeric === 3 || numeric === 4);
-}) ? 'OK' : 'WARNING', summary: openclawTasks.length ? 'OpenClaw tasks found' : 'OpenClaw tasks missing' });
-openclawChecks.push({ name: 'Cron Jobs', value: cronJobs, status: cronJobs.length ? 'OK' : 'WARNING', summary: cronJobs.length ? 'Cron jobs found: ' + cronJobs.length : 'No cron jobs found (' + cronState.source + ')' });
-openclawChecks.push({ name: 'Fallback / Model failures', value: nodeFallbackHints, status: nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical ? 'CRITICAL' : nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_warning ? 'WARNING' : 'OK', summary: nodeFallbackHints.length ? 'Model fallback hints: ' + nodeFallbackHints.length : 'No model fallback hints' });
-openclawChecks.push({ name: 'Growth scan', value: growthItems, status: growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_critical_mb) ? 'CRITICAL' : growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_warning_mb) ? 'WARNING' : 'OK', summary: growthItems.length ? 'Growth items: ' + growthItems.length : 'Growth normal' });
-
-for (const item of checks.concat(openclawChecks)) if (item.status !== 'OK') addFailure(item.name, item.summary, item.value, item.status);
-
-for (const svc of importantServices) {
-  const running = toNumber(svc.Status, svc.Status) === 4 || String(svc.Status).toLowerCase() === 'running';
-  if (!running && !isRecentFix('restart_service', svc.Name)) {
-    const safe = RULES.safe_services.find(x => x.name === svc.Name && x.allow_restart);
-    if (safe) addFix('restart_service', svc.Name, restartService(svc.Name) ? 'success' : 'failed', 'Service was ' + svc.Status);
-  }
-}
-for (const task of openclawTasks) {
-  if (isRecentFix('recover_openclaw_task', task.TaskName, 30)) continue;
-  const recovery = safeRecoverOpenClawTask(task.TaskName, task.State);
-  if (recovery.attempted) addFix('recover_openclaw_task', task.TaskName, recovery.result, recovery.details);
-}
-if (nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical) {
-  const fallbackModel = CONFIG.openclaw.safe_fallback_models[0];
-  const fallbackState = { updated_at: now, active_model: fallbackModel, reason: 'repeated model failure hint', mode: 'config-override' };
-  writeJson(path.join(ROOT, 'state', 'fallback-model.json'), fallbackState);
-  addFix('fallback_model', fallbackModel, 'success', 'Fallback state updated');
-}
-const groupedFailures = {};
-for (const f of (previousState.recent_failures || []).concat(failures)) groupedFailures[f.kind] = (groupedFailures[f.kind] || 0) + 1;
-for (const [kind, count] of Object.entries(groupedFailures)) {
-  if (count >= CONFIG.thresholds.failure_repeat_critical) {
-    const matchingJob = cronJobs.find(x => String(x.name || x.id || x.jobId || '').toLowerCase().includes(kind.toLowerCase()));
-    if (matchingJob && RULES.safe_cron_disable_patterns.some(p => String(matchingJob.name || matchingJob.id || matchingJob.jobId || '').toLowerCase().includes(p.toLowerCase())) && !isRecentFix('disable_repeating_cron', matchingJob.jobId || matchingJob.id || matchingJob.name, 120)) {
-      const disableResult = disableCronJob(String(matchingJob.jobId || matchingJob.id || matchingJob.name));
-      addFix('disable_repeating_cron', matchingJob.jobId || matchingJob.id || matchingJob.name, disableResult.ok ? 'success' : 'failed', disableResult.details);
+  const growthItems = [];
+  for (const scanRoot of CONFIG.monitoring.growth_scan_roots) {
+    for (const pattern of CONFIG.monitoring.growth_scan_patterns) {
+      const items = arrayify(getJson(`if (Test-Path '${scanRoot.replace(/\\/g, '\\\\')}') { Get-ChildItem -Path '${scanRoot.replace(/\\/g, '\\\\')}' -Directory -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.FullName -like '*${pattern}*' } | Select-Object -First 10 FullName,@{n='SizeMB';e={[math]::Round((Get-ChildItem $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum / 1MB,2)}} | ConvertTo-Json -Compress }`, [], { silent: true }));
+      growthItems.push(...items.filter(Boolean));
     }
   }
-}
-for (const proc of topProcesses) {
-  const memMb = Math.round(toNumber(proc.WS, 0) / 1024 / 1024);
-  const safe = RULES.safe_kill_processes.find(x => x.name.toLowerCase() === String(proc.ProcessName || '').toLowerCase() && (!x.path_contains || x.path_contains.some(token => String(proc.Path || '').toLowerCase().includes(token.toLowerCase()))));
-  if (safe && memMb >= 4096 && !isRecentFix('stop_runaway_process', proc.ProcessName + '#' + proc.Id)) addFix('stop_runaway_process', proc.ProcessName + '#' + proc.Id, stopProcess(proc.Id) ? 'success' : 'failed', 'Memory ' + memMb + 'MB');
-}
-for (const cleanupRule of RULES.safe_cleanup_paths) {
-  if (isRecentFix('cleanup_safe_path', cleanupRule.path, 720)) continue;
-  const deleted = cleanupOldFiles(cleanupRule, cleanupRule.path.toLowerCase().includes('log') ? CONFIG.thresholds.old_log_days : CONFIG.thresholds.old_temp_days);
-  if (deleted.length) addFix('cleanup_safe_path', cleanupRule.path, 'success', 'Deleted files: ' + deleted.length);
-}
-const runawayBackups = topProcesses.filter(x => /backup/i.test(String(x.ProcessName)) && toNumber(x.CPU, 0) > CONFIG.thresholds.runaway_backup_minutes);
-for (const proc of runawayBackups) {
-  const safe = RULES.safe_kill_processes.find(x => x.name.toLowerCase() === String(proc.ProcessName || '').toLowerCase());
-  if (safe && !isRecentFix('stop_runaway_backup', proc.ProcessName + '#' + proc.Id)) addFix('stop_runaway_backup', proc.ProcessName + '#' + proc.Id, stopProcess(proc.Id) ? 'success' : 'failed', 'High CPU backup process');
-}
 
-const computerStatus = pickStatus(checks);
-const openclawStatus = pickStatus(openclawChecks);
-const overallStatus = pickStatus([{ status: computerStatus }, { status: openclawStatus }]);
-const recentFailures = truncateArray(failures.concat(previousState.recent_failures || []), CONFIG.monitoring.max_dashboard_failures);
-const recentFixes = truncateArray(fixes.concat(previousState.last_fixes || []), 20);
-const alert = computeAlert(overallStatus, recentFailures, { pingResults, webResults, recentEvents, cronSource: cronState.source, gateways, openclawTasks });
-let alertDelivery = previousState.alerts?.last_delivery || { sent: false, mode: 'none' };
-if (alert.shouldSend) {
-  alertDelivery = sendTelegramAlert(alert);
-  writeAlertFile(alert, alertDelivery);
-  persistAlert(alert, alertDelivery);
-}
+  const checks = [];
+  checks.push({ name: 'CPU', value: cpuLoad, status: cpuLoad >= CONFIG.thresholds.cpu_critical ? 'CRITICAL' : cpuLoad >= CONFIG.thresholds.cpu_warning ? 'WARNING' : 'OK', summary: 'CPU ' + cpuLoad.toFixed(1) + '%' });
+  checks.push({ name: 'RAM', value: ramUsedPct, status: ramUsedPct >= CONFIG.thresholds.ram_critical ? 'CRITICAL' : ramUsedPct >= CONFIG.thresholds.ram_warning ? 'WARNING' : 'OK', summary: 'RAM ' + ramUsedPct.toFixed(1) + '%' });
+  for (const disk of disks) checks.push({ name: 'Disk ' + disk.DeviceID, value: disk.FreeGB, status: disk.FreeGB <= CONFIG.thresholds.disk_critical_free_gb ? 'CRITICAL' : disk.FreeGB <= CONFIG.thresholds.disk_warning_free_gb ? 'WARNING' : 'OK', summary: disk.DeviceID + ' free ' + disk.FreeGB + 'GB' });
+  checks.push({ name: 'Disk Activity', value: diskActivity, status: diskActivity >= CONFIG.thresholds.disk_activity_critical_pct ? 'CRITICAL' : diskActivity >= CONFIG.thresholds.disk_activity_warning_pct ? 'WARNING' : 'OK', summary: 'Disk activity ' + diskActivity.toFixed(1) + '%' });
+  checks.push({ name: 'Network Connectivity', value: pingResults, status: pingResults.every(x => x.ok) ? 'OK' : pingResults.some(x => x.ok) ? 'WARNING' : 'CRITICAL', summary: pingResults.filter(x => !x.ok).length ? 'Ping failed: ' + pingResults.filter(x => !x.ok).map(x => x.target).join(', ') : 'Ping OK' });
+  checks.push({ name: 'Internet Reachability', value: webResults, status: webResults.every(x => x.ok) ? 'OK' : webResults.some(x => x.ok) ? 'WARNING' : 'CRITICAL', summary: webResults.filter(x => !x.ok).length ? 'Internet failed: ' + webResults.filter(x => !x.ok).map(x => x.target).join(', ') : 'Internet OK' });
+  checks.push({ name: 'Windows Defender', value: defender, status: defender && defender.AntivirusEnabled && defender.RealTimeProtectionEnabled ? 'OK' : 'CRITICAL', summary: defender && defender.AntivirusEnabled && defender.RealTimeProtectionEnabled ? 'Defender OK' : 'Defender disabled' });
+  checks.push({ name: 'Firewall', value: firewall, status: firewall.length && firewall.every(x => x.Enabled) ? 'OK' : 'CRITICAL', summary: firewall.length && firewall.every(x => x.Enabled) ? 'Firewall OK' : 'Firewall profile disabled' });
+  checks.push({ name: 'Critical Events', value: recentEvents.length, status: recentEvents.length >= CONFIG.thresholds.event_error_critical ? 'CRITICAL' : recentEvents.length >= CONFIG.thresholds.event_error_warning ? 'WARNING' : 'OK', summary: recentEvents.length ? 'Critical events: ' + recentEvents.length : 'No recent critical events' });
+  checks.push({ name: 'Important Services', value: importantServices, status: importantServices.every(x => toNumber(x.Status, x.Status) === 4 || String(x.Status).toLowerCase() === 'running') ? 'OK' : 'WARNING', summary: importantServices.every(x => toNumber(x.Status, x.Status) === 4 || String(x.Status).toLowerCase() === 'running') ? 'Services OK' : 'Important service stopped' });
+  checks.push({ name: 'Important Tasks', value: scheduledTasks, status: scheduledTasks.length && scheduledTasks.every(x => String(x.State).toLowerCase() !== 'disabled') ? 'OK' : 'WARNING', summary: scheduledTasks.length ? 'Tasks found' : 'Tasks missing' });
 
-const dashboardData = {
-  system_name: CONFIG.system_name,
-  generated_at: now,
-  overall_status: overallStatus,
-  computer_status: computerStatus,
-  openclaw_status: openclawStatus,
-  computer_checks: checks,
-  openclaw_checks: openclawChecks,
-  recent_failures: recentFailures,
-  last_fixes: recentFixes,
-  top_offenders: offenders,
-  gateways,
-  scheduled_tasks: openclawTasks,
-  services: importantServices,
-  recent_events: recentEvents.slice(0, 10),
-  cron_jobs: cronJobs,
-  cron_source: cronState.source,
-  insights: alert.enrichedIssues || [],
-  alerts: {
-    configured: true,
-    last_message: alert.shouldSend ? formatAlert(alert) : previousState.alerts?.last_summary || null,
-    last_status: previousState.alerts?.last_status || alert.status,
-    last_delivery: previousState.alerts?.last_delivery || alertDelivery
+  for (const proc of topProcesses.slice(0, 7)) offenders.push({ name: proc.ProcessName, cpu: Math.round(toNumber(proc.CPU, 0) * 10) / 10, memoryMb: Math.round(toNumber(proc.WS, 0) / 1024 / 1024), path: proc.Path || '' });
+
+  const openclawChecks = [];
+  for (const gateway of gateways) openclawChecks.push({ name: gateway.name, value: gateway, status: gateway.ok ? 'OK' : gateway.listening ? 'WARNING' : 'CRITICAL', summary: gateway.name + ' port ' + gateway.port + ' ' + (gateway.ok ? 'OK' : gateway.listening ? 'no health' : 'down') });
+  openclawChecks.push({ name: 'OpenClaw Ports', value: netPorts, status: RULES.important_ports.every(p => netPorts.some(x => Number(x.LocalPort) === p)) ? 'OK' : 'CRITICAL', summary: 'Ports ' + RULES.important_ports.join(', ') });
+  openclawChecks.push({ name: 'OpenClaw Tasks', value: openclawTasks, status: openclawTasks.length && openclawTasks.every(x => {
+    const state = String(x.State || '').toLowerCase();
+    const numeric = toNumber(x.State, -1);
+    return state !== 'disabled' && (state === 'ready' || state === 'running' || numeric === 1 || numeric === 3 || numeric === 4);
+  }) ? 'OK' : 'WARNING', summary: openclawTasks.length ? 'OpenClaw tasks found' : 'OpenClaw tasks missing' });
+  openclawChecks.push({ name: 'Cron Jobs', value: cronJobs, status: cronJobs.length ? 'OK' : 'WARNING', summary: cronJobs.length ? 'Cron jobs found: ' + cronJobs.length : 'No cron jobs found (' + cronState.source + ')' });
+  openclawChecks.push({ name: 'Fallback / Model failures', value: nodeFallbackHints, status: nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_critical ? 'CRITICAL' : nodeFallbackHints.length >= CONFIG.thresholds.failure_repeat_warning ? 'WARNING' : 'OK', summary: nodeFallbackHints.length ? 'Model fallback hints: ' + nodeFallbackHints.length : 'No model fallback hints' });
+  openclawChecks.push({ name: 'Growth scan', value: growthItems, status: growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_critical_mb) ? 'CRITICAL' : growthItems.some(x => toNumber(x.SizeMB) >= CONFIG.thresholds.growth_warning_mb) ? 'WARNING' : 'OK', summary: growthItems.length ? 'Growth items: ' + growthItems.length : 'Growth normal' });
+
+  for (const item of checks.concat(openclawChecks)) {
+    if (item.status !== 'OK') addFailure(item.name, item.summary, item.value, item.status);
   }
-};
-writeJson(DASHBOARD_DATA_PATH, dashboardData);
-writeJson(STATE_PATH, {
-  system_name: CONFIG.system_name,
-  version: CONFIG.version,
-  last_check: now,
-  overall_status: overallStatus,
-  computer_health: { status: computerStatus, issues: summarizeIssues(checks) },
-  openclaw_health: { status: openclawStatus, issues: summarizeIssues(openclawChecks) },
-  recent_failures: recentFailures,
-  last_fixes: recentFixes,
-  top_offenders: offenders,
-  alerts: previousState.alerts
+
+  const computerStatus = pickStatus(checks);
+  const openclawStatus = pickStatus(openclawChecks);
+  const overallStatus = pickStatus([{ status: computerStatus }, { status: openclawStatus }]);
+  const recentFailures = truncateArray(failures.concat(previousState.recent_failures || []), CONFIG.monitoring.max_dashboard_failures);
+  const recentFixes = [];
+  const alert = computeAlert(overallStatus, recentFailures, { pingResults, webResults, recentEvents, cronSource: cronState.source, gateways, openclawTasks });
+  let alertDelivery = previousState.alerts?.last_delivery || { sent: false, mode: 'none' };
+
+  if (alert.shouldSend) {
+    alertDelivery = await sendTelegramAlert(alert);
+    writeAlertFile(alert, alertDelivery);
+    persistAlert(alert, alertDelivery);
+  }
+
+  const dashboardData = {
+    system_name: CONFIG.system_name,
+    generated_at: now,
+    overall_status: overallStatus,
+    mode: 'reporting-only',
+    computer_status: computerStatus,
+    openclaw_status: openclawStatus,
+    computer_checks: checks,
+    openclaw_checks: openclawChecks,
+    recent_failures: recentFailures,
+    last_fixes: recentFixes,
+    top_offenders: offenders,
+    gateways,
+    scheduled_tasks: openclawTasks,
+    services: importantServices,
+    recent_events: recentEvents.slice(0, 10),
+    cron_jobs: cronJobs,
+    cron_source: cronState.source,
+    insights: alert.enrichedIssues || [],
+    alerts: {
+      configured: true,
+      last_message: alert.shouldSend ? formatAlert(alert) : previousState.alerts?.last_summary || null,
+      last_status: previousState.alerts?.last_status || alert.status,
+      last_delivery: alert.shouldSend ? alertDelivery : (previousState.alerts?.last_delivery || alertDelivery)
+    }
+  };
+
+  writeJson(DASHBOARD_DATA_PATH, dashboardData);
+  writeJson(STATE_PATH, {
+    system_name: CONFIG.system_name,
+    version: CONFIG.version,
+    mode: 'reporting-only',
+    last_check: now,
+    overall_status: overallStatus,
+    computer_health: { status: computerStatus, issues: summarizeIssues(checks) },
+    openclaw_health: { status: openclawStatus, issues: summarizeIssues(openclawChecks) },
+    recent_failures: recentFailures,
+    last_fixes: recentFixes,
+    top_offenders: offenders,
+    alerts: previousState.alerts
+  });
+
+  appendLog('Overall status: ' + overallStatus);
+  appendLog('Computer status: ' + computerStatus);
+  appendLog('OpenClaw status: ' + openclawStatus);
+  appendLog('Mode: reporting-only, no automatic fixes');
+  appendLog('Cron source: ' + cronState.source);
+  if (alert.shouldSend) appendLog('Alert delivery: ' + JSON.stringify(alertDelivery));
+  writeLog();
+
+  require('./render-dashboard');
+  const publishResult = publishDashboard(DASHBOARD_DATA_PATH, DASHBOARD_FILE_PATH);
+  if (publishResult.ok) appendLog('Dashboard publish OK: ' + JSON.stringify(publishResult));
+
+  console.log(JSON.stringify({
+    status: overallStatus,
+    mode: 'reporting-only',
+    dashboard: path.relative(ROOT, DASHBOARD_FILE_PATH),
+    failures: failures.length,
+    fixes: 0,
+    dryRun: IS_DRY_RUN,
+    alertPrepared: alert.shouldSend,
+    alertDelivery,
+    cronSource: cronState.source,
+    publish: publishResult
+  }, null, 2));
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
 });
-appendLog('Overall status: ' + overallStatus);
-appendLog('Computer status: ' + computerStatus);
-appendLog('OpenClaw status: ' + openclawStatus);
-appendLog('Cron source: ' + cronState.source);
-if (alert.shouldSend) appendLog('Alert delivery: ' + JSON.stringify(alertDelivery));
-for (const fix of fixes) appendLog('Fix ' + fix.type + ' target=' + fix.target + ' result=' + fix.result);
-writeLog();
-require('./render-dashboard');
-const publishResult = publishDashboard(DASHBOARD_DATA_PATH, DASHBOARD_FILE_PATH);
-if (publishResult.ok) appendLog('Dashboard publish OK: ' + JSON.stringify(publishResult));
-console.log(JSON.stringify({ status: overallStatus, dashboard: path.relative(ROOT, DASHBOARD_FILE_PATH), failures: failures.length, fixes: fixes.length, dryRun: IS_DRY_RUN, alertPrepared: alert.shouldSend, alertDelivery, cronSource: cronState.source, publish: publishResult }, null, 2));

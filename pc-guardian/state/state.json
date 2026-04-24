@@ -1,8 +1,9 @@
 {
   "system_name": "PC Guardian",
   "version": "1.1.0",
-  "last_check": "2026-04-12T16:42:14.650Z",
-  "overall_status": "WARNING",
+  "mode": "reporting-only",
+  "last_check": "2026-04-24T20:42:57.428Z",
+  "overall_status": "CRITICAL",
   "computer_health": {
     "status": "WARNING",
     "issues": [
@@ -10,12 +11,69 @@
     ]
   },
   "openclaw_health": {
-    "status": "WARNING",
+    "status": "CRITICAL",
     "issues": [
+      "gateway-18790 port 18790 down",
+      "Ports 18789, 18790",
       "No cron jobs found (unavailable)"
     ]
   },
   "recent_failures": [
+    {
+      "time": "2026-04-24T20:42:57.428Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "target": "https://www.msftconnecttest.com/connecttest.txt",
+          "ok": false
+        },
+        {
+          "target": "https://www.google.com/generate_204",
+          "ok": true
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-24T20:42:57.428Z",
+      "kind": "gateway-18790",
+      "summary": "gateway-18790 port 18790 down",
+      "details": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "statusCode": 0,
+        "listening": false,
+        "ok": false
+      },
+      "status": "CRITICAL"
+    },
+    {
+      "time": "2026-04-24T20:42:57.428Z",
+      "kind": "OpenClaw Ports",
+      "summary": "Ports 18789, 18790",
+      "details": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        }
+      ],
+      "status": "CRITICAL"
+    },
+    {
+      "time": "2026-04-24T20:42:57.428Z",
+      "kind": "Cron Jobs",
+      "summary": "No cron jobs found (unavailable)",
+      "details": [],
+      "status": "WARNING"
+    },
     {
       "time": "2026-04-12T16:42:14.650Z",
       "kind": "Internet Reachability",
@@ -197,251 +255,64 @@
       "summary": "No cron jobs found (unavailable)",
       "details": [],
       "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T08:25:26.821Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T08:25:26.821Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T07:51:17.074Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T07:51:17.074Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING"
     }
   ],
-  "last_fixes": [
-    {
-      "time": "2026-04-12T14:35:04.852Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Windows\\Temp",
-      "result": "success",
-      "details": "Deleted files: 6"
-    },
-    {
-      "time": "2026-04-12T14:35:04.852Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
-      "result": "success",
-      "details": "Deleted files: 9"
-    },
-    {
-      "time": "2026-04-12T01:30:02.308Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Windows\\Temp",
-      "result": "success",
-      "details": "Deleted files: 8838"
-    },
-    {
-      "time": "2026-04-12T01:30:02.308Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
-      "result": "success",
-      "details": "Deleted files: 2315"
-    },
-    {
-      "time": "2026-04-11T13:15:57.002Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Windows\\Temp",
-      "result": "success",
-      "details": "Deleted files: 8751"
-    },
-    {
-      "time": "2026-04-11T13:15:57.002Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
-      "result": "success",
-      "details": "Deleted files: 2345"
-    },
-    {
-      "time": "2026-04-08T10:11:05.302Z",
-      "type": "restart_task",
-      "target": "OpenClaw - On Network Reconnect",
-      "result": "failed",
-      "details": "Task state was 1"
-    },
-    {
-      "time": "2026-04-08T10:09:59.391Z",
-      "type": "restart_task",
-      "target": "OpenClaw - On Network Reconnect",
-      "result": "failed",
-      "details": "Task state was 1"
-    },
-    {
-      "time": "2026-04-08T10:09:59.391Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Windows\\Temp",
-      "result": "success",
-      "details": "Deleted files: 1"
-    },
-    {
-      "time": "2026-04-08T06:51:45.801Z",
-      "type": "restart_task",
-      "target": "OpenClaw - On Network Reconnect",
-      "result": "failed",
-      "details": "Task state was 1"
-    },
-    {
-      "time": "2026-04-08T06:51:45.801Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Windows\\Temp",
-      "result": "success",
-      "details": "Deleted files: 6"
-    },
-    {
-      "time": "2026-04-08T06:51:45.801Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
-      "result": "success",
-      "details": "Deleted files: 3672"
-    },
-    {
-      "time": "2026-04-08T06:51:07.081Z",
-      "type": "restart_task",
-      "target": "OpenClaw - On Network Reconnect",
-      "result": "success",
-      "details": "Task state was 1"
-    },
-    {
-      "time": "2026-04-08T06:51:07.081Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Windows\\Temp",
-      "result": "success",
-      "details": "Deleted files: 7"
-    },
-    {
-      "time": "2026-04-08T06:51:07.081Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
-      "result": "success",
-      "details": "Deleted files: 3673"
-    },
-    {
-      "time": "2026-04-08T06:50:03.680Z",
-      "type": "restart_task",
-      "target": "OpenClaw - On Network Reconnect",
-      "result": "success",
-      "details": "Task state was 1"
-    },
-    {
-      "time": "2026-04-08T06:50:03.680Z",
-      "type": "restart_task",
-      "target": "OpenClaw Gateway - Itzhak",
-      "result": "success",
-      "details": "Task state was 4"
-    },
-    {
-      "time": "2026-04-08T06:50:03.680Z",
-      "type": "restart_task",
-      "target": "OpenClaw Gateway - Openclaw",
-      "result": "success",
-      "details": "Task state was 4"
-    },
-    {
-      "time": "2026-04-08T06:50:03.680Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Windows\\Temp",
-      "result": "success",
-      "details": "Deleted files: 7"
-    },
-    {
-      "time": "2026-04-08T06:50:03.680Z",
-      "type": "cleanup_safe_path",
-      "target": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
-      "result": "success",
-      "details": "Deleted files: 3673"
-    }
-  ],
+  "last_fixes": [],
   "top_offenders": [
     {
-      "name": "SearchIndexer",
-      "cpu": 29940.3,
-      "memoryMb": 30,
-      "path": "C:\\WINDOWS\\system32\\SearchIndexer.exe"
-    },
-    {
       "name": "System",
-      "cpu": 21997.9,
-      "memoryMb": 9,
+      "cpu": 29699,
+      "memoryMb": 11,
       "path": ""
     },
     {
       "name": "MsMpEng",
-      "cpu": 20485.6,
-      "memoryMb": 196,
+      "cpu": 20565.5,
+      "memoryMb": 256,
       "path": ""
-    },
-    {
-      "name": "logioptionsplus_agent",
-      "cpu": 15544.4,
-      "memoryMb": 204,
-      "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
     },
     {
       "name": "WmiPrvSE",
-      "cpu": 4711.6,
-      "memoryMb": 25,
+      "cpu": 15100.1,
+      "memoryMb": 34,
       "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
     },
     {
+      "name": "dwm",
+      "cpu": 12142.1,
+      "memoryMb": 91,
+      "path": "C:\\WINDOWS\\system32\\dwm.exe"
+    },
+    {
+      "name": "logioptionsplus_agent",
+      "cpu": 9985.9,
+      "memoryMb": 76,
+      "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
+    },
+    {
       "name": "svchost",
-      "cpu": 4342.1,
-      "memoryMb": 18,
+      "cpu": 8862.7,
+      "memoryMb": 22,
       "path": "C:\\WINDOWS\\system32\\svchost.exe"
     },
     {
-      "name": "Memory Compression",
-      "cpu": 2972,
-      "memoryMb": 193,
-      "path": ""
+      "name": "PhoneExperienceHost",
+      "cpu": 5409.4,
+      "memoryMb": 137,
+      "path": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26022.64.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe"
     }
   ],
   "alerts": {
-    "last_sent_at": "2026-04-12T16:35:04.161Z",
-    "last_status": "WARNING",
-    "last_summary": "gateway-18789 port 18789 no health | RAM 88.9%",
+    "last_sent_at": "2026-04-24T20:42:57.428Z",
+    "last_status": "CRITICAL",
+    "last_summary": "gateway-18790 port 18790 down | Ports 18789, 18790",
     "last_delivery": {
       "sent": true,
       "mode": "telegram",
       "response": {
         "ok": true,
         "result": {
-          "message_id": 1859,
+          "message_id": 2567,
           "from": {
             "id": 8375418380,
             "is_bot": true,
@@ -454,11 +325,19 @@
             "is_forum": true,
             "type": "supergroup"
           },
-          "date": 1776011730,
-          "text": "PC Guardian, ?????\n???? ?????? ?????? ?? ?????? OpenClaw ?? routing ?????\n\n?? ?? ?????\n- ???? ?????? ?????? ?? ?????? OpenClaw ?? routing ?????\n- ???? ????? ??????? ??? ????? ?????\n\n?? ??? ????\n- ?? ?????? ?: 1.1.1.1, 8.8.8.8\n- ???? health ?-gateway ??????\n\n?????? ???? ???????\n1. ???? recovery ???? ?? ?? ???? ???? ?? ????\n2. ????? ?? ?? ????? ?????? ???? ?????",
+          "date": 1777063404,
+          "text": "PC Guardian, התראה קריטית\nעשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n\nמה זה משפיע\n- עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n- דורש בדיקה תפעולית לפי הרכיב שדווח\n\nמה כבר נבדק\n- יש תקשורת ל: 1.1.1.1, 8.8.8.8\n- נבדק health ל-gateway המקומי\n\nהפעולה הבאה המומלצת\n1. לבדוק ידנית את הרכיב אם המצב נשאר לא תקין\n2. לבדוק אם יש השפעה אמיתית לפני פעולה",
           "entities": [
-            "@{offset=209; length=7; type=url}",
-            "@{offset=218; length=7; type=url}"
+            {
+              "offset": 216,
+              "length": 7,
+              "type": "url"
+            },
+            {
+              "offset": 225,
+              "length": 7,
+              "type": "url"
+            }
           ]
         }
       }
