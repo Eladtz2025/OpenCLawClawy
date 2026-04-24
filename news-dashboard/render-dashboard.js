@@ -181,9 +181,7 @@ async function main() {
   const archiveFiles = fs.readdirSync(ARCHIVE_DIR).filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x)).sort().reverse();
   fs.writeFileSync(path.join(ARCHIVE_DIR, 'index.html'), renderArchiveIndex(archiveFiles), 'utf8');
 
-  // 4. Update root index to point to latest.html with cache busting, not directly to a dated file
-  const rootHtml = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=./news-dashboard/live-site/latest.html?v=${cacheBust}" /></head><body><a href="./news-dashboard/live-site/latest.html?v=${cacheBust}">Clawy News Live</a></body></html>`;
-  fs.writeFileSync(ROOT_INDEX_PATH, rootHtml, 'utf8');
+  // 4. Keep the repository root untouched. Public entry is the explicit live-site URL.
 
   console.log(JSON.stringify({ status: meta.status, items: items.length, dailyFile: dailyFileName }, null, 2));
 }
