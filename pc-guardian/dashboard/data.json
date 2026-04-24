@@ -1,16 +1,25 @@
 {
   "system_name": "PC Guardian",
-  "generated_at": "2026-04-24T20:42:57.428Z",
+  "generated_at": "2026-04-24T21:00:21.241Z",
   "overall_status": "CRITICAL",
   "mode": "reporting-only",
-  "computer_status": "WARNING",
+  "policy": {
+    "mode": "reporting-only",
+    "allow_automatic_actions": false,
+    "allow_process_kill": false,
+    "allow_service_restart": false,
+    "allow_task_restart": false,
+    "allow_cleanup": false,
+    "allow_cron_mutation": false
+  },
+  "computer_status": "OK",
   "openclaw_status": "CRITICAL",
   "computer_checks": [
     {
       "name": "CPU",
-      "value": 1.69,
+      "value": 3.68,
       "status": "OK",
-      "summary": "CPU 1.7%"
+      "summary": "CPU 3.7%"
     },
     {
       "name": "RAM",
@@ -26,9 +35,9 @@
     },
     {
       "name": "Disk Activity",
-      "value": 0.64,
+      "value": 0.34,
       "status": "OK",
-      "summary": "Disk activity 0.6%"
+      "summary": "Disk activity 0.3%"
     },
     {
       "name": "Network Connectivity",
@@ -49,16 +58,20 @@
       "name": "Internet Reachability",
       "value": [
         {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
+          "url": "https://www.google.com/generate_204",
+          "severity": "warning",
+          "label": "Google 204",
+          "ok": true
         },
         {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
+          "url": "https://www.msftconnecttest.com/connecttest.txt",
+          "severity": "info",
+          "label": "Microsoft connect test",
+          "ok": false
         }
       ],
-      "status": "WARNING",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt"
+      "status": "OK",
+      "summary": "Internet optional target failed: https://www.msftconnecttest.com/connecttest.txt"
     },
     {
       "name": "Windows Defender",
@@ -169,6 +182,7 @@
         "name": "gateway-18789",
         "url": "http://127.0.0.1:18789/health",
         "port": 18789,
+        "required": true,
         "statusCode": 200,
         "listening": true,
         "ok": true
@@ -182,6 +196,7 @@
         "name": "gateway-18790",
         "url": "http://127.0.0.1:18790/health",
         "port": 18790,
+        "required": true,
         "statusCode": 0,
         "listening": false,
         "ok": false
@@ -203,8 +218,8 @@
           "OwningProcess": 30420
         }
       ],
-      "status": "CRITICAL",
-      "summary": "Ports 18789, 18790"
+      "status": "WARNING",
+      "summary": "Ports missing: 18790"
     },
     {
       "name": "OpenClaw Tasks",
@@ -231,7 +246,7 @@
     {
       "name": "Cron Jobs",
       "value": [],
-      "status": "WARNING",
+      "status": "OK",
       "summary": "No cron jobs found (unavailable)"
     },
     {
@@ -261,7 +276,7 @@
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\agents\\main\\sessions",
-          "SizeMB": 50.63
+          "SizeMB": 50.98
         },
         {
           "FullName": "C:\\Users\\Itzhak\\.openclaw\\browser\\openclaw\\user-data\\Default\\Sessions",
@@ -297,6 +312,92 @@
     }
   ],
   "recent_failures": [
+    {
+      "time": "2026-04-24T21:00:21.241Z",
+      "kind": "gateway-18790",
+      "summary": "gateway-18790 port 18790 down",
+      "details": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "required": true,
+        "statusCode": 0,
+        "listening": false,
+        "ok": false
+      },
+      "status": "CRITICAL"
+    },
+    {
+      "time": "2026-04-24T21:00:21.241Z",
+      "kind": "OpenClaw Ports",
+      "summary": "Ports missing: 18790",
+      "details": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "url": "https://www.google.com/generate_204",
+          "severity": "warning",
+          "label": "Google 204",
+          "ok": true
+        },
+        {
+          "url": "https://www.msftconnecttest.com/connecttest.txt",
+          "severity": "info",
+          "label": "Microsoft connect test",
+          "ok": false
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "gateway-18790",
+      "summary": "gateway-18790 port 18790 down",
+      "details": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "required": true,
+        "statusCode": 0,
+        "listening": false,
+        "ok": false
+      },
+      "status": "CRITICAL"
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "OpenClaw Ports",
+      "summary": "Ports missing: 18790",
+      "details": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        }
+      ],
+      "status": "WARNING"
+    },
     {
       "time": "2026-04-24T20:42:57.428Z",
       "kind": "Internet Reachability",
@@ -480,102 +581,49 @@
       "summary": "No cron jobs found (unavailable)",
       "details": [],
       "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "RAM",
-      "summary": "RAM 88.9%",
-      "details": 88.89593908629442,
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T08:35:04.103Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T08:35:04.103Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING"
     }
   ],
   "last_fixes": [],
   "top_offenders": [
     {
       "name": "System",
-      "cpu": 29699,
+      "cpu": 29732.4,
       "memoryMb": 11,
       "path": ""
     },
     {
       "name": "MsMpEng",
-      "cpu": 20565.5,
-      "memoryMb": 256,
+      "cpu": 20587.4,
+      "memoryMb": 241,
       "path": ""
     },
     {
       "name": "WmiPrvSE",
-      "cpu": 15100.1,
-      "memoryMb": 34,
+      "cpu": 15124.5,
+      "memoryMb": 37,
       "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
     },
     {
       "name": "dwm",
-      "cpu": 12142.1,
+      "cpu": 12144.2,
       "memoryMb": 91,
       "path": "C:\\WINDOWS\\system32\\dwm.exe"
     },
     {
       "name": "logioptionsplus_agent",
-      "cpu": 9985.9,
-      "memoryMb": 76,
+      "cpu": 9999.9,
+      "memoryMb": 77,
       "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
     },
     {
       "name": "svchost",
-      "cpu": 8862.7,
-      "memoryMb": 22,
+      "cpu": 8873.5,
+      "memoryMb": 24,
       "path": "C:\\WINDOWS\\system32\\svchost.exe"
     },
     {
       "name": "PhoneExperienceHost",
-      "cpu": 5409.4,
+      "cpu": 5425.4,
       "memoryMb": 137,
       "path": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26022.64.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe"
     }
@@ -585,6 +633,7 @@
       "name": "gateway-18789",
       "url": "http://127.0.0.1:18789/health",
       "port": 18789,
+      "required": true,
       "statusCode": 200,
       "listening": true,
       "ok": true
@@ -593,6 +642,7 @@
       "name": "gateway-18790",
       "url": "http://127.0.0.1:18790/health",
       "port": 18790,
+      "required": true,
       "statusCode": 0,
       "listening": false,
       "ok": false
@@ -632,6 +682,122 @@
   "cron_source": "unavailable",
   "insights": [
     {
+      "time": "2026-04-24T21:00:21.241Z",
+      "kind": "gateway-18790",
+      "summary": "gateway-18790 port 18790 down",
+      "details": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "required": true,
+        "statusCode": 0,
+        "listening": false,
+        "ok": false
+      },
+      "status": "CRITICAL",
+      "insight": {
+        "severity": "CRITICAL",
+        "confidence": "high",
+        "impact": "עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי",
+        "next": "לבדוק ידנית את הרכיב אם המצב נשאר לא תקין"
+      }
+    },
+    {
+      "time": "2026-04-24T21:00:21.241Z",
+      "kind": "OpenClaw Ports",
+      "summary": "Ports missing: 18790",
+      "details": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "high",
+        "impact": "זו כנראה תוצאה נגזרת של gateway חסר, לא תקלה נפרדת",
+        "next": "להתמקד ב-gateway החסר ולא בפורטים עצמם"
+      }
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "url": "https://www.google.com/generate_204",
+          "severity": "warning",
+          "label": "Google 204",
+          "ok": true
+        },
+        {
+          "url": "https://www.msftconnecttest.com/connecttest.txt",
+          "severity": "info",
+          "label": "Microsoft connect test",
+          "ok": false
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "low",
+        "impact": "כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור",
+        "next": "להשאיר בדשבורד בלבד, ללא התראה"
+      }
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "gateway-18790",
+      "summary": "gateway-18790 port 18790 down",
+      "details": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "required": true,
+        "statusCode": 0,
+        "listening": false,
+        "ok": false
+      },
+      "status": "CRITICAL",
+      "insight": {
+        "severity": "CRITICAL",
+        "confidence": "high",
+        "impact": "עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי",
+        "next": "לבדוק ידנית את הרכיב אם המצב נשאר לא תקין"
+      }
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "OpenClaw Ports",
+      "summary": "Ports missing: 18790",
+      "details": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        }
+      ],
+      "status": "WARNING",
+      "insight": {
+        "severity": "INFO",
+        "confidence": "high",
+        "impact": "זו כנראה תוצאה נגזרת של gateway חסר, לא תקלה נפרדת",
+        "next": "להתמקד ב-gateway החסר ולא בפורטים עצמם"
+      }
+    },
+    {
       "time": "2026-04-24T20:42:57.428Z",
       "kind": "Internet Reachability",
       "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
@@ -649,7 +815,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "impact": "כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -691,10 +857,10 @@
       ],
       "status": "CRITICAL",
       "insight": {
-        "severity": "CRITICAL",
+        "severity": "INFO",
         "confidence": "high",
-        "impact": "עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי",
-        "next": "לבדוק ידנית את הרכיב אם המצב נשאר לא תקין"
+        "impact": "זו כנראה תוצאה נגזרת של gateway חסר, לא תקלה נפרדת",
+        "next": "להתמקד ב-gateway החסר ולא בפורטים עצמם"
       }
     },
     {
@@ -728,7 +894,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "impact": "כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -763,7 +929,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "impact": "כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -818,7 +984,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "impact": "כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -853,7 +1019,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "impact": "כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -888,7 +1054,7 @@
       "insight": {
         "severity": "INFO",
         "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
+        "impact": "כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור",
         "next": "להשאיר בדשבורד בלבד, ללא התראה"
       }
     },
@@ -904,94 +1070,11 @@
         "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
         "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
       }
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "RAM",
-      "summary": "RAM 88.9%",
-      "details": 88.89593908629442,
-      "status": "WARNING",
-      "insight": {
-        "severity": "WARNING",
-        "confidence": "medium",
-        "impact": "דורש בדיקה תפעולית לפי הרכיב שדווח",
-        "next": "לבדוק אם יש השפעה אמיתית לפני פעולה"
-      }
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING",
-      "insight": {
-        "severity": "INFO",
-        "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
-        "next": "להשאיר בדשבורד בלבד, ללא התראה"
-      }
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING",
-      "insight": {
-        "severity": "INFO",
-        "confidence": "low",
-        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
-        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
-      }
-    },
-    {
-      "time": "2026-04-12T08:35:04.103Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING",
-      "insight": {
-        "severity": "INFO",
-        "confidence": "low",
-        "impact": "כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור",
-        "next": "להשאיר בדשבורד בלבד, ללא התראה"
-      }
-    },
-    {
-      "time": "2026-04-12T08:35:04.103Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING",
-      "insight": {
-        "severity": "INFO",
-        "confidence": "low",
-        "impact": "אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה",
-        "next": "להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב"
-      }
     }
   ],
   "alerts": {
     "configured": true,
-    "last_message": "PC Guardian, התראה קריטית\nעשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n\nמה זה משפיע\n- עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי\n- דורש בדיקה תפעולית לפי הרכיב שדווח\n\nמה כבר נבדק\n- יש תקשורת ל: 1.1.1.1, 8.8.8.8\n- נבדק health ל-gateway המקומי\n\nהפעולה הבאה המומלצת\n1. לבדוק ידנית את הרכיב אם המצב נשאר לא תקין\n2. לבדוק אם יש השפעה אמיתית לפני פעולה",
+    "last_message": "gateway-18790 port 18790 down | Ports 18789, 18790",
     "last_status": "CRITICAL",
     "last_delivery": {
       "sent": true,

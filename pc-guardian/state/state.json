@@ -1,24 +1,107 @@
 {
   "system_name": "PC Guardian",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "mode": "reporting-only",
-  "last_check": "2026-04-24T20:42:57.428Z",
+  "last_check": "2026-04-24T21:00:21.241Z",
   "overall_status": "CRITICAL",
   "computer_health": {
-    "status": "WARNING",
-    "issues": [
-      "Internet failed: https://www.msftconnecttest.com/connecttest.txt"
-    ]
+    "status": "OK",
+    "issues": []
   },
   "openclaw_health": {
     "status": "CRITICAL",
     "issues": [
       "gateway-18790 port 18790 down",
-      "Ports 18789, 18790",
-      "No cron jobs found (unavailable)"
+      "Ports missing: 18790"
     ]
   },
   "recent_failures": [
+    {
+      "time": "2026-04-24T21:00:21.241Z",
+      "kind": "gateway-18790",
+      "summary": "gateway-18790 port 18790 down",
+      "details": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "required": true,
+        "statusCode": 0,
+        "listening": false,
+        "ok": false
+      },
+      "status": "CRITICAL"
+    },
+    {
+      "time": "2026-04-24T21:00:21.241Z",
+      "kind": "OpenClaw Ports",
+      "summary": "Ports missing: 18790",
+      "details": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "Internet Reachability",
+      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
+      "details": [
+        {
+          "url": "https://www.google.com/generate_204",
+          "severity": "warning",
+          "label": "Google 204",
+          "ok": true
+        },
+        {
+          "url": "https://www.msftconnecttest.com/connecttest.txt",
+          "severity": "info",
+          "label": "Microsoft connect test",
+          "ok": false
+        }
+      ],
+      "status": "WARNING"
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "gateway-18790",
+      "summary": "gateway-18790 port 18790 down",
+      "details": {
+        "name": "gateway-18790",
+        "url": "http://127.0.0.1:18790/health",
+        "port": 18790,
+        "required": true,
+        "statusCode": 0,
+        "listening": false,
+        "ok": false
+      },
+      "status": "CRITICAL"
+    },
+    {
+      "time": "2026-04-24T20:59:37.986Z",
+      "kind": "OpenClaw Ports",
+      "summary": "Ports missing: 18790",
+      "details": [
+        {
+          "LocalAddress": "::1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        },
+        {
+          "LocalAddress": "127.0.0.1",
+          "LocalPort": 18789,
+          "OwningProcess": 30420
+        }
+      ],
+      "status": "WARNING"
+    },
     {
       "time": "2026-04-24T20:42:57.428Z",
       "kind": "Internet Reachability",
@@ -202,102 +285,49 @@
       "summary": "No cron jobs found (unavailable)",
       "details": [],
       "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "RAM",
-      "summary": "RAM 88.9%",
-      "details": 88.89593908629442,
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T09:47:23.562Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T08:35:04.103Z",
-      "kind": "Internet Reachability",
-      "summary": "Internet failed: https://www.msftconnecttest.com/connecttest.txt",
-      "details": [
-        {
-          "target": "https://www.msftconnecttest.com/connecttest.txt",
-          "ok": false
-        },
-        {
-          "target": "https://www.google.com/generate_204",
-          "ok": true
-        }
-      ],
-      "status": "WARNING"
-    },
-    {
-      "time": "2026-04-12T08:35:04.103Z",
-      "kind": "Cron Jobs",
-      "summary": "No cron jobs found (unavailable)",
-      "details": [],
-      "status": "WARNING"
     }
   ],
   "last_fixes": [],
   "top_offenders": [
     {
       "name": "System",
-      "cpu": 29699,
+      "cpu": 29732.4,
       "memoryMb": 11,
       "path": ""
     },
     {
       "name": "MsMpEng",
-      "cpu": 20565.5,
-      "memoryMb": 256,
+      "cpu": 20587.4,
+      "memoryMb": 241,
       "path": ""
     },
     {
       "name": "WmiPrvSE",
-      "cpu": 15100.1,
-      "memoryMb": 34,
+      "cpu": 15124.5,
+      "memoryMb": 37,
       "path": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe"
     },
     {
       "name": "dwm",
-      "cpu": 12142.1,
+      "cpu": 12144.2,
       "memoryMb": 91,
       "path": "C:\\WINDOWS\\system32\\dwm.exe"
     },
     {
       "name": "logioptionsplus_agent",
-      "cpu": 9985.9,
-      "memoryMb": 76,
+      "cpu": 9999.9,
+      "memoryMb": 77,
       "path": "C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_agent.exe"
     },
     {
       "name": "svchost",
-      "cpu": 8862.7,
-      "memoryMb": 22,
+      "cpu": 8873.5,
+      "memoryMb": 24,
       "path": "C:\\WINDOWS\\system32\\svchost.exe"
     },
     {
       "name": "PhoneExperienceHost",
-      "cpu": 5409.4,
+      "cpu": 5425.4,
       "memoryMb": 137,
       "path": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26022.64.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe"
     }

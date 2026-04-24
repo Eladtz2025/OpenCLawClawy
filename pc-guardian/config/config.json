@@ -1,6 +1,7 @@
 {
   "system_name": "PC Guardian",
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "mode": "reporting-only",
   "monitoring": {
     "interval_minutes": 120,
     "connectivity_targets": [
@@ -8,8 +9,16 @@
       "8.8.8.8"
     ],
     "internet_targets": [
-      "https://www.msftconnecttest.com/connecttest.txt",
-      "https://www.google.com/generate_204"
+      {
+        "url": "https://www.google.com/generate_204",
+        "severity": "warning",
+        "label": "Google 204"
+      },
+      {
+        "url": "https://www.msftconnecttest.com/connecttest.txt",
+        "severity": "info",
+        "label": "Microsoft connect test"
+      }
     ],
     "gateway_health_timeout_ms": 5000,
     "recent_event_hours": 6,
@@ -41,29 +50,20 @@
     "failure_repeat_critical": 4,
     "growth_warning_mb": 1024,
     "growth_critical_mb": 4096,
-    "runaway_backup_minutes": 90,
     "max_log_size_mb": 5,
-    "max_log_files": 6,
-    "old_temp_days": 7,
-    "old_log_days": 14
+    "max_log_files": 6
   },
   "openclaw": {
-    "investigation": {
-      "enabled": true,
-      "trigger_on": [
-        "CRITICAL"
-      ],
-      "min_confidence": "high",
-      "max_reports": 20
-    },
     "gateways": [
       {
         "name": "gateway-18789",
-        "url": "http://127.0.0.1:18789/health"
+        "url": "http://127.0.0.1:18789/health",
+        "required": true
       },
       {
         "name": "gateway-18790",
-        "url": "http://127.0.0.1:18790/health"
+        "url": "http://127.0.0.1:18790/health",
+        "required": true
       }
     ],
     "scheduled_task_patterns": [
@@ -71,10 +71,6 @@
     ],
     "important_services": [
       "OpenClawGateway"
-    ],
-    "safe_fallback_models": [
-      "gpt-4o-mini",
-      "openai-codex/gpt-5.4"
     ]
   },
   "alerts": {
@@ -84,8 +80,8 @@
     "warning_template": "PC Guardian Warning: {summary}",
     "critical_template": "PC Guardian Critical: {summary}",
     "telegram": {
-      "bot_token": "8375418380:AAF-4Ag53oEBeZlCvq6zOS653iyXbBJIQww",
-      "chat_id": "-1003566973693",
+      "bot_token": "",
+      "chat_id": "",
       "silent": false
     }
   },
@@ -104,6 +100,7 @@
     "state_file": "state/state.json",
     "dashboard_data_file": "dashboard/data.json",
     "dashboard_file": "dashboard/index.html",
-    "log_dir": "logs"
+    "log_dir": "logs",
+    "secrets_file": "config/secrets.local.json"
   }
 }

@@ -1,50 +1,4 @@
 {
-  "safe_services": [
-    {
-      "name": "OpenClawGateway",
-      "allow_restart": true
-    },
-    {
-      "name": "W32Time",
-      "allow_restart": true
-    }
-  ],
-  "safe_kill_processes": [
-    {
-      "name": "node",
-      "path_contains": [
-        "openclaw",
-        "pc-guardian"
-      ]
-    },
-    {
-      "name": "git",
-      "path_contains": [
-        "openclaw"
-      ]
-    }
-  ],
-  "safe_cleanup_paths": [
-    {
-      "path": "C:\\Windows\\Temp",
-      "max_depth": 2,
-      "delete_files_only": true
-    },
-    {
-      "path": "C:\\Users\\Itzhak\\AppData\\Local\\Temp",
-      "max_depth": 2,
-      "delete_files_only": true
-    },
-    {
-      "path": "C:\\Users\\Itzhak\\.openclaw\\workspace\\pc-guardian\\logs",
-      "max_depth": 2,
-      "delete_files_only": true
-    }
-  ],
-  "safe_cron_disable_patterns": [
-    "pc-guardian",
-    "backup"
-  ],
   "important_services": [
     "OpenClawGateway",
     "WinDefend",
@@ -59,11 +13,22 @@
     18789,
     18790
   ],
-  "critical_policy": {
-    "allow_file_delete": false,
-    "allow_workspace_delete": false,
-    "allow_backup_delete": false,
-    "prefer_disable_over_delete": true,
-    "prefer_stop_and_alert": true
+  "classification": {
+    "internet_info_targets": [
+      "msftconnecttest.com"
+    ],
+    "info_only_issue_kinds": [
+      "Cron Jobs"
+    ],
+    "dedupe_port_issue_when_gateway_missing": true
+  },
+  "policy": {
+    "mode": "reporting-only",
+    "allow_automatic_actions": false,
+    "allow_process_kill": false,
+    "allow_service_restart": false,
+    "allow_task_restart": false,
+    "allow_cleanup": false,
+    "allow_cron_mutation": false
   }
 }

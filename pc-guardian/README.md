@@ -1,91 +1,97 @@
 # PC Guardian
 
-מערכת קלה, שמרנית ויציבה לניטור בריאות המחשב ו-OpenClaw.
+מערכת ניטור **reporting-only** למחשב ול-OpenClaw.
+
+המטרה שלה פשוטה: לבדוק, לדווח, לעדכן dashboard, ולשלוח התראות. היא **לא** מתקנת, לא עושה restart, לא מנקה, לא עוצרת תהליכים, ולא משנה cron/jobs על דעת עצמה.
+
+## מה היא עושה
+
+- בודקת CPU, RAM, דיסק, Firewall, Defender ו-Event Viewer
+- בודקת reachability לרשת ולאינטרנט
+- בודקת gateways, פורטים, tasks ושירותים של OpenClaw
+- מעדכנת `state/state.json`
+- מייצרת dashboard סטטי ב-`dashboard/index.html`
+- מעתיקה את ה-dashboard ליעד publish אם הוגדר
+- שולחת התראות לטלגרם רק על חריגות עם משמעות תפעולית
+
+## מה היא לא עושה
+
+- לא מבצעת auto-fix
+- לא עושה restart לשירותים או tasks
+- לא עושה kill לתהליכים
+- לא מנקה קבצים או temp
+- לא משנה cron jobs
+- לא מחליפה models
+
+אם תרצה שמערכת תבצע פעולה, זה צריך להיות מפורש ונפרד מהניטור.
 
 ## מבנה
 
-- `config/config.json` - thresholds, יעדים, נתיבי dashboard, alerts ו-publish
-- `config/rules.json` - allowlists ו-safe policy
-- `state/state.json` - מצב ריצה קטן
-- `state/last-alert.json` - payload אחרון של התראה + סטטוס שליחה
-- `state/fallback-model.json` - מצב fallback פעיל
-- `logs/` - לוגים קצרים עם רוטציה
+- `config/config.json` - קונפיג ראשי
+- `config/rules.json` - חוקים וסיווגים
+- `config/secrets.example.json` - תבנית לסודות
+- `config/secrets.local.json` - סודות מקומיים לא ב-git
+- `state/state.json` - מצב ריצה אחרון
+- `state/last-alert.json` - ההתראה האחרונה שנשלחה
+- `logs/` - לוגים קצרים
 - `dashboard/data.json` - פלט JSON לדשבורד
 - `dashboard/index.html` - דשבורד סטטי
-- `scripts/run-checks.js` - מנוע בדיקות ותיקונים
-- `scripts/render-dashboard.js` - בניית דשבורד סטטי
+- `scripts/validate-config.js` - ולידציית קונפיג
+- `scripts/run-checks.js` - מנוע הבדיקות
+- `scripts/render-dashboard.js` - בניית הדשבורד
 - `scripts/install-task.ps1` - התקנת Scheduled Task
-- `scripts/run-pc-guardian.ps1` - עטיפת הרצה ל-Windows Task Scheduler
+- `scripts/run-pc-guardian.ps1` - wrapper להרצה מתוזמנת
 
 ## הרצה
 
-`npm run check`
+```powershell
+node .\scripts\validate-config.js
+node .\scripts\run-checks.js
+```
+
+או:
+
+```powershell
+npm run check
+```
 
 ## בדיקת dry-run
 
-`npm test`
+```powershell
+npm test
+```
+
+## סודות
+
+כדי לא לשמור token בתוך `config.json`, שים את פרטי הטלגרם ב-`config/secrets.local.json` לפי `config/secrets.example.json`.
+
+אפשר גם דרך environment variables:
+
+- `PC_GUARDIAN_TELEGRAM_BOT_TOKEN`
+- `PC_GUARDIAN_TELEGRAM_CHAT_ID`
 
 ## התקנת משימה מתוזמנת
 
 PowerShell כמנהל:
 
-`powershell -ExecutionPolicy Bypass -File .\scripts\install-task.ps1`
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-task.ps1
+```
 
-ברירת המחדל היא הרצה כל 15 דקות, והסקריפט גם מפעיל את המשימה מיד אחרי ההתקנה.
+ברירת המחדל היא כל 120 דקות.
 
-## Telegram alerts
+## עקרונות סיווג
 
-הגדר ב-`config/config.json`:
+- יעדי אינטרנט משניים יכולים להישאר בדשבורד כ-Info בלי לשלוח התראה
+- `cron unavailable` מוצג כמידע, לא כתקלה קריטית
+- אם gateway נפל וגם הפורט שלו חסר, הדגש הוא על ה-gateway ולא על שכפול רעש
 
-- `alerts.telegram.bot_token`
-- `alerts.telegram.chat_id`
-- `alerts.telegram.silent`
+## מצב המוצר
 
-אם השדות ריקים, ההתראות לא יישלחו בפועל.
+המערכת מיועדת להיות:
 
-## Cron jobs
-
-המערכת מנסה קודם `openclaw cron list --json` דרך CLI אמיתי.
-אם זה לא זמין, יש fallback לקריאת cache מקומי מתוך `.openclaw/state/gateway-cron-jobs.json`.
-
-## Fallback model
-
-כאשר מזוהות כשלונות model חוזרים, המערכת כותבת `state/fallback-model.json` במצב `config-override` ומציגה זאת בדשבורד.
-זה כבר לא marker-only, אבל עדיין דורש צרכן חיצוני שיטען את קובץ ה-state הזה ל-runtime בפועל אם רוצים enforcement מלא.
-
-## Scheduled Task health
-
-המערכת מתייחסת ל-`Ready` ו-`Running` כמצב תקין, ולא מנסה restart מיותר למשימות תקינות.
-למשימות OpenClaw יש recovery שמרני בלבד: `schtasks /End` ואז `schtasks /Run`, ורק אם זוהה מצב לא תקין באמת.
-אין stop, disable או kill אגרסיבי ל-OpenClaw tasks מתוך המסלול הזה.
-
-## Investigation Subagent layer
-
-נוספה שכבת חקירה משלימה:
-
-- `scripts/investigate-incident.js` - יוצר דוח חקירה מקומי לפי החריגות האחרונות
-- `scripts/run-investigation.ps1` - wrapper להרצה בטוחה עם לוג
-- `state/investigations/` - ארטיפקטים של דוחות חקירה
-
-כרגע זו שכבת escalation מקומית ושמרנית, לא agent אוטונומי שפועל על המערכת.
-היא מיועדת להעמיק רק אחרי זיהוי, לא להחליף את ליבת הניטור.
-
-## Publish dashboard
-
-יש תמיכה ב-2 מצבים דרך `dashboard_publish`:
-
-- `copy` - העתקה לתיקיית יעד
-- `git` - העתקה ל-repo נפרד, commit ו-push
-
-כך אין תלות ב-file path מקומי יחיד בצד הצרכן, כל עוד יש יעד publish יציב.
-
-## מדיניות בטיחות
-
-- אין מחיקה אוטומטית של קבצים חשובים, workspace, backups או user folders.
-- ניקוי מותר רק בתוך safe cleanup paths, ורק לקבצי temp/log ישנים.
-- במצב Critical המערכת מעדיפה stop / restart / disable זמני / alert, ולא מחיקה.
-- disable של cron חוזר מתבצע רק אם יש job מתאים, allowlist תואם, ו-OpenClaw CLI זמין.
-
-## GitHub / Pages
-
-הדשבורד הסטטי יושב ב-`dashboard/index.html` וניתן לפרסום ב-GitHub Pages או לכל יעד publish אחר.
+- שקטה
+- שמרנית
+- קריאה
+- ללא פעולות אוטומטיות
+- קלה להבנה ול-debug

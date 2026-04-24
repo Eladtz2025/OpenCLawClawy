@@ -6,104 +6,66 @@
   <title>PC Guardian</title>
   <style>
     body{font-family:Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e5e7eb;margin:0;padding:18px}
-    .wrap{max-width:1280px;margin:0 auto}
-    h1,h2,h3{margin:0 0 12px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-bottom:18px}
-    .hero-card,.card{background:#111827;border:1px solid #243046;border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.18)}
-    .hero-card{padding:22px}.hero-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
-    .hero-main{font-size:34px;font-weight:800;line-height:1.1}.hero-sub{font-size:16px;color:#dbe3f0;line-height:1.6}
-    .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
-    .label{color:#94a3b8;font-size:13px;margin-bottom:8px}.value{font-size:26px;font-weight:700}
-    .sub{margin-top:8px;color:#cbd5e1;font-size:15px;line-height:1.55}.muted{color:#94a3b8;font-size:14px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0}
-    .columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}.stack{display:grid;gap:16px}
-    .badge{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px}
+    .wrap{max-width:1200px;margin:0 auto}
+    .grid{display:grid;gap:16px}
+    .top{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;margin-bottom:16px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .panel,.card{background:#111827;border:1px solid #243046;border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.18)}
+    .card .value{font-size:26px;font-weight:800}.muted{color:#94a3b8}.sub{color:#cbd5e1;line-height:1.55}
+    .badge,.pill{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px}
     .ok{background:#123524;color:#9ae6b4}.warn{background:#43320b;color:#f6e05e}.crit{background:#4a1f1f;color:#feb2b2}.soft{background:#1e293b;color:#cbd5e1}
-    table{width:100%;border-collapse:collapse;background:#111827;border-radius:14px;overflow:hidden}
-    th,td{padding:12px 12px;border-bottom:1px solid #243046;text-align:right;vertical-align:top;font-size:14px}
-    th{background:#162033;color:#cbd5e1} tr:last-child td{border-bottom:none}
+    .section{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
     .list{display:grid;gap:12px}.item{padding:14px;border:1px solid #243046;border-radius:14px;background:#0f172a}
-    .item strong{display:block;margin-bottom:6px;font-size:16px}.priority{border-right:4px solid #f6e05e}
-    .priority.critline{border-right-color:#feb2b2}.priority.info{border-right-color:#94a3b8}
-    .pill{display:inline-block;margin-top:8px;margin-left:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800}
-    .section-title{margin-bottom:10px;font-size:22px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width: 900px){body{padding:14px}.hero,.columns,.two-col{grid-template-columns:1fr}.hero-main{font-size:28px}.hero-meta{grid-template-columns:1fr}.value{font-size:24px}th,td{padding:11px 10px;font-size:15px}}
+    .item strong{display:block;margin-bottom:6px}
+    table{width:100%;border-collapse:collapse} th,td{padding:11px;border-bottom:1px solid #243046;text-align:right;vertical-align:top}
+    th{background:#162033;color:#cbd5e1} tr:last-child td{border-bottom:none}
+    @media (max-width: 900px){.top,.section,.cards{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="hero">
-    <div class="hero-card">
-      <div class="hero-title">
-        <div><div class="muted">מצב כללי</div><div class="hero-main">קריטי</div></div>
-        <div><span class="badge crit">קריטי</span></div>
-      </div>
-      <div class="hero-sub">gateway-18790 port 18790 down</div>
-      <div class="hero-meta">
-        <div class="card "><div class="label">בעיות שדורשות פעולה</div><div class="value">3</div><div class="sub">רק פריטים עם משמעות תפעולית</div></div>
-        <div class="card "><div class="label">מערכות בבעיה</div><div class="value">2</div><div class="sub">המחשב, OpenClaw</div></div>
-        <div class="card "><div class="label">בדיקה אחרונה</div><div class="value">2026-04-24T20:42:57.428Z</div><div class="sub">עודכן אוטומטית</div></div>
+  <div class="top">
+    <div class="panel">
+      <div class="muted">PC Guardian</div>
+      <h1 style="margin:8px 0 12px">קריטי</h1>
+      <span class="badge crit">קריטי</span> <span class="pill soft">ללא פעולות אוטומטיות</span>
+      <div class="sub" style="margin-top:14px">gateway-18790 port 18790 down</div>
+      <div class="cards" style="margin-top:16px">
+        <div class="card"><div class="muted">בדיקה אחרונה</div><div class="value" style="font-size:16px">2026-04-24T21:00:21.241Z</div></div>
+        <div class="card"><div class="muted">דורש טיפול</div><div class="value">3</div></div>
+        <div class="card"><div class="muted">מידע בלבד</div><div class="value">5</div></div>
       </div>
     </div>
-    <div class="stack">
-      <div class="card "><div class="label">מצב מחשב</div><div class="value"><span class="badge warn">אזהרה</span></div><div class="sub">יש נקודות שדורשות בדיקה</div></div>
-      <div class="card "><div class="label">מצב OpenClaw</div><div class="value"><span class="badge crit">קריטי</span></div><div class="sub">יש פריטים פתוחים</div></div>
-      <div class="card "><div class="label">החריגה הקריטית האחרונה</div><div class="value">gateway-18790 port 18790 down</div><div class="sub">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div></div>
+    <div class="grid">
+      <div class="card"><div class="muted">מצב מחשב</div><div class="value">תקין</div></div>
+      <div class="card"><div class="muted">מצב OpenClaw</div><div class="value">קריטי</div></div>
+      <div class="card"><div class="muted">מדיניות</div><div class="value" style="font-size:18px">Read Only</div><div class="sub">המערכת לא מבצעת תיקונים לבד</div></div>
     </div>
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <h2 class="section-title">דורש טיפול עכשיו</h2>
-      <div class="list"><div class="item priority critline"><strong>gateway-18790 port 18790 down</strong><div class="muted">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><span class="pill crit">קריטי</span><span class="pill crit">ביטחון גבוה</span><div class="sub">פעולה מומלצת: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div><div class="item priority critline"><strong>Ports 18789, 18790</strong><div class="muted">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><span class="pill crit">קריטי</span><span class="pill crit">ביטחון גבוה</span><div class="sub">פעולה מומלצת: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div><div class="item priority "><strong>gateway-18789 port 18789 no health</strong><div class="muted">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><span class="pill warn">אזהרה</span><span class="pill crit">ביטחון גבוה</span><div class="sub">פעולה מומלצת: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div></div>
+  <div class="section">
+    <div class="panel">
+      <h2>דורש טיפול</h2>
+      <div class="list">
+        <div class="item"><strong>gateway-18790 port 18790 down</strong><span class="pill crit">קריטי</span> <span class="pill crit">ביטחון גבוה</span><div class="sub" style="margin-top:8px">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><div class="sub">המלצה: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div><div class="item"><strong>gateway-18790 port 18790 down</strong><span class="pill crit">קריטי</span> <span class="pill crit">ביטחון גבוה</span><div class="sub" style="margin-top:8px">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><div class="sub">המלצה: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div><div class="item"><strong>gateway-18790 port 18790 down</strong><span class="pill crit">קריטי</span> <span class="pill crit">ביטחון גבוה</span><div class="sub" style="margin-top:8px">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><div class="sub">המלצה: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div>
+      </div>
     </div>
-    <div class="card "><div class="label">מידע בלבד</div><div class="value">5</div><div class="sub">נשאר בדשבורד, בלי לשלוח התראה</div></div>
-    <div class="card "><div class="label">מה תוקן אוטומטית</div><div class="value">אין</div><div class="sub">לא בוצעו תיקונים לאחרונה</div></div>
-    <div class="card "><div class="label">תמונת מצב OpenClaw</div><div class="value">unavailable</div><div class="sub">gateway/tasks/cron/alerts במקום אחד</div></div>
+    <div class="panel">
+      <h2>מידע בלבד</h2>
+      <div class="list">
+        <div class="item"><strong>פורטים חסרים: 18790</strong><span class="pill soft">מידע</span><div class="sub" style="margin-top:8px">זו כנראה תוצאה נגזרת של gateway חסר, לא תקלה נפרדת</div></div><div class="item"><strong>יעד אינטרנט לא נגיש: https://www.msftconnecttest.com/connecttest.txt</strong><span class="pill soft">מידע</span><div class="sub" style="margin-top:8px">כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור</div></div><div class="item"><strong>פורטים חסרים: 18790</strong><span class="pill soft">מידע</span><div class="sub" style="margin-top:8px">זו כנראה תוצאה נגזרת של gateway חסר, לא תקלה נפרדת</div></div><div class="item"><strong>יעד אינטרנט לא נגיש: https://www.msftconnecttest.com/connecttest.txt</strong><span class="pill soft">מידע</span><div class="sub" style="margin-top:8px">כנראה מדובר ביעד בדיקה משני שלא נגיש, לא בתקלה כללית בחיבור</div></div><div class="item"><strong>Ports 18789, 18790</strong><span class="pill soft">מידע</span><div class="sub" style="margin-top:8px">זו כנראה תוצאה נגזרת של gateway חסר, לא תקלה נפרדת</div></div>
+      </div>
+    </div>
   </div>
 
-  <div class="columns">
-    <div class="stack">
-      <div class="card">
-        <h2 class="section-title">מה זה משפיע</h2>
-        <div class="list"><div class="item"><strong>gateway-18790 port 18790 down</strong><span class="pill crit">קריטי</span><span class="pill crit">ביטחון גבוה</span><div class="sub">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><div class="sub">הצעד הבא: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div><div class="item"><strong>Ports 18789, 18790</strong><span class="pill crit">קריטי</span><span class="pill crit">ביטחון גבוה</span><div class="sub">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><div class="sub">הצעד הבא: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div><div class="item"><strong>gateway-18789 port 18789 no health</strong><span class="pill warn">אזהרה</span><span class="pill crit">ביטחון גבוה</span><div class="sub">עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי</div><div class="sub">הצעד הבא: לבדוק ידנית את הרכיב אם המצב נשאר לא תקין</div></div></div>
-      </div>
-      <div class="card">
-        <h2 class="section-title">מה כבר נבדק</h2>
-        <div class="two-col">
-          <div class="card "><div class="label">Ping targets</div><div class="value">Ping OK</div><div class="sub">בדיקת תקשורת בסיסית</div></div>
-          <div class="card "><div class="label">Internet targets</div><div class="value">Internet failed: https://www.msftconnecttest.com/connecttest.txt</div><div class="sub">בדיקת reachability חיצונית</div></div>
-          <div class="card "><div class="label">Gateway health</div><div class="value">gateway-18789 תקין | gateway-18790 בעייתי</div><div class="sub">בדיקת health מקומית</div></div>
-          <div class="card "><div class="label">Cron visibility</div><div class="value">unavailable</div><div class="sub">מקור המידע על cron jobs</div></div>
-        </div>
-      </div>
-      <div class="card">
-        <h2 class="section-title">תקלות אחרונות</h2>
-        <table><thead><tr><th>מתי</th><th>נושא</th><th>משמעות</th></tr></thead><tbody><tr><td>2026-04-24T20:42:57.428Z</td><td>מידע רשת</td><td>כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור · ביטחון נמוך</td></tr><tr><td>2026-04-24T20:42:57.428Z</td><td>gateway-18790</td><td>עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי · ביטחון גבוה</td></tr><tr><td>2026-04-24T20:42:57.428Z</td><td>OpenClaw Ports</td><td>עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי · ביטחון גבוה</td></tr><tr><td>2026-04-24T20:42:57.428Z</td><td>Cron jobs</td><td>אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה · ביטחון נמוך</td></tr><tr><td>2026-04-12T16:42:14.650Z</td><td>מידע רשת</td><td>כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור · ביטחון נמוך</td></tr><tr><td>2026-04-12T16:42:14.650Z</td><td>Cron jobs</td><td>אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה · ביטחון נמוך</td></tr><tr><td>2026-04-12T16:35:04.161Z</td><td>מידע רשת</td><td>כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור · ביטחון נמוך</td></tr><tr><td>2026-04-12T16:35:04.161Z</td><td>gateway-18789</td><td>עשוי להשפיע ישירות על זמינות OpenClaw או routing פנימי · ביטחון גבוה</td></tr></tbody></table>
-      </div>
+  <div class="section">
+    <div class="panel">
+      <h2>בדיקות מחשב</h2>
+      <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>CPU</td><td><span class="badge ok">תקין</span></td><td>CPU 3.7%</td></tr><tr><td>RAM</td><td><span class="badge ok">תקין</span></td><td>RAM 53.7%</td></tr><tr><td>Disk C:</td><td><span class="badge ok">תקין</span></td><td>C: free 113.55GB</td></tr><tr><td>Disk Activity</td><td><span class="badge ok">תקין</span></td><td>Disk activity 0.3%</td></tr><tr><td>Network Connectivity</td><td><span class="badge ok">תקין</span></td><td>חיבור רשת תקין</td></tr><tr><td>Internet Reachability</td><td><span class="badge ok">תקין</span></td><td>Internet optional target failed: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>Windows Defender</td><td><span class="badge ok">תקין</span></td><td>Defender תקין</td></tr><tr><td>Firewall</td><td><span class="badge ok">תקין</span></td><td>Firewall תקין</td></tr><tr><td>Critical Events</td><td><span class="badge ok">תקין</span></td><td>No recent critical events</td></tr><tr><td>Important Services</td><td><span class="badge ok">תקין</span></td><td>השירותים תקינים</td></tr><tr><td>Important Tasks</td><td><span class="badge ok">תקין</span></td><td>Tasks found</td></tr></tbody></table>
     </div>
-
-    <div class="stack">
-      <div class="card">
-        <h2 class="section-title">פריטי מידע בלבד</h2>
-        <div class="list"><div class="item priority info"><strong>יעד אינטרנט חיצוני לא נגיש: https://www.msftconnecttest.com/connecttest.txt</strong><span class="pill soft">ביטחון נמוך</span><div class="muted">כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור</div><div class="sub">להשאיר בדשבורד בלבד, ללא התראה</div></div><div class="item priority info"><strong>אין כרגע מידע על cron jobs</strong><span class="pill soft">ביטחון נמוך</span><div class="muted">אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה</div><div class="sub">להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב</div></div><div class="item priority info"><strong>יעד אינטרנט חיצוני לא נגיש: https://www.msftconnecttest.com/connecttest.txt</strong><span class="pill soft">ביטחון נמוך</span><div class="muted">כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור</div><div class="sub">להשאיר בדשבורד בלבד, ללא התראה</div></div><div class="item priority info"><strong>אין כרגע מידע על cron jobs</strong><span class="pill soft">ביטחון נמוך</span><div class="muted">אין כרגע תמונת מצב מלאה על cron jobs, אבל זה לא בהכרח מעיד על תקלה פעילה</div><div class="sub">להשאיר בדשבורד, ולחבר מקור cron יציב רק אם זה חשוב</div></div><div class="item priority info"><strong>יעד אינטרנט חיצוני לא נגיש: https://www.msftconnecttest.com/connecttest.txt</strong><span class="pill soft">ביטחון נמוך</span><div class="muted">כנראה מדובר ביעד בדיקת אינטרנט אחד שלא נגיש, לא בתקלה כללית בחיבור</div><div class="sub">להשאיר בדשבורד בלבד, ללא התראה</div></div></div>
-      </div>
-      <div class="card">
-        <h2 class="section-title">Top offenders</h2>
-        <div class="list"><div class="item"><strong>System</strong><div>CPU: 29699</div><div>זיכרון: 11 MB</div><div class="muted">ללא נתיב</div><span class="pill crit">דורש טיפול</span></div><div class="item"><strong>MsMpEng</strong><div>CPU: 20565.5</div><div>זיכרון: 256 MB</div><div class="muted">ללא נתיב</div><span class="pill crit">דורש טיפול</span></div><div class="item"><strong>WmiPrvSE</strong><div>CPU: 15100.1</div><div>זיכרון: 34 MB</div><div class="muted">C:\WINDOWS\system32\wbem\wmiprvse.exe</div><span class="pill crit">דורש טיפול</span></div><div class="item"><strong>dwm</strong><div>CPU: 12142.1</div><div>זיכרון: 91 MB</div><div class="muted">C:\WINDOWS\system32\dwm.exe</div><span class="pill crit">דורש טיפול</span></div><div class="item"><strong>logioptionsplus_agent</strong><div>CPU: 9985.9</div><div>זיכרון: 76 MB</div><div class="muted">C:\Program Files\LogiOptionsPlus\logioptionsplus_agent.exe</div><span class="pill crit">דורש טיפול</span></div></div>
-      </div>
-      <div class="card">
-        <h2 class="section-title">מצב מחשב</h2>
-        <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>CPU</td><td><span class="badge ok">תקין</span></td><td>CPU 1.7%</td></tr><tr><td>RAM</td><td><span class="badge ok">תקין</span></td><td>RAM 53.7%</td></tr><tr><td>Disk C:</td><td><span class="badge ok">תקין</span></td><td>C: free 113.55GB</td></tr><tr><td>Disk Activity</td><td><span class="badge ok">תקין</span></td><td>Disk activity 0.6%</td></tr><tr><td>Network Connectivity</td><td><span class="badge ok">תקין</span></td><td>חיבור רשת תקין</td></tr><tr><td>Internet Reachability</td><td><span class="badge warn">אזהרה</span></td><td>יעד אינטרנט חיצוני לא נגיש: https://www.msftconnecttest.com/connecttest.txt</td></tr><tr><td>Windows Defender</td><td><span class="badge ok">תקין</span></td><td>Defender תקין</td></tr><tr><td>Firewall</td><td><span class="badge ok">תקין</span></td><td>Firewall תקין</td></tr><tr><td>Critical Events</td><td><span class="badge ok">תקין</span></td><td>No recent critical events</td></tr><tr><td>Important Services</td><td><span class="badge ok">תקין</span></td><td>השירותים תקינים</td></tr><tr><td>Important Tasks</td><td><span class="badge ok">תקין</span></td><td>Tasks found</td></tr></tbody></table>
-      </div>
-      <div class="card">
-        <h2 class="section-title">מצב OpenClaw</h2>
-        <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>gateway-18789</td><td><span class="badge ok">תקין</span></td><td>gateway-18789 port 18789 OK</td></tr><tr><td>gateway-18790</td><td><span class="badge crit">קריטי</span></td><td>gateway-18790 port 18790 down</td></tr><tr><td>OpenClaw Ports</td><td><span class="badge crit">קריטי</span></td><td>Ports 18789, 18790</td></tr><tr><td>OpenClaw Tasks</td><td><span class="badge ok">תקין</span></td><td>משימות OpenClaw זמינות</td></tr><tr><td>Cron Jobs</td><td><span class="badge warn">אזהרה</span></td><td>אין כרגע מידע על cron jobs</td></tr><tr><td>Fallback / Model failures</td><td><span class="badge ok">תקין</span></td><td>No model fallback hints</td></tr><tr><td>Growth scan</td><td><span class="badge ok">תקין</span></td><td>נמצאו תיקיות למעקב: 12</td></tr></tbody></table>
-      </div>
-      <div class="card">
-        <h2 class="section-title">תוקן אוטומטית</h2>
-        <table><thead><tr><th>מתי</th><th>מה בוצע</th><th>יעד</th><th>תוצאה</th></tr></thead><tbody></tbody></table>
-      </div>
+    <div class="panel">
+      <h2>בדיקות OpenClaw</h2>
+      <table><thead><tr><th>בדיקה</th><th>מצב</th><th>סיכום</th></tr></thead><tbody><tr><td>gateway-18789</td><td><span class="badge ok">תקין</span></td><td>gateway-18789 port 18789 OK</td></tr><tr><td>gateway-18790</td><td><span class="badge crit">קריטי</span></td><td>gateway-18790 port 18790 down</td></tr><tr><td>OpenClaw Ports</td><td><span class="badge warn">אזהרה</span></td><td>פורטים חסרים: 18790</td></tr><tr><td>OpenClaw Tasks</td><td><span class="badge ok">תקין</span></td><td>משימות OpenClaw זמינות</td></tr><tr><td>Cron Jobs</td><td><span class="badge ok">תקין</span></td><td>אין כרגע מידע על cron jobs</td></tr><tr><td>Fallback / Model failures</td><td><span class="badge ok">תקין</span></td><td>No model fallback hints</td></tr><tr><td>Growth scan</td><td><span class="badge ok">תקין</span></td><td>נמצאו תיקיות למעקב: 12</td></tr></tbody></table>
     </div>
   </div>
 </div>
