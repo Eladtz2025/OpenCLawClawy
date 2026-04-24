@@ -113,6 +113,35 @@ function sanitizeSummary(text = '', item, topicKey) {
   return sentenceTrim(cleaned, topicKey === 'hapoel' ? 170 : 220);
 }
 
+function detectSummaryOverclaim(summary = '', item = {}) {
+  const text = normalize(`${summary} ${item.title || ''} ${item.articleBody || ''} ${item.articleDescription || ''}`);
+  const lower = text.toLowerCase();
+  const flags = [];
+
+  if (/claude code/i.test(lower) && /חינם|חינמי|בחינם|free/i.test(lower) && /openrouter|lm studio|deepseek|llama|nvidia nim/i.test(lower)) flags.push('claude_free_overclaim');
+  if (/רשמי|official|native/i.test(lower) && /fork|wrapper|openrouter|lm studio|deepseek|llama|nvidia nim/i.test(lower)) flags.push('officiality_overclaim');
+  if (/בוודאות|בטוח|מובטח|אין ספק|definitely|guaranteed/i.test(lower)) flags.push('certainty_overclaim');
+  if (/חינם|free|ללא תשלום/i.test(lower) && !/לטענת|לכאורה|לא רשמי|wrapper|fork/i.test(lower) && /telegram|t\.me\//i.test(`${item.sourceUrl || ''} ${item.source || ''}`.toLowerCase())) flags.push('unqualified_free_claim');
+
+  return flags;
+}
+
+function rewriteOverclaimSummary(summary = '', item = {}, topicKey, flags = []) {
+  if (flags.includes('claude_free_overclaim')) {
+    return 'לא מדובר ב-Claude הרשמי בחינם, אלא לכל היותר במעטפת לא רשמית שמתחברת לספקי מודלים אחרים.';
+  }
+  if (flags.includes('officiality_overclaim')) {
+    return 'הניסוח כאן חזק מדי. אם מדובר ב-wrapper או fork שמתחבר לספקים אחרים, לא נכון להציג את זה כמוצר רשמי.';
+  }
+  if (flags.includes('unqualified_free_claim')) {
+    return 'יש כאן טענת "חינם", אבל בלי אימות ברור מול מקור רשמי עדיף להציג אותה בזהירות ולא כעובדה.';
+  }
+  if (flags.includes('certainty_overclaim')) {
+    return sentenceTrim(`הניסוח המקורי בטוח מדי. הניסוח הזהיר יותר הוא: ${summary}`, topicKey === 'hapoel' ? 170 : 220);
+  }
+  return sanitizeSummary(summary, item, topicKey);
+}
+
 function detectHypeFlags(topicKey, item) {
   const title = cleanTitle(item.title || item.summary || '');
   const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
@@ -281,6 +310,7 @@ Key Rules:
 2. If the content is already clear, concise, and direct (e.g., a sports result, a clear announcement, or a fact-based update), do NOT over-edit it. Simply refine it to be clean and professional.
 3. Do NOT try to "deepen" or "analyze" a simple fact into a story. Keep the essence.
 4. Write in Hebrew. Keep it to 1-3 short sentences max.
+5. Do not upgrade claims to certainty, do not call something official/free unless clearly supported.
 
 Topic: ${topicKey}
 Title: ${title}
@@ -299,7 +329,12 @@ Summary (Hebrew):`;
       })
     });
     const data = await response.json();
-    return sanitizeSummary(data.response || '', item, topicKey);
+    const sanitized = sanitizeSummary(data.response || '', item, topicKey);
+    const overclaimFlags = detectSummaryOverclaim(sanitized, item);
+    if (overclaimFlags.length > 0) {
+      return rewriteOverclaimSummary(sanitized, item, topicKey, overclaimFlags);
+    }
+    return sanitized;
   } catch (e) {
     console.error(`LLM Error for ${title}: ${e.message}`);
     return makeFallbackSummary(item, topicKey);
