@@ -18,11 +18,15 @@ function hasCorruption(text = '') {
   return ['�', '�?', 'A�', 'x?x', 'xTx', 'x~x'].some(marker => s.includes(marker));
 }
 
-const state = readJson('news-dashboard/state.json');
-const summary = readJson('news-dashboard/daily-summary.json');
-const items = readJson('news-dashboard/daily-final.json');
-const html = readText('news-dashboard/live-site/2026-04-24.html');
-const latest = readText('news-dashboard/live-site/latest.html');
+const path = require('path');
+
+const ROOT = __dirname;
+const state = readJson(path.join(ROOT, 'state.json'));
+const summary = readJson(path.join(ROOT, 'daily-summary.json'));
+const items = readJson(path.join(ROOT, 'daily-final.json'));
+const today = new Date().toISOString().slice(0, 10);
+const html = readText(path.join(ROOT, 'live-site', `${today}.html`));
+const latest = readText(path.join(ROOT, 'live-site', 'latest.html'));
 
 if (!state.buildId) fail('Missing state.buildId');
 if (!summary.buildId) fail('Missing summary.buildId');

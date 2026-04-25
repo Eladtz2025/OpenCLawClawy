@@ -15,6 +15,7 @@ const MEDIA_DIR = path.join(LIVE_SITE_DIR, 'assets', 'media');
 const PUBLIC_URL_BASE = 'https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site';
 const TODAY = new Date().toISOString().slice(0, 10);
 const PUBLIC_URL = `${PUBLIC_URL_BASE}/${TODAY}.html`;
+const PUBLIC_LATEST_URL = `${PUBLIC_URL_BASE}/latest.html`;
 const NOW = new Date().toISOString();
 const BUILD_ID = `build-${Date.now()}`;
 
@@ -186,16 +187,19 @@ function sanitizeFileToken(value = '') {
   return String(value).replace(/[^a-z0-9_-]+/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase();
 }
 
-function extractTelegramMediaMeta(html = '', sourceUrl = '') {
+function extractPageMediaMeta(html = '', sourceUrl = '') {
   const ogImage = String(html).match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i)
     || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+property="og:image"/i);
   const twitterImage = String(html).match(/<meta[^>]+property="twitter:image"[^>]+content="([^"]+)"/i)
-    || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+property="twitter:image"/i);
+    || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+property="twitter:image"/i)
+    || String(html).match(/<meta[^>]+name="twitter:image"[^>]+content="([^"]+)"/i)
+    || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+name="twitter:image"/i);
   const video = String(html).match(/<meta[^>]+property="og:video"[^>]+content="([^"]+)"/i)
     || String(html).match(/<meta[^>]+content="([^"]+)"[^>]+property="og:video"/i);
+  const imageUrl = ogImage?.[1] || twitterImage?.[1] || null;
   return {
-    mediaType: video ? 'video' : (ogImage || twitterImage ? 'image' : null),
-    imageUrl: ogImage?.[1] || twitterImage?.[1] || null,
+    mediaType: video ? 'video' : (imageUrl ? 'image' : null),
+    imageUrl,
     videoUrl: video?.[1] || null
   };
 }
@@ -203,14 +207,14 @@ function extractTelegramMediaMeta(html = '', sourceUrl = '') {
 async function enrichSelectedMedia(items) {
   ensureDir(MEDIA_DIR);
   return Promise.all(items.map(async (item, index) => {
-    if (item.category !== 'technology2' || !/t\.me\//i.test(item.sourceUrl || '')) return item;
     try {
       const pageHtml = await fetchText(item.sourceUrl);
-      const media = extractTelegramMediaMeta(pageHtml, item.sourceUrl);
+      const media = extractPageMediaMeta(pageHtml, item.sourceUrl);
       if (!media?.imageUrl) return item;
       const { buffer, contentType } = await fetchBuffer(media.imageUrl);
       const ext = extensionFromContentType(contentType, media.imageUrl);
-      const fileName = `${TODAY}-${sanitizeFileToken(item.category)}-${sanitizeFileToken(item.source)}-${index + 1}${ext}`;
+      if (!/^\.(jpg|jpeg|png|webp|gif)$/i.test(ext)) return item;
+      const fileName = `${TODAY}-${sanitizeFileToken(item.category)}-${sanitizeFileToken(item.source)}-${index + 1}${ext === '.jpeg' ? '.jpg' : ext}`;
       const absolutePath = path.join(MEDIA_DIR, fileName);
       fs.writeFileSync(absolutePath, buffer);
       return {
@@ -797,28 +801,48 @@ function scoreItem(topicKey, item, sourceCount) {
   return score;
 }
 
+function canonicalDedupKey(item = {}) {
+  const topic = String(item.category || '');
+  const title = cleanTitle(item.title || item.summary || '');
+  const source = String(item.source || '').toLowerCase();
+  let softTitle = title.toLowerCase();
+  softTitle = softTitle
+    .replace(/\|\s*נחשף ב-ynet/iu, '')
+    .replace(/^הוא נשאר[:\s-]*/u, '')
+    .replace(/^עכשיו זה רשמי[:\s-]*/u, '')
+    .replace(/חוזהו/g, 'חוזה')
+    .replace(/האריך את/g, 'האריך')
+    .replace(/בהפועל\s*פ(?:"|׳|')?ת/gu, 'הפועל פתח תקווה')
+    .replace(/gpt\s*[-.]?\s*5\.5/gi, 'gpt55')
+    .replace(/gpt\s*5\.5/gi, 'gpt55')
+    .replace(/claude\s*opus\s*4\.7/gi, 'claudeopus47')
+    .replace(/openai/gi, 'openai')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim();
+  let softKey = softTitle.split(' ').filter(Boolean).slice(0, 8).join(' ');
+  if (topic === 'hapoel' && /עומר פרץ/.test(title) && /האריך/.test(title) && /2028|חוזה/.test(title)) {
+    softKey = 'hapoel omer peretz extension';
+  }
+  if ((topic === 'technology' || topic === 'technology2') && /gpt55/.test(softTitle) && /openai|gpt55/.test(softTitle)) {
+    softKey = 'technology openai gpt55';
+  }
+  if ((topic === 'technology' || topic === 'technology2') && /claudeopus47|opus 4 7/.test(softTitle)) {
+    softKey = 'technology claude opus 47';
+  }
+  return {
+    topic,
+    source,
+    key: title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim(),
+    softKey
+  };
+}
+
 function dedup(items) {
   const seen = new Set();
   const softSeen = new Set();
   const out = [];
   for (const item of items) {
-    const topic = String(item.category || '');
-    const title = cleanTitle(item.title);
-    const key = title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
-    let softTitle = title.toLowerCase();
-    softTitle = softTitle
-      .replace(/\|\s*נחשף ב-ynet/iu, '')
-      .replace(/^הוא נשאר[:\s-]*/u, '')
-      .replace(/^עכשיו זה רשמי[:\s-]*/u, '')
-      .replace(/חוזהו/g, 'חוזה')
-      .replace(/האריך את/g, 'האריך')
-      .replace(/בהפועל\s*פ(?:"|׳|')?ת/gu, 'הפועל פתח תקווה')
-      .replace(/[^\p{L}\p{N}]+/gu, ' ')
-      .trim();
-    let softKey = softTitle.split(' ').filter(Boolean).slice(0, 7).join(' ');
-    if (topic === 'hapoel' && /עומר פרץ/.test(title) && /האריך/.test(title) && /2028|חוזה/.test(title)) {
-      softKey = 'hapoel omer peretz extension';
-    }
+    const { topic, key, softKey } = canonicalDedupKey(item);
     if (!key || seen.has(key)) continue;
     if (softKey && softSeen.has(`${topic}:${softKey}`)) continue;
     seen.add(key);
@@ -826,6 +850,47 @@ function dedup(items) {
     out.push(item);
   }
   return out;
+}
+
+function dedupeAcrossPage(results = []) {
+  const preferredTopicOrder = ['technology', 'technology2', 'israel', 'crypto', 'hapoel'];
+  const topicRank = new Map(preferredTopicOrder.map((topic, index) => [topic, index]));
+  const preferredSourcePatterns = [
+    { test: /(reuters|ars technica|techcrunch|the verge|google blog|calcalist)/i, rank: 0 },
+    { test: /(telegram|technewsheb|ai_tg_il|botai14|hackit770)/i, rank: 1 }
+  ];
+
+  const allItems = results.flatMap(result => result.selected || []);
+  const groups = new Map();
+  for (const item of allItems) {
+    const { softKey, key } = canonicalDedupKey(item);
+    const groupKey = ((item.category === 'technology' || item.category === 'technology2') && softKey) ? `cross:${softKey}` : `${item.category}:${key}`;
+    if (!groups.has(groupKey)) groups.set(groupKey, []);
+    groups.get(groupKey).push(item);
+  }
+
+  const keepIds = new Set();
+  for (const groupItems of groups.values()) {
+    groupItems.sort((a, b) => {
+      const aTopicRank = topicRank.get(a.category) ?? 99;
+      const bTopicRank = topicRank.get(b.category) ?? 99;
+      if (aTopicRank !== bTopicRank) return aTopicRank - bTopicRank;
+      const aSourceRank = preferredSourcePatterns.find(x => x.test.test(String(a.source || '')))?.rank ?? 9;
+      const bSourceRank = preferredSourcePatterns.find(x => x.test.test(String(b.source || '')))?.rank ?? 9;
+      if (aSourceRank !== bSourceRank) return aSourceRank - bSourceRank;
+      return Number(b.score || 0) - Number(a.score || 0);
+    });
+    keepIds.add(groupItems[0].id);
+  }
+
+  return results.map(result => ({
+    ...result,
+    selected: (result.selected || []).filter(item => keepIds.has(item.id)),
+    topicStatus: {
+      ...result.topicStatus,
+      got: (result.selected || []).filter(item => keepIds.has(item.id)).length
+    }
+  }));
 }
 
 const TOPIC_RULES = {
@@ -1013,9 +1078,7 @@ async function collectTopic(topic) {
     return true;
   });
 
-  if (topic.key === 'technology2') {
-    selected = await enrichSelectedMedia(selected);
-  }
+  selected = await enrichSelectedMedia(selected);
 
   const rerunEditorResult = applyEditorSelection(topic.key, selected);
   if (topic.key === 'technology2') {
@@ -1059,13 +1122,14 @@ async function main() {
   const results = [];
   for (const topic of TOPICS) results.push(await collectTopic(topic));
 
-  const items = results.flatMap(r => r.selected);
+  const dedupedResults = dedupeAcrossPage(results);
+  const items = dedupedResults.flatMap(r => r.selected);
   const meta = {
     lastUpdated: NOW,
-    sourcesWorkedCount: new Set(results.flatMap(r => r.topicStatus.sourcesWorked)).size,
-    fallbackActive: results.some(r => r.topicStatus.fallbackActive),
-    status: results.every(r => r.topicStatus.got >= (r.topicStatus.minGoodCount || r.topicStatus.wanted)) ? 'SUCCESS' : 'PARTIAL',
-    topics: results.map(r => r.topicStatus)
+    sourcesWorkedCount: new Set(dedupedResults.flatMap(r => r.topicStatus.sourcesWorked)).size,
+    fallbackActive: dedupedResults.some(r => r.topicStatus.fallbackActive),
+    status: dedupedResults.every(r => r.topicStatus.got >= (r.topicStatus.minGoodCount || r.topicStatus.wanted)) ? 'SUCCESS' : 'PARTIAL',
+    topics: dedupedResults.map(r => r.topicStatus)
   };
 
   fs.writeFileSync(FINAL_PATH, JSON.stringify(items, null, 2), 'utf8');
@@ -1075,8 +1139,9 @@ async function main() {
     buildId: BUILD_ID,
     status: meta.status,
     latestUrl: `./news-dashboard/live-site/latest.html?v=${BUILD_ID}`,
+    publicLatestUrl: `${PUBLIC_LATEST_URL}?v=${BUILD_ID}`,
     publicUrl: `${PUBLIC_URL}?v=${BUILD_ID}`,
-    topics: Object.fromEntries(results.map(r => [r.topicStatus.topic, r.topicStatus]))
+    topics: Object.fromEntries(dedupedResults.map(r => [r.topicStatus.topic, r.topicStatus]))
   };
   fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2), 'utf8');
 
@@ -1085,6 +1150,8 @@ async function main() {
     buildId: BUILD_ID,
     status: meta.status,
     latestUrl: state.latestUrl,
+    publicLatestUrl: state.publicLatestUrl,
+    publicUrl: state.publicUrl,
     lastPublishedAt: NOW,
     sourcesWorkedCount: meta.sourcesWorkedCount,
     fallbackActive: meta.fallbackActive,

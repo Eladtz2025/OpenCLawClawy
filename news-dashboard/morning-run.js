@@ -18,4 +18,5 @@ function runStep(scriptName) {
 runStep('live-pipeline.js');
 runStep('render-dashboard.js');
 runStep('build-sanity-check.js');
+runStep('verify-public-url.js');
 console.log('Dashboard pipeline status: SUCCESS');

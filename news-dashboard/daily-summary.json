@@ -1,21 +1,23 @@
 {
-  "generatedAt": "2026-04-24T16:32:45.616Z",
-  "buildId": "build-1777048365616",
-  "status": "SUCCESS",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777048365616",
-  "lastPublishedAt": "2026-04-24T16:32:45.616Z",
-  "sourcesWorkedCount": 27,
-  "fallbackActive": false,
+  "generatedAt": "2026-04-25T05:22:45.362Z",
+  "buildId": "build-1777094565362",
+  "status": "PARTIAL",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777094565362",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1777094565362",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-04-25.html?v=build-1777094565362",
+  "lastPublishedAt": "2026-04-25T05:22:45.362Z",
+  "sourcesWorkedCount": 26,
+  "fallbackActive": true,
   "topicStatus": [
     {
       "topic": "technology",
       "label": "טכנולוגיה",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 5,
+      "got": 4,
       "maxCount": 5,
       "lowVolumeByDesign": false,
-      "fallbackActive": false,
+      "fallbackActive": true,
       "sourcesWorked": [
         "TechCrunch AI",
         "The Verge Tech",
@@ -89,13 +91,16 @@
         "CoinDesk Ethereum",
         "CoinDesk XRP",
         "Decrypt",
-        "The Block",
         "DL News"
       ],
       "sourcesFailed": [
         {
           "source": "SEC Press Releases",
           "error": "no_items"
+        },
+        {
+          "source": "The Block",
+          "error": "Error: HTTP 403 for https://www.theblock.co/"
         },
         {
           "source": "Blockworks",
