@@ -4,6 +4,7 @@ const path = require('path');
 const OUT_DIR = __dirname;
 const LIVE_DIR = path.join(OUT_DIR, 'live-site');
 const ARCHIVE_DIR = path.join(LIVE_DIR, 'archive');
+const MEDIA_DIR = path.join(LIVE_DIR, 'assets', 'media');
 const FINAL_PATH = path.join(OUT_DIR, 'daily-final.json');
 const STATE_PATH = path.join(OUT_DIR, 'state.json');
 const ROOT_INDEX_PATH = path.join(OUT_DIR, '..', 'index.html');
@@ -146,6 +147,18 @@ function pruneArchives() {
   }
 }
 
+function pruneMedia(archiveFiles) {
+  if (!fs.existsSync(MEDIA_DIR)) return;
+  const keepDays = new Set([...archiveFiles.slice(0, Math.max(ARCHIVE_RETENTION_DAYS, GUARANTEED_RECENT_DAYS)).map(file => file.replace('.html', '')), TODAY]);
+  const mediaFiles = fs.readdirSync(MEDIA_DIR);
+  for (const file of mediaFiles) {
+    const match = file.match(/^(\d{4}-\d{2}-\d{2})-/);
+    if (!match) continue;
+    if (keepDays.has(match[1])) continue;
+    fs.unlinkSync(path.join(MEDIA_DIR, file));
+  }
+}
+
 function renderArchiveIndex(archiveFiles) {
   const recent = archiveFiles.slice(0, GUARANTEED_RECENT_DAYS);
   const recentSet = new Set(recent);
@@ -214,6 +227,7 @@ async function main() {
   fs.writeFileSync(path.join(ARCHIVE_DIR, dailyFileName), dashboard, 'utf8');
   pruneArchives();
   const archiveFiles = fs.readdirSync(ARCHIVE_DIR).filter(x => /^\d{4}-\d{2}-\d{2}\.html$/.test(x)).sort().reverse();
+  pruneMedia(archiveFiles);
   fs.writeFileSync(path.join(ARCHIVE_DIR, 'index.html'), renderArchiveIndex(archiveFiles), 'utf8');
 
   // 4. Keep the repository root untouched. Public entry is the explicit live-site URL.
