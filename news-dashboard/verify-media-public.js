@@ -4,12 +4,18 @@ const path = require('path');
 
 const ROOT = __dirname;
 const HTML_PATH = path.join(ROOT, 'live-site', `${new Date().toISOString().slice(0, 10)}.html`);
+const MAX_ATTEMPTS = 6;
+const SLEEP_MS = 15000;
 
 function fetchHead(url) {
   return execFileSync('curl.exe', ['-I', '-L', '--silent', '--show-error', '--fail', url], {
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'pipe']
   });
+}
+
+function sleep(ms) {
+  execFileSync('powershell', ['-NoProfile', '-Command', `Start-Sleep -Milliseconds ${ms}`], { stdio: 'ignore' });
 }
 
 function fail(message) {
@@ -25,19 +31,25 @@ if (refs.length === 0) {
 
 const uniqueRefs = [...new Set(refs)];
 const base = 'https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/';
-const missing = [];
-for (const rel of uniqueRefs.slice(0, 12)) {
-  const url = new URL(rel.replace(/^\.\//, ''), base).toString();
-  try {
-    const head = fetchHead(url);
-    if (!/200 OK/i.test(head)) missing.push(url);
-  } catch {
-    missing.push(url);
+const sampleUrls = uniqueRefs.slice(0, 12).map(rel => new URL(rel.replace(/^\.\//, ''), base).toString());
+
+let lastMissing = [];
+for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+  const missing = [];
+  for (const url of sampleUrls) {
+    try {
+      const head = fetchHead(url);
+      if (!/200 OK/i.test(head)) missing.push(url);
+    } catch {
+      missing.push(url);
+    }
   }
+  if (missing.length === 0) {
+    process.stdout.write(JSON.stringify({ ok: true, checked: sampleUrls.length, totalMediaRefs: uniqueRefs.length, attempts: attempt }, null, 2));
+    process.exit(0);
+  }
+  lastMissing = missing;
+  if (attempt < MAX_ATTEMPTS) sleep(SLEEP_MS);
 }
 
-if (missing.length > 0) {
-  fail(`Public media missing: ${missing[0]}`);
-}
-
-process.stdout.write(JSON.stringify({ ok: true, checked: Math.min(uniqueRefs.length, 12), totalMediaRefs: uniqueRefs.length }, null, 2));
+fail(`Public media missing after retries: ${lastMissing[0]}`);
