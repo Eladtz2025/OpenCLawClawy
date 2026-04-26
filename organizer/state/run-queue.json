@@ -1,0 +1,21 @@
+﻿{
+    "system":  "Organizer V2",
+    "activeRun":  {
+                      "id":  "a4db46a0-0e92-437b-93c7-bf3006b2d459",
+                      "createdAt":  "2026-04-27T00:36:40",
+                      "status":  "queued",
+                      "goal":  "Organizer V2 run-to-completion",
+                      "phases":  [
+                                     "computer",
+                                     "gmail",
+                                     "photos",
+                                     "finalize"
+                                 ]
+                  },
+    "pendingRuns":  [
+
+                    ],
+    "history":  [
+
+                ]
+}
