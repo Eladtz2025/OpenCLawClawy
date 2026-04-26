@@ -61,16 +61,45 @@ function cleanBody(text = '') {
   return normalize(cleaned.slice(0, cutIndex));
 }
 
-function sentenceTrim(text = '', max = 220) {
+function sentenceTrim(text = '', max = 220, min = 0) {
   const clean = normalize(text);
   if (!clean) return '';
   if (clean.length <= max) return clean;
   const sliced = clean.slice(0, max + 1);
   const punctuationCut = Math.max(sliced.lastIndexOf('. '), sliced.lastIndexOf('! '), sliced.lastIndexOf('? '), sliced.lastIndexOf('। '));
-  if (punctuationCut > Math.floor(max * 0.45)) return sliced.slice(0, punctuationCut + 1).trim();
+  if (punctuationCut > Math.max(Math.floor(max * 0.45), min)) return sliced.slice(0, punctuationCut + 1).trim();
   const spaceCut = sliced.lastIndexOf(' ');
-  if (spaceCut > Math.floor(max * 0.6)) return sliced.slice(0, spaceCut).trim();
+  if (spaceCut > Math.max(Math.floor(max * 0.6), min)) return sliced.slice(0, spaceCut).trim();
   return sliced.slice(0, max).trim();
+}
+
+function dynamicSummaryLimit(item = {}, topicKey = '') {
+  const body = cleanBody(item.articleDescription || item.articlePreview || item.articleBody || '');
+  const title = cleanTitle(item.title || item.summary || '');
+  const source = String(item.source || '').toLowerCase();
+  let max = 260;
+  let min = 90;
+
+  if (topicKey === 'hapoel') {
+    max = 190;
+    min = 70;
+  } else if (topicKey === 'technology2') {
+    max = 240;
+    min = 80;
+  } else if (topicKey === 'crypto') {
+    max = 230;
+    min = 85;
+  }
+
+  if (body.length > 700) max += 70;
+  else if (body.length > 420) max += 35;
+  else if (body.length < 160) max -= 40;
+
+  if (/telegram|t\.me\//i.test(source)) max -= 20;
+  if (/ניתוח|הסבר|מאחורי הקלעים|strategy|roadmap|regulation|earnings|lawsuit|funding|security/i.test(`${title} ${body}`)) max += 30;
+
+  max = Math.max(max, min + 40);
+  return { max, min };
 }
 
 function makeFallbackSummary(item, topicKey) {
@@ -91,19 +120,17 @@ function makeFallbackSummary(item, topicKey) {
       .replace(/מחזור\s*27:[\s\S]*$/u, 'נקבע לוח המשחקים לפלייאוף העליון, כולל מועדי המשחקים שכבר פורסמו.')
       .replace(/\s+/g, ' ')
       .trim();
-    if (shortBody) return sentenceTrim(shortBody, 170);
+    if (shortBody) {
+      const limits = dynamicSummaryLimit(item, topicKey);
+      return sentenceTrim(shortBody, limits.max, limits.min);
+    }
     return `עדכון קצר סביב ${safeTitle || title}.`;
   }
 
-  if (topicKey === 'crypto') {
-    if (compactBody) return sentenceTrim(compactBody, 180);
+  if (compactBody) {
+    const limits = dynamicSummaryLimit(item, topicKey);
+    return sentenceTrim(compactBody, limits.max, limits.min);
   }
-
-  if (topicKey === 'technology2' && compactBody) {
-    return sentenceTrim(compactBody, 180);
-  }
-
-  if (compactBody) return sentenceTrim(compactBody, 220);
   return safeTitle || title;
 }
 
@@ -120,7 +147,8 @@ function sanitizeSummary(text = '', item, topicKey) {
   if (cleaned.length < 20) return makeFallbackSummary(item, topicKey);
   if (/^(none|n\/a|null|undefined)$/i.test(cleaned)) return makeFallbackSummary(item, topicKey);
   if (/skip to main content|coin prices|comment loader|save story/i.test(cleaned)) return makeFallbackSummary(item, topicKey);
-  return sentenceTrim(cleaned, topicKey === 'hapoel' ? 170 : 220);
+  const limits = dynamicSummaryLimit(item, topicKey);
+  return sentenceTrim(cleaned, limits.max, limits.min);
 }
 
 function detectSummaryOverclaim(summary = '', item = {}) {
@@ -147,7 +175,8 @@ function rewriteOverclaimSummary(summary = '', item = {}, topicKey, flags = []) 
     return 'יש כאן טענת "חינם", אבל בלי אימות ברור מול מקור רשמי עדיף להציג אותה בזהירות ולא כעובדה.';
   }
   if (flags.includes('certainty_overclaim')) {
-    return sentenceTrim(`הניסוח המקורי בטוח מדי. הניסוח הזהיר יותר הוא: ${summary}`, topicKey === 'hapoel' ? 170 : 220);
+    const limits = dynamicSummaryLimit(item, topicKey);
+    return sentenceTrim(`הניסוח המקורי בטוח מדי. הניסוח הזהיר יותר הוא: ${summary}`, limits.max, limits.min);
   }
   return sanitizeSummary(summary, item, topicKey);
 }
@@ -227,7 +256,8 @@ function buildCautiousSummary(item, topicKey, flags = []) {
     return 'הפוסט מציג טענת "חינם", אבל בלי אימות ברור מול המוצר הרשמי, ולכן צריך לראות בזה טענה שדורשת בדיקה.';
   }
   if (flags.includes('hype_language')) {
-    return sentenceTrim(`הפוסט מנוסח בצורה שיווקית ומנופחת. העובדות שכדאי לקחת ממנו הן: ${body || title}`, 220);
+    const limits = dynamicSummaryLimit(item, topicKey);
+    return sentenceTrim(`הפוסט מנוסח בצורה שיווקית ומנופחת. העובדות שכדאי לקחת ממנו הן: ${body || title}`, limits.max, limits.min);
   }
   return makeFallbackSummary(item, topicKey);
 }
@@ -397,16 +427,22 @@ async function generateSmartSummary(item, topicKey) {
   const title = item.title || '';
   const body = item.articleBody || item.articlePreview || '';
   
+  const limits = dynamicSummaryLimit(item, topicKey);
   const prompt = `
-You are a professional news editor. Your goal is to create a "Highlights" summary for a news item.
-Do NOT repeat the title. Do NOT use filler phrases like "The article discusses" or "According to the source".
+You are a sharp Hebrew news editor writing a natural article summary for a dashboard.
+Write only the summary itself, with no labels, no bullets, and no opening formulas.
+Do NOT repeat the title unless it is necessary for clarity.
 
-Key Rules:
-1. Focus on the real value/impact (what actually happened).
-2. If the content is already clear, concise, and direct (e.g., a sports result, a clear announcement, or a fact-based update), do NOT over-edit it. Simply refine it to be clean and professional.
-3. Do NOT try to "deepen" or "analyze" a simple fact into a story. Keep the essence.
-4. Write in Hebrew. Keep it to 1-3 short sentences max.
-5. Do not upgrade claims to certainty, do not call something official/free unless clearly supported.
+Rules:
+1. Write a clean, direct summary in Hebrew.
+2. The summary should be dynamic in length: if the story is simple, keep it short; if it has real depth or consequences, make it longer.
+3. Usually aim for 1-3 sentences. Prefer enough detail so the reader will usually understand the item without opening it.
+4. Include the core development, the important context, and the practical implication when relevant, but flow naturally as one summary.
+5. Do not sound like a template. Vary rhythm and length.
+6. Do not add headings like "מה קרה" or "למה זה חשוב".
+7. Do not exaggerate, do not add certainty not supported by the text, and do not call something official or free unless clearly grounded.
+8. If the source text is already clear and direct, lightly refine it instead of inventing extra depth.
+9. Keep the summary roughly under ${limits.max} characters, unless a slightly shorter version is clearly better.
 
 Topic: ${topicKey}
 Title: ${title}
