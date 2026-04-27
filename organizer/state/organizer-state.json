@@ -4,7 +4,7 @@
                   "chatId":  "-1003566973693",
                   "threadId":  "2670"
               },
-    "updatedAt":  "2026-04-27T05:06:00",
+    "updatedAt":  "2026-04-27T05:17:56",
     "pipelines":  {
                       "computer":  {
                                        "status":  "ready_for_approval",
@@ -30,7 +30,8 @@
                                                   "cmd launcher added so auth handshake can run without manual ExecutionPolicy typing",
                                                   "gmail user-scope runner param bug fixed so auth probe can execute",
                                                   "live gmail probe now launches and waits for real auth flow",
-                                                  "gmail handshake verification tightened to require fresh log activity"
+                                                  "gmail handshake verification tightened to require fresh log activity",
+                                                  "auth status checker scripts added for quick non-interactive readiness checks"
                                               ]
                                 },
                       "photos":  {
@@ -48,7 +49,8 @@
                                                    "combined handshake now verifies auth artifacts after each step",
                                                    "cmd launcher added so auth handshake can run without manual ExecutionPolicy typing",
                                                    "photos auth-status no longer blocks on prompt and runner accepts explicit auth code",
-                                                   "combined handshake now accepts PhotosAuthCode for second-pass completion"
+                                                   "combined handshake now accepts PhotosAuthCode for second-pass completion",
+                                                   "auth status checker scripts added for quick non-interactive readiness checks"
                                                ]
                                  }
                   }
