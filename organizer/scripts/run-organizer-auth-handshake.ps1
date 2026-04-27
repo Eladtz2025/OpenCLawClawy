@@ -13,19 +13,34 @@ $gmailScript = 'C:\Users\Itzhak\.openclaw\workspace\organizer\scripts\invoke-gma
 $photosScript = 'C:\Users\Itzhak\.openclaw\workspace\organizer\scripts\invoke-photos-auth.ps1'
 $photosToken = 'C:\Users\Itzhak\.openclaw\workspace\token_photos.pickle'
 $gmailAppData = 'C:\Users\Itzhak\AppData\Roaming\google-workspace-mcp'
+$gmailLogsDir = 'C:\Users\Itzhak\AppData\Roaming\google-workspace-mcp\logs'
 
 if (-not (Test-Path $gmailScript)) { throw "Missing $gmailScript" }
 if (-not (Test-Path $photosScript)) { throw "Missing $photosScript" }
 
 $gmailOk = $false
 $photosOk = $false
+$gmailBaselineTicks = $null
+if (Test-Path $gmailLogsDir) {
+    $gmailBaselineTicks = (Get-Item $gmailLogsDir).LastWriteTimeUtc.Ticks
+}
 
 Write-Host 'Step 1/2: Gmail OAuth' -ForegroundColor Green
 try {
     powershell -ExecutionPolicy Bypass -File $gmailScript -Tool people.getMe
-    $gmailOk = Test-Path $gmailAppData
+    $gmailDataExists = Test-Path $gmailAppData
+    $gmailLogsTouched = $false
+    if (Test-Path $gmailLogsDir) {
+        $gmailCurrentTicks = (Get-Item $gmailLogsDir).LastWriteTimeUtc.Ticks
+        if ($gmailBaselineTicks) {
+            $gmailLogsTouched = $gmailCurrentTicks -gt $gmailBaselineTicks
+        }
+    }
+    $gmailOk = $gmailDataExists -and $gmailLogsTouched
     if ($gmailOk) {
-        Write-Host 'Gmail auth step completed, user-scoped app data detected.' -ForegroundColor Green
+        Write-Host 'Gmail auth step completed, user-scoped app data and fresh log activity detected.' -ForegroundColor Green
+    } elseif ($gmailDataExists) {
+        Write-Host 'Gmail auth command finished, but no fresh Google Workspace log activity was detected.' -ForegroundColor Yellow
     } else {
         Write-Host 'Gmail auth command finished, but user-scoped app data was not detected.' -ForegroundColor Yellow
     }
