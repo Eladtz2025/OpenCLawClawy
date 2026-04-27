@@ -1,3 +1,7 @@
+param(
+    [string]$PhotosAuthCode
+)
+
 $ErrorActionPreference = 'Stop'
 
 Write-Host 'Organizer V2 auth handshake' -ForegroundColor Cyan
@@ -33,7 +37,11 @@ catch {
 Write-Host ''
 Write-Host 'Step 2/2: Google Photos OAuth' -ForegroundColor Green
 try {
-    powershell -ExecutionPolicy Bypass -File $photosScript
+    if ($PhotosAuthCode) {
+        powershell -ExecutionPolicy Bypass -File $photosScript -AuthCode $PhotosAuthCode
+    } else {
+        powershell -ExecutionPolicy Bypass -File $photosScript
+    }
     $photosOk = Test-Path $photosToken
     if ($photosOk) {
         Write-Host 'Photos auth completed, token file detected.' -ForegroundColor Green
@@ -56,4 +64,7 @@ if ($gmailOk -and $photosOk) {
 }
 
 Write-Host 'At least one auth step is still incomplete. Re-run this script interactively after finishing the browser/code steps.' -ForegroundColor Yellow
+if (-not $photosOk -and -not $PhotosAuthCode) {
+    Write-Host 'Tip: you can rerun with -PhotosAuthCode "PASTE_CODE_HERE" after completing the Google Photos consent page.' -ForegroundColor Yellow
+}
 exit 1
