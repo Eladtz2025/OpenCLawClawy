@@ -1,12 +1,12 @@
-﻿{
-    "system":  "Organizer V2",
-    "loopEnabled":  true,
-    "lastTickAt":  "2026-04-27T00:36:41",
-    "currentPhase":  "gmail",
-    "currentRunId":  "a4db46a0-0e92-437b-93c7-bf3006b2d459",
-    "nextActions":  [
-                        "computer.refresh",
-                        "gmail.repair_auth_path",
-                        "photos.prepare_auth"
-                    ]
+{
+  "system": "Organizer V2",
+  "loopEnabled": true,
+  "lastTickAt": "2026-04-27T04:02:57",
+  "currentPhase": "waiting_for_auth",
+  "currentRunId": null,
+  "nextActions": [
+    "gmail.user_session_oauth",
+    "photos.interactive_oauth",
+    "computer.refresh"
+  ]
 }

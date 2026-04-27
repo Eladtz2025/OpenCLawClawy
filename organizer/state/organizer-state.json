@@ -1,44 +1,44 @@
-{
-  "system": "Organizer V2",
-  "topic": {
-    "chatId": "-1003566973693",
-    "threadId": "2670"
-  },
-  "updatedAt": "2026-04-27T00:57:00",
-  "pipelines": {
-    "computer": {
-      "status": "ready_for_approval",
-      "scope": "C:\\Users\\Itzhak",
-      "lastReport": "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\computer-approval-packages.md",
-      "notes": [
-        "computer report rebuilt from disk_audit",
-        "computer report and approval packages rebuilt from disk_audit"
-      ]
-    },
-    "gmail": {
-      "status": "user_scope_config_repaired_pending_auth",
-      "authMode": "google-workspace-oauth",
-      "lastReport": "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\gmail-capability-probe.md",
-      "notes": [
-        "OAuth must complete in real user session",
-        "gmail runner rebuilt, waiting for real OAuth session",
-        "gmail bootstrap rebuilt, waiting for real OAuth session",
-        "mcporter local binary exists but gmail.search times out",
-        "current runtime resolves HOME/AppData to systemprofile, so google-workspace-mcp auth is stored in the wrong profile",
-        "user-scoped mcporter config was created under C:\\Users\\Itzhak\\.mcporter and a user-scoped google-workspace-mcp data directory now exists"
-      ]
-    },
-    "photos": {
-      "status": "blocked_interactive_auth",
-      "authMode": "credentials+token",
-      "credentialsPath": "C:\\Users\\Itzhak\\.openclaw\\workspace\\credentials.json",
-      "lastReport": "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\photos-auth-status.md",
-      "notes": [
-        "Token flow must complete in real user session",
-        "photos runner rebuilt, waiting for valid credentials/token flow",
-        "photos bootstrap rebuilt, waiting for valid credentials/token flow",
-        "python path fixed and OAuth URL generation works, but current session cannot submit interactive auth code"
-      ]
-    }
-  }
+﻿{
+    "system":  "Organizer V2",
+    "topic":  {
+                  "chatId":  "-1003566973693",
+                  "threadId":  "2670"
+              },
+    "updatedAt":  "2026-04-27T04:02:57",
+    "pipelines":  {
+                      "computer":  {
+                                       "status":  "ready_for_approval",
+                                       "scope":  "C:\\Users\\Itzhak",
+                                       "lastReport":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\computer-approval-packages.md",
+                                       "notes":  [
+                                                     "computer report rebuilt from disk_audit",
+                                                     "computer report and approval packages rebuilt from disk_audit"
+                                                 ]
+                                   },
+                      "gmail":  {
+                                    "status":  "blocked_session_scope",
+                                    "authMode":  "google-workspace-oauth",
+                                    "lastReport":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\gmail-capability-probe.md",
+                                    "notes":  [
+                                                  "OAuth must complete in real user session",
+                                                  "gmail runner rebuilt, waiting for real OAuth session",
+                                                  "gmail bootstrap rebuilt, waiting for real OAuth session",
+                                                  "mcporter local binary exists but gmail.search times out",
+                                                  "current runtime resolves HOME/AppData to systemprofile, so google-workspace-mcp auth is stored in the wrong profile",
+                                                  "user-scoped mcporter config was created under C:\\Users\\Itzhak\\.mcporter and a user-scoped google-workspace-mcp data directory now exists"
+                                              ]
+                                },
+                      "photos":  {
+                                     "status":  "blocked_interactive_auth",
+                                     "authMode":  "credentials+token",
+                                     "credentialsPath":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\credentials.json",
+                                     "lastReport":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\photos-auth-status.md",
+                                     "notes":  [
+                                                   "Token flow must complete in real user session",
+                                                   "photos runner rebuilt, waiting for valid credentials/token flow",
+                                                   "photos bootstrap rebuilt, waiting for valid credentials/token flow",
+                                                   "python path fixed and OAuth URL generation works, but current session cannot submit interactive auth code"
+                                               ]
+                                 }
+                  }
 }
