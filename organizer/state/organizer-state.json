@@ -4,7 +4,7 @@
                   "chatId":  "-1003566973693",
                   "threadId":  "2670"
               },
-    "updatedAt":  "2026-04-27T04:11:00",
+    "updatedAt":  "2026-04-27T04:16:00",
     "pipelines":  {
                       "computer":  {
                                        "status":  "ready_for_approval",
@@ -37,7 +37,8 @@
                                                    "Token flow must complete in real user session",
                                                    "photos runner rebuilt, waiting for valid credentials/token flow",
                                                    "photos bootstrap rebuilt, waiting for valid credentials/token flow",
-                                                   "python path fixed and OAuth URL generation works, but current session cannot submit interactive auth code"
+                                                   "python path fixed and OAuth URL generation works, but current session cannot submit interactive auth code",
+                                                   "combined auth handshake script created for real user session"
                                                ]
                                  }
                   }
