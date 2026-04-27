@@ -1,0 +1,12 @@
+﻿{
+    "generatedAt":  "2026-04-27T05:23:44",
+    "gmail":  {
+                  "appDataExists":  true,
+                  "logsDirExists":  true,
+                  "logsLastWriteUtc":  "2026-04-26T21:58:55"
+              },
+    "photos":  {
+                   "tokenExists":  false,
+                   "tokenPath":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\token_photos.pickle"
+               }
+}
