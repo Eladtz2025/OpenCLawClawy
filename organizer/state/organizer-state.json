@@ -4,7 +4,7 @@
                   "chatId":  "-1003566973693",
                   "threadId":  "2670"
               },
-    "updatedAt":  "2026-04-27T04:36:00",
+    "updatedAt":  "2026-04-27T04:46:00",
     "pipelines":  {
                       "computer":  {
                                        "status":  "ready_for_approval",
@@ -16,7 +16,7 @@
                                                  ]
                                    },
                       "gmail":  {
-                                    "status":  "blocked_session_scope",
+                                    "status":  "waiting_live_auth_flow",
                                     "authMode":  "google-workspace-oauth",
                                     "lastReport":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\gmail-capability-probe.md",
                                     "notes":  [
@@ -27,7 +27,9 @@
                                                   "current runtime resolves HOME/AppData to systemprofile, so google-workspace-mcp auth is stored in the wrong profile",
                                                   "user-scoped mcporter config was created under C:\\Users\\Itzhak\\.mcporter and a user-scoped google-workspace-mcp data directory now exists",
                                                   "combined handshake now verifies auth artifacts after each step",
-                                                  "cmd launcher added so auth handshake can run without manual ExecutionPolicy typing"
+                                                  "cmd launcher added so auth handshake can run without manual ExecutionPolicy typing",
+                                                  "gmail user-scope runner param bug fixed so auth probe can execute",
+                                                  "live gmail probe now launches and waits for real auth flow"
                                               ]
                                 },
                       "photos":  {
