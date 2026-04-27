@@ -4,7 +4,7 @@
                   "chatId":  "-1003566973693",
                   "threadId":  "2670"
               },
-    "updatedAt":  "2026-04-27T04:46:00",
+    "updatedAt":  "2026-04-27T04:56:00",
     "pipelines":  {
                       "computer":  {
                                        "status":  "ready_for_approval",
@@ -45,7 +45,8 @@
                                                    "combined auth handshake script created for real user session",
                                                    "oauth url revalidated during continuation, still blocked on interactive code entry",
                                                    "combined handshake now verifies auth artifacts after each step",
-                                                   "cmd launcher added so auth handshake can run without manual ExecutionPolicy typing"
+                                                   "cmd launcher added so auth handshake can run without manual ExecutionPolicy typing",
+                                                   "photos auth-status no longer blocks on prompt and runner accepts explicit auth code"
                                                ]
                                  }
                   }

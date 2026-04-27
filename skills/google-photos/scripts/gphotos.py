@@ -19,7 +19,7 @@ SCOPES = ['https://www.googleapis.com/auth/photoslibrary.appendonly',
 CREDENTIALS_FILE = 'credentials.json'
 TOKEN_FILE = 'token_photos.pickle'
 
-def get_credentials(credentials_path, token_path):
+def get_credentials(credentials_path, token_path, auth_code=None, allow_interactive=True):
     creds = None
     if os.path.exists(token_path):
         with open(token_path, 'rb') as token:
@@ -29,10 +29,13 @@ def get_credentials(credentials_path, token_path):
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(credentials_path, SCOPES)
-            # Use console flow for headless/remote environments
             auth_url, _ = flow.authorization_url(prompt='consent')
             print(f"Please visit this URL to authorize: {auth_url}")
-            code = input("Enter the authorization code: ")
+            code = auth_code
+            if not code:
+                if not allow_interactive:
+                    return None
+                code = input("Enter the authorization code: ")
             flow.fetch_token(code=code)
             creds = flow.credentials
         with open(token_path, 'wb') as token:
@@ -47,8 +50,13 @@ def list_albums(creds):
     response = requests.get('https://photoslibrary.googleapis.com/v1/albums', headers=headers)
     return response.json()
 
-def auth_status(creds):
+def auth_status_from_token(token_path):
+    creds = None
+    if os.path.exists(token_path):
+        with open(token_path, 'rb') as token:
+            creds = pickle.load(token)
     return {
+        'token_file_exists': os.path.exists(token_path),
         'valid': bool(creds and creds.valid),
         'expired': bool(creds and creds.expired),
         'has_refresh_token': bool(getattr(creds, 'refresh_token', None)),
@@ -116,12 +124,13 @@ def upload_photo(creds, photo_path, album_id=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Google Photos CLI Utility')
-    parser.add_argument('--action', choices=['list', 'create', 'upload', 'auth-status', 'media'], required=True)
+    parser.add_argument('--action', choices=['auth', 'list', 'create', 'upload', 'auth-status', 'media'], required=True)
     parser.add_argument('--title', help='Album title for create')
     parser.add_argument('--photo', help='Photo path for upload')
     parser.add_argument('--album-id', help='Album ID for upload')
     parser.add_argument('--credentials', default=CREDENTIALS_FILE, help='Path to Google Cloud credentials.json')
     parser.add_argument('--token', default=TOKEN_FILE, help='Path to store/read auth token')
+    parser.add_argument('--auth-code', help='Authorization code to complete OAuth without interactive prompt')
     
     args = parser.parse_args()
 
@@ -130,12 +139,17 @@ if __name__ == '__main__':
         print("Please provide a valid Google Cloud credentials.json file.")
         exit(1)
 
-    creds = get_credentials(args.credentials, args.token)
-    
-    if args.action == 'list':
+    if args.action == 'auth-status':
+        print(json.dumps(auth_status_from_token(args.token), indent=2))
+        exit(0)
+
+    allow_interactive = args.action == 'auth'
+    creds = get_credentials(args.credentials, args.token, auth_code=args.auth_code, allow_interactive=allow_interactive)
+
+    if args.action == 'auth':
+        print(json.dumps(auth_status_from_token(args.token), indent=2))
+    elif args.action == 'list':
         print(json.dumps(list_albums(creds), indent=2))
-    elif args.action == 'auth-status':
-        print(json.dumps(auth_status(creds), indent=2))
     elif args.action == 'media':
         print(json.dumps(list_media_items(creds), indent=2))
     elif args.action == 'create':
