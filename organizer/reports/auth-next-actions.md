@@ -1,12 +1,15 @@
 # Organizer Auth Next Actions
 
-Generated: 2026-04-27T04:31:00
+Generated: 2026-04-27T04:36:00
 
-## Recommended one-shot command
+## Easiest launcher
 Run from Elad's real Windows user session:
+`C:\Users\Itzhak\.openclaw\workspace\organizer\scripts\run-organizer-auth-handshake.cmd`
+
+## PowerShell form
 `powershell -ExecutionPolicy Bypass -File C:\Users\Itzhak\.openclaw\workspace\organizer\scripts\run-organizer-auth-handshake.ps1`
 
-What it now does:
+What it does:
 - runs Gmail OAuth step
 - runs Google Photos OAuth step
 - verifies whether user-scoped Gmail app data exists
