@@ -4,7 +4,7 @@
                   "chatId":  "-1003566973693",
                   "threadId":  "2670"
               },
-    "updatedAt":  "2026-04-27T04:21:00",
+    "updatedAt":  "2026-04-27T04:31:00",
     "pipelines":  {
                       "computer":  {
                                        "status":  "ready_for_approval",
@@ -25,7 +25,8 @@
                                                   "gmail bootstrap rebuilt, waiting for real OAuth session",
                                                   "mcporter local binary exists but gmail.search times out",
                                                   "current runtime resolves HOME/AppData to systemprofile, so google-workspace-mcp auth is stored in the wrong profile",
-                                                  "user-scoped mcporter config was created under C:\\Users\\Itzhak\\.mcporter and a user-scoped google-workspace-mcp data directory now exists"
+                                                  "user-scoped mcporter config was created under C:\\Users\\Itzhak\\.mcporter and a user-scoped google-workspace-mcp data directory now exists",
+                                                  "combined handshake now verifies auth artifacts after each step"
                                               ]
                                 },
                       "photos":  {
@@ -39,7 +40,8 @@
                                                    "photos bootstrap rebuilt, waiting for valid credentials/token flow",
                                                    "python path fixed and OAuth URL generation works, but current session cannot submit interactive auth code",
                                                    "combined auth handshake script created for real user session",
-                                                   "oauth url revalidated during continuation, still blocked on interactive code entry"
+                                                   "oauth url revalidated during continuation, still blocked on interactive code entry",
+                                                   "combined handshake now verifies auth artifacts after each step"
                                                ]
                                  }
                   }
