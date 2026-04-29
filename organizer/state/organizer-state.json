@@ -4,7 +4,7 @@
                   "chatId":  "-1003566973693",
                   "threadId":  "2670"
               },
-    "updatedAt":  "2026-04-29T13:21:15",
+    "updatedAt":  "2026-04-29T13:30:26",
     "pipelines":  {
                       "computer":  {
                                        "status":  "ready_for_approval",
@@ -16,7 +16,7 @@
                                                  ]
                                    },
                       "gmail":  {
-                                    "status":  "waiting_live_auth_flow",
+                                    "status":  "ready",
                                     "authMode":  "google-workspace-oauth",
                                     "lastReport":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\reports\\gmail-capability-probe.md",
                                     "notes":  [
@@ -32,7 +32,8 @@
                                                   "live gmail probe now launches and waits for real auth flow",
                                                   "gmail handshake verification tightened to require fresh log activity",
                                                   "auth status checker scripts added for quick non-interactive readiness checks",
-                                                  "latest observed gmail log write utc: 2026-04-26T21:58:55"
+                                                  "latest observed gmail log write utc: 2026-04-26T21:58:55",
+                                                  "direct user-session people.getMe succeeded on 2026-04-29, so Gmail OAuth is confirmed even though log freshness detection did not update"
                                               ]
                                 },
                       "photos":  {

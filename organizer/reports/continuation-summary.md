@@ -1,10 +1,10 @@
 ﻿# Organizer Continuation Summary
 
-Generated: 2026-04-29T13:21:15
+Generated: 2026-04-29T13:30:26
 Current phase: waiting_for_auth
 Current run: 
 Computer: ready_for_approval
-Gmail: waiting_live_auth_flow
+Gmail: ready
 Photos: blocked_interactive_auth
 
 Auth snapshot:
@@ -12,3 +12,7 @@ Auth snapshot:
 - Gmail logsDirExists: True
 - Gmail logsLastWriteUtc: 2026-04-26T21:58:55
 - Photos tokenExists: False
+
+Gmail user-session marker:
+- success: True
+- generatedAt: 2026-04-29T13:00:00

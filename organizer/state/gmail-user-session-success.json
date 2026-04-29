@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-04-29T13:00:00",
+  "tool": "people.getMe",
+  "toolArgs": [],
+  "source": "manual_user_session_confirmed_from_chat",
+  "success": true,
+  "evidence": "Elad ran invoke-gmail-user-scope.ps1 -Tool people.getMe and got a valid profile JSON response."
+}

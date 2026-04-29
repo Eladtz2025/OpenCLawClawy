@@ -9,9 +9,20 @@ $reportsDir = Join-Path $organizerRoot 'reports'
 $authStatusScript = Join-Path $organizerRoot 'scripts\get-organizer-auth-status.ps1'
 $authStatusReportPath = Join-Path $reportsDir 'auth-status-latest.json'
 $summaryPath = Join-Path $reportsDir 'continuation-summary.md'
+$gmailUserSessionMarkerPath = Join-Path $organizerRoot 'state\gmail-user-session-success.json'
 
 function Save-Json($path, $obj) {
     $obj | ConvertTo-Json -Depth 20 | Set-Content -Path $path -Encoding UTF8
+}
+
+function Get-GmailUserSessionMarker($path) {
+    if (-not (Test-Path $path)) { return $null }
+    try {
+        return Get-Content $path -Raw | ConvertFrom-Json
+    }
+    catch {
+        return $null
+    }
 }
 
 function Write-ContinuationSummary($path, $continuation, $state, $authStatus) {
@@ -33,6 +44,14 @@ function Write-ContinuationSummary($path, $continuation, $state, $authStatus) {
         $summary += "- Gmail logsDirExists: $($authStatus.gmail.logsDirExists)"
         $summary += "- Gmail logsLastWriteUtc: $($authStatus.gmail.logsLastWriteUtc)"
         $summary += "- Photos tokenExists: $($authStatus.photos.tokenExists)"
+    }
+
+    $gmailMarker = Get-GmailUserSessionMarker -path $gmailUserSessionMarkerPath
+    if ($gmailMarker) {
+        $summary += ''
+        $summary += 'Gmail user-session marker:'
+        $summary += "- success: $($gmailMarker.success)"
+        $summary += "- generatedAt: $($gmailMarker.generatedAt)"
     }
 
     $summary -join "`r`n" | Set-Content -Path $path -Encoding UTF8
@@ -99,7 +118,9 @@ if (Test-Path $authStatusScript) {
 }
 
 $gmailAuthFresh = Test-GmailAuthFresh -authStatus $authStatus
-$gmailBlocked = ($state.pipelines.gmail.status -in @('blocked_session_scope','user_scope_config_repaired_pending_auth','waiting_live_auth_flow')) -and (-not $gmailAuthFresh)
+$gmailUserSessionMarker = Get-GmailUserSessionMarker -path $gmailUserSessionMarkerPath
+$gmailConfirmed = $gmailAuthFresh -or ($gmailUserSessionMarker -and $gmailUserSessionMarker.success)
+$gmailBlocked = ($state.pipelines.gmail.status -in @('blocked_session_scope','user_scope_config_repaired_pending_auth','waiting_live_auth_flow')) -and (-not $gmailConfirmed)
 $photosBlocked = $state.pipelines.photos.status -eq 'blocked_interactive_auth'
 $authWaiting = $gmailBlocked -or $photosBlocked
 
@@ -161,7 +182,23 @@ switch ($continuation.currentPhase) {
     }
     'gmail' {
         $probePath = Join-Path $reportsDir 'gmail-capability-probe.md'
-        if ($gmailAuthFresh) {
+
+        if ($gmailUserSessionMarker -and $gmailUserSessionMarker.success) {
+            $state.pipelines.gmail.status = 'ready'
+            $lines = @(
+                '# Gmail Capability Probe',
+                '',
+                "Generated: $(Get-Date -Format s)",
+                '',
+                'Status: ready',
+                'Verification: direct user-scope people.getMe succeeded in real user session.',
+                '',
+                "Marker generatedAt: $($gmailUserSessionMarker.generatedAt)",
+                'Note: gmail.search via current continuation runner still times out, so Gmail OAuth is confirmed but the full search path still needs a runner-level fix.'
+            )
+            $lines -join "`r`n" | Set-Content -Path $probePath -Encoding UTF8
+        }
+        elseif ($gmailAuthFresh) {
             $probeResult = Invoke-GmailProbeWithTimeout -workspace $workspace -timeoutSeconds 25
             if ($probeResult.outputPath) {
                 $probePath = $probeResult.outputPath

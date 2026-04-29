@@ -1,15 +1,10 @@
-# Gmail Capability Probe
+﻿# Gmail Capability Probe
 
-Generated: 2026-04-27T04:46:00
+Generated: 
+2026-04-29T13:27:06
 
-Status: user_scope_probe_launches_waiting_for_auth
+Status: ready
+Verification: direct user-scope people.getMe succeeded in Elad's user session on 2026-04-29.
 
-Findings:
-- `mcporter` local binary exists
-- user-scoped config exists at `C:\Users\Itzhak\.mcporter\mcporter.json`
-- user-scoped Google Workspace app data exists at `C:\Users\Itzhak\AppData\Roaming\google-workspace-mcp`
-- the Gmail user-scope runner parameter bug was fixed
-- live probe now launches and remains waiting for real authenticated user flow
+Note: gmail.search via current continuation runner still times out, so Gmail OAuth is confirmed but the full search path still needs a runner-level fix.
 
-Next executable path:
-- `organizer\scripts\invoke-gmail-user-scope.ps1`
