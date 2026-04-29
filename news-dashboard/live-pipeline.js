@@ -1159,8 +1159,7 @@ async function main() {
   };
   fs.writeFileSync(SUMMARY_PATH, JSON.stringify(summary, null, 2), 'utf8');
 
-  const telegramLines = ['בוקר טוב', `${PUBLIC_URL}?v=${BUILD_ID}`];
-  fs.writeFileSync(TELEGRAM_SUMMARY_PATH, telegramLines.join('\n'), 'utf8');
+  fs.writeFileSync(TELEGRAM_SUMMARY_PATH, '', 'utf8');
   fs.writeFileSync(TELEGRAM_ALERT_PATH, '', 'utf8');
 
   console.log(JSON.stringify({ status: meta.status, items: items.length }, null, 2));
