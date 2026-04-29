@@ -4,7 +4,7 @@
                   "chatId":  "-1003566973693",
                   "threadId":  "2670"
               },
-    "updatedAt":  "2026-04-27T05:17:56",
+    "updatedAt":  "2026-04-29T13:01:23",
     "pipelines":  {
                       "computer":  {
                                        "status":  "ready_for_approval",
@@ -31,7 +31,8 @@
                                                   "gmail user-scope runner param bug fixed so auth probe can execute",
                                                   "live gmail probe now launches and waits for real auth flow",
                                                   "gmail handshake verification tightened to require fresh log activity",
-                                                  "auth status checker scripts added for quick non-interactive readiness checks"
+                                                  "auth status checker scripts added for quick non-interactive readiness checks",
+                                                  "latest observed gmail log write utc: 2026-04-26T21:58:55"
                                               ]
                                 },
                       "photos":  {

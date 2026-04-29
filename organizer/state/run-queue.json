@@ -1,21 +1,74 @@
 ﻿{
     "system":  "Organizer V2",
-    "activeRun":  {
-                      "id":  "a4db46a0-0e92-437b-93c7-bf3006b2d459",
-                      "createdAt":  "2026-04-27T00:36:40",
-                      "status":  "queued",
-                      "goal":  "Organizer V2 run-to-completion",
-                      "phases":  [
-                                     "computer",
-                                     "gmail",
-                                     "photos",
-                                     "finalize"
-                                 ]
-                  },
+    "activeRun":  null,
     "pendingRuns":  [
 
                     ],
     "history":  [
-
+                    {
+                        "id":  "a4db46a0-0e92-437b-93c7-bf3006b2d459",
+                        "createdAt":  "2026-04-27T00:36:40",
+                        "status":  "partial",
+                        "goal":  "Organizer V2 run-to-completion",
+                        "phases":  [
+                                       "computer",
+                                       "gmail",
+                                       "photos",
+                                       "finalize"
+                                   ],
+                        "completedAt":  "2026-04-27T00:52:50"
+                    },
+                    {
+                        "id":  "10e351ca-6ee8-4e64-8072-6edaa5655900",
+                        "createdAt":  "2026-04-27T01:07:49",
+                        "status":  "partial",
+                        "goal":  "Organizer V2 auto-continuation cycle",
+                        "phases":  [
+                                       "computer",
+                                       "gmail",
+                                       "photos",
+                                       "finalize"
+                                   ],
+                        "completedAt":  "2026-04-27T01:22:42"
+                    },
+                    {
+                        "id":  "defad9a4-3d56-4fc3-bd8e-2a174acc3ab0",
+                        "createdAt":  "2026-04-27T01:27:54",
+                        "status":  "partial",
+                        "goal":  "Organizer V2 auto-continuation cycle",
+                        "phases":  [
+                                       "computer",
+                                       "gmail",
+                                       "photos",
+                                       "finalize"
+                                   ],
+                        "completedAt":  "2026-04-27T01:42:37"
+                    },
+                    {
+                        "id":  "857d8e91-4add-4779-903b-1e5aa9172b92",
+                        "createdAt":  "2026-04-27T01:47:38",
+                        "status":  "partial",
+                        "goal":  "Organizer V2 auto-continuation cycle",
+                        "phases":  [
+                                       "computer",
+                                       "gmail",
+                                       "photos",
+                                       "finalize"
+                                   ],
+                        "completedAt":  "2026-04-27T02:02:35"
+                    },
+                    {
+                        "id":  "36d8c2e9-3c26-4565-983e-889c3d535268",
+                        "createdAt":  "2026-04-27T02:07:55",
+                        "status":  "partial",
+                        "goal":  "Organizer V2 auto-continuation cycle",
+                        "phases":  [
+                                       "computer",
+                                       "gmail",
+                                       "photos",
+                                       "finalize"
+                                   ],
+                        "completedAt":  "2026-04-27T02:18:12"
+                    }
                 ]
 }

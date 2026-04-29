@@ -8,9 +8,34 @@ $statePath = Join-Path $organizerRoot 'state\organizer-state.json'
 $reportsDir = Join-Path $organizerRoot 'reports'
 $authStatusScript = Join-Path $organizerRoot 'scripts\get-organizer-auth-status.ps1'
 $authStatusReportPath = Join-Path $reportsDir 'auth-status-latest.json'
+$summaryPath = Join-Path $reportsDir 'continuation-summary.md'
 
 function Save-Json($path, $obj) {
     $obj | ConvertTo-Json -Depth 20 | Set-Content -Path $path -Encoding UTF8
+}
+
+function Write-ContinuationSummary($path, $continuation, $state, $authStatus) {
+    $summary = @(
+        '# Organizer Continuation Summary',
+        '',
+        "Generated: $(Get-Date -Format s)",
+        "Current phase: $($continuation.currentPhase)",
+        "Current run: $($continuation.currentRunId)",
+        "Computer: $($state.pipelines.computer.status)",
+        "Gmail: $($state.pipelines.gmail.status)",
+        "Photos: $($state.pipelines.photos.status)"
+    )
+
+    if ($authStatus) {
+        $summary += ''
+        $summary += 'Auth snapshot:'
+        $summary += "- Gmail appDataExists: $($authStatus.gmail.appDataExists)"
+        $summary += "- Gmail logsDirExists: $($authStatus.gmail.logsDirExists)"
+        $summary += "- Gmail logsLastWriteUtc: $($authStatus.gmail.logsLastWriteUtc)"
+        $summary += "- Photos tokenExists: $($authStatus.photos.tokenExists)"
+    }
+
+    $summary -join "`r`n" | Set-Content -Path $path -Encoding UTF8
 }
 
 $queue = Get-Content $queuePath -Raw | ConvertFrom-Json
@@ -82,6 +107,7 @@ if (-not $queue.activeRun) {
     Save-Json $statePath $state
     Save-Json $queuePath $queue
     Save-Json $continuationPath $continuation
+    Write-ContinuationSummary -path $summaryPath -continuation $continuation -state $state -authStatus $authStatus
     Write-Output $continuation.currentPhase.ToUpperInvariant()
     exit 0
 }
@@ -159,16 +185,5 @@ Save-Json $statePath $state
 Save-Json $queuePath $queue
 Save-Json $continuationPath $continuation
 
-$summaryPath = Join-Path $reportsDir 'continuation-summary.md'
-$summary = @(
-    '# Organizer Continuation Summary',
-    '',
-    "Generated: $(Get-Date -Format s)",
-    "Current phase: $($continuation.currentPhase)",
-    "Current run: $($continuation.currentRunId)",
-    "Computer: $($state.pipelines.computer.status)",
-    "Gmail: $($state.pipelines.gmail.status)",
-    "Photos: $($state.pipelines.photos.status)"
-)
-$summary -join "`r`n" | Set-Content -Path $summaryPath -Encoding UTF8
+Write-ContinuationSummary -path $summaryPath -continuation $continuation -state $state -authStatus $authStatus
 Write-Output $summaryPath
