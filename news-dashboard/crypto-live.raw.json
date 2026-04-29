@@ -463,6 +463,11 @@
     "success": true,
     "items": [
       {
+        "title": "ZetaChain identifies cross-chain messaging loophole as root of targeted exploit",
+        "url": "https://www.theblock.co/post/399315/zetachain-post-mortem",
+        "publishedAt": "6:33PM EDT"
+      },
+      {
         "title": "US court sentences Cartier descendant to 8 years in $470 million crypto laundering case",
         "url": "https://www.theblock.co/post/399314/us-sentences-cartier-descendant-crypto-laundering",
         "publishedAt": "6:33PM EDT"
@@ -475,11 +480,6 @@
       {
         "title": "Hong Kong warns of fake tokens posing as HSBC's stablecoin",
         "url": "https://www.theblock.co/post/399308/hong-kong-warns-fake-stablecoins",
-        "publishedAt": "6:33PM EDT"
-      },
-      {
-        "title": "Ethereum ICO whale moves $23 million in ETH after 10-year dormancy",
-        "url": "https://www.theblock.co/post/399300/ethereum-ico-whale-moves-23-million",
         "publishedAt": "6:33PM EDT"
       },
       {
@@ -508,6 +508,11 @@
         "publishedAt": "6:33PM EDT"
       },
       {
+        "title": "ZetaChain identifies cross-chain messaging loophole as root of targeted exploit",
+        "url": "https://www.theblock.co/post/399315/zetachain-post-mortem",
+        "publishedAt": "6:33PM EDT"
+      },
+      {
         "title": "US court sentences Cartier descendant to 8 years in $470 million crypto laundering case",
         "url": "https://www.theblock.co/post/399314/us-sentences-cartier-descendant-crypto-laundering",
         "publishedAt": "6:33PM EDT"
@@ -520,11 +525,6 @@
       {
         "title": "Hong Kong warns of fake tokens posing as HSBC's stablecoin",
         "url": "https://www.theblock.co/post/399308/hong-kong-warns-fake-stablecoins",
-        "publishedAt": "6:33PM EDT"
-      },
-      {
-        "title": "Ethereum ICO whale moves $23 million in ETH after 10-year dormancy",
-        "url": "https://www.theblock.co/post/399300/ethereum-ico-whale-moves-23-million",
         "publishedAt": "6:33PM EDT"
       },
       {
@@ -533,6 +533,11 @@
         "publishedAt": "6:33PM EDT"
       },
       {
+        "title": "ZetaChain identifies cross-chain messaging loophole as root of targeted exploit",
+        "url": "https://www.theblock.co/post/399315/zetachain-post-mortem",
+        "publishedAt": "6:33PM EDT"
+      },
+      {
         "title": "US court sentences Cartier descendant to 8 years in $470 million crypto laundering case",
         "url": "https://www.theblock.co/post/399314/us-sentences-cartier-descendant-crypto-laundering",
         "publishedAt": "6:33PM EDT"
@@ -545,11 +550,6 @@
       {
         "title": "Hong Kong warns of fake tokens posing as HSBC's stablecoin",
         "url": "https://www.theblock.co/post/399308/hong-kong-warns-fake-stablecoins",
-        "publishedAt": "6:33PM EDT"
-      },
-      {
-        "title": "Ethereum ICO whale moves $23 million in ETH after 10-year dormancy",
-        "url": "https://www.theblock.co/post/399300/ethereum-ico-whale-moves-23-million",
         "publishedAt": "6:33PM EDT"
       },
       {
@@ -571,104 +571,104 @@
     "success": true,
     "items": [
       {
-        "title": "Aave-led 'DeFi United' campaign raises $300m to address Kelp DAO breach",
-        "url": "https://www.dlnews.com/articles/defi/300m-pledged-as-defi-responds-to-kelp-dao-breach/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
-      },
-      {
-        "title": "Bitcoin mining meltdown? Why IREN’s real future is in AI, according to Bernstein",
-        "url": "https://www.dlnews.com/articles/markets/bitcoin-mining-meltdown-why-irens-real-future-is-in-ai-says-bernstein/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
-      },
-      {
-        "title": "Aave publishes plan to plug $246m hole left by Kelp DAO attackers",
-        "url": "https://www.dlnews.com/articles/defi/aave-posts-plan-to-restore-rseth-backing/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "title": "Bitcoin traders flip bullish on price ahead of Powell’s final FOMC as Fed chair",
+        "url": "https://www.dlnews.com/articles/markets/traders-bullish-on-bitcoin-price-ahead-of-powell-final-fomc/",
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Aave-led 'DeFi United' campaign raises $300m to address Kelp DAO breach",
         "url": "https://www.dlnews.com/articles/defi/300m-pledged-as-defi-responds-to-kelp-dao-breach/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Bitcoin mining meltdown? Why IREN’s real future is in AI, according to Bernstein",
         "url": "https://www.dlnews.com/articles/markets/bitcoin-mining-meltdown-why-irens-real-future-is-in-ai-says-bernstein/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
+      },
+      {
+        "title": "Bitcoin traders flip bullish on price ahead of Powell’s final FOMC as Fed chair",
+        "url": "https://www.dlnews.com/articles/markets/traders-bullish-on-bitcoin-price-ahead-of-powell-final-fomc/",
+        "publishedAt": "2026-04-29T08:13:03.913Z"
+      },
+      {
+        "title": "Aave-led 'DeFi United' campaign raises $300m to address Kelp DAO breach",
+        "url": "https://www.dlnews.com/articles/defi/300m-pledged-as-defi-responds-to-kelp-dao-breach/",
+        "publishedAt": "2026-04-29T08:13:03.913Z"
+      },
+      {
+        "title": "Bitcoin mining meltdown? Why IREN’s real future is in AI, according to Bernstein",
+        "url": "https://www.dlnews.com/articles/markets/bitcoin-mining-meltdown-why-irens-real-future-is-in-ai-says-bernstein/",
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Aave publishes plan to plug $246m hole left by Kelp DAO attackers",
         "url": "https://www.dlnews.com/articles/defi/aave-posts-plan-to-restore-rseth-backing/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Bitmine buys $294m more Ethereum ahead of Clarity Act ‘markup in May’",
         "url": "https://www.dlnews.com/articles/markets/bitmine-buys-294m-more-ethereum-ahead-of-clarity-act-markup-in-may/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
-      },
-      {
-        "title": "Justin Sun announces $20m boost for Aave as he calls on lender to expand to his blockchain",
-        "url": "https://www.dlnews.com/articles/defi/tron-founder-justin-sun-announces-boost-for-aave/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Banks are fighting a ‘sideshow’ as Clarity Act stalls. Will it matter?",
         "url": "https://www.dlnews.com/articles/markets/banks-are-fighting-a-sideshow-as-clarity-act-stalls-will-it-matter/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Bitmine buys $294m more Ethereum ahead of Clarity Act ‘markup in May’",
         "url": "https://www.dlnews.com/articles/markets/bitmine-buys-294m-more-ethereum-ahead-of-clarity-act-markup-in-may/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Bitcoin traders eye $90,000 price after Kevin Warsh’s confirmation chances skyrocket. Here’s why",
         "url": "https://www.dlnews.com/articles/markets/why-bitcoin-traders-eye-90k-price-after-kevin-warsh-confirmation-chances-skyrocket/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "‘I suspected I was being socially engineered.’ Why crypto’s hacking epidemic is getting even worse",
         "url": "https://www.dlnews.com/articles/defi/why-the-crypto-hacking-epidemic-is-getting-worse/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
-        "title": "Bitmine buys $294m more Ethereum ahead of Clarity Act ‘markup in May’",
-        "url": "https://www.dlnews.com/articles/markets/bitmine-buys-294m-more-ethereum-ahead-of-clarity-act-markup-in-may/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "title": "Bitcoin traders flip bullish on price ahead of Powell’s final FOMC as Fed chair",
+        "url": "https://www.dlnews.com/articles/markets/traders-bullish-on-bitcoin-price-ahead-of-powell-final-fomc/",
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Polymarket bettors bag big win betting on the weather. Now the French meteorological agency is investigating 'tampering'",
         "url": "https://www.dlnews.com/articles/defi/french-meteorological-agency-is-investigating-tampering-amid-big-polymarket-bets/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
+      },
+      {
+        "title": "Justin Sun announces $20m boost for Aave as he calls on lender to expand to his blockchain",
+        "url": "https://www.dlnews.com/articles/defi/tron-founder-justin-sun-announces-boost-for-aave/",
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "French police record 135 crypto kidnapping cases since 2023 as crime wave swells",
         "url": "https://www.dlnews.com/articles/regulation/french-police-record-135-crypto-kidnapping-cases-since-2023-crime-wave-swells/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Bitcoin treasury Metaplanet bets on splashy advertising to turn around its ailing share price",
         "url": "https://www.dlnews.com/articles/markets/metaplanet-bets-on-las-vegas-sphere-advertising/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "‘Eyes gouged out’: Man paid crypto to torture and kill 1,500 cats, say activists after arrest",
         "url": "https://www.dlnews.com/articles/regulation/man-paid-crypto-to-torture-kill-1500-cats-say-activists-after-arrest/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Banks are fighting a ‘sideshow’ as Clarity Act stalls. Will it matter?",
         "url": "https://www.dlnews.com/articles/markets/banks-are-fighting-a-sideshow-as-clarity-act-stalls-will-it-matter/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       },
       {
         "title": "Bitcoin traders eye $90,000 price after Kevin Warsh’s confirmation chances skyrocket. Here’s why",
         "url": "https://www.dlnews.com/articles/markets/why-bitcoin-traders-eye-90k-price-after-kevin-warsh-confirmation-chances-skyrocket/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
-      },
-      {
-        "title": "‘I suspected I was being socially engineered.’ Why crypto’s hacking epidemic is getting even worse",
-        "url": "https://www.dlnews.com/articles/defi/why-the-crypto-hacking-epidemic-is-getting-worse/",
-        "publishedAt": "2026-04-28T19:31:09.445Z"
+        "publishedAt": "2026-04-29T08:13:03.913Z"
       }
     ]
   },
