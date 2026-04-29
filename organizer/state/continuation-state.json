@@ -1,11 +1,10 @@
 ﻿{
     "system":  "Organizer V2",
     "loopEnabled":  true,
-    "lastTickAt":  "2026-04-29T13:30:26",
-    "currentPhase":  "waiting_for_auth",
+    "lastTickAt":  "2026-04-29T13:44:21",
+    "currentPhase":  "waiting_for_photos_auth",
     "currentRunId":  null,
     "nextActions":  [
-                        "gmail.live_auth_flow",
                         "photos.interactive_oauth",
                         "computer.refresh"
                     ]

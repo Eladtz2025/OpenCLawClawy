@@ -124,6 +124,13 @@ $gmailBlocked = ($state.pipelines.gmail.status -in @('blocked_session_scope','us
 $photosBlocked = $state.pipelines.photos.status -eq 'blocked_interactive_auth'
 $authWaiting = $gmailBlocked -or $photosBlocked
 
+$nextActions = @()
+if ($gmailBlocked) { $nextActions += 'gmail.live_auth_flow' }
+if ($photosBlocked) { $nextActions += 'photos.interactive_oauth' }
+if ($state.pipelines.computer.status -eq 'ready_for_approval') { $nextActions += 'computer.refresh' }
+if ($nextActions.Count -eq 0) { $nextActions += 'auto_continue' }
+$continuation.nextActions = $nextActions
+
 if ($continuation.loopEnabled -and -not $queue.activeRun -and (($null -eq $queue.pendingRuns) -or $queue.pendingRuns.Count -eq 0) -and -not $authWaiting) {
     $autoRunId = [guid]::NewGuid().ToString()
     $queue.activeRun = [pscustomobject]@{
@@ -138,10 +145,14 @@ if ($continuation.loopEnabled -and -not $queue.activeRun -and (($null -eq $queue
 }
 
 if ($authWaiting -and -not $queue.activeRun) {
-    $continuation.currentPhase = 'waiting_for_auth'
+    if ($photosBlocked -and -not $gmailBlocked) {
+        $continuation.currentPhase = 'waiting_for_photos_auth'
+    } else {
+        $continuation.currentPhase = 'waiting_for_auth'
+    }
 }
 
-if (-not $authWaiting -and -not $queue.activeRun -and $continuation.currentPhase -eq 'waiting_for_auth') {
+if (-not $authWaiting -and -not $queue.activeRun -and $continuation.currentPhase -in @('waiting_for_auth','waiting_for_photos_auth')) {
     $continuation.currentPhase = 'computer'
 }
 
@@ -158,7 +169,11 @@ if (-not $queue.activeRun -and $queue.pendingRuns.Count -gt 0) {
 
 if (-not $queue.activeRun) {
     if ($authWaiting) {
-        $continuation.currentPhase = 'waiting_for_auth'
+        if ($photosBlocked -and -not $gmailBlocked) {
+            $continuation.currentPhase = 'waiting_for_photos_auth'
+        } else {
+            $continuation.currentPhase = 'waiting_for_auth'
+        }
     } else {
         $continuation.currentPhase = 'idle'
     }
