@@ -1,1 +1,11 @@
 news-dashboard/.editor-runtime/
+news-dashboard/_*.html
+news-dashboard/_*.txt
+news-dashboard/_*.json
+news-dashboard/_*.bin
+news-dashboard/check-*.js
+news-dashboard/extract-media-list.js
+news-dashboard/final-public-verify.js
+news-dashboard/probe-technology-media.js
+news-dashboard/verify-build.js
+news-dashboard/verify-ui-changes.js
