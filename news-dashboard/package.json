@@ -6,6 +6,7 @@
   "main": "morning-run.js",
   "scripts": {
     "morning": "node morning-run.js",
+    "publish": "node publish-pages.js",
     "test:live": "node morning-run.js --dry-run"
   }
 }
