@@ -38,6 +38,44 @@ function Write-ContinuationSummary($path, $continuation, $state, $authStatus) {
     $summary -join "`r`n" | Set-Content -Path $path -Encoding UTF8
 }
 
+function Test-GmailAuthFresh($authStatus, [int]$maxAgeMinutes = 30) {
+    if (-not $authStatus) { return $false }
+    if (-not $authStatus.gmail.appDataExists) { return $false }
+    if (-not $authStatus.gmail.logsDirExists) { return $false }
+    if (-not $authStatus.gmail.logsLastWriteUtc) { return $false }
+
+    try {
+        $lastWriteUtc = [datetime]::Parse($authStatus.gmail.logsLastWriteUtc)
+        return $lastWriteUtc -ge (Get-Date).ToUniversalTime().AddMinutes(-1 * $maxAgeMinutes)
+    }
+    catch {
+        return $false
+    }
+}
+
+function Invoke-GmailProbeWithTimeout($workspace, $timeoutSeconds = 25) {
+    $probeScript = Join-Path $workspace 'organizer\scripts\probe-gmail-capabilities.ps1'
+    if (-not (Test-Path $probeScript)) {
+        return [pscustomobject]@{ completed = $false; timedOut = $false; outputPath = $null; reason = 'missing_probe_script' }
+    }
+
+    $job = Start-Job -ScriptBlock {
+        param($scriptPath)
+        powershell -ExecutionPolicy Bypass -File $scriptPath
+    } -ArgumentList $probeScript
+
+    $completed = Wait-Job -Job $job -Timeout $timeoutSeconds
+    if (-not $completed) {
+        Stop-Job -Job $job | Out-Null
+        Remove-Job -Job $job | Out-Null
+        return [pscustomobject]@{ completed = $false; timedOut = $true; outputPath = $null; reason = 'timeout' }
+    }
+
+    $output = Receive-Job -Job $job
+    Remove-Job -Job $job | Out-Null
+    return [pscustomobject]@{ completed = $true; timedOut = $false; outputPath = ($output | Select-Object -Last 1); reason = $null }
+}
+
 $queue = Get-Content $queuePath -Raw | ConvertFrom-Json
 $continuation = Get-Content $continuationPath -Raw | ConvertFrom-Json
 $state = Get-Content $statePath -Raw | ConvertFrom-Json
@@ -60,7 +98,8 @@ if (Test-Path $authStatusScript) {
     }
 }
 
-$gmailBlocked = $state.pipelines.gmail.status -in @('blocked_session_scope','user_scope_config_repaired_pending_auth','waiting_live_auth_flow')
+$gmailAuthFresh = Test-GmailAuthFresh -authStatus $authStatus
+$gmailBlocked = ($state.pipelines.gmail.status -in @('blocked_session_scope','user_scope_config_repaired_pending_auth','waiting_live_auth_flow')) -and (-not $gmailAuthFresh)
 $photosBlocked = $state.pipelines.photos.status -eq 'blocked_interactive_auth'
 $authWaiting = $gmailBlocked -or $photosBlocked
 
@@ -122,22 +161,44 @@ switch ($continuation.currentPhase) {
     }
     'gmail' {
         $probePath = Join-Path $reportsDir 'gmail-capability-probe.md'
-        if (-not (Test-Path $probePath)) {
-            $lines = @(
-                '# Gmail Capability Probe',
-                '',
-                "Generated: $(Get-Date -Format s)",
-                '',
-                'Status: blocked_session_scope',
-                'Reason: runtime HOME/AppData resolves to systemprofile, so google-workspace auth lands in the wrong profile.',
-                'Continuation loop skips long live probe here to avoid hanging the whole run.'
-            )
-            $lines -join "`r`n" | Set-Content -Path $probePath -Encoding UTF8
-        }
-        if ($authStatus -and $authStatus.gmail.appDataExists -and $authStatus.gmail.logsDirExists) {
-            $state.pipelines.gmail.status = 'waiting_live_auth_flow'
-        } elseif (-not $state.pipelines.gmail.status) {
-            $state.pipelines.gmail.status = 'blocked_session_scope'
+        if ($gmailAuthFresh) {
+            $probeResult = Invoke-GmailProbeWithTimeout -workspace $workspace -timeoutSeconds 25
+            if ($probeResult.outputPath) {
+                $probePath = $probeResult.outputPath
+            }
+            if ($probeResult.completed -and (Test-Path $probePath)) {
+                $probeText = Get-Content $probePath -Raw
+                if ($probeText -match 'mcporter people\.getMe exit:\s*0' -and $probeText -match 'mcporter gmail\.search exit:\s*0') {
+                    $state.pipelines.gmail.status = 'ready'
+                } else {
+                    $state.pipelines.gmail.status = 'waiting_live_auth_flow'
+                }
+            } elseif ($probeResult.timedOut) {
+                $state.pipelines.gmail.status = 'waiting_live_auth_flow'
+                $gmailNotes = @()
+                if ($state.pipelines.gmail.notes) { $gmailNotes += $state.pipelines.gmail.notes }
+                $timeoutNote = "gmail probe timed out at $(Get-Date -Format s)"
+                $gmailNotes += $timeoutNote
+                $state.pipelines.gmail.notes = $gmailNotes
+            }
+        } else {
+            if (-not (Test-Path $probePath)) {
+                $lines = @(
+                    '# Gmail Capability Probe',
+                    '',
+                    "Generated: $(Get-Date -Format s)",
+                    '',
+                    'Status: blocked_session_scope',
+                    'Reason: runtime HOME/AppData resolves to systemprofile, so google-workspace auth lands in the wrong profile.',
+                    'Continuation loop is waiting for fresh user-session auth activity before running a live probe.'
+                )
+                $lines -join "`r`n" | Set-Content -Path $probePath -Encoding UTF8
+            }
+            if ($authStatus -and $authStatus.gmail.appDataExists -and $authStatus.gmail.logsDirExists) {
+                $state.pipelines.gmail.status = 'waiting_live_auth_flow'
+            } elseif (-not $state.pipelines.gmail.status) {
+                $state.pipelines.gmail.status = 'blocked_session_scope'
+            }
         }
         $state.pipelines.gmail.lastReport = $probePath
         $continuation.currentPhase = 'photos'
