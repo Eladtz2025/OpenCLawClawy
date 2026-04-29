@@ -1,6 +1,6 @@
 ﻿# Organizer Continuation Summary
 
-Generated: 2026-04-29T13:44:21
+Generated: 2026-04-29T14:12:49
 Current phase: waiting_for_photos_auth
 Current run: 
 Computer: ready_for_approval
@@ -12,6 +12,10 @@ Auth snapshot:
 - Gmail logsDirExists: True
 - Gmail logsLastWriteUtc: 2026-04-26T21:58:55
 - Photos tokenExists: False
+
+Photos next manual command:
+- powershell -ExecutionPolicy Bypass -File C:\Users\Itzhak\.openclaw\workspace\organizer\scripts\invoke-photos-auth.ps1
+- Or rerun with -AuthCode "PASTE_CODE_HERE" after completing consent
 
 Gmail user-session marker:
 - success: True

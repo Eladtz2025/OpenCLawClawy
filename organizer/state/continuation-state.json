@@ -1,11 +1,10 @@
 ﻿{
     "system":  "Organizer V2",
     "loopEnabled":  true,
-    "lastTickAt":  "2026-04-29T13:44:21",
+    "lastTickAt":  "2026-04-29T14:12:49",
     "currentPhase":  "waiting_for_photos_auth",
     "currentRunId":  null,
     "nextActions":  [
-                        "photos.interactive_oauth",
-                        "computer.refresh"
+                        "photos.interactive_oauth"
                     ]
 }

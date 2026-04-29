@@ -46,6 +46,13 @@ function Write-ContinuationSummary($path, $continuation, $state, $authStatus) {
         $summary += "- Photos tokenExists: $($authStatus.photos.tokenExists)"
     }
 
+    if ($state.pipelines.photos.status -eq 'blocked_interactive_auth') {
+        $summary += ''
+        $summary += 'Photos next manual command:'
+        $summary += '- powershell -ExecutionPolicy Bypass -File C:\Users\Itzhak\.openclaw\workspace\organizer\scripts\invoke-photos-auth.ps1'
+        $summary += '- Or rerun with -AuthCode "PASTE_CODE_HERE" after completing consent'
+    }
+
     $gmailMarker = Get-GmailUserSessionMarker -path $gmailUserSessionMarkerPath
     if ($gmailMarker) {
         $summary += ''
@@ -127,7 +134,7 @@ $authWaiting = $gmailBlocked -or $photosBlocked
 $nextActions = @()
 if ($gmailBlocked) { $nextActions += 'gmail.live_auth_flow' }
 if ($photosBlocked) { $nextActions += 'photos.interactive_oauth' }
-if ($state.pipelines.computer.status -eq 'ready_for_approval') { $nextActions += 'computer.refresh' }
+if ((-not $authWaiting) -and $state.pipelines.computer.status -eq 'ready_for_approval') { $nextActions += 'computer.refresh' }
 if ($nextActions.Count -eq 0) { $nextActions += 'auto_continue' }
 $continuation.nextActions = $nextActions
 
