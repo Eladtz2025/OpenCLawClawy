@@ -1,10 +1,10 @@
 {
-  "lastPublishedAt": "2026-04-29T08:29:40.642Z",
-  "buildId": "build-1777451380642",
+  "lastPublishedAt": "2026-05-01T11:42:48.084Z",
+  "buildId": "build-1777635768084",
   "status": "SUCCESS",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777451380642",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1777451380642",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-04-29.html?v=build-1777451380642",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777635768084",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1777635768084",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-01.html?v=build-1777635768084",
   "topics": {
     "technology": {
       "topic": "technology",
@@ -37,7 +37,7 @@
       "label": "טכנולוגיה #2",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 22,
+      "got": 20,
       "maxCount": null,
       "lowVolumeByDesign": false,
       "fallbackActive": false,
