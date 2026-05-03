@@ -14,7 +14,7 @@ function fail(message) {
 }
 
 function fetchUrl(url) {
-  return execFileSync('curl.exe', ['-L', '--silent', '--show-error', '--fail', url], {
+  return execFileSync('curl.exe', ['-L', '--silent', '--show-error', '--fail', '--max-time', '30', url], {
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'pipe']
   });

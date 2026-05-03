@@ -6,6 +6,11 @@
     "success": true,
     "items": [
       {
+        "title": "Bitcoin's 'hazardous' airdrop: Why developers are warning against Paul Sztorc’s eCash fork Developers and industry figures say the eCash proposal introduces user risk, uneven distribution and philosophical tension.",
+        "url": "https://www.coindesk.com/tech/2026/05/02/bitcoin-s-hazardous-airdrop-why-developers-are-warning-against-paul-sztorc-s-ecash-fork",
+        "publishedAt": "2026-05-02T00:00:00"
+      },
+      {
         "title": "Canadian pension giant AIMCo buys the dip in Strategy, now sitting on $69 million unrealized gain AIMCo returns to Michael Saylor's bitcoin treasury company years after exiting, now sitting on a sizable unrealized gain.",
         "url": "https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain",
         "publishedAt": "2026-05-01T00:00:00"
@@ -41,21 +46,6 @@
         "publishedAt": "2026-05-01T00:00:00"
       },
       {
-        "title": "Bithumb scores a legal win in South Korea as six-month suspension is lifted by local judge South Korea's financial watchdog imposed a $24.6 million fine on Bithumb and partial suspension that came into effect last month.",
-        "url": "https://www.coindesk.com/policy/2026/05/01/bithumb-scores-a-legal-win-in-south-korea-as-six-month-suspension-is-lifted-by-local-judge",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "Strategy keeps STRC dividend at 11.5% as stock logs first monthly gain in nine STRC’s volume weighted average price of $99.76 for April kept the dividend steady for a third consecutive month.",
-        "url": "https://www.coindesk.com/markets/2026/05/01/strategy-keeps-strc-dividend-at-11-5-as-stock-logs-first-monthly-gain-in-nine",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "U.S. senators won't be weighing in on prediction markets bets after banning themselves The Senate agreed unanimously to revise its rules to ban members and their staffs from wagers on prediction markets platforms.",
-        "url": "https://www.coindesk.com/policy/2026/04/30/u-s-senators-won-t-be-weighing-in-on-prediction-markets-bets-after-banning-themselves",
-        "publishedAt": "2026-04-30T00:00:00"
-      },
-      {
         "title": "CoinW Expands Global Presence at Blockchain Forum 2026, Strengthening User Engagement",
         "url": "https://www.coindesk.com/press-release/2026/04/24/coinw-expands-global-presence-at-blockchain-forum-2026-strengthening-user-engagement",
         "publishedAt": "2026-04-24T00:00:00"
@@ -71,29 +61,29 @@
         "publishedAt": "2026-04-16T00:00:00"
       },
       {
-        "title": "Clarity Act text lets crypto firms offer stablecoin rewards while shielding bank yield",
-        "url": "https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "The $292M crypto hack exposed DeFi's weak spots. Here’s what must change, insiders say",
+        "url": "https://www.coindesk.com/business/2026/05/02/the-usd292m-crypto-hack-exposed-defi-s-weak-spots-here-s-what-must-change-insiders-say",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
-        "title": "Clarity Act text lets crypto firms offer stablecoin rewards while shielding bank yield",
-        "url": "https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "The $292M crypto hack exposed DeFi's weak spots. Here’s what must change, insiders say",
+        "url": "https://www.coindesk.com/business/2026/05/02/the-usd292m-crypto-hack-exposed-defi-s-weak-spots-here-s-what-must-change-insiders-say",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
-        "title": "Bitcoin takes another aim at $80,000 as stocks rise, oil drops on Iran optimism",
-        "url": "https://www.coindesk.com/markets/2026/05/01/bitcoin-takes-another-aim-at-usd80-000-as-stocks-rise-oil-drops-on-iran-optimism",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "Prediction markets are ditching the 'casino' label to become a regular part of how people track the news",
+        "url": "https://www.coindesk.com/markets/2026/05/02/prediction-markets-are-ditching-the-casino-label-to-become-a-regular-part-of-how-people-track-the-news",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
-        "title": "Tether posts $1.04 billion Q1 profit, reaches $8.23 billion reserve buffer",
-        "url": "https://www.coindesk.com/business/2026/05/01/tether-posts-usd1-04-billion-q1-profit-reaches-usd8-23-billion-reserve-buffer",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "Crypto industry backs CLARITY Act yield compromise, pushes Senate Banking for markup",
+        "url": "https://www.coindesk.com/policy/2026/05/02/crypto-industry-backs-clarity-act-yield-compromise-pushes-senate-banking-for-markup",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
-        "title": "Canadian pension giant AIMCo buys the dip in Strategy, now sitting on $69 million unrealized gain",
-        "url": "https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "Brazil's central bank bans stablecoin and crypto settlement in cross-border payments",
+        "url": "https://www.coindesk.com/policy/2026/05/02/brazil-s-central-bank-bans-stablecoin-and-crypto-settlement-in-cross-border-payments",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
         "title": "TP ICAP Fuels the Emergence of a Wholesale Crypto Market",
@@ -101,9 +91,19 @@
         "publishedAt": null
       },
       {
-        "title": "SBI Holdings eyes stake in crypto exchange Bitbank to build digital asset powerhouse",
-        "url": "https://www.coindesk.com/business/2026/05/01/sbi-holdings-continues-its-crypto-expansion-with-plans-for-a-stake-in-bitbank",
+        "title": "Clarity Act text lets crypto firms offer stablecoin rewards while shielding bank yield",
+        "url": "https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield",
         "publishedAt": "2026-05-01T00:00:00"
+      },
+      {
+        "title": "New Bitcoin quantum proposal offers Satoshi Nakamoto a way to prove control without moving BTC",
+        "url": "https://www.coindesk.com/tech/2026/05/02/new-bitcoin-quantum-proposal-offers-satoshi-nakamoto-a-way-to-prove-control-without-moving-btc",
+        "publishedAt": "2026-05-02T00:00:00"
+      },
+      {
+        "title": "Bitcoin above $78,000 as Senate clears Clarity Act yield hurdle, S&P 500 sets new record",
+        "url": "https://www.coindesk.com/markets/2026/05/02/bitcoin-above-usd78-000-as-senate-clears-clarity-act-yield-hurdle-s-and-p-500-sets-new-record",
+        "publishedAt": "2026-05-02T00:00:00"
       }
     ]
   },
@@ -113,6 +113,16 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "Bitcoin's 'hazardous' airdrop: Why developers are warning against Paul Sztorc’s eCash fork",
+        "url": "https://www.coindesk.com/tech/2026/05/02/bitcoin-s-hazardous-airdrop-why-developers-are-warning-against-paul-sztorc-s-ecash-fork",
+        "publishedAt": "2026-05-02T00:00:00"
+      },
+      {
+        "title": "New Bitcoin quantum proposal offers Satoshi Nakamoto a way to prove control without moving BTC",
+        "url": "https://www.coindesk.com/tech/2026/05/02/new-bitcoin-quantum-proposal-offers-satoshi-nakamoto-a-way-to-prove-control-without-moving-btc",
+        "publishedAt": "2026-05-02T00:00:00"
+      },
       {
         "title": "Bitcoin miner Riot's shares jump 8% after expanding AMD data center deal, signaling AI pivot",
         "url": "https://www.coindesk.com/markets/2026/05/01/bitcoin-miner-riot-s-shares-jump-8-after-expanding-amd-data-center-deal-signaling-ai-pivot",
@@ -154,19 +164,9 @@
         "publishedAt": "2026-04-30T00:00:00"
       },
       {
-        "title": "Jack Mallers' Twenty One Capital surges after majority holder Tether proposes 3-way merger",
-        "url": "https://www.coindesk.com/markets/2026/04/29/jack-mallers-twenty-one-capital-surges-after-majority-holder-tether-proposes-3-way-merger",
-        "publishedAt": "2026-04-29T00:00:00"
-      },
-      {
-        "title": "Fed leaves rates unchanged at Jerome Powell's final meeting as chairman",
-        "url": "https://www.coindesk.com/markets/2026/04/29/fed-leaves-rates-unchanged-at-jerome-powell-s-final-meeting-as-chairman",
-        "publishedAt": "2026-04-29T00:00:00"
-      },
-      {
-        "title": "Canadian pension giant AIMCo buys the dip in Strategy, now sitting on $69 million unrealized gain AIMCo returns to Michael Saylor's bitcoin treasury company years after exiting, now sitting on a sizable unrealized gain.",
-        "url": "https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "Bitcoin's 'hazardous' airdrop: Why developers are warning against Paul Sztorc’s eCash fork Developers and industry figures say the eCash proposal introduces user risk, uneven distribution and philosophical tension.",
+        "url": "https://www.coindesk.com/tech/2026/05/02/bitcoin-s-hazardous-airdrop-why-developers-are-warning-against-paul-sztorc-s-ecash-fork",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -237,9 +237,9 @@
         "publishedAt": "2026-04-22T00:00:00"
       },
       {
-        "title": "Canadian pension giant AIMCo buys the dip in Strategy, now sitting on $69 million unrealized gain AIMCo returns to Michael Saylor's bitcoin treasury company years after exiting, now sitting on a sizable unrealized gain.",
-        "url": "https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "Bitcoin's 'hazardous' airdrop: Why developers are warning against Paul Sztorc’s eCash fork Developers and industry figures say the eCash proposal introduces user risk, uneven distribution and philosophical tension.",
+        "url": "https://www.coindesk.com/tech/2026/05/02/bitcoin-s-hazardous-airdrop-why-developers-are-warning-against-paul-sztorc-s-ecash-fork",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -305,9 +305,9 @@
         "publishedAt": "2026-03-17T00:00:00"
       },
       {
-        "title": "Canadian pension giant AIMCo buys the dip in Strategy, now sitting on $69 million unrealized gain AIMCo returns to Michael Saylor's bitcoin treasury company years after exiting, now sitting on a sizable unrealized gain.",
-        "url": "https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "Bitcoin's 'hazardous' airdrop: Why developers are warning against Paul Sztorc’s eCash fork Developers and industry figures say the eCash proposal introduces user risk, uneven distribution and philosophical tension.",
+        "url": "https://www.coindesk.com/tech/2026/05/02/bitcoin-s-hazardous-airdrop-why-developers-are-warning-against-paul-sztorc-s-ecash-fork",
+        "publishedAt": "2026-05-02T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -323,103 +323,8 @@
     "success": true,
     "items": [
       {
-        "title": "Minnesota Moves to Ban AI Apps That Generate Fake Nude Images",
-        "url": "https://decrypt.co/366388/minnesota-moves-ban-ai-apps-generate-fake-nude-images",
-        "publishedAt": null
-      },
-      {
-        "title": "Ethereum Foundation Sells $23 Million More in ETH to Tom Lee's BitMine",
-        "url": "https://decrypt.co/366385/ethereum-foundation-sells-23-million-more-eth-tom-lee-bitmine",
-        "publishedAt": null
-      },
-      {
-        "title": "Doctors Use AI to Spot 'Hidden' Sperm In Men",
-        "url": "https://decrypt.co/366374/doctors-ai-hidden-sperm-men-study",
-        "publishedAt": null
-      },
-      {
-        "title": "OpenAI's GPT-5.5 Matches Claude Mythos in Cyberattack Capabilities: AI Security Institute",
-        "url": "https://decrypt.co/366371/openais-gpt-55-matches-claude-mythos-cyberattack-ai-security-institute",
-        "publishedAt": null
-      },
-      {
         "title": "Emerging Tech Hub Exploring Ahead of the Cutting Edge Discover Now",
         "url": "https://decrypt.co/emerge",
-        "publishedAt": null
-      },
-      {
-        "title": "MyCryptoParadise Launches “Professional Trader” Trading Psychology Album",
-        "url": "https://decrypt.co/366336/mycryptoparadise-launches-professional-trader-trading-psychology-album",
-        "publishedAt": null
-      },
-      {
-        "title": "Tapbit Reinforces Transparency with Proof of Reserves and Independent Security Validation by CertiK",
-        "url": "https://decrypt.co/366157/tapbit-reinforces-transparency-with-proof-of-reserves-and-independent-security-validation-by-certik",
-        "publishedAt": null
-      },
-      {
-        "title": "Shrapnel Enters China’s $49B Market powered by GalaChain and Government-Backed Digital Asset Framework",
-        "url": "https://decrypt.co/366139/shrapnel-enters-chinas-49b-market-powered-by-galachain-and-government-backed-digital-asset-framework",
-        "publishedAt": null
-      },
-      {
-        "title": "What Is Q-Day? The Quantum Threat to Bitcoin Explained",
-        "url": "https://decrypt.co/resources/what-q-day-quantum-threat-bitcoin-explained",
-        "publishedAt": null
-      },
-      {
-        "title": "What’s on the Ethereum Roadmap: Glamsterdam, Hegota and Beyond",
-        "url": "https://decrypt.co/resources/whats-on-ethereum-roadmap-glamsterdam-hegota-beyond",
-        "publishedAt": null
-      },
-      {
-        "title": "What Is Bluesky? The Decentralized Social Media Rival to Elon Musk's X",
-        "url": "https://decrypt.co/resources/what-is-bluesky-twitter-x-decentralized-social-media-rival",
-        "publishedAt": null
-      },
-      {
-        "title": "What Are Coin Mixers and How Do They Work?",
-        "url": "https://decrypt.co/resources/what-are-coin-mixers-tornado-cash-how-do-they-work",
-        "publishedAt": null
-      },
-      {
-        "title": "What Is Strategy (MSTR)? The Bitcoin Treasury Company",
-        "url": "https://decrypt.co/resources/what-is-strategy-microstrategy-mstr-the-bitcoin-treasury-company",
-        "publishedAt": null
-      },
-      {
-        "title": "What Is Base? The Ethereum Layer-2 Network Launched by Coinbase",
-        "url": "https://decrypt.co/resources/what-is-base-coinbases-layer-2-chain",
-        "publishedAt": null
-      },
-      {
-        "title": "Inside Trump’s Meme Coin Bash: Foreign Guests, Iran War Riffs, and Mar-a-Lago Charm",
-        "url": "https://decrypt.co/365830/inside-trump-meme-coin-bash-foreign-guests-iran-war-mar-a-lago",
-        "publishedAt": null
-      },
-      {
-        "title": "The Quantum Threat to Bitcoin Dividing Crypto",
-        "url": "https://decrypt.co/363030/the-quantum-threat-to-bitcoin-dividing-crypto",
-        "publishedAt": null
-      },
-      {
-        "title": "The 7 Largest Publicly Traded Ethereum Treasury Firms",
-        "url": "https://decrypt.co/335519/7-largest-publicly-traded-ethereum-treasury-firms",
-        "publishedAt": null
-      },
-      {
-        "title": "From Coinbase to Ripple: The Biggest Crypto Cases Dumped by Trump's SEC",
-        "url": "https://decrypt.co/308273/trump-sec-ending-crypto-lawsuits-investigations",
-        "publishedAt": null
-      },
-      {
-        "title": "Why Verifiable Data Is the Missing Layer in AI: Walrus",
-        "url": "https://decrypt.co/358431/why-verifiable-data-is-the-missing-layer-in-ai-walrus",
-        "publishedAt": null
-      },
-      {
-        "title": "The Vibes From the 'Davos for Degens' as Bitcoin and Ethereum Plummeted",
-        "url": "https://decrypt.co/357315/vibes-davos-degens-bitcoin-ethereum-plummeted",
         "publishedAt": null
       }
     ]
@@ -435,9 +340,109 @@
     "source": "The Block",
     "url": "https://www.theblock.co/",
     "kind": "secondary",
-    "success": false,
-    "error": "Error: HTTP 403 for https://www.theblock.co/",
-    "items": []
+    "success": true,
+    "items": [
+      {
+        "title": "BlackRock urges OCC to drop tokenized reserve cap idea, expand eligible assets in GENIUS Act comment letter",
+        "url": "https://www.theblock.co/post/399812/blackrock-urges-occ-to-drop-tokenized-reserve-cap-idea-expand-eligible-assets-in-genius-act-comment-letter",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "CryptoQuant says bitcoin's April price surge was 'speculative' as spot demand remains weak, warns of correction risk",
+        "url": "https://www.theblock.co/post/399790/cryptoquant-bitcoin-april-price-surge-speculative-spot-demand-weak-correction-risk",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Leading Iranian crypto exchange Nobitex was founded by sons of elite political family tied to supreme leaders: Reuters",
+        "url": "https://www.theblock.co/post/399784/leading-iranian-crypto-exchange-nobitex-was-founded-by-sons-of-elite-political-family-tied-to-supreme-leaders-reuters",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Coinbase says deal reached on Clarity Act stablecoin yield, clearing path to long-stalled Senate markup",
+        "url": "https://www.theblock.co/post/399780/coinbase-says-deal-reached-on-clarity-act-stablecoin-yield-clearing-path-to-long-stalled-senate-markup",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
+        "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Strategic Selection: A Practical Guide to Choosing the Right Market Maker",
+        "url": "https://www.theblock.co/post/395685/strategic-selection-a-practical-guide-to-choosing-the-right-market-maker",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
+        "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Strategic Selection: A Practical Guide to Choosing the Right Market Maker",
+        "url": "https://www.theblock.co/post/395685/strategic-selection-a-practical-guide-to-choosing-the-right-market-maker",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "BlackRock urges OCC to drop tokenized reserve cap idea, expand eligible assets in GENIUS Act comment letter",
+        "url": "https://www.theblock.co/post/399812/blackrock-urges-occ-to-drop-tokenized-reserve-cap-idea-expand-eligible-assets-in-genius-act-comment-letter",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "CryptoQuant says bitcoin's April price surge was 'speculative' as spot demand remains weak, warns of correction risk",
+        "url": "https://www.theblock.co/post/399790/cryptoquant-bitcoin-april-price-surge-speculative-spot-demand-weak-correction-risk",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Leading Iranian crypto exchange Nobitex was founded by sons of elite political family tied to supreme leaders: Reuters",
+        "url": "https://www.theblock.co/post/399784/leading-iranian-crypto-exchange-nobitex-was-founded-by-sons-of-elite-political-family-tied-to-supreme-leaders-reuters",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Coinbase says deal reached on Clarity Act stablecoin yield, clearing path to long-stalled Senate markup",
+        "url": "https://www.theblock.co/post/399780/coinbase-says-deal-reached-on-clarity-act-stablecoin-yield-clearing-path-to-long-stalled-senate-markup",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "JPMorgan says rising stablecoin use may not lead to similar market cap growth",
+        "url": "https://www.theblock.co/post/399767/jpmorgan-rising-stablecoin-use-may-not-lead-similar-market-cap-growth",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "RealOpen and TRON Verify $9.4M in USDT for Crypto-Enabled Real Estate Purchases",
+        "url": "https://www.theblock.co/post/399506/realopen-and-tron-verify-9-4m-in-usdt-for-crypto-enabled-real-estate-purchases",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "BlackRock urges OCC to drop tokenized reserve cap idea, expand eligible assets in GENIUS Act comment letter",
+        "url": "https://www.theblock.co/post/399812/blackrock-urges-occ-to-drop-tokenized-reserve-cap-idea-expand-eligible-assets-in-genius-act-comment-letter",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "CryptoQuant says bitcoin's April price surge was 'speculative' as spot demand remains weak, warns of correction risk",
+        "url": "https://www.theblock.co/post/399790/cryptoquant-bitcoin-april-price-surge-speculative-spot-demand-weak-correction-risk",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Leading Iranian crypto exchange Nobitex was founded by sons of elite political family tied to supreme leaders: Reuters",
+        "url": "https://www.theblock.co/post/399784/leading-iranian-crypto-exchange-nobitex-was-founded-by-sons-of-elite-political-family-tied-to-supreme-leaders-reuters",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "Coinbase says deal reached on Clarity Act stablecoin yield, clearing path to long-stalled Senate markup",
+        "url": "https://www.theblock.co/post/399780/coinbase-says-deal-reached-on-clarity-act-stablecoin-yield-clearing-path-to-long-stalled-senate-markup",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "RealOpen and TRON Verify $9.4M in USDT for Crypto-Enabled Real Estate Purchases",
+        "url": "https://www.theblock.co/post/399506/realopen-and-tron-verify-9-4m-in-usdt-for-crypto-enabled-real-estate-purchases",
+        "publishedAt": "6:18PM EDT"
+      },
+      {
+        "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
+        "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
+        "publishedAt": "6:18PM EDT"
+      }
+    ]
   },
   {
     "source": "DL News",
@@ -491,13 +496,13 @@
         "publishedAt": "2026-05-02T01:30:00.000Z"
       },
       {
-        "title": "Bitmine buys $294m more Ethereum ahead of Clarity Act ‘markup in May’",
-        "url": "https://www.dlnews.com/articles/markets/bitmine-buys-294m-more-ethereum-ahead-of-clarity-act-markup-in-may/",
+        "title": "Anthropic’s new Mythos AI will hit crypto. Bitcoin investors don’t care, says Coinbase",
+        "url": "https://www.dlnews.com/articles/markets/anthropic-mythos-ai-will-hit-crypto-bitcoin-investors-dont-care-says-coinbase/",
         "publishedAt": "2026-05-02T01:30:00.000Z"
       },
       {
-        "title": "Anthropic’s new Mythos AI will hit crypto. Bitcoin investors don’t care, says Coinbase",
-        "url": "https://www.dlnews.com/articles/markets/anthropic-mythos-ai-will-hit-crypto-bitcoin-investors-dont-care-says-coinbase/",
+        "title": "Hegseth recasts Bitcoin as national security asset amid Russia, China expansion",
+        "url": "https://www.dlnews.com/articles/markets/hegseth-recasts-bitcoin-as-national-security-asset-amid-russia-china-expansion/",
         "publishedAt": "2026-05-02T01:30:00.000Z"
       },
       {

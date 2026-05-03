@@ -1,10 +1,10 @@
 {
-  "lastPublishedAt": "2026-05-02T04:30:49.769Z",
-  "buildId": "build-1777696249769",
+  "lastPublishedAt": "2026-05-03T06:43:06.153Z",
+  "buildId": "build-1777790586153",
   "status": "SUCCESS",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777696249769",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1777696249769",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-02.html?v=build-1777696249769",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777790586153",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1777790586153",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-03.html?v=build-1777790586153",
   "topics": {
     "technology": {
       "topic": "technology",
@@ -37,7 +37,7 @@
       "label": "טכנולוגיה #2",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 19,
+      "got": 22,
       "maxCount": null,
       "lowVolumeByDesign": false,
       "fallbackActive": false,
@@ -65,15 +65,11 @@
         "Maariv News",
         "Israel Hayom News",
         "Times of Israel",
+        "Kan News",
         "Israel News Archive",
         "Maariv Israel"
       ],
-      "sourcesFailed": [
-        {
-          "source": "Kan News",
-          "error": "Error: HTTP 403 for https://www.kan.org.il/lobby/news/"
-        }
-      ],
+      "sourcesFailed": [],
       "editorApplied": true,
       "editorError": null
     },
@@ -92,16 +88,13 @@
         "CoinDesk Ethereum",
         "CoinDesk XRP",
         "Decrypt",
+        "The Block",
         "DL News"
       ],
       "sourcesFailed": [
         {
           "source": "SEC Press Releases",
           "error": "no_items"
-        },
-        {
-          "source": "The Block",
-          "error": "Error: HTTP 403 for https://www.theblock.co/"
         },
         {
           "source": "Blockworks",
@@ -123,13 +116,10 @@
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
+        "Walla Sport",
         "PT News"
       ],
       "sourcesFailed": [
-        {
-          "source": "Walla Sport",
-          "error": "no_items"
-        },
         {
           "source": "Soccerway Hapoel PT",
           "error": "no_items"

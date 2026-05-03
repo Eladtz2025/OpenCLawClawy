@@ -99,7 +99,7 @@ function pushHead() {
 }
 
 function fetchUrl(url) {
-  return exec('curl.exe', ['-L', '--silent', '--show-error', '--fail', url]);
+  return exec('curl.exe', ['-L', '--silent', '--show-error', '--fail', '--max-time', '30', url]);
 }
 
 function waitForPublicBuild(state) {

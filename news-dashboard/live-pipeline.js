@@ -142,25 +142,39 @@ function extract(regex, html, mapper, limit = 50) {
   return out;
 }
 
+const FETCH_TIMEOUT_MS = Number(process.env.NEWS_FETCH_TIMEOUT_MS || 20000);
+const FETCH_HEADERS = {
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36',
+  'accept-language': 'he,en-US;q=0.9,en;q=0.8'
+};
+
 async function fetchText(url) {
-  const res = await fetch(url, {
-    headers: {
-      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36',
-      'accept-language': 'he,en-US;q=0.9,en;q=0.8'
-    }
-  });
+  const signal = AbortSignal.timeout(FETCH_TIMEOUT_MS);
+  let res;
+  try {
+    res = await fetch(url, { headers: FETCH_HEADERS, signal });
+  } catch (err) {
+    const reason = err && (err.name === 'TimeoutError' || err.name === 'AbortError')
+      ? `timeout ${FETCH_TIMEOUT_MS}ms`
+      : (err && err.message) || String(err);
+    throw new Error(`fetch ${reason} for ${url}`);
+  }
   const text = await res.text();
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return text;
 }
 
 async function fetchBuffer(url) {
-  const res = await fetch(url, {
-    headers: {
-      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36',
-      'accept-language': 'he,en-US;q=0.9,en;q=0.8'
-    }
-  });
+  const signal = AbortSignal.timeout(FETCH_TIMEOUT_MS);
+  let res;
+  try {
+    res = await fetch(url, { headers: FETCH_HEADERS, signal });
+  } catch (err) {
+    const reason = err && (err.name === 'TimeoutError' || err.name === 'AbortError')
+      ? `timeout ${FETCH_TIMEOUT_MS}ms`
+      : (err && err.message) || String(err);
+    throw new Error(`fetch ${reason} for ${url}`);
+  }
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   const arrayBuffer = await res.arrayBuffer();
   return {
