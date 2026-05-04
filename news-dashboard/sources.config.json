@@ -4,7 +4,6 @@
     { "name": "The Verge Tech", "url": "https://www.theverge.com/tech", "kind": "primary", "parser": "verge", "type": "web", "priority": 1 },
     { "name": "Google Blog Technology", "url": "https://blog.google/technology/", "kind": "secondary", "parser": "googleblog", "type": "official", "priority": 2 },
     { "name": "Calcalist Tech", "url": "https://www.calcalist.co.il/calcalistech", "kind": "secondary", "parser": "calcalist", "type": "web", "priority": 2 },
-    { "name": "Reuters Tech", "url": "https://www.reuters.com/technology/", "kind": "secondary", "parser": "reuters", "type": "web", "priority": 2 },
     { "name": "Ars Technica", "url": "https://arstechnica.com/", "kind": "secondary", "parser": "ars", "type": "web", "priority": 2 },
     { "name": "WIRED", "url": "https://www.wired.com/", "kind": "secondary", "parser": "wired", "type": "web", "priority": 2 }
   ],

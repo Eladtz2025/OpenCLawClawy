@@ -23,7 +23,7 @@ const { DASHBOARD_ROOT, WORKSPACE, logAction } = require('./runtime');
 
 // Bumped whenever the runner gains a backend-visible capability the UI cares
 // about (stuck detection, force kill, restart, diagnostics, etc.).
-const RUNNER_VERSION = '2026-05-04.1';
+const RUNNER_VERSION = '2026-05-04.2';
 
 const TASKS_DIR = path.join(DASHBOARD_ROOT, 'state', 'claude-tasks');
 fs.mkdirSync(TASKS_DIR, { recursive: true });
@@ -489,23 +489,79 @@ function pidLooksLikeOurChild(pid) {
   return !!pidImageMatches(pid, ['node.exe', 'claude.exe']);
 }
 
-// Enumerate currently-live claude.exe processes (for the diagnostics panel).
-// Returns [{ pid, name, sessionName }]. Used to show stale claude processes
-// not tracked by any in-memory task — those are leaks to clean up.
-function listClaudeProcesses() {
+// Enumerate currently-live claude.exe processes with their executable path
+// and parent pid (for the diagnostics panel). Uses WMI via PowerShell — slower
+// than tasklist but the only way to get the full path. Cached for 10s so the
+// dashboard's 5s diagnostics poll doesn't re-query every tick.
+let _procCache = { ts: 0, procs: [] };
+const PROC_CACHE_TTL_MS = 10 * 1000;
+
+function listClaudeProcesses({ force = false } = {}) {
+  const now = Date.now();
+  if (!force && now - _procCache.ts < PROC_CACHE_TTL_MS) return _procCache.procs;
   try {
-    const out = execFileSync(
-      'tasklist', ['/FI', 'IMAGENAME eq claude.exe', '/FO', 'CSV', '/NH'],
-      { windowsHide: true, timeout: 3000 }
-    ).toString('utf8');
-    const procs = [];
-    for (const line of out.trim().split(/\r?\n/)) {
-      const m = line.match(/^"([^"]+)","(\d+)"/);
-      if (!m) continue;
-      procs.push({ name: m[1], pid: Number(m[2]) });
-    }
+    // Single PowerShell invocation; output as JSON so we don't need to parse
+    // CSV by hand. Timeout 8s — WMI on a busy machine can be slow.
+    const out = execFileSync('powershell.exe', [
+      '-NoProfile', '-NonInteractive', '-Command',
+      "Get-CimInstance Win32_Process -Filter \"Name = 'claude.exe'\" | Select-Object ProcessId,ParentProcessId,ExecutablePath,CreationDate | ConvertTo-Json -Compress"
+    ], { windowsHide: true, timeout: 8000 }).toString('utf8').trim();
+    if (!out) { _procCache = { ts: now, procs: [] }; return []; }
+    let parsed;
+    try { parsed = JSON.parse(out); } catch { parsed = []; }
+    if (!Array.isArray(parsed)) parsed = [parsed];
+    const procs = parsed.map(p => ({
+      pid: Number(p.ProcessId),
+      ppid: Number(p.ParentProcessId),
+      path: p.ExecutablePath || null,
+      // CreationDate from CIM serializes as `/Date(<ms>)/` strings; pull the ms out.
+      startedAtMs: (typeof p.CreationDate === 'string' ? Number((p.CreationDate.match(/\((\d+)\)/) || [])[1]) : null) || null
+    }));
+    _procCache = { ts: now, procs };
     return procs;
-  } catch { return []; }
+  } catch {
+    // Fall back to plain tasklist (no path) so diagnostics still works.
+    try {
+      const out = execFileSync(
+        'tasklist', ['/FI', 'IMAGENAME eq claude.exe', '/FO', 'CSV', '/NH'],
+        { windowsHide: true, timeout: 3000 }
+      ).toString('utf8');
+      const procs = [];
+      for (const line of out.trim().split(/\r?\n/)) {
+        const m = line.match(/^"([^"]+)","(\d+)"/);
+        if (!m) continue;
+        procs.push({ pid: Number(m[2]), ppid: null, path: null, startedAtMs: null });
+      }
+      _procCache = { ts: now, procs };
+      return procs;
+    } catch { return []; }
+  }
+}
+
+// Classify a claude.exe process by its executable path so the diagnostics
+// panel can tell the difference between:
+//   - dashboard-cli: the dashboard's own runner invocations of `claude.exe`
+//                    from CLAUDE_BIN (currently `~/.local/bin/claude.exe`).
+//                    These SHOULD all be tracked — anything from this image
+//                    that isn't tracked is a real leak.
+//   - desktop-app:   the user's Claude desktop app from WindowsApps.
+//                    NEVER touch — it's the user's interactive UI.
+//   - desktop-cli:   `claude-code` CLI shipped inside the Claude desktop app
+//                    (under AppData/Roaming/Claude/claude-code/...).
+//                    Could be the user's interactive PowerShell session.
+//                    NEVER touch.
+//   - other:         unrecognised path. Treat as external (don't auto-kill).
+function classifyClaudeProcessByPath(execPath) {
+  if (!execPath) return 'unknown-path';
+  const p = execPath.toLowerCase();
+  // CLAUDE_BIN may be elsewhere; compare against its dirname so future moves
+  // (e.g. user updates CLAUDE_BIN) keep working.
+  const binDir = path.dirname((CLAUDE_BIN || '').toLowerCase());
+  if (binDir && p.startsWith(binDir)) return 'dashboard-cli';
+  if (p.includes('\\windowsapps\\claude_'))                       return 'desktop-app';
+  if (p.includes('\\appdata\\roaming\\claude\\claude-code\\'))    return 'desktop-cli';
+  if (p.endsWith('\\.local\\bin\\claude.exe'))                    return 'dashboard-cli';
+  return 'other';
 }
 
 // Called once at module load. Any task whose state file says 'running' is, by
@@ -566,8 +622,17 @@ function gcOldTasks() {
 }
 gcOldTasks();
 
-// Snapshot for the Claude Runner Diagnostics panel. Cheap to compute (one
-// dir scan + one tasklist call) so the UI can poll it every few seconds.
+// Snapshot for the Claude Runner Diagnostics panel. Classifies live claude.exe
+// processes by their executable path AND by whether they appear in a state
+// file we wrote — so we don't mislabel the user's desktop app or interactive
+// CLI session as "leaks". A *real leak* requires BOTH:
+//   (a) the path is CLAUDE_BIN (or its dirname), AND
+//   (b) the PID is recorded in a state file with status `running` or
+//       `orphaned`, AND
+//   (c) the PID is NOT in our in-memory `running` map (i.e. came from a
+//       previous dashboard process).
+// Without (b), a CLAUDE_BIN process is treated as the user's interactive
+// session — we never auto-kill it.
 function getDiagnostics(opts = {}) {
   const recent = listTasks(50).map(t => augmentHealth(t, opts));
   const active = recent.filter(t => t.runtimeStatus === 'running');
@@ -578,10 +643,49 @@ function getDiagnostics(opts = {}) {
   for (const entry of running.values()) {
     if (entry.task && entry.task.pid) trackedPids.add(entry.task.pid);
   }
-  const claudeProcs = listClaudeProcesses();
-  // Untracked claude.exe instances point to leaks (previous dashboard runs
-  // that didn't clean up, or external `claude` invocations).
-  const untrackedClaudeProcs = claudeProcs.filter(p => !trackedPids.has(p.pid));
+  // PIDs we ever wrote to a state file with status `running` or `orphaned` —
+  // i.e. PIDs we know belong (or belonged) to dashboard-spawned tasks. The
+  // runner only ever assigns its own child PIDs into these state files, so an
+  // intersection with live processes gives us a high-confidence leak set.
+  const dashboardPidSet = new Set();
+  try {
+    for (const n of fs.readdirSync(TASKS_DIR)) {
+      if (!n.endsWith('.json')) continue;
+      try {
+        const t = JSON.parse(fs.readFileSync(path.join(TASKS_DIR, n), 'utf8'));
+        if ((t.status === 'running' || t.status === 'orphaned') && t.pid) {
+          dashboardPidSet.add(t.pid);
+        }
+      } catch {}
+    }
+  } catch {}
+  // Build classified buckets. Categories besides `dashboardLeak` are
+  // informational only — never touched by cleanup.
+  const all = listClaudeProcesses().map(p => ({
+    ...p,
+    pathKind: classifyClaudeProcessByPath(p.path),
+    tracked: trackedPids.has(p.pid),
+    inStateFile: dashboardPidSet.has(p.pid)
+  }));
+  const buckets = {
+    tracked:       all.filter(p => p.tracked),
+    // Real leak: path looks like ours AND PID is recorded in a state file
+    // (was a dashboard task) AND not in current memory (from a past dashboard
+    // process that crashed/restarted without cleanup).
+    dashboardLeak: all.filter(p => !p.tracked && p.pathKind === 'dashboard-cli' && p.inStateFile),
+    desktopApp:    all.filter(p => p.pathKind === 'desktop-app'),
+    desktopCli:    all.filter(p => p.pathKind === 'desktop-cli'),
+    // CLAUDE_BIN processes that aren't tracked AND aren't in any state file
+    // are the user's interactive PowerShell Claude sessions. Counted under
+    // "other" alongside any unclassified entries, never touched.
+    other:         all.filter(p => !p.tracked
+                                  && !(p.pathKind === 'dashboard-cli' && p.inStateFile)
+                                  && p.pathKind !== 'desktop-app'
+                                  && p.pathKind !== 'desktop-cli')
+  };
+  // Backwards-compatible field for old UI: untrackedClaudeProcesses now
+  // contains ONLY real leaks, not the user's desktop app.
+  const untrackedClaudeProcs = buckets.dashboardLeak;
   return {
     runnerVersion: RUNNER_VERSION,
     validModes: VALID_MODES,
@@ -595,9 +699,23 @@ function getDiagnostics(opts = {}) {
     stuckCount: stuck.length,
     stuckTasks: stuck,
     lastCompleted, lastFailed,
-    claudeProcessCount: claudeProcs.length,
+    claudeProcessCount: all.length,
     trackedClaudePids: Array.from(trackedPids),
     untrackedClaudeProcesses: untrackedClaudeProcs,
+    // New, classification-aware view. Old key kept for back-compat.
+    processBuckets: {
+      tracked: buckets.tracked.length,
+      dashboardLeak: buckets.dashboardLeak.length,
+      desktopApp: buckets.desktopApp.length,
+      desktopCli: buckets.desktopCli.length,
+      other: buckets.other.length
+    },
+    processBucketsDetail: {
+      dashboardLeak: buckets.dashboardLeak.map(p => ({ pid: p.pid, ppid: p.ppid, path: p.path, startedAtMs: p.startedAtMs })),
+      desktopApp:    buckets.desktopApp.map(p => ({ pid: p.pid, ppid: p.ppid })),
+      desktopCli:    buckets.desktopCli.map(p => ({ pid: p.pid, ppid: p.ppid, path: p.path })),
+      other:         buckets.other.map(p => ({ pid: p.pid, ppid: p.ppid, path: p.path }))
+    },
     thresholds: {
       stuckAfterMs: opts.stuckAfterMs ?? DEFAULT_STUCK_AFTER_MS,
       softWarnMs:   opts.softWarnMs   ?? DEFAULT_SOFT_WARN_MS,
@@ -607,11 +725,41 @@ function getDiagnostics(opts = {}) {
   };
 }
 
+// Kill only the processes in the `dashboardLeak` bucket — i.e. claude.exe
+// instances that came from CLAUDE_BIN but are not tracked by any in-memory
+// task. The user's desktop app, desktop-bundled CLI, and any other CLI from
+// outside CLAUDE_BIN are never touched by this function.
+function cleanupDashboardLeaks() {
+  // Refresh the cache before deciding what to kill — don't act on stale data.
+  listClaudeProcesses({ force: true });
+  const diag = getDiagnostics();
+  const targets = (diag.processBucketsDetail && diag.processBucketsDetail.dashboardLeak) || [];
+  const results = [];
+  for (const p of targets) {
+    try {
+      execFileSync('taskkill', ['/T', '/F', '/PID', String(p.pid)], { windowsHide: true, timeout: 5000 });
+      results.push({ pid: p.pid, ok: true });
+    } catch (e) {
+      results.push({ pid: p.pid, ok: false, error: (e && e.message || String(e)).slice(0, 200) });
+    }
+  }
+  // Bust the proc cache so the next /api/claude/diagnostics call sees the new state.
+  _procCache = { ts: 0, procs: [] };
+  return {
+    ok: true,
+    targetedCount: targets.length,
+    results,
+    note: targets.length === 0
+      ? 'No real leaks found. Desktop app and external CLI processes are intentionally not touched.'
+      : `Killed ${results.filter(r => r.ok).length}/${targets.length} dashboard-cli leaks.`
+  };
+}
+
 module.exports = {
   listTasks, getTask, getTaskWithHealth,
   startTask, stopTask, forceKillTask, restartTask,
   readLogSlice, readLogTailLines, getEmitter, isRunning,
-  getDiagnostics, listClaudeProcesses,
+  getDiagnostics, listClaudeProcesses, cleanupDashboardLeaks,
   CLAUDE_BIN, TASKS_DIR, VALID_MODES, RUNNER_VERSION,
   DEFAULT_STUCK_AFTER_MS, DEFAULT_SOFT_WARN_MS, DEFAULT_HARD_WARN_MS
 };

@@ -566,8 +566,9 @@ async function route(req, res, ctx) {
   }
 
   // Runtime diagnostics — counts of active/stuck/last-completed/last-failed
-  // tasks, runner version, mode support, and any untracked claude.exe
-  // processes (leak detection). Cheap to call; UI polls every few seconds.
+  // tasks, runner version, mode support, and classified claude.exe processes
+  // (real leaks vs the user's desktop app vs external CLI). Cheap to call;
+  // UI polls every few seconds.
   if (req.method === 'GET' && pathname === '/api/claude/diagnostics') {
     const q = parsed.query || {};
     return sendJson(res, 200, claudeRunner.getDiagnostics({
@@ -575,6 +576,21 @@ async function route(req, res, ctx) {
       softWarnMs:   q.softWarnMs   ? Number(q.softWarnMs)   : undefined,
       hardWarnMs:   q.hardWarnMs   ? Number(q.hardWarnMs)   : undefined
     }));
+  }
+
+  // Kill ONLY processes that look like real dashboard-spawned leaks
+  // (claude.exe from CLAUDE_BIN that aren't tracked by any in-memory task).
+  // Never touches the user's Claude desktop app or interactive CLI.
+  if (req.method === 'POST' && pathname === '/api/claude/diagnostics/cleanup') {
+    let body;
+    try { body = JSON.parse((await readBody(req)) || '{}'); }
+    catch { return sendJson(res, 400, { error: 'invalid JSON body' }); }
+    if (body.confirm !== true) {
+      return sendJson(res, 412, { error: 'confirmation required', expectedBody: { confirm: true } });
+    }
+    const r = claudeRunner.cleanupDashboardLeaks();
+    logAction({ alias: 'claude', name: 'cleanup-leaks', mode: 'exec', ok: r.ok, targetedCount: r.targetedCount });
+    return sendJson(res, 200, r);
   }
 
   let cm = pathname.match(/^\/api\/claude\/task\/([0-9a-f-]{36})$/);

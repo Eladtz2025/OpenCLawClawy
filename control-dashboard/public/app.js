@@ -1486,28 +1486,34 @@ async function refreshClaudeDiagnostics() {
 function paintClaudeDiagnostics() {
   const wrap = $('#claude-diagnostics'); if (!wrap) return;
   const d = state.claudeDiagnostics; if (!d) return;
-  const orphans = d.untrackedClaudeProcesses || [];
-  const orphansClass = orphans.length ? 'is-warn' : '';
+  const buckets = d.processBuckets || {};
+  const leakCount = buckets.dashboardLeak || 0;
   const stuckClass = d.stuckCount ? 'is-warn' : '';
+  const leakClass = leakCount ? 'is-warn' : '';
   const binClass = d.claudeBinExists ? '' : 'is-bad';
   const last = d.lastCompleted;
   const fail = d.lastFailed;
+  // External-process tooltip is informational only — never an error.
+  const externalCount = (buckets.desktopApp || 0) + (buckets.desktopCli || 0) + (buckets.other || 0);
+  const externalTip = `Desktop app: ${buckets.desktopApp||0} · Desktop CLI: ${buckets.desktopCli||0} · Other: ${buckets.other||0} — informational only, never auto-killed.`;
   wrap.innerHTML = `
     <div class="diag-head">
       <span class="diag-title">CLAUDE RUNNER DIAGNOSTICS</span>
       <span class="diag-meta">runner ${escapeHtml(d.runnerVersion || '?')} · auto ${d.autoSupported ? 'on' : 'off'} · default ${escapeHtml(d.defaultMode || '?')}</span>
       <span class="spacer"></span>
+      ${leakCount ? `<button class="btn-danger btn-tiny" id="claude-diag-cleanup" title="taskkill /T /F on each leaked dashboard-cli PID. Desktop app + interactive CLI sessions are never touched.">✕ CLEANUP ${leakCount} LEAK${leakCount > 1 ? 'S' : ''}</button>` : ''}
       <button class="btn-ghost btn-tiny" id="claude-diag-refresh">⟳ REFRESH</button>
     </div>
     <div class="diag-grid">
       <div class="diag-cell"><div class="diag-label">ACTIVE</div><div class="diag-val">${d.activeCount || 0}</div></div>
       <div class="diag-cell ${stuckClass}"><div class="diag-label">STUCK</div><div class="diag-val">${d.stuckCount || 0}</div></div>
-      <div class="diag-cell ${orphansClass}"><div class="diag-label">UNTRACKED CLAUDE.EXE</div><div class="diag-val">${orphans.length}</div></div>
+      <div class="diag-cell ${leakClass}"><div class="diag-label">DASHBOARD LEAKS</div><div class="diag-val" title="claude.exe from CLAUDE_BIN that aren't tracked by any in-memory task — real leaks">${leakCount}</div></div>
+      <div class="diag-cell"><div class="diag-label">EXTERNAL PROCS</div><div class="diag-val" title="${escapeHtml(externalTip)}">${externalCount}</div></div>
       <div class="diag-cell ${binClass}"><div class="diag-label">CLAUDE BIN</div><div class="diag-val" title="${escapeHtml(d.claudeBin || '')}">${d.claudeBinExists ? 'OK' : 'MISSING'}</div></div>
       <div class="diag-cell"><div class="diag-label">LAST OK</div><div class="diag-val">${last ? `<a href="#" data-claude-jump="${escapeHtml(last.id)}">${escapeHtml((last.prompt || '').slice(0, 40) || last.id.slice(0, 8))}</a> <span class="diag-rel">${relTime(last.endedAt)}</span>` : '—'}</div></div>
       <div class="diag-cell"><div class="diag-label">LAST FAIL</div><div class="diag-val">${fail ? `<a href="#" data-claude-jump="${escapeHtml(fail.id)}">${escapeHtml((fail.prompt || '').slice(0, 40) || fail.id.slice(0, 8))}</a> <span class="diag-rel">${escapeHtml(fail.status || 'failed')} · ${relTime(fail.endedAt)}</span>` : '—'}</div></div>
     </div>
-    ${orphans.length ? `<div class="diag-warn">⚠ ${orphans.length} stale claude.exe process${orphans.length > 1 ? 'es' : ''} not tracked by this runner: pid ${orphans.map(p => p.pid).join(', ')}. Restart the dashboard to sweep them.</div>` : ''}
+    ${leakCount ? `<div class="diag-warn">⚠ ${leakCount} dashboard-cli process${leakCount > 1 ? 'es' : ''} not tracked by any task — likely orphaned from a previous run. Use CLEANUP above (taskkill /T /F per pid). Desktop app and interactive sessions are NOT in this count.</div>` : ''}
   `;
   wrap.querySelectorAll('a[data-claude-jump]').forEach(a => {
     a.onclick = (e) => {
@@ -1519,6 +1525,15 @@ function paintClaudeDiagnostics() {
   });
   const refreshBtn = $('#claude-diag-refresh');
   if (refreshBtn) refreshBtn.onclick = () => { refreshClaudeDiagnostics(); refreshClaudeList(); };
+  const cleanupBtn = $('#claude-diag-cleanup');
+  if (cleanupBtn) cleanupBtn.onclick = async () => {
+    if (!confirm(`Force-kill ${leakCount} leaked dashboard-cli claude.exe process${leakCount > 1 ? 'es' : ''}?\n\nThe Claude desktop app and any interactive PowerShell session will NOT be touched.`)) return;
+    cleanupBtn.disabled = true;
+    const r = await api('/api/claude/diagnostics/cleanup', { method: 'POST', body: { confirm: true } });
+    cleanupBtn.disabled = false;
+    if (!r.ok) { alert('cleanup failed: ' + JSON.stringify(r.data)); return; }
+    refreshClaudeDiagnostics();
+  };
 }
 
 // ── live output via SSE ─────────────────────────────────────────────────
