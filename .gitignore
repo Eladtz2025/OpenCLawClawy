@@ -35,3 +35,8 @@ gmail-audit/
 
 # Generated system-map snapshots (regenerated on demand).
 SYSTEM_MAP_DATA/
+
+# yamaot30 build deps + intermediates
+yamaot30/node_modules/
+yamaot30/package-lock.json
+yamaot30/test-*.png

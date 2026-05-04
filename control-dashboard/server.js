@@ -751,6 +751,59 @@ async function route(req, res, ctx) {
     }
   }
 
+  // ---- Study app state sync (yamaot30 etc.) ----
+  // GET  /api/study/state/:appId       → { ok, state, updatedAt, etag }
+  // PUT  /api/study/state/:appId       → body { state, expectedEtag? }
+  // Storage: state/study/<appId>.json. App ids restricted to safe slug.
+  // Allowed from both local and remote listeners (remote already gated by
+  // Tailscale CGNAT + bearer token), so the user's phone on Tailscale can
+  // sync against their workstation.
+  let sm = pathname.match(/^\/api\/study\/state\/([a-z0-9][a-z0-9_-]{0,40})$/);
+  if (sm) {
+    const appId = sm[1];
+    const studyDir = path.join(STATE_DIR, 'study');
+    fs.mkdirSync(studyDir, { recursive: true });
+    const statePath = path.join(studyDir, appId + '.json');
+    if (req.method === 'GET') {
+      try {
+        const raw = fs.readFileSync(statePath, 'utf8');
+        const obj = JSON.parse(raw);
+        return sendJson(res, 200, { ok: true, ...obj });
+      } catch (e) {
+        if (e.code === 'ENOENT') return sendJson(res, 200, { ok: true, state: null, updatedAt: null, etag: null });
+        return sendJson(res, 500, { error: e.message });
+      }
+    }
+    if (req.method === 'PUT') {
+      let body;
+      try { body = JSON.parse((await readBody(req, 8 * 1024 * 1024)) || '{}'); }
+      catch { return sendJson(res, 400, { error: 'invalid JSON body' }); }
+      if (!body || typeof body.state !== 'object' || body.state === null) {
+        return sendJson(res, 400, { error: 'state object required' });
+      }
+      // Optimistic concurrency: caller may pass expectedEtag. If it doesn't
+      // match the on-disk etag, refuse and return current state so the
+      // client can merge/resolve. Skipped if expectedEtag absent (force).
+      let onDisk = null;
+      try { onDisk = JSON.parse(fs.readFileSync(statePath, 'utf8')); } catch {}
+      if (body.expectedEtag != null && onDisk && onDisk.etag !== body.expectedEtag) {
+        return sendJson(res, 409, { error: 'etag mismatch', current: onDisk });
+      }
+      const etag = require('crypto').randomBytes(8).toString('hex');
+      const updatedAt = new Date().toISOString();
+      const out = { state: body.state, updatedAt, etag };
+      try { fs.writeFileSync(statePath, JSON.stringify(out), 'utf8'); }
+      catch (e) { return sendJson(res, 500, { error: 'write failed: ' + e.message }); }
+      logAction({ alias: 'study', name: 'state-write:' + appId, mode: 'write', ok: true, bytes: JSON.stringify(out).length });
+      return sendJson(res, 200, { ok: true, etag, updatedAt });
+    }
+    if (req.method === 'DELETE') {
+      try { fs.unlinkSync(statePath); } catch {}
+      return sendJson(res, 200, { ok: true });
+    }
+    return sendJson(res, 405, { error: 'method not allowed' });
+  }
+
   // file viewer (path must be in registry's `files` blocks)
   if (req.method === 'GET' && pathname === '/api/file') {
     const requested = parsed.query && parsed.query.path;

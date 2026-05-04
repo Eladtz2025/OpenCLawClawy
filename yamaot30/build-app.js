@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Builds yamaot30-study.html from:
-//   - questions.json   (parsed from israelsails.com question bank)
-//   - sign.pdf         (embedded as base64 for in-app reference)
-//   - explanations.js  (hand-authored detailed explanations)
+//   - questions.json   (parsed from israelsails.com)
+//   - sign.pdf         (embedded as base64; rendered inline via <embed>)
+//   - hand-authored explanations (below)
 //
 // Output: a single self-contained HTML file. No build tools, no CDN deps.
 
@@ -13,7 +13,10 @@ const HERE = __dirname;
 const SRC_DIR = 'C:/Users/Itzhak/AppData/Local/Temp/yamaot30';
 
 const questions = JSON.parse(fs.readFileSync(path.join(SRC_DIR, 'questions.json'), 'utf8'));
+// PDF base64 kept as a "view full sheet" fallback (~500KB embed). Each
+// numbered image is embedded individually as a PNG crop in image-crops.json.
 const pdfB64 = fs.readFileSync(path.join(SRC_DIR, 'pdf-base64.txt'), 'utf8').trim();
+const imageCrops = JSON.parse(fs.readFileSync(path.join(HERE, 'image-crops.json'), 'utf8'));
 
 // Hand-authored detailed explanations for the user-specified images.
 // `verified: true` only on the three the user explicitly described.
@@ -66,12 +69,10 @@ const seedExplanations = {
   }
 };
 
-// Detect category by simple keyword heuristic. The site doesn't expose
-// categories explicitly. Users can re-categorize via import.
 function categorize(q) {
   const t = q.text + ' ' + q.answers.map(a => a.text).join(' ');
   if (q.images && q.images.length) return 'אורות וסימונים';
-  if (/חוק|תקנה|תקנון|עקרון|קולרגס|cוolregs/i.test(t)) return 'חוק והתקנון';
+  if (/חוק|תקנה|תקנון|עקרון|קולרגס/i.test(t)) return 'חוק והתקנון';
   if (/מפרשית|מפרש|רוח/.test(t)) return 'הפלגת מפרשיות';
   if (/חירום|תאונה|פציעה|חילוץ|כיבוי|אש|הצלה/.test(t)) return 'חירום ובטיחות';
   if (/ניווט|מצפן|GPS|מפה|כיוון|קורס|מהירות|קשר רדיו|VHF|רדיו/.test(t)) return 'ניווט וקשר';
@@ -81,13 +82,13 @@ function categorize(q) {
 }
 for (const q of questions) q.category = categorize(q);
 
-// Compact stringify (no whitespace) to keep the embedded payload small.
 const dataPayload = JSON.stringify({
-  version: 1,
+  version: 3,
   generatedAt: new Date().toISOString().slice(0, 10),
   source: 'israelsails.com / yamaot30 (parsed; license = community mirror)',
   questions,
-  seedExplanations
+  seedExplanations,
+  imageCrops    // imageNum → 'data:image/png;base64,...' (cropped from sign.pdf)
 });
 
 const html = `<!doctype html>
@@ -98,7 +99,25 @@ const html = `<!doctype html>
 <meta name="theme-color" content="#0d1b2a">
 <title>ימאות 30 — אפליקציית לימוד</title>
 <style>
-:root {
+:root,
+html[data-theme="light"] {
+  --bg: #f5f1e8;
+  --bg-soft: #ffffff;
+  --bg-card: #ffffff;
+  --bg-input: #f0ebe0;
+  --text: #1f2937;
+  --text-dim: #4b5563;
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+  --accent-dim: #0369a1;
+  --good: #16a34a;
+  --bad: #dc2626;
+  --warn: #d97706;
+  --line: #d1d5db;
+  --shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.06);
+  --pdf-bg: #ffffff;
+}
+html[data-theme="dark"] {
   --bg: #0d1b2a;
   --bg-soft: #1b263b;
   --bg-card: #1f2a3d;
@@ -112,11 +131,16 @@ const html = `<!doctype html>
   --bad: #ef476f;
   --warn: #ffd166;
   --line: #344563;
+  --shadow: 0 0 0 transparent;
+  --pdf-bg: #ffffff;
+}
+:root {
   --radius: 10px;
   --gap: 14px;
   --pad: 14px;
   --font: -apple-system, "Segoe UI", "Helvetica Neue", "Arial Hebrew", "David", Arial, sans-serif;
 }
+
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; margin: 0; }
 body {
@@ -128,7 +152,6 @@ body {
   overflow-x: hidden;
 }
 
-/* desktop layout: 4 columns RTL → reading order right→left */
 .app {
   display: grid;
   grid-template-columns: 280px 1fr 1fr 360px;
@@ -142,17 +165,23 @@ body {
   border-radius: var(--radius);
   padding: var(--pad);
   border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 .card h2 {
   margin: 0 0 10px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--accent-dim);
   text-transform: uppercase;
   border-bottom: 1px solid var(--line);
   padding-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.card h2 .h-side { font-size: 11px; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); }
+
 button, .btn {
   background: var(--bg-input);
   border: 1px solid var(--line);
@@ -163,18 +192,18 @@ button, .btn {
   font-size: 14px;
   cursor: pointer;
   text-align: center;
-  transition: background .12s, border-color .12s, transform .05s;
+  transition: background .12s, border-color .12s, transform .05s, box-shadow .12s;
 }
-button:hover, .btn:hover { background: #2a3756; border-color: var(--accent-dim); }
+button:hover, .btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 button:active { transform: scale(.98); }
-button.primary { background: var(--accent-dim); border-color: var(--accent); color: #061320; font-weight: 600; }
-button.primary:hover { background: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+button.primary:hover { background: var(--accent-dim); border-color: var(--accent-dim); }
 button.danger { color: var(--bad); border-color: var(--bad); }
+button.danger:hover { background: var(--bad); color: #fff; }
 button.subtle { background: transparent; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .btn-row > * { flex: 1 1 auto; }
 
-/* dashboard */
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .stat {
   background: var(--bg-input);
@@ -186,9 +215,8 @@ button.subtle { background: transparent; }
 .stat .lbl { font-size: 11px; color: var(--text-dim); }
 .nav-list { display: flex; flex-direction: column; gap: 6px; }
 .nav-list button { text-align: right; padding: 10px 12px; }
-.nav-list button.active { background: var(--accent-dim); color: #061320; border-color: var(--accent); }
+.nav-list button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-/* question card */
 .q-meta {
   display: flex;
   justify-content: space-between;
@@ -212,179 +240,133 @@ button.subtle { background: transparent; }
   text-align: right;
   transition: border-color .15s, background .15s;
 }
-.answer:hover:not(.locked) { border-color: var(--accent-dim); }
+.answer:hover:not(.locked) { border-color: var(--accent); }
 .answer .letter {
   flex: 0 0 28px;
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #344563;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
   color: var(--text);
   display: flex; align-items: center; justify-content: center;
   font-weight: 600;
   font-size: 14px;
 }
-.answer.correct { border-color: var(--good); background: rgba(118,200,147,0.12); }
-.answer.correct .letter { background: var(--good); color: #0d1b2a; }
-.answer.wrong { border-color: var(--bad); background: rgba(239,71,111,0.12); }
-.answer.wrong .letter { background: var(--bad); color: #fff; }
-.answer.reveal { border-color: var(--good); }
-.answer.reveal .letter { background: var(--good); color: #0d1b2a; }
+.answer.correct, .answer.reveal { border-color: var(--good); background: rgba(22,163,74,0.08); }
+.answer.correct .letter, .answer.reveal .letter { background: var(--good); color: #fff; border-color: var(--good); }
+.answer.wrong { border-color: var(--bad); background: rgba(220,38,38,0.08); }
+.answer.wrong .letter { background: var(--bad); color: #fff; border-color: var(--bad); }
 .answer.locked { cursor: default; }
 
 .action-row { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
 .action-row button { flex: 0 0 auto; }
-.note-area {
-  margin-top: 14px;
-}
+.note-area { margin-top: 14px; }
 .note-area textarea {
-  width: 100%;
-  min-height: 56px;
-  resize: vertical;
+  width: 100%; min-height: 56px; resize: vertical;
   background: var(--bg-input);
   color: var(--text);
   border: 1px solid var(--line);
-  border-radius: 7px;
-  padding: 8px 10px;
-  font: inherit;
-  font-size: 14px;
+  border-radius: 7px; padding: 8px 10px;
+  font: inherit; font-size: 14px;
 }
 .feedback {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border-radius: 7px;
-  font-size: 14px;
+  margin-top: 10px; padding: 8px 12px;
+  border-radius: 7px; font-size: 14px;
 }
-.feedback.good { background: rgba(118,200,147,0.18); border-right: 3px solid var(--good); }
-.feedback.bad { background: rgba(239,71,111,0.18); border-right: 3px solid var(--bad); }
-.feedback.guess { background: rgba(255,209,102,0.18); border-right: 3px solid var(--warn); }
+.feedback.good { background: rgba(22,163,74,0.12); border-right: 3px solid var(--good); }
+.feedback.bad { background: rgba(220,38,38,0.12); border-right: 3px solid var(--bad); }
+.feedback.guess { background: rgba(217,119,6,0.12); border-right: 3px solid var(--warn); }
 .hint-box {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: rgba(76,201,240,0.10);
+  margin-top: 10px; padding: 8px 12px;
+  background: rgba(14,165,233,0.08);
   border-right: 3px solid var(--accent);
-  border-radius: 7px;
-  font-size: 14px;
+  border-radius: 7px; font-size: 14px;
 }
-.hint-box h3 { margin: 0 0 6px; font-size: 13px; color: var(--accent); }
+.hint-box h3 { margin: 0 0 6px; font-size: 13px; color: var(--accent-dim); }
 
-/* image panel */
-.image-tabs {
-  display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px;
-}
+.image-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
 .image-tabs button { padding: 5px 10px; font-size: 13px; flex: 0 0 auto; }
-.image-tabs button.active { background: var(--accent-dim); color: #061320; border-color: var(--accent); }
+.image-tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 .image-zoom {
   display: flex; gap: 6px; align-items: center; margin-bottom: 8px;
-  font-size: 12px; color: var(--muted);
+  font-size: 12px; color: var(--muted); flex-wrap: wrap;
 }
 .image-zoom button { padding: 4px 8px; font-size: 13px; }
 .image-frame {
-  background: #000;
+  background: var(--pdf-bg);
   border-radius: 8px;
+  border: 1px solid var(--line);
   overflow: hidden;
   position: relative;
   flex: 1 1 auto;
-  min-height: 280px;
+  min-height: 360px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
 }
-.image-frame img { max-width: 100%; max-height: 100%; display: block; }
+.image-frame img { max-width: 100%; max-height: 100%; display: block; margin: auto; }
 .image-frame embed, .image-frame iframe {
-  width: 100%; height: 100%; min-height: 280px; border: none; background: #fff;
+  width: 100%; height: 100%; min-height: 360px; border: none; background: #fff;
 }
 .image-empty {
-  color: var(--muted);
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 14px;
+  color: var(--muted); text-align: center; padding: 30px 20px; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; flex: 1;
 }
-.image-actions { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
-.image-actions button { font-size: 12px; padding: 5px 9px; }
-.image-clean { background: #fff !important; }
-.image-clean img { mix-blend-mode: normal; }
 
-/* explanation panel */
 .exp-section { margin-top: 12px; }
 .exp-section h3 {
-  font-size: 13px;
-  margin: 0 0 4px;
-  color: var(--accent);
-  font-weight: 600;
+  font-size: 13px; margin: 0 0 4px;
+  color: var(--accent-dim); font-weight: 600;
 }
 .exp-section p, .exp-section ul, .exp-section ol {
-  margin: 4px 0;
-  font-size: 14px;
-  line-height: 1.55;
+  margin: 4px 0; font-size: 14px; line-height: 1.55;
 }
 .exp-section ul, .exp-section ol { padding-right: 20px; }
 .exp-section li { margin-bottom: 3px; }
 .exp-empty { color: var(--muted); font-size: 14px; padding: 20px 6px; text-align: center; }
 .unverified-tag {
   display: inline-block;
-  background: rgba(255,209,102,0.18);
-  color: var(--warn);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  margin-right: 6px;
+  background: rgba(217,119,6,0.18); color: var(--warn);
+  padding: 2px 8px; border-radius: 4px;
+  font-size: 11px; margin-right: 6px;
 }
 
-/* modal */
 .modal-overlay {
   position: fixed; inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  align-items: center; justify-content: center;
-  z-index: 100;
-  padding: 16px;
+  background: rgba(0,0,0,0.5);
+  display: none; align-items: center; justify-content: center;
+  z-index: 100; padding: 16px;
 }
 .modal-overlay.show { display: flex; }
 .modal {
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 20px;
-  max-width: 560px;
-  width: 100%;
-  max-height: 90vh;
-  overflow: auto;
+  padding: 20px; max-width: 560px; width: 100%;
+  max-height: 90vh; overflow: auto;
+  box-shadow: var(--shadow);
 }
-.modal h2 { margin-top: 0; font-size: 17px; color: var(--accent); }
+.modal h2 { margin-top: 0; font-size: 17px; color: var(--accent-dim); }
 .modal textarea { width: 100%; min-height: 90px; }
-.modal input[type="text"], .modal input[type="number"], .modal input[type="file"] {
+.modal label { display: block; margin: 8px 0; font-size: 13px; color: var(--text-dim); }
+.modal input[type="text"], .modal input[type="number"], .modal input[type="file"], .modal input[type="url"] {
   width: 100%; padding: 8px 10px;
-  background: var(--bg-input);
-  color: var(--text);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  font: inherit;
-  margin: 4px 0 10px;
+  background: var(--bg-input); color: var(--text);
+  border: 1px solid var(--line); border-radius: 6px;
+  font: inherit; margin: 4px 0 10px;
 }
-.modal-buttons { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+.modal-buttons { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; flex-wrap: wrap; }
 
-/* search list */
 .search-list { max-height: 60vh; overflow: auto; margin-top: 10px; }
 .search-item {
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--line);
-  cursor: pointer;
-  font-size: 14px;
+  padding: 8px 10px; border-bottom: 1px solid var(--line);
+  cursor: pointer; font-size: 14px;
 }
 .search-item:hover { background: var(--bg-input); }
 .search-item .qnum { color: var(--accent); font-weight: 600; margin-left: 6px; }
 .search-item .qcat { font-size: 11px; color: var(--muted); float: left; }
 
-/* exam summary */
-.exam-bar { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-.exam-progress {
-  width: 100%; height: 6px; background: var(--bg-input);
-  border-radius: 3px; overflow: hidden; margin-bottom: 12px;
-}
-.exam-progress > div { height: 100%; background: var(--accent); transition: width .25s; }
-
-/* mobile: stack panels */
 @media (max-width: 1100px) {
   .app { grid-template-columns: 1fr; padding: 10px; gap: 10px; }
   .col-dash { order: 4; }
@@ -396,40 +378,28 @@ button.subtle { background: transparent; }
   .answer { padding: 12px 14px; font-size: 16px; min-height: 48px; }
   .answer .letter { width: 32px; height: 32px; flex-basis: 32px; }
   button, .btn { padding: 11px 14px; font-size: 15px; min-height: 42px; }
-  .image-frame { min-height: 220px; }
+  .image-frame { min-height: 320px; }
   .nav-list button { padding: 12px 14px; }
 }
 @media (max-width: 600px) {
   .stat-grid { grid-template-columns: 1fr 1fr; }
-  .image-frame { min-height: 200px; }
+  .image-frame { min-height: 280px; }
 }
 
-/* sticky bottom action on mobile */
-.mobile-next {
-  display: none;
-  position: sticky;
-  bottom: 0;
-  left: 0; right: 0;
-  margin-top: 10px;
-  z-index: 50;
-}
+.mobile-next { display: none; position: sticky; bottom: 0; left: 0; right: 0; margin-top: 10px; z-index: 50; }
 @media (max-width: 1100px) {
   .mobile-next { display: block; }
   .mobile-next button { width: 100%; padding: 14px; font-size: 16px; }
 }
 
-/* utility */
 .tag {
-  display: inline-block;
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 10px;
-  background: var(--bg-input);
-  color: var(--text-dim);
+  display: inline-block; font-size: 11px;
+  padding: 2px 8px; border-radius: 10px;
+  background: var(--bg-input); color: var(--text-dim);
   margin-left: 6px;
 }
 .tag.good { color: var(--good); }
-.tag.bad  { color: var(--bad); }
+.tag.bad { color: var(--bad); }
 .tag.warn { color: var(--warn); }
 .help-text { font-size: 12px; color: var(--muted); margin-top: 4px; }
 .divider { height: 1px; background: var(--line); margin: 10px 0; }
@@ -437,30 +407,47 @@ button.subtle { background: transparent; }
   position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
   background: var(--bg-card); border: 1px solid var(--accent);
   padding: 10px 16px; border-radius: 7px; z-index: 200;
-  font-size: 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  font-size: 14px; box-shadow: var(--shadow), 0 4px 18px rgba(0,0,0,0.15);
+  color: var(--text);
 }
+.sync-status {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--muted);
+}
+.sync-status .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--muted);
+}
+.sync-status.ok .dot { background: var(--good); }
+.sync-status.error .dot { background: var(--bad); }
+.sync-status.busy .dot { background: var(--warn); animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100% { opacity:.4 } 50% { opacity:1 } }
 </style>
 </head>
 <body>
 <div class="app">
 
-  <!-- RIGHT column (dashboard, first in source order = rightmost in RTL) -->
   <aside class="col col-dash">
     <div class="card">
-      <h2>סטטוס</h2>
+      <h2>סטטוס <button id="themeToggle" class="subtle" style="font-size:12px;padding:4px 8px;min-height:0;" title="החלף ערכת נושא">☀/🌙</button></h2>
       <div class="stat-grid" id="stats"></div>
       <div class="divider"></div>
       <div class="nav-list" id="modeNav"></div>
     </div>
     <div class="card">
-      <h2>גיבוי וסנכרון</h2>
-      <div class="btn-row">
-        <button id="exportBtn" class="primary">יצא JSON</button>
-        <button id="importBtn">יבא JSON</button>
+      <h2>סנכרון בין מכשירים</h2>
+      <div id="syncStatus" class="sync-status"><div class="dot"></div><span>לא הוגדר</span></div>
+      <div class="btn-row" style="margin-top:8px;">
+        <button id="syncSettingsBtn">הגדרות שרת</button>
+        <button id="syncNowBtn">סנכרן עכשיו</button>
       </div>
       <div class="help-text">
-        כל ההתקדמות שמורה מקומית בדפדפן. להעברה בין מחשב/טלפון: יצא ב-JSON,
-        העבר לקובץ (ענן/דוא"ל), פתח באפליקציה בצד השני וייבא.
+        מסונכרן עם dashboard מקומי. בטלפון השתמש ב-Tailscale URL.
+      </div>
+      <div class="divider"></div>
+      <div class="btn-row">
+        <button id="exportBtn">יצא JSON</button>
+        <button id="importBtn">יבא JSON</button>
       </div>
       <div class="divider"></div>
       <div class="btn-row">
@@ -470,10 +457,9 @@ button.subtle { background: transparent; }
     </div>
   </aside>
 
-  <!-- center column: question -->
   <main class="col col-q">
     <div class="card">
-      <h2>שאלה</h2>
+      <h2>שאלה <span class="h-side" id="qNumHeader"></span></h2>
       <div class="q-meta">
         <span id="qNum">—</span>
         <span id="qCat" class="tag"></span>
@@ -491,7 +477,7 @@ button.subtle { background: transparent; }
       </div>
 
       <div class="note-area">
-        <h3 style="font-size:13px;margin:0 0 4px;color:var(--accent);">הערה אישית לשאלה</h3>
+        <h3 style="font-size:13px;margin:0 0 4px;color:var(--accent-dim);">הערה אישית לשאלה</h3>
         <textarea id="noteText" placeholder="הערות שלך לשאלה הזו..."></textarea>
       </div>
 
@@ -501,25 +487,24 @@ button.subtle { background: transparent; }
     </div>
   </main>
 
-  <!-- center-left column: image -->
   <section class="col col-img">
     <div class="card" style="display:flex; flex-direction:column;">
-      <h2>תמונה</h2>
+      <h2>תמונה <span class="h-side" id="currentImgLabel">—</span></h2>
       <div id="imageTabs" class="image-tabs"></div>
       <div id="imageZoom" class="image-zoom" hidden>
-        <button data-zoom="-1">−</button>
-        <span id="zoomLabel">100%</span>
-        <button data-zoom="+1">+</button>
-        <button id="cleanBtn">תצוגה נקייה</button>
-        <button id="uploadCropBtn">העלה גזירה</button>
+        <button id="uploadCropBtn" title="החלף את התמונה המוטמעת בקובץ משלך">📷 החלף גזירה</button>
+        <button id="clearCropBtn" hidden title="חזור לתמונה המוטמעת">🗑 מחק גזירה אישית</button>
+        <button id="anchorPageBtn" hidden title="זכור עמוד PDF (רק כשאין גזירה מוטמעת)">📌 שמור עוגן</button>
       </div>
       <div id="imageFrame" class="image-frame">
         <div class="image-empty">לשאלה זו אין תמונה משויכת.</div>
       </div>
+      <div class="help-text" style="margin-top:6px;">
+        100 התמונות חתוכות וכלולות בקובץ. ב-"החלף גזירה" אפשר להחליף תמונה ספציפית בגרסה משלך אם תרצה גזירה מוקפדת יותר.
+      </div>
     </div>
   </section>
 
-  <!-- left column: explanation -->
   <aside class="col col-exp">
     <div class="card" style="display:flex;flex-direction:column;max-height:90vh;overflow:hidden;">
       <h2>הסבר תמונה</h2>
@@ -533,7 +518,6 @@ button.subtle { background: transparent; }
 
 </div>
 
-<!-- modals -->
 <div id="modalOverlay" class="modal-overlay">
   <div class="modal" id="modalContent"></div>
 </div>
@@ -543,17 +527,19 @@ button.subtle { background: transparent; }
 const DATA = ${dataPayload};
 const PDF_DATA_URI = "data:application/pdf;base64,${pdfB64}";
 const PDF_LIVE_URL = "https://israelsails.com/attachments/yamaot30/sign.pdf";
-const STORAGE_KEY = "yamaot30-state-v1";
+const STORAGE_KEY = "yamaot30-state-v2";
+const APP_ID = "yamaot30";
 const QUESTIONS_BY_ID = Object.fromEntries(DATA.questions.map(q => [q.id, q]));
-const ALL_IMAGE_NUMS = [...new Set(DATA.questions.flatMap(q => q.images || []))].sort((a,b) => a - b);
 
 // ================================ state ================================
 const DEFAULT_STATE = {
-  version: 1,
-  questions: {},   // id → { attempts, lastResult, nextReviewAt, intervalDays, markedAsGuess, notes }
-  explanations: {},// imageNum → { official, whatWeSee, breakdown, direction, conclusion, commonMistake, memoryTrick, verified }
-  customImages: {},// imageNum → "data:image/png;base64,..."
-  ui: { mode: 'smart', currentQId: null, currentImg: null, zoom: 100, cleanView: false }
+  version: 2,
+  questions: {},
+  explanations: {},
+  customImages: {},
+  pageAnchors: {},  // imageNum → { page: number, zoom?: number, fragment?: string }
+  sync: { url: '', autoSync: false, etag: null, lastSyncAt: null },
+  ui: { mode: 'smart', currentQId: null, currentImg: null, theme: 'light' }
 };
 
 function loadState() {
@@ -561,40 +547,58 @@ function loadState() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return seedState();
     const s = JSON.parse(raw);
-    // shallow merge with default to fill in any missing top-level keys after schema bumps
-    return Object.assign({}, DEFAULT_STATE, s,
-      { ui: Object.assign({}, DEFAULT_STATE.ui, s.ui || {}) });
+    return mergeState(s);
   } catch { return seedState(); }
+}
+function mergeState(s) {
+  return Object.assign({}, DEFAULT_STATE, s,
+    { ui: Object.assign({}, DEFAULT_STATE.ui, s.ui || {}),
+      sync: Object.assign({}, DEFAULT_STATE.sync, s.sync || {}),
+      pageAnchors: Object.assign({}, DEFAULT_STATE.pageAnchors, s.pageAnchors || {}) });
 }
 function seedState() {
   const s = JSON.parse(JSON.stringify(DEFAULT_STATE));
-  // Pre-seed the hand-authored explanations the build knows about.
   for (const [k, v] of Object.entries(DATA.seedExplanations)) {
     s.explanations[k] = JSON.parse(JSON.stringify(v));
   }
   return s;
 }
 let STATE = loadState();
+
+let saveDebounce = null;
 function saveState() {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(STATE)); }
   catch (e) { showToast('שגיאת שמירה: ' + e.message); }
+  // schedule auto-sync (debounced 2s) if configured
+  if (STATE.sync.autoSync && STATE.sync.url) {
+    if (saveDebounce) clearTimeout(saveDebounce);
+    saveDebounce = setTimeout(() => syncPush({ silent: true }), 2000);
+  }
 }
 
 function qState(id) {
   if (!STATE.questions[id]) {
     STATE.questions[id] = {
-      attempts: [],
-      lastResult: null,        // 'correct' | 'wrong' | 'guessed' | null
-      nextReviewAt: null,
-      intervalDays: 0,
-      markedAsGuess: false,
-      notes: ''
+      attempts: [], lastResult: null, nextReviewAt: null,
+      intervalDays: 0, markedAsGuess: false, notes: ''
     };
   }
   return STATE.questions[id];
 }
 
-// ================================ spaced repetition =================
+// ================================ theme ===============================
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', STATE.ui.theme || 'light');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content',
+    STATE.ui.theme === 'dark' ? '#0d1b2a' : '#f5f1e8');
+}
+function toggleTheme() {
+  STATE.ui.theme = STATE.ui.theme === 'dark' ? 'light' : 'dark';
+  applyTheme();
+  saveState();
+}
+
+// ================================ spaced repetition ==================
 const INTERVAL_LADDER = [1, 3, 7, 14, 30];
 function recordAnswer(id, selectedLetter, wasGuess) {
   const q = QUESTIONS_BY_ID[id];
@@ -604,7 +608,6 @@ function recordAnswer(id, selectedLetter, wasGuess) {
   st.attempts.push({ ts: Date.now(), selectedLetter, correct, wasGuess });
   st.lastResult = result;
   st.markedAsGuess = wasGuess && correct ? true : st.markedAsGuess;
-  // Schedule next review:
   const today = new Date(); today.setHours(0,0,0,0);
   let nextDays;
   if (result === 'correct') {
@@ -612,16 +615,14 @@ function recordAnswer(id, selectedLetter, wasGuess) {
     nextDays = INTERVAL_LADDER[Math.max(0, nextIdx)];
   } else if (result === 'wrong') {
     nextDays = 1;
-  } else { // guessed (whether right or wrong)
-    nextDays = INTERVAL_LADDER[0]; // cap at 1 day — still weak
+  } else {
+    nextDays = INTERVAL_LADDER[0];
   }
   st.intervalDays = nextDays;
-  const next = new Date(today.getTime() + nextDays * 86400000);
-  st.nextReviewAt = next.toISOString().slice(0, 10);
+  st.nextReviewAt = new Date(today.getTime() + nextDays * 86400000).toISOString().slice(0, 10);
   saveState();
   return result;
 }
-
 function isDue(id) {
   const st = STATE.questions[id];
   if (!st || !st.nextReviewAt) return false;
@@ -640,9 +641,7 @@ const MODES = [
   { id: 'exam',     label: 'מבחן 50',           pick: startExam },
   { id: 'bank',     label: 'מאגר שאלות',       pick: openBank }
 ];
-
 function pickSmart() {
-  // priority: due → wrong → guessed → unseen → least-recently-seen
   const due = DATA.questions.filter(q => isDue(q.id) && (STATE.questions[q.id]?.lastResult !== 'correct'));
   if (due.length) return due[Math.floor(Math.random() * due.length)].id;
   const wrong = DATA.questions.filter(q => STATE.questions[q.id]?.lastResult === 'wrong');
@@ -651,7 +650,6 @@ function pickSmart() {
   if (guessed.length) return guessed[Math.floor(Math.random() * guessed.length)].id;
   const unseen = DATA.questions.filter(q => isUnseen(q.id));
   if (unseen.length) return unseen[Math.floor(Math.random() * unseen.length)].id;
-  // fallback: oldest-attempt
   const sorted = [...DATA.questions].sort((a, b) => {
     const aa = STATE.questions[a.id]?.attempts || [];
     const bb = STATE.questions[b.id]?.attempts || [];
@@ -666,7 +664,7 @@ function pickMistakes() {
     const s = STATE.questions[q.id];
     return s && (s.lastResult === 'wrong' || s.markedAsGuess);
   });
-  if (!pool.length) { showToast('אין כרגע טעויות או ניחושים — כל הכבוד! עובר לסבב חכם.'); return pickSmart(); }
+  if (!pool.length) { showToast('אין כרגע טעויות או ניחושים — עובר לסבב חכם.'); return pickSmart(); }
   return pool[Math.floor(Math.random() * pool.length)].id;
 }
 function pickImages() {
@@ -674,7 +672,6 @@ function pickImages() {
   return pool[Math.floor(Math.random() * pool.length)].id;
 }
 
-// ================================ exam mode ==========================
 let examState = null;
 function startExam() {
   const pool = [...DATA.questions];
@@ -684,7 +681,7 @@ function startExam() {
   }
   examState = { ids: pool.slice(0, 50).map(q => q.id), idx: 0, scores: [] };
   showQuestion(examState.ids[0]);
-  return null; // suppress default flow
+  return null;
 }
 function examNext(correct) {
   if (!examState) return;
@@ -694,13 +691,9 @@ function examNext(correct) {
     const total = examState.scores.length;
     const right = examState.scores.filter(x => x).length;
     const pct = Math.round(100 * right / total);
-    openModal('סיום מבחן 50', \`
-      <p>ציון: <strong>\${right} / \${total}</strong> (\${pct}%)</p>
+    openModal('סיום מבחן 50', \`<p>ציון: <strong>\${right} / \${total}</strong> (\${pct}%)</p>
       <p>\${pct >= 85 ? 'מצוין — קרוב לרמת מבחן.' : (pct >= 70 ? 'טוב, אפשר ללטש.' : 'דרושה עוד עבודה.')}</p>
-      <div class="modal-buttons">
-        <button class="primary" data-close>סגירה</button>
-      </div>
-    \`);
+      <div class="modal-buttons"><button class="primary" data-close>סגירה</button></div>\`);
     examState = null;
     setMode('smart');
   } else {
@@ -708,7 +701,6 @@ function examNext(correct) {
   }
 }
 
-// ================================ question bank ======================
 function openBank() {
   openModal('מאגר שאלות', \`
     <input type="text" id="bankSearch" placeholder="חפש לפי מספר או טקסט..." style="margin-bottom:10px">
@@ -730,11 +722,7 @@ function openBank() {
       '</div>'
     ).join('') || '<div class="exp-empty">אין תוצאות.</div>';
     list.querySelectorAll('.search-item').forEach(el => {
-      el.onclick = () => {
-        const id = Number(el.dataset.id);
-        closeModal();
-        showQuestion(id);
-      };
+      el.onclick = () => { const id = Number(el.dataset.id); closeModal(); showQuestion(id); };
     });
   };
   document.getElementById('bankSearch').addEventListener('input', renderBank);
@@ -753,9 +741,9 @@ function showQuestion(id) {
   STATE.ui.currentQId = id;
   const q = QUESTIONS_BY_ID[id];
   document.getElementById('qNum').textContent = '#' + q.id;
+  document.getElementById('qNumHeader').textContent = '#' + q.id;
   document.getElementById('qCat').textContent = q.category;
   document.getElementById('qText').textContent = q.text;
-  // Answers
   const ans = document.getElementById('answers');
   ans.innerHTML = '';
   for (const a of q.answers) {
@@ -769,13 +757,8 @@ function showQuestion(id) {
   document.getElementById('feedback').innerHTML = '';
   document.getElementById('hintBox').innerHTML = '';
   document.getElementById('noteText').value = qState(id).notes || '';
-  // Images: pick first or current
   const imgs = q.images || [];
-  if (imgs.length) {
-    STATE.ui.currentImg = imgs.includes(STATE.ui.currentImg) ? STATE.ui.currentImg : imgs[0];
-  } else {
-    STATE.ui.currentImg = null;
-  }
+  STATE.ui.currentImg = (imgs.length && imgs.includes(STATE.ui.currentImg)) ? STATE.ui.currentImg : (imgs[0] || null);
   renderImagePanel(q);
   renderExplanationPanel();
   renderStats();
@@ -783,34 +766,28 @@ function showQuestion(id) {
 }
 
 function onAnswerClick(id, letter, el) {
-  // Already answered? ignore additional clicks
   if (document.querySelector('.answer.locked')) return;
   const wasGuess = !!document.body.dataset.pendingGuess;
   document.body.dataset.pendingGuess = '';
   const result = recordAnswer(id, letter, wasGuess);
-  // Lock all
   document.querySelectorAll('.answer').forEach(a => {
     a.classList.add('locked');
     if (a.dataset.letter === QUESTIONS_BY_ID[id].correct) a.classList.add('reveal');
     if (a === el && letter !== QUESTIONS_BY_ID[id].correct) a.classList.add('wrong');
     if (a === el && letter === QUESTIONS_BY_ID[id].correct) a.classList.add('correct');
   });
-  // Feedback
   const fb = document.getElementById('feedback');
   if (result === 'correct') fb.innerHTML = '<div class="feedback good">✓ נכון!</div>';
   else if (result === 'wrong') fb.innerHTML = '<div class="feedback bad">✗ לא נכון. התשובה: ' + QUESTIONS_BY_ID[id].correct + '</div>';
   else fb.innerHTML = '<div class="feedback guess">' + (letter === QUESTIONS_BY_ID[id].correct ? '✓ נכון, אבל סומן כניחוש — ייסקר שוב.' : '✗ ניחוש לא הצליח.') + '</div>';
   renderStats();
-  if (examState) {
-    setTimeout(() => examNext(letter === QUESTIONS_BY_ID[id].correct), 900);
-  }
+  if (examState) setTimeout(() => examNext(letter === QUESTIONS_BY_ID[id].correct), 900);
 }
 
 function showHint() {
   const id = STATE.ui.currentQId;
   if (!id) return;
   const q = QUESTIONS_BY_ID[id];
-  // Hint without giving the answer: surface category, image hint, common decoy words.
   const lines = [];
   lines.push('קטגוריה: ' + q.category + '.');
   if (q.images && q.images.length) lines.push('יש להסתכל על תמונה ' + q.images.join(', ') + ' בפאנל התמונה.');
@@ -820,7 +797,6 @@ function showHint() {
   document.getElementById('hintBox').innerHTML = '<div class="hint-box"><h3>רמז</h3>' +
     lines.map(l => '<div>' + escapeHtml(l) + '</div>').join('') + '</div>';
 }
-
 function showLightsTrick() {
   document.getElementById('hintBox').innerHTML =
     '<div class="hint-box"><h3>שיטת אורות (יסוד)</h3>' +
@@ -836,15 +812,20 @@ function showLightsTrick() {
 }
 
 // ================================ image panel ========================
+let pdfFrame = null; // <embed> or <iframe> currently shown for the PDF
+
 function renderImagePanel(q) {
   const tabs = document.getElementById('imageTabs');
   const frame = document.getElementById('imageFrame');
   const zoom = document.getElementById('imageZoom');
+  const label = document.getElementById('currentImgLabel');
   tabs.innerHTML = '';
   frame.innerHTML = '';
+  pdfFrame = null;
   if (!q.images || !q.images.length) {
     zoom.hidden = true;
-    frame.innerHTML = '<div class="image-empty">לשאלה זו אין תמונה משויכת.<br><br>אם בכל זאת מופיעה הפניה לתמונה, השתמש בכפתור "תיקון נתונים" להוספה ידנית.</div>';
+    label.textContent = '—';
+    frame.innerHTML = '<div class="image-empty">לשאלה זו אין תמונה משויכת.</div>';
     return;
   }
   zoom.hidden = false;
@@ -857,40 +838,89 @@ function renderImagePanel(q) {
     tabs.appendChild(b);
   }
   const num = STATE.ui.currentImg || q.images[0];
-  // Custom upload takes precedence
+  label.textContent = 'תמונה ' + num;
+  const clearBtn = document.getElementById('clearCropBtn');
+  const anchorBtn = document.getElementById('anchorPageBtn');
+  clearBtn.hidden = !STATE.customImages[num];
+  // Anchor button only matters when we're falling back to the PDF view
+  // (no built-in crop AND no custom upload).
+  const hasBuiltin = !!(DATA.imageCrops && DATA.imageCrops[num]);
+  anchorBtn.hidden = hasBuiltin || !!STATE.customImages[num];
+  // Image source priority:
+  //   1. User-uploaded custom crop (their own override)
+  //   2. Built-in cropped PNG (extracted from sign.pdf at build time)
+  //   3. Fallback: embedded PDF viewer (only if nothing else available)
   const custom = STATE.customImages[num];
-  if (custom) {
+  const builtin = DATA.imageCrops && DATA.imageCrops[num];
+  if (custom || builtin) {
     const img = document.createElement('img');
-    img.src = custom;
-    img.style.transform = 'scale(' + (STATE.ui.zoom / 100) + ')';
-    img.style.transformOrigin = 'center center';
-    if (STATE.ui.cleanView) frame.classList.add('image-clean'); else frame.classList.remove('image-clean');
+    img.src = custom || builtin;
+    img.alt = 'תמונה ' + num;
+    img.style.cssText = 'max-width:100%;max-height:100%;display:block;margin:auto;background:#fff;padding:8px;border-radius:6px;';
     frame.appendChild(img);
-  } else {
-    // Fallback: PDF-embed scoped to first page (we don't know which page each
-    // numbered sign is on; the user can scroll to find it, OR upload a crop).
-    frame.classList.remove('image-clean');
-    const wrap = document.createElement('div');
-    wrap.style.cssText = 'background:#fff;color:#333;padding:18px;text-align:center;font-size:14px;width:100%;';
-    wrap.innerHTML = '<div style="margin-bottom:10px;font-weight:600;">תמונה ' + num + ' — אין גזירה מוטמעת</div>' +
-      '<div style="margin-bottom:14px;color:#555;">פתח את גיליון הסימונים הרשמי כדי לאתר את התמונה, או העלה גזירה מקומית.</div>' +
-      '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">' +
-      '<a href="' + PDF_DATA_URI + '" target="_blank" style="background:#0d1b2a;color:#fff;text-decoration:none;padding:8px 14px;border-radius:6px;">פתיחת PDF הסימונים</a>' +
-      '</div>';
-    frame.appendChild(wrap);
+    return;
   }
-  document.getElementById('zoomLabel').textContent = STATE.ui.zoom + '%';
+  // 3. Last resort: PDF viewer. Use per-image anchor if user has set one.
+  const anchor = STATE.pageAnchors[num];
+  let frag = '#zoom=auto,top';
+  if (anchor && anchor.fragment) frag = '#' + anchor.fragment;
+  else if (anchor && anchor.page) frag = '#page=' + anchor.page + '&zoom=auto';
+  const embed = document.createElement('embed');
+  embed.type = 'application/pdf';
+  embed.src = PDF_DATA_URI + frag;
+  embed.style.cssText = 'width:100%;height:100%;min-height:360px;background:#fff;border:0;';
+  frame.appendChild(embed);
+  pdfFrame = embed;
 }
 
-document.addEventListener('click', (e) => {
-  const z = e.target.closest('button[data-zoom]');
-  if (z) {
-    const delta = Number(z.dataset.zoom);
-    STATE.ui.zoom = Math.max(50, Math.min(300, STATE.ui.zoom + delta * 25));
-    saveState();
-    if (STATE.ui.currentQId) renderImagePanel(QUESTIONS_BY_ID[STATE.ui.currentQId]);
-  }
-});
+function saveAnchorForCurrentImage() {
+  const num = STATE.ui.currentImg;
+  if (!num) { showToast('בחר תמונה קודם.'); return; }
+  // Browsers don't expose the current PDF viewer page programmatically
+  // (security). Ask the user for the page number; default 1.
+  const cur = STATE.pageAnchors[num] || {};
+  const ans = prompt('מספר העמוד ב-PDF שבו מופיעה תמונה ' + num + ':', cur.page || '1');
+  if (ans == null) return;
+  const page = Math.max(1, parseInt(String(ans), 10) || 1);
+  STATE.pageAnchors[num] = { page, fragment: 'page=' + page + '&zoom=auto' };
+  saveState();
+  renderImagePanel(QUESTIONS_BY_ID[STATE.ui.currentQId]);
+  showToast('עוגן נשמר: תמונה ' + num + ' → עמוד ' + page);
+}
+
+function uploadImageCrop() {
+  const num = STATE.ui.currentImg;
+  if (!num) { showToast('בחר תמונה קודם.'); return; }
+  openModal('העלאת גזירה לתמונה ' + num, \`
+    <p style="font-size:13px;color:var(--muted);">בחר קובץ PNG/JPG מהמכשיר. נשמר מקומית בלבד.</p>
+    <input type="file" id="cropFile" accept="image/png,image/jpeg,image/webp">
+    <div class="modal-buttons">
+      <button data-close>ביטול</button>
+      <button class="primary" id="saveCropBtn">שמור</button>
+    </div>
+  \`);
+  document.getElementById('saveCropBtn').onclick = () => {
+    const f = document.getElementById('cropFile').files[0];
+    if (!f) { showToast('לא נבחר קובץ.'); return; }
+    const r = new FileReader();
+    r.onload = () => {
+      STATE.customImages[num] = r.result;
+      saveState();
+      renderImagePanel(QUESTIONS_BY_ID[STATE.ui.currentQId]);
+      closeModal();
+      showToast('הגזירה נשמרה.');
+    };
+    r.readAsDataURL(f);
+  };
+}
+function clearImageCrop() {
+  const num = STATE.ui.currentImg;
+  if (!num) return;
+  if (!confirm('למחוק את הגזירה לתמונה ' + num + '?')) return;
+  delete STATE.customImages[num];
+  saveState();
+  renderImagePanel(QUESTIONS_BY_ID[STATE.ui.currentQId]);
+}
 
 // ================================ explanation ========================
 function renderExplanationPanel() {
@@ -903,8 +933,7 @@ function renderExplanationPanel() {
   const ex = STATE.explanations[num];
   if (!ex) {
     target.innerHTML = '<div class="exp-empty">אין הסבר עדיין לתמונה ' + num +
-      '.<br><br><span class="unverified-tag">דורש בדיקה ידנית</span>' +
-      '<br><br>הוסף הסבר מהכפתור למטה.</div>';
+      '.<br><br><span class="unverified-tag">דורש בדיקה ידנית</span><br><br>הוסף הסבר מהכפתור למטה.</div>';
     return;
   }
   const v = ex.verified ? '' : '<span class="unverified-tag">דורש בדיקה ידנית</span>';
@@ -913,8 +942,7 @@ function renderExplanationPanel() {
   if (ex.whatWeSee) h += '<div class="exp-section"><h3>2. מה רואים</h3><p>' + escapeHtml(ex.whatWeSee) + '</p></div>';
   if (Array.isArray(ex.breakdown) && ex.breakdown.length) {
     h += '<div class="exp-section"><h3>3. פירוט לפי אורות</h3><ul>' +
-      ex.breakdown.map(b => '<li>' + escapeHtml(b) + '</li>').join('') +
-      '</ul></div>';
+      ex.breakdown.map(b => '<li>' + escapeHtml(b) + '</li>').join('') + '</ul></div>';
   }
   if (ex.direction) h += '<div class="exp-section"><h3>4. כיוון יחסי</h3><p>' + escapeHtml(ex.direction) + '</p></div>';
   if (ex.conclusion) h += '<div class="exp-section"><h3>5. סיכום פשוט</h3><p>' + escapeHtml(ex.conclusion) + '</p></div>';
@@ -922,35 +950,20 @@ function renderExplanationPanel() {
   if (ex.memoryTrick) h += '<div class="exp-section"><h3>7. שיטת זיכרון</h3><p>' + escapeHtml(ex.memoryTrick) + '</p></div>';
   target.innerHTML = h;
 }
-
 function openExplanationEditor() {
   const num = STATE.ui.currentImg;
   if (!num) { showToast('בחר תמונה קודם.'); return; }
   const ex = STATE.explanations[num] || { verified: false };
   openModal('עריכת הסבר תמונה ' + num, \`
-    <label>מסקנה רשמית
-      <textarea id="ex-official">\${escapeHtml(ex.official || '')}</textarea>
-    </label>
-    <label>מה רואים
-      <textarea id="ex-whatWeSee">\${escapeHtml(ex.whatWeSee || '')}</textarea>
-    </label>
-    <label>פירוט לפי אורות (כל שורה = פריט נפרד)
-      <textarea id="ex-breakdown">\${escapeHtml((ex.breakdown || []).join('\\n'))}</textarea>
-    </label>
-    <label>כיוון יחסי
-      <input type="text" id="ex-direction" value="\${escapeHtml(ex.direction || '')}">
-    </label>
-    <label>סיכום פשוט
-      <textarea id="ex-conclusion">\${escapeHtml(ex.conclusion || '')}</textarea>
-    </label>
-    <label>טעות נפוצה
-      <textarea id="ex-commonMistake">\${escapeHtml(ex.commonMistake || '')}</textarea>
-    </label>
-    <label>שיטת זיכרון
-      <textarea id="ex-memoryTrick">\${escapeHtml(ex.memoryTrick || '')}</textarea>
-    </label>
-    <label style="display:flex;gap:8px;align-items:center;margin-top:10px;">
-      <input type="checkbox" id="ex-verified" \${ex.verified ? 'checked' : ''}> מאומת (לא "דורש בדיקה ידנית")
+    <label>מסקנה רשמית<textarea id="ex-official">\${escapeHtml(ex.official || '')}</textarea></label>
+    <label>מה רואים<textarea id="ex-whatWeSee">\${escapeHtml(ex.whatWeSee || '')}</textarea></label>
+    <label>פירוט לפי אורות (כל שורה = פריט נפרד)<textarea id="ex-breakdown">\${escapeHtml((ex.breakdown || []).join('\\n'))}</textarea></label>
+    <label>כיוון יחסי<input type="text" id="ex-direction" value="\${escapeHtml(ex.direction || '')}"></label>
+    <label>סיכום פשוט<textarea id="ex-conclusion">\${escapeHtml(ex.conclusion || '')}</textarea></label>
+    <label>טעות נפוצה<textarea id="ex-commonMistake">\${escapeHtml(ex.commonMistake || '')}</textarea></label>
+    <label>שיטת זיכרון<textarea id="ex-memoryTrick">\${escapeHtml(ex.memoryTrick || '')}</textarea></label>
+    <label style="display:flex;gap:8px;align-items:center;">
+      <input type="checkbox" id="ex-verified" \${ex.verified ? 'checked' : ''}> מאומת
     </label>
     <div class="modal-buttons">
       <button data-close>ביטול</button>
@@ -975,40 +988,145 @@ function openExplanationEditor() {
   };
 }
 
-// ================================ image upload =======================
-function uploadImageCrop() {
-  const num = STATE.ui.currentImg;
-  if (!num) { showToast('בחר תמונה קודם.'); return; }
-  openModal('העלאת גזירה לתמונה ' + num, \`
-    <p style="font-size:13px;color:var(--muted);">בחר קובץ PNG/JPG מהמכשיר. הגזירה נשמרת מקומית בלבד (localStorage).</p>
-    <input type="file" id="cropFile" accept="image/png,image/jpeg,image/webp">
+// ================================ sync ===============================
+function setSyncStatus(state, text) {
+  const el = document.getElementById('syncStatus');
+  el.className = 'sync-status' + (state ? ' ' + state : '');
+  el.querySelector('span').textContent = text || '';
+}
+function openSyncSettings() {
+  const cur = STATE.sync || {};
+  openModal('הגדרות סנכרון', \`
+    <p style="font-size:13px;color:var(--muted);">
+      כתובת ה-dashboard המקומי. לדוגמה <code>http://127.0.0.1:7777</code> במחשב,
+      <code>http://&lt;tailscale-ip&gt;:7787</code> בטלפון.
+    </p>
+    <label>כתובת השרת<input type="url" id="syncUrl" value="\${escapeHtml(cur.url || '')}" placeholder="http://127.0.0.1:7777"></label>
+    <label style="display:flex;gap:8px;align-items:center;">
+      <input type="checkbox" id="syncAuto" \${cur.autoSync ? 'checked' : ''}> סנכרון אוטומטי בכל שמירה
+    </label>
     <div class="modal-buttons">
       <button data-close>ביטול</button>
-      <button class="primary" id="saveCropBtn">שמור</button>
-      \${STATE.customImages[num] ? '<button class="danger" id="delCropBtn">מחק קיים</button>' : ''}
+      <button id="testSyncBtn">בדוק חיבור</button>
+      <button class="primary" id="saveSyncBtn">שמור</button>
+    </div>
+    <div id="syncTestOut" class="help-text" style="margin-top:10px;"></div>
+  \`);
+  document.getElementById('testSyncBtn').onclick = async () => {
+    const url = document.getElementById('syncUrl').value.trim().replace(/\\/+\$/, '');
+    const out = document.getElementById('syncTestOut');
+    if (!url) { out.textContent = 'הכנס כתובת.'; return; }
+    out.textContent = 'בודק...';
+    try {
+      const r = await fetch(url + '/api/health');
+      const j = await r.json();
+      out.textContent = j.ok ? '✓ הצלחה — pid ' + (j.pid || '?') : 'תגובה: ' + JSON.stringify(j);
+    } catch (e) { out.textContent = '✗ שגיאה: ' + e.message; }
+  };
+  document.getElementById('saveSyncBtn').onclick = () => {
+    STATE.sync.url = document.getElementById('syncUrl').value.trim().replace(/\\/+\$/, '');
+    STATE.sync.autoSync = document.getElementById('syncAuto').checked;
+    saveState();
+    closeModal();
+    refreshSyncBadge();
+    showToast('הגדרות נשמרו.');
+  };
+}
+async function syncPush(opts) {
+  opts = opts || {};
+  if (!STATE.sync.url) { if (!opts.silent) showToast('הגדר כתובת שרת קודם.'); return; }
+  setSyncStatus('busy', 'מעלה...');
+  try {
+    const body = { state: stateForSync(), expectedEtag: STATE.sync.etag };
+    let r = await fetch(STATE.sync.url + '/api/study/state/' + APP_ID, {
+      method: 'PUT', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (r.status === 409) {
+      // server has newer etag — retry without expectedEtag (force overwrite)
+      // only if user confirms (skip confirm in autoSync mode → fail loud)
+      if (opts.silent) {
+        setSyncStatus('error', 'התנגשות — אישור ידני נדרש');
+        return;
+      }
+      if (!confirm('בשרת יש גרסה חדשה יותר. דרוס בכל זאת?')) {
+        setSyncStatus('error', 'בוטל');
+        return;
+      }
+      r = await fetch(STATE.sync.url + '/api/study/state/' + APP_ID, {
+        method: 'PUT', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ state: stateForSync() })
+      });
+    }
+    const j = await r.json();
+    if (!r.ok || !j.ok) throw new Error(j.error || ('http ' + r.status));
+    STATE.sync.etag = j.etag;
+    STATE.sync.lastSyncAt = j.updatedAt;
+    saveState();
+    setSyncStatus('ok', 'מסונכרן ' + new Date(j.updatedAt).toLocaleTimeString());
+    if (!opts.silent) showToast('סונכרן לשרת.');
+  } catch (e) {
+    setSyncStatus('error', 'שגיאה');
+    if (!opts.silent) showToast('סנכרון נכשל: ' + e.message);
+  }
+}
+async function syncPull(opts) {
+  opts = opts || {};
+  if (!STATE.sync.url) { showToast('הגדר כתובת שרת קודם.'); return; }
+  setSyncStatus('busy', 'מוריד...');
+  try {
+    const r = await fetch(STATE.sync.url + '/api/study/state/' + APP_ID);
+    const j = await r.json();
+    if (!r.ok || !j.ok) throw new Error(j.error || ('http ' + r.status));
+    if (!j.state) {
+      setSyncStatus('ok', 'אין נתונים בשרת');
+      if (!opts.silent) showToast('אין נתונים שמורים בשרת.');
+      return;
+    }
+    if (!opts.silent && !confirm('זה ידרוס את ההתקדמות המקומית. להמשיך?')) {
+      setSyncStatus('ok', 'בוטל');
+      return;
+    }
+    STATE = mergeState(j.state);
+    STATE.sync.etag = j.etag;
+    STATE.sync.lastSyncAt = j.updatedAt;
+    saveState();
+    applyTheme();
+    renderModeNav(); renderStats();
+    if (STATE.ui.currentQId) showQuestion(STATE.ui.currentQId);
+    setSyncStatus('ok', 'הורד ' + new Date(j.updatedAt).toLocaleTimeString());
+    if (!opts.silent) showToast('נטען מהשרת.');
+  } catch (e) {
+    setSyncStatus('error', 'שגיאה');
+    if (!opts.silent) showToast('שליפה נכשלה: ' + e.message);
+  }
+}
+function stateForSync() {
+  // exclude the sync block itself (different per device)
+  const { sync, ...rest } = STATE;
+  return rest;
+}
+function refreshSyncBadge() {
+  if (!STATE.sync.url) { setSyncStatus('', 'לא הוגדר'); return; }
+  if (STATE.sync.lastSyncAt) {
+    const ago = Math.round((Date.now() - new Date(STATE.sync.lastSyncAt).getTime()) / 60000);
+    setSyncStatus('ok', 'סונכרן לפני ' + (ago < 1 ? 'רגע' : (ago + ' דקות')));
+  } else {
+    setSyncStatus('', 'מוכן (לא סונכרן)');
+  }
+}
+function syncNowMenu() {
+  if (!STATE.sync.url) { openSyncSettings(); return; }
+  openModal('סנכרון', \`
+    <p>בחר כיוון סנכרון:</p>
+    <div class="modal-buttons" style="justify-content:center;">
+      <button class="primary" id="pushBtn">העלה מקומי → לשרת</button>
+      <button class="primary" id="pullBtn">הורד שרת → מקומי</button>
+      <button data-close>ביטול</button>
     </div>
   \`);
-  document.getElementById('saveCropBtn').onclick = () => {
-    const f = document.getElementById('cropFile').files[0];
-    if (!f) { showToast('לא נבחר קובץ.'); return; }
-    const r = new FileReader();
-    r.onload = () => {
-      STATE.customImages[num] = r.result;
-      saveState();
-      renderImagePanel(QUESTIONS_BY_ID[STATE.ui.currentQId]);
-      closeModal();
-      showToast('הגזירה נשמרה.');
-    };
-    r.readAsDataURL(f);
-  };
-  const del = document.getElementById('delCropBtn');
-  if (del) del.onclick = () => {
-    delete STATE.customImages[num];
-    saveState();
-    renderImagePanel(QUESTIONS_BY_ID[STATE.ui.currentQId]);
-    closeModal();
-    showToast('נמחק.');
-  };
+  document.getElementById('pushBtn').onclick = () => { closeModal(); syncPush(); };
+  document.getElementById('pullBtn').onclick = () => { closeModal(); syncPull(); };
 }
 
 // ================================ stats ==============================
@@ -1048,15 +1166,12 @@ function setMode(id) {
   const next = m.pick();
   if (next != null) showQuestion(next);
 }
-
-// ================================ next-question ======================
 function nextQuestion() {
   const m = MODES.find(x => x.id === STATE.ui.mode) || MODES[0];
   const next = m.pick();
   if (next != null) showQuestion(next);
 }
 
-// ================================ modals =============================
 function openModal(title, html) {
   const o = document.getElementById('modalOverlay');
   document.getElementById('modalContent').innerHTML = '<h2>' + title + '</h2>' + html;
@@ -1066,13 +1181,11 @@ function openModal(title, html) {
 }
 function closeModal() { document.getElementById('modalOverlay').classList.remove('show'); }
 function showToast(msg) {
-  const t = document.createElement('div');
-  t.className = 'toast'; t.textContent = msg;
+  const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
   document.body.appendChild(t);
   setTimeout(() => t.remove(), 2400);
 }
 
-// ================================ backup =============================
 function exportJSON() {
   const blob = new Blob([JSON.stringify(STATE, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
@@ -1080,7 +1193,7 @@ function exportJSON() {
   a.download = 'yamaot30-progress-' + new Date().toISOString().slice(0, 10) + '.json';
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
-  showToast('יצוא הושלם — בדוק תיקיית הורדות.');
+  showToast('יצוא הושלם.');
 }
 function importJSON() {
   const inp = document.createElement('input');
@@ -1093,32 +1206,27 @@ function importJSON() {
         const obj = JSON.parse(r.result);
         if (!obj || obj.version == null) throw new Error('פורמט לא מזוהה.');
         if (!confirm('פעולה זו תחליף את ההתקדמות הנוכחית. להמשיך?')) return;
-        STATE = Object.assign({}, DEFAULT_STATE, obj,
-          { ui: Object.assign({}, DEFAULT_STATE.ui, obj.ui || {}) });
-        saveState();
-        renderStats();
-        renderModeNav();
-        if (STATE.ui.currentQId) showQuestion(STATE.ui.currentQId);
-        else nextQuestion();
+        STATE = mergeState(obj);
+        saveState(); applyTheme();
+        renderStats(); renderModeNav();
+        if (STATE.ui.currentQId) showQuestion(STATE.ui.currentQId); else nextQuestion();
         showToast('ייבוא הושלם.');
-      } catch (e) {
-        showToast('שגיאה: ' + e.message);
-      }
+      } catch (e) { showToast('שגיאה: ' + e.message); }
     };
     r.readAsText(f);
   };
   inp.click();
 }
 function resetProgress() {
-  if (!confirm('למחוק את כל ההתקדמות והערות? פעולה זו אינה הפיכה (אלא אם יש לך גיבוי).')) return;
+  if (!confirm('למחוק את כל ההתקדמות והערות? פעולה זו אינה הפיכה.')) return;
   STATE = seedState();
-  saveState();
-  renderStats(); renderModeNav();
+  saveState(); renderStats(); renderModeNav();
   nextQuestion();
   showToast('האיפוס בוצע.');
 }
 
 // ================================ wiring =============================
+document.getElementById('themeToggle').onclick = toggleTheme;
 document.getElementById('hintBtn').onclick = showHint;
 document.getElementById('lightsBtn').onclick = showLightsTrick;
 document.getElementById('guessBtn').onclick = () => {
@@ -1132,38 +1240,34 @@ document.getElementById('importBtn').onclick = importJSON;
 document.getElementById('resetBtn').onclick = resetProgress;
 document.getElementById('aboutBtn').onclick = () => openModal('אודות', \`
   <p><strong>ימאות 30 — אפליקציית לימוד</strong></p>
-  <p>קובץ יחיד, פועל מקומית מ-<code>file://</code>, שומר ב-localStorage.</p>
+  <p>קובץ HTML יחיד. שמור מקומית. מסונכרן בין מכשירים דרך dashboard מקומי / Tailscale.</p>
   <ul>
-    <li>362 שאלות מתוך מאגר israelsails.com</li>
+    <li>362 שאלות מ-israelsails.com (yamaot30)</li>
     <li>תשובות נכונות מאומתות מהמקור</li>
-    <li>הסברים מפורטים מובנים לתמונות 22, 25, 66</li>
-    <li>סבב חכם, חזרה מרווחת, מבחן 50, מאגר חיפוש</li>
-    <li>גיבוי/שחזור JSON להעברה בין מכשירים</li>
+    <li>הסברים מובנים לתמונות 22 / 25 / 66</li>
+    <li>סבב חכם · חזרה מרווחת · מבחן 50 · מאגר חיפוש</li>
+    <li>סנכרון אוטומטי דרך OpenClaw dashboard (אופציונלי)</li>
   </ul>
-  <p style="font-size:12px;color:var(--muted);">תיוג קטגוריות בוצע אוטומטית לפי מילות מפתח. ערוך ידנית בעת הצורך.</p>
   <div class="modal-buttons"><button class="primary" data-close>סגירה</button></div>
 \`);
-document.getElementById('cleanBtn').onclick = () => {
-  STATE.ui.cleanView = !STATE.ui.cleanView;
-  saveState();
-  if (STATE.ui.currentQId) renderImagePanel(QUESTIONS_BY_ID[STATE.ui.currentQId]);
-};
 document.getElementById('uploadCropBtn').onclick = uploadImageCrop;
+document.getElementById('clearCropBtn').onclick = clearImageCrop;
+document.getElementById('anchorPageBtn').onclick = saveAnchorForCurrentImage;
 document.getElementById('editExplanationBtn').onclick = openExplanationEditor;
+document.getElementById('syncSettingsBtn').onclick = openSyncSettings;
+document.getElementById('syncNowBtn').onclick = syncNowMenu;
 document.getElementById('noteText').addEventListener('input', (e) => {
   if (!STATE.ui.currentQId) return;
   qState(STATE.ui.currentQId).notes = e.target.value;
   saveState();
 });
 
-// Init
+applyTheme();
 renderModeNav();
 renderStats();
-if (STATE.ui.currentQId && QUESTIONS_BY_ID[STATE.ui.currentQId]) {
-  showQuestion(STATE.ui.currentQId);
-} else {
-  nextQuestion();
-}
+refreshSyncBadge();
+if (STATE.ui.currentQId && QUESTIONS_BY_ID[STATE.ui.currentQId]) showQuestion(STATE.ui.currentQId);
+else nextQuestion();
 </script>
 </body>
 </html>
@@ -1173,7 +1277,6 @@ const outPath = path.join(HERE, 'yamaot30-study.html');
 fs.writeFileSync(outPath, html, 'utf8');
 const stat = fs.statSync(outPath);
 console.log('Wrote', outPath, '(', (stat.size / 1024).toFixed(1), 'KB)');
-console.log('Questions:', questions.length);
-console.log('Answer keys:', questions.filter(q => q.correct).length);
-console.log('Image refs:', new Set(questions.flatMap(q => q.images)).size);
+console.log('Questions:', questions.length, '| Answer keys:', questions.filter(q => q.correct).length);
+console.log('Image refs:', new Set(questions.flatMap(q => q.images || [])).size);
 console.log('Seed explanations:', Object.keys(seedExplanations).length, '(images', Object.keys(seedExplanations).join(', ') + ')');

@@ -1,0 +1,17 @@
+{
+  "name": "yamaot30",
+  "version": "1.0.0",
+  "description": "קובץ HTML יחיד, פועל מקומית, לא דורש שרת או אינטרנט אחרי הטעינה.",
+  "main": "build-app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mupdf": "^1.27.0",
+    "pdfjs-dist": "^4.8.69"
+  }
+}
