@@ -18,10 +18,15 @@ const questions = JSON.parse(fs.readFileSync(path.join(SRC_DIR, 'questions.json'
 const pdfB64 = fs.readFileSync(path.join(SRC_DIR, 'pdf-base64.txt'), 'utf8').trim();
 const imageCrops = JSON.parse(fs.readFileSync(path.join(HERE, 'image-crops.json'), 'utf8'));
 
-// Hand-authored detailed explanations for the user-specified images.
-// `verified: true` only on the three the user explicitly described.
-// Everything else stays unverified ("דורש בדיקה ידנית") until reviewed.
-const seedExplanations = {
+// Hand-authored detailed explanations. The full corpus lives in
+// explanations.js (loaded below); this inline block stays as a fallback
+// for the original 3 images so the build doesn't break if explanations.js
+// is missing.
+const explanationsFromFile = (() => {
+  try { return require('./explanations.js'); }
+  catch { return null; }
+})();
+const seedExplanations = explanationsFromFile || {
   22: {
     verified: true,
     official: 'כלי שייט בעל הספק מעל 50 מטרים, מוגבל בכושרו לתמרן, פונה שמאלה.',
