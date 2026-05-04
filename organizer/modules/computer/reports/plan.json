@@ -1,0 +1,302 @@
+﻿{
+    "module":  "computer",
+    "version":  1,
+    "generatedAt":  "2026-05-03T13:40:03.1184701Z",
+    "scanGeneratedAt":  "2026-05-03T13:39:47.3663899Z",
+    "buckets":  {
+                    "safeTrash":  [
+
+                                  ],
+                    "archive":  [
+
+                                ],
+                    "manualReview":  [
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\New folder (2)\\DJI_0210.MP4",
+                                             "sizeBytes":  3758764881,
+                                             "sizeHuman":  "3.50 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-27T12:52:52.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\New folder (2)\\DJI_0209.MP4",
+                                             "sizeBytes":  3758641061,
+                                             "sizeHuman":  "3.50 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-27T12:47:30.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0212.MP4",
+                                             "sizeBytes":  3174882085,
+                                             "sizeHuman":  "2.96 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-11-24T09:47:16.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video.mp4",
+                                             "sizeBytes":  2784869176,
+                                             "sizeHuman":  "2.59 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-12-03T18:02:32.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Wuthering Heights (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Wuthering.Heights.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  2694465366,
+                                             "sizeHuman":  "2.51 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-03-26T17:25:40.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0217.MP4",
+                                             "sizeBytes":  2490473601,
+                                             "sizeHuman":  "2.32 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-11-24T10:18:02.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0213.MP4",
+                                             "sizeBytes":  2261895685,
+                                             "sizeHuman":  "2.11 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-11-24T09:50:40.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Send Help (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Send.Help.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  2246754613,
+                                             "sizeHuman":  "2.09 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-03-24T22:28:50.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Ready Or Not 2 Here I Come (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Ready.Or.Not.2.Here.I.Come.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  2135098405,
+                                             "sizeHuman":  "1.99 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-04-13T19:39:48.1676759Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\GOAT (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\GOAT.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  2011962031,
+                                             "sizeHuman":  "1.87 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-03-24T22:28:10.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\New folder (2)\\DJI_0211.MP4",
+                                             "sizeBytes":  2004464433,
+                                             "sizeHuman":  "1.87 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-27T12:55:44.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Mercy (2026) [HYBRID] [1080p] [BluRay] [5.1] [YTS.BZ]\\Mercy.2026.HYBRID.1080p.BluRay.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  1969817006,
+                                             "sizeHuman":  "1.83 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-04-11T19:44:00.6065229Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Teenage Mutant Ninja Turtles Mutant Mayhem (2023) [1080p] [BluRay] [5.1] [YTS.MX]\\Teenage.Mutant.Ninja.Turtles.Mutant.Mayhem.2023.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+                                             "sizeBytes":  1965905737,
+                                             "sizeHuman":  "1.83 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-03-11T13:48:28.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Ready.or.Not.2019.1080p.BluRay.H264.AAC-RARBG\\Ready.or.Not.2019.1080p.BluRay.H264.AAC-RARBG.mp4",
+                                             "sizeBytes":  1952862096,
+                                             "sizeHuman":  "1.82 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-04-13T19:35:22.5169528Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\In The Blink Of An Eye (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\In.The.Blink.Of.An.Eye.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  1864018944,
+                                             "sizeHuman":  "1.74 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-03-06T14:40:02.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Wardriver (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Wardriver.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  1859693408,
+                                             "sizeHuman":  "1.73 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-04-03T16:42:24.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Tinsel Town (2025) [1080p] [WEBRip] [5.1] [YTS.LT]\\Tinsel.Town.2025.1080p.WEBRip.x264.AAC5.1-[YTS.LT].mp4",
+                                             "sizeBytes":  1850859926,
+                                             "sizeHuman":  "1.72 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-12-24T19:09:46.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0201.MP4",
+                                             "sizeBytes":  1835573741,
+                                             "sizeHuman":  "1.71 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-25T05:22:36.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0183.MP4",
+                                             "sizeBytes":  1815120181,
+                                             "sizeHuman":  "1.69 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-24T05:21:48.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0182.MP4",
+                                             "sizeBytes":  1802478289,
+                                             "sizeHuman":  "1.68 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-24T05:18:08.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Hoppers (2026) [1080p] [WEBRip] [YTS.BZ]\\Hoppers.2026.1080p.WEBRip.x264.AAC-[YTS.BZ].mp4",
+                                             "sizeBytes":  1721318557,
+                                             "sizeHuman":  "1.60 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-03-26T21:13:08.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0215.MP4",
+                                             "sizeBytes":  1521204553,
+                                             "sizeHuman":  "1.42 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-11-24T10:12:50.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0219.MP4",
+                                             "sizeBytes":  1281920389,
+                                             "sizeHuman":  "1.19 GB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-01-16T04:16:44.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Spider-Man Into The Spider-Verse (2018) [BluRay] [720p] [YTS.AM]\\Spider-Man.Into.The.Spider-Verse.2018.720p.BluRay.x264-[YTS.AM].mp4",
+                                             "sizeBytes":  1052201236,
+                                             "sizeHuman":  "1,003.46 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-03-11T13:41:32.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0206.MP4",
+                                             "sizeBytes":  843015289,
+                                             "sizeHuman":  "803.96 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-25T05:43:22.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0184.MP4",
+                                             "sizeBytes":  833225269,
+                                             "sizeHuman":  "794.63 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-24T05:40:36.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0214.MP4",
+                                             "sizeBytes":  722844289,
+                                             "sizeHuman":  "689.36 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-11-24T10:10:38.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video-1.mp4",
+                                             "sizeBytes":  699702327,
+                                             "sizeHuman":  "667.29 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-12-03T18:24:06.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video-1-reframe.mp4",
+                                             "sizeBytes":  681366741,
+                                             "sizeHuman":  "649.80 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-12-03T18:33:38.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video-highlight.mp4",
+                                             "sizeBytes":  606999965,
+                                             "sizeHuman":  "578.88 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-12-03T18:08:22.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\The Muppet Show (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\The.Muppet.Show.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                                             "sizeBytes":  597856336,
+                                             "sizeHuman":  "570.16 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2026-02-17T16:22:18.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0187.MP4",
+                                             "sizeBytes":  406866513,
+                                             "sizeHuman":  "388.02 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-24T05:43:12.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0202.MP4",
+                                             "sizeBytes":  376657393,
+                                             "sizeHuman":  "359.21 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-25T05:27:58.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0207.MP4",
+                                             "sizeBytes":  320297905,
+                                             "sizeHuman":  "305.46 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-25T05:44:30.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0196.MP4",
+                                             "sizeBytes":  313924725,
+                                             "sizeHuman":  "299.38 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-24T05:45:50.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0203.MP4",
+                                             "sizeBytes":  262972397,
+                                             "sizeHuman":  "250.79 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-25T05:30:16.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0200.MP4",
+                                             "sizeBytes":  262870813,
+                                             "sizeHuman":  "250.69 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-25T05:19:00.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0185.MP4",
+                                             "sizeBytes":  258097345,
+                                             "sizeHuman":  "246.14 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-24T05:40:58.0000000Z"
+                                         },
+                                         {
+                                             "kind":  "large-userspace",
+                                             "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0188.MP4",
+                                             "sizeBytes":  247199257,
+                                             "sizeHuman":  "235.75 MB",
+                                             "rationale":  "file \u003e=200MB, last touched 2025-10-24T05:43:34.0000000Z"
+                                         }
+                                     ]
+                },
+    "totals":  {
+                   "safeTrashCount":  0,
+                   "archiveCount":  0,
+                   "manualReviewCount":  39,
+                   "safeTrashBytes":  null,
+                   "archiveBytes":  null,
+                   "manualReviewBytes":  59249141964
+               },
+    "rules":  [
+                  "safeTrash candidates may be moved to the Windows Recycle Bin only; never permadelete.",
+                  "archive candidates are moved to disk_audit/archive/\u003cYYYY-MM-DD\u003e/\u003coriginal-relative-path\u003e.",
+                  "manualReview candidates require explicit per-item human approval; never auto-applied."
+              ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "openclaw-control-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local dashboard to operate OpenClaw systems by friendly names (news / organizer / system-map). Bound to 127.0.0.1 only.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

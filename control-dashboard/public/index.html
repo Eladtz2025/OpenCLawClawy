@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenClaw Control</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="scrim" id="nav-scrim" hidden></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-glyph">◆</div>
+        <div class="brand-text">
+          <div class="brand-title">OpenClaw</div>
+          <div class="brand-sub">CONTROL</div>
+        </div>
+      </div>
+
+      <div class="status-pulse" id="global-pulse">
+        <div class="pulse-dot"></div>
+        <div class="pulse-text">
+          <div class="pulse-state" id="global-state">—</div>
+          <div class="pulse-meta" id="global-meta">connecting…</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="sidebar-nav">
+        <div class="nav-section">SYSTEMS</div>
+        <a class="nav-item" data-route="news">
+          <span class="nav-glyph">▣</span>
+          <span class="nav-label">News Dashboard</span>
+          <span class="nav-badge" data-badge="news"></span>
+        </a>
+        <a class="nav-item" data-route="organizer">
+          <span class="nav-glyph">▤</span>
+          <span class="nav-label">Organizer V2</span>
+          <span class="nav-badge" data-badge="organizer"></span>
+        </a>
+        <div class="nav-children" data-children="organizer">
+          <a class="nav-child" data-route="organizer/overview">Overview</a>
+          <a class="nav-child" data-route="organizer/computer">Computer</a>
+          <a class="nav-child" data-route="organizer/gmail">Gmail</a>
+          <a class="nav-child" data-route="organizer/photos">Photos</a>
+        </div>
+        <a class="nav-item" data-route="system-map">
+          <span class="nav-glyph">⬡</span>
+          <span class="nav-label">System Map</span>
+          <span class="nav-badge" data-badge="system-map"></span>
+        </a>
+        <a class="nav-item" data-route="traffic-law">
+          <span class="nav-glyph">§</span>
+          <span class="nav-label">Traffic Appeal IL</span>
+          <span class="nav-badge" data-badge="traffic-law"></span>
+        </a>
+
+        <div class="nav-section">TOOLS</div>
+        <a class="nav-item" data-route="claude">
+          <span class="nav-glyph">★</span>
+          <span class="nav-label">Claude Code</span>
+        </a>
+        <a class="nav-item" data-route="activity">
+          <span class="nav-glyph">≡</span>
+          <span class="nav-label">Activity</span>
+        </a>
+        <a class="nav-item" data-route="telegram">
+          <span class="nav-glyph">✈</span>
+          <span class="nav-label">Telegram / Topics</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="kbd-line"><span class="kbd">127.0.0.1</span> · loopback only</div>
+        <div class="kbd-line clock" id="sidebar-clock">—</div>
+        <div class="self-status" id="self-status">
+          <div class="self-row"><span class="self-label">SERVER</span><span class="self-val" id="self-running">—</span></div>
+          <div class="self-row"><span class="self-label">PID</span><span class="self-val" id="self-pid">—</span></div>
+          <div class="self-row"><span class="self-label">UPTIME</span><span class="self-val" id="self-uptime">—</span></div>
+          <div class="self-row"><span class="self-label">URL</span><span class="self-val" id="self-url">—</span></div>
+          <div class="self-row"><span class="self-label">TASK</span><span class="self-val" id="self-task">—</span></div>
+          <div class="self-actions">
+            <button id="self-restart" class="btn-ghost btn-tiny" title="Restart the dashboard server (loopback only)">↻ RESTART</button>
+            <span class="self-restart-status" id="self-restart-status"></span>
+          </div>
+        </div>
+
+        <div class="remote-panel" id="remote-panel">
+          <div class="remote-head">
+            <span class="remote-title">REMOTE · TAILSCALE</span>
+            <span class="remote-state" id="remote-state">—</span>
+          </div>
+          <div class="self-row"><span class="self-label">VPN IP</span><span class="self-val" id="remote-ip">—</span></div>
+          <div class="self-row"><span class="self-label">PORT</span><span class="self-val" id="remote-port">—</span></div>
+          <div class="self-row"><span class="self-label">TOKEN</span><span class="self-val" id="remote-token">—</span></div>
+          <div class="self-row"><span class="self-label">ROTATED</span><span class="self-val" id="remote-rotated">—</span></div>
+          <div class="remote-url-row">
+            <span class="self-label">URL</span>
+            <span class="self-val remote-url" id="remote-url">—</span>
+          </div>
+          <div class="remote-actions">
+            <button id="remote-copy" class="btn-ghost btn-tiny" disabled>COPY URL</button>
+            <button id="remote-help"  class="btn-ghost btn-tiny">SETUP</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="crumbs" id="crumbs">
+          <span class="crumb">SYSTEMS</span>
+          <span class="crumb-sep">›</span>
+          <span class="crumb crumb-active" id="crumb-page">—</span>
+        </div>
+        <div class="topbar-right">
+          <button id="refresh-btn" class="btn-ghost">⟳ <span class="hide-mobile">REFRESH</span></button>
+          <span class="topbar-clock hide-mobile" id="topbar-clock">—</span>
+        </div>
+      </header>
+
+      <div class="page-host" id="page-host">
+        <div class="boot">INITIALISING CONSOLE…</div>
+      </div>
+    </main>
+  </div>
+
+  <div id="confirm-overlay" class="overlay">
+    <div class="overlay-box">
+      <div class="overlay-title" id="confirm-title">CONFIRM</div>
+      <div class="overlay-body" id="confirm-text"></div>
+      <div class="overlay-actions">
+        <button id="confirm-cancel" class="btn-ghost">CANCEL</button>
+        <button id="confirm-ok" class="btn-danger">RUN</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

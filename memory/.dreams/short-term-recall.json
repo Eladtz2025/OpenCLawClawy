@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-12T07:52:02.103Z",
+  "updatedAt": "2026-04-26T16:51:22.531Z",
   "entries": {
     "memory:memory/2026-04-04.md:1:10": {
       "key": "memory:memory/2026-04-04.md:1:10",
@@ -11,6 +11,7 @@
       "snippet": "- אלעד בונה עם קלואי דשבורד חדשות אישי בעברית כאתר רספונסיבי ב-GitHub Pages, עם URL ראשי: https://eladtz2025.github.io/OpenCLawClawy/ וגם latest תחת news-dashboard/site/latest.html. - הריפו הייעודי לדשבורד: https://github.com/Eladtz2025/OpenCLawClawy.git - הוגדר Git לריפו עם user.name=Clawy ו-user.email=clawy@local; GitHub Pages הופעל על branch main / root. - אלעד מעדיף שהמערכת תהיה ישימה טכנית בלבד: לא להציע תוכניות שלא ניתן לבצע בפועל; הומרה התוכנית ל-Hybrid engine שבו tools עושים live collection והקבצים המקומיים עושים state/scoring/render/archive/publish. - כלל עבודה חשוב שאלעד ביקש לעגן: אסור לנסח \"אני מתחיל עכשיו\" / \"אעשה עכשיו\" / \"ממשיך עכשיו\" בלי tool call אמיתי באותו רצף; אם נאמר \"הש",
       "recallCount": 3,
       "dailyCount": 0,
+      "groundedCount": 0,
       "totalScore": 2.0603054257473494,
       "maxScore": 0.7995145882311928,
       "firstRecalledAt": "2026-04-08T06:32:32.190Z",
@@ -45,6 +46,7 @@
       "snippet": "- מקורות שאושרו עקרונית: טכנולוגיה — Reuters Tech, The Verge, TechCrunch, מקורות רשמיים; ישראל — הארץ, ynet, כאן; קריפטו — לבחור 5 חזקים; הפועל פתח תקווה — מקור רשמי, ONE, Sport5, Flashscore, Soccerway. - בפועל התברר שחלק מהמקורות חסומים/חלשים ב-runtime: CoinDesk usable; The Block חסום; כאן חסום; ynet חלש דרך fetch; לכן נבנתה רשימת usable sources נפרדת לפי מה שעובד בפועל. - כלל מערכת חדש שאלעד ביקש: מקור שחסום/לא usable בפועל לא יישאר מקור primary; מוסיפים מקור רק אחרי חיפוש + בדיקת usability אמיתית. - אלעד הדגיש שמשחק של הפועל פתח תקווה ביום מסוים הוא ידיעה חשובה מאוד; policy חדש: match today for Hapoel must be included if verified, וצריך fixture-first retrieval. - fallback נדרש: אם קריפטו/",
       "recallCount": 3,
       "dailyCount": 0,
+      "groundedCount": 0,
       "totalScore": 2.210869336861992,
       "maxScore": 0.7789403791911073,
       "firstRecalledAt": "2026-04-10T14:02:47.255Z",
@@ -78,6 +80,7 @@
       "snippet": "- אלעד ביקש לרכך ולפשט את כללי העבודה, והעדיף גרסת agent rules רזה: קצר, מדויק, מעשי, מאפשר גם execution וגם checks, עם פחות קשיחות ניסוחית. - אלעד הבהיר כלל התנהגות חשוב: אם אני אומר שאני מתחיל, אני חייב להתחיל בפועל באותו תור; אסור לכתוב דברים לא נכונים גם כניסוח מעבר. - במערכת החדשות, אלעד הגדיר העדפות selection: טכנולוגיה/טכנולוגיה 2 = חדש, חשוב, שימושי, פוטנציאל כסף; קריפטו = קודם כל מה שיכול לעזור להרוויח, עם עדיפות ל-BTC/ETH/XRP כשיש הצדקה; ישראל = דברים מהותיים במדינה; הפועל = הכי חדש והכי חשוב. - אלעד קבע כלל freshness למסלול החדשות: חדשות מ-24 השעות האחרונות בלבד, ואם אין מספיק אז מותר להישאר רק עם מהיום הקודם, לא יותר. - אלעד אישר להוסיף sources חדשים ל-israel ול-hapoel אחרי בדיקת",
       "recallCount": 1,
       "dailyCount": 0,
+      "groundedCount": 0,
       "totalScore": 0.7804244253595606,
       "maxScore": 0.7804244253595606,
       "firstRecalledAt": "2026-04-11T20:36:26.219Z",
@@ -108,6 +111,7 @@
       "snippet": "- ב־2026-04-05 אלעד חיזק כלל עבודה מחייב: אם אני אומר שאני עושה משהו ושאעדכן כשאסיים, אני חייב באמת לבצע בפועל ולעדכן בפועל; לא ליצור רושם של עבודה ברקע אם היא לא קרתה. - ב־2026-04-05 אלעד ביקש סיכומים ותשובות עובדתיים בלבד כשבודקים מצב מערכת/Agent/Workspace; עדיף לציין UNKNOWN או חסר ודאות מאשר לנחש. - נבנתה והורחבה מערכת Backup Manager בתוך `backup-manager/` עבור `C:\\Users\\Itzhak\\.openclaw`: backup, retention=3, restore-preview, restore, health-check, dashboard מקומי ו-GitHub Pages dashboard. - מצב ה־Backup Manager נכון לסוף הסשן: המערכת עבור `Itzhak` קיימת ועובדת, אבל הרחבת multi-root עבור `C:\\Users\\OpenClaw\\.openclaw` לא הושלמה בהצלחה; שורש שני אומת, אך לא הופק artifact תקין של multi-roo",
       "recallCount": 1,
       "dailyCount": 0,
+      "groundedCount": 0,
       "totalScore": 0.7629603832809881,
       "maxScore": 0.7629603832809881,
       "firstRecalledAt": "2026-04-11T20:36:26.219Z",
@@ -127,6 +131,164 @@
         "ו-github",
         "multi-root",
         "multi-roo"
+      ]
+    },
+    "memory:memory/2026-04-24.md:8:12": {
+      "key": "memory:memory/2026-04-24.md:8:12",
+      "path": "memory/2026-04-24.md",
+      "startLine": 8,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "- Adjusted topic logic so `hapoel` is treated as low-volume by design and does not make the whole dashboard `PARTIAL` when few legitimate items exist. - Changed `technology2` from hard cap 5 to effectively unbounded within the last 24h after dedupe/editor filtering, so it can show all distinct good items instead of truncating to 5. - Important recurring issue discovered: public HTML sometimes showed mojibake/corruption even when local JSON/HTML looked correct. Root cause was around published artifact encoding/dirty tracked HTML state; resolved by forcing clean rewrite of tracked published HTML files and pushing commit `638ff6b` (`Rewrite published dashboard HTML in clean UTF-8`). - Key commi",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-26T04:37:16.595Z",
+      "lastRecalledAt": "2026-04-26T16:51:22.531Z",
+      "queryHashes": [
+        "2e85f3e60547",
+        "6bf581e2edb6"
+      ],
+      "recallDays": [
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "low-volume",
+        "dedupe/editor",
+        "mojibake/corruption",
+        "json/html",
+        "encoding/dirty",
+        "utf-8",
+        "adjusted",
+        "topic"
+      ]
+    },
+    "memory:memory/2026-04-24.md:1:9": {
+      "key": "memory:memory/2026-04-24.md:1:9",
+      "path": "memory/2026-04-24.md",
+      "startLine": 1,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "- ב-news-dashboard, אחרי rerun אמיתי, תוקן mismatch של timestamp בין live-site HTML לבין daily-summary/state. - commit חדש: 1171f3b (`news-dashboard: refresh run and tighten cleanup`). - הלקח שנאכף שוב: לא לומר \"מושלם\" כשעדיין נשארים PT News summary גולמי ותקצירים בינוניים/חתוכים; אלעד מעדיף כנות מפורשת על פני סגירה אופטימית. - המצב המאומת האחרון לאחר rerun: render SUCCESS, pipeline status PARTIAL, 21 items, technology 4/5, technology2 5/5, israel 5/5, crypto 5/5, hapoel 2/5. - Worked extensively on `news-dashboard` public GitHub Pages reliability and content quality. - Fixed Pages publishing path issues earlier, added visible build marker/timestamp in dashboard header, and tied `latest.html",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-26T04:37:16.595Z",
+      "lastRecalledAt": "2026-04-26T16:51:22.531Z",
+      "queryHashes": [
+        "2e85f3e60547",
+        "c986d77658d0",
+        "6bf581e2edb6"
+      ],
+      "recallDays": [
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "ב-news-dashboard",
+        "live-site",
+        "daily-summary/state",
+        "news-dashboard",
+        "בינוניים/חתוכים",
+        "4/5",
+        "5/5",
+        "2/5"
+      ]
+    },
+    "memory:memory/2026-04-23.md:1:8": {
+      "key": "memory:memory/2026-04-23.md:1:8",
+      "path": "memory/2026-04-23.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "- Worked deeply on `news-dashboard` pipeline quality and verification. - Confirmed major fixes landed: dynamic `PARTIAL/SUCCESS` status, no blank editor-note block in UI, corrected parser mappings, stronger hard filters, and synthetic Hapoel labeling/removal from selected output. - Multiple reruns showed system remains operational but not yet `SUCCESS`; latest stable observed state stayed around: technology `4/5`, technology2 `5/5`, israel `3/5` or `4/5`, crypto `2/5`, hapoel `2/5` or `3/5`, overall `PARTIAL`. - Key concrete blockers identified as external/structural, not just tuning: Reuters Tech returns HTTP 401, Hapoel sources Walla/ONE/Sport5/Soccerway yielded no useful items, crypto sou",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-26T10:35:10.237Z",
+      "lastRecalledAt": "2026-04-26T10:35:10.237Z",
+      "queryHashes": [
+        "c986d77658d0"
+      ],
+      "recallDays": [
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "news-dashboard",
+        "partial/success",
+        "editor-note",
+        "labeling/removal",
+        "4/5",
+        "5/5",
+        "3/5",
+        "2/5"
+      ]
+    },
+    "memory:memory/2026-04-23.md:28:35": {
+      "key": "memory:memory/2026-04-23.md:28:35",
+      "path": "memory/2026-04-23.md",
+      "startLine": 28,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "- `hapoel` remains a real external/source-coverage blocker: with synthetic fallback removed and current sources failing (`Walla`, `ONE`, `Sport5`, `Soccerway`), there are only about 2 truthful items available. - `Reuters Tech` still returns HTTP 401 and remains a practical blocker for reaching a fuller truthful `technology` set. - New commit created during this phase: `d935533` - `Improve news dashboard editor selection and source cleanup`. - Later source-expansion work achieved a real improvement: added `Ars Technica` via RSS plus `Engadget` as a new technology source, then reran `morning-run.js` successfully. - After adding `Engadget`, the dashboard improved from 21 to 22 items and `techno",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-26T10:35:10.237Z",
+      "lastRecalledAt": "2026-04-26T10:35:10.237Z",
+      "queryHashes": [
+        "c986d77658d0"
+      ],
+      "recallDays": [
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "external/source-coverage",
+        "source-expansion",
+        "morning-run.js",
+        "hapoel",
+        "remains",
+        "real",
+        "external",
+        "source"
+      ]
+    },
+    "memory:memory/2026-04-26.md:1:8": {
+      "key": "memory:memory/2026-04-26.md:1:8",
+      "path": "memory/2026-04-26.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "- Organizer status: local disk audit completed; filtered results and approval packages prepared under `workspace\\disk_audit`. User approved deleting package 1 and package 2, and wants a more detailed HTML page for package 3. - Created HTML summaries for disk audit packages: `disk_audit\\approval_packages_summary.html` and `disk_audit\\package3_review.html`. - Package 3 was split into 3 sub-buckets and summaries were created: OpenClaw, old AppData, and placeholders. Files: `disk_audit\\package3_split.json` and `disk_audit\\package3_split_summary.json`. - Google access clarification: Gmail should use `google-workspace-mcp` OAuth via browser and does not require Google Cloud Console credentials; Go",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-26T16:51:22.531Z",
+      "lastRecalledAt": "2026-04-26T16:51:22.531Z",
+      "queryHashes": [
+        "6bf581e2edb6"
+      ],
+      "recallDays": [
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "disk-audit",
+        "approval-packages-summary.html",
+        "package3-review.html",
+        "sub-buckets",
+        "package3-split.json",
+        "package3-split-summary.json",
+        "google-workspace-mcp",
+        "organizer"
       ]
     }
   }

@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy to config.json and fill in real values. allowedUserIds is mandatory — without it the bridge refuses to start.",
+  "allowedUserIds": ["620906995"],
+  "sessionKey": "agent:traffic-law:telegram:bridge",
+  "accountId": "default",
+  "threadId": null,
+  "botUsername": null,
+  "perUserRateLimitMs": 5000
+}

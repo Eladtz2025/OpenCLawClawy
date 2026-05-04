@@ -1,0 +1,22 @@
+{
+  "_doc": "Optional file the agent may write at the end of a session so the dashboard can render the current-case panel. All fields are optional. Delete or rename this example before a real run; do not check real ticket data into git.",
+  "ticketNumber": "0000-000000-00",
+  "serviceDate": "2026-04-25",
+  "offenseDate": "2026-04-12",
+  "category": "B",
+  "categoryReason": "ברירת קנס במסלול הקלאסי — עבירת מהירות לא נכנסת לרפורמת 2026 בשלבה הראשון.",
+  "deadlines": {
+    "cancellation30": "2026-05-25",
+    "cancellation90_notOwner": "2026-07-24",
+    "court90": "2026-07-24"
+  },
+  "chosenRoute": "cancellation",
+  "missingEvidence": [
+    "צילום המצלמה הרשמי + תעודת כיול",
+    "תמונה עכשווית של תמרורי 80 בק\"מ 84",
+    "תדפיס נקודות חובה עדכני"
+  ],
+  "lastDraft": "appeal-0000-000000-00-2026-05-04.md",
+  "nextAction": "ראשית הפק תדפיס נקודות; שלח בקשת עיון בצילום המצלמה; אז הגש את בקשת הביטול עד 2026-05-25.",
+  "updatedAt": "2026-05-04T00:00:00Z"
+}

@@ -1,0 +1,40 @@
+{
+  "module": "photos",
+  "version": 1,
+  "generatedAt": "2026-05-03T06:58:54.803079+00:00",
+  "approvalContractSha1": "1ca6d92ca74576ce82a23130b1de07879528ea6f",
+  "dryRun": true,
+  "log": [
+    {
+      "kind": "group-screenshots",
+      "action": "create-album-and-add-from-search:Screenshots",
+      "result": "would-create-album",
+      "dryRun": true
+    },
+    {
+      "kind": "group-downloaded",
+      "action": "create-album-and-add-from-search:Downloaded",
+      "result": "would-create-album",
+      "dryRun": true
+    },
+    {
+      "kind": "group-old-pre-2020",
+      "action": "create-album-and-add-from-search:Pre-2020",
+      "result": "would-create-album",
+      "dryRun": true
+    },
+    {
+      "kind": "flag-near-duplicates",
+      "action": "mark-only",
+      "result": "would-create-album",
+      "dryRun": true
+    }
+  ],
+  "totals": {
+    "considered": 4,
+    "wouldCreate": 4,
+    "created": 0,
+    "authBlocked": 0,
+    "errors": 0
+  }
+}

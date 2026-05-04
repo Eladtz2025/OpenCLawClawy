@@ -1,0 +1,20 @@
+﻿{
+    "module":  "computer",
+    "version":  1,
+    "generatedAt":  "2026-05-03T13:43:31.8641424Z",
+    "approvalContractSha1":  "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709",
+    "dryRun":  true,
+    "archiveDir":  "C:\\Users\\Itzhak\\.openclaw\\workspace\\disk_audit\\archive\\2026-05-03",
+    "log":  [
+
+            ],
+    "totals":  {
+                   "considered":  0,
+                   "archived":  0,
+                   "recycled":  0,
+                   "wouldDo":  0,
+                   "errors":  0,
+                   "missing":  0,
+                   "requiresManual":  0
+               }
+}

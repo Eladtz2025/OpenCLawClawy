@@ -1,0 +1,15 @@
+{
+  "name": "openclaw-telegram-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone Telegram poller that routes /command messages to the OpenClaw control-dashboard's /api/telegram/dispatch endpoint.",
+  "main": "bridge.js",
+  "bin": {
+    "openclaw-telegram-bridge": "bridge.js"
+  },
+  "scripts": {
+    "start": "node bridge.js",
+    "self-check": "node bridge.js --self-check"
+  },
+  "type": "commonjs"
+}

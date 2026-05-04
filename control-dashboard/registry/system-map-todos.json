@@ -1,0 +1,46 @@
+{
+  "_comment": "Hand-curated open TODOs / blockers. Edit freely. The dashboard reads this and shows it on the system-map card.",
+  "updatedAt": "2026-05-03",
+  "items": [
+    {
+      "id": "news-cron-docker-dependency",
+      "system": "news",
+      "title": "News Dashboard cron requires Docker",
+      "detail": "OpenClaw cron daemon spawns the agentTurn inside a Docker sandbox. If Docker is down at 07:30 IL, the morning delivery is missed. Doctor now flags this; longer-term consider a non-sandbox cron kind or Windows Task Scheduler.",
+      "severity": "medium",
+      "added": "2026-05-03"
+    },
+    {
+      "id": "organizer-photos-readonly-scope-deprecated",
+      "system": "organizer",
+      "title": "Google Photos broad-readonly scope deprecated",
+      "detail": "As of 2025-03-31, broad photoslibrary.readonly only returns app-created data. Real library scan requires Picker API integration (separate UX). Current scan is auth-clean but returns 0 items.",
+      "severity": "low",
+      "added": "2026-05-03"
+    },
+    {
+      "id": "organizer-cron-disabled",
+      "system": "organizer",
+      "title": "Organizer cron disabled (replacement payload not enabled)",
+      "detail": "organizer-v2-continuation cron remains disabled after the docker-loop incident. organizer/cron-payload.proposed.json is documented but not applied. Re-enable after a few stable manual tick.ps1 runs.",
+      "severity": "low",
+      "added": "2026-05-02"
+    },
+    {
+      "id": "organizer-computer-large-files-manual-review",
+      "system": "organizer",
+      "title": "39 large user files awaiting manual review",
+      "detail": "Computer scan flagged 39 files >=200MB (drone footage, movies, etc.). They sit in the manualReview bucket and require explicit -ApproveAll all to enter the approval package.",
+      "severity": "low",
+      "added": "2026-05-02"
+    },
+    {
+      "id": "skills-triage-deferred",
+      "system": "system-map",
+      "title": "Third-party skills triage deferred",
+      "detail": "Audit recommended archiving devops-automation-pack, systems-architect, the broken third-party workspace-files (replaced by _custom/workspace-files-win); choosing between gws-gmail and google-workspace-mcp. Not done yet.",
+      "severity": "low",
+      "added": "2026-05-02"
+    }
+  ]
+}

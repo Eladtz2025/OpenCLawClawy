@@ -1,0 +1,23 @@
+{
+  "_comment": "Proposed replacement payload for the disabled organizer-v2-continuation cron job. NOT enabled. Mirrors the news-dashboard cron shape (agentTurn, model set, no toolsAllow) so it does not trigger the docker-sandbox runner. To apply: replace the existing payload in ~/.openclaw/cron/jobs.json job id 833bcc23-... with this object's `payload`/`schedule` fields, set `enabled: true`, and back up the old jobs.json first.",
+  "_safetyNotes": [
+    "The agent message is INTENTIONALLY narrow — it only invokes tick.ps1 and reports if a module errored or quieted. No multi-step planning, no LLM-driven retries.",
+    "Schedule changed from every 5 minutes to every 30 minutes — there is nothing time-critical in this system, and the reduced cadence avoids burning tokens on ticks that mostly do nothing while modules are disabled.",
+    "delivery.mode is 'announce' only when the tick exits non-zero (handled by the agent's conditional reporting). For the news-dashboard the cron daemon handles this with mode:'announce', but here we use mode:'none' so the agent itself decides whether to talk."
+  ],
+  "schedule": {
+    "kind": "cron",
+    "expr": "0,30 * * * *",
+    "tz": "Asia/Jerusalem"
+  },
+  "wakeMode": "now",
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Run 'powershell -ExecutionPolicy Bypass -File C:\\Users\\Itzhak\\.openclaw\\workspace\\organizer\\scripts\\tick.ps1' once. If it exits 0 stay silent. If it exits 2 (a module errored) or 3 (all enabled modules are quieted), send ONE short Telegram message to user 620906995 summarizing which module needs attention and the path to organizer/reports/orchestrator-tick.md. Do not retry. Do not modify any file. Do not enable any disabled module without explicit human approval.",
+    "timeoutSeconds": 120,
+    "model": "openai-codex/gpt-5.4"
+  },
+  "delivery": {
+    "mode": "none"
+  }
+}

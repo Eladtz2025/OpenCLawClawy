@@ -11,3 +11,27 @@ news-dashboard/verify-build.js
 news-dashboard/verify-ui-changes.js
 news-dashboard/telegram-summary.txt
 news-dashboard/telegram-alert.txt
+
+# OAuth credentials & token caches — never commit these.
+credentials.json
+client_secret_*.json
+token_*.pickle
+*.token.json
+
+# One-off scratch & deploy notes that occasionally land in the repo root.
+tmp-*.js
+tmp-*.json
+deploy-note.txt
+deploy-trigger.txt
+workflow-fix-note.txt
+file_*.txt
+
+# Local backup snapshots produced by housekeeping passes.
+_backups/
+
+# Audit/report directories regenerated locally.
+disk_audit/
+gmail-audit/
+
+# Generated system-map snapshots (regenerated on demand).
+SYSTEM_MAP_DATA/

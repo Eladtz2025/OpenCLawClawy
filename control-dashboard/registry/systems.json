@@ -1,0 +1,148 @@
+{
+  "_comment": "Canonical alias → system mapping. Used by both the dashboard and (future) the Telegram command bridge so the same names work everywhere.",
+  "version": 1,
+  "systems": [
+    {
+      "alias": "news",
+      "name": "News Dashboard",
+      "summary": "Daily morning news digest pipeline. Cron at 07:30 IL.",
+      "telegram": {
+        "groupChatId": "-1003566973693",
+        "topicId": 106,
+        "deliveryDmId": "620906995"
+      },
+      "providerModule": "news",
+      "files": {
+        "doctorScript": "news-dashboard/doctor.js",
+        "runbook": "news-dashboard/RUNBOOK.md",
+        "state": "news-dashboard/state.json",
+        "summaryJson": "news-dashboard/daily-summary.json",
+        "telegramSummary": "news-dashboard/telegram-summary.txt",
+        "telegramAlert": "news-dashboard/telegram-alert.txt",
+        "morningRun": "news-dashboard/morning-run.js",
+        "livePipeline": "news-dashboard/live-pipeline.js",
+        "scheduledRun": "news-dashboard/scheduled-run.js",
+        "scheduledTaskRegistrar": "news-dashboard/register-scheduled-task.ps1",
+        "scheduledTaskStatus": "control-dashboard/state/news-scheduled-task.json"
+      },
+      "skills": [
+        "_custom/news-dashboard-doctor"
+      ],
+      "actions": [
+        { "name": "doctor", "mode": "read", "label": "Run doctor" },
+        { "name": "dry-run-pipeline", "mode": "exec", "requiresConfirmation": false, "label": "Run live-pipeline.js (no push)" },
+        { "name": "send-morning-ping-dm", "mode": "send", "requiresConfirmation": true, "label": "Send today's morning ping to DM" }
+      ]
+    },
+    {
+      "alias": "organizer",
+      "name": "Organizer V2",
+      "summary": "Three-module local optimization suite: Computer / Gmail / Photos. Apply is dry-run by default.",
+      "telegram": {
+        "groupChatId": "-1003566973693",
+        "topicId": 2670,
+        "deliveryDmId": "620906995"
+      },
+      "providerModule": "organizer",
+      "files": {
+        "doctorScript": "organizer/scripts/doctor.js",
+        "tickScript": "organizer/scripts/tick.ps1",
+        "orgctl": "organizer/orgctl.js",
+        "orchestratorState": "organizer/state/orchestrator.json",
+        "tickLog": "organizer/logs/tick.log",
+        "tickReport": "organizer/reports/orchestrator-tick.md",
+        "computerState": "organizer/modules/computer/state.json",
+        "computerScanReport": "organizer/modules/computer/reports/scan-report.md",
+        "computerApprovalPackage": "organizer/modules/computer/reports/approval-package.md",
+        "gmailState": "organizer/modules/gmail/state.json",
+        "gmailScanReport": "organizer/modules/gmail/reports/scan-report.md",
+        "gmailApprovalPackage": "organizer/modules/gmail/reports/approval-package.md",
+        "photosState": "organizer/modules/photos/state.json",
+        "photosScanReport": "organizer/modules/photos/reports/scan-report.md",
+        "photosApprovalPackage": "organizer/modules/photos/reports/approval-package.md"
+      },
+      "skills": [
+        "_custom/organizer-v2-runbook",
+        "_custom/organizer-v2-doctor",
+        "_custom/organizer-computer",
+        "_custom/organizer-gmail",
+        "_custom/organizer-photos"
+      ],
+      "actions": [
+        { "name": "doctor", "mode": "read", "label": "Run cross-module doctor" },
+        { "name": "tick", "mode": "exec", "requiresConfirmation": false, "label": "Run orchestrator tick" },
+        { "name": "computer.scan", "mode": "exec", "requiresConfirmation": false, "label": "Computer: scan" },
+        { "name": "computer.plan", "mode": "exec", "requiresConfirmation": false, "label": "Computer: plan" },
+        { "name": "computer.approve", "mode": "exec", "requiresConfirmation": false, "label": "Computer: approve" },
+        { "name": "computer.apply", "mode": "exec", "requiresConfirmation": false, "label": "Computer: apply --dry-run" },
+        { "name": "gmail.scan", "mode": "exec", "requiresConfirmation": false, "label": "Gmail: scan" },
+        { "name": "gmail.plan", "mode": "exec", "requiresConfirmation": false, "label": "Gmail: plan" },
+        { "name": "gmail.approve", "mode": "exec", "requiresConfirmation": false, "label": "Gmail: approve" },
+        { "name": "gmail.apply", "mode": "exec", "requiresConfirmation": false, "label": "Gmail: apply --dry-run" },
+        { "name": "photos.scan", "mode": "exec", "requiresConfirmation": false, "label": "Photos: scan" },
+        { "name": "photos.plan", "mode": "exec", "requiresConfirmation": false, "label": "Photos: plan" },
+        { "name": "photos.approve", "mode": "exec", "requiresConfirmation": false, "label": "Photos: approve" },
+        { "name": "photos.apply", "mode": "exec", "requiresConfirmation": false, "label": "Photos: apply --dry-run" }
+      ]
+    },
+    {
+      "alias": "system-map",
+      "name": "System Map",
+      "summary": "Index of registered systems, aliases, custom skills, recent changelog entries, open TODOs, and recommended next work.",
+      "telegram": {
+        "groupChatId": "-1003566973693",
+        "topicId": 987,
+        "deliveryDmId": null
+      },
+      "providerModule": "system-map",
+      "files": {
+        "changelog": "../../CHANGELOG.md",
+        "registry": "control-dashboard/registry/systems.json",
+        "todos": "control-dashboard/registry/system-map-todos.json",
+        "nextWork": "control-dashboard/registry/system-map-next-work.json",
+        "skillsRoot": "skills/_custom"
+      },
+      "skills": [],
+      "actions": [
+        { "name": "refresh", "mode": "read", "label": "Refresh map" }
+      ]
+    },
+    {
+      "alias": "traffic-law",
+      "name": "Traffic-Law-Appeal-IL",
+      "summary": "Israeli traffic-ticket appeal agent. Researches gov.il sources, drafts בקשה לביטול / להישפט. Never files on your behalf.",
+      "telegram": null,
+      "providerModule": "traffic-law-appeal-il",
+      "files": {
+        "agent":          "traffic-law-appeal-il/AGENT.md",
+        "readme":         "traffic-law-appeal-il/README.md",
+        "disclaimer":     "traffic-law-appeal-il/DISCLAIMER.md",
+        "intakeForm":     "traffic-law-appeal-il/intake-form.md",
+        "startPrompt":    "traffic-law-appeal-il/prompts/start-appeal.md",
+        "sources":        "traffic-law-appeal-il/references/sources.md",
+        "deadlines":      "traffic-law-appeal-il/references/deadlines.md",
+        "pointsSystem":   "traffic-law-appeal-il/references/points-system.md",
+        "reform2026":     "traffic-law-appeal-il/references/2026-reform.md",
+        "exampleTicket":  "traffic-law-appeal-il/examples/sample-ticket-anonymized.md",
+        "outputDir":      "traffic-law-appeal-il/output"
+      },
+      "skills": [
+        "_custom/traffic-ticket-parser-il",
+        "_custom/traffic-offense-classifier-il",
+        "_custom/traffic-deadline-risk-check-il",
+        "_custom/traffic-law-research-il",
+        "_custom/traffic-case-law-and-regulation-research-il",
+        "_custom/traffic-police-procedure-check-il",
+        "_custom/traffic-camera-radar-evidence-check-il",
+        "_custom/traffic-appeal-strategy-il",
+        "_custom/traffic-evidence-checklist-il",
+        "_custom/traffic-risk-assessment-il",
+        "_custom/traffic-appeal-letter-drafter-il",
+        "_custom/traffic-clean-record-warning-request-il",
+        "_custom/traffic-court-request-drafter-il",
+        "_custom/traffic-next-actions-il"
+      ],
+      "actions": []
+    }
+  ]
+}

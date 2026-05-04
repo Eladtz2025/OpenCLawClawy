@@ -1,0 +1,38 @@
+{
+  "module": "photos",
+  "version": 1,
+  "generatedAt": "2026-05-03T06:58:53.096577+00:00",
+  "planGeneratedAt": "2026-05-03T06:58:52.554645+00:00",
+  "items": [
+    {
+      "kind": "group-screenshots",
+      "action": "create-album-and-add-from-search:Screenshots",
+      "rationale": "group screenshots into a single curation album"
+    },
+    {
+      "kind": "group-downloaded",
+      "action": "create-album-and-add-from-search:Downloaded",
+      "rationale": "group downloaded/whatsapp content into a single album"
+    },
+    {
+      "kind": "group-old-pre-2020",
+      "action": "create-album-and-add-from-search:Pre-2020",
+      "rationale": "group pre-2020 photos for archival review"
+    },
+    {
+      "kind": "flag-near-duplicates",
+      "action": "mark-only",
+      "rationale": "identify near-duplicates and surface them; never auto-delete"
+    }
+  ],
+  "totals": {
+    "count": 4
+  },
+  "contractSha1": "1ca6d92ca74576ce82a23130b1de07879528ea6f",
+  "safetyRules": [
+    "Apply mode performs ONLY album-add operations and tag/label-style metadata.",
+    "Never delete media. Never remove from existing albums without explicit per-item approval.",
+    "Each item must be in the approval package to be applied.",
+    "Apply default is dry-run."
+  ]
+}

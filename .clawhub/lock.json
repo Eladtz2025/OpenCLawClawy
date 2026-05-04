@@ -20,6 +20,30 @@
     "spotify-player": {
       "version": "1.0.0",
       "installedAt": 1775060118815
+    },
+    "systems-architect": {
+      "version": "1.0.0",
+      "installedAt": 1777105981262
+    },
+    "devops-automation-pack": {
+      "version": "1.0.0",
+      "installedAt": 1777106043957
+    },
+    "skill-scanner": {
+      "version": "0.1.2",
+      "installedAt": 1777107667301
+    },
+    "google-photos": {
+      "version": "1.0.0",
+      "installedAt": 1777111062349
+    },
+    "gws-gmail": {
+      "version": "1.0.14",
+      "installedAt": 1777111685821
+    },
+    "google-workspace-mcp": {
+      "version": "1.0.0",
+      "installedAt": 1777111686440
     }
   }
 }

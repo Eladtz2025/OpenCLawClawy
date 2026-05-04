@@ -1,0 +1,29 @@
+{
+  "module": "photos",
+  "version": 1,
+  "generatedAt": "2026-05-03T06:58:44.786940+00:00",
+  "authDecision": "authenticated",
+  "mode": "live",
+  "data": {
+    "mode": "live",
+    "albums": {
+      "count": 0,
+      "sample": []
+    },
+    "mediaItems": {
+      "count": 0,
+      "sample": []
+    },
+    "screenshotsLikely": {
+      "count": 0
+    },
+    "downloadedLikely": {
+      "count": 0
+    },
+    "oldMedia": {
+      "count": 0
+    },
+    "errors": []
+  },
+  "notes": []
+}

@@ -1,0 +1,26 @@
+{
+  "_comment": "Hand-curated 'recommended next work' shown on the system-map card. Treat as a short rolling backlog.",
+  "updatedAt": "2026-05-03",
+  "items": [
+    {
+      "title": "Wire dashboard send-morning-ping-dm to OpenClaw MCP",
+      "system": "news",
+      "rationale": "Action stub exists; needs to actually call mcp__openclaw__messages_send via the local gateway's HTTP API. Current workaround: ask Claude to send."
+    },
+    {
+      "title": "Telegram command bridge",
+      "system": "system-map",
+      "rationale": "Dashboard's HTTP action API is registry-driven and ready. Add a Telegram message handler that maps '/news doctor', '/organizer tick', etc. to POST /api/system/<alias>/action/<name>."
+    },
+    {
+      "title": "Computer manual-review approval helper",
+      "system": "organizer",
+      "rationale": "Dashboard could surface the 39 manualReview items with per-row check + a single 'approve selected' button calling computer.approve --kinds-include with explicit IDs."
+    },
+    {
+      "title": "Photos Picker API exploration",
+      "system": "organizer",
+      "rationale": "Investigate Google Photos Picker API as the only path to broad library scan post-2025 deprecation. Bigger work; keep on backlog until you actually want library reads."
+    }
+  ]
+}

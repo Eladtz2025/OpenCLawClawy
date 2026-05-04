@@ -1,0 +1,1900 @@
+﻿{
+    "module":  "computer",
+    "version":  1,
+    "generatedAt":  "2026-05-03T13:39:47.3663899Z",
+    "scanRoot":  "C:\\Users\\Itzhak",
+    "disk":  [
+                 {
+                     "name":  "C",
+                     "root":  "C:\\",
+                     "usedBytes":  398389796864,
+                     "freeBytes":  111342080000,
+                     "totalBytes":  509731876864,
+                     "usedHuman":  "371.03 GB",
+                     "freeHuman":  "103.70 GB"
+                 },
+                 {
+                     "name":  "E",
+                     "root":  "E:\\",
+                     "usedBytes":  0,
+                     "freeBytes":  0,
+                     "totalBytes":  0,
+                     "usedHuman":  "0 B",
+                     "freeHuman":  "0 B"
+                 },
+                 {
+                     "name":  "F",
+                     "root":  "F:\\",
+                     "usedBytes":  0,
+                     "freeBytes":  0,
+                     "totalBytes":  0,
+                     "usedHuman":  "0 B",
+                     "freeHuman":  "0 B"
+                 }
+             ],
+    "windowsHealth":  {
+                          "osCaption":  "Microsoft Windows 11 Pro",
+                          "osVersion":  "10.0.26200",
+                          "osArchitecture":  "64-bit",
+                          "lastBootUpTimeUtc":  "2026-04-28T23:30:15.5000000Z",
+                          "uptimeHours":  110.2,
+                          "totalMemoryGb":  15.76,
+                          "freeMemoryGb":  5.18,
+                          "pendingRebootApprox":  false,
+                          "defenderRealTimeProtection":  true,
+                          "defenderSignaturesAgeDays":  0
+                      },
+    "processHotspots":  {
+                            "byMemory":  [
+                                             {
+                                                 "name":  "node",
+                                                 "pid":  34496,
+                                                 "wsMb":  1304.1,
+                                                 "cpu":  null
+                                             },
+                                             {
+                                                 "name":  "Memory Compression",
+                                                 "pid":  3632,
+                                                 "wsMb":  638.3,
+                                                 "cpu":  null
+                                             },
+                                             {
+                                                 "name":  "chrome",
+                                                 "pid":  40384,
+                                                 "wsMb":  613.5,
+                                                 "cpu":  6359.46875
+                                             },
+                                             {
+                                                 "name":  "chrome",
+                                                 "pid":  7464,
+                                                 "wsMb":  424.9,
+                                                 "cpu":  15882.28125
+                                             },
+                                             {
+                                                 "name":  "chrome",
+                                                 "pid":  29816,
+                                                 "wsMb":  363.1,
+                                                 "cpu":  12722.5625
+                                             },
+                                             {
+                                                 "name":  "chrome",
+                                                 "pid":  40640,
+                                                 "wsMb":  347.1,
+                                                 "cpu":  4292.34375
+                                             },
+                                             {
+                                                 "name":  "claude",
+                                                 "pid":  20836,
+                                                 "wsMb":  323.9,
+                                                 "cpu":  8758.171875
+                                             },
+                                             {
+                                                 "name":  "chrome",
+                                                 "pid":  50808,
+                                                 "wsMb":  321.9,
+                                                 "cpu":  254.96875
+                                             },
+                                             {
+                                                 "name":  "MsMpEng",
+                                                 "pid":  5748,
+                                                 "wsMb":  285.1,
+                                                 "cpu":  null
+                                             },
+                                             {
+                                                 "name":  "chrome",
+                                                 "pid":  26536,
+                                                 "wsMb":  244.3,
+                                                 "cpu":  1857.734375
+                                             },
+                                             {
+                                                 "name":  "explorer",
+                                                 "pid":  11660,
+                                                 "wsMb":  230.2,
+                                                 "cpu":  1673.234375
+                                             },
+                                             {
+                                                 "name":  "SnippingTool",
+                                                 "pid":  3012,
+                                                 "wsMb":  229.3,
+                                                 "cpu":  47.53125
+                                             },
+                                             {
+                                                 "name":  "chrome",
+                                                 "pid":  45640,
+                                                 "wsMb":  169.4,
+                                                 "cpu":  132.15625
+                                             },
+                                             {
+                                                 "name":  "logioptionsplus_agent",
+                                                 "pid":  14088,
+                                                 "wsMb":  166,
+                                                 "cpu":  18270.734375
+                                             },
+                                             {
+                                                 "name":  "TextInputHost",
+                                                 "pid":  17364,
+                                                 "wsMb":  154.6,
+                                                 "cpu":  233.65625
+                                             }
+                                         ],
+                            "byCpu":  [
+                                          {
+                                              "name":  "logioptionsplus_agent",
+                                              "pid":  14088,
+                                              "wsMb":  166,
+                                              "cpu":  18270.734375
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  7464,
+                                              "wsMb":  424.9,
+                                              "cpu":  15882.28125
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  29816,
+                                              "wsMb":  363.1,
+                                              "cpu":  12722.5625
+                                          },
+                                          {
+                                              "name":  "claude",
+                                              "pid":  20836,
+                                              "wsMb":  323.9,
+                                              "cpu":  8758.171875
+                                          },
+                                          {
+                                              "name":  "claude",
+                                              "pid":  26632,
+                                              "wsMb":  145.6,
+                                              "cpu":  8047.3125
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  40384,
+                                              "wsMb":  613.5,
+                                              "cpu":  6359.46875
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  14328,
+                                              "wsMb":  81.9,
+                                              "cpu":  4696.53125
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  40640,
+                                              "wsMb":  347.1,
+                                              "cpu":  4292.34375
+                                          },
+                                          {
+                                              "name":  "PhoneExperienceHost",
+                                              "pid":  1840,
+                                              "wsMb":  68.1,
+                                              "cpu":  4029.203125
+                                          },
+                                          {
+                                              "name":  "claude",
+                                              "pid":  26964,
+                                              "wsMb":  11.8,
+                                              "cpu":  2733.703125
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  26536,
+                                              "wsMb":  244.3,
+                                              "cpu":  1857.734375
+                                          },
+                                          {
+                                              "name":  "explorer",
+                                              "pid":  11660,
+                                              "wsMb":  230.2,
+                                              "cpu":  1673.234375
+                                          },
+                                          {
+                                              "name":  "CrossDeviceService",
+                                              "pid":  17416,
+                                              "wsMb":  17.7,
+                                              "cpu":  1571.984375
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  11644,
+                                              "wsMb":  43.4,
+                                              "cpu":  1522.515625
+                                          },
+                                          {
+                                              "name":  "chrome",
+                                              "pid":  9500,
+                                              "wsMb":  25.4,
+                                              "cpu":  1091.921875
+                                          }
+                                      ]
+                        },
+    "startupApps":  [
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "Snap Camera",
+                            "command":  "\"C:\\Program Files\\Snap Inc\\Snap Camera\\Snap Camera.exe\" --minimized-mode"
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "com.squirrel.Teams.Teams",
+                            "command":  "C:\\Users\\Itzhak\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart \"Teams.exe\" --process-start-args \"--system-initiated\""
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "Samsung DeX",
+                            "command":  "C:\\Program Files (x86)\\Samsung\\Samsung DeX\\SamsungDeX.exe --autorun"
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "CCXProcess",
+                            "command":  "\"C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe\""
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "Plex Media Server",
+                            "command":  "\"C:\\Program Files\\Plex\\Plex Media Server\\Plex Media Server.exe\""
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "Grammarly",
+                            "command":  "C:\\Users\\Itzhak\\AppData\\Local\\Grammarly\\DesktopIntegrations\\Grammarly.Desktop.exe"
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "BraveSoftware Update",
+                            "command":  "\"C:\\Users\\Itzhak\\AppData\\Local\\BraveSoftware\\Update\\1.3.361.151\\BraveUpdateCore.exe\""
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "Docker Desktop",
+                            "command":  "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe"
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "MicrosoftEdgeAutoLaunch_5011FC56642442178AD2F39E039404F9",
+                            "command":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start"
+                        },
+                        {
+                            "source":  "HKCU\\Run",
+                            "name":  "GoogleChromeAutoLaunch_FA658749DB7C4F819CE0D2893CB3D238",
+                            "command":  "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\" --no-startup-window /prefetch:5"
+                        },
+                        {
+                            "source":  "HKLM\\Run",
+                            "name":  "SecurityHealth",
+                            "command":  "C:\\WINDOWS\\system32\\SecurityHealthSystray.exe"
+                        },
+                        {
+                            "source":  "HKLM\\Run",
+                            "name":  "Logitech Download Assistant",
+                            "command":  "C:\\Windows\\system32\\rundll32.exe C:\\Windows\\System32\\LogiLDA.dll,LogiFetch"
+                        },
+                        {
+                            "source":  "HKLM\\WOW6432Run",
+                            "name":  "TeamsMachineInstaller",
+                            "command":  "C:\\Program Files\\Teams Installer\\Teams.exe --checkInstall --source=PROPLUS"
+                        },
+                        {
+                            "source":  "HKLM\\WOW6432Run",
+                            "name":  "Wondershare Helper Compact.exe",
+                            "command":  "C:\\Program Files (x86)\\Common Files\\Wondershare\\Wondershare Helper Compact\\WSHelper.exe"
+                        }
+                    ],
+    "installedApps":  [
+                          {
+                              "name":  "µTorrent",
+                              "publisher":  "BitTorrent Limited",
+                              "version":  "3.6.0.47224",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Roaming\\uTorrent\\uTorrent.exe\" /UNINSTALL"
+                          },
+                          {
+                              "name":  "Anki Launcher",
+                              "publisher":  null,
+                              "version":  "25.09",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Anki\\uninstall.exe\""
+                          },
+                          {
+                              "name":  "Antigravity (User)",
+                              "publisher":  "Google",
+                              "version":  "1.15.8",
+                              "installDate":  "20260202",
+                              "estimatedSizeKb":  722528,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Antigravity\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Bonjour",
+                              "publisher":  "Apple Inc.",
+                              "version":  "3.1.0.1",
+                              "installDate":  "20231217",
+                              "estimatedSizeKb":  2064,
+                              "uninstallString":  "MsiExec.exe /X{56DDDFB8-7F79-4480-89D5-25E1F52AB28F}"
+                          },
+                          {
+                              "name":  "Brave",
+                              "publisher":  "Brave Software Inc",
+                              "version":  "147.1.89.145",
+                              "installDate":  "20260429",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\147.1.89.145\\Installer\\setup.exe\" --uninstall"
+                          },
+                          {
+                              "name":  "BtUpdater version 0.00.105",
+                              "publisher":  "Midland",
+                              "version":  "0.00.105",
+                              "installDate":  "20231221",
+                              "estimatedSizeKb":  194695,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\BtUpdater\\unins001.exe\""
+                          },
+                          {
+                              "name":  "CapCut",
+                              "publisher":  "Bytedance Pte. Ltd.",
+                              "version":  "8.3.0.3497",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "C:\\Users\\Itzhak\\AppData\\Local\\CapCut\\Apps\\uninst.exe"
+                          },
+                          {
+                              "name":  "CMake",
+                              "publisher":  "Kitware",
+                              "version":  "4.3.1",
+                              "installDate":  "20260404",
+                              "estimatedSizeKb":  156379,
+                              "uninstallString":  "MsiExec.exe /X{2D665576-8EAB-43BC-8AD3-BDFC7379F381}"
+                          },
+                          {
+                              "name":  "Comet",
+                              "publisher":  "The Comet Authors",
+                              "version":  "140.1.7339.21965",
+                              "installDate":  "20251010",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Perplexity\\Comet\\Application\\140.1.7339.21965\\Installer\\setup.exe\" --uninstall"
+                          },
+                          {
+                              "name":  "Copilot",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "147.0.3912.93",
+                              "installDate":  "20260501",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\147.0.3912.93\\Installer\\copilot_setup.exe\" --uninstall --mscopilot --channel=stable --system-level --verbose-logging"
+                          },
+                          {
+                              "name":  "digiKam 8.8.0",
+                              "publisher":  "The digiKam team",
+                              "version":  "8.8.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  1047684,
+                              "uninstallString":  "\"C:\\Program Files\\digiKam\\Uninstall.exe\""
+                          },
+                          {
+                              "name":  "Docker Desktop",
+                              "publisher":  "Docker Inc.",
+                              "version":  "4.66.1",
+                              "installDate":  null,
+                              "estimatedSizeKb":  3520238,
+                              "uninstallString":  "\"C:\\Program Files\\Docker\\Docker\\Docker Desktop Installer.exe\" \"uninstall\""
+                          },
+                          {
+                              "name":  "ExpressVPN",
+                              "publisher":  "ExpressVPN",
+                              "version":  "7.9.0.1210",
+                              "installDate":  "20200425",
+                              "estimatedSizeKb":  60520,
+                              "uninstallString":  "MsiExec.exe /X{E5B9C3E5-889C-4F22-A959-F4B8465D7CEB}"
+                          },
+                          {
+                              "name":  "Git",
+                              "publisher":  "The Git Development Community",
+                              "version":  "2.52.0",
+                              "installDate":  "20260131",
+                              "estimatedSizeKb":  354563,
+                              "uninstallString":  "\"C:\\Program Files\\Git\\unins000.exe\""
+                          },
+                          {
+                              "name":  "GitHub CLI",
+                              "publisher":  "GitHub, Inc.",
+                              "version":  "2.86.0",
+                              "installDate":  "20260209",
+                              "estimatedSizeKb":  37417,
+                              "uninstallString":  "MsiExec.exe /X{2FAFC7E5-97C0-4178-A1EB-C08AC83FA13B}"
+                          },
+                          {
+                              "name":  "GitHub Desktop",
+                              "publisher":  "GitHub, Inc.",
+                              "version":  "3.5.8",
+                              "installDate":  "20260430",
+                              "estimatedSizeKb":  190094,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\GitHubDesktop\\Update.exe\" --uninstall"
+                          },
+                          {
+                              "name":  "Google Chrome",
+                              "publisher":  "Google LLC",
+                              "version":  "147.0.7727.138",
+                              "installDate":  "20260501",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\147.0.7727.138\\Installer\\setup.exe\" --uninstall --channel=stable --system-level --verbose-logging"
+                          },
+                          {
+                              "name":  "Google Photos",
+                              "publisher":  "Google\\Chrome",
+                              "version":  "1.0",
+                              "installDate":  "20251231",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\" --profile-directory=Default --uninstall-app-id=ncmjhecbjeaamljdfahankockkkdmedg"
+                          },
+                          {
+                              "name":  "Grammarly for Windows",
+                              "publisher":  "Grammarly",
+                              "version":  "1.2.109.1500",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Grammarly\\DesktopIntegrations\\Uninstall.exe\""
+                          },
+                          {
+                              "name":  "Intel® PROSet/Wireless Software",
+                              "publisher":  "Intel Corporation",
+                              "version":  "20.120.0.0u",
+                              "installDate":  null,
+                              "estimatedSizeKb":  253159,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{565f1fac-1f41-47e8-916d-c7ec5ab1a6b2}\\ISetup.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Intel® PROSet/Wireless WiFi Software",
+                              "publisher":  "Intel Corporation",
+                              "version":  "20.120.0.2866",
+                              "installDate":  "20200323",
+                              "estimatedSizeKb":  123588,
+                              "uninstallString":  "MsiExec.exe /I{8F7809B3-BA0B-4190-8F42-A26155830655}"
+                          },
+                          {
+                              "name":  "Ledger Wallet 2.145.0",
+                              "publisher":  "Ledger Wallet Team",
+                              "version":  "2.145.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  416774,
+                              "uninstallString":  "\"C:\\Program Files\\Ledger Live\\Uninstall Ledger Wallet.exe\" /allusers"
+                          },
+                          {
+                              "name":  "Logi Options+",
+                              "publisher":  "Logitech",
+                              "version":  "2.3.879545",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files\\LogiOptionsPlus\\logioptionsplus_updater.exe\" --uninstall --full --shadow"
+                          },
+                          {
+                              "name":  "Logi Plugin Service",
+                              "publisher":  "Logitech",
+                              "version":  "6.2.6.1611",
+                              "installDate":  "20251210",
+                              "estimatedSizeKb":  281090,
+                              "uninstallString":  "MsiExec.exe /X{FB4DBF89-6BCB-485D-AFA7-6E298885E6A5}"
+                          },
+                          {
+                              "name":  "Microsoft 365 - en-us",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "16.0.19929.20090",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\OfficeClickToRun.exe\" scenario=install scenariosubtype=ARP sourcetype=None productstoremove=O365HomePremRetail.16_en-us_x-none culture=en-us version.16=16.0"
+                          },
+                          {
+                              "name":  "Microsoft 365 - he-il",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "16.0.19929.20090",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\OfficeClickToRun.exe\" scenario=install scenariosubtype=ARP sourcetype=None productstoremove=O365HomePremRetail.16_he-il_x-none culture=he-il version.16=16.0"
+                          },
+                          {
+                              "name":  "Microsoft 365 Apps for business - en-us",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "16.0.19929.20090",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\OfficeClickToRun.exe\" scenario=install scenariosubtype=ARP sourcetype=None productstoremove=O365BusinessRetail.16_en-us_x-none culture=en-us version.16=16.0"
+                          },
+                          {
+                              "name":  "Microsoft Edge",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "147.0.3912.98",
+                              "installDate":  "20260502",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\147.0.3912.98\\Installer\\setup.exe\" --uninstall --msedge --channel=stable --system-level --verbose-logging"
+                          },
+                          {
+                              "name":  "Microsoft Edge WebView2 Runtime",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "147.0.3912.98",
+                              "installDate":  "20260502",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\147.0.3912.98\\Installer\\setup.exe\" --uninstall --msedgewebview --system-level --verbose-logging"
+                          },
+                          {
+                              "name":  "Microsoft Teams classic",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "1.7.00.7956",
+                              "installDate":  "20240410",
+                              "estimatedSizeKb":  140273,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Microsoft\\Teams\\Update.exe\" --uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Update Health Tools",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "5.72.0.0",
+                              "installDate":  "20231110",
+                              "estimatedSizeKb":  1045,
+                              "uninstallString":  "MsiExec.exe /X{C6FD611E-7EFE-488C-A0E0-974C09EF6473}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2005 Redistributable",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "8.0.61001",
+                              "installDate":  "20231221",
+                              "estimatedSizeKb":  4964,
+                              "uninstallString":  "MsiExec.exe /X{710f4c1c-cc18-4c49-8cbf-51240c89a1a2}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4148",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "9.0.30729.4148",
+                              "installDate":  "20251203",
+                              "estimatedSizeKb":  13512,
+                              "uninstallString":  "MsiExec.exe /X{4B6C7001-C7D6-3710-913E-5BC23FCE91E6}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "9.0.30729.6161",
+                              "installDate":  "20220426",
+                              "estimatedSizeKb":  10440,
+                              "uninstallString":  "MsiExec.exe /X{9BE518E6-ECC6-35A9-88E4-87755C07200F}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "10.0.40219",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  14199,
+                              "uninstallString":  "MsiExec.exe /X{1D8E6291-B0D5-35EC-8441-6616F567A0F7}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "10.0.40219",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  11417,
+                              "uninstallString":  "MsiExec.exe /X{F0C3E5D1-1ADE-321E-8167-68EF0DE699A5}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "11.0.61030.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  21014,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{ca67548a-5ebe-413a-b50c-4b9ceb6d66c6}\\vcredist_x64.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "11.0.61030.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  17800,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\\vcredist_x86.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.61030",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "11.0.61030",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  12272,
+                              "uninstallString":  "MsiExec.exe /X{37B8F9C7-03FB-3253-8781-2517C99D7C00}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.61030",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "11.0.61030",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  2000,
+                              "uninstallString":  "MsiExec.exe /X{CF2BEA3C-26EA-32F8-AA9B-331F7E34BA97}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "11.0.61030",
+                              "installDate":  "20200820",
+                              "estimatedSizeKb":  9900,
+                              "uninstallString":  "MsiExec.exe /X{B175520C-86A2-35A7-8619-86DC379688B9}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.61030",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "11.0.61030",
+                              "installDate":  "20200820",
+                              "estimatedSizeKb":  1772,
+                              "uninstallString":  "MsiExec.exe /X{BD95A8CD-1D9F-35AD-981A-3E7925026EBB}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.30501.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  21062,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{050d4fc8-5d48-4b8f-8972-47c82c46020f}\\vcredist_x64.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40660",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.40660.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  21062,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{ef6b00ec-13e1-4c25-9064-b2f383cb8412}\\vcredist_x64.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.30501.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  17600,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{f65db027-aff3-4070-886a-0d87064aabb1}\\vcredist_x86.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40660",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.40660.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  17601,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{61087a79-ac85-455c-934d-1fa22cc64f36}\\vcredist_x86.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40660",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.40660",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  11784,
+                              "uninstallString":  "MsiExec.exe /X{5740BD44-B58D-321A-AFC0-6D3D4556DD6C}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40660",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.40660",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  2524,
+                              "uninstallString":  "MsiExec.exe /X{CB0836EC-B072-368D-82B2-D3470BF95707}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40660",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.40660",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  9456,
+                              "uninstallString":  "MsiExec.exe /X{7DAD0258-515C-3DD4-8964-BD714199E0F7}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40660",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "12.0.40660",
+                              "installDate":  "20230128",
+                              "estimatedSizeKb":  2076,
+                              "uninstallString":  "MsiExec.exe /X{E30D8B21-D82D-3211-82CC-0F0A5D1495E8}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "14.44.35211.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  21235,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{d8bbe9f9-7c5b-42c6-b715-9ee898a2e515}\\VC_redist.x64.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "14.44.35211.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  18673,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{0b5169e3-39da-4313-808e-1f9c0407f3bf}\\VC_redist.x86.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "14.44.35211",
+                              "installDate":  "20260131",
+                              "estimatedSizeKb":  11892,
+                              "uninstallString":  "MsiExec.exe /I{86AB2CC9-08BD-4643-B0F9-F82D006D72FF}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "14.44.35211",
+                              "installDate":  "20260131",
+                              "estimatedSizeKb":  2404,
+                              "uninstallString":  "MsiExec.exe /I{43B0D101-A022-48F4-9D04-BA404CEB1D53}"
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "14.44.35211",
+                              "installDate":  "20260131",
+                              "estimatedSizeKb":  2024,
+                              "uninstallString":  "MsiExec.exe /I{922480B5-CAEB-4B1B-AAA4-9716EFDCE26B}"
+                          },
+                          {
+                              "name":  "Microsoft Visual Studio Code (User)",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "1.110.0",
+                              "installDate":  "20260305",
+                              "estimatedSizeKb":  526739,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Microsoft VS Code\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Miniconda3 py310_25.1.1-2 (Python 3.10.16 64-bit)",
+                              "publisher":  "Anaconda, Inc.",
+                              "version":  "py310_25.1.1-2",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\pinokio\\bin\\miniconda\\Uninstall-Miniconda3.exe\""
+                          },
+                          {
+                              "name":  "Node.js",
+                              "publisher":  "Node.js Foundation",
+                              "version":  "24.1.0",
+                              "installDate":  "20250529",
+                              "estimatedSizeKb":  104169,
+                              "uninstallString":  "MsiExec.exe /I{AF8935EE-4481-4FA6-A772-F354723E1038}"
+                          },
+                          {
+                              "name":  "Notepad++ (64-bit x64)",
+                              "publisher":  "Notepad++ Team",
+                              "version":  "8.8.2",
+                              "installDate":  null,
+                              "estimatedSizeKb":  17804,
+                              "uninstallString":  "\"C:\\Program Files\\Notepad++\\uninstall.exe\""
+                          },
+                          {
+                              "name":  "Office 16 Click-to-Run Extensibility Component",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "16.0.19929.20032",
+                              "installDate":  "20260423",
+                              "estimatedSizeKb":  32188,
+                              "uninstallString":  "MsiExec.exe /X{90160000-008C-0000-1000-0000000FF1CE}"
+                          },
+                          {
+                              "name":  "Office 16 Click-to-Run Localization Component",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "16.0.19929.20062",
+                              "installDate":  "20260423",
+                              "estimatedSizeKb":  1104,
+                              "uninstallString":  "MsiExec.exe /X{90160000-008C-040D-1000-0000000FF1CE}"
+                          },
+                          {
+                              "name":  "Ollama version 0.22.0",
+                              "publisher":  "Ollama",
+                              "version":  "0.22.0",
+                              "installDate":  "20260429",
+                              "estimatedSizeKb":  6610536,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Ollama\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Pinokio 6.0.10",
+                              "publisher":  "https://twitter.com/cocktailpeanut",
+                              "version":  "6.0.10",
+                              "installDate":  null,
+                              "estimatedSizeKb":  477091,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Pinokio\\Uninstall Pinokio.exe\" /currentuser"
+                          },
+                          {
+                              "name":  "Plex",
+                              "publisher":  "Plex, Inc.",
+                              "version":  "1.109.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "C:\\Program Files\\Plex\\Plex\\Uninstall.exe"
+                          },
+                          {
+                              "name":  "Plex Media Server 1.43.0.10492 (x64)",
+                              "publisher":  "Plex, Inc.",
+                              "version":  "1.43.0.10492",
+                              "installDate":  "20260217",
+                              "estimatedSizeKb":  231200,
+                              "uninstallString":  "\"C:\\Program Files\\Plex\\Plex Media Server\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Plugable Digital Viewer",
+                              "publisher":  "Plugable Technologies",
+                              "version":  "3.1.07",
+                              "installDate":  null,
+                              "estimatedSizeKb":  2805,
+                              "uninstallString":  "C:\\Program Files (x86)\\Plugable Technologies\\Plugable Digital Viewer\\uninstall.exe"
+                          },
+                          {
+                              "name":  "PostgreSQL 17 ",
+                              "publisher":  "PostgreSQL Global Development Group",
+                              "version":  "17.5-1",
+                              "installDate":  "20250602",
+                              "estimatedSizeKb":  1061014,
+                              "uninstallString":  "\"C:\\Program Files\\PostgreSQL\\17\\uninstall-postgresql.exe\""
+                          },
+                          {
+                              "name":  "Python 3.10.11 (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  104194,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Package Cache\\{a10fbb63-03ff-4b8c-a176-f5fd355f715b}\\python-3.10.11-amd64.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Add to Path (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  48,
+                              "uninstallString":  "MsiExec.exe /I{15BA29B4-F876-4D93-A6DA-BE49FD1C802C}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Core Interpreter (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  4408,
+                              "uninstallString":  "MsiExec.exe /I{D59C7C1D-92A7-4836-B90F-2F50BE301EE1}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Development Libraries (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  1548,
+                              "uninstallString":  "MsiExec.exe /I{6DBAD419-6A71-4996-912C-E783E21B46AA}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Documentation (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  9168,
+                              "uninstallString":  "MsiExec.exe /I{8D87865C-0573-40CE-BC1A-A9C1473120C3}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Executables (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  1876,
+                              "uninstallString":  "MsiExec.exe /I{F8AA714D-9073-4CC3-AD61-743E85488839}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 pip Bootstrap (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  252,
+                              "uninstallString":  "MsiExec.exe /I{5C3F818F-9EF5-444C-9386-77A0063A383A}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Standard Library (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  26180,
+                              "uninstallString":  "MsiExec.exe /I{6532871D-1F76-408C-ABD0-63C732137351}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Tcl/Tk Support (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  15984,
+                              "uninstallString":  "MsiExec.exe /I{6108D417-E511-4AFC-A24D-7CEE1DC9D3EE}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Test Suite (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  24200,
+                              "uninstallString":  "MsiExec.exe /I{A057AC8D-8770-4890-A721-E6F7368BC9D0}"
+                          },
+                          {
+                              "name":  "Python 3.10.11 Utility Scripts (64-bit)",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.10.11150.0",
+                              "installDate":  "20250822",
+                              "estimatedSizeKb":  776,
+                              "uninstallString":  "MsiExec.exe /I{7D83DF0A-088D-4738-8012-7122B67B294C}"
+                          },
+                          {
+                              "name":  "Python 3.14.3",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.14-64",
+                              "installDate":  "20260327",
+                              "estimatedSizeKb":  126000,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.PythonManager_3847v3x7pw1km\\pymanager.exe\" uninstall --yes --by-id \"pythoncore-3.14-64\""
+                          },
+                          {
+                              "name":  "Python Launcher",
+                              "publisher":  "Python Software Foundation",
+                              "version":  "3.13.5150.0",
+                              "installDate":  "20250731",
+                              "estimatedSizeKb":  1552,
+                              "uninstallString":  "MsiExec.exe /X{69012533-AE90-48A1-B7E5-7124E81C4B40}"
+                          },
+                          {
+                              "name":  "Qualcomm Combo Digital Architecture Drivers version 112.2.0.0",
+                              "publisher":  "Qualcomm Technologies International, Ltd.",
+                              "version":  "112.2.0.0",
+                              "installDate":  "20231221",
+                              "estimatedSizeKb":  18619,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\QTIL\\Drivers\\Qualcomm_Drivers_WIN_CDA_112.2.0.0\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Samsung DeX",
+                              "publisher":  "Samsung Electronics Co., Ltd.",
+                              "version":  "2.4.0.27",
+                              "installDate":  null,
+                              "estimatedSizeKb":  250324,
+                              "uninstallString":  "\"C:\\ProgramData\\Package Cache\\{a306c372-6ec4-43f0-b372-b1de15b0e935}\\SamsungDeXSetup_2.4.0.27_x86.exe\"  /uninstall"
+                          },
+                          {
+                              "name":  "Samsung USB Driver for Mobile Phones",
+                              "publisher":  "Samsung Electronics Co., Ltd.",
+                              "version":  "1.7.46.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  43295,
+                              "uninstallString":  "C:\\Program Files\\Samsung\\USB Drivers\\Uninstall.exe"
+                          },
+                          {
+                              "name":  "Should I Remove It",
+                              "publisher":  "Reason Software Company Inc.",
+                              "version":  "1.0.4",
+                              "installDate":  "20251027",
+                              "estimatedSizeKb":  568,
+                              "uninstallString":  "MsiExec.exe /X{4E62123C-4C0D-4123-A8A2-C0103B92D7EA}"
+                          },
+                          {
+                              "name":  "Snap Camera 1.10.0",
+                              "publisher":  "Snap Inc.",
+                              "version":  "1.10.0",
+                              "installDate":  "20201209",
+                              "estimatedSizeKb":  247141,
+                              "uninstallString":  "\"C:\\Program Files\\Snap Inc\\Snap Camera\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Spotify",
+                              "publisher":  "Spotify AB",
+                              "version":  "1.2.88.483.g8aa8628e",
+                              "installDate":  "20260425",
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "C:\\Users\\Itzhak\\AppData\\Roaming\\Spotify\\uninstall.exe"
+                          },
+                          {
+                              "name":  "Stremio version 5.0.13",
+                              "publisher":  "Smart Code OOD",
+                              "version":  "5.0.13",
+                              "installDate":  "20250813",
+                              "estimatedSizeKb":  208689,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\Stremio\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Teams Machine-Wide Installer",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "1.4.0.2781",
+                              "installDate":  "20211103",
+                              "estimatedSizeKb":  111684,
+                              "uninstallString":  "MsiExec.exe /I{731F6BAA-A986-45A4-8936-7C3AAAAA760B}"
+                          },
+                          {
+                              "name":  "The Jackbox Party Pack",
+                              "publisher":  "Jackbox Games, Inc.",
+                              "version":  null,
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Steam\\steam.exe\" steam://uninstall/331670"
+                          },
+                          {
+                              "name":  "The Jackbox Party Pack 3",
+                              "publisher":  "Jackbox Games, Inc.",
+                              "version":  null,
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Steam\\steam.exe\" steam://uninstall/434170"
+                          },
+                          {
+                              "name":  "TreeSize Free V4.8.0",
+                              "publisher":  "JAM Software",
+                              "version":  "4.8.0",
+                              "installDate":  "20251112",
+                              "estimatedSizeKb":  82690,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Programs\\JAM Software\\TreeSize Free\\unins000.exe\""
+                          },
+                          {
+                              "name":  "V380.1.1.0.705",
+                              "publisher":  "M@cro-video Technologies Co.",
+                              "version":  "1.1.0.705",
+                              "installDate":  "20210306",
+                              "estimatedSizeKb":  123028,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\V380\\unins000.exe\""
+                          },
+                          {
+                              "name":  "VLC media player",
+                              "publisher":  "VideoLAN",
+                              "version":  "3.0.8",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\VideoLAN\\VLC\\uninstall.exe\""
+                          },
+                          {
+                              "name":  "Vulkan Run Time Libraries 1.0.65.1",
+                              "publisher":  "LunarG, Inc.",
+                              "version":  "1.0.65.1",
+                              "installDate":  null,
+                              "estimatedSizeKb":  1700,
+                              "uninstallString":  "C:\\Program Files (x86)\\VulkanRT\\1.0.65.1\\UninstallVulkanRT.exe"
+                          },
+                          {
+                              "name":  "Windows Driver Package - Cambridge Silicon Radio Ltd. (CSRBC) USB  (03/21/2013 3.0.0.2)",
+                              "publisher":  "Cambridge Silicon Radio Ltd.",
+                              "version":  "03/21/2013 3.0.0.2",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "C:\\PROGRA~1\\DIFX\\4A7292~1\\dpinst64.exe /u C:\\Windows\\System32\\DriverStore\\FileRepository\\csrbc.inf_amd64_4380922c659e189b\\csrbc.inf"
+                          },
+                          {
+                              "name":  "Windows PC Health Check",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "3.2.2110.14001",
+                              "installDate":  "20211025",
+                              "estimatedSizeKb":  11751,
+                              "uninstallString":  "MsiExec.exe /X{B1E7D0FD-7CFE-4E0C-A5DA-0F676499DB91}"
+                          },
+                          {
+                              "name":  "Windows Subsystem for Linux",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "2.5.10.0",
+                              "installDate":  "20250821",
+                              "estimatedSizeKb":  858372,
+                              "uninstallString":  "MsiExec.exe /X{2CCE677F-C28B-4AE1-BAC4-2F1A37049E70}"
+                          },
+                          {
+                              "name":  "WinRAR 5.91 (64-bit)",
+                              "publisher":  "win.rar GmbH",
+                              "version":  "5.91.0",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "C:\\Program Files\\WinRAR\\uninstall.exe"
+                          },
+                          {
+                              "name":  "Wondershare Filmora 15(Build 15.0.12.16430)",
+                              "publisher":  "Wondershare Software",
+                              "version":  null,
+                              "installDate":  "20251203",
+                              "estimatedSizeKb":  732021,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\LocalWondershare\\Wondershare Filmora\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Wondershare Helper Compact 2.6.0",
+                              "publisher":  "Wondershare",
+                              "version":  "2.6.0",
+                              "installDate":  "20251203",
+                              "estimatedSizeKb":  6769,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Common Files\\Wondershare\\Wondershare Helper Compact\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Wondershare NativePush(Build 1.1.1.0)",
+                              "publisher":  "Wondershare Software",
+                              "version":  null,
+                              "installDate":  "20251203",
+                              "estimatedSizeKb":  8289,
+                              "uninstallString":  "\"C:\\Users\\Itzhak\\AppData\\Local\\Wondershare\\Wondershare NativePush\\unins000.exe\""
+                          },
+                          {
+                              "name":  "Worms Reloaded",
+                              "publisher":  "Team17 Digital Ltd",
+                              "version":  null,
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files (x86)\\Steam\\steam.exe\" steam://uninstall/22600"
+                          },
+                          {
+                              "name":  "Xvid Video Codec",
+                              "publisher":  "Xvid Team",
+                              "version":  "1.3.3",
+                              "installDate":  1604082401,
+                              "estimatedSizeKb":  9118,
+                              "uninstallString":  "C:\\Program Files (x86)\\Xvid\\uninstall.exe"
+                          },
+                          {
+                              "name":  "יישומי Microsoft 365 לעסקים - he-il",
+                              "publisher":  "Microsoft Corporation",
+                              "version":  "16.0.19929.20090",
+                              "installDate":  null,
+                              "estimatedSizeKb":  null,
+                              "uninstallString":  "\"C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\OfficeClickToRun.exe\" scenario=install scenariosubtype=ARP sourcetype=None productstoremove=O365BusinessRetail.16_he-il_x-none culture=he-il version.16=16.0"
+                          }
+                      ],
+    "largeUserspace":  [
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\New folder (2)\\DJI_0210.MP4",
+                               "sizeBytes":  3758764881,
+                               "sizeHuman":  "3.50 GB",
+                               "lastWriteUtc":  "2025-10-27T12:52:52.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\New folder (2)\\DJI_0209.MP4",
+                               "sizeBytes":  3758641061,
+                               "sizeHuman":  "3.50 GB",
+                               "lastWriteUtc":  "2025-10-27T12:47:30.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0212.MP4",
+                               "sizeBytes":  3174882085,
+                               "sizeHuman":  "2.96 GB",
+                               "lastWriteUtc":  "2025-11-24T09:47:16.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video.mp4",
+                               "sizeBytes":  2784869176,
+                               "sizeHuman":  "2.59 GB",
+                               "lastWriteUtc":  "2025-12-03T18:02:32.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Wuthering Heights (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Wuthering.Heights.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  2694465366,
+                               "sizeHuman":  "2.51 GB",
+                               "lastWriteUtc":  "2026-03-26T17:25:40.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0217.MP4",
+                               "sizeBytes":  2490473601,
+                               "sizeHuman":  "2.32 GB",
+                               "lastWriteUtc":  "2025-11-24T10:18:02.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0213.MP4",
+                               "sizeBytes":  2261895685,
+                               "sizeHuman":  "2.11 GB",
+                               "lastWriteUtc":  "2025-11-24T09:50:40.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Send Help (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Send.Help.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  2246754613,
+                               "sizeHuman":  "2.09 GB",
+                               "lastWriteUtc":  "2026-03-24T22:28:50.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Ready Or Not 2 Here I Come (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Ready.Or.Not.2.Here.I.Come.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  2135098405,
+                               "sizeHuman":  "1.99 GB",
+                               "lastWriteUtc":  "2026-04-13T19:39:48.1676759Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\GOAT (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\GOAT.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  2011962031,
+                               "sizeHuman":  "1.87 GB",
+                               "lastWriteUtc":  "2026-03-24T22:28:10.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\New folder (2)\\DJI_0211.MP4",
+                               "sizeBytes":  2004464433,
+                               "sizeHuman":  "1.87 GB",
+                               "lastWriteUtc":  "2025-10-27T12:55:44.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Mercy (2026) [HYBRID] [1080p] [BluRay] [5.1] [YTS.BZ]\\Mercy.2026.HYBRID.1080p.BluRay.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  1969817006,
+                               "sizeHuman":  "1.83 GB",
+                               "lastWriteUtc":  "2026-04-11T19:44:00.6065229Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Teenage Mutant Ninja Turtles Mutant Mayhem (2023) [1080p] [BluRay] [5.1] [YTS.MX]\\Teenage.Mutant.Ninja.Turtles.Mutant.Mayhem.2023.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+                               "sizeBytes":  1965905737,
+                               "sizeHuman":  "1.83 GB",
+                               "lastWriteUtc":  "2026-03-11T13:48:28.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Ready.or.Not.2019.1080p.BluRay.H264.AAC-RARBG\\Ready.or.Not.2019.1080p.BluRay.H264.AAC-RARBG.mp4",
+                               "sizeBytes":  1952862096,
+                               "sizeHuman":  "1.82 GB",
+                               "lastWriteUtc":  "2026-04-13T19:35:22.5169528Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\In The Blink Of An Eye (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\In.The.Blink.Of.An.Eye.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  1864018944,
+                               "sizeHuman":  "1.74 GB",
+                               "lastWriteUtc":  "2026-03-06T14:40:02.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Wardriver (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\Wardriver.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  1859693408,
+                               "sizeHuman":  "1.73 GB",
+                               "lastWriteUtc":  "2026-04-03T16:42:24.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Tinsel Town (2025) [1080p] [WEBRip] [5.1] [YTS.LT]\\Tinsel.Town.2025.1080p.WEBRip.x264.AAC5.1-[YTS.LT].mp4",
+                               "sizeBytes":  1850859926,
+                               "sizeHuman":  "1.72 GB",
+                               "lastWriteUtc":  "2025-12-24T19:09:46.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0201.MP4",
+                               "sizeBytes":  1835573741,
+                               "sizeHuman":  "1.71 GB",
+                               "lastWriteUtc":  "2025-10-25T05:22:36.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0183.MP4",
+                               "sizeBytes":  1815120181,
+                               "sizeHuman":  "1.69 GB",
+                               "lastWriteUtc":  "2025-10-24T05:21:48.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0182.MP4",
+                               "sizeBytes":  1802478289,
+                               "sizeHuman":  "1.68 GB",
+                               "lastWriteUtc":  "2025-10-24T05:18:08.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Hoppers (2026) [1080p] [WEBRip] [YTS.BZ]\\Hoppers.2026.1080p.WEBRip.x264.AAC-[YTS.BZ].mp4",
+                               "sizeBytes":  1721318557,
+                               "sizeHuman":  "1.60 GB",
+                               "lastWriteUtc":  "2026-03-26T21:13:08.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0215.MP4",
+                               "sizeBytes":  1521204553,
+                               "sizeHuman":  "1.42 GB",
+                               "lastWriteUtc":  "2025-11-24T10:12:50.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0219.MP4",
+                               "sizeBytes":  1281920389,
+                               "sizeHuman":  "1.19 GB",
+                               "lastWriteUtc":  "2026-01-16T04:16:44.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\Spider-Man Into The Spider-Verse (2018) [BluRay] [720p] [YTS.AM]\\Spider-Man.Into.The.Spider-Verse.2018.720p.BluRay.x264-[YTS.AM].mp4",
+                               "sizeBytes":  1052201236,
+                               "sizeHuman":  "1,003.46 MB",
+                               "lastWriteUtc":  "2026-03-11T13:41:32.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0206.MP4",
+                               "sizeBytes":  843015289,
+                               "sizeHuman":  "803.96 MB",
+                               "lastWriteUtc":  "2025-10-25T05:43:22.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0184.MP4",
+                               "sizeBytes":  833225269,
+                               "sizeHuman":  "794.63 MB",
+                               "lastWriteUtc":  "2025-10-24T05:40:36.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\DJI_0214.MP4",
+                               "sizeBytes":  722844289,
+                               "sizeHuman":  "689.36 MB",
+                               "lastWriteUtc":  "2025-11-24T10:10:38.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video-1.mp4",
+                               "sizeBytes":  699702327,
+                               "sizeHuman":  "667.29 MB",
+                               "lastWriteUtc":  "2025-12-03T18:24:06.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video-1-reframe.mp4",
+                               "sizeBytes":  681366741,
+                               "sizeHuman":  "649.80 MB",
+                               "lastWriteUtc":  "2025-12-03T18:33:38.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Drone Elad \u0026 Shay\\My Video-highlight.mp4",
+                               "sizeBytes":  606999965,
+                               "sizeHuman":  "578.88 MB",
+                               "lastWriteUtc":  "2025-12-03T18:08:22.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Movies\\The Muppet Show (2026) [1080p] [WEBRip] [5.1] [YTS.BZ]\\The.Muppet.Show.2026.1080p.WEBRip.x264.AAC5.1-[YTS.BZ].mp4",
+                               "sizeBytes":  597856336,
+                               "sizeHuman":  "570.16 MB",
+                               "lastWriteUtc":  "2026-02-17T16:22:18.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0187.MP4",
+                               "sizeBytes":  406866513,
+                               "sizeHuman":  "388.02 MB",
+                               "lastWriteUtc":  "2025-10-24T05:43:12.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0202.MP4",
+                               "sizeBytes":  376657393,
+                               "sizeHuman":  "359.21 MB",
+                               "lastWriteUtc":  "2025-10-25T05:27:58.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0207.MP4",
+                               "sizeBytes":  320297905,
+                               "sizeHuman":  "305.46 MB",
+                               "lastWriteUtc":  "2025-10-25T05:44:30.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0196.MP4",
+                               "sizeBytes":  313924725,
+                               "sizeHuman":  "299.38 MB",
+                               "lastWriteUtc":  "2025-10-24T05:45:50.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0203.MP4",
+                               "sizeBytes":  262972397,
+                               "sizeHuman":  "250.79 MB",
+                               "lastWriteUtc":  "2025-10-25T05:30:16.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Drone\\DJI_0200.MP4",
+                               "sizeBytes":  262870813,
+                               "sizeHuman":  "250.69 MB",
+                               "lastWriteUtc":  "2025-10-25T05:19:00.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0185.MP4",
+                               "sizeBytes":  258097345,
+                               "sizeHuman":  "246.14 MB",
+                               "lastWriteUtc":  "2025-10-24T05:40:58.0000000Z",
+                               "extension":  ".mp4"
+                           },
+                           {
+                               "path":  "C:\\Users\\Itzhak\\Desktop\\Elad\\Sunskipper\\Video\\DJI_0188.MP4",
+                               "sizeBytes":  247199257,
+                               "sizeHuman":  "235.75 MB",
+                               "lastWriteUtc":  "2025-10-24T05:43:34.0000000Z",
+                               "extension":  ".mp4"
+                           }
+                       ],
+    "oldDownloads":  [
+
+                     ],
+    "desktopClutter":  [
+
+                       ],
+    "tempCacheFiles":  [
+
+                       ],
+    "duplicateGroups":  [
+
+                        ],
+    "existingDiskAudit":  {
+                              "generatedAt":  "2026-04-26T13:41:04",
+                              "emptyDirCandidates":  85,
+                              "zeroFileCandidates":  284,
+                              "coldFileCandidates":  549,
+                              "emptyByBucket":  [
+                                                    {
+                                                        "Name":  ".openclaw",
+                                                        "Count":  41
+                                                    },
+                                                    {
+                                                        "Name":  "Documents",
+                                                        "Count":  10
+                                                    },
+                                                    {
+                                                        "Name":  "Music",
+                                                        "Count":  6
+                                                    },
+                                                    {
+                                                        "Name":  ".claude",
+                                                        "Count":  5
+                                                    },
+                                                    {
+                                                        "Name":  ".cache",
+                                                        "Count":  3
+                                                    },
+                                                    {
+                                                        "Name":  ".gemini",
+                                                        "Count":  3
+                                                    },
+                                                    {
+                                                        "Name":  ".openclaw.backup-20260403-165516",
+                                                        "Count":  3
+                                                    },
+                                                    {
+                                                        "Name":  ".codex",
+                                                        "Count":  3
+                                                    },
+                                                    {
+                                                        "Name":  "Roaming",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  "Desktop",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  ".local",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  "MicrosoftEdgeBackups",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  ".antigravity",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  "New folder",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  ".azure",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  ".aws",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  ".config",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  "Pictures",
+                                                        "Count":  1
+                                                    },
+                                                    {
+                                                        "Name":  ".vscode",
+                                                        "Count":  1
+                                                    }
+                                                ],
+                              "zeroByBucket":  [
+                                                   {
+                                                       "Name":  ".antigravity",
+                                                       "Count":  169
+                                                   },
+                                                   {
+                                                       "Name":  ".openclaw",
+                                                       "Count":  103
+                                                   },
+                                                   {
+                                                       "Name":  ".gemini",
+                                                       "Count":  3
+                                                   },
+                                                   {
+                                                       "Name":  ".config",
+                                                       "Count":  2
+                                                   },
+                                                   {
+                                                       "Name":  "MicrosoftEdgeBackups",
+                                                       "Count":  1
+                                                   },
+                                                   {
+                                                       "Name":  ".python_history",
+                                                       "Count":  1
+                                                   },
+                                                   {
+                                                       "Name":  "Claude Projects",
+                                                       "Count":  1
+                                                   },
+                                                   {
+                                                       "Name":  "homeelad.openclawworkspace-videoeditingout",
+                                                       "Count":  1
+                                                   },
+                                                   {
+                                                       "Name":  "docker-compose.yml",
+                                                       "Count":  1
+                                                   },
+                                                   {
+                                                       "Name":  ".cagent",
+                                                       "Count":  1
+                                                   },
+                                                   {
+                                                       "Name":  "Documents",
+                                                       "Count":  1
+                                                   }
+                                               ],
+                              "coldByBucket":  [
+                                                   {
+                                                       "Name":  "AppData",
+                                                       "Count":  548
+                                                   },
+                                                   {
+                                                       "Name":  "MicrosoftEdgeBackups",
+                                                       "Count":  1
+                                                   }
+                                               ],
+                              "notableCold":  [
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\safe-watch-updater\\installer.exe",
+                                                      "size":  123331304,
+                                                      "lastAccessTime":  "\/Date(1586014028504)\/",
+                                                      "lastWriteTime":  "\/Date(1586013989451)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\kast-app-updater\\installer.exe",
+                                                      "size":  85991440,
+                                                      "lastAccessTime":  "\/Date(1586066370294)\/",
+                                                      "lastWriteTime":  "\/Date(1586066340700)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Google\\Chrome\\User Data\\System Profile\\optimization_guide_prediction_model_downloads\\7241d9fc-1825-4d85-b178-e9af38764997\\global-entities_names",
+                                                      "size":  26212350,
+                                                      "lastAccessTime":  "\/Date(1680440146315)\/",
+                                                      "lastWriteTime":  "\/Date(1679334290000)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Roaming\\Microsoft\\Teams\\old_logs_20230314125604.txt",
+                                                      "size":  16325564,
+                                                      "lastAccessTime":  "\/Date(1678791364888)\/",
+                                                      "lastWriteTime":  "\/Date(1678791364888)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20221022143736_002_pms.log",
+                                                      "size":  14409096,
+                                                      "lastAccessTime":  "\/Date(1666438693043)\/",
+                                                      "lastWriteTime":  "\/Date(1666438692501)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20221117194738_002_pms.log",
+                                                      "size":  14402334,
+                                                      "lastAccessTime":  "\/Date(1668707293623)\/",
+                                                      "lastWriteTime":  "\/Date(1668707293166)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20230316202804_002_pms.log",
+                                                      "size":  14390138,
+                                                      "lastAccessTime":  "\/Date(1678991316846)\/",
+                                                      "lastWriteTime":  "\/Date(1678991316317)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220807221204_002_pms.log",
+                                                      "size":  14386042,
+                                                      "lastAccessTime":  "\/Date(1659899551943)\/",
+                                                      "lastWriteTime":  "\/Date(1659899551275)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220707222620_002_pms.log",
+                                                      "size":  14362262,
+                                                      "lastAccessTime":  "\/Date(1657222006810)\/",
+                                                      "lastWriteTime":  "\/Date(1657222006284)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220618172752_002_pms.log",
+                                                      "size":  14356994,
+                                                      "lastAccessTime":  "\/Date(1655562509068)\/",
+                                                      "lastWriteTime":  "\/Date(1655562508541)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220624140520_002_pms.log",
+                                                      "size":  14351134,
+                                                      "lastAccessTime":  "\/Date(1656068756491)\/",
+                                                      "lastWriteTime":  "\/Date(1656068755838)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220524193158_002_pms.log",
+                                                      "size":  14112114,
+                                                      "lastAccessTime":  "\/Date(1653409953107)\/",
+                                                      "lastWriteTime":  "\/Date(1653409952550)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20230402200114_002_pms.log",
+                                                      "size":  14024876,
+                                                      "lastAccessTime":  "\/Date(1680454902041)\/",
+                                                      "lastWriteTime":  "\/Date(1680454901458)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220517091159_002_pms.log",
+                                                      "size":  13737870,
+                                                      "lastAccessTime":  "\/Date(1652767980465)\/",
+                                                      "lastWriteTime":  "\/Date(1652767979817)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220406193817_002_pms.log",
+                                                      "size":  13720320,
+                                                      "lastAccessTime":  "\/Date(1649263135245)\/",
+                                                      "lastWriteTime":  "\/Date(1649263134572)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20211216190259_002_pms.log",
+                                                      "size":  13720166,
+                                                      "lastAccessTime":  "\/Date(1639674208655)\/",
+                                                      "lastWriteTime":  "\/Date(1639674208168)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220121112950_002_pms.log",
+                                                      "size":  13718562,
+                                                      "lastAccessTime":  "\/Date(1642757422798)\/",
+                                                      "lastWriteTime":  "\/Date(1642757422193)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20211021202629_002_pms.log",
+                                                      "size":  13711212,
+                                                      "lastAccessTime":  "\/Date(1634837254717)\/",
+                                                      "lastWriteTime":  "\/Date(1634837253808)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220227103040_002_pms.log",
+                                                      "size":  13711208,
+                                                      "lastAccessTime":  "\/Date(1645950670816)\/",
+                                                      "lastWriteTime":  "\/Date(1645950670084)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20220509180425_002_pms.log",
+                                                      "size":  13708286,
+                                                      "lastAccessTime":  "\/Date(1652108703165)\/",
+                                                      "lastWriteTime":  "\/Date(1652108702639)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20210926201431_002_pms.log",
+                                                      "size":  13696384,
+                                                      "lastAccessTime":  "\/Date(1632676505973)\/",
+                                                      "lastWriteTime":  "\/Date(1632676505411)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20210824001508_002_pms.log",
+                                                      "size":  13665680,
+                                                      "lastAccessTime":  "\/Date(1629753342043)\/",
+                                                      "lastWriteTime":  "\/Date(1629753341470)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20210822205737_002_pms.log",
+                                                      "size":  13485076,
+                                                      "lastAccessTime":  "\/Date(1629655095595)\/",
+                                                      "lastWriteTime":  "\/Date(1629655095001)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Google\\Chrome\\User Data\\System Profile\\optimization_guide_prediction_model_downloads\\7241d9fc-1825-4d85-b178-e9af38764997\\global-entities_metadata",
+                                                      "size":  13315323,
+                                                      "lastAccessTime":  "\/Date(1680440146313)\/",
+                                                      "lastWriteTime":  "\/Date(1679334290000)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex\\cache\\4.10.2557.0-win-x64\\widevinecdm.dll",
+                                                      "size":  12369176,
+                                                      "lastAccessTime":  "\/Date(1668707039203)\/",
+                                                      "lastWriteTime":  "\/Date(1668707039203)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Roaming\\Samsung\\Samsung DeX\\SamsungDexSetupwin.temp",
+                                                      "size":  11825152,
+                                                      "lastAccessTime":  "\/Date(1664374455404)\/",
+                                                      "lastWriteTime":  "\/Date(1664374455404)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex\\cache\\4.10.2449.0-win-x64\\widevinecdm.dll",
+                                                      "size":  10708824,
+                                                      "lastAccessTime":  "\/Date(1650098642485)\/",
+                                                      "lastWriteTime":  "\/Date(1650098642485)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex\\cache\\4.10.2209.1-win-x64\\widevinecdm.dll",
+                                                      "size":  10367592,
+                                                      "lastAccessTime":  "\/Date(1630261101115)\/",
+                                                      "lastWriteTime":  "\/Date(1630261101115)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex\\cache\\4.10.2391.0-win-x64\\widevinecdm.dll",
+                                                      "size":  10053976,
+                                                      "lastAccessTime":  "\/Date(1639671812500)\/",
+                                                      "lastWriteTime":  "\/Date(1639671812500)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex Media Server\\Logs\\Installer Logs\\Plex Media Server_20200405195434_002_pms.log",
+                                                      "size":  7977202,
+                                                      "lastAccessTime":  "\/Date(1586105692036)\/",
+                                                      "lastWriteTime":  "\/Date(1586105688929)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Local Extension Settings\\kbfnbcaeplbcioakkpcpgfkobkghlhen\\000003.log",
+                                                      "size":  7039122,
+                                                      "lastAccessTime":  "\/Date(1665592885830)\/",
+                                                      "lastWriteTime":  "\/Date(1665592885830)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Plex\\Logs\\Plex.log.1",
+                                                      "size":  5299962,
+                                                      "lastAccessTime":  "\/Date(1629684303925)\/",
+                                                      "lastWriteTime":  "\/Date(1629684303925)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Roaming\\uTorrent\\helper_web_ui.btinstall",
+                                                      "size":  4419936,
+                                                      "lastAccessTime":  "\/Date(1642641511058)\/",
+                                                      "lastWriteTime":  "\/Date(1601141265175)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Roaming\\OculusClient\\Cache\\data_3",
+                                                      "size":  4202496,
+                                                      "lastAccessTime":  "\/Date(1640452910859)\/",
+                                                      "lastWriteTime":  "\/Date(1640446663998)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\LocalLow\\uTorrent.WebView2\\EBWebView\\GrShaderCache\\GPUCache\\data_3",
+                                                      "size":  4202496,
+                                                      "lastAccessTime":  "\/Date(1659940784033)\/",
+                                                      "lastWriteTime":  "\/Date(1659887734073)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Roaming\\Microsoft\\Templates\\LiveContent\\16\\Managed\\Document Themes\\1033\\TM04033937[[fn=Vapor Trail]].thmx",
+                                                      "size":  3611324,
+                                                      "lastAccessTime":  "\/Date(1642928749289)\/",
+                                                      "lastWriteTime":  "\/Date(1535559512000)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extension State\\lost\\000759.log",
+                                                      "size":  3273734,
+                                                      "lastAccessTime":  "\/Date(1664292399927)\/",
+                                                      "lastWriteTime":  "\/Date(1664292119192)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Oculus\\Service_2022-06-10_15.56.04.txt",
+                                                      "size":  3221171,
+                                                      "lastAccessTime":  "\/Date(1655406874717)\/",
+                                                      "lastWriteTime":  "\/Date(1655406874717)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Comms\\UnistoreDB\\USSres00002.jrs",
+                                                      "size":  3145728,
+                                                      "lastAccessTime":  "\/Date(1584892922755)\/",
+                                                      "lastWriteTime":  "\/Date(1584892922755)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  },
+                                                  {
+                                                      "path":  "C:\\Users\\Itzhak\\AppData\\Local\\Comms\\UnistoreDB\\USSres00001.jrs",
+                                                      "size":  3145728,
+                                                      "lastAccessTime":  "\/Date(1584892922753)\/",
+                                                      "lastWriteTime":  "\/Date(1584892922753)\/",
+                                                      "bucket":  "AppData",
+                                                      "kind":  "cold_file"
+                                                  }
+                                              ]
+                          },
+    "totals":  {
+                   "largeUserspaceCount":  39,
+                   "oldDownloadsCount":  0,
+                   "desktopClutterCount":  0,
+                   "tempCacheCount":  0,
+                   "duplicateGroupsCount":  0,
+                   "duplicateBytesEst":  0,
+                   "startupAppsCount":  14,
+                   "installedAppsCount":  104,
+                   "scanWindowSeconds":  90,
+                   "timeBudgetExceeded":  false
+               }
+}
