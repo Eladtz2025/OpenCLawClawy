@@ -51,10 +51,19 @@ function fmtStatus(alias, s) {
 }
 
 // ---------------------------- COMMANDS map ----------------------------
+//
+// SCOPE NOTE (2026-05-04 split):
+//   This dispatcher is shared between two callers:
+//   - @ClaudeClawyBot (telegram-bridge/) — dev-bridge: /claude, /dashboard, /topics
+//   - @Clawy_OpenClawBot (clawy-runtime/) — system runtime: /news, /organizer,
+//                                            /system-map, /traffic-law in topics
+//   The dispatcher itself doesn't know which caller invoked it. The bridge
+//   layer is responsible for restricting the command surface (the dev bridge
+//   only forwards a small whitelist; the CLAWY runtime forwards the rest).
 const COMMANDS = {
   // ----- News -----
   news: {
-    description: '/news [status|send today] — News-Dashboard status or send today\'s digest.',
+    description: '/news [status|send today|doctor] — News-Dashboard status, send today\'s digest, or run health check.',
     async run(ctx) {
       const sub = (ctx.args || 'status').trim().split(/\s+/)[0].toLowerCase();
       if (sub === 'status' || sub === '') {
@@ -67,7 +76,17 @@ const COMMANDS = {
         const r = await ctx.callSystemAction('news', 'send-morning-ping-dm');
         return { ok: true, kind: 'reply', replyText: `news send today → ${JSON.stringify(r).slice(0, 400)}` };
       }
-      return { ok: false, kind: 'reply', replyText: `Unknown subcommand: ${sub}. Try /news status or /news send today.` };
+      if (sub === 'doctor') {
+        const r = await ctx.callSystemAction('news', 'doctor');
+        let parsed = null;
+        try { const m = r && r.stdout && r.stdout.match(/\{[\s\S]*\}\s*$/); if (m) parsed = JSON.parse(m[0]); } catch {}
+        const issues = parsed && parsed.issues ? parsed.issues : [];
+        const lines = [`news doctor: ${parsed && parsed.ok ? 'OK' : 'ATTENTION'} (exit ${r.exit})`];
+        if (issues.length) lines.push('Issues:', ...issues.slice(0, 8).map(i => `  • ${i}`));
+        else lines.push('No issues found.');
+        return { ok: true, kind: 'reply', replyText: lines.join('\n') };
+      }
+      return { ok: false, kind: 'reply', replyText: `Unknown subcommand: ${sub}. Try /news status | send today | doctor.` };
     }
   },
 
@@ -114,13 +133,11 @@ const COMMANDS = {
         return { ok: true, kind: 'reply', replyText: fmtStatus('traffic-law', s) };
       }
       if (sub === 'checklist') {
-        // Hand back the intake-form path so the user knows what to send.
         const intakePath = resolveWorkspacePath('traffic-law-appeal-il/intake-form.md');
         return { ok: true, kind: 'reply', replyText: `Traffic-law intake checklist: ${intakePath}\nFill it out, then DM the answers and I'll start the agent.` };
       }
       if (sub === 'start appeal' || sub === 'start' || sub === 'draft appeal') {
-        // Kick off the Traffic-Law-Appeal-IL agent in auto mode. The agent
-        // produces drafts under output/ — never sent externally.
+        // Sensitive: drafts stay under output/ — never sent externally.
         const startPromptPath = resolveWorkspacePath('traffic-law-appeal-il/prompts/start-appeal.md');
         const raw = fs.readFileSync(startPromptPath, 'utf8');
         const kickoff = extractKickoffPrompt(raw);
@@ -160,13 +177,96 @@ const COMMANDS = {
     }
   },
 
-  // ----- Legacy alias kept working -----
-  // `/traffic <text>` was the old kickoff command before the split. Map it to
-  // /traffic-law start appeal so existing bookmarks/macros don't break.
-  traffic: {
-    description: '/traffic <text> — legacy alias for /traffic-law start appeal (kept for back-compat).',
+  // ----- Topics registry view -----
+  topics: {
+    description: '/topics — list Telegram topic aliases and their routability.',
     async run(ctx) {
-      return COMMANDS['traffic-law'].run({ ...ctx, args: 'start appeal' });
+      if (!ctx.telegramTopics) return { ok: false, kind: 'reply', replyText: 'topics module unavailable' };
+      const list = ctx.telegramTopics.listTopics();
+      const lines = ['Topic registry:'];
+      for (const t of list) {
+        const tag = t.routable ? 'routable' : (t.topicIdStatus === 'pending' ? 'PENDING' : 'not routable');
+        const sens = t.sensitivity !== 'normal' ? ` (${t.sensitivity})` : '';
+        const id = t.topicId == null ? 'pending' : `id ${t.topicId}`;
+        lines.push(`• ${t.alias.padEnd(13)} ${id.padEnd(11)} ${tag}${sens}`);
+      }
+      return { ok: true, kind: 'reply', replyText: lines.join('\n') };
+    }
+  },
+
+  // ----- Claude Code remote-control -----
+  claude: {
+    description: '/claude <task> | status | stop | last | logs — drive the local Claude Code runner.',
+    async run(ctx) {
+      // SAFETY: this command can launch arbitrary code on the user's
+      // workstation. The bridge layer enforces an allowlist of Telegram
+      // user IDs; nothing here re-checks that. If you wire this command
+      // into a non-bridge entrypoint, you MUST gate the caller separately.
+      const args = (ctx.args || '').trim();
+      const sub = args.split(/\s+/)[0].toLowerCase();
+      const runner = ctx.claudeRunner;
+      if (!runner) return { ok: false, kind: 'reply', replyText: 'claude runner unavailable' };
+
+      // ---- /claude status ----
+      if (sub === 'status') {
+        const d = runner.getDiagnostics();
+        const lines = [`claude runner ${d.runnerVersion} · default ${d.defaultMode}`];
+        lines.push(`active: ${d.activeCount}, stuck: ${d.stuckCount}, dashboard leaks: ${d.processBuckets.dashboardLeak}`);
+        if (d.lastCompleted) lines.push(`last ok: ${(d.lastCompleted.prompt || '').slice(0, 50)} (${d.lastCompleted.id.slice(0, 8)})`);
+        if (d.lastFailed) lines.push(`last fail: ${d.lastFailed.status} — ${(d.lastFailed.prompt || '').slice(0, 50)} (${d.lastFailed.id.slice(0, 8)})`);
+        if (d.activeTasks.length) {
+          lines.push('Currently running:');
+          for (const t of d.activeTasks) lines.push(`  • ${t.id.slice(0, 8)} (${t.mode}) — ${(t.prompt || '').slice(0, 60)}`);
+        }
+        return { ok: true, kind: 'reply', replyText: lines.join('\n') };
+      }
+
+      // ---- /claude stop ----
+      if (sub === 'stop') {
+        // Stop the most recent currently-running task.
+        const d = runner.getDiagnostics();
+        if (!d.activeTasks.length) return { ok: true, kind: 'reply', replyText: 'No active task to stop.' };
+        const target = d.activeTasks[0];
+        const r = runner.stopTask(target.id);
+        return { ok: r.ok, kind: 'reply', replyText: r.ok
+          ? `Stopping task ${target.id.slice(0, 8)} (was: ${(target.prompt || '').slice(0, 60)})`
+          : `Stop failed: ${r.error}` };
+      }
+
+      // ---- /claude last ----
+      if (sub === 'last') {
+        const list = runner.listTasks(1);
+        if (!list.length) return { ok: true, kind: 'reply', replyText: 'No tasks yet.' };
+        const t = list[0];
+        const lines = [
+          `Last task ${t.id.slice(0, 8)} — ${t.status}${t.exitCode != null ? ` (exit ${t.exitCode})` : ''}`,
+          `Mode: ${t.mode} · Created: ${t.createdAt}${t.endedAt ? ` · Ended: ${t.endedAt}` : ''}`,
+          `Prompt: ${(t.prompt || '').slice(0, 200)}`
+        ];
+        return { ok: true, kind: 'reply', replyText: lines.join('\n') };
+      }
+
+      // ---- /claude logs ----
+      if (sub === 'logs') {
+        const list = runner.listTasks(1);
+        if (!list.length) return { ok: true, kind: 'reply', replyText: 'No tasks yet.' };
+        const t = list[0];
+        // Pull the last ~3KB of stdout (Telegram cap is 4KB per message).
+        const fullState = runner.getTask(t.id);
+        const stdout = (fullState && fullState.stdout) || '';
+        const tail = stdout.length > 3000 ? '…' + stdout.slice(-3000) : stdout;
+        return { ok: true, kind: 'reply', replyText: `Logs for ${t.id.slice(0, 8)} (${t.status}):\n${tail || '(no stdout yet)'}` };
+      }
+
+      // ---- /claude <task> — start a new task ----
+      if (!args) return { ok: false, kind: 'reply', replyText: 'Usage: /claude <task description> — or /claude status | stop | last | logs' };
+      const r = runner.startTask({ prompt: args, mode: 'auto', name: 'telegram-claude' });
+      if (ctx.logAction) ctx.logAction({ alias: 'claude', name: 'task-start-via-telegram-claude', taskId: r.id, fromUserId: ctx.fromUserId });
+      return {
+        ok: true, kind: 'claude',
+        taskId: r.id,
+        replyText: `Claude Code starting — task ${r.id.slice(0, 8)} (auto mode).\nWorkspace: ${r.cwd}\nLive: http://127.0.0.1:7777/?taskId=${r.id}`
+      };
     }
   }
 };

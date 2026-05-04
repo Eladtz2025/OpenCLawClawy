@@ -69,8 +69,8 @@
       "alias": "traffic-law",
       "name": "Traffic-Law-Appeal-IL",
       "groupChatId": "-1003566973693",
-      "topicId": null,
-      "topicIdStatus": "pending",
+      "topicId": 2858,
+      "topicIdStatus": "set",
       "humanTopicName": "תעבורה / Traffic Law",
       "purpose": "Sensitive legal-work context for the Traffic-Law-Appeal-IL agent. Status pings only — no drafts/tickets unless explicitly requested.",
       "defaultTarget": "dm",
@@ -86,7 +86,7 @@
         "ticket-text",
         "case-state-json"
       ],
-      "reRegisterHints": "1) In Telegram, create a new TOPIC inside the OpenClaw supergroup, named exactly: 'תעבורה / Traffic Law'. 2) Send any one message inside that topic. 3) Open the dashboard's Telegram / Topics panel and click 'PROBE' on the traffic-law row, OR POST to /api/telegram/topics/traffic-law with { topicId: <numericId> }. 4) Until then, status pings fall back to DM (deliveryDmId) — and only when explicitly requested."
+      "reRegisterHints": "Topic 2858 registered against the existing supergroup. To re-label or move: POST /api/telegram/topics/traffic-law with {topicId, humanTopicName, ...} or use the dashboard RELABEL button."
     },
     {
       "alias": "unknown-537",

@@ -1,4 +1,7 @@
 config.json
 state/offset.json
 state/outgoing-*.txt
+state/bridge.pid
+logs/
+incoming/
 node_modules/

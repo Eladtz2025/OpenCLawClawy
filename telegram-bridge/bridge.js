@@ -32,7 +32,10 @@ const BRIDGE_DIR = __dirname;
 const STATE_DIR = path.join(BRIDGE_DIR, 'state');
 const OFFSET_FILE = path.join(STATE_DIR, 'offset.json');
 const CONFIG_FILE = path.join(BRIDGE_DIR, 'config.json');
-const TOKEN_FILE = path.join(os.homedir(), '.openclaw', 'traffic-bridge.token');
+// Token file path: prefer the bot-agnostic name; keep the legacy name as a
+// fallback so older installs keep working without manual migration.
+const TOKEN_FILE_PRIMARY  = path.join(os.homedir(), '.openclaw', 'claude-bridge.token');
+const TOKEN_FILE_FALLBACK = path.join(os.homedir(), '.openclaw', 'traffic-bridge.token');
 const SEND_VIA_GATEWAY = path.resolve(BRIDGE_DIR, '..', 'control-dashboard', 'bin', 'send-via-gateway.js');
 
 const DASHBOARD_URL = process.env.OPENCLAW_DASHBOARD_URL || 'http://127.0.0.1:7777';
@@ -66,19 +69,22 @@ function loadConfig() {
 }
 
 function loadToken() {
-  if (process.env.TRAFFIC_BRIDGE_TOKEN) {
-    const t = process.env.TRAFFIC_BRIDGE_TOKEN.trim();
-    if (t) return t;
+  // Env override wins (in either name) so dev/test runs can swap bots
+  // without touching the file system.
+  for (const k of ['OPENCLAW_BRIDGE_TOKEN', 'TRAFFIC_BRIDGE_TOKEN']) {
+    if (process.env[k]) {
+      const t = process.env[k].trim();
+      if (t) return t;
+    }
   }
-  if (!fs.existsSync(TOKEN_FILE)) {
-    return null;
+  // Then the on-disk file. Prefer the new bot-agnostic name; fall back to
+  // the legacy `traffic-bridge.token` so existing installs keep booting.
+  for (const p of [TOKEN_FILE_PRIMARY, TOKEN_FILE_FALLBACK]) {
+    if (!fs.existsSync(p)) continue;
+    try { return fs.readFileSync(p, 'utf8').replace(/^﻿/, '').trim(); }
+    catch (e) { log('ERR', `cannot read ${p}: ${e.message}`); }
   }
-  try {
-    return fs.readFileSync(TOKEN_FILE, 'utf8').replace(/^﻿/, '').trim();
-  } catch (e) {
-    log('ERR', `cannot read ${TOKEN_FILE}: ${e.message}`);
-    return null;
-  }
+  return null;
 }
 
 function readOffset() {
@@ -140,6 +146,30 @@ async function tg(token, method, params) {
   return r.parsed.result;
 }
 
+// Direct sendMessage using the bridge's OWN bot token. This is what the bridge
+// must use to make replies appear as its bot identity (@ClaudeClawyBot).
+//
+// IMPORTANT: an earlier version routed all bridge replies through the
+// OpenClaw gateway (`bin/send-via-gateway.js`), which sends from
+// `accountId=default`. That account is @Clawy_OpenClawBot — the unrelated
+// main daemon bot. Result: the user typed /start to @ClaudeClawyBot,
+// the bridge polled it correctly, but the welcome reply came back from
+// @Clawy_OpenClawBot, making it look like the new bot was dead.
+//
+// `tgSendDirect` uses the same token the poller uses, so the from-bot is
+// always the bot the user is talking to. It also returns sub-second
+// (vs ~25s through the gateway+CLI shellout).
+async function tgSendDirect(token, { chatId, threadId, text }) {
+  const params = { chat_id: chatId, text };
+  if (threadId != null && threadId !== '') params.message_thread_id = Number(threadId);
+  try {
+    const result = await tg(token, 'sendMessage', params);
+    return { ok: true, messageId: result && result.message_id };
+  } catch (e) {
+    return { ok: false, error: e.message };
+  }
+}
+
 // Send via the existing OpenClaw gateway (so replies go through the same
 // channel/account the rest of the system uses; we don't depend on a separate
 // outbound implementation).
@@ -184,6 +214,48 @@ function sendViaGateway({ targetUserId, threadId, text, sessionKey, accountId })
   });
 }
 
+// ---------------------------------------------------------------- local commands
+// Commands answered locally by the bridge — never round-tripped through the
+// dashboard. /start and /help are the universal Telegram bot conventions:
+// the dashboard's COMMANDS map doesn't know them, so dispatching them would
+// return a 400 the user reads as "unknown command". Reply directly instead.
+//
+// SCOPE: this bridge is the Claude Code developer bridge ONLY. It exposes
+// /claude, /dashboard, /topics. System-level commands (/news, /organizer,
+// /traffic-law, /system-map) are owned by @Clawy_OpenClawBot in topics —
+// not here.
+const LOCAL_COMMANDS = {
+  start: [
+    'Claude Code dev bridge is ready (@ClaudeClawyBot).',
+    '',
+    'This bot is a developer bridge for the local Claude Code runner only.',
+    'For system status / news / organizer / traffic-law, use @Clawy_OpenClawBot in the supergroup topics.',
+    '',
+    'Try one of:',
+    '  /dashboard               — overall pulse across systems',
+    '  /topics                  — list Telegram topic aliases',
+    '  /claude Reply with PONG only',
+    '',
+    'For more: /help'
+  ].join('\n'),
+  help: [
+    '@ClaudeClawyBot — Claude Code dev-bridge commands:',
+    '',
+    '  /dashboard               overall pulse (read-only)',
+    '  /topics                  list Telegram topic aliases',
+    '',
+    'Claude Code runner',
+    '  /claude <task>           run a Claude Code task locally',
+    '  /claude status           runner version + active/leak counts',
+    '  /claude stop             stop the most recent running task',
+    '  /claude last             one-line summary of last task',
+    '  /claude logs             last ~3KB stdout of last task',
+    '',
+    'Allowlist enforced — only your user ID can issue commands.',
+    'System operations live in @Clawy_OpenClawBot (group topics).'
+  ].join('\n')
+};
+
 // ---------------------------------------------------------------- command parser
 function parseCommand(text, botUsername) {
   // Telegram-style: `/cmd@bot args...` or `/cmd args...`.
@@ -217,29 +289,149 @@ async function dispatchToDashboard(parsed, fromUserId, replyToMessageId) {
   return r.parsed;
 }
 
-async function pollTaskCompletion(taskId, { timeoutMs = 25 * 60 * 1000, intervalMs = 4000 } = {}) {
-  const url = `${DASHBOARD_URL}/api/claude/task/${taskId}`;
-  const deadline = Date.now() + timeoutMs;
-  while (Date.now() < deadline) {
-    let r;
-    try { r = await httpJson('GET', url, null, { timeoutMs: 8000 }); }
-    catch (e) {
-      log('WARN', `task poll failed: ${e.message}`);
-      await sleep(intervalMs);
-      continue;
-    }
-    if (r.statusCode !== 200 || !r.parsed) {
-      await sleep(intervalMs);
-      continue;
-    }
-    const t = r.parsed;
-    if (t.status && t.status !== 'running') return t;
-    await sleep(intervalMs);
-  }
-  return null; // timed out
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ---------------------------------------------------------------- in-flight tasks
+// Telegram-launched Claude tasks are tracked here so:
+//   1. handleUpdate never has to await task completion (bridge keeps polling
+//      Telegram for new messages — no more bridge-wide block).
+//   2. /claude stop, /claude status, /claude last continue to work mid-task
+//      (they go through the dashboard runner, but we ALSO hold metadata about
+//      where to deliver the final reply).
+//   3. Bridge restart can resume waiting on tasks that were in-flight (so
+//      restart doesn't orphan the user — they still get the final reply).
+//
+// State file: state/in-flight-tasks.json
+//   { tasks: [ { taskId, chatId, threadId, startedAt, lastProgressAt,
+//                progressLevel, label } ], updatedAt }
+//
+// Each task gets one persistent watcher (a setTimeout chain). It polls the
+// dashboard /api/claude/task/:id at PROGRESS_POLL_INTERVAL_MS, sends progress
+// updates at the 5-min / 15-min / every-15-min thresholds, and on terminal
+// status sends the final reply and removes from the in-flight registry.
+
+const INFLIGHT_FILE = path.join(STATE_DIR, 'in-flight-tasks.json');
+const PROGRESS_POLL_INTERVAL_MS = 5000;
+const PROGRESS_THRESHOLDS_SEC = [5 * 60, 15 * 60, 30 * 60, 45 * 60, 60 * 60]; // when to send "still working…"
+const HARD_BRIDGE_TIMEOUT_MS = 90 * 60 * 1000; // bridge gives up watching at 90 min; user can /claude logs to see what happened
+const inFlightTasks = new Map(); // taskId → { ... }
+
+function loadInflight() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(INFLIGHT_FILE, 'utf8'));
+    return Array.isArray(raw && raw.tasks) ? raw.tasks : [];
+  } catch { return []; }
+}
+function saveInflight() {
+  try {
+    fs.writeFileSync(INFLIGHT_FILE, JSON.stringify({
+      tasks: Array.from(inFlightTasks.values()),
+      updatedAt: new Date().toISOString()
+    }, null, 2), 'utf8');
+  } catch (e) { log('WARN', `inflight save failed: ${e.message}`); }
 }
 
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+// Format the final reply for a terminal task state.
+function formatFinalReply(task, label) {
+  const stdoutTail = (task.stdout || '').slice(-FINAL_OUTPUT_LIMIT);
+  const idShort = String(task.id || '').slice(0, 8);
+  if (task.status === 'completed') {
+    return `Task ${idShort} ${label ? '(' + label + ') ' : ''}completed.\n\n${stdoutTail.trim() || '(no stdout)'}`;
+  }
+  const stderrTail = (task.stderr || '').slice(-1000);
+  return `Task ${idShort} ${label ? '(' + label + ') ' : ''}ended: status=${task.status}${task.exitCode != null ? ' exit=' + task.exitCode : ''}.\n\n${stdoutTail.trim() || stderrTail.trim() || '(no output)'}`;
+}
+
+// Spawn a background watcher for a task. Non-blocking — handleUpdate returns
+// immediately. The watcher chains setTimeout calls so it never holds the
+// event loop and survives concurrent watchers fine.
+function trackTask({ taskId, chatId, threadId, label, ctx }) {
+  const entry = {
+    taskId, chatId, threadId, label: label || null,
+    startedAt: new Date().toISOString(),
+    lastProgressAt: null,
+    progressLevel: 0
+  };
+  inFlightTasks.set(taskId, entry);
+  saveInflight();
+  startTaskWatcher(entry, ctx);
+}
+
+function startTaskWatcher(entry, ctx) {
+  const startedAtMs = new Date(entry.startedAt).getTime();
+  const taskUrl = `${DASHBOARD_URL}/api/claude/task/${entry.taskId}`;
+
+  const tick = async () => {
+    if (!inFlightTasks.has(entry.taskId)) return; // already removed elsewhere
+    const elapsedMs = Date.now() - startedAtMs;
+    if (elapsedMs > HARD_BRIDGE_TIMEOUT_MS) {
+      log('WARN', `task ${entry.taskId} watcher giving up after ${Math.round(elapsedMs/60000)}min — task may still be running on the dashboard runner`);
+      await tgSendDirect(ctx.token, {
+        chatId: entry.chatId, threadId: entry.threadId,
+        text: `Task ${entry.taskId.slice(0,8)} is still running after ${Math.round(elapsedMs/60000)} min — bridge stops watching but the dashboard runner continues. Use /claude status or /claude logs to check, /claude stop to abort.`
+      });
+      inFlightTasks.delete(entry.taskId);
+      saveInflight();
+      return;
+    }
+
+    let task = null;
+    try {
+      const r = await httpJson('GET', taskUrl, null, { timeoutMs: 8000 });
+      if (r.statusCode === 200 && r.parsed) task = r.parsed;
+    } catch (e) {
+      log('WARN', `task ${entry.taskId} poll failed: ${e.message}`);
+    }
+
+    if (!task) { setTimeout(tick, PROGRESS_POLL_INTERVAL_MS); return; }
+
+    // Terminal state — send final reply, remove from inflight.
+    if (task.status && task.status !== 'running') {
+      log('INFO', `task ${entry.taskId} terminal: ${task.status}`);
+      const reply = formatFinalReply(task, entry.label);
+      const r = await tgSendDirect(ctx.token, { chatId: entry.chatId, threadId: entry.threadId, text: reply });
+      if (r.ok) log('INFO', `task ${entry.taskId} final sent (msg ${r.messageId})`);
+      else log('ERR', `task ${entry.taskId} final send FAILED: ${r.error}`);
+      inFlightTasks.delete(entry.taskId);
+      saveInflight();
+      return;
+    }
+
+    // Still running. Maybe send a progress note if we crossed a threshold.
+    const elapsedSec = Math.floor(elapsedMs / 1000);
+    const nextThreshold = PROGRESS_THRESHOLDS_SEC[entry.progressLevel];
+    if (nextThreshold != null && elapsedSec >= nextThreshold) {
+      const stuckSec = task.staleMs != null ? Math.floor(task.staleMs / 1000) : null;
+      const stuckTag = task.possiblyStuck ? ' (POSSIBLY STUCK — no output for ' + Math.round(stuckSec/60) + 'm)' : '';
+      const progressText = `Task ${entry.taskId.slice(0,8)} still running — ${Math.round(elapsedSec/60)}m elapsed${stuckTag}.\n\nUse /claude logs for the latest output, /claude stop to abort.`;
+      const r = await tgSendDirect(ctx.token, { chatId: entry.chatId, threadId: entry.threadId, text: progressText });
+      if (r.ok) log('INFO', `task ${entry.taskId} progress note sent (level ${entry.progressLevel}, msg ${r.messageId})`);
+      entry.progressLevel += 1;
+      entry.lastProgressAt = new Date().toISOString();
+      saveInflight();
+    }
+
+    setTimeout(tick, PROGRESS_POLL_INTERVAL_MS);
+  };
+
+  // Kick off — small initial delay so the user sees the ack first.
+  setTimeout(tick, 500);
+}
+
+// On bridge startup, re-attach watchers to any tasks recorded as in-flight
+// from a previous run. Tasks that already completed are short-circuited by
+// the watcher's first poll (terminal status sends the final reply right
+// away).
+function recoverInflightWatchers(ctx) {
+  const previous = loadInflight();
+  if (!previous.length) return;
+  log('INFO', `recovering ${previous.length} in-flight task watcher(s) from previous run`);
+  for (const e of previous) {
+    if (!e || !e.taskId) continue;
+    inFlightTasks.set(e.taskId, e);
+    startTaskWatcher(e, ctx);
+  }
+}
 
 // ---------------------------------------------------------------- per-user rate limit
 const lastDispatchByUser = new Map();
@@ -256,13 +448,27 @@ function rateLimited(userId, minIntervalMs) {
 async function handleUpdate(update, ctx) {
   const message = update.message || update.edited_message;
   if (!message) return;
-  if (!message.text) return;
   const fromUserId = message.from && message.from.id != null ? String(message.from.id) : null;
   if (!fromUserId) return;
+  if (!message.text) return; // dev-bridge only accepts slash commands
   const chatId = message.chat && message.chat.id != null ? String(message.chat.id) : fromUserId;
+  // Topic-aware reply: if the message arrived in a forum topic, send back
+  // into the same topic so the conversation stays threaded. Falls back to
+  // the configured static threadId only if the inbound message isn't in a
+  // topic (e.g. DM or generic group).
+  const replyThreadId = message.message_thread_id != null
+    ? message.message_thread_id
+    : ctx.cfg.threadId;
 
   const parsed = parseCommand(message.text, ctx.cfg.botUsername);
-  if (!parsed) return; // not a slash-command
+
+  // Dev-bridge scope: only slash commands are accepted. Free-text routing
+  // moved to the CLAWY runtime (@Clawy_OpenClawBot) which owns the topics.
+  // Plain messages here are silently ignored (don't even ack — keeps DMs
+  // quiet and avoids accidental Claude task launches from chit-chat).
+  if (!parsed) return;
+  // ----- /commands ------------------------------------------------------
+
   if (!ctx.cfg.allowedUserIds.includes(fromUserId)) {
     log('WARN', `ignored /${parsed.command} from disallowed user ${fromUserId}`);
     return;
@@ -272,67 +478,93 @@ async function handleUpdate(update, ctx) {
     return;
   }
 
-  log('INFO', `dispatch /${parsed.command} from ${fromUserId} (${parsed.args.length} chars args)`);
+  // Local commands handled inside the bridge (never round-trip to the
+  // dashboard's COMMANDS map). /start and /help are Telegram conventions —
+  // the dashboard doesn't know them, so dispatching them returns a 400 and
+  // the user gets an "unknown command" error instead of a friendly welcome.
+  const localReply = LOCAL_COMMANDS[parsed.command];
+  if (localReply) {
+    log('INFO', `local /${parsed.command} from ${fromUserId} thread=${replyThreadId ?? '-'}`);
+    const sendRes = await tgSendDirect(ctx.token, {
+      chatId, threadId: replyThreadId, text: localReply
+    });
+    if (sendRes.ok) log('INFO', `local /${parsed.command} reply sent (msg ${sendRes.messageId})`);
+    else log('ERR', `local /${parsed.command} reply FAILED: ${sendRes.error}`);
+    return;
+  }
+
+  // Dev-bridge whitelist. Anything outside this list is owned by CLAWY
+  // (@Clawy_OpenClawBot) — point users there instead of silently failing.
+  // The dispatcher *does* know /news, /organizer, /traffic-law, /system-map,
+  // /status: those are kept for the CLAWY runtime to call. Refusing them
+  // here keeps responsibility split clean (and avoids two bots both
+  // answering the same command).
+  const BRIDGE_ALLOWED_COMMANDS = new Set(['claude', 'dashboard', 'topics']);
+  if (!BRIDGE_ALLOWED_COMMANDS.has(parsed.command)) {
+    log('INFO', `bridge-rejecting /${parsed.command} from ${fromUserId} (handled by @Clawy_OpenClawBot)`);
+    await tgSendDirect(ctx.token, {
+      chatId, threadId: replyThreadId,
+      text: `/${parsed.command} is owned by @Clawy_OpenClawBot. Use it inside the matching topic of the OpenClaw supergroup. This bot only handles /claude, /dashboard, /topics.`
+    });
+    return;
+  }
+
+  log('INFO', `dispatch /${parsed.command} from ${fromUserId} thread=${replyThreadId ?? '-'} (${parsed.args.length} chars args)`);
 
   let dispatchResult;
   try {
     dispatchResult = await dispatchToDashboard(parsed, fromUserId, message.message_id);
   } catch (e) {
     log('ERR', `dispatch failed: ${e.message}`);
-    await sendViaGateway({
-      targetUserId: chatId,
-      threadId: ctx.cfg.threadId,
-      text: `Sorry, /${parsed.command} could not be dispatched: ${e.message.slice(0, 300)}`,
-      sessionKey: ctx.cfg.sessionKey,
-      accountId: ctx.cfg.accountId
+    await tgSendDirect(ctx.token, {
+      chatId, threadId: replyThreadId,
+      text: `Sorry, /${parsed.command} could not be dispatched: ${e.message.slice(0, 300)}`
     });
+    return;
+  }
+
+  // Two response shapes from /api/telegram/dispatch:
+  //   kind:'reply'  → synchronous, replyText is the answer; nothing to poll.
+  //   kind:'claude' → asynchronous, taskId points at a runner job; the
+  //                   bridge polls it and sends the trailing output when done.
+  // If the dashboard is older / unrecognised, fall back to "treat as task".
+  const kind = dispatchResult && dispatchResult.kind;
+
+  if (kind === 'reply') {
+    const text = (dispatchResult.replyText || '(no reply text)').slice(0, FINAL_OUTPUT_LIMIT);
+    const r = await tgSendDirect(ctx.token, { chatId, threadId: replyThreadId, text });
+    if (r.ok) log('INFO', `dispatch /${parsed.command} reply sent (msg ${r.messageId})`);
+    else log('ERR', `dispatch /${parsed.command} reply FAILED: ${r.error}`);
     return;
   }
 
   const taskId = dispatchResult && dispatchResult.taskId;
   if (!taskId) {
-    await sendViaGateway({
-      targetUserId: chatId,
-      threadId: ctx.cfg.threadId,
-      text: `Dispatch ok but no taskId returned. Raw: ${JSON.stringify(dispatchResult).slice(0, 300)}`,
-      sessionKey: ctx.cfg.sessionKey,
-      accountId: ctx.cfg.accountId
+    await tgSendDirect(ctx.token, {
+      chatId, threadId: replyThreadId,
+      text: `Dispatch ok but no taskId returned. Raw: ${JSON.stringify(dispatchResult).slice(0, 300)}`
     });
     return;
   }
 
-  await sendViaGateway({
-    targetUserId: chatId,
-    threadId: ctx.cfg.threadId,
-    text: `Working on /${parsed.command} — task ${taskId}\nLive view: ${dispatchResult.dashboardUrl || (DASHBOARD_URL + '/?taskId=' + taskId)}`,
-    sessionKey: ctx.cfg.sessionKey,
-    accountId: ctx.cfg.accountId
-  });
+  // For task-shaped responses ('claude' or any future async kind):
+  //   1. Send the ack synchronously (sub-second).
+  //   2. Hand the taskId off to a background watcher (trackTask).
+  //   3. Return from handleUpdate IMMEDIATELY so the bridge keeps polling
+  //      Telegram for the next message.
+  // The watcher runs on its own setTimeout chain, sends progress updates at
+  // 5/15/30/45/60 min if the task is still running, and the final reply when
+  // the task hits a terminal state. State is persisted under
+  // state/in-flight-tasks.json so a bridge restart doesn't orphan the user.
+  const ackText = (dispatchResult.replyText || `Working on /${parsed.command} — task ${taskId}`)
+    + (dispatchResult.dashboardUrl ? `\nLive: ${dispatchResult.dashboardUrl}` : '');
+  const ackRes = await tgSendDirect(ctx.token, { chatId, threadId: replyThreadId, text: ackText });
+  if (ackRes.ok) log('INFO', `task ${taskId} ack sent (msg ${ackRes.messageId}) — watcher armed (non-blocking)`);
+  else log('ERR', `task ${taskId} ack send FAILED: ${ackRes.error}`);
 
-  const finalTask = await pollTaskCompletion(taskId);
-  if (!finalTask) {
-    await sendViaGateway({
-      targetUserId: chatId,
-      threadId: ctx.cfg.threadId,
-      text: `Task ${taskId} is still running after the bridge's poll timeout. Open the dashboard to follow live: ${DASHBOARD_URL}`,
-      sessionKey: ctx.cfg.sessionKey,
-      accountId: ctx.cfg.accountId
-    });
-    return;
-  }
-
-  const stdoutTail = (finalTask.stdout || '').slice(-FINAL_OUTPUT_LIMIT);
-  const summary = finalTask.status === 'completed'
-    ? `Task ${taskId} completed.\n\n${stdoutTail || '(no stdout)'}`
-    : `Task ${taskId} ended with status=${finalTask.status} exit=${finalTask.exitCode}.\n\n${stdoutTail || finalTask.stderr || '(no output)'}`;
-
-  await sendViaGateway({
-    targetUserId: chatId,
-    threadId: ctx.cfg.threadId,
-    text: summary,
-    sessionKey: ctx.cfg.sessionKey,
-    accountId: ctx.cfg.accountId
-  });
+  trackTask({ taskId, chatId, threadId: replyThreadId, label: parsed.command, ctx });
+  // Return immediately — DO NOT await task completion. The whole point of
+  // this rewrite is that handleUpdate finishes in ~1s no matter what.
 }
 
 // ---------------------------------------------------------------- main loop
@@ -355,7 +587,7 @@ async function selfCheck(ctx) {
     return 3;
   }
   if (!ctx.token) {
-    log('WARN', `no bot token at ${TOKEN_FILE} (and TRAFFIC_BRIDGE_TOKEN unset). Bridge will not poll.`);
+    log('WARN', `no bot token at ${TOKEN_FILE_PRIMARY} (or ${TOKEN_FILE_FALLBACK}, and OPENCLAW_BRIDGE_TOKEN unset). Bridge will not poll.`);
     return 4;
   }
   try {
@@ -374,7 +606,12 @@ async function selfCheck(ctx) {
 
 async function mainLoop(ctx) {
   let offset = readOffset();
-  log('INFO', `starting poll loop offset=${offset} timeout=${POLL_TIMEOUT}s`);
+  // Restore in-flight task watchers BEFORE entering the poll loop. If any of
+  // these tasks already completed during the bridge's downtime, the watcher's
+  // first poll will detect the terminal state and send the final reply
+  // immediately. Either way, the user doesn't get orphaned by a restart.
+  recoverInflightWatchers(ctx);
+  log('INFO', `starting poll loop offset=${offset} timeout=${POLL_TIMEOUT}s in-flight=${inFlightTasks.size}`);
   let consecutiveErrors = 0;
   while (true) {
     try {
@@ -413,7 +650,7 @@ async function main() {
     process.exit(await selfCheck(ctx));
   }
   if (!token) {
-    log('ERR', `no bot token. Place token at ${TOKEN_FILE} or set TRAFFIC_BRIDGE_TOKEN; see README.md.`);
+    log('ERR', `no bot token. Place token at ${TOKEN_FILE_PRIMARY} (or ${TOKEN_FILE_FALLBACK}) or set OPENCLAW_BRIDGE_TOKEN; see README.md.`);
     process.exit(2);
   }
   if (!cfg.allowedUserIds.length) {
