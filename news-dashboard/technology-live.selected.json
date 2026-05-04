@@ -1,43 +1,5 @@
 [
   {
-    "id": "technology-mdg6mjyg15nxk9ei15qg16nx",
-    "category": "technology",
-    "title": "ידעה שהיא מתכננת טבח - ובחרה לשתוק: OpenAI נתבעת בגין הירי בבית הספר בקנדה",
-    "source": "Calcalist Tech",
-    "sourceUrl": "https://www.calcalist.co.il/world_news/article/b1xequvr11e",
-    "sourceKind": "secondary",
-    "sourceType": "secondary",
-    "sourceStrength": "medium",
-    "publishedAt": "2026-05-03T06:30:39.676268Z",
-    "fresh": true,
-    "signalPositive": true,
-    "signalNegative": false,
-    "verificationCount": 1,
-    "collectedAt": "2026-05-03T06:43:06.153Z",
-    "fixture": false,
-    "synthetic": false,
-    "summary": "ידעה שהיא מתכננת טבח - ובחרה לשתוק: OpenAI נתבעת בגין הירי בבית הספר בקנדה",
-    "why": "למה זה חשוב",
-    "certainty": "נמוכה",
-    "score": 25,
-    "publishedLabel": "03.05.2026, 09:30",
-    "editorialScore": 37,
-    "hypeFlags": [],
-    "qualityIssues": [],
-    "editorNote": "משפחות של קרבנות פיגוע ירי בקנדה תובעות את OpenAI ואת המייסד והמנכ\"ל סם אלטמן, בטענה שאף שהחברה זיהתה את המחבלת כאיום משמעותי שמונה חודשים לפני הפיגוע, היא לא התריעה מפני הסכנה כי זה היה מסכן את ההנפקה המתוכננת שלה",
-    "articleDescription": "משפחות של קרבנות פיגוע ירי בקנדה תובעות את OpenAI ואת המייסד והמנכ\"ל סם אלטמן, בטענה שאף שהחברה זיהתה את המחבלת כאיום משמעותי שמונה חודשים לפני הפיגוע, היא לא התריעה מפני הסכנה כי זה היה מסכן את ההנפקה המתוכננת שלה",
-    "articleBody": "משפחות של קרבנות פיגוע ירי בקנדה תובעות את OpenAI ואת המייסד והמנכ\"ל סם אלטמן, בטענה שאף שהחברה זיהתה את המחבלת כאיום משמעותי שמונה חודשים לפני הפיגוע, היא לא התריעה מפני הסכנה כי זה היה מסכן את ההנפקה המתוכננת שלה",
-    "articleParagraphs": [
-      "משפחות של קרבנות פיגוע ירי בקנדה תובעות את OpenAI ואת המייסד והמנכ\"ל סם אלטמן, בטענה שאף שהחברה זיהתה את המחבלת כאיום משמעותי שמונה חודשים לפני הפיגוע, היא לא התריעה מפני הסכנה כי זה היה מסכן את ההנפקה המתוכננת שלה"
-    ],
-    "normalizedTitle": "ידעה שהיא מתכננת טבח - ובחרה לשתוק: OpenAI נתבעת בגין הירי בבית הספר בקנדה",
-    "articlePreview": "משפחות של קרבנות פיגוע ירי בקנדה תובעות את OpenAI ואת המייסד והמנכ\"ל סם אלטמן, בטענה שאף שהחברה זיהתה את המחבלת כאיום משמעותי שמונה חודשים לפני הפיגוע, היא לא התריעה מפני הסכנה כי זה היה מסכן את ההנפקה המתוכננת שלה",
-    "mediaType": "image",
-    "imageUrl": "https://pic1.calcalist.co.il/picserver3/crop_images/2026/03/16/HkI6PvrcWe/HkI6PvrcWe_0_218_2101_1183_0_large.jpg",
-    "videoUrl": null,
-    "localMediaPath": "./assets/media/2026-05-03-technology-calcalist-tech-2.jpg"
-  },
-  {
     "id": "technology-qsbeyxjrlu1vbmv5ienhbxbh",
     "category": "technology",
     "title": "A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat",
@@ -46,20 +8,20 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-05-03T00:00:00",
+    "publishedAt": "2026-05-04T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-03T06:43:06.153Z",
+    "collectedAt": "2026-05-04T04:30:02.502Z",
     "fixture": false,
     "synthetic": false,
     "summary": "A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat",
     "why": "למה זה חשוב",
     "certainty": "נמוכה",
-    "score": 25,
-    "publishedLabel": "03.05.2026, 00:00",
-    "editorialScore": 31,
+    "score": 26,
+    "publishedLabel": "04.05.2026, 00:00",
+    "editorialScore": 32,
     "hypeFlags": [],
     "qualityIssues": [
       "low_fact_density"
@@ -78,7 +40,7 @@
     "mediaType": "image",
     "imageUrl": "https://media.wired.com/photos/69f14b40d98ff026bfabf317/191:100/w_1280,c_limit/Made-In-China-Super-PAC-Backed-By-OpenAI-Palantir-Paying-TikTok-Influencers-Business.jpg",
     "videoUrl": null,
-    "localMediaPath": "./assets/media/2026-05-03-technology-wired-3.jpg"
+    "localMediaPath": "./assets/media/2026-05-04-technology-wired-2.jpg"
   },
   {
     "id": "technology-sg93ifnoaxzvbibaawxpcybp",
@@ -89,20 +51,20 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-05-03T00:00:00",
+    "publishedAt": "2026-05-04T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-03T06:43:06.153Z",
+    "collectedAt": "2026-05-04T04:30:02.502Z",
     "fixture": false,
     "synthetic": false,
     "summary": "How Shivon Zilis Operated as Elon Musk’s OpenAI Insider",
     "why": "למה זה חשוב",
     "certainty": "נמוכה",
-    "score": 27,
-    "publishedLabel": "03.05.2026, 00:00",
-    "editorialScore": 29,
+    "score": 28,
+    "publishedLabel": "04.05.2026, 00:00",
+    "editorialScore": 30,
     "hypeFlags": [],
     "qualityIssues": [
       "low_fact_density"
@@ -121,7 +83,7 @@
     "mediaType": "image",
     "imageUrl": "https://media.wired.com/photos/69f3d20465348cc78c80dfb1/191:100/w_1280,c_limit/Model-Behavior-Why-Everything-in-Musk-v-Altman-Leads-Back-to-Shivon-Zelis-Business-2258844337.jpg",
     "videoUrl": null,
-    "localMediaPath": "./assets/media/2026-05-03-technology-wired-1.jpg"
+    "localMediaPath": "./assets/media/2026-05-04-technology-wired-1.jpg"
   },
   {
     "id": "technology-sg93ievsb24gtxvzaybtcxvl",
@@ -132,20 +94,20 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-05-03T00:00:00",
+    "publishedAt": "2026-05-04T00:00:00",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-03T06:43:06.153Z",
+    "collectedAt": "2026-05-04T04:30:02.502Z",
     "fixture": false,
     "synthetic": false,
     "summary": "How Elon Musk Squeezed OpenAI: They ‘Are Gonna Want to Kill Me’",
     "why": "למה זה חשוב",
     "certainty": "נמוכה",
-    "score": 25,
-    "publishedLabel": "03.05.2026, 00:00",
-    "editorialScore": 27,
+    "score": 26,
+    "publishedLabel": "04.05.2026, 00:00",
+    "editorialScore": 28,
     "hypeFlags": [],
     "qualityIssues": [
       "low_fact_density"
@@ -164,7 +126,7 @@
     "mediaType": "image",
     "imageUrl": "https://media.wired.com/photos/69f2443b51254f9508013a9a/191:100/w_1280,c_limit/Model-Behavior-Musk-Grilled-by-OpenAI-Lawyers-Business.jpg",
     "videoUrl": null,
-    "localMediaPath": "./assets/media/2026-05-03-technology-wired-4.jpg"
+    "localMediaPath": "./assets/media/2026-05-04-technology-wired-3.jpg"
   },
   {
     "id": "technology-15txkifxldeg15nxldeo15nx",
@@ -175,20 +137,20 @@
     "sourceKind": "secondary",
     "sourceType": "secondary",
     "sourceStrength": "medium",
-    "publishedAt": "2026-05-03T06:30:39.676268Z",
+    "publishedAt": "2026-05-04T04:23:18.640628Z",
     "fresh": true,
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 2,
-    "collectedAt": "2026-05-03T06:43:06.153Z",
+    "collectedAt": "2026-05-04T04:30:02.502Z",
     "fixture": false,
     "synthetic": false,
     "summary": "הג'וניורים חוזרים? לצד פיטורי הענק, בהייטק בונים על צעירי דור ה-AI",
     "why": "למה זה חשוב",
     "certainty": "מאומת חלקית",
-    "score": 20,
-    "publishedLabel": "03.05.2026, 09:30",
-    "editorialScore": 22,
+    "score": 22,
+    "publishedLabel": "04.05.2026, 07:23",
+    "editorialScore": 24,
     "hypeFlags": [],
     "qualityIssues": [
       "low_fact_density"
@@ -204,6 +166,6 @@
     "mediaType": "image",
     "imageUrl": "https://pic1.calcalist.co.il/picserver3/crop_images/2026/04/30/SyxiO7igRWg/SyxiO7igRWg_0_260_2500_1408_0_large.jpg",
     "videoUrl": null,
-    "localMediaPath": "./assets/media/2026-05-03-technology-calcalist-tech-5.jpg"
+    "localMediaPath": "./assets/media/2026-05-04-technology-calcalist-tech-4.jpg"
   }
 ]

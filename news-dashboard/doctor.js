@@ -8,12 +8,14 @@ const os = require('os');
 const { execFileSync } = require('child_process');
 
 const ROOT = __dirname;
+const WORKSPACE = path.resolve(ROOT, '..');
 const STATE_PATH = path.join(ROOT, 'state.json');
 const SUMMARY_PATH = path.join(ROOT, 'daily-summary.json');
 const ALERT_PATH = path.join(ROOT, 'telegram-alert.txt');
 const TELEGRAM_SUMMARY_PATH = path.join(ROOT, 'telegram-summary.txt');
 const CRON_JOBS_PATH = path.join(os.homedir(), '.openclaw', 'cron', 'jobs.json');
 const NEWS_CRON_NAME = 'daily-news-dashboard-0730-israel-private';
+const TASK_STATUS_PATH = path.join(WORKSPACE, 'control-dashboard', 'state', 'news-scheduled-task.json');
 
 const KNOWN_BAD_SOURCES = new Set([
   'Reuters Tech',
@@ -27,15 +29,73 @@ const KNOWN_BAD_SOURCES = new Set([
   'Sport 5'
 ]);
 
-const STALE_AFTER_HOURS = 30;
+// 26h = the daily cron should have fired by now (it runs every 24h at 07:30 IL).
+// 30h is too generous and missed today's "morning never delivered" case.
+const STALE_AFTER_HOURS = 26;
 const asJson = process.argv.includes('--json');
 
-function readJson(p) {
-  return JSON.parse(fs.readFileSync(p, 'utf8'));
-}
+function stripBom(s) { return (s && s.charCodeAt(0) === 0xFEFF) ? s.slice(1) : s; }
+function readJson(p) { return JSON.parse(stripBom(fs.readFileSync(p, 'utf8'))); }
 
 function safeReadText(p) {
   try { return fs.readFileSync(p, 'utf8'); } catch { return ''; }
+}
+
+function readWindowsTaskState() {
+  try {
+    const t = JSON.parse(stripBom(fs.readFileSync(TASK_STATUS_PATH, 'utf8')));
+    return {
+      found: true,
+      schedulerType: 'windows-task',
+      enabled: true,
+      lastRunAt: t.lastRunEndedAt || t.lastRunStartedAt || null,
+      nextRunAt: t.nextRunAt || null,
+      lastStatus: t.lastStatus || null,
+      lastRunStatus: t.lastStatus === 'ok' ? 'ok' : (t.lastStatus === 'error' ? 'error' : null),
+      lastDeliveryStatus: t.lastDeliveryStatus || null,
+      lastDelivered: t.lastDelivered === true,
+      consecutiveErrors: Number(t.consecutiveErrors || 0),
+      lastError: (t.lastError || '').slice(0, 240),
+      taskName: t.taskName || 'OpenClaw-NewsDashboard-Morning'
+    };
+  } catch {
+    return null;
+  }
+}
+
+function readDockerCronState() {
+  try {
+    const j = JSON.parse(stripBom(fs.readFileSync(CRON_JOBS_PATH, 'utf8')));
+    const job = (j.jobs || []).find(x => x.name === NEWS_CRON_NAME);
+    if (!job) return { found: false };
+    const s = job.state || {};
+    return {
+      found: true,
+      schedulerType: 'docker-cron',
+      enabled: !!job.enabled,
+      lastRunAtMs: s.lastRunAtMs || null,
+      lastRunAt: s.lastRunAtMs ? new Date(s.lastRunAtMs).toISOString() : null,
+      nextRunAtMs: s.nextRunAtMs || null,
+      nextRunAt: s.nextRunAtMs ? new Date(s.nextRunAtMs).toISOString() : null,
+      lastStatus: s.lastStatus || null,
+      lastRunStatus: s.lastRunStatus || null,
+      lastDeliveryStatus: s.lastDeliveryStatus || null,
+      lastDelivered: s.lastDelivered === true,
+      consecutiveErrors: Number(s.consecutiveErrors || 0),
+      lastError: (s.lastError || '').slice(0, 240)
+    };
+  } catch (e) {
+    return { found: false, readError: e.message };
+  }
+}
+
+// Canonical scheduler state: prefer the Windows task (Node-native, no Docker).
+// Fall back to the legacy Docker cron only if the Windows task hasn't been
+// installed yet — in that case its problems are surfaced as before.
+function readCronState() {
+  const win = readWindowsTaskState();
+  if (win) return win;
+  return readDockerCronState();
 }
 
 function curlHead(url) {
@@ -65,10 +125,43 @@ function summarize() {
     summary: null,
     liveUrl: null,
     alert: null,
+    cron: null,
     perTopic: [],
     newFailures: [],
     issues
   };
+
+  // ---- 0. scheduler state (catches "morning delivery never fired") ----
+  // Prefers Windows Task Scheduler ("OpenClaw-NewsDashboard-Morning"); falls
+  // back to the legacy Docker-based OpenClaw cron when the new task is not
+  // installed yet.
+  const cron = readCronState();
+  result.cron = cron;
+  const schedulerLabel = cron.schedulerType === 'windows-task'
+    ? `Windows task "${cron.taskName}"`
+    : `cron "${NEWS_CRON_NAME}"`;
+  if (!cron.found) {
+    issues.push(`no scheduler found — neither Windows task status file nor Docker cron job is present`);
+    result.ok = false;
+    emit('WARN', 'no scheduler found (Windows task not installed; Docker cron also missing)');
+  } else {
+    if (!cron.enabled) {
+      issues.push(`${schedulerLabel} is DISABLED — no morning delivery will happen`);
+      result.ok = false;
+      emit('WARN', `${schedulerLabel} disabled — no morning delivery`);
+    }
+    if (cron.lastStatus === 'error' || cron.lastRunStatus === 'error') {
+      issues.push(`${schedulerLabel} lastRun ERROR: ${cron.lastError || 'no message'}`);
+      result.ok = false;
+      emit('WARN', `${schedulerLabel} lastRun ERROR: ${(cron.lastError || '').slice(0, 160)}`);
+    } else {
+      emit('OK', `${schedulerLabel} lastStatus=${cron.lastStatus}, consecutiveErrors=${cron.consecutiveErrors}`);
+    }
+    if (cron.consecutiveErrors >= 1) {
+      issues.push(`${schedulerLabel} consecutiveErrors=${cron.consecutiveErrors} (any non-zero = today/recent failed)`);
+      result.ok = false;
+    }
+  }
 
   // ---- 1. read state ----
   let state;

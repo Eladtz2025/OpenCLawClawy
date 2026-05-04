@@ -1,0 +1,7 @@
+[2026-05-03T09:25:26.762Z] [INFO] === scheduled-run start (skipSend=true) ===
+[2026-05-03T09:25:26.769Z] [INFO] pipeline ok, buildId=build-1777790586153
+[2026-05-03T09:25:26.771Z] [INFO] === scheduled-run done OK buildId=build-1777790586153 status=skipped ===
+[2026-05-03T09:25:35.809Z] [INFO] === scheduled-run start (skipSend=false) ===
+[2026-05-03T09:25:35.813Z] [INFO] pipeline ok, buildId=build-1777790586153
+[2026-05-03T09:25:35.813Z] [INFO] buildId build-1777790586153 already sent at 2026-05-03T07:25:00.000Z (msg 565) — skipping send
+[2026-05-03T09:25:35.815Z] [INFO] === scheduled-run done OK buildId=build-1777790586153 status=duplicate ===
