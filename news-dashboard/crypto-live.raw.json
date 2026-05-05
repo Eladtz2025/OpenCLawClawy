@@ -6,29 +6,59 @@
     "success": true,
     "items": [
       {
-        "title": "Policy Summit and other things at Consensus 2026: State of Crypto We are kicking off the show in Miami this week. Here's what you should attend.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/policy-summit-and-other-things-at-consensus-2026-state-of-crypto",
-        "publishedAt": "2026-05-03T00:00:00"
+        "title": "Bitcoin tests $80,000 as Asia’s bid fades and Hong Kong AI IPOs surge Western desks are carrying the bitcoin rally alone, with Friday’s jobs report the next test.",
+        "url": "https://www.coindesk.com/markets/2026/05/05/bitcoin-tests-usd80-000-as-asia-s-bid-fades-and-hong-kong-ai-ipos-surge",
+        "publishedAt": "2026-05-05T00:00:00"
       },
       {
-        "title": "Crypto is at bottom of U.S. voters' priorities heading into elections, CoinDesk survey shows Americans had a generally unfavorable view of cryptocurrencies, the survey of 1,000 randomly selected registered voters found.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/crypto-is-at-the-bottom-of-u-s-voters-priorities-heading-into-the-midterm-coindesk-survey-shows",
-        "publishedAt": "2026-05-03T00:00:00"
+        "title": "Wall Street giant DTCC plans tokenized securities platform with July pilot, October launch Clearing giant's move toward live tokenization market adds weight to Wall Street's blockchain push.",
+        "url": "https://www.coindesk.com/business/2026/05/04/wall-street-giant-dtcc-plans-tokenized-securities-platform-with-july-pilot-october-launch",
+        "publishedAt": "2026-05-04T00:00:00"
       },
       {
-        "title": "Bitcoin's 'hazardous' airdrop: Why developers are warning against Paul Sztorc’s eCash fork Developers and industry figures say the eCash proposal introduces user risk, uneven distribution and philosophical tension.",
-        "url": "https://www.coindesk.com/tech/2026/05/02/bitcoin-s-hazardous-airdrop-why-developers-are-warning-against-paul-sztorc-s-ecash-fork",
-        "publishedAt": "2026-05-02T00:00:00"
+        "title": "Binance is launching a withdrawal lock to help deter crypto wrench attacks The lock is meant to protect users from being forced into withdrawing their funds, though it's an internal policy and not a cryptographic lock.",
+        "url": "https://www.coindesk.com/business/2026/05/04/binance-is-launching-a-withdrawal-lock-to-help-deter-crypto-wrench-attacks",
+        "publishedAt": "2026-05-04T00:00:00"
       },
       {
-        "title": "Canadian pension giant AIMCo buys the dip in Strategy, now sitting on $69 million unrealized gain AIMCo returns to Michael Saylor's bitcoin treasury company years after exiting, now sitting on a sizable unrealized gain.",
-        "url": "https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "Trump-affiliated World Liberty sues Justin Sun for 'defamation' after Tron creator's lawsuit World Liberty alleged that Sun engaged in short-selling, straw purchases and defamation.",
+        "url": "https://www.coindesk.com/policy/2026/05/04/trump-affiliated-world-liberty-sues-justin-sun-for-defamation-after-tron-creator-s-lawsuit",
+        "publishedAt": "2026-05-04T00:00:00"
       },
       {
-        "title": "Tether posts $1.04 billion Q1 profit, reaches $8.23 billion reserve buffer The stablecoin issuer said the crypto market was highly volatile during the first quarter.",
-        "url": "https://www.coindesk.com/business/2026/05/01/tether-posts-usd1-04-billion-q1-profit-reaches-usd8-23-billion-reserve-buffer",
-        "publishedAt": "2026-05-01T00:00:00"
+        "title": "CoinDesk 20 performance update: Bittensor (TAO) jumps 4.1% over the weekend Chainlink (LINK), up 2.7% since Friday, was also a top performer.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/05/04/coindesk-20-performance-update-bittensor-tao-jumps-4-1-over-the-weekend",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Kraken parent Payward closes $550 million Bitnomial deal, securing full CFTC derivatives stack The deal gives Payward a full CFTC-regulated derivatives stack in the U.S.",
+        "url": "https://www.coindesk.com/business/2026/05/04/kraken-parent-payward-closes-usd550-million-bitnomial-deal-securing-full-cftc-derivatives-stack",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Bitcoin stalls near $80,000. Stocks and ETF inflows still point to a breakout. Your day-ahead look for May 4, 2026",
+        "url": "https://www.coindesk.com/daybook-us/2026/05/04/bitcoin-stalls-near-usd80-000-stocks-and-etf-inflows-still-point-to-a-breakout",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Coinbase boosts Solana trading with DFlow integration Coinbase adding DFlow as its primary router will mean eight times less trade failures.",
+        "url": "https://www.coindesk.com/business/2026/05/04/coinbase-boosts-solana-trading-with-dflow-integration",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Crypto bears got it wrong again, losing $300 million in liquidations Bitcoin's move to $80,000 caught bears on the wrong side of the market again, leading to large short liquidations.",
+        "url": "https://www.coindesk.com/markets/2026/05/04/crypto-bears-got-it-wrong-again-losing-usd300-million-in-liquidations",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Jobs data, earnings calls: Crypto Week Ahead Your look at what's coming in the week starting May 4.",
+        "url": "https://www.coindesk.com/markets/2026/05/04/jobs-data-earnings-calls-crypto-week-ahead",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Recovery in bitcoin ETF inflows is real. It is just not complete yet. While ETF inflows have resumed, the recovery has yet to match last fall’s peak.",
+        "url": "https://www.coindesk.com/markets/2026/05/04/the-bitcoin-etf-recovery-in-flows-is-real-it-is-just-not-complete-yet",
+        "publishedAt": "2026-05-04T00:00:00"
       },
       {
         "title": "CoinW Expands Global Presence at Blockchain Forum 2026, Strengthening User Engagement",
@@ -46,18 +76,23 @@
         "publishedAt": "2026-04-16T00:00:00"
       },
       {
-        "title": "U.S. voters don't trust Trump administration to oversee crypto sector, CoinDesk poll finds",
-        "url": "https://www.coindesk.com/policy/2026/05/03/u-s-voters-don-t-trust-trump-administration-to-oversee-crypto-sector-coindesk-poll-finds",
-        "publishedAt": "2026-05-03T00:00:00"
+        "title": "Circle, Coinbase lead crypto stocks rally amid Clarity Act progress, bitcoin hitting $80,000",
+        "url": "https://www.coindesk.com/markets/2026/05/04/circle-coinbase-lead-crypto-stock-rally-amid-clarity-act-progress-bitcoin-above-usd80-000",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Circle, Coinbase lead crypto stocks rally amid Clarity Act progress, bitcoin hitting $80,000",
+        "url": "https://www.coindesk.com/markets/2026/05/04/circle-coinbase-lead-crypto-stock-rally-amid-clarity-act-progress-bitcoin-above-usd80-000",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Crypto bears got it wrong again, losing $300 million in liquidations",
+        "url": "https://www.coindesk.com/markets/2026/05/04/crypto-bears-got-it-wrong-again-losing-usd300-million-in-liquidations",
+        "publishedAt": "2026-05-04T00:00:00"
       },
       {
         "title": "U.S. voters don't trust Trump administration to oversee crypto sector, CoinDesk poll finds",
         "url": "https://www.coindesk.com/policy/2026/05/03/u-s-voters-don-t-trust-trump-administration-to-oversee-crypto-sector-coindesk-poll-finds",
-        "publishedAt": "2026-05-03T00:00:00"
-      },
-      {
-        "title": "Americans still prefer banks over crypto for financial access, CoinDesk's survey shows",
-        "url": "https://www.coindesk.com/policy/2026/05/03/americans-still-prefer-banks-over-crypto-for-financial-access-coindesk-s-survey-shows",
         "publishedAt": "2026-05-03T00:00:00"
       },
       {
@@ -66,43 +101,8 @@
         "publishedAt": "2026-05-02T00:00:00"
       },
       {
-        "title": "Crypto is at bottom of U.S. voters' priorities heading into elections, CoinDesk survey shows",
-        "url": "https://www.coindesk.com/policy/2026/05/03/crypto-is-at-the-bottom-of-u-s-voters-priorities-heading-into-the-midterm-coindesk-survey-shows",
-        "publishedAt": "2026-05-03T00:00:00"
-      },
-      {
         "title": "TP ICAP Fuels the Emergence of a Wholesale Crypto Market",
         "url": "https://www.coindesk.com/sponsored-content/tp-icap-fuels-the-emergence-of-a-wholesale-crypto-market",
-        "publishedAt": null
-      },
-      {
-        "title": "The $292M crypto hack exposed DeFi's weak spots. Here’s what must change, insiders say",
-        "url": "https://www.coindesk.com/business/2026/05/02/the-usd292m-crypto-hack-exposed-defi-s-weak-spots-here-s-what-must-change-insiders-say",
-        "publishedAt": "2026-05-02T00:00:00"
-      },
-      {
-        "title": "Brazil's central bank bans stablecoin and crypto settlement in cross-border payments",
-        "url": "https://www.coindesk.com/policy/2026/05/02/brazil-s-central-bank-bans-stablecoin-and-crypto-settlement-in-cross-border-payments",
-        "publishedAt": "2026-05-02T00:00:00"
-      },
-      {
-        "title": "Clarity Act text lets crypto firms offer stablecoin rewards while shielding bank yield",
-        "url": "https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "New Bitcoin quantum proposal offers Satoshi Nakamoto a way to prove control without moving BTC",
-        "url": "https://www.coindesk.com/tech/2026/05/02/new-bitcoin-quantum-proposal-offers-satoshi-nakamoto-a-way-to-prove-control-without-moving-btc",
-        "publishedAt": "2026-05-02T00:00:00"
-      },
-      {
-        "title": "Bitcoin above $78,000 as Senate clears Clarity Act yield hurdle, S&P 500 sets new record",
-        "url": "https://www.coindesk.com/markets/2026/05/02/bitcoin-above-usd78-000-as-senate-clears-clarity-act-yield-hurdle-s-and-p-500-sets-new-record",
-        "publishedAt": "2026-05-02T00:00:00"
-      },
-      {
-        "title": "Discover what's new in our Research Hub !",
-        "url": "https://www.coindesk.com/research",
         "publishedAt": null
       }
     ]
@@ -113,6 +113,31 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "Bitcoin tests $80,000 as Asia’s bid fades and Hong Kong AI IPOs surge",
+        "url": "https://www.coindesk.com/markets/2026/05/05/bitcoin-tests-usd80-000-as-asia-s-bid-fades-and-hong-kong-ai-ipos-surge",
+        "publishedAt": "2026-05-05T00:00:00"
+      },
+      {
+        "title": "GameStop's $55.5 billion eBay takeover bid puts its $368 million bitcoin stash in the crosshairs",
+        "url": "https://www.coindesk.com/business/2026/05/04/gamestop-s-usd55-5-billion-ebay-takeover-bid-puts-its-usd368-million-bitcoin-stash-in-the-crosshairs",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Hut 8 swaps Coinbase loan for cheaper FalconX deal, slashing borrowing costs as it bets big on AI",
+        "url": "https://www.coindesk.com/markets/2026/04/28/hut-8-swaps-coinbase-credit-line-for-cheaper-falconx-deal-slashing-borrowing-costs-as-it-bets-big-on-ai",
+        "publishedAt": "2026-04-28T00:00:00"
+      },
+      {
+        "title": "Recovery in bitcoin ETF inflows is real. It is just not complete yet.",
+        "url": "https://www.coindesk.com/markets/2026/05/04/the-bitcoin-etf-recovery-in-flows-is-real-it-is-just-not-complete-yet",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
+      {
+        "title": "Veteran trader Peter Brandt sees bitcoin hitting $250,000, but only after a bottom later this year",
+        "url": "https://www.coindesk.com/markets/2026/05/04/veteran-trader-peter-brandt-sees-bitcoin-hitting-usd250-000-but-only-after-a-bottom-later-this-year",
+        "publishedAt": "2026-05-04T00:00:00"
+      },
       {
         "title": "Bitcoin reclaims $80,000 as flows build, but traders hedge and doubt a breakout",
         "url": "https://www.coindesk.com/markets/2026/05/04/bitcoin-reclaims-usd80-000-as-flows-build-but-traders-hedge-and-doubt-a-breakout",
@@ -134,44 +159,9 @@
         "publishedAt": "2026-05-02T00:00:00"
       },
       {
-        "title": "Bitcoin miner Riot's shares jump 8% after expanding AMD data center deal, signaling AI pivot",
-        "url": "https://www.coindesk.com/markets/2026/05/01/bitcoin-miner-riot-s-shares-jump-8-after-expanding-amd-data-center-deal-signaling-ai-pivot",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "Canadian pension giant AIMCo buys the dip in Strategy, now sitting on $69 million unrealized gain",
-        "url": "https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "Bitcoin takes another aim at $80,000 as stocks rise, oil drops on Iran optimism",
-        "url": "https://www.coindesk.com/markets/2026/05/01/bitcoin-takes-another-aim-at-usd80-000-as-stocks-rise-oil-drops-on-iran-optimism",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "Institutional demand to drive bitcoin market cap to $16 trillion by 2030: Ark Invest",
-        "url": "https://www.coindesk.com/markets/2026/05/01/institutional-demand-to-drive-bitcoin-market-cap-to-usd16-trillion-by-2030-ark-invest",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "Bitcoin edges above $77,000, but institutional activity suggests downside hedging",
-        "url": "https://www.coindesk.com/markets/2026/05/01/bitcoin-edges-above-usd77-000-but-institutional-activity-suggests-downside-hedging",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "Strategy keeps STRC dividend at 11.5% as stock logs first monthly gain in nine",
-        "url": "https://www.coindesk.com/markets/2026/05/01/strategy-keeps-strc-dividend-at-11-5-as-stock-logs-first-monthly-gain-in-nine",
-        "publishedAt": "2026-05-01T00:00:00"
-      },
-      {
-        "title": "Policy Summit and other things at Consensus 2026: State of Crypto We are kicking off the show in Miami this week. Here's what you should attend.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/policy-summit-and-other-things-at-consensus-2026-state-of-crypto",
-        "publishedAt": "2026-05-03T00:00:00"
-      },
-      {
-        "title": "Crypto is at bottom of U.S. voters' priorities heading into elections, CoinDesk survey shows Americans had a generally unfavorable view of cryptocurrencies, the survey of 1,000 randomly selected registered voters found.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/crypto-is-at-the-bottom-of-u-s-voters-priorities-heading-into-the-midterm-coindesk-survey-shows",
-        "publishedAt": "2026-05-03T00:00:00"
+        "title": "Bitcoin tests $80,000 as Asia’s bid fades and Hong Kong AI IPOs surge Western desks are carrying the bitcoin rally alone, with Friday’s jobs report the next test.",
+        "url": "https://www.coindesk.com/markets/2026/05/05/bitcoin-tests-usd80-000-as-asia-s-bid-fades-and-hong-kong-ai-ipos-surge",
+        "publishedAt": "2026-05-05T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -190,6 +180,11 @@
         "title": "decentralized applications (dApps)",
         "url": "https://www.coindesk.com/learn/what-is-a-dapp-decentralized-apps-explained",
         "publishedAt": null
+      },
+      {
+        "title": "Tom Lee says 'crypto spring' started as largest Ethereum treasury buys $238 million in ether",
+        "url": "https://www.coindesk.com/business/2026/05/04/tom-lee-says-crypto-spring-started-as-largest-ethereum-treasury-buys-usd238-million-in-ether",
+        "publishedAt": "2026-05-04T00:00:00"
       },
       {
         "title": "Ethereum Foundation finalizes sale of 10,000 ether to BitMine as part of its treasury strategy",
@@ -237,19 +232,9 @@
         "publishedAt": "2026-04-23T00:00:00"
       },
       {
-        "title": "Inside the $71 million freeze on Arbitrum that has the crypto world questioning what decentralization really means",
-        "url": "https://www.coindesk.com/tech/2026/04/22/inside-the-usd71-million-freeze-on-arbitrum-that-has-the-crypto-world-questioning-what-decentralization-really-means",
-        "publishedAt": "2026-04-22T00:00:00"
-      },
-      {
-        "title": "Policy Summit and other things at Consensus 2026: State of Crypto We are kicking off the show in Miami this week. Here's what you should attend.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/policy-summit-and-other-things-at-consensus-2026-state-of-crypto",
-        "publishedAt": "2026-05-03T00:00:00"
-      },
-      {
-        "title": "Crypto is at bottom of U.S. voters' priorities heading into elections, CoinDesk survey shows Americans had a generally unfavorable view of cryptocurrencies, the survey of 1,000 randomly selected registered voters found.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/crypto-is-at-the-bottom-of-u-s-voters-priorities-heading-into-the-midterm-coindesk-survey-shows",
-        "publishedAt": "2026-05-03T00:00:00"
+        "title": "Bitcoin tests $80,000 as Asia’s bid fades and Hong Kong AI IPOs surge Western desks are carrying the bitcoin rally alone, with Friday’s jobs report the next test.",
+        "url": "https://www.coindesk.com/markets/2026/05/05/bitcoin-tests-usd80-000-as-asia-s-bid-fades-and-hong-kong-ai-ipos-surge",
+        "publishedAt": "2026-05-05T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -315,14 +300,9 @@
         "publishedAt": "2026-03-17T00:00:00"
       },
       {
-        "title": "Policy Summit and other things at Consensus 2026: State of Crypto We are kicking off the show in Miami this week. Here's what you should attend.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/policy-summit-and-other-things-at-consensus-2026-state-of-crypto",
-        "publishedAt": "2026-05-03T00:00:00"
-      },
-      {
-        "title": "Crypto is at bottom of U.S. voters' priorities heading into elections, CoinDesk survey shows Americans had a generally unfavorable view of cryptocurrencies, the survey of 1,000 randomly selected registered voters found.",
-        "url": "https://www.coindesk.com/policy/2026/05/03/crypto-is-at-the-bottom-of-u-s-voters-priorities-heading-into-the-midterm-coindesk-survey-shows",
-        "publishedAt": "2026-05-03T00:00:00"
+        "title": "Bitcoin tests $80,000 as Asia’s bid fades and Hong Kong AI IPOs surge Western desks are carrying the bitcoin rally alone, with Friday’s jobs report the next test.",
+        "url": "https://www.coindesk.com/markets/2026/05/05/bitcoin-tests-usd80-000-as-asia-s-bid-fades-and-hong-kong-ai-ipos-surge",
+        "publishedAt": "2026-05-05T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -338,23 +318,23 @@
     "success": true,
     "items": [
       {
-        "title": "How Canton Network Lets Institutions Guard Against DeFi Security Risks: Digital Asset CEO",
-        "url": "https://decrypt.co/366086/how-canton-network-lets-institutions-guard-against-defi-security-risks",
+        "title": "Someone Built an Open-Source 'Theoretical Mythos' to Reverse-Engineer Anthropic's Most Dangerous AI",
+        "url": "https://decrypt.co/366745/openmythos-claude-mythos-architecture-open-source-reconstruction",
         "publishedAt": null
       },
       {
-        "title": "You Installed Hermes. Now Make It Look Better Than ChatGPT or Claude",
-        "url": "https://decrypt.co/366535/you-installed-hermes-make-look-better-chatgpt-claude",
+        "title": "Aave Fights to Unfreeze $71 Million as Kelp DAO Hack Spills Into Court",
+        "url": "https://decrypt.co/366744/aave-unfreeze-71m-arbitrum-kelp-dao-hack",
         "publishedAt": null
       },
       {
-        "title": "OpenAI GPT Image 2 vs Google Nano Banana 2: Which AI Image Generator Is Best?",
-        "url": "https://decrypt.co/366408/openai-gpt-image-2-vs-google-nano-banana-2-review",
+        "title": "K-Pop Firm's Stock Plunges as It Dumps Bitcoin Treasury Plan for AI Pivot",
+        "url": "https://decrypt.co/366740/k-pop-firm-stock-plunges-dumps-bitcoin-treasury-plan-ai-pivot",
         "publishedAt": null
       },
       {
-        "title": "Oscars Ban AI Performances and Screenplays From Eligibility",
-        "url": "https://decrypt.co/366405/oscars-ban-ai-performances-screenplays-eligibility",
+        "title": "Haun Ventures Raises $1 Billion Fund for the Intersection of Crypto and AI Agents",
+        "url": "https://decrypt.co/366728/haun-ventures-raises-1-billion-fund-intersection-crypto-tech-ai-agents",
         "publishedAt": null
       },
       {
@@ -363,18 +343,18 @@
         "publishedAt": null
       },
       {
-        "title": "MyCryptoParadise Launches “Professional Trader” Trading Psychology Album",
-        "url": "https://decrypt.co/366336/mycryptoparadise-launches-professional-trader-trading-psychology-album",
+        "title": "DeLorean Brings Its Iconic IP to Solana",
+        "url": "https://decrypt.co/366634/delorean-brings-its-iconic-ip-to-solana",
         "publishedAt": null
       },
       {
-        "title": "Tapbit Reinforces Transparency with Proof of Reserves and Independent Security Validation by CertiK",
-        "url": "https://decrypt.co/366157/tapbit-reinforces-transparency-with-proof-of-reserves-and-independent-security-validation-by-certik",
+        "title": "altFINS Partners with CoinEx to Connect Analytics with Trade Execution",
+        "url": "https://decrypt.co/366622/altfins-partners-with-coinex-to-connect-analytics-with-trade-execution",
         "publishedAt": null
       },
       {
-        "title": "Shrapnel Enters China’s $49B Market powered by GalaChain and Government-Backed Digital Asset Framework",
-        "url": "https://decrypt.co/366139/shrapnel-enters-chinas-49b-market-powered-by-galachain-and-government-backed-digital-asset-framework",
+        "title": "Fuutura Outlines Architecture Built for the Cross-Border Stablecoin Corridors the IMF Now Tracks",
+        "url": "https://decrypt.co/366616/fuutura-outlines-architecture-built-for-the-cross-border-stablecoin-corridors-the-imf-now-tracks",
         "publishedAt": null
       },
       {
@@ -450,109 +430,9 @@
     "source": "The Block",
     "url": "https://www.theblock.co/",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "Bitcoin rises past $80,000, breaking 'major' psychological resistance zone",
-        "url": "https://www.theblock.co/post/399835/bitcoin-rises-past-80000-trump-hormuz-mission",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "Michael Saylor's Strategy pauses weekly bitcoin purchases ahead of Q1 earnings release",
-        "url": "https://www.theblock.co/post/399828/strategy-pauses-bitcoin-purchase-q1-earnings",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "New York AG settles for $5 million with Uphold in first enforcement action against a crypto yield product promoter",
-        "url": "https://www.theblock.co/post/399825/new-york-ag-settles-for-5-million-with-uphold-in-first-enforcement-action-against-a-crypto-yield-product-promoter",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "North Korea terrorism creditors move to seize Arbitrum-frozen Kelp DAO ETH ahead of DeFi United vote",
-        "url": "https://www.theblock.co/post/399819/north-korea-terrorism-creditors-move-to-seize-arbitrum-frozen-kelp-dao-eth-ahead-of-defi-united-vote",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
-        "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "Strategic Selection: A Practical Guide to Choosing the Right Market Maker",
-        "url": "https://www.theblock.co/post/395685/strategic-selection-a-practical-guide-to-choosing-the-right-market-maker",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
-        "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "Strategic Selection: A Practical Guide to Choosing the Right Market Maker",
-        "url": "https://www.theblock.co/post/395685/strategic-selection-a-practical-guide-to-choosing-the-right-market-maker",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "Bitcoin rises past $80,000, breaking 'major' psychological resistance zone",
-        "url": "https://www.theblock.co/post/399835/bitcoin-rises-past-80000-trump-hormuz-mission",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "New York AG settles for $5 million with Uphold in first enforcement action against a crypto yield product promoter",
-        "url": "https://www.theblock.co/post/399825/new-york-ag-settles-for-5-million-with-uphold-in-first-enforcement-action-against-a-crypto-yield-product-promoter",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "Michael Saylor's Strategy pauses weekly bitcoin purchases ahead of Q1 earnings release",
-        "url": "https://www.theblock.co/post/399828/strategy-pauses-bitcoin-purchase-q1-earnings",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "North Korea terrorism creditors move to seize Arbitrum-frozen Kelp DAO ETH ahead of DeFi United vote",
-        "url": "https://www.theblock.co/post/399819/north-korea-terrorism-creditors-move-to-seize-arbitrum-frozen-kelp-dao-eth-ahead-of-defi-united-vote",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "BlackRock urges OCC to drop tokenized reserve cap idea, expand eligible assets in GENIUS Act comment letter",
-        "url": "https://www.theblock.co/post/399812/blackrock-urges-occ-to-drop-tokenized-reserve-cap-idea-expand-eligible-assets-in-genius-act-comment-letter",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "RealOpen and TRON Verify $9.4M in USDT for Crypto-Enabled Real Estate Purchases",
-        "url": "https://www.theblock.co/post/399506/realopen-and-tron-verify-9-4m-in-usdt-for-crypto-enabled-real-estate-purchases",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "Bitcoin rises past $80,000, breaking 'major' psychological resistance zone",
-        "url": "https://www.theblock.co/post/399835/bitcoin-rises-past-80000-trump-hormuz-mission",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "Michael Saylor's Strategy pauses weekly bitcoin purchases ahead of Q1 earnings release",
-        "url": "https://www.theblock.co/post/399828/strategy-pauses-bitcoin-purchase-q1-earnings",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "New York AG settles for $5 million with Uphold in first enforcement action against a crypto yield product promoter",
-        "url": "https://www.theblock.co/post/399825/new-york-ag-settles-for-5-million-with-uphold-in-first-enforcement-action-against-a-crypto-yield-product-promoter",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "North Korea terrorism creditors move to seize Arbitrum-frozen Kelp DAO ETH ahead of DeFi United vote",
-        "url": "https://www.theblock.co/post/399819/north-korea-terrorism-creditors-move-to-seize-arbitrum-frozen-kelp-dao-eth-ahead-of-defi-united-vote",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "RealOpen and TRON Verify $9.4M in USDT for Crypto-Enabled Real Estate Purchases",
-        "url": "https://www.theblock.co/post/399506/realopen-and-tron-verify-9-4m-in-usdt-for-crypto-enabled-real-estate-purchases",
-        "publishedAt": "12:03AM EDT"
-      },
-      {
-        "title": "A Deep Dive into the Future of Onchain Liquidity Routing",
-        "url": "https://www.theblock.co/post/396391/a-deep-dive-into-the-future-of-onchain-liquidity-routing",
-        "publishedAt": "12:03AM EDT"
-      }
-    ]
+    "success": false,
+    "error": "Error: HTTP 403 for https://www.theblock.co/",
+    "items": []
   },
   {
     "source": "DL News",
@@ -561,104 +441,104 @@
     "success": true,
     "items": [
       {
-        "title": "Crypto companies raised $600m in April despite despite market downturn, VCs say",
-        "url": "https://www.dlnews.com/articles/deals/crypto-companies-raised-600m-in-april-despite-fake-innovation-vcs-say/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "title": "Aave secures emergency hearing to void ‘catastrophic’ restraining order",
+        "url": "https://www.dlnews.com/articles/defi/aave-gets-emergency-hearing-to-void-catastrophic-court-order/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
-        "title": "Crypto industry reels as April sees highest number of hacks ever",
-        "url": "https://www.dlnews.com/articles/defi/crypto-industry-reels-after-highest-number-of-hacks-ever/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "title": "Clarity Act odds surge on stablecoin compromise, Coinbase support",
+        "url": "https://www.dlnews.com/articles/regulation/clarity-act-odds-surge-on-stablecoin-compromise/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
-        "title": "Hegseth recasts Bitcoin as national security asset amid Russia, China expansion",
-        "url": "https://www.dlnews.com/articles/markets/hegseth-recasts-bitcoin-as-national-security-asset-amid-russia-china-expansion/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "title": "‘Every hit earns crypto’? App that gives users Bitcoin for getting stoned deemed ‘dangerous’ and ‘unethical’",
+        "url": "https://www.dlnews.com/articles/web3/gudtrip-app-gives-users-bitcoin-and-deemed-unethical/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
-        "title": "Crypto industry reels as April sees highest number of hacks ever",
-        "url": "https://www.dlnews.com/articles/defi/crypto-industry-reels-after-highest-number-of-hacks-ever/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "title": "Aave secures emergency hearing to void ‘catastrophic’ restraining order",
+        "url": "https://www.dlnews.com/articles/defi/aave-gets-emergency-hearing-to-void-catastrophic-court-order/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
-        "title": "Crypto companies raised $600m in April despite despite market downturn, VCs say",
-        "url": "https://www.dlnews.com/articles/deals/crypto-companies-raised-600m-in-april-despite-fake-innovation-vcs-say/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "title": "Clarity Act odds surge on stablecoin compromise, Coinbase support",
+        "url": "https://www.dlnews.com/articles/regulation/clarity-act-odds-surge-on-stablecoin-compromise/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "‘Every hit earns crypto’? App that gives users Bitcoin for getting stoned deemed ‘dangerous’ and ‘unethical’",
+        "url": "https://www.dlnews.com/articles/web3/gudtrip-app-gives-users-bitcoin-and-deemed-unethical/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Ethereum devs huddled in the Arctic Circle to fix the network. Here’s what to know",
+        "url": "https://www.dlnews.com/articles/markets/ethereum-devs-huddled-in-the-arctic-circle-to-fix-the-network-heres-what-to-know/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Bitcoin tops $80,000 price as Clarity Act nears Senate floor with new Fed chair imminent",
+        "url": "https://www.dlnews.com/articles/markets/bitcoin-tops-80k-price-as-clarity-act-nears-senate-floor-with-new-fed-chair-imminent/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Bitcoin tops $80,000 price as Clarity Act nears Senate floor with new Fed chair imminent",
+        "url": "https://www.dlnews.com/articles/markets/bitcoin-tops-80k-price-as-clarity-act-nears-senate-floor-with-new-fed-chair-imminent/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
         "title": "Anthropic’s new Mythos AI will hit crypto. Bitcoin investors don’t care, says Coinbase",
         "url": "https://www.dlnews.com/articles/markets/anthropic-mythos-ai-will-hit-crypto-bitcoin-investors-dont-care-says-coinbase/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Clarity Act odds surge on stablecoin compromise, Coinbase support",
+        "url": "https://www.dlnews.com/articles/regulation/clarity-act-odds-surge-on-stablecoin-compromise/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
         "title": "Hegseth recasts Bitcoin as national security asset amid Russia, China expansion",
         "url": "https://www.dlnews.com/articles/markets/hegseth-recasts-bitcoin-as-national-security-asset-amid-russia-china-expansion/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Bitcoin tops $80,000 price as Clarity Act nears Senate floor with new Fed chair imminent",
+        "url": "https://www.dlnews.com/articles/markets/bitcoin-tops-80k-price-as-clarity-act-nears-senate-floor-with-new-fed-chair-imminent/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "A wallet tied to one of crypto’s most notorious hackers is laundering funds again",
+        "url": "https://www.dlnews.com/articles/people-culture/wallets-tied-to-andean-medjedovic-use-tornado-cash/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Crypto industry reels as April sees highest number of hacks ever",
+        "url": "https://www.dlnews.com/articles/defi/crypto-industry-reels-after-highest-number-of-hacks-ever/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Crypto companies raised $600m in April despite despite market downturn, VCs say",
+        "url": "https://www.dlnews.com/articles/deals/crypto-companies-raised-600m-in-april-despite-fake-innovation-vcs-say/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Anthropic’s new Mythos AI will hit crypto. Bitcoin investors don’t care, says Coinbase",
+        "url": "https://www.dlnews.com/articles/markets/anthropic-mythos-ai-will-hit-crypto-bitcoin-investors-dont-care-says-coinbase/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
+      },
+      {
+        "title": "Hegseth recasts Bitcoin as national security asset amid Russia, China expansion",
+        "url": "https://www.dlnews.com/articles/markets/hegseth-recasts-bitcoin-as-national-security-asset-amid-russia-china-expansion/",
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
         "title": "US Senate bans prediction market trading by Senators, staff",
         "url": "https://www.dlnews.com/articles/regulation/us-senate-bans-prediction-market-trading-by-senators/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "XRP held back by ‘two forces’ analyst says as traders bet on price to plunge",
-        "url": "https://www.dlnews.com/articles/markets/xrp-held-back-by-two-forces-analyst-says-as-traders-bet-on-price-to-plunge/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "Anthropic’s new Mythos AI will hit crypto. Bitcoin investors don’t care, says Coinbase",
-        "url": "https://www.dlnews.com/articles/markets/anthropic-mythos-ai-will-hit-crypto-bitcoin-investors-dont-care-says-coinbase/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "Hegseth recasts Bitcoin as national security asset amid Russia, China expansion",
-        "url": "https://www.dlnews.com/articles/markets/hegseth-recasts-bitcoin-as-national-security-asset-amid-russia-china-expansion/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "A wallet tied to one of crypto’s most notorious hackers is laundering funds again",
-        "url": "https://www.dlnews.com/articles/people-culture/wallets-tied-to-andean-medjedovic-use-tornado-cash/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "Hegseth recasts Bitcoin as national security asset amid Russia, China expansion",
-        "url": "https://www.dlnews.com/articles/markets/hegseth-recasts-bitcoin-as-national-security-asset-amid-russia-china-expansion/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "A wallet tied to one of crypto’s most notorious hackers is laundering funds again",
-        "url": "https://www.dlnews.com/articles/people-culture/wallets-tied-to-andean-medjedovic-use-tornado-cash/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       },
       {
         "title": "Democrat Senators question Howard Lutnick over Tether ties",
         "url": "https://www.dlnews.com/articles/regulation/dem-senators-question-howard-lutnick-over-tether-ties/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "XRP held back by ‘two forces’ analyst says as traders bet on price to plunge",
-        "url": "https://www.dlnews.com/articles/markets/xrp-held-back-by-two-forces-analyst-says-as-traders-bet-on-price-to-plunge/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "Vitalik-backed MegaETH sees token fall 55% on first day trading",
-        "url": "https://www.dlnews.com/articles/defi/vitalik-backed-megaeth-sees-token-fall-55percent-on-first-day-trading/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "Elizabeth Warren slams Trump after expose ties World Liberty Financial to crypto projects linked to human trafficking group",
-        "url": "https://www.dlnews.com/articles/regulation/warren-slams-trump-over-world-liberty-financial-expose/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "A wallet tied to one of crypto’s most notorious hackers is laundering funds again",
-        "url": "https://www.dlnews.com/articles/people-culture/wallets-tied-to-andean-medjedovic-use-tornado-cash/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
-      },
-      {
-        "title": "Tokenisation will balloon to $2tn despite DeFi turbulence, Standard Chartered says",
-        "url": "https://www.dlnews.com/articles/markets/tokenisation-will-balloon-to-2tn-despite-defi-turbulence/",
-        "publishedAt": "2026-05-02T01:30:00.000Z"
+        "publishedAt": "2026-05-04T21:51:05.552Z"
       }
     ]
   },
