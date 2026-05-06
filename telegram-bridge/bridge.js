@@ -27,11 +27,18 @@ const https = require('https');
 const http = require('http');
 const { URL } = require('url');
 const { spawn } = require('child_process');
+const crypto = require('crypto');
 
 const BRIDGE_DIR = __dirname;
 const STATE_DIR = path.join(BRIDGE_DIR, 'state');
 const OFFSET_FILE = path.join(STATE_DIR, 'offset.json');
+const CONVERSATIONS_FILE = path.join(STATE_DIR, 'conversations.json');
 const CONFIG_FILE = path.join(BRIDGE_DIR, 'config.json');
+// How long after the previous turn we keep treating subsequent DMs as part
+// of the same Claude conversation (--resume the same session). After this
+// the next plain text starts a fresh session. Only DM matters here; group
+// topics still require an explicit slash command.
+const CONVERSATION_IDLE_MS = 30 * 60 * 1000;
 // Token file path: prefer the bot-agnostic name; keep the legacy name as a
 // fallback so older installs keep working without manual migration.
 const TOKEN_FILE_PRIMARY  = path.join(os.homedir(), '.openclaw', 'claude-bridge.token');
@@ -96,6 +103,51 @@ function readOffset() {
 function writeOffset(id) {
   try { fs.writeFileSync(OFFSET_FILE, JSON.stringify({ lastUpdateId: id, updatedAt: new Date().toISOString() }, null, 2)); }
   catch (e) { log('WARN', `offset write failed: ${e.message}`); }
+}
+
+// ---------------------------------------------------------------- conversation state
+// Per-user "open conversation" with Claude. Each entry carries the session
+// id we passed to `claude --session-id` on the first turn and re-pass via
+// `--resume` on follow-ups. An entry is considered live while the gap to
+// `lastTurnAt` is below CONVERSATION_IDLE_MS; otherwise the next DM opens a
+// fresh session. /new clears the entry on demand.
+function loadConversations() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(CONVERSATIONS_FILE, 'utf8'));
+    return raw && typeof raw === 'object' && raw.byUser ? raw.byUser : {};
+  } catch { return {}; }
+}
+function saveConversations(byUser) {
+  try {
+    fs.writeFileSync(CONVERSATIONS_FILE, JSON.stringify({
+      byUser, updatedAt: new Date().toISOString()
+    }, null, 2));
+  } catch (e) { log('WARN', `conversations save failed: ${e.message}`); }
+}
+function getActiveConversation(userId) {
+  const all = loadConversations();
+  const c = all[userId];
+  if (!c || !c.sessionId || !c.lastTurnAt) return null;
+  if (Date.now() - new Date(c.lastTurnAt).getTime() > CONVERSATION_IDLE_MS) return null;
+  return c;
+}
+function recordConversationTurn(userId, sessionId, taskId) {
+  const all = loadConversations();
+  all[userId] = {
+    sessionId,
+    lastTurnAt: new Date().toISOString(),
+    lastTaskId: taskId || null
+  };
+  saveConversations(all);
+}
+function clearConversation(userId) {
+  const all = loadConversations();
+  if (all[userId]) {
+    delete all[userId];
+    saveConversations(all);
+    return true;
+  }
+  return false;
 }
 
 // ---------------------------------------------------------------- logging
@@ -266,6 +318,10 @@ const LOCAL_COMMANDS = {
     '  /claude last             one-line summary of last task',
     '  /claude logs             last ~3KB stdout of last task',
     '',
+    'Conversations (DM only)',
+    '  טקסט חופשי               ממשיך את השיחה האחרונה אם פחות מ-30 דק׳ עברו',
+    '  /new                     נקה שיחה — ההודעה הבאה תפתח שיחה חדשה',
+    '',
     'Allowlist enforced — only your user ID can issue commands.',
     'System operations live in @Clawy_OpenClawBot (group topics).'
   ].join('\n')
@@ -287,13 +343,18 @@ function parseCommand(text, botUsername) {
 }
 
 // ---------------------------------------------------------------- task tracking
-async function dispatchToDashboard(parsed, fromUserId, replyToMessageId) {
+async function dispatchToDashboard(parsed, fromUserId, replyToMessageId, extras) {
   const url = `${DASHBOARD_URL}/api/telegram/dispatch`;
   const r = await httpJson('POST', url, {
     command: parsed.command,
     args: parsed.args,
     fromUserId,
-    replyToMessageId
+    replyToMessageId,
+    // sessionId / resumeSessionId are passed through to the Claude runner
+    // so multi-turn DMs continue the same Claude session. Either may be
+    // null / undefined for non-Claude commands or for fresh runs.
+    sessionId: extras && extras.sessionId || null,
+    resumeSessionId: extras && extras.resumeSessionId || null
   }, { timeoutMs: 15000 });
   if (r.statusCode !== 200) {
     const err = new Error(`dashboard returned ${r.statusCode}: ${r.text.slice(0, 200)}`);
@@ -507,6 +568,22 @@ async function handleUpdate(update, ctx) {
     return;
   }
 
+  // Conversation lifecycle: /new clears the active Claude session for this
+  // user so the next plain DM starts fresh. Handled inline so it bypasses
+  // the BRIDGE_ALLOWED_COMMANDS gate below (it's a bridge-local primitive,
+  // not a dashboard-routed command).
+  if (parsed.command === 'new' && isDM) {
+    const had = clearConversation(fromUserId);
+    log('INFO', `/new from ${fromUserId} (cleared=${had})`);
+    await tgSendDirect(ctx.token, {
+      chatId, threadId: replyThreadId,
+      text: had
+        ? '✅ נוקתה השיחה. ההודעה הבאה תפתח שיחה חדשה עם קלוד.'
+        : 'אין שיחה פתוחה. ההודעה הבאה תפתח שיחה חדשה ממילא.'
+    });
+    return;
+  }
+
   // Local commands handled inside the bridge (never round-trip to the
   // dashboard's COMMANDS map). /start and /help are Telegram conventions —
   // the dashboard doesn't know them, so dispatching them returns a 400 and
@@ -538,11 +615,28 @@ async function handleUpdate(update, ctx) {
     return;
   }
 
-  log('INFO', `dispatch /${parsed.command} from ${fromUserId} thread=${replyThreadId ?? '-'} (${parsed.args.length} chars args)`);
+  // For /claude in DM, decide whether to continue the active conversation
+  // (resume the same Claude session) or open a fresh one. Group/topic
+  // /claude calls always start fresh — group conversations are owned by
+  // CLAWY topics and don't share session state across users.
+  let conversationExtras = {};
+  let conversationStatus = null; // 'new' | 'resume' | null
+  if (parsed.command === 'claude' && isDM && parsed.args) {
+    const active = getActiveConversation(fromUserId);
+    if (active) {
+      conversationExtras = { resumeSessionId: active.sessionId };
+      conversationStatus = 'resume';
+    } else {
+      conversationExtras = { sessionId: crypto.randomUUID() };
+      conversationStatus = 'new';
+    }
+  }
+
+  log('INFO', `dispatch /${parsed.command} from ${fromUserId} thread=${replyThreadId ?? '-'} (${parsed.args.length} chars args)${conversationStatus ? ' conversation=' + conversationStatus : ''}`);
 
   let dispatchResult;
   try {
-    dispatchResult = await dispatchToDashboard(parsed, fromUserId, message.message_id);
+    dispatchResult = await dispatchToDashboard(parsed, fromUserId, message.message_id, conversationExtras);
   } catch (e) {
     log('ERR', `dispatch failed: ${e.message}`);
     await tgSendDirect(ctx.token, {
@@ -585,7 +679,23 @@ async function handleUpdate(update, ctx) {
   // 5/15/30/45/60 min if the task is still running, and the final reply when
   // the task hits a terminal state. State is persisted under
   // state/in-flight-tasks.json so a bridge restart doesn't orphan the user.
-  const ackText = `🤔 חושב… (אעדכן כל 2 דק׳ עד שאסיים)`
+  // If this turn opened or extended a conversation, persist the session id
+  // so the NEXT plain-text DM from this user resumes the same Claude
+  // session. Done before the ack send so a crash between ack and persist
+  // doesn't lose continuity.
+  const conversationSessionId = conversationExtras.resumeSessionId
+    || conversationExtras.sessionId
+    || null;
+  if (conversationSessionId && parsed.command === 'claude' && isDM) {
+    recordConversationTurn(fromUserId, conversationSessionId, taskId);
+  }
+
+  const conversationTag = conversationStatus === 'resume'
+    ? ' · ממשיך שיחה'
+    : conversationStatus === 'new'
+    ? ' · שיחה חדשה'
+    : '';
+  const ackText = `🤔 חושב…${conversationTag} (אעדכן כל 2 דק׳ עד שאסיים)`
     + (dispatchResult.dashboardUrl ? `\nLive: ${dispatchResult.dashboardUrl}` : '');
   const ackRes = await tgSendDirect(ctx.token, { chatId, threadId: replyThreadId, text: ackText });
   if (ackRes.ok) log('INFO', `task ${taskId} ack sent (msg ${ackRes.messageId}) — watcher armed (non-blocking)`);

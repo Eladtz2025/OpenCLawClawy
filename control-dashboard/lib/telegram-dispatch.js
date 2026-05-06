@@ -260,7 +260,16 @@ const COMMANDS = {
 
       // ---- /claude <task> — start a new task ----
       if (!args) return { ok: false, kind: 'reply', replyText: 'Usage: /claude <task description> — or /claude status | stop | last | logs' };
-      const r = runner.startTask({ prompt: args, mode: 'auto', name: 'telegram-claude' });
+      const r = runner.startTask({
+        prompt: args,
+        mode: 'auto',
+        name: 'telegram-claude',
+        // Multi-turn continuity: if the bridge passed a session id, the
+        // runner enables session persistence and either creates the
+        // session (sessionId) or resumes it (resumeSessionId).
+        sessionId: ctx.sessionId || null,
+        resumeSessionId: ctx.resumeSessionId || null
+      });
       if (ctx.logAction) ctx.logAction({ alias: 'claude', name: 'task-start-via-telegram-claude', taskId: r.id, fromUserId: ctx.fromUserId });
       return {
         ok: true, kind: 'claude',
@@ -285,7 +294,12 @@ async function dispatch(body, deps) {
     ...deps,
     args: typeof body.args === 'string' ? body.args : '',
     fromUserId: body.fromUserId != null ? String(body.fromUserId) : null,
-    replyToMessageId: body.replyToMessageId || null
+    replyToMessageId: body.replyToMessageId || null,
+    // Multi-turn DM continuity. The bridge sets either sessionId (open a new
+    // Claude session with this id, persist) or resumeSessionId (resume an
+    // existing one). Only the /claude command consumes these.
+    sessionId: typeof body.sessionId === 'string' ? body.sessionId : null,
+    resumeSessionId: typeof body.resumeSessionId === 'string' ? body.resumeSessionId : null
   };
 
   let r;

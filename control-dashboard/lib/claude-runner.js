@@ -192,7 +192,7 @@ function getEmitter(id) {
   return e ? e.emitter : null;
 }
 
-function startTask({ prompt, mode = 'auto', cwd, model, effort, name }) {
+function startTask({ prompt, mode = 'auto', cwd, model, effort, name, sessionId, resumeSessionId }) {
   if (!prompt || !prompt.trim()) throw new Error('prompt required');
   if (!fs.existsSync(CLAUDE_BIN)) throw new Error(`claude CLI not found at ${CLAUDE_BIN}; set env CLAUDE_BIN`);
   if (!VALID_MODES.includes(mode)) throw new Error(`unknown mode: ${mode}`);
@@ -221,7 +221,20 @@ function startTask({ prompt, mode = 'auto', cwd, model, effort, name }) {
   if (model)  args.push('--model', String(model));
   if (effort) args.push('--effort', String(effort));
   if (name)   args.push('--name', String(name));
-  args.push('--no-session-persistence');
+  // Session handling. By default we run with --no-session-persistence so
+  // each dashboard task is reproducible and isolated. When the caller
+  // wants multi-turn continuity (Telegram DM conversations), they pass
+  // either resumeSessionId (continue an existing session) or sessionId
+  // (open a new persisted session with this id). In both cases we omit
+  // the --no-session-persistence flag so Claude saves the session under
+  // ~/.claude/projects/ and the next call can resume it.
+  if (resumeSessionId) {
+    args.push('--resume', String(resumeSessionId));
+  } else if (sessionId) {
+    args.push('--session-id', String(sessionId));
+  } else {
+    args.push('--no-session-persistence');
+  }
 
   // Open append-only log streams.
   const stdoutLog = fs.createWriteStream(logPath(id, 'stdout'), { flags: 'a' });
