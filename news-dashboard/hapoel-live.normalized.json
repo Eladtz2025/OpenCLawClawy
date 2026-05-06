@@ -13,7 +13,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -31,7 +31,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -49,7 +49,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -67,7 +67,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -85,7 +85,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -103,7 +103,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -121,7 +121,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -139,7 +139,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -157,7 +157,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -175,7 +175,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -193,7 +193,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -211,7 +211,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   },
@@ -229,7 +229,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "collectedAt": "2026-05-06T07:41:24.414Z",
     "fixture": false,
     "synthetic": false
   }
