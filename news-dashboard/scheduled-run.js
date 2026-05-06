@@ -166,13 +166,24 @@ function runMorningRun() {
 function verifyPublish() {
   const state = readJsonOpt(STATE_PATH);
   if (!state) return { ok: false, reason: 'state.json missing or invalid' };
-  if (state.status !== 'SUCCESS') return { ok: false, reason: `state.status = ${state.status}`, state };
   if (!state.buildId) return { ok: false, reason: 'state.buildId missing', state };
   const ageMs = Date.now() - new Date(state.lastPublishedAt || 0).getTime();
   if (!isFinite(ageMs) || ageMs > 6 * 3600e3) {
     return { ok: false, reason: `state.lastPublishedAt is stale (${ageMs}ms old)`, state };
   }
-  return { ok: true, state };
+  if (state.status === 'SUCCESS') return { ok: true, state };
+  if (state.status === 'PARTIAL') {
+    const topics = state.topics ? Object.values(state.topics) : [];
+    const total = topics.length;
+    const meetMin = topics.filter(t => (t.got || 0) >= (t.minGoodCount || t.wanted || 1)).length;
+    const empties = topics.filter(t => (t.got || 0) === 0).length;
+    const allowedShortfall = Math.max(1, Math.floor(total * 0.2));
+    if (empties === 0 && total > 0 && (total - meetMin) <= allowedShortfall) {
+      return { ok: true, state, partial: true, meetMin, total };
+    }
+    return { ok: false, reason: `state.status = PARTIAL (${meetMin}/${total} meet min, ${empties} empty)`, state };
+  }
+  return { ok: false, reason: `state.status = ${state.status}`, state };
 }
 
 // ----------------------------------------------------------------------------
@@ -323,7 +334,11 @@ function main() {
     process.exit(1);
   }
   const buildId = verify.state.buildId;
-  log('INFO', `pipeline ok, buildId=${buildId}`);
+  if (verify.partial) {
+    log('WARN', `pipeline ok (PARTIAL: ${verify.meetMin}/${verify.total} topics met min) buildId=${buildId}`);
+  } else {
+    log('INFO', `pipeline ok, buildId=${buildId}`);
+  }
 
   const send = sendSummary(buildId);
   const finishedAt = isoLocal();
