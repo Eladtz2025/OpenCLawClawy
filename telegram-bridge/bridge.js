@@ -423,9 +423,12 @@ function startTaskWatcher(entry, ctx) {
     const elapsedSec = Math.floor(elapsedMs / 1000);
     const nextThreshold = PROGRESS_THRESHOLDS_SEC[entry.progressLevel];
     if (nextThreshold != null && elapsedSec >= nextThreshold) {
-      const stuckSec = task.staleMs != null ? Math.floor(task.staleMs / 1000) : null;
-      const stuckTag = task.possiblyStuck ? ` (אולי תקוע — אין פלט ${Math.round(stuckSec/60)} דק׳)` : '';
-      const progressText = `🤔 עדיין חושב… ${Math.round(elapsedSec/60)} דק׳${stuckTag}.\n(/claude logs לפלט, /claude stop כדי לעצור)`;
+      // Intentionally drop the "possiblyStuck" tag from the user-visible
+      // ping — Claude tasks routinely think for several minutes without
+      // emitting stdout, so the dashboard's stuck heuristic produces false
+      // alarms in DM. Elapsed minutes alone are enough signal for the user
+      // to decide whether to wait or /claude stop.
+      const progressText = `🤔 עדיין חושב… ${Math.round(elapsedSec/60)} דק׳\n(/claude logs לפלט, /claude stop כדי לעצור)`;
       const r = await tgSendDirect(ctx.token, { chatId: entry.chatId, threadId: entry.threadId, text: progressText });
       if (r.ok) log('INFO', `task ${entry.taskId} progress note sent (level ${entry.progressLevel}, msg ${r.messageId})`);
       entry.progressLevel += 1;
