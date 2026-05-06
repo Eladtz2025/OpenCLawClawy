@@ -327,7 +327,14 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 const INFLIGHT_FILE = path.join(STATE_DIR, 'in-flight-tasks.json');
 const PROGRESS_POLL_INTERVAL_MS = 5000;
-const PROGRESS_THRESHOLDS_SEC = [5 * 60, 15 * 60, 30 * 60, 45 * 60, 60 * 60]; // when to send "still working…"
+// Send a "still thinking" line every 2 minutes until the task finishes (or
+// the hard bridge timeout kicks in at 90 min). The user explicitly asked
+// for a heartbeat-style cadence so DM doesn't go silent during long runs.
+const PROGRESS_THRESHOLDS_SEC = (() => {
+  const list = [];
+  for (let m = 2; m <= 90; m += 2) list.push(m * 60);
+  return list;
+})();
 const HARD_BRIDGE_TIMEOUT_MS = 90 * 60 * 1000; // bridge gives up watching at 90 min; user can /claude logs to see what happened
 const inFlightTasks = new Map(); // taskId → { ... }
 
@@ -417,8 +424,8 @@ function startTaskWatcher(entry, ctx) {
     const nextThreshold = PROGRESS_THRESHOLDS_SEC[entry.progressLevel];
     if (nextThreshold != null && elapsedSec >= nextThreshold) {
       const stuckSec = task.staleMs != null ? Math.floor(task.staleMs / 1000) : null;
-      const stuckTag = task.possiblyStuck ? ' (POSSIBLY STUCK — no output for ' + Math.round(stuckSec/60) + 'm)' : '';
-      const progressText = `Task ${entry.taskId.slice(0,8)} still running — ${Math.round(elapsedSec/60)}m elapsed${stuckTag}.\n\nUse /claude logs for the latest output, /claude stop to abort.`;
+      const stuckTag = task.possiblyStuck ? ` (אולי תקוע — אין פלט ${Math.round(stuckSec/60)} דק׳)` : '';
+      const progressText = `🤔 עדיין חושב… ${Math.round(elapsedSec/60)} דק׳${stuckTag}.\n(/claude logs לפלט, /claude stop כדי לעצור)`;
       const r = await tgSendDirect(ctx.token, { chatId: entry.chatId, threadId: entry.threadId, text: progressText });
       if (r.ok) log('INFO', `task ${entry.taskId} progress note sent (level ${entry.progressLevel}, msg ${r.messageId})`);
       entry.progressLevel += 1;
@@ -475,12 +482,16 @@ async function handleUpdate(update, ctx) {
     ? message.message_thread_id
     : ctx.cfg.threadId;
 
-  const parsed = parseCommand(message.text, ctx.cfg.botUsername);
+  let parsed = parseCommand(message.text, ctx.cfg.botUsername);
 
-  // Dev-bridge scope: only slash commands are accepted. Free-text routing
-  // moved to the CLAWY runtime (@Clawy_OpenClawBot) which owns the topics.
-  // Plain messages here are silently ignored (don't even ack — keeps DMs
-  // quiet and avoids accidental Claude task launches from chit-chat).
+  // Plain text in a private chat (DM) is treated as a /claude prompt — the
+  // user can just talk to the bot without typing /claude every time. In
+  // groups/topics we still require an explicit slash command so the bot
+  // doesn't react to every message.
+  const isDM = message.chat && message.chat.type === 'private';
+  if (!parsed && isDM && message.text && !message.text.startsWith('/')) {
+    parsed = { command: 'claude', args: message.text.trim() };
+  }
   if (!parsed) return;
   // ----- /commands ------------------------------------------------------
 
@@ -571,7 +582,7 @@ async function handleUpdate(update, ctx) {
   // 5/15/30/45/60 min if the task is still running, and the final reply when
   // the task hits a terminal state. State is persisted under
   // state/in-flight-tasks.json so a bridge restart doesn't orphan the user.
-  const ackText = (dispatchResult.replyText || `Working on /${parsed.command} — task ${taskId}`)
+  const ackText = `🤔 חושב… (אעדכן כל 2 דק׳ עד שאסיים)`
     + (dispatchResult.dashboardUrl ? `\nLive: ${dispatchResult.dashboardUrl}` : '');
   const ackRes = await tgSendDirect(ctx.token, { chatId, threadId: replyThreadId, text: ackText });
   if (ackRes.ok) log('INFO', `task ${taskId} ack sent (msg ${ackRes.messageId}) — watcher armed (non-blocking)`);
