@@ -13,7 +13,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -31,7 +31,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -49,7 +49,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -67,7 +67,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -85,7 +85,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -103,7 +103,25 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
+    "fixture": false,
+    "synthetic": false
+  },
+  {
+    "id": "hapoel-16fxonezinee15nxnneoineo",
+    "category": "hapoel",
+    "title": "קני מילר רצה פרמיירה עם יותר מ־0:4: הטור של דני דבורין גם הצהובים הוכיחו להפועל פתח תקווה שהפלייאוף העליון הוא כבר משהו אחר • הטור של דני דבורין על ה-0:4 המוחץ 08:37 06/05/2026 דני דבורין",
+    "source": "Walla Sport",
+    "sourceUrl": "https://sports.walla.co.il/item/3835830",
+    "sourceKind": "secondary",
+    "sourceType": "secondary",
+    "sourceStrength": "medium",
+    "publishedAt": "2026-05-06T00:00:00",
+    "fresh": true,
+    "signalPositive": true,
+    "signalNegative": false,
+    "verificationCount": 1,
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -121,7 +139,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -139,7 +157,7 @@
     "signalPositive": true,
     "signalNegative": true,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -157,7 +175,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -175,7 +193,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -193,7 +211,7 @@
     "signalPositive": true,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   },
@@ -211,7 +229,7 @@
     "signalPositive": false,
     "signalNegative": false,
     "verificationCount": 1,
-    "collectedAt": "2026-05-06T04:30:02.548Z",
+    "collectedAt": "2026-05-06T07:33:18.532Z",
     "fixture": false,
     "synthetic": false
   }
