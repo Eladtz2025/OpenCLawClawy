@@ -423,10 +423,28 @@ function chooseTop(topicKey, candidates, wanted = 5) {
   return out;
 }
 
+const OLLAMA_URL = process.env.OLLAMA_URL || 'http://localhost:11434';
+const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'gemma4:31b-cloud';
+const PER_CALL_TIMEOUT_MS = Number(process.env.NEWS_EDITOR_LLM_TIMEOUT_MS) || 12000;
+const LLM_CONCURRENCY = Math.max(1, Number(process.env.NEWS_EDITOR_LLM_CONCURRENCY) || 4);
+
+async function ollamaReachable() {
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), 3000);
+  try {
+    const r = await fetch(`${OLLAMA_URL}/api/tags`, { signal: controller.signal });
+    return r.ok;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 async function generateSmartSummary(item, topicKey) {
   const title = item.title || '';
   const body = item.articleBody || item.articlePreview || '';
-  
+
   const limits = dynamicSummaryLimit(item, topicKey);
   const prompt = `
 You are a sharp Hebrew news editor writing a natural article summary for a dashboard.
@@ -450,16 +468,23 @@ Content: ${body}
 
 Summary (Hebrew):`;
 
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), PER_CALL_TIMEOUT_MS);
   try {
-    const response = await fetch('http://localhost:11434/api/generate', {
+    const response = await fetch(`${OLLAMA_URL}/api/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gemma4:31b-cloud',
+        model: OLLAMA_MODEL,
         prompt: prompt,
         stream: false
-      })
+      }),
+      signal: controller.signal
     });
+    if (!response.ok) {
+      console.error(`LLM HTTP ${response.status} for ${title}`);
+      return makeFallbackSummary(item, topicKey);
+    }
     const data = await response.json();
     const sanitized = sanitizeSummary(data.response || '', item, topicKey);
     const grounded = groundSummary(sanitized, item, topicKey);
@@ -469,9 +494,27 @@ Summary (Hebrew):`;
     }
     return grounded;
   } catch (e) {
-    console.error(`LLM Error for ${title}: ${e.message}`);
+    const reason = e.name === 'AbortError' ? `timeout>${PER_CALL_TIMEOUT_MS}ms` : e.message;
+    console.error(`LLM Error for ${title}: ${reason}`);
     return makeFallbackSummary(item, topicKey);
+  } finally {
+    clearTimeout(t);
   }
+}
+
+async function runWithConcurrency(items, limit, worker) {
+  const results = new Array(items.length);
+  let next = 0;
+  async function pump() {
+    while (true) {
+      const i = next++;
+      if (i >= items.length) return;
+      results[i] = await worker(items[i], i);
+    }
+  }
+  const runners = Array.from({ length: Math.min(limit, items.length) }, () => pump());
+  await Promise.all(runners);
+  return results;
 }
 
 async function main() {
@@ -486,18 +529,30 @@ async function main() {
   const candidates = JSON.parse(fs.readFileSync(path.resolve(inputPath), 'utf8'));
   const selected = chooseTop(topicKey, candidates, 5);
 
-  // Now we apply the Smart Edit to the selected items
-  for (const item of selected) {
-    if (Array.isArray(item.hypeFlags) && item.hypeFlags.length > 0) {
-      item.editorNote = sanitizeSummary(buildCautiousSummary(item, topicKey, item.hypeFlags), item, topicKey);
-      continue;
-    }
-    const summary = await generateSmartSummary(item, topicKey);
-    item.editorNote = sanitizeSummary(summary, item, topicKey);
+  const llmAvailable = await ollamaReachable();
+  if (!llmAvailable) {
+    console.error(`Ollama unreachable at ${OLLAMA_URL} — using fallback summaries`);
   }
 
+  await runWithConcurrency(selected, LLM_CONCURRENCY, async (item) => {
+    if (Array.isArray(item.hypeFlags) && item.hypeFlags.length > 0) {
+      item.editorNote = sanitizeSummary(buildCautiousSummary(item, topicKey, item.hypeFlags), item, topicKey);
+      return;
+    }
+    const summary = llmAvailable
+      ? await generateSmartSummary(item, topicKey)
+      : makeFallbackSummary(item, topicKey);
+    item.editorNote = sanitizeSummary(summary, item, topicKey);
+  });
+
   fs.writeFileSync(path.resolve(outputPath), JSON.stringify(selected, null, 2), 'utf8');
-  console.log(JSON.stringify({ topic: topicKey, selected: selected.length, outputPath }, null, 2));
+  console.log(JSON.stringify({
+    topic: topicKey,
+    selected: selected.length,
+    llmAvailable,
+    concurrency: LLM_CONCURRENCY,
+    outputPath
+  }, null, 2));
 }
 
 main().catch(err => {

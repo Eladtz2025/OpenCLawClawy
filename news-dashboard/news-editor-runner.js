@@ -24,10 +24,11 @@ function applyEditorSelection(topicKey, scoredItems) {
   });
   fs.writeFileSync(inputPath, JSON.stringify(prefiltered, null, 2), 'utf8');
 
+  const timeoutMs = Number(process.env.NEWS_EDITOR_TIMEOUT_MS) || 180000;
   const run = spawnSync(process.execPath, [path.join(OUT_DIR, 'news-editor-agent.js'), topicKey, inputPath, outputPath], {
     cwd: OUT_DIR,
     encoding: 'utf8',
-    timeout: 30000,
+    timeout: timeoutMs,
     env: {
       ...process.env,
       PYTHONIOENCODING: 'utf-8',
@@ -37,9 +38,19 @@ function applyEditorSelection(topicKey, scoredItems) {
   });
 
   if (run.status !== 0) {
+    const stderrTail = (run.stderr || '').split(/\r?\n/).slice(-6).join('\n').trim();
+    const stdoutTail = (run.stdout || '').split(/\r?\n/).slice(-6).join('\n').trim();
+    let reason;
+    if (run.status === null) {
+      reason = run.signal
+        ? `editor_killed_signal_${run.signal} (likely timeout>${timeoutMs}ms)`
+        : `editor_exit_null (likely timeout>${timeoutMs}ms)`;
+    } else {
+      reason = `editor_exit_${run.status}`;
+    }
     return {
       ok: false,
-      error: run.stderr || run.stdout || `editor_exit_${run.status}`
+      error: [reason, stderrTail, stdoutTail].filter(Boolean).join(' | ')
     };
   }
 
