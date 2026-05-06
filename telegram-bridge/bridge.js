@@ -99,9 +99,24 @@ function writeOffset(id) {
 }
 
 // ---------------------------------------------------------------- logging
+// Append directly to logs/bridge.log (and bridge.err.log for ERR/WARN)
+// in addition to stdout. Direct file IO survives a broken stdout pipe
+// (e.g. cmd.exe parent dying), which previously caused a silent zombie:
+// the node process kept running but no logs appeared, so we couldn't tell
+// the bridge had stopped polling. fs.appendFileSync is sync-safe at this
+// volume (heartbeat + per-message lines).
+const LOG_DIR = path.join(BRIDGE_DIR, 'logs');
+const LOG_FILE = path.join(LOG_DIR, 'bridge.log');
+const ERR_LOG_FILE = path.join(LOG_DIR, 'bridge.err.log');
+fs.mkdirSync(LOG_DIR, { recursive: true });
+
 function log(level, msg) {
   const line = `[${new Date().toISOString()}] ${level} ${msg}`;
-  process.stdout.write(line + '\n');
+  try { process.stdout.write(line + '\n'); } catch {}
+  try { fs.appendFileSync(LOG_FILE, line + '\n'); } catch {}
+  if (level === 'ERR' || level === 'WARN') {
+    try { fs.appendFileSync(ERR_LOG_FILE, line + '\n'); } catch {}
+  }
 }
 
 // ---------------------------------------------------------------- http helpers
@@ -613,6 +628,11 @@ async function mainLoop(ctx) {
   recoverInflightWatchers(ctx);
   log('INFO', `starting poll loop offset=${offset} timeout=${POLL_TIMEOUT}s in-flight=${inFlightTasks.size}`);
   let consecutiveErrors = 0;
+  // Heartbeat: emit a log line every HEARTBEAT_MS even when no messages arrive,
+  // so an external watchdog (or a human reading the log) can tell the loop is
+  // alive. Without this, a quiet bridge looks identical to a hung bridge.
+  const HEARTBEAT_MS = 5 * 60 * 1000;
+  let lastHeartbeat = Date.now();
   while (true) {
     try {
       const updates = await tg(ctx.token, 'getUpdates', {
@@ -621,6 +641,10 @@ async function mainLoop(ctx) {
         allowed_updates: ['message', 'edited_message']
       });
       consecutiveErrors = 0;
+      if (Date.now() - lastHeartbeat >= HEARTBEAT_MS) {
+        log('INFO', `heartbeat offset=${offset} in-flight=${inFlightTasks.size} updates=${updates.length}`);
+        lastHeartbeat = Date.now();
+      }
       for (const u of updates) {
         try {
           await handleUpdate(u, ctx);

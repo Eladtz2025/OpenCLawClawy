@@ -2,6 +2,7 @@ config.json
 state/offset.json
 state/outgoing-*.txt
 state/bridge.pid
+state/in-flight-tasks.json
 logs/
 incoming/
 node_modules/
