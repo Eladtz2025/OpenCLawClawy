@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-05T04:30:02.323Z",
-  "buildId": "build-1777955402323",
+  "generatedAt": "2026-05-06T04:30:02.548Z",
+  "buildId": "build-1778041802548",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1777955402323",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1777955402323",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-05.html?v=build-1777955402323",
-  "lastPublishedAt": "2026-05-05T04:30:02.323Z",
-  "sourcesWorkedCount": 26,
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778041802548",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778041802548",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-06.html?v=build-1778041802548",
+  "lastPublishedAt": "2026-05-06T04:30:02.548Z",
+  "sourcesWorkedCount": 27,
   "fallbackActive": true,
   "topicStatus": [
     {
@@ -27,15 +27,15 @@
         "WIRED"
       ],
       "sourcesFailed": [],
-      "editorApplied": true,
-      "editorError": null
+      "editorApplied": false,
+      "editorError": "editor_exit_null"
     },
     {
       "topic": "technology2",
       "label": "טכנולוגיה #2",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 24,
+      "got": 22,
       "maxCount": null,
       "lowVolumeByDesign": false,
       "fallbackActive": false,
@@ -102,8 +102,8 @@
           "error": "no_items"
         }
       ],
-      "editorApplied": false,
-      "editorError": "editor_exit_null"
+      "editorApplied": true,
+      "editorError": null
     },
     {
       "topic": "hapoel",
@@ -116,16 +116,13 @@
       "fallbackActive": false,
       "sourcesWorked": [
         "ynet Sport Israel Soccer",
+        "Walla Sport",
         "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
         {
           "source": "Hapoel PT News",
-          "error": "no_items"
-        },
-        {
-          "source": "Walla Sport",
           "error": "no_items"
         },
         {
@@ -137,8 +134,8 @@
           "error": "no_items"
         }
       ],
-      "editorApplied": false,
-      "editorError": "editor_exit_null"
+      "editorApplied": true,
+      "editorError": null
     }
   ]
 }
