@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
+const { spawn, spawnSync } = require('child_process');
 
 function normalize(text = '') {
   return String(text).replace(/\s+/g, ' ').trim();
@@ -428,6 +430,24 @@ const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'gemma4:31b-cloud';
 const PER_CALL_TIMEOUT_MS = Number(process.env.NEWS_EDITOR_LLM_TIMEOUT_MS) || 12000;
 const LLM_CONCURRENCY = Math.max(1, Number(process.env.NEWS_EDITOR_LLM_CONCURRENCY) || 4);
 
+const LLM_PROVIDER = (process.env.NEWS_EDITOR_LLM || 'auto').toLowerCase();
+const CODEX_TIMEOUT_MS = Number(process.env.NEWS_EDITOR_CODEX_TIMEOUT_MS) || 45000;
+function resolveCodexEntry() {
+  if (process.env.NEWS_EDITOR_CODEX_JS) return process.env.NEWS_EDITOR_CODEX_JS;
+  const candidates = [];
+  const npmRoot = process.platform === 'win32'
+    ? path.join(os.homedir(), 'AppData', 'Roaming', 'npm', 'node_modules', '@openai', 'codex', 'bin', 'codex.js')
+    : path.join('/usr/local/lib/node_modules', '@openai', 'codex', 'bin', 'codex.js');
+  candidates.push(npmRoot);
+  for (const p of candidates) {
+    try { if (fs.existsSync(p)) return p; } catch {}
+  }
+  return null;
+}
+const CODEX_JS = resolveCodexEntry();
+const CODEX_WORKDIR = path.join(os.tmpdir(), 'codex-news-editor');
+try { fs.mkdirSync(CODEX_WORKDIR, { recursive: true }); } catch {}
+
 async function ollamaReachable() {
   const controller = new AbortController();
   const t = setTimeout(() => controller.abort(), 3000);
@@ -441,7 +461,86 @@ async function ollamaReachable() {
   }
 }
 
-async function generateSmartSummary(item, topicKey) {
+let codexAvailableCache = null;
+function codexAvailable() {
+  if (LLM_PROVIDER === 'ollama') return false;
+  if (!CODEX_JS) return false;
+  if (codexAvailableCache !== null) return codexAvailableCache;
+  const r = spawnSync(process.execPath, [CODEX_JS, 'login', 'status'], { encoding: 'utf8', timeout: 8000 });
+  codexAvailableCache = r.status === 0 && /Logged in/i.test(`${r.stdout || ''}${r.stderr || ''}`);
+  return codexAvailableCache;
+}
+
+function callCodex(prompt) {
+  return new Promise((resolve) => {
+    const lastMsgPath = path.join(
+      CODEX_WORKDIR,
+      `last-${process.pid}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.txt`
+    );
+    const args = [
+      CODEX_JS,
+      'exec',
+      '--skip-git-repo-check',
+      '--ephemeral',
+      '--color=never',
+      '-C', CODEX_WORKDIR,
+      '-o', lastMsgPath,
+      prompt
+    ];
+    let killed = false;
+    const child = spawn(process.execPath, args, { stdio: ['ignore', 'pipe', 'pipe'] });
+    const timer = setTimeout(() => { killed = true; try { child.kill('SIGKILL'); } catch {} }, CODEX_TIMEOUT_MS);
+    child.stdout.on('data', () => {});
+    child.stderr.on('data', () => {});
+    child.on('error', () => { clearTimeout(timer); resolve({ ok: false, reason: 'spawn_error' }); });
+    child.on('exit', (code) => {
+      clearTimeout(timer);
+      if (killed) {
+        try { fs.unlinkSync(lastMsgPath); } catch {}
+        resolve({ ok: false, reason: `timeout>${CODEX_TIMEOUT_MS}ms` });
+        return;
+      }
+      if (code !== 0) {
+        try { fs.unlinkSync(lastMsgPath); } catch {}
+        resolve({ ok: false, reason: `exit_${code}` });
+        return;
+      }
+      try {
+        const text = fs.readFileSync(lastMsgPath, 'utf8').trim();
+        try { fs.unlinkSync(lastMsgPath); } catch {}
+        if (!text) { resolve({ ok: false, reason: 'empty_output' }); return; }
+        resolve({ ok: true, text });
+      } catch (e) {
+        resolve({ ok: false, reason: `read_error_${e.code || 'unknown'}` });
+      }
+    });
+  });
+}
+
+async function callOllama(prompt) {
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), PER_CALL_TIMEOUT_MS);
+  try {
+    const response = await fetch(`${OLLAMA_URL}/api/generate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: OLLAMA_MODEL, prompt, stream: false }),
+      signal: controller.signal
+    });
+    if (!response.ok) return { ok: false, reason: `http_${response.status}` };
+    const data = await response.json();
+    const text = (data.response || '').trim();
+    if (!text) return { ok: false, reason: 'empty_output' };
+    return { ok: true, text };
+  } catch (e) {
+    const reason = e.name === 'AbortError' ? `timeout>${PER_CALL_TIMEOUT_MS}ms` : e.message;
+    return { ok: false, reason };
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+async function generateSmartSummary(item, topicKey, providers) {
   const title = item.title || '';
   const body = item.articleBody || item.articlePreview || '';
 
@@ -468,38 +567,28 @@ Content: ${body}
 
 Summary (Hebrew):`;
 
-  const controller = new AbortController();
-  const t = setTimeout(() => controller.abort(), PER_CALL_TIMEOUT_MS);
-  try {
-    const response = await fetch(`${OLLAMA_URL}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: OLLAMA_MODEL,
-        prompt: prompt,
-        stream: false
-      }),
-      signal: controller.signal
-    });
-    if (!response.ok) {
-      console.error(`LLM HTTP ${response.status} for ${title}`);
-      return makeFallbackSummary(item, topicKey);
-    }
-    const data = await response.json();
-    const sanitized = sanitizeSummary(data.response || '', item, topicKey);
-    const grounded = groundSummary(sanitized, item, topicKey);
-    const overclaimFlags = detectSummaryOverclaim(grounded, item);
-    if (overclaimFlags.length > 0) {
-      return groundSummary(rewriteOverclaimSummary(grounded, item, topicKey, overclaimFlags), item, topicKey);
-    }
-    return grounded;
-  } catch (e) {
-    const reason = e.name === 'AbortError' ? `timeout>${PER_CALL_TIMEOUT_MS}ms` : e.message;
-    console.error(`LLM Error for ${title}: ${reason}`);
-    return makeFallbackSummary(item, topicKey);
-  } finally {
-    clearTimeout(t);
+  let raw = null;
+  if (providers.codex) {
+    const r = await callCodex(prompt);
+    if (r.ok) raw = r.text;
+    else console.error(`Codex failed for ${title.slice(0, 60)}: ${r.reason}${providers.ollama ? ' — falling back to Ollama' : ''}`);
   }
+  if (!raw && providers.ollama) {
+    const r = await callOllama(prompt);
+    if (r.ok) raw = r.text;
+    else console.error(`Ollama failed for ${title.slice(0, 60)}: ${r.reason}`);
+  }
+  if (!raw) {
+    return makeFallbackSummary(item, topicKey);
+  }
+
+  const sanitized = sanitizeSummary(raw, item, topicKey);
+  const grounded = groundSummary(sanitized, item, topicKey);
+  const overclaimFlags = detectSummaryOverclaim(grounded, item);
+  if (overclaimFlags.length > 0) {
+    return groundSummary(rewriteOverclaimSummary(grounded, item, topicKey, overclaimFlags), item, topicKey);
+  }
+  return grounded;
 }
 
 async function runWithConcurrency(items, limit, worker) {
@@ -529,9 +618,17 @@ async function main() {
   const candidates = JSON.parse(fs.readFileSync(path.resolve(inputPath), 'utf8'));
   const selected = chooseTop(topicKey, candidates, 5);
 
-  const llmAvailable = await ollamaReachable();
+  const wantCodex = LLM_PROVIDER !== 'ollama';
+  const wantOllama = LLM_PROVIDER !== 'codex';
+  const providers = {
+    codex: wantCodex && codexAvailable(),
+    ollama: wantOllama && (await ollamaReachable())
+  };
+  const llmAvailable = providers.codex || providers.ollama;
   if (!llmAvailable) {
-    console.error(`Ollama unreachable at ${OLLAMA_URL} — using fallback summaries`);
+    console.error(`No LLM available (codex=${providers.codex} ollama=${providers.ollama}) — using fallback summaries`);
+  } else {
+    console.error(`LLM providers: codex=${providers.codex} ollama=${providers.ollama}`);
   }
 
   await runWithConcurrency(selected, LLM_CONCURRENCY, async (item) => {
@@ -540,7 +637,7 @@ async function main() {
       return;
     }
     const summary = llmAvailable
-      ? await generateSmartSummary(item, topicKey)
+      ? await generateSmartSummary(item, topicKey, providers)
       : makeFallbackSummary(item, topicKey);
     item.editorNote = sanitizeSummary(summary, item, topicKey);
   });
@@ -549,7 +646,7 @@ async function main() {
   console.log(JSON.stringify({
     topic: topicKey,
     selected: selected.length,
-    llmAvailable,
+    providers,
     concurrency: LLM_CONCURRENCY,
     outputPath
   }, null, 2));
