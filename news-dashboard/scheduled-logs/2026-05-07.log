@@ -1,0 +1,134 @@
+[2026-05-07T04:30:02.805Z] [INFO] === scheduled-run start (skipSend=false) ===
+[2026-05-07T04:30:02.832Z] [INFO] running C:\Users\Itzhak\.openclaw\workspace\news-dashboard\morning-run.js
+[2026-05-07T04:34:57.297Z] [PIPE] {
+[2026-05-07T04:34:57.304Z] [PIPE]   "status": "PARTIAL",
+[2026-05-07T04:34:57.305Z] [PIPE]   "items": 41
+[2026-05-07T04:34:57.305Z] [PIPE] }
+[2026-05-07T04:34:57.305Z] [PIPE] {
+[2026-05-07T04:34:57.307Z] [PIPE]   "status": "PARTIAL",
+[2026-05-07T04:34:57.307Z] [PIPE]   "items": 41,
+[2026-05-07T04:34:57.307Z] [PIPE]   "dailyFile": "2026-05-07.html"
+[2026-05-07T04:34:57.308Z] [PIPE] }
+[2026-05-07T04:34:57.309Z] [PIPE] {
+[2026-05-07T04:34:57.309Z] [PIPE]   "ok": true,
+[2026-05-07T04:34:57.309Z] [PIPE]   "buildId": "build-1778128202954",
+[2026-05-07T04:34:57.309Z] [PIPE]   "lastPublishedAt": "2026-05-07T04:30:02.954Z",
+[2026-05-07T04:34:57.309Z] [PIPE]   "tech2WithMedia": 23,
+[2026-05-07T04:34:57.309Z] [PIPE]   "itemCount": 41
+[2026-05-07T04:34:57.310Z] [PIPE] }
+[2026-05-07T04:34:57.310Z] [PIPE] [main f05bef0] Publish news dashboard build-1778128202954
+[2026-05-07T04:34:57.310Z] [PIPE]  118 files changed, 5141 insertions(+), 5202 deletions(-)
+[2026-05-07T04:34:57.310Z] [PIPE]  create mode 100644 news-dashboard/live-site/2026-05-07.html
+[2026-05-07T04:34:57.310Z] [PIPE]  delete mode 100644 news-dashboard/live-site/archive/2026-04-29.html
+[2026-05-07T04:34:57.310Z] [PIPE]  create mode 100644 news-dashboard/live-site/archive/2026-05-07.html
+[2026-05-07T04:34:57.310Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-coindesk-1.jpg
+[2026-05-07T04:34:57.310Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-coindesk-2.jpg
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-coindesk-3.jpg
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-coindesk-4.jpg
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-coindesk-bitcoin-2.jpg
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-decrypt-3.jpg
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-decrypt-4.jpg
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-decrypt-4.png
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-decrypt-5.jpg
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-decrypt-5.png
+[2026-05-07T04:34:57.311Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-dl-news-1.webp
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-crypto-dl-news-5.webp
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-hapoel-walla-sport-3.webp
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-hapoel-ynet-sport-israel-soccer-1.jpg
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-hapoel-ynet-sport-israel-soccer-2.jpg
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-hapoel-ynet-sport-israel-soccer-4.jpg
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-hapoel-ynet-sport-israel-soccer-5.jpg
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-israel-hayom-news-1.jpg
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-israel-hayom-news-4.jpg
+[2026-05-07T04:34:57.312Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-israel-hayom-news-5.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-kan-news-2.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-kan-news-3.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-kan-news-3.png
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-kan-news-5.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-ynet-news-1.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-israel-ynet-news-2.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology-calcalist-tech-1.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology-calcalist-tech-2.jpg
+[2026-05-07T04:34:57.313Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology-calcalist-tech-3.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology-wired-4.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology-wired-5.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-ai_tg_il-telegram-1.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-ai_tg_il-telegram-10.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-ai_tg_il-telegram-17.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-ai_tg_il-telegram-18.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-ai_tg_il-telegram-19.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-ai_tg_il-telegram-5.jpg
+[2026-05-07T04:34:57.314Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-botai14-telegram-21.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-botai14-telegram-22.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-botai14-telegram-3.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-botai14-telegram-6.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-botai14-telegram-8.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-hackit770-telegram-20.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-hackit770-telegram-7.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-technewsheb-telegram-15.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-technewsheb-telegram-16.jpg
+[2026-05-07T04:34:57.315Z] [PIPE]  delete mode 100644 news-dashboard/live-site/assets/media/2026-04-29-technology2-technewsheb-telegram-4.jpg
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-crypto-coindesk-4.jpg
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-crypto-decrypt-1.png
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-crypto-decrypt-2.jpg
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-crypto-decrypt-3.png
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-crypto-decrypt-5.jpg
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-hapoel-walla-sport-1.webp
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-hapoel-ynet-sport-israel-soccer-2.jpg
+[2026-05-07T04:34:57.316Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-hapoel-ynet-sport-israel-soccer-3.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-hapoel-ynet-sport-israel-soccer-4.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-israel-israel-hayom-news-3.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-israel-israel-hayom-news-4.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-israel-ynet-news-1.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-israel-ynet-news-2.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-israel-ynet-news-5.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology-calcalist-tech-3.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology-calcalist-tech-4.jpg
+[2026-05-07T04:34:57.317Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology-wired-1.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology-wired-2.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-technewsheb-telegram-2.jpg => 2026-05-07-technology2-ai_tg_il-telegram-15.jpg} (56%)
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-ai_tg_il-telegram-18.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-ai_tg_il-telegram-19.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-ai_tg_il-telegram-20.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-ai_tg_il-telegram-4.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-ai_tg_il-telegram-5.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-botai14-telegram-10.jpg
+[2026-05-07T04:34:57.318Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-technewsheb-telegram-14.jpg => 2026-05-07-technology2-botai14-telegram-16.jpg} (100%)
+[2026-05-07T04:34:57.318Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-botai14-telegram-23.jpg
+[2026-05-07T04:34:57.319Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-botai14-telegram-3.jpg
+[2026-05-07T04:34:57.319Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-technewsheb-telegram-9.jpg => 2026-05-07-technology2-botai14-telegram-6.jpg} (100%)
+[2026-05-07T04:34:57.319Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-hackit770-telegram-12.jpg => 2026-05-07-technology2-hackit770-telegram-11.jpg} (100%)
+[2026-05-07T04:34:57.319Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-hackit770-telegram-13.jpg => 2026-05-07-technology2-hackit770-telegram-12.jpg} (100%)
+[2026-05-07T04:34:57.319Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-hackit770-telegram-13.jpg
+[2026-05-07T04:34:57.319Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-hackit770-telegram-6.jpg => 2026-05-07-technology2-hackit770-telegram-7.jpg} (100%)
+[2026-05-07T04:34:57.319Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-hackit770-telegram-8.jpg => 2026-05-07-technology2-hackit770-telegram-8.jpg} (100%)
+[2026-05-07T04:34:57.319Z] [PIPE]  rename news-dashboard/live-site/assets/media/{2026-04-29-technology2-hackit770-telegram-11.jpg => 2026-05-07-technology2-hackit770-telegram-9.jpg} (100%)
+[2026-05-07T04:34:57.319Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-technewsheb-telegram-1.jpg
+[2026-05-07T04:34:57.320Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-technewsheb-telegram-14.jpg
+[2026-05-07T04:34:57.320Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-technewsheb-telegram-17.jpg
+[2026-05-07T04:34:57.320Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-technewsheb-telegram-2.jpg
+[2026-05-07T04:34:57.320Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-technewsheb-telegram-21.jpg
+[2026-05-07T04:34:57.320Z] [PIPE]  create mode 100644 news-dashboard/live-site/assets/media/2026-05-07-technology2-technewsheb-telegram-22.jpg
+[2026-05-07T04:34:57.320Z] [PIPE]  create mode 100644 news-dashboard/scheduled-logs/2026-05-07.log
+[2026-05-07T04:34:57.320Z] [PIPE] {
+[2026-05-07T04:34:57.320Z] [PIPE]   "ok": true,
+[2026-05-07T04:34:57.320Z] [PIPE]   "buildId": "build-1778128202954",
+[2026-05-07T04:34:57.321Z] [PIPE]   "commit": "f05bef063b748f8453a98b081a0de50304bd9aee",
+[2026-05-07T04:34:57.321Z] [PIPE]   "datedUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-07.html?v=build-1778128202954"
+[2026-05-07T04:34:57.321Z] [PIPE] }{
+[2026-05-07T04:34:57.321Z] [PIPE]   "ok": true,
+[2026-05-07T04:34:57.321Z] [PIPE]   "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778128202954",
+[2026-05-07T04:34:57.321Z] [PIPE]   "resolvedUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-07.html?v=build-1778128202954",
+[2026-05-07T04:34:57.321Z] [PIPE]   "buildId": "build-1778128202954"
+[2026-05-07T04:34:57.321Z] [PIPE] }{
+[2026-05-07T04:34:57.321Z] [PIPE]   "ok": true,
+[2026-05-07T04:34:57.322Z] [PIPE]   "checked": 12,
+[2026-05-07T04:34:57.322Z] [PIPE]   "totalMediaRefs": 41,
+[2026-05-07T04:34:57.322Z] [PIPE]   "attempts": 1
+[2026-05-07T04:34:57.323Z] [PIPE] }Dashboard pipeline status: SUCCESS
+[2026-05-07T04:34:57.323Z] [PIPE-ERR] To https://github.com/Eladtz2025/OpenCLawClawy.git
+[2026-05-07T04:34:57.323Z] [PIPE-ERR]    0e787c0..f05bef0  HEAD -> main
+[2026-05-07T04:34:57.328Z] [WARN] pipeline ok (PARTIAL: 4/5 topics met min) buildId=build-1778128202954
+[2026-05-07T04:34:57.333Z] [INFO] sending summary (117 bytes) via gateway → telegram:620906995 key=news:morning:eeb070bdcf14b80a3b4dee3f
+[2026-05-07T04:35:11.468Z] [INFO] sent ok messageId=636 bytes=117
+[2026-05-07T04:35:11.471Z] [INFO] === scheduled-run done OK buildId=build-1778128202954 status=sent ===

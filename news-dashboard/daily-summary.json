@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-07T04:30:02.954Z",
-  "buildId": "build-1778128202954",
+  "generatedAt": "2026-05-08T04:30:03.581Z",
+  "buildId": "build-1778214603581",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778128202954",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778128202954",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-07.html?v=build-1778128202954",
-  "lastPublishedAt": "2026-05-07T04:30:02.954Z",
-  "sourcesWorkedCount": 26,
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778214603581",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778214603581",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-08.html?v=build-1778214603581",
+  "lastPublishedAt": "2026-05-08T04:30:03.581Z",
+  "sourcesWorkedCount": 25,
   "fallbackActive": true,
   "topicStatus": [
     {
@@ -90,13 +90,16 @@
         "CoinDesk Ethereum",
         "CoinDesk XRP",
         "Decrypt",
-        "The Block",
         "DL News"
       ],
       "sourcesFailed": [
         {
           "source": "SEC Press Releases",
           "error": "no_items"
+        },
+        {
+          "source": "The Block",
+          "error": "Error: HTTP 403 for https://www.theblock.co/"
         },
         {
           "source": "Blockworks",
@@ -111,7 +114,7 @@
       "label": "הפועל פתח תקווה",
       "wanted": 5,
       "minGoodCount": 1,
-      "got": 4,
+      "got": 3,
       "maxCount": 5,
       "lowVolumeByDesign": true,
       "fallbackActive": false,
