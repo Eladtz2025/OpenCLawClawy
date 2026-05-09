@@ -6,29 +6,54 @@
     "success": true,
     "items": [
       {
-        "title": "Coinbax wins $20,000 PitchFest prize at Consensus Miami for stablecoin compliance Coinbax took the top spot at Consensus Miami with software built to add compliance controls to onchain payments.",
-        "url": "https://www.coindesk.com/business/2026/05/07/coinbax-wins-usd20-000-pitchfest-prize-at-consensus-miami-for-stablecoin-compliance",
+        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
+        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
+      {
+        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000 Tokenization and digital asset-infrastructure stocks climbed as SEC Chair Paul Atkins signaled support for onchain finance rules.",
+        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
+      {
+        "title": "XRP pushes toward $1.40 as tightening range lowers breakout chances Price moved higher on a late volume burst, with traders watching whether compression near $1.39-$1.40 finally resolves into a larger move.",
+        "url": "https://www.coindesk.com/markets/2026/05/08/xrp-pushes-toward-usd1-40-as-tightening-range-lowers-breakout-chances",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
+      {
+        "title": "CoinDesk 20 performance update: NEAR Protocol (NEAR) gains 6.3%, leading index higher Internet Computer (ICP), up 5.8% from Thursday, was also a top performer.",
+        "url": "https://www.coindesk.com/coindesk-indices/2026/05/08/coindesk-20-performance-update-near-protocol-near-gains-6-3-leading-index-higher",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
+      {
+        "title": "Coinbase bulls point to crypto legislation and stablecoins after earnings miss Analysts say Coinbase’s long-term growth may depend more on stablecoins and U.S. crypto legislation than a rebound in trading activity.",
+        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-bulls-point-to-crypto-legislation-and-stablecoins-after-earnings-miss",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
+      {
+        "title": "U.S. added 115K jobs in April, nearly doubling expectations The data comes ahead of what's expected to be a new Federal Reserve chairman taking the reins at the U.S. central bank later this month.",
+        "url": "https://www.coindesk.com/markets/2026/05/07/u-s-added-115k-jobs-in-april-nearly-doubling-expectations",
         "publishedAt": "2026-05-07T00:00:00"
       },
       {
-        "title": "Coinbase stock declines 5% after missing Q1 estimates on crypto slowdown The crypto platform missed on the top and bottom lines as falling digital asset prices weighed on trading activity and investor sentiment.",
-        "url": "https://www.coindesk.com/markets/2026/05/07/coinbase-stock-drops-4-after-surprise-1q-miss-as-crypto-trading-slows",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "U.S. hiring slowdown could be great for bitcoin — unless wages spoil the party Your day-ahead look for May 8, 2026",
+        "url": "https://www.coindesk.com/daybook-us/2026/05/08/u-s-hiring-slowdown-could-be-great-for-bitcoin-unless-wages-spoil-the-party",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "'DeFi is not dead,' it’s going mainstream with AI agents, crypto executives agree DeFi and its underlying technology have already proved themselves at scale, said eToro CEO Yoni Assia.",
-        "url": "https://www.coindesk.com/business/2026/05/07/defi-is-not-dead-it-s-going-mainstream-with-ai-agents-crypto-executives-say",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Coinbase blames AWS for hours-long crypto trading outage Coinbase says the outage has been fully resolved but that it will investigate the incident fully.",
+        "url": "https://www.coindesk.com/business/2026/05/08/coinbase-disruption-tied-to-aws-outage-draws-criticism-amid-staff-layoffs-and-q1-losses",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Bitcoin ending May above $76,000 would confirm new bull market, Tom Lee says Tokenization and AI agentic finance are the main narratives driving the next bull cycle in crypto, Lee said at Consensus 2026.",
-        "url": "https://www.coindesk.com/markets/2026/05/07/bitcoin-ending-may-above-usd76-000-would-confirm-new-bull-market-tom-lee-says",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Bitcoin retreats below $80,000, liquidating $300 million in futures bets BTC fell under $80,000 after U.S. strikes in Iran sent oil briefly above $100, triggering liquidations and a shift toward bearish positioning.",
+        "url": "https://www.coindesk.com/markets/2026/05/08/bitcoin-retreats-below-usd80-000-liquidating-usd300-million-in-futures-bets",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Bitcoin tests Bollinger Bands breakout as creator flips bullish on BTC A related MVRV indicator hit overheated levels last seen before bitcoin's late-2024 push to $100,000.",
-        "url": "https://www.coindesk.com/markets/2026/05/07/bitcoin-tests-bollinger-bands-breakout-as-creator-flips-bullish-on-btc",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Zcash to roll out quantum-recoverable wallets within a month, go quantum-proof by 2027 Bitcoin no longer holds up as the cypherpunk-grade money it was meant to be, Zcash's Zooko Wilcox told an engaged audience.",
+        "url": "https://www.coindesk.com/tech/2026/05/08/zcash-to-roll-out-quantum-recoverable-wallets-within-a-month-go-quantum-proof-by-2027",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
         "title": "CoinW Expands Global Presence at Blockchain Forum 2026, Strengthening User Engagement",
@@ -46,29 +71,29 @@
         "publishedAt": "2026-04-16T00:00:00"
       },
       {
-        "title": "Donald Trump Jr. denies rumors World Liberty Financial is falling apart",
-        "url": "https://www.coindesk.com/business/2026/05/07/donald-trump-jr-denies-rumors-world-liberty-financial-is-falling-apart",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday",
+        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Donald Trump Jr. denies rumors World Liberty Financial is falling apart",
-        "url": "https://www.coindesk.com/business/2026/05/07/donald-trump-jr-denies-rumors-world-liberty-financial-is-falling-apart",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday",
+        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "'DeFi is not dead,' it’s going mainstream with AI agents, crypto executives agree",
-        "url": "https://www.coindesk.com/business/2026/05/07/defi-is-not-dead-it-s-going-mainstream-with-ai-agents-crypto-executives-say",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Kraken parent goes for the OCC charter in bid to become a federal crypto bank",
+        "url": "https://www.coindesk.com/policy/2026/05/08/kraken-parent-goes-for-the-occ-charter-in-big-to-become-a-federal-crypto-bank",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Aave to expand collateral and listing standards after KelpDAO exploit",
-        "url": "https://www.coindesk.com/business/2026/05/07/aave-to-overhaul-collateral-and-listing-standards-after-kelpdao-exploit",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000",
+        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Consensus Miami Day 3: Real-time coverage and highlights from on the ground",
-        "url": "https://www.coindesk.com/markets/2026/05/07/consensus-miami-day-3-real-time-coverage-and-highlights-from-on-the-ground",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "SEC chair Atkins signals new rules for onchain markets, AI-driven finance",
+        "url": "https://www.coindesk.com/policy/2026/05/08/sec-chair-atkins-signals-new-rules-for-onchain-markets-ai-driven-finance",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
         "title": "TP ICAP Fuels the Emergence of a Wholesale Crypto Market",
@@ -76,34 +101,9 @@
         "publishedAt": null
       },
       {
-        "title": "Bitcoin treasury firms outline $3 trillion opportunity in BTC-backed digital credit at Consensus",
-        "url": "https://www.coindesk.com/markets/2026/05/07/bitcoin-treasury-firms-outline-usd3-trillion-opportunity-in-btc-backed-digital-credit-at-consensus",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Bitcoin tests Bollinger Bands breakout as creator flips bullish on BTC",
-        "url": "https://www.coindesk.com/markets/2026/05/07/bitcoin-tests-bollinger-bands-breakout-as-creator-flips-bullish-on-btc",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Safety first: Why Adam Back says Bitcoin is winning the 'DeFi security war'",
-        "url": "https://www.coindesk.com/tech/2026/05/07/safety-first-why-adam-back-says-bitcoin-is-winning-the-defi-security-war",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Dogecoin slides 4%, bitcoin rally pauses as Iran ceasefire optimism lifts equities",
-        "url": "https://www.coindesk.com/markets/2026/05/07/dogecoin-slides-4-bitcoin-rally-pauses-as-iran-ceasefire-optimism-lifts-equities",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Bitwise enters tokenization in takeover of Superstate’s $267 million 'carry fund'",
-        "url": "https://www.coindesk.com/markets/2026/05/07/bitwise-expands-into-tokenized-funds-with-planned-takeover-of-superstate-s-uscc-fund",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Discover what's new in our Research Hub !",
-        "url": "https://www.coindesk.com/research",
-        "publishedAt": null
+        "title": "AI agents fueled a frenzy of startup building at the Consensus Miami EasyA hackathon",
+        "url": "https://www.coindesk.com/tech/2026/05/08/ai-agents-fueled-a-frenzy-of-startup-building-at-the-consensus-miami-easya-hackathon",
+        "publishedAt": "2026-05-08T00:00:00"
       }
     ]
   },
@@ -113,6 +113,21 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000",
+        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
+      {
+        "title": "S&P 500 call options volume surges to record $2.6 trillion. Here's what it means for bitcoin",
+        "url": "https://www.coindesk.com/markets/2026/05/08/s-and-p-500-call-options-volume-surges-to-record-usd2-6-trillion-here-s-what-it-means-for-bitcoin",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
+      {
+        "title": "Bitcoin slips below $80,000: Why the 'Trump rally' is hitting a wall of profit-taking",
+        "url": "https://www.coindesk.com/markets/2026/05/08/bitcoin-s-usd80k-breakout-fizzles-as-analysts-split-on-whether-rally-has-legs",
+        "publishedAt": "2026-05-08T00:00:00"
+      },
       {
         "title": "Bitcoin ending May above $76,000 would confirm new bull market, Tom Lee says",
         "url": "https://www.coindesk.com/markets/2026/05/07/bitcoin-ending-may-above-usd76-000-would-confirm-new-bull-market-tom-lee-says",
@@ -144,29 +159,14 @@
         "publishedAt": "2026-05-07T00:00:00"
       },
       {
-        "title": "Three signals pointing to a possible bitcoin move to $85,000",
-        "url": "https://www.coindesk.com/markets/2026/05/07/three-signals-pointing-to-a-possible-bitcoin-move-to-usd85-000",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
+        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Bitcoin approaches $82,000 as oil crashes 6% on fresh Iran peace deal hopes",
-        "url": "https://www.coindesk.com/markets/2026/05/06/bitcoin-nasdaq-futures-rally-as-oil-crashes-6-on-iran-peace-deal-hopes",
-        "publishedAt": "2026-05-06T00:00:00"
-      },
-      {
-        "title": "Bitcoin's price rally has a hidden rhythm. Here are the hours and days driving gains.",
-        "url": "https://www.coindesk.com/markets/2026/05/06/bitcoin-s-price-rally-has-a-hidden-rhythm-here-are-the-hours-and-days-driving-gains",
-        "publishedAt": "2026-05-06T00:00:00"
-      },
-      {
-        "title": "Coinbax wins $20,000 PitchFest prize at Consensus Miami for stablecoin compliance Coinbax took the top spot at Consensus Miami with software built to add compliance controls to onchain payments.",
-        "url": "https://www.coindesk.com/business/2026/05/07/coinbax-wins-usd20-000-pitchfest-prize-at-consensus-miami-for-stablecoin-compliance",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Coinbase stock declines 5% after missing Q1 estimates on crypto slowdown The crypto platform missed on the top and bottom lines as falling digital asset prices weighed on trading activity and investor sentiment.",
-        "url": "https://www.coindesk.com/markets/2026/05/07/coinbase-stock-drops-4-after-surprise-1q-miss-as-crypto-trading-slows",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000 Tokenization and digital asset-infrastructure stocks climbed as SEC Chair Paul Atkins signaled support for onchain finance rules.",
+        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -185,6 +185,11 @@
         "title": "decentralized applications (dApps)",
         "url": "https://www.coindesk.com/learn/what-is-a-dapp-decentralized-apps-explained",
         "publishedAt": null
+      },
+      {
+        "title": "Judge clears path for Aave to move $71 million in ETH linked to North Korea hack",
+        "url": "https://www.coindesk.com/policy/2026/05/09/judge-clears-path-for-aave-to-move-usd71-million-in-eth-linked-to-north-korea-hack",
+        "publishedAt": "2026-05-09T00:00:00"
       },
       {
         "title": "Bitmine to slow down ether purchases as it nears accumulation goal, Tom Lee says",
@@ -232,19 +237,14 @@
         "publishedAt": "2026-04-27T00:00:00"
       },
       {
-        "title": "Fidelity Digital Assets says bitcoin is leading crypto market stabilization",
-        "url": "https://www.coindesk.com/markets/2026/04/27/fidelity-digital-assets-says-bitcoin-is-leading-crypto-market-stabilization",
-        "publishedAt": "2026-04-27T00:00:00"
+        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
+        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Coinbax wins $20,000 PitchFest prize at Consensus Miami for stablecoin compliance Coinbax took the top spot at Consensus Miami with software built to add compliance controls to onchain payments.",
-        "url": "https://www.coindesk.com/business/2026/05/07/coinbax-wins-usd20-000-pitchfest-prize-at-consensus-miami-for-stablecoin-compliance",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Coinbase stock declines 5% after missing Q1 estimates on crypto slowdown The crypto platform missed on the top and bottom lines as falling digital asset prices weighed on trading activity and investor sentiment.",
-        "url": "https://www.coindesk.com/markets/2026/05/07/coinbase-stock-drops-4-after-surprise-1q-miss-as-crypto-trading-slows",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000 Tokenization and digital asset-infrastructure stocks climbed as SEC Chair Paul Atkins signaled support for onchain finance rules.",
+        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -310,14 +310,14 @@
         "publishedAt": "2026-03-17T00:00:00"
       },
       {
-        "title": "Coinbax wins $20,000 PitchFest prize at Consensus Miami for stablecoin compliance Coinbax took the top spot at Consensus Miami with software built to add compliance controls to onchain payments.",
-        "url": "https://www.coindesk.com/business/2026/05/07/coinbax-wins-usd20-000-pitchfest-prize-at-consensus-miami-for-stablecoin-compliance",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
+        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Coinbase stock declines 5% after missing Q1 estimates on crypto slowdown The crypto platform missed on the top and bottom lines as falling digital asset prices weighed on trading activity and investor sentiment.",
-        "url": "https://www.coindesk.com/markets/2026/05/07/coinbase-stock-drops-4-after-surprise-1q-miss-as-crypto-trading-slows",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000 Tokenization and digital asset-infrastructure stocks climbed as SEC Chair Paul Atkins signaled support for onchain finance rules.",
+        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -333,28 +333,33 @@
     "success": true,
     "items": [
       {
-        "title": "Solv Protocol Will Dump LayerZero, Migrate $700M Tokenized Bitcoin Tech to Chainlink",
-        "url": "https://decrypt.co/367154/solv-protocol-dump-layerzero-migrate-700m-tokenized-bitcoin-chainlink",
+        "title": "Banking Industry Says Clarity Act Stablecoin Proposal Would Enable 'Evasion'",
+        "url": "https://decrypt.co/367351/banking-industry-clarity-act-stablecoin-evasion",
         "publishedAt": null
       },
       {
-        "title": "Trump Sons Haven't Abandoned World Liberty Financial, Crypto Firm Insists",
-        "url": "https://decrypt.co/367215/trump-sons-havent-abandoned-world-liberty-financial",
+        "title": "TeraWulf's AI Compute Revenue Outpaces Bitcoin Mining Amid $427 Million Loss",
+        "url": "https://decrypt.co/367309/terawulfs-ai-compute-revenue-outpaces-bitcoin-mining-amid-427-million-loss",
         "publishedAt": null
       },
       {
-        "title": "Coinbase Shares Slide as Crypto Giant Reports $394 Million Q1 Loss",
-        "url": "https://decrypt.co/367216/coinbase-shares-slide-crypto-giant-reports-394-million-q1-loss",
+        "title": "Intel Stock Hits All-Time High After Preliminary Chip Deal With Apple",
+        "url": "https://decrypt.co/367320/intel-all-time-high-chip-deal-apple",
         "publishedAt": null
       },
       {
-        "title": "Tom Lee Says BitMine May Slow Ethereum Buys After Amassing Nearly $12 Billion of ETH",
-        "url": "https://decrypt.co/367192/tom-lee-bitmine-slow-ethereum-buys-12-billion-eth",
+        "title": "Elizabeth Warren Wants Meta to Spill All on Stablecoin Plans Ahead of Clarity Act Votes",
+        "url": "https://decrypt.co/367314/elizabeth-warren-meta-stablecoin-plans-clarity-act-votes",
         "publishedAt": null
       },
       {
         "title": "Emerging Tech Hub Exploring Ahead of the Cutting Edge Discover Now",
         "url": "https://decrypt.co/emerge",
+        "publishedAt": null
+      },
+      {
+        "title": "GoMining Launches GoBTC Pay to Bring Native Instant Payments to Bitcoin",
+        "url": "https://decrypt.co/367297/gomining-launches-gobtc-pay-to-bring-native-instant-payments-to-bitcoin",
         "publishedAt": null
       },
       {
@@ -365,11 +370,6 @@
       {
         "title": "Roobet Launches Prediction Markets on May 6, The First Major Crypto Casino to Integrate the Format",
         "url": "https://decrypt.co/366998/roobet-launches-prediction-markets-on-may-6-the-first-major-crypto-casino-to-integrate-the-format",
-        "publishedAt": null
-      },
-      {
-        "title": "Ibiza Superclubs to Become Art Galleries this Summer for the Launch of the Culture Collective Immersive Art Expo",
-        "url": "https://decrypt.co/366928/ibiza-superclubs-to-become-art-galleries-this-summer-for-the-launch-of-the-culture-collective-immersive-art-expo",
         "publishedAt": null
       },
       {
@@ -491,18 +491,18 @@
         "publishedAt": "2026-05-07T19:18:59.456Z"
       },
       {
-        "title": "Clarity Act odds surge on stablecoin compromise, Coinbase support",
-        "url": "https://www.dlnews.com/articles/regulation/clarity-act-odds-surge-on-stablecoin-compromise/",
-        "publishedAt": "2026-05-07T19:18:59.456Z"
-      },
-      {
         "title": "DeFi rides Pokémon trading card boom as onchain marketplaces bring in $11m",
         "url": "https://www.dlnews.com/articles/defi/defi-rides-pokemon-trading-card-boom/",
         "publishedAt": "2026-05-07T19:18:59.456Z"
       },
       {
-        "title": "Bitcoin tops $80,000 price as Clarity Act nears Senate floor with new Fed chair imminent",
-        "url": "https://www.dlnews.com/articles/markets/bitcoin-tops-80k-price-as-clarity-act-nears-senate-floor-with-new-fed-chair-imminent/",
+        "title": "Coinbase shares pop as CEO Brian Armstrong cuts 700 jobs and blames AI",
+        "url": "https://www.dlnews.com/articles/markets/coinbase-cuts-jobs-and-blames-artificial-intelligence/",
+        "publishedAt": "2026-05-07T19:18:59.456Z"
+      },
+      {
+        "title": "Hyperliquid takes aim at Kalshi, Polymarket targeting $24bn prediction markets",
+        "url": "https://www.dlnews.com/articles/markets/hyperliquid-launches-prediction-markets-for-bitcoin/",
         "publishedAt": "2026-05-07T19:18:59.456Z"
       },
       {
