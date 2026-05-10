@@ -6,6 +6,26 @@
     "success": true,
     "items": [
       {
+        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
+        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "CME is set to let traders bet on bitcoin volatility, not just price CME Group plans to launch bitcoin volatility futures on June 1 pending regulatory approval bringing a easy way to bet on the degree of price swings.",
+        "url": "https://www.coindesk.com/markets/2026/05/09/you-ll-soon-be-able-to-bet-on-bitcoin-volatility-not-just-price-on-cme",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "Crypto wallets are being rebuilt for AI agents, Trust Wallet and Mesh executives say at Consensus Miami Trust Wallet CEO Felix Fan and Mesh CTO Arjun Mukherjee said AI agents are creating a new role for crypto wallets.",
+        "url": "https://www.coindesk.com/business/2026/05/09/crypto-wallets-are-being-rebuilt-for-ai-agents-trust-wallet-and-mesh-executives-say-at-consensus-miami",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "BlackRock deepens tokenization push with new onchain fund offerings The world's largest asset manager filed paperwork to expand its tokenized fund lineup as real-world assets grow 200% year over year.",
+        "url": "https://www.coindesk.com/business/2026/05/09/blackrock-deepens-tokenization-push-with-new-onchain-fund-offerings",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
         "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
         "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
         "publishedAt": "2026-05-08T00:00:00"
@@ -26,36 +46,6 @@
         "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "Coinbase bulls point to crypto legislation and stablecoins after earnings miss Analysts say Coinbase’s long-term growth may depend more on stablecoins and U.S. crypto legislation than a rebound in trading activity.",
-        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-bulls-point-to-crypto-legislation-and-stablecoins-after-earnings-miss",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "U.S. added 115K jobs in April, nearly doubling expectations The data comes ahead of what's expected to be a new Federal Reserve chairman taking the reins at the U.S. central bank later this month.",
-        "url": "https://www.coindesk.com/markets/2026/05/07/u-s-added-115k-jobs-in-april-nearly-doubling-expectations",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "U.S. hiring slowdown could be great for bitcoin — unless wages spoil the party Your day-ahead look for May 8, 2026",
-        "url": "https://www.coindesk.com/daybook-us/2026/05/08/u-s-hiring-slowdown-could-be-great-for-bitcoin-unless-wages-spoil-the-party",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Coinbase blames AWS for hours-long crypto trading outage Coinbase says the outage has been fully resolved but that it will investigate the incident fully.",
-        "url": "https://www.coindesk.com/business/2026/05/08/coinbase-disruption-tied-to-aws-outage-draws-criticism-amid-staff-layoffs-and-q1-losses",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Bitcoin retreats below $80,000, liquidating $300 million in futures bets BTC fell under $80,000 after U.S. strikes in Iran sent oil briefly above $100, triggering liquidations and a shift toward bearish positioning.",
-        "url": "https://www.coindesk.com/markets/2026/05/08/bitcoin-retreats-below-usd80-000-liquidating-usd300-million-in-futures-bets",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Zcash to roll out quantum-recoverable wallets within a month, go quantum-proof by 2027 Bitcoin no longer holds up as the cypherpunk-grade money it was meant to be, Zcash's Zooko Wilcox told an engaged audience.",
-        "url": "https://www.coindesk.com/tech/2026/05/08/zcash-to-roll-out-quantum-recoverable-wallets-within-a-month-go-quantum-proof-by-2027",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
         "title": "CoinW Expands Global Presence at Blockchain Forum 2026, Strengthening User Engagement",
         "url": "https://www.coindesk.com/press-release/2026/04/24/coinw-expands-global-presence-at-blockchain-forum-2026-strengthening-user-engagement",
         "publishedAt": "2026-04-24T00:00:00"
@@ -71,28 +61,28 @@
         "publishedAt": "2026-04-16T00:00:00"
       },
       {
-        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday",
-        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
-        "publishedAt": "2026-05-08T00:00:00"
+        "title": "LayerZero says it ‘made a mistake’ in $292 Million Kelp exploit",
+        "url": "https://www.coindesk.com/tech/2026/05/09/layerzero-says-it-made-a-mistake-in-usd292-million-kelp-exploit",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "LayerZero says it ‘made a mistake’ in $292 Million Kelp exploit",
+        "url": "https://www.coindesk.com/tech/2026/05/09/layerzero-says-it-made-a-mistake-in-usd292-million-kelp-exploit",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "BlackRock deepens tokenization push with new onchain fund offerings",
+        "url": "https://www.coindesk.com/business/2026/05/09/blackrock-deepens-tokenization-push-with-new-onchain-fund-offerings",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "Crypto industry cheers Senate Clarity Act markup date as market structure push resumes",
+        "url": "https://www.coindesk.com/policy/2026/05/09/crypto-industry-cheers-senate-clarity-act-markup-date-as-market-structure-push-resumes",
+        "publishedAt": "2026-05-09T00:00:00"
       },
       {
         "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday",
         "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Kraken parent goes for the OCC charter in bid to become a federal crypto bank",
-        "url": "https://www.coindesk.com/policy/2026/05/08/kraken-parent-goes-for-the-occ-charter-in-big-to-become-a-federal-crypto-bank",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000",
-        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "SEC chair Atkins signals new rules for onchain markets, AI-driven finance",
-        "url": "https://www.coindesk.com/policy/2026/05/08/sec-chair-atkins-signals-new-rules-for-onchain-markets-ai-driven-finance",
         "publishedAt": "2026-05-08T00:00:00"
       },
       {
@@ -101,8 +91,18 @@
         "publishedAt": null
       },
       {
-        "title": "AI agents fueled a frenzy of startup building at the Consensus Miami EasyA hackathon",
-        "url": "https://www.coindesk.com/tech/2026/05/08/ai-agents-fueled-a-frenzy-of-startup-building-at-the-consensus-miami-easya-hackathon",
+        "title": "Judge clears path for Aave to move $71 million in ETH linked to North Korea hack",
+        "url": "https://www.coindesk.com/policy/2026/05/09/judge-clears-path-for-aave-to-move-usd71-million-in-eth-linked-to-north-korea-hack",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "CME is set to let traders bet on bitcoin volatility, not just price",
+        "url": "https://www.coindesk.com/markets/2026/05/09/you-ll-soon-be-able-to-bet-on-bitcoin-volatility-not-just-price-on-cme",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "SEC chair Atkins signals new rules for onchain markets, AI-driven finance",
+        "url": "https://www.coindesk.com/policy/2026/05/08/sec-chair-atkins-signals-new-rules-for-onchain-markets-ai-driven-finance",
         "publishedAt": "2026-05-08T00:00:00"
       }
     ]
@@ -113,6 +113,26 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns",
+        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "It might be too late for bitcoin’s quantum migration, Project Eleven report argues",
+        "url": "https://www.coindesk.com/business/2026/05/09/it-might-be-too-late-for-bitcoin-s-quantum-migration-project-eleven-report-argues",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "Swiss central bank bitcoin reserve push fails over signature shortfall",
+        "url": "https://www.coindesk.com/business/2026/05/09/swiss-central-bank-bitcoin-reserve-push-fails-over-signature-shortfall",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
+        "title": "CME is set to let traders bet on bitcoin volatility, not just price",
+        "url": "https://www.coindesk.com/markets/2026/05/09/you-ll-soon-be-able-to-bet-on-bitcoin-volatility-not-just-price-on-cme",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
       {
         "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000",
         "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
@@ -139,34 +159,9 @@
         "publishedAt": "2026-05-07T00:00:00"
       },
       {
-        "title": "Bitcoin tests Bollinger Bands breakout as creator flips bullish on BTC",
-        "url": "https://www.coindesk.com/markets/2026/05/07/bitcoin-tests-bollinger-bands-breakout-as-creator-flips-bullish-on-btc",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Purge of millions of crypto tokens underway, BTC needs it for sustainable bull cycle: Ben Cowen",
-        "url": "https://www.coindesk.com/markets/2026/05/07/purge-of-millions-of-crypto-tokens-underway-btc-needs-it-for-sustainable-bull-cycle-ben-cowen",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Safety first: Why Adam Back says Bitcoin is winning the 'DeFi security war'",
-        "url": "https://www.coindesk.com/tech/2026/05/07/safety-first-why-adam-back-says-bitcoin-is-winning-the-defi-security-war",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Bitcoin lenders say institutions want crypto credit to look more like TradFi",
-        "url": "https://www.coindesk.com/markets/2026/05/07/bitcoin-lenders-say-institutions-want-crypto-credit-to-look-more-like-tradfi",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
-        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000 Tokenization and digital asset-infrastructure stocks climbed as SEC Chair Paul Atkins signaled support for onchain finance rules.",
-        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
-        "publishedAt": "2026-05-08T00:00:00"
+        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
+        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
+        "publishedAt": "2026-05-09T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -237,14 +232,9 @@
         "publishedAt": "2026-04-27T00:00:00"
       },
       {
-        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
-        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000 Tokenization and digital asset-infrastructure stocks climbed as SEC Chair Paul Atkins signaled support for onchain finance rules.",
-        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
-        "publishedAt": "2026-05-08T00:00:00"
+        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
+        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
+        "publishedAt": "2026-05-09T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -310,14 +300,9 @@
         "publishedAt": "2026-03-17T00:00:00"
       },
       {
-        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday The Senate Banking Committee announced it would hold its markup hearing for the Clarity Act on March 14.",
-        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "Coinbase rebounds as altcoins surge with bitcoin holding above $80,000 Tokenization and digital asset-infrastructure stocks climbed as SEC Chair Paul Atkins signaled support for onchain finance rules.",
-        "url": "https://www.coindesk.com/markets/2026/05/08/coinbase-rebounds-as-altcoins-surge-with-bitcoin-holding-above-usd80-000",
-        "publishedAt": "2026-05-08T00:00:00"
+        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
+        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
+        "publishedAt": "2026-05-09T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -333,6 +318,16 @@
     "success": true,
     "items": [
       {
+        "title": "Australian Police Seize Millions in Bitcoin From Alleged Darknet Marketplace Operator",
+        "url": "https://decrypt.co/367363/australian-police-seize-millions-bitcoin-darknet-marketplace-operator",
+        "publishedAt": null
+      },
+      {
+        "title": "Olympic Sprinter Can't Outrun Charges in UK Crypto Fraud Investigation",
+        "url": "https://decrypt.co/367353/olympic-sprinter-cant-outrun-charges-uk-crypto-fraud",
+        "publishedAt": null
+      },
+      {
         "title": "Banking Industry Says Clarity Act Stablecoin Proposal Would Enable 'Evasion'",
         "url": "https://decrypt.co/367351/banking-industry-clarity-act-stablecoin-evasion",
         "publishedAt": null
@@ -340,16 +335,6 @@
       {
         "title": "TeraWulf's AI Compute Revenue Outpaces Bitcoin Mining Amid $427 Million Loss",
         "url": "https://decrypt.co/367309/terawulfs-ai-compute-revenue-outpaces-bitcoin-mining-amid-427-million-loss",
-        "publishedAt": null
-      },
-      {
-        "title": "Intel Stock Hits All-Time High After Preliminary Chip Deal With Apple",
-        "url": "https://decrypt.co/367320/intel-all-time-high-chip-deal-apple",
-        "publishedAt": null
-      },
-      {
-        "title": "Elizabeth Warren Wants Meta to Spill All on Stablecoin Plans Ahead of Clarity Act Votes",
-        "url": "https://decrypt.co/367314/elizabeth-warren-meta-stablecoin-plans-clarity-act-votes",
         "publishedAt": null
       },
       {
@@ -491,18 +476,8 @@
         "publishedAt": "2026-05-07T19:18:59.456Z"
       },
       {
-        "title": "DeFi rides Pokémon trading card boom as onchain marketplaces bring in $11m",
-        "url": "https://www.dlnews.com/articles/defi/defi-rides-pokemon-trading-card-boom/",
-        "publishedAt": "2026-05-07T19:18:59.456Z"
-      },
-      {
-        "title": "Coinbase shares pop as CEO Brian Armstrong cuts 700 jobs and blames AI",
-        "url": "https://www.dlnews.com/articles/markets/coinbase-cuts-jobs-and-blames-artificial-intelligence/",
-        "publishedAt": "2026-05-07T19:18:59.456Z"
-      },
-      {
-        "title": "Hyperliquid takes aim at Kalshi, Polymarket targeting $24bn prediction markets",
-        "url": "https://www.dlnews.com/articles/markets/hyperliquid-launches-prediction-markets-for-bitcoin/",
+        "title": "Lord Kulveer Ranger on digital assets, digital pound, and stablecoins",
+        "url": "https://www.dlnews.com/articles/opinion/opinion-lord-kulveer-ranger-on-digital-assets/",
         "publishedAt": "2026-05-07T19:18:59.456Z"
       },
       {
@@ -553,6 +528,16 @@
       {
         "title": "Crypto industry reels as April sees highest number of hacks ever",
         "url": "https://www.dlnews.com/articles/defi/crypto-industry-reels-after-highest-number-of-hacks-ever/",
+        "publishedAt": "2026-05-07T19:18:59.456Z"
+      },
+      {
+        "title": "Crypto companies raised $600m in April despite despite market downturn, VCs say",
+        "url": "https://www.dlnews.com/articles/deals/crypto-companies-raised-600m-in-april-despite-fake-innovation-vcs-say/",
+        "publishedAt": "2026-05-07T19:18:59.456Z"
+      },
+      {
+        "title": "Lord Kulveer Ranger on digital assets, digital pound, and stablecoins",
+        "url": "https://www.dlnews.com/articles/opinion/opinion-lord-kulveer-ranger-on-digital-assets/",
         "publishedAt": "2026-05-07T19:18:59.456Z"
       }
     ]
