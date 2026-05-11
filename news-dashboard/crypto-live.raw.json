@@ -6,6 +6,16 @@
     "success": true,
     "items": [
       {
+        "title": "A bitcoin whale that went silent in 2013 moves $40 million in BTC A long-dormant whale woke up Sunday, moving millions worth of bitcoin on-chain.",
+        "url": "https://www.coindesk.com/markets/2026/05/11/a-bitcoin-whale-that-went-silent-in-2013-moves-usd40-million-in-btc",
+        "publishedAt": "2026-05-11T00:00:00"
+      },
+      {
+        "title": "Policy at Consensus Miami: State of Crypto This was a hectic week.",
+        "url": "https://www.coindesk.com/policy/2026/05/10/policy-at-consensus-miami-state-of-crypto",
+        "publishedAt": "2026-05-10T00:00:00"
+      },
+      {
         "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
         "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
         "publishedAt": "2026-05-09T00:00:00"
@@ -36,16 +46,6 @@
         "publishedAt": "2026-05-08T00:00:00"
       },
       {
-        "title": "XRP pushes toward $1.40 as tightening range lowers breakout chances Price moved higher on a late volume burst, with traders watching whether compression near $1.39-$1.40 finally resolves into a larger move.",
-        "url": "https://www.coindesk.com/markets/2026/05/08/xrp-pushes-toward-usd1-40-as-tightening-range-lowers-breakout-chances",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
-        "title": "CoinDesk 20 performance update: NEAR Protocol (NEAR) gains 6.3%, leading index higher Internet Computer (ICP), up 5.8% from Thursday, was also a top performer.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/05/08/coindesk-20-performance-update-near-protocol-near-gains-6-3-leading-index-higher",
-        "publishedAt": "2026-05-08T00:00:00"
-      },
-      {
         "title": "CoinW Expands Global Presence at Blockchain Forum 2026, Strengthening User Engagement",
         "url": "https://www.coindesk.com/press-release/2026/04/24/coinw-expands-global-presence-at-blockchain-forum-2026-strengthening-user-engagement",
         "publishedAt": "2026-04-24T00:00:00"
@@ -61,13 +61,8 @@
         "publishedAt": "2026-04-16T00:00:00"
       },
       {
-        "title": "LayerZero says it ‘made a mistake’ in $292 Million Kelp exploit",
-        "url": "https://www.coindesk.com/tech/2026/05/09/layerzero-says-it-made-a-mistake-in-usd292-million-kelp-exploit",
-        "publishedAt": "2026-05-09T00:00:00"
-      },
-      {
-        "title": "LayerZero says it ‘made a mistake’ in $292 Million Kelp exploit",
-        "url": "https://www.coindesk.com/tech/2026/05/09/layerzero-says-it-made-a-mistake-in-usd292-million-kelp-exploit",
+        "title": "BlackRock deepens tokenization push with new onchain fund offerings",
+        "url": "https://www.coindesk.com/business/2026/05/09/blackrock-deepens-tokenization-push-with-new-onchain-fund-offerings",
         "publishedAt": "2026-05-09T00:00:00"
       },
       {
@@ -76,19 +71,29 @@
         "publishedAt": "2026-05-09T00:00:00"
       },
       {
+        "title": "LayerZero says it ‘made a mistake’ in $292 Million Kelp exploit",
+        "url": "https://www.coindesk.com/tech/2026/05/09/layerzero-says-it-made-a-mistake-in-usd292-million-kelp-exploit",
+        "publishedAt": "2026-05-09T00:00:00"
+      },
+      {
         "title": "Crypto industry cheers Senate Clarity Act markup date as market structure push resumes",
         "url": "https://www.coindesk.com/policy/2026/05/09/crypto-industry-cheers-senate-clarity-act-markup-date-as-market-structure-push-resumes",
         "publishedAt": "2026-05-09T00:00:00"
       },
       {
-        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday",
-        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
-        "publishedAt": "2026-05-08T00:00:00"
+        "title": "Bored Ape NFTs are finally making a comeback as crypto traders rediscover their appetite for risk",
+        "url": "https://www.coindesk.com/business/2026/05/10/bored-ape-nfts-are-finally-making-a-comeback-as-crypto-traders-rediscover-their-appetite-for-risk",
+        "publishedAt": "2026-05-10T00:00:00"
       },
       {
         "title": "TP ICAP Fuels the Emergence of a Wholesale Crypto Market",
         "url": "https://www.coindesk.com/sponsored-content/tp-icap-fuels-the-emergence-of-a-wholesale-crypto-market",
         "publishedAt": null
+      },
+      {
+        "title": "Senate Banking Committee plans to hold key market structure hearing on Thursday",
+        "url": "https://www.coindesk.com/policy/2026/05/08/senate-banking-committee-plans-to-hold-key-market-structure-hearing-on-thursday",
+        "publishedAt": "2026-05-08T00:00:00"
       },
       {
         "title": "Judge clears path for Aave to move $71 million in ETH linked to North Korea hack",
@@ -99,11 +104,6 @@
         "title": "CME is set to let traders bet on bitcoin volatility, not just price",
         "url": "https://www.coindesk.com/markets/2026/05/09/you-ll-soon-be-able-to-bet-on-bitcoin-volatility-not-just-price-on-cme",
         "publishedAt": "2026-05-09T00:00:00"
-      },
-      {
-        "title": "SEC chair Atkins signals new rules for onchain markets, AI-driven finance",
-        "url": "https://www.coindesk.com/policy/2026/05/08/sec-chair-atkins-signals-new-rules-for-onchain-markets-ai-driven-finance",
-        "publishedAt": "2026-05-08T00:00:00"
       }
     ]
   },
@@ -113,6 +113,11 @@
     "kind": "secondary",
     "success": true,
     "items": [
+      {
+        "title": "A bitcoin whale that went silent in 2013 moves $40 million in BTC",
+        "url": "https://www.coindesk.com/markets/2026/05/11/a-bitcoin-whale-that-went-silent-in-2013-moves-usd40-million-in-btc",
+        "publishedAt": "2026-05-11T00:00:00"
+      },
       {
         "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns",
         "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
@@ -154,14 +159,14 @@
         "publishedAt": "2026-05-07T00:00:00"
       },
       {
-        "title": "The great derivatives disconnect: Why 'negative' funding is actually a bullish signal for Bitcoin",
-        "url": "https://www.coindesk.com/business/2026/05/07/the-great-derivatives-disconnect-why-negative-funding-is-actually-a-bullish-signal-for-bitcoin",
-        "publishedAt": "2026-05-07T00:00:00"
+        "title": "A bitcoin whale that went silent in 2013 moves $40 million in BTC A long-dormant whale woke up Sunday, moving millions worth of bitcoin on-chain.",
+        "url": "https://www.coindesk.com/markets/2026/05/11/a-bitcoin-whale-that-went-silent-in-2013-moves-usd40-million-in-btc",
+        "publishedAt": "2026-05-11T00:00:00"
       },
       {
-        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
-        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
-        "publishedAt": "2026-05-09T00:00:00"
+        "title": "Policy at Consensus Miami: State of Crypto This was a hectic week.",
+        "url": "https://www.coindesk.com/policy/2026/05/10/policy-at-consensus-miami-state-of-crypto",
+        "publishedAt": "2026-05-10T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -232,9 +237,14 @@
         "publishedAt": "2026-04-27T00:00:00"
       },
       {
-        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
-        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
-        "publishedAt": "2026-05-09T00:00:00"
+        "title": "A bitcoin whale that went silent in 2013 moves $40 million in BTC A long-dormant whale woke up Sunday, moving millions worth of bitcoin on-chain.",
+        "url": "https://www.coindesk.com/markets/2026/05/11/a-bitcoin-whale-that-went-silent-in-2013-moves-usd40-million-in-btc",
+        "publishedAt": "2026-05-11T00:00:00"
+      },
+      {
+        "title": "Policy at Consensus Miami: State of Crypto This was a hectic week.",
+        "url": "https://www.coindesk.com/policy/2026/05/10/policy-at-consensus-miami-state-of-crypto",
+        "publishedAt": "2026-05-10T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -300,9 +310,14 @@
         "publishedAt": "2026-03-17T00:00:00"
       },
       {
-        "title": "Trump Media’s Q1 loss widens to $406 million on bitcoin, CRO markdowns The loss was primarily driven by $244 million in unrealized losses on cryptocurrency holdings and an additional $108.2 million investment loss.",
-        "url": "https://www.coindesk.com/business/2026/05/09/trump-media-s-q1-loss-widens-to-usd406-million-on-bitcoin-cro-markdowns",
-        "publishedAt": "2026-05-09T00:00:00"
+        "title": "A bitcoin whale that went silent in 2013 moves $40 million in BTC A long-dormant whale woke up Sunday, moving millions worth of bitcoin on-chain.",
+        "url": "https://www.coindesk.com/markets/2026/05/11/a-bitcoin-whale-that-went-silent-in-2013-moves-usd40-million-in-btc",
+        "publishedAt": "2026-05-11T00:00:00"
+      },
+      {
+        "title": "Policy at Consensus Miami: State of Crypto This was a hectic week.",
+        "url": "https://www.coindesk.com/policy/2026/05/10/policy-at-consensus-miami-state-of-crypto",
+        "publishedAt": "2026-05-10T00:00:00"
       },
       {
         "title": "Documentation and Governance",
@@ -318,6 +333,16 @@
     "success": true,
     "items": [
       {
+        "title": "Crypto Firms Race to 'Quantum-Proof' Wallets Before Bitcoin, Ethereum Networks Catch Up",
+        "url": "https://decrypt.co/367321/crypto-firms-race-quantum-proof-wallets-bitcoin-ethereum",
+        "publishedAt": null
+      },
+      {
+        "title": "AI Models Scheme, Betray and Vote Each Other Out in Survivor-Style Game",
+        "url": "https://decrypt.co/367213/ai-models-scheme-betray-vote-out-survivor-style-game",
+        "publishedAt": null
+      },
+      {
         "title": "Australian Police Seize Millions in Bitcoin From Alleged Darknet Marketplace Operator",
         "url": "https://decrypt.co/367363/australian-police-seize-millions-bitcoin-darknet-marketplace-operator",
         "publishedAt": null
@@ -325,16 +350,6 @@
       {
         "title": "Olympic Sprinter Can't Outrun Charges in UK Crypto Fraud Investigation",
         "url": "https://decrypt.co/367353/olympic-sprinter-cant-outrun-charges-uk-crypto-fraud",
-        "publishedAt": null
-      },
-      {
-        "title": "Banking Industry Says Clarity Act Stablecoin Proposal Would Enable 'Evasion'",
-        "url": "https://decrypt.co/367351/banking-industry-clarity-act-stablecoin-evasion",
-        "publishedAt": null
-      },
-      {
-        "title": "TeraWulf's AI Compute Revenue Outpaces Bitcoin Mining Amid $427 Million Loss",
-        "url": "https://decrypt.co/367309/terawulfs-ai-compute-revenue-outpaces-bitcoin-mining-amid-427-million-loss",
         "publishedAt": null
       },
       {
