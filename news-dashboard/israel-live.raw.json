@@ -114,6 +114,11 @@
     "success": true,
     "items": [
       {
+        "title": "article 1319708",
+        "url": "https://www.maariv.co.il/news/politics/article-1319708",
+        "publishedAt": "2026-05-11"
+      },
+      {
         "title": "article 1319760",
         "url": "https://www.maariv.co.il/news/politics/article-1319760",
         "publishedAt": "2026-05-11"
@@ -164,13 +169,8 @@
         "publishedAt": "2026-05-11"
       },
       {
-        "title": "article 1319734",
-        "url": "https://www.maariv.co.il/news/law/article-1319734",
-        "publishedAt": "2026-05-11"
-      },
-      {
-        "title": "article 1319729",
-        "url": "https://www.maariv.co.il/news/politics/article-1319729",
+        "title": "article 1319708",
+        "url": "https://www.maariv.co.il/news/politics/article-1319708",
         "publishedAt": "2026-05-11"
       },
       {
@@ -420,13 +420,13 @@
         "publishedAt": null
       },
       {
-        "title": "IDF says reservist Alexander Glovanyov killed in Hezbollah drone attack in northern Israel",
-        "url": "https://www.timesofisrael.com/liveblog_entry/idf-says-reservist-alexander-glovanyov-killed-in-hezbollah-drone-attack-in-northern-israel/",
+        "title": "One evacuated passenger tests positive for hantavirus, another develops symptoms on flight",
+        "url": "https://www.timesofisrael.com/liveblog_entry/one-evacuated-passenger-tests-positive-for-hantavirus-another-develops-symptoms-on-flight/",
         "publishedAt": null
       },
       {
-        "title": "Netanyahu blasts claim Israel is hostile to Christians as 'incredible fabrication'",
-        "url": "https://www.timesofisrael.com/liveblog_entry/netanyahu-blasts-claim-israel-is-hostile-to-christians-as-incredible-fabrication/",
+        "title": "IDF says reservist Alexander Glovanyov killed in Hezbollah drone attack in northern Israel",
+        "url": "https://www.timesofisrael.com/liveblog_entry/idf-says-reservist-alexander-glovanyov-killed-in-hezbollah-drone-attack-in-northern-israel/",
         "publishedAt": null
       }
     ]

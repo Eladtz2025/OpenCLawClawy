@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-11T04:30:02.345Z",
-  "buildId": "build-1778473802345",
+  "generatedAt": "2026-05-11T04:43:12.885Z",
+  "buildId": "build-1778474592885",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778473802345",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778473802345",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-11.html?v=build-1778473802345",
-  "lastPublishedAt": "2026-05-11T04:30:02.345Z",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778474592885",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778474592885",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-11.html?v=build-1778474592885",
+  "lastPublishedAt": "2026-05-11T04:43:12.885Z",
   "sourcesWorkedCount": 24,
   "fallbackActive": true,
   "topicStatus": [
