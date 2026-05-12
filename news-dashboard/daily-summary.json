@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-11T04:43:12.885Z",
-  "buildId": "build-1778474592885",
+  "generatedAt": "2026-05-12T04:30:01.947Z",
+  "buildId": "build-1778560201947",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778474592885",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778474592885",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-11.html?v=build-1778474592885",
-  "lastPublishedAt": "2026-05-11T04:43:12.885Z",
-  "sourcesWorkedCount": 24,
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778560201947",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778560201947",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-12.html?v=build-1778560201947",
+  "lastPublishedAt": "2026-05-12T04:30:01.947Z",
+  "sourcesWorkedCount": 26,
   "fallbackActive": true,
   "topicStatus": [
     {
@@ -35,7 +35,7 @@
       "label": "טכנולוגיה #2",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 22,
+      "got": 21,
       "maxCount": null,
       "lowVolumeByDesign": false,
       "fallbackActive": false,
@@ -114,12 +114,14 @@
       "label": "הפועל פתח תקווה",
       "wanted": 5,
       "minGoodCount": 1,
-      "got": 2,
+      "got": 3,
       "maxCount": 5,
       "lowVolumeByDesign": true,
       "fallbackActive": false,
       "sourcesWorked": [
         "ynet Sport Israel Soccer",
+        "Walla Sport",
+        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -128,19 +130,11 @@
           "error": "no_items"
         },
         {
-          "source": "Walla Sport",
-          "error": "no_items"
-        },
-        {
           "source": "Soccerway Hapoel PT",
           "error": "no_items"
         },
         {
           "source": "ONE Sport",
-          "error": "no_items"
-        },
-        {
-          "source": "Sport 5",
           "error": "no_items"
         }
       ],

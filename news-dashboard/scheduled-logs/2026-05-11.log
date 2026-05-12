@@ -126,3 +126,43 @@
 [2026-05-11T04:33:24.168Z] [ERR] send failed: gateway send failed
 [2026-05-11T04:43:12.772Z] [INFO] === scheduled-run start (skipSend=false) ===
 [2026-05-11T04:43:12.776Z] [INFO] running C:\Users\Itzhak\.openclaw\workspace\news-dashboard\morning-run.js
+[2026-05-11T04:46:02.685Z] [PIPE] {
+[2026-05-11T04:46:02.688Z] [PIPE]   "status": "PARTIAL",
+[2026-05-11T04:46:02.688Z] [PIPE]   "items": 38
+[2026-05-11T04:46:02.688Z] [PIPE] }
+[2026-05-11T04:46:02.688Z] [PIPE] {
+[2026-05-11T04:46:02.688Z] [PIPE]   "status": "PARTIAL",
+[2026-05-11T04:46:02.688Z] [PIPE]   "items": 38,
+[2026-05-11T04:46:02.688Z] [PIPE]   "dailyFile": "2026-05-11.html"
+[2026-05-11T04:46:02.689Z] [PIPE] }
+[2026-05-11T04:46:02.689Z] [PIPE] {
+[2026-05-11T04:46:02.689Z] [PIPE]   "ok": true,
+[2026-05-11T04:46:02.689Z] [PIPE]   "buildId": "build-1778474592885",
+[2026-05-11T04:46:02.689Z] [PIPE]   "lastPublishedAt": "2026-05-11T04:43:12.885Z",
+[2026-05-11T04:46:02.689Z] [PIPE]   "tech2WithMedia": 22,
+[2026-05-11T04:46:02.689Z] [PIPE]   "itemCount": 38
+[2026-05-11T04:46:02.689Z] [PIPE] }
+[2026-05-11T04:46:02.689Z] [PIPE] [main 740c942] Publish news dashboard build-1778474592885
+[2026-05-11T04:46:02.689Z] [PIPE]  24 files changed, 902 insertions(+), 774 deletions(-)
+[2026-05-11T04:46:02.689Z] [PIPE] {
+[2026-05-11T04:46:02.689Z] [PIPE]   "ok": true,
+[2026-05-11T04:46:02.689Z] [PIPE]   "buildId": "build-1778474592885",
+[2026-05-11T04:46:02.689Z] [PIPE]   "commit": "740c94231c339e6739cc4f392271e6eab24e4f5f",
+[2026-05-11T04:46:02.689Z] [PIPE]   "datedUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-11.html?v=build-1778474592885"
+[2026-05-11T04:46:02.689Z] [PIPE] }{
+[2026-05-11T04:46:02.689Z] [PIPE]   "ok": true,
+[2026-05-11T04:46:02.690Z] [PIPE]   "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778474592885",
+[2026-05-11T04:46:02.690Z] [PIPE]   "resolvedUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-11.html?v=build-1778474592885",
+[2026-05-11T04:46:02.690Z] [PIPE]   "buildId": "build-1778474592885"
+[2026-05-11T04:46:02.690Z] [PIPE] }{
+[2026-05-11T04:46:02.690Z] [PIPE]   "ok": true,
+[2026-05-11T04:46:02.690Z] [PIPE]   "checked": 12,
+[2026-05-11T04:46:02.690Z] [PIPE]   "totalMediaRefs": 38,
+[2026-05-11T04:46:02.690Z] [PIPE]   "attempts": 1
+[2026-05-11T04:46:02.690Z] [PIPE] }Dashboard pipeline status: SUCCESS
+[2026-05-11T04:46:02.690Z] [PIPE-ERR] To https://github.com/Eladtz2025/OpenCLawClawy.git
+[2026-05-11T04:46:02.690Z] [PIPE-ERR]    35d6958..740c942  HEAD -> main
+[2026-05-11T04:46:02.692Z] [WARN] pipeline ok (PARTIAL: 4/5 topics met min) buildId=build-1778474592885
+[2026-05-11T04:46:02.695Z] [INFO] sending summary (117 bytes) via gateway → telegram:620906995 key=news:morning:a8465c2d5fedef876abd5f0a
+[2026-05-11T04:46:25.129Z] [INFO] sent ok messageId=641 bytes=117
+[2026-05-11T04:46:25.132Z] [INFO] === scheduled-run done OK buildId=build-1778474592885 status=sent ===
