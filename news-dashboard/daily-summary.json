@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-12T04:30:01.947Z",
-  "buildId": "build-1778560201947",
+  "generatedAt": "2026-05-13T04:30:02.123Z",
+  "buildId": "build-1778646602123",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778560201947",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778560201947",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-12.html?v=build-1778560201947",
-  "lastPublishedAt": "2026-05-12T04:30:01.947Z",
-  "sourcesWorkedCount": 26,
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778646602123",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778646602123",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-13.html?v=build-1778646602123",
+  "lastPublishedAt": "2026-05-13T04:30:02.123Z",
+  "sourcesWorkedCount": 25,
   "fallbackActive": true,
   "topicStatus": [
     {
@@ -35,7 +35,7 @@
       "label": "טכנולוגיה #2",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 21,
+      "got": 19,
       "maxCount": null,
       "lowVolumeByDesign": false,
       "fallbackActive": false,
@@ -54,10 +54,10 @@
       "label": "ישראל",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 5,
+      "got": 3,
       "maxCount": 5,
       "lowVolumeByDesign": false,
-      "fallbackActive": false,
+      "fallbackActive": true,
       "sourcesWorked": [
         "ynet News",
         "Maariv News",
@@ -121,7 +121,6 @@
       "sourcesWorked": [
         "ynet Sport Israel Soccer",
         "Walla Sport",
-        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -135,6 +134,10 @@
         },
         {
           "source": "ONE Sport",
+          "error": "no_items"
+        },
+        {
+          "source": "Sport 5",
           "error": "no_items"
         }
       ],
