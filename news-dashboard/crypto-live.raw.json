@@ -3,353 +3,33 @@
     "source": "CoinDesk",
     "url": "https://www.coindesk.com/",
     "kind": "primary",
-    "success": true,
-    "items": [
-      {
-        "title": "Ethereum app builder Consensys has delayed its potential IPO until fall The MetaMask wallet builder had reportedly engaged bankers from JPMorgan and Goldman Sachs to lead the process.",
-        "url": "https://www.coindesk.com/business/2026/05/13/ethereum-app-builder-consensys-has-delayed-its-potential-ipo-until-fall",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "The Protocol: Solana’s ‘Alpenglow’ upgrade is live for testing Also: LayerZero apology, Ronin layer-2 transition and ‘Clear Signing’",
-        "url": "https://www.coindesk.com/tech/2026/05/13/the-protocol-solana-s-alpenglow-upgrade-is-live-for-testing",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Metaplanet delays preferred share listing amid challenging Japanese market structure CEO Simon Gerovich says regulatory and infrastructure challenges are slowing the launch of Metaplanet's perpetual preferred share.",
-        "url": "https://www.coindesk.com/markets/2026/05/13/metaplanet-delays-preferred-share-listing-amid-challenging-japanese-market-structure",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "UK parliament to probe Nigel Farage’s $6.8 million donation from crypto billionaire If found guilty of violating the Parliamentary code of conduct, the Reform UK party leader could be suspended from the House of Commons.",
-        "url": "https://www.coindesk.com/policy/2026/05/13/uk-parliament-to-probe-nigel-farage-s-usd6-8-million-donation-from-crypto-billionaire",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Bitcoin buyers with long-term 'conviction' surges 300% with most recent buyers sitting on profits Bitcoin held by so-called conviction buyers has surged to nearly 4 million BTC, a roughly 300% increase since late 2025.",
-        "url": "https://www.coindesk.com/markets/2026/05/13/bitcoin-s-available-supply-is-shrinking-as-long-term-hoarding-hits-record-4-million-btc",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Telecom giant KDDI to acquire 14.9% stake in Coincheck Group in $65 million deal The companies signed a business alliance for revenue sharing, referral fees and customer referrals to expand crypto access in Japan.",
-        "url": "https://www.coindesk.com/business/2026/05/13/telecom-giant-kddi-to-acquire-14-9-stake-in-coincheck-group-in-usd65-million-deal",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "CoinDesk 20 performance update: SUI drops 3.2% as index trades lower Bittensor (TAO), down 2.7% from Tuesday, joined Sui (SUI) as an underperformer.",
-        "url": "https://www.coindesk.com/coindesk-indices/2026/05/13/coindesk-20-performance-update-sui-drops-3-2-as-index-trades-lower",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Tokenized Treasuries hit $15 billion as bitcoin stalls, Fed rate-rise concerns build Your day-ahead look for May 13, 2026",
-        "url": "https://www.coindesk.com/daybook-us/2026/05/13/tokenized-treasuries-hit-usd15-billion-as-bitcoin-stalls-fed-rate-rise-concerns-build",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Bitcoin holds below $81,000 with Trump-Xi talks on the horizon Bitcoin held steady before President Donald Trump's with his Chinese counterpart, Xi Jinping.",
-        "url": "https://www.coindesk.com/markets/2026/05/13/bitcoin-holds-below-usd81-000-with-trump-xi-talks-on-the-horizon",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Charles Schwab begins U.S. rollout of spot crypto trading for retail customers An initial group of clients can now trade bitcoin and ether on the Schwab Crypto platform.",
-        "url": "https://www.coindesk.com/business/2026/05/13/charles-schwab-begins-rollout-of-spot-crypto-trading-for-retail",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "EToro reiterates commitment to crypto despite falling activity in Q1 CEO Yoni Assia says he’s bullish on crypto and expects to see it back to all-time highs this year even as crypto derivatives trading on eToro dropped.",
-        "url": "https://www.coindesk.com/business/2026/05/13/etoro-reiterates-commitment-to-crypto-despite-falling-activity-in-q1",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "CoinW Amplifies Global Leadership and Community Engagement with Strong Presence at Consensus Miami",
-        "url": "https://www.coindesk.com/press-release/2026/05/12/coinw-amplifies-global-leadership-and-community-engagement-with-strong-presence-at-consensus-miami",
-        "publishedAt": "2026-05-12T00:00:00"
-      },
-      {
-        "title": "CoinW Expands Global Presence at Blockchain Forum 2026, Strengthening User Engagement",
-        "url": "https://www.coindesk.com/press-release/2026/04/24/coinw-expands-global-presence-at-blockchain-forum-2026-strengthening-user-engagement",
-        "publishedAt": "2026-04-24T00:00:00"
-      },
-      {
-        "title": "Reppo Foundation Secures $20M Capital Commitment to Solve Training Data Bottleneck Using Prediction Markets",
-        "url": "https://www.coindesk.com/press-release/2026/04/23/reppo-foundation-secures-usd20m-capital-commitment-to-solve-training-data-bottleneck-using-prediction-markets",
-        "publishedAt": "2026-04-23T00:00:00"
-      },
-      {
-        "title": "Ethereum app builder Consensys has delayed its potential IPO until fall",
-        "url": "https://www.coindesk.com/business/2026/05/13/ethereum-app-builder-consensys-has-delayed-its-potential-ipo-until-fall",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Ethereum app builder Consensys has delayed its potential IPO until fall",
-        "url": "https://www.coindesk.com/business/2026/05/13/ethereum-app-builder-consensys-has-delayed-its-potential-ipo-until-fall",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Live markets: Bitcoin dips below $80,000 as producer price inflation surges to 6%",
-        "url": "https://www.coindesk.com/markets/2026/05/13/live-markets-bitcoin-dips-below-usd80-000-as-producer-price-inflation-surges-to-6",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Clarity Act amendments would remake key parts of crypto bill but have doubtful future",
-        "url": "https://www.coindesk.com/policy/2026/05/13/clarity-act-amendments-would-remake-key-parts-of-crypto-bill-but-have-doubtful-future",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Crypto wallet provider Ledger puts U.S. IPO plans on hold due to market conditions",
-        "url": "https://www.coindesk.com/business/2026/05/13/crypto-wallet-provider-ledger-puts-u-s-ipo-plans-on-hold-due-to-market-conditions",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "TP ICAP Fuels the Emergence of a Wholesale Crypto Market",
-        "url": "https://www.coindesk.com/sponsored-content/tp-icap-fuels-the-emergence-of-a-wholesale-crypto-market",
-        "publishedAt": null
-      }
-    ]
+    "success": false,
+    "error": "Error: HTTP 429 for https://www.coindesk.com/",
+    "items": []
   },
   {
     "source": "CoinDesk Bitcoin",
     "url": "https://www.coindesk.com/tag/bitcoin/",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "Metaplanet delays preferred share listing amid challenging Japanese market structure",
-        "url": "https://www.coindesk.com/markets/2026/05/13/metaplanet-delays-preferred-share-listing-amid-challenging-japanese-market-structure",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Bitcoin buyers with long-term 'conviction' surges 300% with most recent buyers sitting on profits",
-        "url": "https://www.coindesk.com/markets/2026/05/13/bitcoin-s-available-supply-is-shrinking-as-long-term-hoarding-hits-record-4-million-btc",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Live markets: Bitcoin dips below $80,000 as producer price inflation surges to 6%",
-        "url": "https://www.coindesk.com/markets/2026/05/13/live-markets-bitcoin-dips-below-usd80-000-as-producer-price-inflation-surges-to-6",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "The 2020 signal returns: Why the copper-to-gold breakout could point to bitcoin breakout",
-        "url": "https://www.coindesk.com/markets/2026/05/13/the-2020-signal-returns-why-the-copper-to-gold-breakout-could-point-to-bitcoin-breakout",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "The $82,000 battle: bitcoin tests key resistance zone to form next major breakout",
-        "url": "https://www.coindesk.com/markets/2026/05/13/bitcoin-faces-crucial-test-at-200-day-moving-averages-as-bulls-defend-key-support-zone",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Bitcoin’s bull-bear cycle indicator turns green for first time since March 2023",
-        "url": "https://www.coindesk.com/markets/2026/05/12/bitcoin-s-bull-bear-cycle-turns-green-for-first-time-since-march-2023",
-        "publishedAt": "2026-05-12T00:00:00"
-      },
-      {
-        "title": "Live markets: Bitcoin climbs back to $80,800 as U.S. stocks bounce into the close",
-        "url": "https://www.coindesk.com/markets/2026/05/12/live-markets-bitcoin-holds-usd80-000-as-stocks-sink-yields-rise-on-ugly-inflation-print",
-        "publishedAt": "2026-05-12T00:00:00"
-      },
-      {
-        "title": "Hot inflation data pours cold water on Federal Reserve rate cut hopes",
-        "url": "https://www.coindesk.com/markets/2026/05/12/hot-inflation-data-pours-cold-water-on-federal-reserve-rate-cut-hopes",
-        "publishedAt": "2026-05-12T00:00:00"
-      },
-      {
-        "title": "Ethereum app builder Consensys has delayed its potential IPO until fall The MetaMask wallet builder had reportedly engaged bankers from JPMorgan and Goldman Sachs to lead the process.",
-        "url": "https://www.coindesk.com/business/2026/05/13/ethereum-app-builder-consensys-has-delayed-its-potential-ipo-until-fall",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "The Protocol: Solana’s ‘Alpenglow’ upgrade is live for testing Also: LayerZero apology, Ronin layer-2 transition and ‘Clear Signing’",
-        "url": "https://www.coindesk.com/tech/2026/05/13/the-protocol-solana-s-alpenglow-upgrade-is-live-for-testing",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Metaplanet delays preferred share listing amid challenging Japanese market structure CEO Simon Gerovich says regulatory and infrastructure challenges are slowing the launch of Metaplanet's perpetual preferred share.",
-        "url": "https://www.coindesk.com/markets/2026/05/13/metaplanet-delays-preferred-share-listing-amid-challenging-japanese-market-structure",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "UK parliament to probe Nigel Farage’s $6.8 million donation from crypto billionaire If found guilty of violating the Parliamentary code of conduct, the Reform UK party leader could be suspended from the House of Commons.",
-        "url": "https://www.coindesk.com/policy/2026/05/13/uk-parliament-to-probe-nigel-farage-s-usd6-8-million-donation-from-crypto-billionaire",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Documentation and Governance",
-        "url": "https://indices.coindesk.com/documentation-and-governance",
-        "publishedAt": null
-      }
-    ]
+    "success": false,
+    "error": "Error: HTTP 429 for https://www.coindesk.com/tag/bitcoin/",
+    "items": []
   },
   {
     "source": "CoinDesk Ethereum",
     "url": "https://www.coindesk.com/tag/ethereum/",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "decentralized applications (dApps)",
-        "url": "https://www.coindesk.com/learn/what-is-a-dapp-decentralized-apps-explained",
-        "publishedAt": null
-      },
-      {
-        "title": "The Protocol: Solana’s ‘Alpenglow’ upgrade is live for testing",
-        "url": "https://www.coindesk.com/tech/2026/05/13/the-protocol-solana-s-alpenglow-upgrade-is-live-for-testing",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "The Ethereum Foundation unveils new 'Clear Signing' standard to stop users from approving malicious crypto transactions",
-        "url": "https://www.coindesk.com/tech/2026/05/12/the-ethereum-foundation-unveils-new-clear-signing-standard-to-stop-users-from-approving-malicious-crypto-transactions",
-        "publishedAt": "2026-05-12T00:00:00"
-      },
-      {
-        "title": "ETH/BTC ratio falls to 10-month low as ether continues to underperform bitcoin",
-        "url": "https://www.coindesk.com/markets/2026/05/12/eth-btc-ratio-falls-to-10-month-low-as-ether-continues-to-underperform-bitcoin",
-        "publishedAt": "2026-05-12T00:00:00"
-      },
-      {
-        "title": "Galaxy Digital to manage Sharplink’s new $125 million onchain yield play",
-        "url": "https://www.coindesk.com/business/2026/05/11/galaxy-digital-to-manage-sharplink-s-new-usd125-million-onchain-yield-play",
-        "publishedAt": "2026-05-11T00:00:00"
-      },
-      {
-        "title": "Tom Lee's Bitmine slows down ether purchases after already buying 1 million tokens this year",
-        "url": "https://www.coindesk.com/business/2026/05/11/tom-lee-s-bitmine-slows-down-ether-purchases-after-already-buying-1-million-tokens-this-year",
-        "publishedAt": "2026-05-11T00:00:00"
-      },
-      {
-        "title": "Ronin set to transition to Ethereum layer 2 from independent sidechain",
-        "url": "https://www.coindesk.com/tech/2026/05/11/ronin-set-to-transition-to-ethereum-layer-2-from-independent-sidechain",
-        "publishedAt": "2026-05-11T00:00:00"
-      },
-      {
-        "title": "Judge clears path for Aave to move $71 million in ETH linked to North Korea hack",
-        "url": "https://www.coindesk.com/policy/2026/05/09/judge-clears-path-for-aave-to-move-usd71-million-in-eth-linked-to-north-korea-hack",
-        "publishedAt": "2026-05-09T00:00:00"
-      },
-      {
-        "title": "Bitmine to slow down ether purchases as it nears accumulation goal, Tom Lee says",
-        "url": "https://www.coindesk.com/business/2026/05/07/bitmine-to-slow-down-ether-purchases-as-it-nears-accumulation-goal-tom-lee-says",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "'JaredfromSubway' bot front runs Vitalik Buterin's $4 token swap with $1 million in volume",
-        "url": "https://www.coindesk.com/tech/2026/05/07/jaredfromsubway-bot-front-runs-vitalik-buterin-s-usd4-token-swap-with-usd1-million-in-volume",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "The end of ads: Coinbase engineer says AI agents could kill the internet’s favorite business model",
-        "url": "https://www.coindesk.com/tech/2026/05/06/the-end-of-ads-coinbase-engineer-says-ai-agents-could-kill-the-internet-s-favorite-business-model",
-        "publishedAt": "2026-05-06T00:00:00"
-      },
-      {
-        "title": "Ethereum app builder Consensys has delayed its potential IPO until fall The MetaMask wallet builder had reportedly engaged bankers from JPMorgan and Goldman Sachs to lead the process.",
-        "url": "https://www.coindesk.com/business/2026/05/13/ethereum-app-builder-consensys-has-delayed-its-potential-ipo-until-fall",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "The Protocol: Solana’s ‘Alpenglow’ upgrade is live for testing Also: LayerZero apology, Ronin layer-2 transition and ‘Clear Signing’",
-        "url": "https://www.coindesk.com/tech/2026/05/13/the-protocol-solana-s-alpenglow-upgrade-is-live-for-testing",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Metaplanet delays preferred share listing amid challenging Japanese market structure CEO Simon Gerovich says regulatory and infrastructure challenges are slowing the launch of Metaplanet's perpetual preferred share.",
-        "url": "https://www.coindesk.com/markets/2026/05/13/metaplanet-delays-preferred-share-listing-amid-challenging-japanese-market-structure",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "UK parliament to probe Nigel Farage’s $6.8 million donation from crypto billionaire If found guilty of violating the Parliamentary code of conduct, the Reform UK party leader could be suspended from the House of Commons.",
-        "url": "https://www.coindesk.com/policy/2026/05/13/uk-parliament-to-probe-nigel-farage-s-usd6-8-million-donation-from-crypto-billionaire",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Documentation and Governance",
-        "url": "https://indices.coindesk.com/documentation-and-governance",
-        "publishedAt": null
-      }
-    ]
+    "success": false,
+    "error": "Error: HTTP 429 for https://www.coindesk.com/tag/ethereum/",
+    "items": []
   },
   {
     "source": "CoinDesk XRP",
     "url": "https://www.coindesk.com/tag/xrp/",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "Spot XRP ETFs attract biggest inflows since January",
-        "url": "https://www.coindesk.com/markets/2026/05/12/spot-xrp-etfs-attract-biggest-inflows-since-january",
-        "publishedAt": "2026-05-12T00:00:00"
-      },
-      {
-        "title": "Ripple, JPMorgan settle first cross-border tokenized Treasury redemption on XRP Ledger",
-        "url": "https://www.coindesk.com/markets/2026/05/07/ripple-jpmorgan-settle-first-cross-border-tokenized-treasury-redemption-on-xrp-ledger",
-        "publishedAt": "2026-05-07T00:00:00"
-      },
-      {
-        "title": "Ripple partners with Korea's Kyobo Life to tokenize government bond settlement",
-        "url": "https://www.coindesk.com/business/2026/04/16/ripple-partners-with-korea-s-kyobo-life-to-tokenize-government-bond-settlement",
-        "publishedAt": "2026-04-16T00:00:00"
-      },
-      {
-        "title": "Nearly $120 million of XRP just moved to Coinbase in whale transaction",
-        "url": "https://www.coindesk.com/markets/2026/04/13/nearly-usd120-million-of-xrp-just-moved-to-coinbase-in-whale-transaction",
-        "publishedAt": "2026-04-13T00:00:00"
-      },
-      {
-        "title": "XRP may be less exposed to quantum computer threats than bitcoin, experts say",
-        "url": "https://www.coindesk.com/tech/2026/04/10/xrp-may-be-less-exposed-to-quantum-threats-than-bitcoin-experts-say",
-        "publishedAt": "2026-04-10T00:00:00"
-      },
-      {
-        "title": "Crypto's $224 million inflow rebound was led by mostly one country and XRP",
-        "url": "https://www.coindesk.com/markets/2026/04/07/crypto-s-usd224-million-inflow-rebound-was-led-by-mostly-one-country-and-xrp",
-        "publishedAt": "2026-04-07T00:00:00"
-      },
-      {
-        "title": "Oil, silver trading is way more popular than XRP, solana on Hyperliquid",
-        "url": "https://www.coindesk.com/markets/2026/03/23/oil-silver-trading-is-way-more-popular-than-xrp-sol-on-hyperliquid",
-        "publishedAt": "2026-03-23T00:00:00"
-      },
-      {
-        "title": "Bitcoin jumps to $70,800 as oil retreats; ether and XRP lag",
-        "url": "https://www.coindesk.com/markets/2026/03/20/bitcoin-jumps-to-usd70-800-as-oil-retreats-ether-and-xrp-lag",
-        "publishedAt": "2026-03-20T00:00:00"
-      },
-      {
-        "title": "XRP treasury firm Evernorth discloses $233.7 million impairment on holdings in SPAC filing",
-        "url": "https://www.coindesk.com/business/2026/03/19/xrp-treasury-firm-evernorth-discloses-usd233-7-million-impairment-on-holdings-in-spac-filing",
-        "publishedAt": "2026-03-19T00:00:00"
-      },
-      {
-        "title": "XRP hovers near $14 million options battleground that could sway trading",
-        "url": "https://www.coindesk.com/markets/2026/03/18/xrp-hovers-near-usd14-million-options-battleground-that-could-sway-trading",
-        "publishedAt": "2026-03-18T00:00:00"
-      },
-      {
-        "title": "Ethereum app builder Consensys has delayed its potential IPO until fall The MetaMask wallet builder had reportedly engaged bankers from JPMorgan and Goldman Sachs to lead the process.",
-        "url": "https://www.coindesk.com/business/2026/05/13/ethereum-app-builder-consensys-has-delayed-its-potential-ipo-until-fall",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "The Protocol: Solana’s ‘Alpenglow’ upgrade is live for testing Also: LayerZero apology, Ronin layer-2 transition and ‘Clear Signing’",
-        "url": "https://www.coindesk.com/tech/2026/05/13/the-protocol-solana-s-alpenglow-upgrade-is-live-for-testing",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Metaplanet delays preferred share listing amid challenging Japanese market structure CEO Simon Gerovich says regulatory and infrastructure challenges are slowing the launch of Metaplanet's perpetual preferred share.",
-        "url": "https://www.coindesk.com/markets/2026/05/13/metaplanet-delays-preferred-share-listing-amid-challenging-japanese-market-structure",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "UK parliament to probe Nigel Farage’s $6.8 million donation from crypto billionaire If found guilty of violating the Parliamentary code of conduct, the Reform UK party leader could be suspended from the House of Commons.",
-        "url": "https://www.coindesk.com/policy/2026/05/13/uk-parliament-to-probe-nigel-farage-s-usd6-8-million-donation-from-crypto-billionaire",
-        "publishedAt": "2026-05-13T00:00:00"
-      },
-      {
-        "title": "Documentation and Governance",
-        "url": "https://indices.coindesk.com/documentation-and-governance",
-        "publishedAt": null
-      }
-    ]
+    "success": false,
+    "error": "Error: HTTP 429 for https://www.coindesk.com/tag/xrp/",
+    "items": []
   },
   {
     "source": "Decrypt",
@@ -358,28 +38,33 @@
     "success": true,
     "items": [
       {
-        "title": "Bitcoin Owner Claims Claude AI Cracked Lost Wallet Password, Netting $400K in BTC",
-        "url": "https://decrypt.co/367796/claude-ai-cracked-lost-bitcoin-wallet-owner-claims",
+        "title": "Democrats Split on Clarity Act as Crypto Bill Passes Key Senate Committee Vote",
+        "url": "https://decrypt.co/367871/democrats-split-clarity-act-crypto-bill-passes-senate-committee-vote",
         "publishedAt": null
       },
       {
-        "title": "Bitcoin Rally Cut Short as Profit-Taking Rises, US Demand Falls: CryptoQuant",
-        "url": "https://decrypt.co/367787/bitcoin-rally-cut-short-profit-taking-rises-us-demand-falls-cryptoquant",
+        "title": "NFL All Day Stops Issuing NFTs as Dapper Labs Signals Future Plans With League",
+        "url": "https://decrypt.co/367926/nfl-all-day-stops-issuing-nfts-dapper-labs-future-plans-league",
         "publishedAt": null
       },
       {
-        "title": "Myriad Adopts Chainlink as Official Oracle Platform to Power New Crypto Prediction Markets",
-        "url": "https://decrypt.co/367581/myriad-adopts-chainlink-as-official-oracle-platform-to-power-new-crypto-prediction-markets",
+        "title": "Bitcoin Firm Strive Unveils Daily Dividend Payments for SATA Preferred Shares",
+        "url": "https://decrypt.co/367878/bitcoin-firm-strive-daily-dividend-payments-preferred-share",
         "publishedAt": null
       },
       {
-        "title": "Crypto-Friendly Kevin Warsh Confirmed as Fed Chair to Replace Jerome Powell",
-        "url": "https://decrypt.co/367784/crypto-friendly-kevin-warsh-confirmed-fed-chair-replace-jerome-powell",
+        "title": "Kraken to Migrate Wrapped Bitcoin Tech to Chainlink as LayerZero Exodus Expands",
+        "url": "https://decrypt.co/367880/kraken-migrate-wrapped-bitcoin-chainlink-layerzero-exodus",
         "publishedAt": null
       },
       {
         "title": "Emerging Tech Hub Exploring Ahead of the Cutting Edge Discover Now",
         "url": "https://decrypt.co/emerge",
+        "publishedAt": null
+      },
+      {
+        "title": "MapleStory Universe Marks One Year of Live Ops, Surpasses 150M On-chain Transactions, Entering MSU 2.0 Phase",
+        "url": "https://decrypt.co/367838/maplestory-universe-marks-one-year-of-live-ops-surpasses-150m-on-chain-transactions-entering-msu-2-0-phase",
         "publishedAt": null
       },
       {
@@ -390,11 +75,6 @@
       {
         "title": "DAPPOS Launches xBubble: An AI Agent That Learns and Uses AI for You",
         "url": "https://decrypt.co/367730/dappos-launches-xbubble-an-ai-agent-that-learns-and-uses-ai-for-you",
-        "publishedAt": null
-      },
-      {
-        "title": "BASIS.pro Is Live: Base58Labs Officially Launches Crypto Arbitrage Platform",
-        "url": "https://decrypt.co/367713/basis-pro-is-live-base58labs-officially-launches-crypto-arbitrage-platform",
         "publishedAt": null
       },
       {

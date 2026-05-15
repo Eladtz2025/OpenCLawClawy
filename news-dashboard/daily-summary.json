@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-14T04:30:02.819Z",
-  "buildId": "build-1778733002819",
+  "generatedAt": "2026-05-15T04:30:02.359Z",
+  "buildId": "build-1778819402359",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778733002819",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778733002819",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-14.html?v=build-1778733002819",
-  "lastPublishedAt": "2026-05-14T04:30:02.819Z",
-  "sourcesWorkedCount": 24,
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778819402359",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778819402359",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-15.html?v=build-1778819402359",
+  "lastPublishedAt": "2026-05-15T04:30:02.359Z",
+  "sourcesWorkedCount": 21,
   "fallbackActive": true,
   "topicStatus": [
     {
@@ -85,14 +85,26 @@
       "lowVolumeByDesign": false,
       "fallbackActive": false,
       "sourcesWorked": [
-        "CoinDesk",
-        "CoinDesk Bitcoin",
-        "CoinDesk Ethereum",
-        "CoinDesk XRP",
         "Decrypt",
         "DL News"
       ],
       "sourcesFailed": [
+        {
+          "source": "CoinDesk",
+          "error": "Error: HTTP 429 for https://www.coindesk.com/"
+        },
+        {
+          "source": "CoinDesk Bitcoin",
+          "error": "Error: HTTP 429 for https://www.coindesk.com/tag/bitcoin/"
+        },
+        {
+          "source": "CoinDesk Ethereum",
+          "error": "Error: HTTP 429 for https://www.coindesk.com/tag/ethereum/"
+        },
+        {
+          "source": "CoinDesk XRP",
+          "error": "Error: HTTP 429 for https://www.coindesk.com/tag/xrp/"
+        },
         {
           "source": "SEC Press Releases",
           "error": "no_items"
@@ -114,12 +126,13 @@
       "label": "הפועל פתח תקווה",
       "wanted": 5,
       "minGoodCount": 1,
-      "got": 2,
+      "got": 3,
       "maxCount": 5,
       "lowVolumeByDesign": true,
       "fallbackActive": false,
       "sourcesWorked": [
         "ynet Sport Israel Soccer",
+        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -137,10 +150,6 @@
         },
         {
           "source": "ONE Sport",
-          "error": "no_items"
-        },
-        {
-          "source": "Sport 5",
           "error": "no_items"
         }
       ],
