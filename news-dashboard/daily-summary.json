@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-15T04:30:02.359Z",
-  "buildId": "build-1778819402359",
+  "generatedAt": "2026-05-16T04:30:02.679Z",
+  "buildId": "build-1778905802679",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778819402359",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778819402359",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-15.html?v=build-1778819402359",
-  "lastPublishedAt": "2026-05-15T04:30:02.359Z",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1778905802679",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1778905802679",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-16.html?v=build-1778905802679",
+  "lastPublishedAt": "2026-05-16T04:30:02.679Z",
   "sourcesWorkedCount": 21,
   "fallbackActive": true,
   "topicStatus": [
@@ -132,7 +132,7 @@
       "fallbackActive": false,
       "sourcesWorked": [
         "ynet Sport Israel Soccer",
-        "Sport 5",
+        "Walla Sport",
         "PT News"
       ],
       "sourcesFailed": [
@@ -141,15 +141,15 @@
           "error": "no_items"
         },
         {
-          "source": "Walla Sport",
-          "error": "no_items"
-        },
-        {
           "source": "Soccerway Hapoel PT",
           "error": "no_items"
         },
         {
           "source": "ONE Sport",
+          "error": "no_items"
+        },
+        {
+          "source": "Sport 5",
           "error": "no_items"
         }
       ],

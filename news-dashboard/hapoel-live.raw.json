@@ -15,17 +15,17 @@
       {
         "title": "אחרי שהודיעו כי לא ייכנסו למשחק הביתי מול הפועל פ\"ת בעקבות ההחלטה לא לאפשר להם להכניס תופים, דגלים ושלטים, משטרת ישראל הקלה בדרישות - והאדומים יגיעו להתמודדות כמתוכנן",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/bjsu5ygyfl",
-        "publishedAt": "2026-05-15"
+        "publishedAt": "2026-05-16"
       },
       {
         "title": "אחרי היעדרות קצרה והניצחון אתמול (שבת) 2:4 על הפועל פ\"ת, הפועל באר-שבע שוב מוליכה את ליגת העל. המאמן, שערך חמישה שינויים בהרכב, מסביר: \"ההחלטות שלי מבוססות על עובדות\". וגם: גיבור המשחק במושבה - והאם יפתח במשחק העונה",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/bkfka560ze",
-        "publishedAt": "2026-05-15"
+        "publishedAt": "2026-05-16"
       },
       {
         "title": "החבורה של ברק יצחקי הפסידה למכבי חיפה ואיבדה את ראשות הטבלה לדרומיים, שניצחו את הפועל פ\"ת. במחזור הבא השתיים ייפגשו למשחק העונה, ומרוץ האליפות נראה לוהט מתמיד. אז מה מצפה לנו במחזורים הבאים?",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/mwfye8yd9",
-        "publishedAt": "2026-05-15"
+        "publishedAt": "2026-05-16"
       }
     ]
   },
@@ -33,8 +33,14 @@
     "source": "Walla Sport",
     "url": "https://sports.walla.co.il/category/157",
     "kind": "secondary",
-    "success": false,
-    "items": []
+    "success": true,
+    "items": [
+      {
+        "title": "כצפוי: הפועל פתח תקוה לא מימשה את האופציה על מארק קוסטה אחרי האכזבה, השיפור והדעיכה: הפועל פתח תקוה הודיעה לסוכנו של החלוץ ההונגרי על כך שהוחלט שלא לממש את האופציה עליו עודכן: 13:21 15/05/2026 רענן ברנובסקי",
+        "url": "https://sports.walla.co.il/item/3838359",
+        "publishedAt": "2026-05-16"
+      }
+    ]
   },
   {
     "source": "Soccerway Hapoel PT",
@@ -54,14 +60,8 @@
     "source": "Sport 5",
     "url": "https://www.sport5.co.il/",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "גבוה ברשימה: הפועל פ\"ת רוצה את בילנקי",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=544622",
-        "publishedAt": "2026-05-15"
-      }
-    ]
+    "success": false,
+    "items": []
   },
   {
     "source": "PT News",
@@ -72,12 +72,7 @@
       {
         "title": "omer 2028",
         "url": "https://www.hapoelpt.com/post/omer-2028",
-        "publishedAt": "2026-05-15"
-      },
-      {
-        "title": "לזכרו של ים פריד ז ל",
-        "url": "https://www.hapoelpt.com/post/לזכרו-של-ים-פריד-ז-ל",
-        "publishedAt": "2026-05-15"
+        "publishedAt": "2026-05-16"
       }
     ]
   }
