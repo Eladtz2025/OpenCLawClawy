@@ -1,0 +1,14 @@
+[2026-05-17T04:30:02.830Z] [INFO] === scheduled-run start (skipSend=false) ===
+[2026-05-17T04:30:02.846Z] [INFO] running C:\Users\Itzhak\.openclaw\workspace\news-dashboard\morning-run.js
+[2026-05-17T04:32:40.481Z] [PIPE] {
+[2026-05-17T04:32:40.482Z] [PIPE]   "status": "PARTIAL",
+[2026-05-17T04:32:40.483Z] [PIPE]   "items": 38
+[2026-05-17T04:32:40.484Z] [PIPE] }
+[2026-05-17T04:32:40.488Z] [PIPE] {
+[2026-05-17T04:32:40.489Z] [PIPE]   "status": "PARTIAL",
+[2026-05-17T04:32:40.490Z] [PIPE]   "items": 38,
+[2026-05-17T04:32:40.490Z] [PIPE]   "dailyFile": "2026-05-17.html"
+[2026-05-17T04:32:40.491Z] [PIPE] }
+[2026-05-17T04:32:40.495Z] [PIPE-ERR] daily-final contains likely corruption markers
+[2026-05-17T04:32:40.496Z] [PIPE-ERR] build-sanity-check.js failed with exit code 1
+[2026-05-17T04:32:40.497Z] [ERR] morning-run exited 1
