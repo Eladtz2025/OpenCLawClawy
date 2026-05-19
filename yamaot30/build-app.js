@@ -656,8 +656,20 @@ async function bootstrapSync() {
   } catch (e) { /* offline / API down — stay local */ }
 }
 
+// Merge a server-pulled state into local STATE. Preserves local-only
+// fields (ui cursor/theme, sync linkage) and any local attempts that
+// haven't propagated to the server yet — so a pull never silently
+// discards an answer the user just made on this device.
 function adoptServerState(j) {
-  STATE = mergeState(j.state);
+  const preservedUi = STATE.ui;
+  const serverState = Object.assign({}, j.state || {});
+  delete serverState.ui; // each device has its own cursor/theme/mode
+  serverState.questions = mergeQuestionAttempts(
+    serverState.questions || {},
+    STATE.questions || {}
+  );
+  STATE = mergeState(serverState);
+  STATE.ui = preservedUi;
   STATE.sync.url = location.origin;
   STATE.sync.autoSync = true;
   STATE.sync.etag = j.etag;
@@ -668,6 +680,36 @@ function adoptServerState(j) {
   if (typeof renderStats === 'function') renderStats();
   if (typeof refreshSyncBadge === 'function') refreshSyncBadge();
   if (STATE.ui && STATE.ui.currentQId && typeof showQuestion === 'function') showQuestion(STATE.ui.currentQId);
+}
+
+// Union attempts arrays per question by timestamp. Derived fields
+// (lastResult, nextReviewAt, intervalDays, markedAsGuess) follow
+// whichever side recorded the most recent attempt. notes prefers local.
+function mergeQuestionAttempts(serverQs, localQs) {
+  const out = {};
+  const ids = new Set([...Object.keys(serverQs || {}), ...Object.keys(localQs || {})]);
+  for (const id of ids) {
+    const s = serverQs[id] || { attempts: [] };
+    const l = localQs[id] || { attempts: [] };
+    const sAttempts = Array.isArray(s.attempts) ? s.attempts : [];
+    const lAttempts = Array.isArray(l.attempts) ? l.attempts : [];
+    const seen = new Set(sAttempts.map(a => a.ts));
+    const localExtras = lAttempts.filter(a => a && a.ts != null && !seen.has(a.ts));
+    if (localExtras.length === 0) { out[id] = s; continue; }
+    const allAttempts = sAttempts.concat(localExtras).sort((a, b) => a.ts - b.ts);
+    const lastS = sAttempts.length ? Math.max.apply(null, sAttempts.map(a => a.ts)) : -Infinity;
+    const lastL = Math.max.apply(null, localExtras.map(a => a.ts));
+    const winner = lastL > lastS ? l : s;
+    out[id] = {
+      attempts: allAttempts,
+      lastResult: winner.lastResult != null ? winner.lastResult : null,
+      nextReviewAt: winner.nextReviewAt != null ? winner.nextReviewAt : null,
+      intervalDays: winner.intervalDays != null ? winner.intervalDays : 0,
+      markedAsGuess: !!winner.markedAsGuess,
+      notes: (l.notes && l.notes.length) ? l.notes : (s.notes || '')
+    };
+  }
+  return out;
 }
 
 let saveDebounce = null;
@@ -1163,12 +1205,17 @@ async function syncPush(opts) {
     });
     if (r.status === 409) {
       // server has newer etag — another device pushed first. In silent
-      // (auto-sync) mode, adopt the server's state instead of failing —
-      // that's the cross-device update the user expects to "just happen".
-      // In manual mode, ask before overwriting.
+      // (auto-sync) mode: pull-and-merge (preserves local attempts the
+      // server doesn't have yet — see adoptServerState/mergeQuestionAttempts),
+      // then push the merged union once so the server holds it.
+      // Single retry only — if still conflicting we surface a warning.
       if (opts.silent) {
-        setSyncStatus('busy', 'מסנכרן מחדש...');
+        setSyncStatus('busy', 'ממזג...');
         await syncPull({ silent: true });
+        if (!opts.noRetry) {
+          return syncPush({ silent: true, noRetry: true });
+        }
+        setSyncStatus('error', 'התנגשות חוזרת');
         return;
       }
       if (!confirm('בשרת יש גרסה חדשה יותר. דרוס בכל זאת?')) {
@@ -1205,17 +1252,11 @@ async function syncPull(opts) {
       if (!opts.silent) showToast('אין נתונים שמורים בשרת.');
       return;
     }
-    if (!opts.silent && !confirm('זה ידרוס את ההתקדמות המקומית. להמשיך?')) {
+    if (!opts.silent && !confirm('יימזג מצב השרת עם המקומי. תשובות מקומיות שלא הועלו יישמרו. להמשיך?')) {
       setSyncStatus('ok', 'בוטל');
       return;
     }
-    STATE = mergeState(j.state);
-    STATE.sync.etag = j.etag;
-    STATE.sync.lastSyncAt = j.updatedAt;
-    saveState();
-    applyTheme();
-    renderModeNav(); renderStats();
-    if (STATE.ui.currentQId) showQuestion(STATE.ui.currentQId);
+    adoptServerState(j);
     setSyncStatus('ok', 'הורד ' + new Date(j.updatedAt).toLocaleTimeString());
     if (!opts.silent) showToast('נטען מהשרת.');
   } catch (e) {
@@ -1224,8 +1265,10 @@ async function syncPull(opts) {
   }
 }
 function stateForSync() {
-  // exclude the sync block itself (different per device)
-  const { sync, ...rest } = STATE;
+  // Exclude per-device fields: sync (server linkage) and ui (cursor,
+  // theme, mode — each device picks its own; syncing the cursor caused
+  // mobile to jump back to whatever question desktop was on).
+  const { sync, ui, ...rest } = STATE;
   return rest;
 }
 function refreshSyncBadge() {
