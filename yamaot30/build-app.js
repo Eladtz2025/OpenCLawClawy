@@ -12,43 +12,11 @@ const path = require('path');
 const HERE = __dirname;
 const SRC_DIR = 'C:/Users/Itzhak/AppData/Local/Temp/yamaot30';
 
-// Source-file resolution: prefer SRC_DIR (the original parse output in
-// %TEMP%) but fall back to the project root if temp is gone — keeps the
-// build runnable from a clean checkout.
-function pickSource(name) {
-  const tmp = path.join(SRC_DIR, name);
-  if (fs.existsSync(tmp)) return tmp;
-  const local = path.join(HERE, name);
-  if (fs.existsSync(local)) return local;
-  throw new Error('missing source: ' + name + ' (looked in ' + SRC_DIR + ' and ' + HERE + ')');
-}
-
-const questionsFile = JSON.parse(fs.readFileSync(pickSource('questions.json'), 'utf8'));
-// The local questions.json wraps the array under a `questions` key; the temp
-// one is the bare array. Accept both.
-const questions = Array.isArray(questionsFile) ? questionsFile : questionsFile.questions;
+const questions = JSON.parse(fs.readFileSync(path.join(SRC_DIR, 'questions.json'), 'utf8'));
 // PDF base64 kept as a "view full sheet" fallback (~500KB embed). Each
 // numbered image is embedded individually as a PNG crop in image-crops.json.
-const pdfB64 = fs.readFileSync(pickSource('pdf-base64.txt'), 'utf8').trim();
+const pdfB64 = fs.readFileSync(path.join(SRC_DIR, 'pdf-base64.txt'), 'utf8').trim();
 const imageCrops = JSON.parse(fs.readFileSync(path.join(HERE, 'image-crops.json'), 'utf8'));
-
-// Per-question images (synoptic maps, cardinal buoy topmarks, etc.) that
-// don't fit the numbered-sign scheme. Pulled from israelsails.com
-// /images/yamaot30/q{ID}.PNG by hand; loaded as base64 if present.
-const questionImages = (() => {
-  const dir = path.join(HERE, 'question-images');
-  if (!fs.existsSync(dir)) return {};
-  const out = {};
-  for (const file of fs.readdirSync(dir)) {
-    const m = file.match(/^q(\d+)\.(png|jpe?g|gif|webp)$/i);
-    if (!m) continue;
-    const buf = fs.readFileSync(path.join(dir, file));
-    const ext = m[2].toLowerCase();
-    const mime = ext === 'jpg' ? 'image/jpeg' : 'image/' + (ext === 'jpe' ? 'jpeg' : ext);
-    out[Number(m[1])] = 'data:' + mime + ';base64,' + buf.toString('base64');
-  }
-  return out;
-})();
 
 // Hand-authored detailed explanations. The full corpus lives in
 // explanations.js (loaded below); this inline block stays as a fallback
@@ -125,8 +93,7 @@ const dataPayload = JSON.stringify({
   source: 'israelsails.com / yamaot30 (parsed; license = community mirror)',
   questions,
   seedExplanations,
-  imageCrops,     // imageNum → 'data:image/png;base64,...' (cropped from sign.pdf)
-  questionImages  // questionId → 'data:image/png;base64,...' (maps/diagrams per question)
+  imageCrops    // imageNum → 'data:image/png;base64,...' (cropped from sign.pdf)
 });
 
 const html = `<!doctype html>
@@ -589,20 +556,10 @@ function loadState() {
   } catch { return seedState(); }
 }
 function mergeState(s) {
-  const merged = Object.assign({}, DEFAULT_STATE, s,
+  return Object.assign({}, DEFAULT_STATE, s,
     { ui: Object.assign({}, DEFAULT_STATE.ui, s.ui || {}),
       sync: Object.assign({}, DEFAULT_STATE.sync, s.sync || {}),
-      pageAnchors: Object.assign({}, DEFAULT_STATE.pageAnchors, s.pageAnchors || {}),
-      explanations: Object.assign({}, s.explanations || {}) });
-  // Layer in any new seed explanations the user doesn't already have, and
-  // upgrade unverified placeholders if the seed now has a verified entry.
-  for (const [k, seed] of Object.entries(DATA.seedExplanations)) {
-    const existing = merged.explanations[k];
-    if (!existing || (seed.verified && !existing.verified && !existing.userEdited)) {
-      merged.explanations[k] = JSON.parse(JSON.stringify(seed));
-    }
-  }
-  return merged;
+      pageAnchors: Object.assign({}, DEFAULT_STATE.pageAnchors, s.pageAnchors || {}) });
 }
 function seedState() {
   const s = JSON.parse(JSON.stringify(DEFAULT_STATE));
@@ -612,63 +569,6 @@ function seedState() {
   return s;
 }
 let STATE = loadState();
-
-// Cross-device sync defaults: every device that opens this URL shares one
-// server-side state, no settings dialog needed. The user can still override
-// via the sync settings UI — those overrides will be re-applied next load.
-if (typeof location !== 'undefined' && location.origin && /^https?:/.test(location.origin)) {
-  STATE.sync.url = location.origin;
-  STATE.sync.autoSync = true;
-}
-
-// Runs on startup and again whenever the tab regains focus. First-time link:
-// adopt server state if it has equal-or-more answered questions, otherwise
-// push local up. Already-linked: pull from server whenever its etag differs
-// from ours — that's how device B picks up changes device A just pushed.
-async function bootstrapSync() {
-  if (!STATE.sync.url) return;
-  try {
-    const r = await fetch(STATE.sync.url + '/api/study/state/' + APP_ID, { cache: 'no-store' });
-    if (!r.ok) return;
-    const j = await r.json();
-    if (!j || !j.ok) return;
-    if (!STATE.sync.etag) {
-      // First-time link on this device: pick the side with more progress.
-      const localCount = Object.keys(STATE.questions || {}).length;
-      if (j.state) {
-        const serverCount = Object.keys(j.state.questions || {}).length;
-        if (serverCount >= localCount) {
-          adoptServerState(j);
-        } else {
-          STATE.sync.etag = null; // force overwrite — local has more answers
-          syncPush({ silent: true });
-        }
-      } else {
-        syncPush({ silent: true });
-      }
-      return;
-    }
-    // Already linked. If server moved on (etag changed since we last synced),
-    // another device pushed updates we don't have — adopt them.
-    if (j.state && j.etag && j.etag !== STATE.sync.etag) {
-      adoptServerState(j);
-    }
-  } catch (e) { /* offline / API down — stay local */ }
-}
-
-function adoptServerState(j) {
-  STATE = mergeState(j.state);
-  STATE.sync.url = location.origin;
-  STATE.sync.autoSync = true;
-  STATE.sync.etag = j.etag;
-  STATE.sync.lastSyncAt = j.updatedAt;
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(STATE)); } catch {}
-  if (typeof applyTheme === 'function') applyTheme();
-  if (typeof renderModeNav === 'function') renderModeNav();
-  if (typeof renderStats === 'function') renderStats();
-  if (typeof refreshSyncBadge === 'function') refreshSyncBadge();
-  if (STATE.ui && STATE.ui.currentQId && typeof showQuestion === 'function') showQuestion(STATE.ui.currentQId);
-}
 
 let saveDebounce = null;
 function saveState() {
@@ -927,19 +827,6 @@ function renderImagePanel(q) {
   tabs.innerHTML = '';
   frame.innerHTML = '';
   pdfFrame = null;
-  // Per-question map/diagram (synoptic charts, cardinal buoy topmarks, etc.)
-  // — distinct from the numbered sign-image grid and rendered standalone.
-  const qImg = DATA.questionImages && DATA.questionImages[q.id];
-  if (qImg && (!q.images || !q.images.length)) {
-    zoom.hidden = true;
-    label.textContent = 'תמונת השאלה';
-    const img = document.createElement('img');
-    img.src = qImg;
-    img.alt = 'תמונת שאלה ' + q.id;
-    img.style.cssText = 'max-width:100%;max-height:100%;display:block;margin:auto;background:#fff;padding:8px;border-radius:6px;';
-    frame.appendChild(img);
-    return;
-  }
   if (!q.images || !q.images.length) {
     zoom.hidden = true;
     label.textContent = '—';
@@ -1097,8 +984,7 @@ function openExplanationEditor() {
       conclusion: document.getElementById('ex-conclusion').value.trim(),
       commonMistake: document.getElementById('ex-commonMistake').value.trim(),
       memoryTrick: document.getElementById('ex-memoryTrick').value.trim(),
-      verified: document.getElementById('ex-verified').checked,
-      userEdited: true
+      verified: document.getElementById('ex-verified').checked
     };
     saveState();
     renderExplanationPanel();
@@ -1162,13 +1048,10 @@ async function syncPush(opts) {
       body: JSON.stringify(body)
     });
     if (r.status === 409) {
-      // server has newer etag — another device pushed first. In silent
-      // (auto-sync) mode, adopt the server's state instead of failing —
-      // that's the cross-device update the user expects to "just happen".
-      // In manual mode, ask before overwriting.
+      // server has newer etag — retry without expectedEtag (force overwrite)
+      // only if user confirms (skip confirm in autoSync mode → fail loud)
       if (opts.silent) {
-        setSyncStatus('busy', 'מסנכרן מחדש...');
-        await syncPull({ silent: true });
+        setSyncStatus('error', 'התנגשות — אישור ידני נדרש');
         return;
       }
       if (!confirm('בשרת יש גרסה חדשה יותר. דרוס בכל זאת?')) {
@@ -1388,26 +1271,8 @@ applyTheme();
 renderModeNav();
 renderStats();
 refreshSyncBadge();
-bootstrapSync();
 if (STATE.ui.currentQId && QUESTIONS_BY_ID[STATE.ui.currentQId]) showQuestion(STATE.ui.currentQId);
 else nextQuestion();
-
-// Re-check the server whenever the tab regains focus. Flush any pending local
-// push first so an edit made just before switching tabs isn't clobbered.
-// Throttled to once per 5s so quickly toggling tabs doesn't hammer the API.
-let _lastVisibilitySync = 0;
-document.addEventListener('visibilitychange', async () => {
-  if (document.visibilityState !== 'visible') return;
-  if (!STATE.sync.url || !STATE.sync.autoSync) return;
-  if (Date.now() - _lastVisibilitySync < 5000) return;
-  _lastVisibilitySync = Date.now();
-  if (saveDebounce) {
-    clearTimeout(saveDebounce);
-    saveDebounce = null;
-    await syncPush({ silent: true });
-  }
-  bootstrapSync();
-});
 </script>
 </body>
 </html>
@@ -1419,26 +1284,4 @@ const stat = fs.statSync(outPath);
 console.log('Wrote', outPath, '(', (stat.size / 1024).toFixed(1), 'KB)');
 console.log('Questions:', questions.length, '| Answer keys:', questions.filter(q => q.correct).length);
 console.log('Image refs:', new Set(questions.flatMap(q => q.images || [])).size);
-
-// Also emit the Vercel copy with its own APP_ID. The Vercel build uses a
-// long random APP_ID as a soft secret in the KV namespace (see vercel/README.md);
-// reuse whatever the existing file already had so deployed KV state stays
-// addressable. Falls back to the documented default if the file is missing.
-const vercelOut = path.join(HERE, 'vercel', 'public', 'yamaot30-study.html');
-if (fs.existsSync(path.dirname(vercelOut))) {
-  const DEFAULT_VERCEL_APP_ID = 'yamaot30-c0b07f87c69bf7606a53d580ac8f3af6';
-  let vercelAppId = DEFAULT_VERCEL_APP_ID;
-  if (fs.existsSync(vercelOut)) {
-    const prev = fs.readFileSync(vercelOut, 'utf8');
-    const m = prev.match(/const APP_ID = "([^"]+)"/);
-    if (m && m[1] && m[1] !== 'yamaot30') vercelAppId = m[1];
-  }
-  const vercelHtml = html.replace(
-    'const APP_ID = "yamaot30";',
-    'const APP_ID = "' + vercelAppId + '";'
-  );
-  fs.writeFileSync(vercelOut, vercelHtml, 'utf8');
-  const vstat = fs.statSync(vercelOut);
-  console.log('Wrote', vercelOut, '(', (vstat.size / 1024).toFixed(1), 'KB, APP_ID=' + vercelAppId + ')');
-}
 console.log('Seed explanations:', Object.keys(seedExplanations).length, '(images', Object.keys(seedExplanations).join(', ') + ')');
