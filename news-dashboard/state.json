@@ -1,17 +1,17 @@
 {
-  "lastPublishedAt": "2026-05-20T04:30:02.695Z",
-  "buildId": "build-1779251402695",
+  "lastPublishedAt": "2026-05-21T04:30:02.136Z",
+  "buildId": "build-1779337802136",
   "status": "PARTIAL",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1779251402695",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1779251402695",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-20.html?v=build-1779251402695",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1779337802136",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1779337802136",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-21.html?v=build-1779337802136",
   "topics": {
     "technology": {
       "topic": "technology",
       "label": "טכנולוגיה",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 4,
+      "got": 2,
       "maxCount": 5,
       "lowVolumeByDesign": false,
       "fallbackActive": true,
@@ -32,7 +32,7 @@
       "label": "טכנולוגיה #2",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 20,
+      "got": 22,
       "maxCount": null,
       "lowVolumeByDesign": false,
       "fallbackActive": false,
@@ -82,26 +82,14 @@
       "lowVolumeByDesign": false,
       "fallbackActive": false,
       "sourcesWorked": [
+        "CoinDesk",
+        "CoinDesk Bitcoin",
+        "CoinDesk Ethereum",
+        "CoinDesk XRP",
         "Decrypt",
         "DL News"
       ],
       "sourcesFailed": [
-        {
-          "source": "CoinDesk",
-          "error": "Error: HTTP 429 for https://www.coindesk.com/"
-        },
-        {
-          "source": "CoinDesk Bitcoin",
-          "error": "Error: HTTP 429 for https://www.coindesk.com/tag/bitcoin/"
-        },
-        {
-          "source": "CoinDesk Ethereum",
-          "error": "Error: HTTP 429 for https://www.coindesk.com/tag/ethereum/"
-        },
-        {
-          "source": "CoinDesk XRP",
-          "error": "Error: HTTP 429 for https://www.coindesk.com/tag/xrp/"
-        },
         {
           "source": "SEC Press Releases",
           "error": "no_items"
@@ -123,19 +111,20 @@
       "label": "הפועל פתח תקווה",
       "wanted": 5,
       "minGoodCount": 1,
-      "got": 3,
+      "got": 1,
       "maxCount": 5,
       "lowVolumeByDesign": true,
       "fallbackActive": false,
       "sourcesWorked": [
-        "ynet Sport Israel Soccer",
-        "Walla Sport",
-        "Sport 5",
-        "PT News"
+        "ynet Sport Israel Soccer"
       ],
       "sourcesFailed": [
         {
           "source": "Hapoel PT News",
+          "error": "no_items"
+        },
+        {
+          "source": "Walla Sport",
           "error": "no_items"
         },
         {
@@ -144,6 +133,14 @@
         },
         {
           "source": "ONE Sport",
+          "error": "no_items"
+        },
+        {
+          "source": "Sport 5",
+          "error": "no_items"
+        },
+        {
+          "source": "PT News",
           "error": "no_items"
         }
       ],
