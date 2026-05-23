@@ -8,7 +8,7 @@
       {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
       }
     ]
   },
@@ -21,22 +21,22 @@
       {
         "title": "בבית\"ר חוששים משאננות: \"הפועל פ\"ת תעשה הכל כדי להרוס לנו\"",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/skl00x2ykfx",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
       },
       {
         "title": "המאמן דיבר לקראת המשחק מחר (20:30, המושבה) מול הפועל פ\"ת. על היריבה: \"היא תבוא בשיא המוטיבציה\". על הלחץ איתו מתמודדים השחקנים: \"הוא שם מתחילת העונה. מי שלא מסוגל לשאת את זה - לא יכול להיות בבית\"ר\"",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/r1g111iujmx",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
       },
       {
         "title": "אוהדי בית\"ר זועמים: מחירי הכרטיסים הגבוהים למשחק מול הפועל פ\"ת",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/hjisszpjfe",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
       },
       {
         "title": "הירוקים, שרשמו עוד תוצאה מאכזבת עם תיקו מול הפועל פ\"ת מול אצטדיון חצי ריק, מבינים שאף על פי השחקנים הצעירים שמקבלים הזדמנויות, המועדון זקוק לשינוי, בעיקר בגזרת הזרים: \"כולם מאוכזבים, לא רצינו להגיע למצב כזה\"",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/bko1e0i1ge",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
       }
     ]
   },
@@ -49,7 +49,7 @@
       {
         "title": "עידו שחר: \"לא היה נעים להפסיד בב\"ש. צריך לתת פוש אחרון\" מכבי תל אביב מאיצה את ההכנות למפגש עם הפועל פ\"ת במחזור הסיום (שבת, 18:00, ספורט1), כשקני מילר עשוי לבצע רוטציה: \"יש לנו גמר גביע באופק\" 14:58 21/05/2026 יניב טוכמן",
         "url": "https://sports.walla.co.il/item/3839866",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
       }
     ]
   },
@@ -71,14 +71,8 @@
     "source": "Sport 5",
     "url": "https://www.sport5.co.il/",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "יאזן נאסר ואבישי כהן מועמדים להפועל פ\"ת",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=545128",
-        "publishedAt": "2026-05-22"
-      }
-    ]
+    "success": false,
+    "items": []
   },
   {
     "source": "PT News",
@@ -87,19 +81,19 @@
     "success": true,
     "items": [
       {
-        "title": "אוללה אוללה הפועל פתח תקוה",
-        "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-22"
-      },
-      {
         "title": "omer 2028",
         "url": "https://www.hapoelpt.com/post/omer-2028",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
       },
       {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-22"
+        "publishedAt": "2026-05-23"
+      },
+      {
+        "title": "אוללה אוללה הפועל פתח תקוה",
+        "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
+        "publishedAt": "2026-05-23"
       }
     ]
   }

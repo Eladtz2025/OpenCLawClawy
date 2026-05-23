@@ -1,10 +1,10 @@
 {
-  "lastPublishedAt": "2026-05-22T04:30:02.149Z",
-  "buildId": "build-1779424202149",
-  "status": "SUCCESS",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1779424202149",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1779424202149",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-22.html?v=build-1779424202149",
+  "lastPublishedAt": "2026-05-23T04:30:02.175Z",
+  "buildId": "build-1779510602175",
+  "status": "PARTIAL",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1779510602175",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1779510602175",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-23.html?v=build-1779510602175",
   "topics": {
     "technology": {
       "topic": "technology",
@@ -51,10 +51,10 @@
       "label": "ישראל",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 5,
+      "got": 4,
       "maxCount": 5,
       "lowVolumeByDesign": false,
-      "fallbackActive": false,
+      "fallbackActive": true,
       "sourcesWorked": [
         "ynet News",
         "Maariv News",
@@ -111,7 +111,7 @@
       "label": "הפועל פתח תקווה",
       "wanted": 5,
       "minGoodCount": 1,
-      "got": 3,
+      "got": 2,
       "maxCount": 5,
       "lowVolumeByDesign": true,
       "fallbackActive": false,
@@ -119,7 +119,6 @@
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
         "Walla Sport",
-        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -129,6 +128,10 @@
         },
         {
           "source": "ONE Sport",
+          "error": "no_items"
+        },
+        {
+          "source": "Sport 5",
           "error": "no_items"
         }
       ],
