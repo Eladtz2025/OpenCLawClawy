@@ -6,9 +6,14 @@
     "success": true,
     "items": [
       {
+        "title": "תודה איתי",
+        "url": "https://www.hapoelpt.com/post/תודה-איתי",
+        "publishedAt": "2026-05-28"
+      },
+      {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-24"
+        "publishedAt": "2026-05-28"
       }
     ]
   },
@@ -16,29 +21,8 @@
     "source": "ynet Sport Israel Soccer",
     "url": "https://www.ynet.co.il/sport/israelisoccer",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "בבית\"ר חוששים משאננות: \"הפועל פ\"ת תעשה הכל כדי להרוס לנו\"",
-        "url": "https://www.ynet.co.il/sport/israelisoccer/article/skl00x2ykfx",
-        "publishedAt": "2026-05-24"
-      },
-      {
-        "title": "המאמן דיבר לקראת המשחק מחר (20:30, המושבה) מול הפועל פ\"ת. על היריבה: \"היא תבוא בשיא המוטיבציה\". על הלחץ איתו מתמודדים השחקנים: \"הוא שם מתחילת העונה. מי שלא מסוגל לשאת את זה - לא יכול להיות בבית\"ר\"",
-        "url": "https://www.ynet.co.il/sport/israelisoccer/article/r1g111iujmx",
-        "publishedAt": "2026-05-24"
-      },
-      {
-        "title": "אוהדי בית\"ר זועמים: מחירי הכרטיסים הגבוהים למשחק מול הפועל פ\"ת",
-        "url": "https://www.ynet.co.il/sport/israelisoccer/article/hjisszpjfe",
-        "publishedAt": "2026-05-24"
-      },
-      {
-        "title": "הירוקים, שרשמו עוד תוצאה מאכזבת עם תיקו מול הפועל פ\"ת מול אצטדיון חצי ריק, מבינים שאף על פי השחקנים הצעירים שמקבלים הזדמנויות, המועדון זקוק לשינוי, בעיקר בגזרת הזרים: \"כולם מאוכזבים, לא רצינו להגיע למצב כזה\"",
-        "url": "https://www.ynet.co.il/sport/israelisoccer/article/bko1e0i1ge",
-        "publishedAt": "2026-05-24"
-      }
-    ]
+    "success": false,
+    "items": []
   },
   {
     "source": "Walla Sport",
@@ -47,9 +31,9 @@
     "success": true,
     "items": [
       {
-        "title": "ההצעות לפרץ והבעיה שמדאיגה את מכבי תל אביב לפני הגמר הצהובים שוב איבדו יתרון וסיימו ב-2:2 מול הפועל פתח תקוה, לפני המפגש עם הפועל באר שבע בשלישי בטדי. הקשר מחזיק בהצעות מעניינות מחו\"ל 07:17 24/05/2026 יניב טוכמן",
-        "url": "https://sports.walla.co.il/item/3840222",
-        "publishedAt": "2026-05-24"
+        "title": "המגן אריאל מנדי מועמד להפועל פתח תקוה הכחולים החלו בחיפושים אחר מועמדים לחיזוק: מנדי שירד ליגה עם אשדוד הפך לשחקן חופשי, ועשוי להחליף את שחר רוזן שכרגע חוזר אוטומטית למכבי ת\"א עודכן: 11:14 27/05/2026 רענן ברנובסקי",
+        "url": "https://sports.walla.co.il/item/3841173",
+        "publishedAt": "2026-05-28"
       }
     ]
   },
@@ -71,14 +55,8 @@
     "source": "Sport 5",
     "url": "https://www.sport5.co.il/",
     "kind": "secondary",
-    "success": true,
-    "items": [
-      {
-        "title": "בלם הפועל פ\"ת נפרד מחבריו. וגם: האלטרנטיבות בעמדת הבלם ועתידו של קוסטה",
-        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=545474",
-        "publishedAt": "2026-05-24"
-      }
-    ]
+    "success": false,
+    "items": []
   },
   {
     "source": "PT News",
@@ -87,14 +65,14 @@
     "success": true,
     "items": [
       {
-        "title": "omer 2028",
-        "url": "https://www.hapoelpt.com/post/omer-2028",
-        "publishedAt": "2026-05-24"
+        "title": "תודה איתי",
+        "url": "https://www.hapoelpt.com/post/תודה-איתי",
+        "publishedAt": "2026-05-28"
       },
       {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-24"
+        "publishedAt": "2026-05-28"
       }
     ]
   }
