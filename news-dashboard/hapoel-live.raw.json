@@ -8,12 +8,12 @@
       {
         "title": "תודה איתי",
         "url": "https://www.hapoelpt.com/post/תודה-איתי",
-        "publishedAt": "2026-05-28"
+        "publishedAt": "2026-05-29"
       },
       {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-28"
+        "publishedAt": "2026-05-29"
       }
     ]
   },
@@ -21,8 +21,14 @@
     "source": "ynet Sport Israel Soccer",
     "url": "https://www.ynet.co.il/sport/israelisoccer",
     "kind": "secondary",
-    "success": false,
-    "items": []
+    "success": true,
+    "items": [
+      {
+        "title": "בלם הפועל פ\"ת בעונה שחלפה הפך לרכש הראשון של האלופה בפגרה וילבש אדום עד קיץ 2029: \"שמח,נרגש ומודע לציפיות הגבוהות\"",
+        "url": "https://www.ynet.co.il/sport/israelisoccer/article/h12rdpsxgx",
+        "publishedAt": "2026-05-29"
+      }
+    ]
   },
   {
     "source": "Walla Sport",
@@ -31,9 +37,14 @@
     "success": true,
     "items": [
       {
-        "title": "המגן אריאל מנדי מועמד להפועל פתח תקוה הכחולים החלו בחיפושים אחר מועמדים לחיזוק: מנדי שירד ליגה עם אשדוד הפך לשחקן חופשי, ועשוי להחליף את שחר רוזן שכרגע חוזר אוטומטית למכבי ת\"א עודכן: 11:14 27/05/2026 רענן ברנובסקי",
-        "url": "https://sports.walla.co.il/item/3841173",
-        "publishedAt": "2026-05-28"
+        "title": "המהפכה בהגנה מתחילה: אבישי כהן סיכם בהפועל פתח תקוה המגן שסיים את העונה באשדוד יהיה החיזוק הראשון של פרץ, שמתכנן שינויים רבים בחוליית ההגנה. סיכם לעונה עם אופציה לעונה נוספת 14:11 28/05/2026 רענן ברנובסקי",
+        "url": "https://sports.walla.co.il/item/3841538",
+        "publishedAt": "2026-05-29"
+      },
+      {
+        "title": "החיזוק הראשון של הקיץ: איתי רוטמן חתם בהפועל באר שבע אחרי הסיכום עם קוז'וך וחגיגות האליפות בעיר, האלופה צירפה את הבלם מהפועל פ\"ת לשלוש שנים: \"מודע לציפיות הגבוהות\" 10:05 28/05/2026 יניב טוכמן",
+        "url": "https://sports.walla.co.il/item/3841437",
+        "publishedAt": "2026-05-29"
       }
     ]
   },
@@ -67,12 +78,12 @@
       {
         "title": "תודה איתי",
         "url": "https://www.hapoelpt.com/post/תודה-איתי",
-        "publishedAt": "2026-05-28"
+        "publishedAt": "2026-05-29"
       },
       {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-28"
+        "publishedAt": "2026-05-29"
       }
     ]
   }
