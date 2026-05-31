@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-05-30T04:30:02.846Z",
-  "buildId": "build-1780115402846",
-  "status": "SUCCESS",
-  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1780115402846",
-  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1780115402846",
-  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-30.html?v=build-1780115402846",
-  "lastPublishedAt": "2026-05-30T04:30:02.846Z",
-  "sourcesWorkedCount": 25,
-  "fallbackActive": false,
+  "generatedAt": "2026-05-31T04:30:01.745Z",
+  "buildId": "build-1780201801745",
+  "status": "PARTIAL",
+  "latestUrl": "./news-dashboard/live-site/latest.html?v=build-1780201801745",
+  "publicLatestUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/latest.html?v=build-1780201801745",
+  "publicUrl": "https://eladtz2025.github.io/OpenCLawClawy/news-dashboard/live-site/2026-05-31.html?v=build-1780201801745",
+  "lastPublishedAt": "2026-05-31T04:30:01.745Z",
+  "sourcesWorkedCount": 26,
+  "fallbackActive": true,
   "topicStatus": [
     {
       "topic": "technology",
       "label": "טכנולוגיה",
       "wanted": 5,
       "minGoodCount": 5,
-      "got": 5,
+      "got": 4,
       "maxCount": 5,
       "lowVolumeByDesign": false,
-      "fallbackActive": false,
+      "fallbackActive": true,
       "sourcesWorked": [
         "TechCrunch AI",
         "The Verge Tech",
@@ -114,13 +114,14 @@
       "label": "הפועל פתח תקווה",
       "wanted": 5,
       "minGoodCount": 1,
-      "got": 2,
+      "got": 3,
       "maxCount": 5,
       "lowVolumeByDesign": true,
       "fallbackActive": false,
       "sourcesWorked": [
         "Hapoel PT News",
         "ynet Sport Israel Soccer",
+        "Sport 5",
         "PT News"
       ],
       "sourcesFailed": [
@@ -134,10 +135,6 @@
         },
         {
           "source": "ONE Sport",
-          "error": "no_items"
-        },
-        {
-          "source": "Sport 5",
           "error": "no_items"
         }
       ],

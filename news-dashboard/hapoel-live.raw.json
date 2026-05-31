@@ -8,12 +8,12 @@
       {
         "title": "תודה איתי",
         "url": "https://www.hapoelpt.com/post/תודה-איתי",
-        "publishedAt": "2026-05-30"
+        "publishedAt": "2026-05-31"
       },
       {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-30"
+        "publishedAt": "2026-05-31"
       }
     ]
   },
@@ -26,7 +26,7 @@
       {
         "title": "בלם הפועל פ\"ת בעונה שחלפה הפך לרכש הראשון של האלופה בפגרה וילבש אדום עד קיץ 2029: \"שמח,נרגש ומודע לציפיות הגבוהות\"",
         "url": "https://www.ynet.co.il/sport/israelisoccer/article/h12rdpsxgx",
-        "publishedAt": "2026-05-30"
+        "publishedAt": "2026-05-31"
       }
     ]
   },
@@ -55,8 +55,14 @@
     "source": "Sport 5",
     "url": "https://www.sport5.co.il/",
     "kind": "secondary",
-    "success": false,
-    "items": []
+    "success": true,
+    "items": [
+      {
+        "title": "נסאר על סף סיכום בהפועל פ\"ת, דבוש מועמד",
+        "url": "https://www.sport5.co.il/articles.aspx?FolderID=64&docID=546120",
+        "publishedAt": "2026-05-31"
+      }
+    ]
   },
   {
     "source": "PT News",
@@ -67,12 +73,12 @@
       {
         "title": "תודה איתי",
         "url": "https://www.hapoelpt.com/post/תודה-איתי",
-        "publishedAt": "2026-05-30"
+        "publishedAt": "2026-05-31"
       },
       {
         "title": "אוללה אוללה הפועל פתח תקוה",
         "url": "https://www.hapoelpt.com/post/אוללה-אוללה-הפועל-פתח-תקוה",
-        "publishedAt": "2026-05-30"
+        "publishedAt": "2026-05-31"
       }
     ]
   }
